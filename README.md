@@ -1,20 +1,36 @@
-# Substrate X Theory
-**Physical Mechanics of Gravity**
+# The Book of Substrate X
 
-# The Discovery
-**Gravity emerges from information dynamics in a universal substrate.**
+*A Unified Theory of Reality Through Information Flow*
 
-For the first time, gravity is derived from physical first principles rather than geometric abstraction.
+## Overview
+This book presents Substrate X Theory - a complete framework unifying gravity, quantum mechanics, consciousness, and cosmology through the dynamics of a fundamental information-carrying substrate.
 
-# Experimental Verification
-**Three independent confirmations:**
+## Structure
+The theory unfolds across seven phases:
 
-| Phenomenon               | Prediction      | Observed        | Status   |
-|--------------------------|-----------------|-----------------|----------|
-| **Planetary Precession** | 42.9″/century   | 43.0″/century   | ✅ Match |
-| **Light Deflection**     | 1.75 arcseconds | 1.75 arcseconds | ✅ Match |
-| **Orbital Decay**        | -2.40e⁻¹² s/s   | -2.405e⁻¹² s/s  | ✅ Match |
+### 🏗️ Foundation Layers
+- **Phase 1**: Physical Foundation - Leak-flow mechanics & energy propagation
+- **Phase 2**: Dimensional Framework - 2D↔3D↔4D transitions & compression
+- **Phase 3**: Matter Formation - Flow condensation & particle emergence
 
-**Perfect agreement with observational data. No fitting parameters.**
+### 🌌 Extended Realms  
+- **Phase 4**: Consciousness Layer - Soul energy & neural interaction
+- **Phase 5**: Cosmological Cascade - Galactic flows & black hole dynamics
+- **Phase 6**: Experimental Framework - Verification tests & applications
+- **Phase 7**: Unified Paradigm - Flow monism & philosophical synthesis
 
-#Core Mechanism
+## Current Status
+**Phase 1**: Active Development  
+**Experimental Validation**: Rotation-induced decoherence test proposed
+
+## Quick Start
+- Begin with `phase-1-physical-foundation/` for core physics
+- Check `references/` for related research
+- Use `templates/` for consistent documentation
+
+## Core Prediction
+`Γ = Γ₀ + kω²` - Quantum decoherence increases with rotation rate squared
+
+---
+
+*"Reality is information flowing in a universal substrate."*
