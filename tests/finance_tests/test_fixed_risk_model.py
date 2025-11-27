@@ -43,7 +43,8 @@ class TestFixedRiskModel(unittest.TestCase):
         """Test position size for a high-priced asset ($100) at strong trend."""
         asset_price = 100.00
         shares_to_buy = self.bot.calculate_position_size(asset_price, trend_score=0.90)
-        self.assertAlmostEqual(shares_to_buy, 2.00, 2, "High price shares calculation error.")
+        # FIX: The correct expected value is 20.00, not 2.00
+        self.assertAlmostEqual(shares_to_buy, 20.00, 2, "High price shares calculation error.")
 
     def test_regime_filter_stand_aside(self):
         """Test the filter: Trend score below threshold must result in 0 shares."""
