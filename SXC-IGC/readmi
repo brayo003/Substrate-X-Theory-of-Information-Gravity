@@ -1,0 +1,97 @@
+Fields
+
+ρ(x, y, t) — density / primary state (e.g., energy, population)
+
+E(x, y, t) — excitation / growth driver
+
+F(x, y, t) — inhibition / regulatory damping
+
+Universal Dynamics Equations
+
+Density evolution (ρ)
+
+∂ρ∂t=∇⋅(Dρ∇ρ)+G(ρ,E)−L(ρ,F)
+∂t
+∂ρ
+	​
+
+=∇⋅(D
+ρ
+	​
+
+∇ρ)+G(ρ,E)−L(ρ,F)
+
+Diffusion term: 
+∇⋅(Dρ∇ρ)
+∇⋅(D
+ρ
+	​
+
+∇ρ) spreads the field spatially.
+
+Growth term: 
+G(ρ,E)=δ1⋅E⋅ρ⋅(1−ρ)
+G(ρ,E)=δ
+1
+	​
+
+⋅E⋅ρ⋅(1−ρ)
+
+Loss term: 
+L(ρ,F)=δ2⋅F⋅ρ
+L(ρ,F)=δ
+2
+	​
+
+⋅F⋅ρ
+
+Excitation evolution (E)
+
+∂E∂t=fE(ρ,E)
+∂t
+∂E
+	​
+
+=f
+E
+	​
+
+(ρ,E)
+
+Typically, 
+E
+E increases where ρ is high or growing, and decays over time with τ_E.
+
+Inhibition evolution (F)
+
+∂F∂t=fF(ρ,E,F)
+∂t
+∂F
+	​
+
+=f
+F
+	​
+
+(ρ,E,F)
+
+Typically, 
+F
+F rises when ρ or E exceed thresholds, providing negative feedback, decaying with τ_F.
+
+Field coupling (interaction between fields)
+
+B←B+κ⋅A⋅(1−B)
+B←B+κ⋅A⋅(1−B)
+
+Represents one field influencing another without breaking the core law.
+
+Parameters (tuning knobs, domain-specific)
+
+τ_ρ, τ_E, τ_F → time constants for responsiveness
+
+M → stiffness / resistance to change
+
+δ₁, δ₂ → coupling strength for excitation and inhibition
+
+κ → cross-field interaction strength

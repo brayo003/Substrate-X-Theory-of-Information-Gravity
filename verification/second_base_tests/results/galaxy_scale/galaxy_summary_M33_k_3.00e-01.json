@@ -1,0 +1,10 @@
+{
+  "smoothing_sigma": 2,
+  "k_eff": 0.3,
+  "v_total_8_15kpc_mean_kms": 183.16420341627506,
+  "v_newt_8_15kpc_mean_kms": 127.04774380236476,
+  "ratio_outer_mean": 1.0050328840203984,
+  "max_v_total_kms": 655.9896571923296,
+  "npz_file": "verification/second_base_tests/results/galaxy_scale/galaxy_M33_k_3.00e-01.npz",
+  "plot_file": "verification/second_base_tests/results/galaxy_scale/galaxy_rotation_M33_k_3.00e-01.png"
+}

@@ -1,0 +1,72 @@
+Model choice. Let the substrate be described by a massive vector field Xμ=(Φ,X⃗)Xμ=(Φ,X
+), where ΦΦ is the scalar (pressure) potential and X⃗X
+
+is the flow velocity field.
+
+Lagrangian density (Proca-type):
+L=−14FμνFμν+mX22XμXμ−αXμJμ+Lmatter,
+L=−41​Fμν​Fμν+2mX2​​Xμ​Xμ−αXμ​Jμ+Lmatter​,
+
+with Fμν=∂μXν−∂νXμFμν​=∂μ​Xν​−∂ν​Xμ​, Jμ=(ρ,J⃗)Jμ=(ρ,J
+
+) the mass–energy current, and mXmX​ a mass parameter setting a length scale. A natural choice for the mass parameter is
+mX=ℏLXc,
+mX​=LX​cℏ​,
+
+where LXLX​ is the substrate length scale.
+
+Coupling constant. To recover Newtonian gravity in the massless limit, set α=4πGα=4πG.
+
+Field equations (Euler–Lagrange):
+∂νFνμ+mX2Xμ=αJμ.
+∂ν​Fνμ+mX2​Xμ=αJμ.
+
+Taking components and defining E⃗=−∇Φ−∂tX⃗E
+=−∇Φ−∂t​X
+and B⃗=∇×X⃗B
+=∇×X
+
+, we have
+∇⋅E⃗+mX2Φ=αρ,
+∇⋅E
++mX2​Φ=αρ,
+∇×B⃗−∂tE⃗+mX2X⃗=αJ⃗.
+∇×B
+−∂t​E
++mX2​X
+=αJ
+.
+
+Static, weak-field limit. For stationary sources (J⃗=0,∂t→0J
+
+=0,∂t​→0),
+∇2Φ−mX2Φ=−αρ,∇2X⃗−mX2X⃗=0.
+∇2Φ−mX2​Φ=−αρ,∇2X
+−mX2​X
+=0.
+
+For a point mass MM at the origin (ρ=Mδ(r⃗)ρ=Mδ(r
+
+)) the scalar solution is the Yukawa potential
+Φ(r)=−αM4πe−mXrr=−GMre−mXr,
+Φ(r)=−4παM​re−mX​r​=−rGM​e−mX​r,
+
+where the last equality uses α=4πGα=4πG.
+
+Interpretation.
+
+    mX→0mX​→0: infinite-range force, recover Newtonian gravity.
+
+    mX≠0mX​=0: finite-range (Yukawa) modifications that regularize short-distance singularities.
+
+    Proca structure gives a Lorentz-invariant massive mediator; if ∂μJμ=0∂μ​Jμ=0 then ∂μXμ=0∂μ​Xμ=0 (consistency condition).
+
+    FμνFμνFμν​Fμν measures substrate strain/torsion; B⃗=∇×X⃗B
+
+=∇×X
+
+    encodes vorticity (candidate for vortex/particle interpretation).
+
+This Proca-like field-theoretic foundation preserves the leak/flow intuition while providing a concrete PDE framework to derive limits and predictions.
+
+Gauge symmetry note: The mass term mXmX​ breaks the U(1)U(1) gauge symmetry, making the longitudinal mode physical and ensuring the conservation law ∂μJμ=0∂μ​Jμ=0 implies ∂μXμ=0∂μ​Xμ=0 as a dynamical constraint rather than a gauge choice.

@@ -1,0 +1,111 @@
+Newtonian Limit (Poisson Equation)
+
+Starting from the static field equation:
+
+∇2Φ−mX2Φ=−αρ,
+∇
+2
+Φ−m
+X
+2
+	​
+
+Φ=−αρ,
+
+taking the massless limit 
+mX→0
+m
+X
+	​
+
+→0 gives
+
+∇2Φ=−αρ.
+∇
+2
+Φ=−αρ.
+
+Comparing with Newtonian gravity,
+
+∇2ΦN=−4πGρ,
+∇
+2
+Φ
+N
+	​
+
+=−4πGρ,
+
+we identify the coupling
+
+α=4πG.
+α=4πG.
+
+In this limit, the Yukawa potential
+
+Φ(r)=−GMre−mXr
+Φ(r)=−
+r
+GM
+	​
+
+e
+−m
+X
+	​
+
+r
+
+reduces to the Newtonian potential
+
+ΦN(r)=−GMr.
+Φ
+N
+	​
+
+(r)=−
+r
+GM
+	​
+
+.
+2. Effective Metric and Relativistic Behavior
+
+In Lorenz gauge (
+∂μXμ=0
+∂
+μ
+	​
+
+X
+μ
+=0), the field equations take the Proca form:
+
+□Xμ+mX2Xμ=αJμ.
+□X
+μ
++m
+X
+2
+	​
+
+X
+μ
+=αJ
+μ
+.
+
+Particle motion follows from the action:
+
+S=∫ ⁣[−m−gμνx˙μx˙ν+qXμx˙μ]dτ.
+S=∫[−m
+−g
+μν
+	​
+
+x
+˙
+μ
+x
+˙
+ν

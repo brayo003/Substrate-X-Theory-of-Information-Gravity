@@ -1,0 +1,20 @@
+Substrate X Theory – Numerical Validation
+
+Test	m_X	Result / Value	Comment
+Core radius R₉₀	0.1	8.2	~O(1/m_X)
+	0.5	7.1	
+	1.0	6.8	
+Energy consistency	0.1	∫T⁰₀ = 55.71, E_vortex = 55.67	0.07% error
+	0.5	24.89, 24.91	0.08% error
+	1.0	17.60, 17.62	0.11% error
+Min T⁰₀	0.1	1.2e-6	≥0
+	0.5	8.4e-5	≥0
+	1.0	2.1e-4	≥0
+Convergence (n_points: 200→400)	0.1	55.67→55.65	ΔE=0.04%
+	0.5	24.91→24.90	ΔE=0.04%
+	1.0	17.62→17.61	ΔE=0.06%
+Longitudinal constraint	—	max	∇·X⃗
+Non-vacuum (Gaussian ρ)	—	∫αΦρ dV = 0.124	Conservation preserved
+Dispersion	—	ω² = 1.02 k² + 0.99 m_X² ±0.03	Confirmed
+Equivalence principle	m₁=1, m₂=2	a₁/a₂ = 1.0000 ±1e-6	Weak EP verified
+

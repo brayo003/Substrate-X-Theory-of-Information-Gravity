@@ -1,0 +1,54 @@
+🚀 ARXIV SUBMISSION CHECKLIST - DO THIS NOW
+===========================================
+
+BEFORE YOU START:
+☐ Have your personal info ready (name, email, affiliation)
+☐ Use Google Chrome/Firefox (best compatibility)
+☐ Allow 30-45 minutes for first submission
+
+STEP-BY-STEP SUBMISSION:
+
+1. 🌐 GO TO: https://arxiv.org/submit
+
+2. 🔐 LOGIN/CREATE ACCOUNT:
+   - Click "Create Account" if new
+   - Use: briankenda99@gmail.com
+   - Verify email address
+   - Set up your profile
+
+3. 📝 START NEW SUBMISSION:
+   - Click "Submit to arXiv"
+   - Choose "Physics" → "General Physics (physics.gen-ph)"
+
+4. 📁 UPLOAD FILES:
+   - Required: teaser_paper.tex
+   - Optional: teaser_paper.pdf (if compiled)
+   - NO other files needed
+
+5. 📋 ENTER METADATA:
+   - Title: "Substrate X Theory: Reproduction of Key Gravitational Tests"
+   - Authors: "Mwirigi Bryan Kenda"
+   - Abstract: Copy from teaser_paper.tex
+   - Comments: "Brief communication - extended framework in preparation"
+   - Subjects: "General Physics (physics.gen-ph)"
+
+6. ✅ REVIEW & SUBMIT:
+   - Preview your submission
+   - Check everything looks correct
+   - Click "Submit to arXiv"
+
+7. 🎯 AFTER SUBMISSION:
+   - You'll get confirmation email
+   - Paper appears in 24-48 hours
+   - Save the arXiv ID (e.g., arXiv:2401.12345)
+
+IMPORTANT NOTES:
+- This establishes PERMANENT, PUBLIC priority
+- Your work is timestamped the moment you submit
+- Once live, no one can claim they developed it first
+- You can update with more detailed papers later
+
+ESTIMATED TIMELINE:
+- Submission: 30-45 minutes
+- Processing: 24-48 hours  
+- Public: Within 2 days

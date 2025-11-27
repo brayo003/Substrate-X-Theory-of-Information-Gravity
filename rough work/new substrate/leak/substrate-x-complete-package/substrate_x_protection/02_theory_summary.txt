@@ -1,0 +1,22 @@
+SUBSTRATE X THEORY SUMMARY
+==========================
+Key Equations:
+- Master Equation: ∂s/∂t + ∇·(s v_sub) = αE - β∇·(E v_sub) + γF - σ_irr  
+- Force Law: F_grav = k s v_sub
+
+Key Variables:
+- s: Information density in substrate
+- v_sub: Substrate flow velocity  
+- E: Energy density
+- σ_irr: Irreversible information production
+
+Physical Interpretation:
+Gravity emerges from the interaction between matter and the
+substrate's information flow. The force law F = k s v_sub
+naturally produces inverse-square law behavior while providing
+a mechanism for relativistic corrections.
+
+Test Results:
+✓ Mercury precession: 42.9''/century
+✓ Gravitational lensing: 1.75 arcseconds  
+✓ Binary pulsar decay: -2.40e-12 s/s

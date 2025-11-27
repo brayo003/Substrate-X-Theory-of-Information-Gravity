@@ -1,0 +1,7 @@
+{
+  "delta1": 0.5,
+  "delta2": 0.3,
+  "keff_solar": 0.000379,
+  "use_case": "solar_system_scale",
+  "performance": "best_overall"
+}

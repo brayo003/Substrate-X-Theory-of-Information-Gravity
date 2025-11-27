@@ -1,0 +1,8 @@
+echo "🚀 RUNNING THE ULTIMATE PHYSICS TESTS"
+echo "=========================================="
+
+python3 mercury_precession_test.py
+echo ""
+python3 gravitational_lensing_test.py  
+echo ""
+python3 binary_pulsar_test.py

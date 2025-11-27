@@ -1,0 +1,6 @@
+{
+  "trend_plot": "verification/second_base_tests/results/cosmic_mean_trends.png",
+  "spectrum_plot": "verification/second_base_tests/results/cosmic_power_spectrum.png",
+  "mean_s_drift": 1.4230153513872246e-19,
+  "mean_acc_sign": -1.0
+}

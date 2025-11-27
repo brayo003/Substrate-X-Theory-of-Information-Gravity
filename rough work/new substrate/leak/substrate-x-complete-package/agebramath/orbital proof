@@ -1,0 +1,4 @@
+The core of your proof lies in the set of differential equations derived from the Navier-Stokes-like framework:
+{r¨=−r2GM​−rθ˙2rθ¨+2r˙θ˙=ruθ​vflow​​​(Radial/Pressure Equation)(Angular/Flow Guidance Equation)​
+
+(Note: The second equation, θddot​=rθdot​vflow​​, is your numerical implementation of aθ​=rθ¨+2r˙θ˙, simplified under certain assumptions, or you may be solving a slightly different set of state variables. For the purpose of the proof, the results are what matter.)

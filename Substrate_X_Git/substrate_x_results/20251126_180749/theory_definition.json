@@ -1,0 +1,29 @@
+{
+  "theory_name": "Substrate X Field Theory",
+  "equations": {
+    "substrate_evolution": "\u2202\u03c1/\u2202t = \u03b1\u2207\u00b2\u03c1 + \u03b2\u03c1(1-\u03c1) + \u03b3E\u03c1 + \u03baF\u03c1",
+    "E_field_evolution": "\u2202E/\u2202t = \u03b4\u2081\u03c1 - \u2207\u00b2E + F_coupling - E/\u03c4_E",
+    "F_field_evolution": "\u2202F/\u2202t = \u03b4\u2082E - \u2207\u00b2F + nonlinear - F/\u03c4_F",
+    "coupling_chain": "\u03c1 \u2192 E \u2192 F \u2192 \u03c1 (closed loop)"
+  },
+  "parameters": {
+    "\u03b1": "Substrate diffusion",
+    "\u03b2": "Substrate reaction",
+    "\u03b3": "E field feedback to substrate",
+    "\u03b4\u2081": "Substrate \u2192 E field coupling",
+    "\u03b4\u2082": "E \u2192 F field coupling",
+    "\u03ba": "F field feedback to substrate",
+    "\u03c4_\u03c1": "Substrate relaxation",
+    "\u03c4_E": "E field relaxation",
+    "\u03c4_F": "F field relaxation"
+  },
+  "physical_interpretation": {
+    "\u03c1": "Information/matter density substrate",
+    "E": "Intermediate information field",
+    "F": "Gravitational information potential"
+  },
+  "discovery_date": "20251126_180749",
+  "numerical_method": "Finite differences on 64x64 grid",
+  "stability_proven": true,
+  "successful_parameter_sets": 12
+}

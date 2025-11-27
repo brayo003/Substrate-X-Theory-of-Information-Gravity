@@ -1,0 +1,20 @@
+1. The Time Dilation Factor
+
+The time dilation factor utilized by the Substrate X model is:
+Λ(r)=dτdt​=1−rc22GM​​1​
+
+2. The Redshift Calculation
+
+The redshift z for a photon escaping from a massive object (radius re​) to an observer at infinity (ro​→∞) is given by:
+z=Λ(re​)1​−1
+
+Substituting the Λ(r) factor from the Substrate X model yields:
+z=1−re​c22GM​​−1
+
+3. Comparison and Conclusion
+
+The model's prediction is summarized by the table below:
+Celestial Body / Effect	Substrate X Prediction	Accepted Value / Effect	Result
+Sun Surface Redshift	2.12×10−6	≈2.12×10−6	✅ PASS (Exact Match)
+Earth Surface Redshift	6.95×10−10	Confirms time dilation over height difference	✅ PASS
+GPS Satellite Timing	Predicts ∼45 microseconds/day difference	Matches observed clock rate difference	✅ PASS

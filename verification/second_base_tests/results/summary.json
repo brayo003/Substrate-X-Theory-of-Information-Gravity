@@ -1,0 +1,9 @@
+{
+  "dwarf_galaxy": {
+    "test": "dwarf_galaxy",
+    "m_star_Msun": 100000000.0,
+    "r_eff_kpc": 1.0,
+    "data_file": "verification/second_base_tests/results/dwarf_galaxy_rotation.npz",
+    "plot_file": "verification/second_base_tests/results/dwarf_rotation_curve.png"
+  }
+}

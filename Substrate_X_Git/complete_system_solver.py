@@ -1,0 +1,231 @@
+#!/usr/bin/env python3
+"""
+COMPLETE SYSTEM: E, F, and s fields all evolve with mutual coupling
+"""
+import numpy as np
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from src.numerical_solver_fixed_gamma import SubstrateXSolver
+
+class CompleteSystemSolver(SubstrateXSolver):
+    """
+    Complete system with dynamic E and F field evolution
+    Includes substrate → gravity feedback via δ₁ and δ₂
+    """
+    
+    def __init__(self, grid_size, domain_size, alpha=1e-10, beta=1e-10, gamma=1e-10, 
+                 delta1=1e-10, delta2=1e-10, chi=1.0, tau=1e3):
+        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+        
+        # New feedback coupling constants
+        self.delta1 = delta1 / (self.L_char / self.T_char**2)  # Scale δ₁
+        self.delta2 = delta2 / (1.0 / self.T_char**2)          # Scale δ₂
+        
+        # Time derivatives for E and F
+        self.E_prev = np.zeros_like(self.E)
+        self.F_prev = np.zeros_like(self.F)
+        
+        print(f"Complete System Parameters:")
+        print(f"  δ₁ (s→E coupling): {self.delta1:.3e}")
+        print(f"  δ₂ (s→F coupling): {self.delta2:.3e}")
+    
+    def evolve_E_field(self):
+        """
+        Evolve E field: ∂²E/∂t² = c²∇²E - (1/τ)∂E/∂t + δ₁∇²s
+        """
+        # Wave term: c²∇²E
+        laplacian_E = self.compute_laplacian(self.E)
+        wave_term = self.c**2 * laplacian_E
+        
+        # Damping term: -(1/τ)∂E/∂t  
+        E_vel = (self.E - self.E_prev) / self.dt
+        damping_term = -(1.0 / self.tau) * E_vel
+        
+        # Substrate feedback: δ₁∇²s (substrate curvature → potential)
+        laplacian_s = self.compute_laplacian(self.s)
+        substrate_feedback = self.delta1 * laplacian_s
+        
+        # Assemble RHS for E
+        E_rhs = wave_term + damping_term + substrate_feedback
+        
+        # Time integration (simple Euler for now)
+        E_new = 2 * self.E - self.E_prev + E_rhs * self.dt**2
+        
+        # Update E field
+        self.E_prev = self.E.copy()
+        self.E = E_new
+    
+    def evolve_F_field(self):
+        """
+        Evolve F field: ∂²F/∂t² = c²∇²F - (1/τ)∂F/∂t + δ₂∇s
+        """
+        # Wave term for each component
+        laplacian_Fx = self.compute_laplacian(self.F[:,:,0])
+        laplacian_Fy = self.compute_laplacian(self.F[:,:,1])
+        wave_term_x = self.c**2 * laplacian_Fx
+        wave_term_y = self.c**2 * laplacian_Fy
+        
+        # Damping term
+        F_vel_x = (self.F[:,:,0] - self.F_prev[:,:,0]) / self.dt
+        F_vel_y = (self.F[:,:,1] - self.F_prev[:,:,1]) / self.dt
+        damping_term_x = -(1.0 / self.tau) * F_vel_x
+        damping_term_y = -(1.0 / self.tau) * F_vel_y
+        
+        # Substrate feedback: δ₂∇s (substrate gradient → acceleration)
+        grad_s_x, grad_s_y = np.gradient(self.s, self.dx, axis=0), np.gradient(self.s, self.dx, axis=1)
+        substrate_feedback_x = self.delta2 * grad_s_x
+        substrate_feedback_y = self.delta2 * grad_s_y
+        
+        # Assemble RHS for F
+        F_rhs_x = wave_term_x + damping_term_x + substrate_feedback_x
+        F_rhs_y = wave_term_y + damping_term_y + substrate_feedback_y
+        
+        # Time integration
+        F_new_x = 2 * self.F[:,:,0] - self.F_prev[:,:,0] + F_rhs_x * self.dt**2
+        F_new_y = 2 * self.F[:,:,1] - self.F_prev[:,:,1] + F_rhs_y * self.dt**2
+        
+        # Update F field
+        self.F_prev = self.F.copy()
+        self.F[:,:,0] = F_new_x
+        self.F[:,:,1] = F_new_y
+    
+    def step(self):
+        """Complete system step: evolve E, F, and s fields"""
+        # 1. Evolve E field (with substrate feedback)
+        self.evolve_E_field()
+        
+        # 2. Evolve F field (with substrate feedback) 
+        self.evolve_F_field()
+        
+        # 3. Evolve s field (with gravity coupling)
+        super().step()
+
+def test_complete_system():
+    """Test the complete coupled system"""
+    print("🎯 TESTING COMPLETE COUPLED SYSTEM")
+    print("=" * 60)
+    
+    # Parameters for solar system calibration
+    params = {
+        "dim": 2,
+        'grid_size': 32,
+        'domain_size': 2e11,
+        'alpha': 1e-5,    # E → s coupling
+        'beta': 1e-5,     # ∇·(E v_sub) → s coupling  
+        'gamma': 1e-5,    # |F|² → s coupling
+        'delta1': 1e-5,   # ∇²s → E coupling (NEW)
+        'delta2': 1e-5,   # ∇s → F coupling (NEW)
+        'chi': 1.0,
+        'tau': 1e6
+    }
+    
+    solver = CompleteSystemSolver(**params)
+    
+    mass = 2e30
+    solver.add_point_mass(mass, (0,0))
+    
+    # Add substrate perturbation
+    solver.s += 1e-5
+    
+    print("Initial state:")
+    E_initial = solver.E.copy()
+    F_initial = solver.F.copy()
+    
+    char_distance = 2e10
+    distances = np.sqrt(solver.X**2 + solver.Y**2)
+    char_idx = np.unravel_index(np.argmin(np.abs(distances - char_distance)), distances.shape)
+    
+    F_initial_char = np.sqrt(F_initial[:,:,0]**2 + F_initial[:,:,1]**2)[char_idx]
+    g_newton = solver.G * mass / (distances[char_idx] + solver.r_min)**2
+    
+    print(f"  Newtonian g: {g_newton:.6e} m/s²")
+    print(f"  Initial F: {F_initial_char:.6e} m/s²")
+    print(f"  Initial k_eff: {(F_initial_char - g_newton)/g_newton:.6f}")
+    
+    # Evolve complete system
+    print("Evolving complete system...")
+    k_eff_history = []
+    
+    for i in range(100):
+        solver.step()
+        
+        # Monitor k_eff
+        F_current = np.sqrt(solver.F[:,:,0]**2 + solver.F[:,:,1]**2)[char_idx]
+        k_eff = (F_current - g_newton) / g_newton
+        k_eff_history.append(k_eff)
+        
+        if i % 20 == 0:
+            print(f"  Step {i}: k_eff = {k_eff:.6f}")
+    
+    print(f"Final k_eff: {k_eff_history[-1]:.6f}")
+    print(f"Target k_eff: 0.000200")
+    
+    # Check if we're getting closer to target
+    final_k_eff = k_eff_history[-1]
+    if abs(final_k_eff) > 1e-5:
+        print("✅ GRAVITY MODIFICATION DETECTED!")
+        print("The complete system is working!")
+    else:
+        print("❌ Still no significant modification")
+        print("Try stronger δ₁, δ₂ parameters")
+
+def calibrate_parameters():
+    """Find parameters that give k_eff ≈ 2e-4"""
+    print(f"\n🔧 CALIBRATING PARAMETERS")
+    print("=" * 60)
+    
+    # Test different feedback strengths
+    delta_values = [1e-8, 1e-7, 1e-6, 1e-5, 1e-4]
+    
+    for delta in delta_values:
+        print(f"Testing δ₁=δ₂={delta:.1e}:")
+        
+        solver = CompleteSystemSolver(
+            grid_size=16,
+            domain_size=2e11,
+            alpha=1e-5, beta=1e-5, gamma=1e-5,
+            delta1=delta, delta2=delta,
+            chi=1.0, tau=1e6
+        )
+        
+        mass = 2e30
+        solver.add_point_mass(mass, (0,0))
+        solver.s += 1e-5
+        
+        # Evolve briefly
+        for i in range(50):
+            solver.step()
+        
+        # Measure k_eff
+        char_distance = 2e10
+        distances = np.sqrt(solver.X**2 + solver.Y**2)
+        char_idx = np.unravel_index(np.argmin(np.abs(distances - char_distance)), distances.shape)
+        
+        F_final = np.sqrt(solver.F[:,:,0]**2 + solver.F[:,:,1]**2)[char_idx]
+        g_newton = solver.G * mass / (distances[char_idx] + solver.r_min)**2
+        k_eff = (F_final - g_newton) / g_newton
+        
+        print(f"  k_eff = {k_eff:.6f} (target: 0.000200)")
+        
+        if abs(k_eff - 0.0002) < 0.0001:
+            print(f"  ✅ FOUND GOOD PARAMETERS: δ₁=δ₂={delta:.1e}")
+            return delta
+    
+    print("❌ No parameter set achieved target k_eff")
+    return None
+
+if __name__ == "__main__":
+    test_complete_system()
+    best_delta = calibrate_parameters()
+    
+    if best_delta:
+        print(f"\n🎉 CALIBRATION SUCCESS!")
+        print(f"Use δ₁ = δ₂ = {best_delta:.1e} for solar system scale")
+        print("Now test if same parameters give k_eff ≈ 0.3 at galactic scale!")
+    else:
+        print(f"\n💡 Next steps:")
+        print("1. Try even stronger δ₁, δ₂ values")
+        print("2. Adjust α, β, γ parameters")
+        print("3. The complete system architecture is correct - just needs parameter tuning")

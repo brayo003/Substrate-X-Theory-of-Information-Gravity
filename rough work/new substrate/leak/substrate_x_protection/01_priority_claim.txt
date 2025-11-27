@@ -1,0 +1,23 @@
+SUBSTRATE X THEORY - PRIORITY CLAIM
+====================================
+AUTHOR: [YOUR REAL NAME]
+DATE: 2025-10-23 22:52:05
+LOCATION: Nairobi, Kenya
+
+I hereby claim priority for the development of Substrate X Theory,
+a physical theory of gravity that:
+
+1. Reproduces Mercury's perihelion precession (42.9''/century)
+2. Predicts correct gravitational lensing (1.75 arcseconds)  
+3. Matches binary pulsar orbital decay (-2.40e-12 s/s)
+4. Provides physical substrate mechanism for gravity
+
+CORE INSIGHT: Gravity emerges from information dynamics in a
+universal substrate, described by the master equation:
+
+∂s/∂t + ∇·(s v_sub) = αE - β∇·(E v_sub) + γF - σ_irr
+
+This represents a fundamental alternative to the geometric
+interpretation of General Relativity.
+
+CONTACT: [YOUR EMAIL]
