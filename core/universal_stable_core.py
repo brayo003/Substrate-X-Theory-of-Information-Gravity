@@ -1,5 +1,5 @@
 # core/universal_stable_core.py
-# Universal Dynamics Engine - Functional Core PDE Solver (FIXED)
+# Universal Dynamics Engine - Functional Core PDE Solver (Stability Adjusted)
 
 import numpy as np
 
@@ -16,10 +16,10 @@ class UniversalDynamicsEngine:
         self.R = params['R']
         self.D = params['D']
         
-        # NOTE: For now, we hardcode the Urban reaction constants here for simplicity. 
-        self.delta1, self.delta2 = 2.0, 1.2
+        # NOTE: Stability Adjusted Reaction Constants for Urban Domain
+        self.delta1, self.delta2 = 2.0, 0.8  # delta2 reduced from 1.2 to 0.8
         self.alpha, self.beta, self.gamma = 1.2, 0.8, 1.0
-        self.tau_E, self.tau_F = 0.6, 0.4
+        self.tau_E, self.tau_F = 0.1, 0.05   # tau_E reduced from 0.6, tau_F reduced from 0.4
         
         self.rho = None
         self.E = None
@@ -37,24 +37,22 @@ class UniversalDynamicsEngine:
         
         # Use simple 5-point stencil for the interior
         laplacian[1:-1, 1:-1] = (
-            field[:-2, 1:-1] + field[2:, 1:-1] +  # Y-direction
-            field[1:-1, :-2] + field[1:-1, 2:] - 4 * field[1:-1, 1:-1] # X-direction
+            field[:-2, 1:-1] + field[2:, 1:-1] + 
+            field[1:-1, :-2] + field[1:-1, 2:] - 4 * field[1:-1, 1:-1] 
         )
-        # Assuming grid resolution dx=dy=1 for simplicity in this core.
         return laplacian
 
-    # --- REACTION TERMS (FIXED Signature) ---
+    # --- REACTION TERMS ---
     def reaction_rho(self, rho, E, F):
-        """Density evolution: development drives growth, constraints limit it""" 
+        """Density evolution""" 
         return self.delta1 * E * rho * (1 - rho) - self.delta2 * F * rho
     
     def reaction_E(self, rho, E, F):
-        """Development evolution: density creates potential, constraints limit it"""
+        """Development evolution"""
         return (self.alpha * rho + self.beta * E * (1 - E) - self.gamma * F * E - self.tau_E * E)
 
-    # *** FIX IS HERE: Added F to arguments ***
     def reaction_F(self, rho, E, F): 
-        """Constraint evolution: density increases constraint, potential decreases it"""
+        """Constraint evolution"""
         return (self.R * rho - self.R * E - self.tau_F * F)
         
     # --- CORE SOLVER ---
@@ -70,17 +68,15 @@ class UniversalDynamicsEngine:
             L_rho = self.laplacian_2d(rho)
             L_E = self.laplacian_2d(E)
             
-            # 2. Calculate Reaction Term (Updated to pass F to reaction_F)
+            # 2. Calculate Reaction Term
             R_rho = self.reaction_rho(rho, E, F)
             R_E = self.reaction_E(rho, E, F)
-            
-            # *** FIX IS HERE: Passed F as the third argument ***
             R_F = self.reaction_F(rho, E, F) 
             
             # 3. Apply Forward Euler Integration
             drho_dt = D * L_rho + R_rho 
             dE_dt = D * L_E + R_E
-            dF_dt = R_F # F is assumed to be non-diffusing
+            dF_dt = R_F
             
             # Update fields
             rho += drho_dt * dt
