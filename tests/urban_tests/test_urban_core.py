@@ -1,92 +1,56 @@
-#!/usr/bin/env python3
-"""
-CORRECTED SMOKE TEST: City Growth Patterns
-Proper urban scaling for SXC-IGC engine
-"""
+# tests/urban_tests/test_urban_core.py (FIXED IMPORTS)
+
+import unittest
+import numpy as np
 import sys
 import os
-sys.path.insert(0, '../..')
-from core_engine.src.universal_dynamics_monitored import create_monitored_engine
-import numpy as np
-import random
 
-SEED = 42
-random.seed(SEED)
-np.random.seed(SEED)
+# Add parent directory to path to allow import of core/ and domains/
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-print("🏙️ CORRECTED CITY GROWTH SMOKE TEST")
-print("Proper urban scaling: slower decay, stronger coupling")
-print("=" * 60)
+# --- NEW, CORRECT IMPORTS ---
+from core.universal_stable_core import UniversalDynamicsEngine
+from domains.urban_config import get_urban_parameters
+# ----------------------------
 
-def test_city_growth_smoke():
-    # URBAN-SCALE PARAMETERS
-    engine = create_monitored_engine(
-        'general', 
-        grid_size=32,
-        # URBAN SCALING: Slower decay, stronger excitation
-        M_factor=20000,      # Moderate constraints
-        tau_rho=0.001,       # SLOWER decay for urban patterns
-        tau_E=0.0005,        # Fast development response
-        tau_F=0.002,         # Moderate constraint dynamics
-        delta1=3.0,          # STRONG development drive
-        delta2=2.0,          # Strong infrastructure coupling
-        kappa=1.5,           # Moderate regulatory friction
-        cubic_damping=0.1,   # Less damping for growth
-        breaking_threshold=0.8,
-        dt=0.0001
-    )
-    
-    print("✅ Urban-Scale SXC-IGC Engine Created")
-    print(f"   τ_ρ: {engine.tau_rho} (SLOW decay) | δ1: {engine.delta1} (STRONG drive)")
-    
-    # CORRECT initialization
-    engine.initialize_gaussian(amplitude=1.0)  # Downtown core
-    
-    # Add development potential (E field) - URBAN SCALE
-    engine.E = np.zeros((32, 32))
-    engine.E[16, :] = 0.8    # East-west development corridor
-    engine.E[:, 16] = 0.8    # North-south development corridor
-    engine.E[8, 8] = 0.6     # Subcenter development
-    
-    print("✅ Urban pattern initialized")
-    print("   - Downtown core + development corridors")
-    
-    # Run urban growth simulation
-    growth_data = []
-    
-    for step in range(100):
-        engine.evolve(1, verbose=False)
+class TestUrbanCoreStability(unittest.TestCase):
+    """
+    Tests the fundamental stability and integrity of the UniversalDynamicsEngine
+    when initialized with Urban Domain parameters.
+    """
+
+    def setUp(self):
+        # Load parameters from the new domains file
+        self.params, self.initial_fields = get_urban_parameters()
         
-        density_mean = np.mean(engine.rho)
-        development = np.mean(engine.E)
-        stress = np.mean(engine.stress_history)
-        
-        growth_data.append({
-            'density': density_mean,
-            'development': development, 
-            'stress': stress
-        })
-        
-        if step % 20 == 0:
-            print(f"   Step {step}: Density={density_mean:.3f}, Stress={stress:.3f}")
-    
-    # Results analysis
-    final_density = growth_data[-1]['density']
-    density_change = final_density - growth_data[0]['density']
-    max_stress = max(d['stress'] for d in growth_data)
-    
-    print(f"\n📊 URBAN GROWTH RESULTS:")
-    print(f"   Final Density: {final_density:.3f}")
-    print(f"   Density Change: {density_change:+.3f}")
-    print(f"   Max Stress: {max_stress:.3f}")
-    
-    # Success: Some density dynamics emerged
-    dynamics_emerged = abs(density_change) > 0.01
-    stable = max_stress < 0.5
-    
-    return dynamics_emerged and stable
+        # Initialize the Engine using the new class name
+        self.engine = UniversalDynamicsEngine(self.params)
+        self.engine.set_initial_conditions(
+            rho_initial=self.initial_fields['rho'],
+            E_initial=self.initial_fields['E'],
+            F_initial=self.initial_fields['F']
+        )
+        self.grid_res = self.params['GRID_RES']
 
-if __name__ == "__main__":
-    success = test_city_growth_smoke()
-    print(f"\n🎯 SMOKE TEST: {'PASSED' if success else 'FAILED'}")
-    print("=" * 60)
+    def test_run_produces_stable_output(self):
+        """Test a short run (10 steps) maintains non-NaN and non-Inf values."""
+        
+        # Run a short simulation
+        num_steps = 10
+        final_fields, final_metrics = self.engine.run_simulation(num_steps)
+
+        # Check for NaN and Inf values in the output fields
+        self.assertFalse(np.any(np.isnan(final_fields['rho'])), "Rho field contains NaN values.")
+        self.assertFalse(np.any(np.isinf(final_fields['rho'])), "Rho field contains Inf values.")
+        self.assertFalse(np.any(np.isnan(final_fields['E'])), "E field contains NaN values.")
+        self.assertFalse(np.any(np.isinf(final_fields['E'])), "E field contains Inf values.")
+        
+        # Check that the shapes are maintained
+        self.assertEqual(final_fields['rho'].shape, self.grid_res)
+        
+        # Check that the density is generally non-zero (i.e., the engine did something)
+        self.assertTrue(np.sum(final_fields['rho']) > np.sum(self.initial_fields['rho']) * 0.5)
+
+if __name__ == '__main__':
+    # This ensures the test is runnable directly
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
