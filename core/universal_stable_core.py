@@ -1,5 +1,5 @@
 # core/universal_stable_core.py
-# Universal Dynamics Engine - Functional Core PDE Solver
+# Universal Dynamics Engine - Functional Core PDE Solver (FIXED)
 
 import numpy as np
 
@@ -17,7 +17,6 @@ class UniversalDynamicsEngine:
         self.D = params['D']
         
         # NOTE: For now, we hardcode the Urban reaction constants here for simplicity. 
-        # In a fully domain-agnostic model, these would be loaded from a universal source.
         self.delta1, self.delta2 = 2.0, 1.2
         self.alpha, self.beta, self.gamma = 1.2, 0.8, 1.0
         self.tau_E, self.tau_F = 0.6, 0.4
@@ -44,7 +43,7 @@ class UniversalDynamicsEngine:
         # Assuming grid resolution dx=dy=1 for simplicity in this core.
         return laplacian
 
-    # --- REACTION TERMS (Based on the tested Urban equations) ---
+    # --- REACTION TERMS (FIXED Signature) ---
     def reaction_rho(self, rho, E, F):
         """Density evolution: development drives growth, constraints limit it""" 
         return self.delta1 * E * rho * (1 - rho) - self.delta2 * F * rho
@@ -53,9 +52,9 @@ class UniversalDynamicsEngine:
         """Development evolution: density creates potential, constraints limit it"""
         return (self.alpha * rho + self.beta * E * (1 - E) - self.gamma * F * E - self.tau_E * E)
 
-    def reaction_F(self, rho, E):
+    # *** FIX IS HERE: Added F to arguments ***
+    def reaction_F(self, rho, E, F): 
         """Constraint evolution: density increases constraint, potential decreases it"""
-        # This is simplified; F is usually a vector field, but treated as a scalar source here.
         return (self.R * rho - self.R * E - self.tau_F * F)
         
     # --- CORE SOLVER ---
@@ -64,7 +63,6 @@ class UniversalDynamicsEngine:
         rho, E, F = self.rho, self.E, self.F
         dt = self.DT
         D = self.D
-        R = self.R # Re-using R for the F-field reaction (Urban constraint logic)
         
         for _ in range(num_steps):
             
@@ -72,22 +70,17 @@ class UniversalDynamicsEngine:
             L_rho = self.laplacian_2d(rho)
             L_E = self.laplacian_2d(E)
             
-            # 2. Calculate Reaction Term
+            # 2. Calculate Reaction Term (Updated to pass F to reaction_F)
             R_rho = self.reaction_rho(rho, E, F)
             R_E = self.reaction_E(rho, E, F)
-            R_F = self.reaction_F(rho, E)
+            
+            # *** FIX IS HERE: Passed F as the third argument ***
+            R_F = self.reaction_F(rho, E, F) 
             
             # 3. Apply Forward Euler Integration
-            # The Diffusion Coefficient 'D' is applied only to the rho and E fields
-            
-            # d_rho/dt = D * Laplacian(rho) + R_rho
             drho_dt = D * L_rho + R_rho 
-            
-            # d_E/dt = D * Laplacian(E) + R_E
             dE_dt = D * L_E + R_E
-            
-            # d_F/dt = R_F (F is assumed to be a non-diffusing constraint field for simplicity)
-            dF_dt = R_F 
+            dF_dt = R_F # F is assumed to be non-diffusing
             
             # Update fields
             rho += drho_dt * dt
