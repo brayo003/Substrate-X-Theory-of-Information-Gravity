@@ -1,6 +1,29 @@
-__pycache__/
-*.py[cod]
+# Legal and confidential documents (NEVER commit)
+legal/
+backups/
+*CONFIDENTIAL*
+*SECRET*
+*PROPRIETARY*
 
+# Security files
+*.key
+*.pem
+*credentials*
+*config*
+
+# Temporary files
+*.tmp
+*.log
+__pycache__/
+*.pyc
 .DS_Store
-.vscode/
-.idea/
+*.tar.gz
+
+# Development files
+*.swp
+*.swo
+*~
+
+# Backup files (stored in ~/.backup/)
+backups/
+*.tar.gz
