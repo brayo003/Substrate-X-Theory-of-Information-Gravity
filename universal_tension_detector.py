@@ -2,76 +2,68 @@ import numpy as np
 import pandas as pd
 
 class UniversalTensionDetector:
-    # 👑 THE GOVERNING UNIVERSAL CONSTANT (Derived from Finance/Social average)
+    # 👑 THE GOVERNING UNIVERSAL CONSTANT
     C_UNIVERSAL = 2.0 
     
-    # 🧬 DOMAIN STRUCTURAL FINGERPRINTS (K) AND RESILIENCE (R)
-    # These are the validated parameters for each domain
+    # 🧬 DOMAIN STRUCTURAL FINGERPRINTS (K), RESILIENCE (R), AND MAX LOSS (MMaxLoss)
     DOMAIN_PARAMETERS = {
         'finance': {
-            'R': 0.012,     # Baseline Volatility during calm (S&P 500)
-            'K': 1.333      # Structural Factor (Engineered Efficiency)
+            'R': 0.012,        # Baseline Volatility during calm
+            'K': 1.333,        # Structural Factor
+            'MMaxLoss': -0.22  # Maximum loss threshold for capitulation entry
         },
         'social': {
-            'R': 0.0016,    # Baseline Volatility during calm (Narrative Cohesion)
-            'K': 0.800      # Structural Factor (Contagion Amplifier)
+            'R': 0.0016,       # Baseline Volatility during calm
+            'K': 0.800,        # Structural Factor  
+            'MMaxLoss': -0.18  # Maximum narrative collapse threshold
         },
         'geopolitics': {
-            'R': 0.0020,    # Baseline Volatility during calm (GSI)
-            'K': 0.800      # Structural Factor (Amplifier)
+            'R': 0.0020,       # Baseline Volatility during calm
+            'K': 0.800,        # Structural Factor
+            'MMaxLoss': -0.25  # Maximum geopolitical stress threshold
         }
     }
 
     def __init__(self, domain='finance'):
-        """Initializes the detector for a specific domain (e.g., 'finance', 'social')."""
         self.domain = domain.lower()
         if self.domain not in self.DOMAIN_PARAMETERS:
-            raise ValueError(f"Domain '{domain}' not found. Available domains: {list(self.DOMAIN_PARAMETERS.keys())}")
+            raise ValueError(f"Domain '{domain}' not found. Available: {list(self.DOMAIN_PARAMETERS.keys())}")
         
         params = self.DOMAIN_PARAMETERS[self.domain]
         self.R = params['R']
         self.K = params['K']
+        self.MMaxLoss = params['MMaxLoss']
         
-        # 🧪 Calculate the Domain-Specific Critical Volatility Threshold (The Universal Law)
-        # sigma_Critical = C_U * R * K
+        # Calculate Domain-Specific Critical Volatility Threshold
         self.sigma_critical = self.C_UNIVERSAL * self.R * self.K
         
-        # We keep the old thresholds for comparison/score scaling (from the old engine)
+        # Momentum thresholds
         self.momentum_crisis_threshold = -0.08
         self.extreme_momentum_threshold = -0.15
 
     def detect_tension(self, series):
-        """
-        Detects systemic tension by comparing current Volatility to the Universal Law's 
-        calculated critical threshold (sigma_critical).
-        """
+        """Main Engine: Defensive tension detection"""
         if series is None or len(series) < 22:
             return {'error': 'Insufficient data'}
         
         try:
-            # 1. Calculate Core Metrics
             returns = series.pct_change().dropna()
             sigma_current = returns.std()
             
             recent_period = min(30, len(series) // 3)
             momentum = (series.iloc[-1] - series.iloc[-recent_period]) / series.iloc[-recent_period]
             
-            # 2. Calculate Tension Score (Based on the Universal Law)
-            # Tension Score is the ratio of current stress to the critical breaking point
+            # Tension Ratio (Universal Law)
             tension_ratio = sigma_current / self.sigma_critical
+            vol_score = min(tension_ratio * 0.5, 0.5)
             
-            # Use a bounded score (0 to 1.0) based on the tension ratio
-            vol_score = min(tension_ratio * 0.5, 0.5) # Max 50% contribution from Volatility
-            
-            # 3. Calculate Momentum Score (Based on Directional Stress)
+            # Momentum Score
             mom_score = 0
             if momentum < self.momentum_crisis_threshold:
                 mom_score = 0.25
             if momentum < self.extreme_momentum_threshold:
                 mom_score = 0.5
             
-            # 4. Final Crisis Score
-            # Drawdown check is omitted for brevity but is assumed to contribute to the final score
             final_score = vol_score + mom_score 
             
             level = "✅ STABLE"
@@ -83,41 +75,64 @@ class UniversalTensionDetector:
                 level = "💥 COLLAPSE IMMINENT"
 
             return {
-                'sigma_current': sigma_current,
-                'sigma_critical': self.sigma_critical,
-                'momentum': momentum,
-                'final_score': final_score,
+                'sigma_current': round(sigma_current, 5),
+                'sigma_critical': round(self.sigma_critical, 5),
+                'momentum': round(momentum, 3),
+                'final_score': round(final_score, 2),
                 'level': level,
-                'law_factors': {'C_U': self.C_UNIVERSAL, 'R': self.R, 'K': self.K}
+                'tension_ratio': round(tension_ratio, 2)
             }
 
         except Exception as e:
             return {'error': str(e)}
 
-# --- DEMONSTRATION OF UNIVERSAL LAW ---
-if __name__ == '__main__':
-    
-    # 1. Finance Domain Test (Uses R=0.012, K=1.333, sigma_critical=0.032)
-    # Simulate current stress at the 2008 level (sigma_current ~ 0.036)
-    detector_finance = UniversalTensionDetector(domain='finance')
-    finance_data = pd.Series([100.0] + list(100 + np.cumsum(np.random.normal(0, 0.036, 60))))
-    result_finance = detector_finance.detect_tension(finance_data)
-    
-    # 2. Social Domain Test (Uses R=0.0016, K=0.800, sigma_critical=0.00256)
-    # Simulate current stress at the observed collapse level (sigma_current ~ 0.004)
-    detector_social = UniversalTensionDetector(domain='social')
-    social_data = pd.Series([100.0] + list(100 + np.cumsum(np.random.normal(0, 0.004, 60))))
-    result_social = detector_social.detect_tension(social_data)
-    
-    print(f"👑 UNIVERSAL LAW: σ_Critical = {detector_finance.C_UNIVERSAL} * R * K\n")
+    def detect_capitulation(self, series):
+        """Inverse Engine: Offensive opportunity detection"""
+        tension_result = self.detect_tension(series)
+        
+        if 'error' in tension_result:
+            return {'error': tension_result['error']}
+        
+        TR = tension_result['tension_ratio']
+        momentum = tension_result['momentum']
+        
+        # 🎯 CAPITULATION ENTRY LOGIC
+        if TR > 1.0 and momentum <= self.MMaxLoss:
+            signal = '⚔️ CAPITULATION ENTRY - Maximum inefficiency point reached'
+            confidence = min(0.95, (TR - 1.0) * 2 + abs(momentum - self.MMaxLoss) * 3)
+        else:
+            signal = '🛡️ NO ENTRY - Awaiting capitulation conditions'
+            confidence = 0.0
+        
+        return {
+            'signal': signal,
+            'confidence': round(confidence, 2),
+            'conditions_met': {
+                'tension_ratio_above_critical': TR > 1.0,
+                'momentum_at_max_loss': momentum <= self.MMaxLoss,
+                'tension_ratio': round(TR, 2),
+                'momentum': round(momentum, 3),
+                'MMaxLoss_threshold': self.MMaxLoss
+            },
+            'defensive_status': tension_result
+        }
 
-    print("--- 1. FINANCE DOMAIN TEST ---")
-    print(f"   Critical Threshold (Law): σ_Critical = {detector_finance.sigma_critical:.5f} (2.0 * 0.012 * 1.333)")
-    print(f"   Current Volatility (Observed): σ_Current = {result_finance['sigma_current']:.5f}")
-    print(f"   Engine Status: {result_finance['level']} (Score: {result_finance['final_score']:.2f})")
+# Test the dual-engine system
+if __name__ == '__main__':
+    print("🧪 TESTING DUAL-ENGINE UNIVERSAL TENSION SYSTEM")
+    print("=" * 60)
     
-    print("\n--- 2. SOCIAL DOMAIN TEST ---")
-    print(f"   Critical Threshold (Law): σ_Critical = {detector_social.sigma_critical:.5f} (2.0 * 0.0016 * 0.800)")
-    print(f"   Current Volatility (Observed): σ_Current = {result_social['sigma_current']:.5f}")
-    print(f"   Engine Status: {result_social['level']} (Score: {result_social['final_score']:.2f})")
+    # Simulate crisis data
+    crisis_data = pd.Series([100.0] + list(100 + np.cumsum(np.random.normal(0, 0.040, 60))))
     
+    detector = UniversalTensionDetector(domain='finance')
+    
+    print("1. MAIN ENGINE (Defensive):")
+    defense = detector.detect_tension(crisis_data)
+    for key, value in defense.items():
+        print(f"   {key}: {value}")
+    
+    print("\n2. INVERSE ENGINE (Offensive):")
+    offense = detector.detect_capitulation(crisis_data)
+    for key, value in offense.items():
+        print(f"   {key}: {value}")
