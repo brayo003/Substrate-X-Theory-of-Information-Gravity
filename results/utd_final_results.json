@@ -1,0 +1,19 @@
+{
+  "S_spectral_entropy": 1.8568,
+  "Q_coherence": 6.567625496121399e-05,
+  "delta2_volatility": 0.1223309068413031,
+  "C_raw": 0.024617081733455146,
+  "C_scaled": 2.4617081733455146,
+  "data_stats": {
+    "n_edges": 1417585,
+    "total_weight": 137643463.0,
+    "unique_pages": 672769,
+    "top_pages": {
+      "United_States": 0.001856924364072415,
+      "Jimmy_Carter": 0.001772027488148856,
+      "Marvel_Cinematic_Universe:_Phase_Six": 0.0014377726023937657,
+      "George_V": 0.0010567955559211701,
+      "Rosalynn_Carter": 0.0010156421304221327
+    }
+  }
+}
