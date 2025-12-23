@@ -4,3 +4,4 @@ github/
 private github/
 token
 *.tsv
+anchor/*.hdf5
