@@ -1,0 +1,69 @@
+{
+  "name": "UTD Mod - Minecraft 1.20.4",
+  "root_dir": "~/Projects/mods/new_world",
+  "git_repo": "~/Git/Substrate X Theory of Information Gravity",
+  "last_update": "2025-12-11T13:45:00Z",
+  "current_phase": "V1.4 Final Verification & Asset Integration",
+  "files": [
+    {
+      "path": "src/main/java/com/utdmod/entity/TensionSerpentEntity.java",
+      "status": "implemented",
+      "notes": "CRITICAL Apex Predator Mob (Logic Complete)."
+    },
+    {
+      "path": "src/main/java/com/utdmod/UTDModClient.java",
+      "status": "complete",
+      "notes": "All client renderers, models, HUD, and Block Entity renderers registered."
+    },
+    {
+      "path": "src/main/java/com/utdmod/signals/tuning/TensionLogSystem.java",
+      "status": "complete",
+      "notes": "Logging system active for verification."
+    }
+  ],
+  "verification_criteria": {
+    "tension_saturation_time": {
+      "target": "4800 - 7200 ticks (0.00 to 0.80 tension)",
+      "fallback_action": "Increase base tension increment by ~15%."
+    },
+    "suppression_efficiency": {
+      "target": "0.15 - 0.25 tension reduction per use",
+      "fallback_action": "Lower Ritual Block reduction amount (0.05 -> 0.03)."
+    },
+    "mob_density": {
+      "wraith_target": "1 - 2 spawns per +1.00 tension avg",
+      "serpent_target": "0.05 - 0.1 spawns per +1.00 tension avg",
+      "fallback_action": "Drop Wraith spawn threshold (0.85 -> 0.75)."
+    },
+    "plateau_duration": {
+      "target": "> 3600 ticks (Mid-Tension)",
+      "fallback_action": "Adjust decay rate in plateau zone."
+    }
+  },
+  "tasks": [
+    {
+      "id": "CLIENT_RENDERING_MOBS",
+      "status": "complete",
+      "description": "Renderers and layers for Serpent/Wraith implemented."
+    },
+    {
+      "id": "CLIENT_RENDERING_HUD",
+      "status": "complete",
+      "description": "Tension Meter Overlay implemented."
+    },
+    {
+      "id": "OPTIMIZATION_FEEDBACK_LOOP_ANALYSIS",
+      "status": "complete",
+      "description": "Metrics defined. Verification logic integrated into QA filter."
+    },
+    {
+      "id": "ASSET_INTEGRATION_FINAL",
+      "assigned_to": "Asset Team",
+      "status": "pending",
+      "description": "Integrate final texture files and sounds."
+    }
+  ],
+  "current_sprint_focus": [
+    "ASSET_INTEGRATION_FINAL"
+  ]
+}

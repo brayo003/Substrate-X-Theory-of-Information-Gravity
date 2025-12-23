@@ -1,0 +1,23 @@
+OPTIMAL TARGET PARAMETERS FOR TESTING
+============================================================
+
+Mediator mass: m_S = 3.947e-04 eV
+Coupling strength: α_S = 1.043e-34
+Force range: λ = 1/m_S = 0.5 mm
+
+PREDICTED FORCES:
+F_X/F_G at contact: 2.547e-06
+F_X/F_G at 1 mm: 3.447e-07
+Absolute force at 1 mm (1g masses): 2.30e-17 N
+
+EXPERIMENTAL REQUIREMENTS:
+Current best sensitivity: 1e-15 N
+Required sensitivity: 2.30e-17 N
+Improvement needed: 43.5×
+Timeline: 3-5 years with upgraded apparatus
+
+TEST CONFIGURATION:
+1. Test masses: 1g gold and aluminum (compare baryon numbers)
+2. Distances: 0.5, 1.0, 2.0 mm (cover Yukawa suppression)
+3. Sensitivity goal: 5e-16 N
+4. Key signature: Force ∝ (baryon number)², not mass

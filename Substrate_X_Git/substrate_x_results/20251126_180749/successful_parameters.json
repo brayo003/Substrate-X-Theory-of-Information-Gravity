@@ -1,0 +1,62 @@
+[
+  {
+    "delta1": 0.1,
+    "delta2": 0.1,
+    "notes": "Baseline stable"
+  },
+  {
+    "delta1": 0.1,
+    "delta2": 0.2,
+    "notes": "Moderate coupling"
+  },
+  {
+    "delta1": 0.1,
+    "delta2": 0.3,
+    "notes": "Strong F field"
+  },
+  {
+    "delta1": 0.2,
+    "delta2": 0.1,
+    "notes": "Strong E field"
+  },
+  {
+    "delta1": 0.2,
+    "delta2": 0.2,
+    "notes": "Balanced coupling"
+  },
+  {
+    "delta1": 0.2,
+    "delta2": 0.3,
+    "notes": "E-F dominated"
+  },
+  {
+    "delta1": 0.3,
+    "delta2": 0.1,
+    "notes": "E field dominated"
+  },
+  {
+    "delta1": 0.3,
+    "delta2": 0.2,
+    "notes": "Strong coupling"
+  },
+  {
+    "delta1": 0.3,
+    "delta2": 0.3,
+    "notes": "Very strong coupling"
+  },
+  {
+    "delta1": 0.5,
+    "delta2": 0.1,
+    "notes": "Extreme E field"
+  },
+  {
+    "delta1": 0.5,
+    "delta2": 0.2,
+    "notes": "Very strong E-F"
+  },
+  {
+    "delta1": 0.5,
+    "delta2": 0.3,
+    "notes": "Maximum coupling"
+  }
+]

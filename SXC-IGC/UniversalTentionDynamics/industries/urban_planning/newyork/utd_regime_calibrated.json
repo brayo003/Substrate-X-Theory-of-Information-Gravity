@@ -1,0 +1,27 @@
+{
+  "r": 5.0,
+  "a": 5.0,
+  "b": 0.1,
+  "speed_scale": 60.0,
+  "density_exp": 0.5,
+  "capacity_base": 0.1,
+  "excitation_weight": 3.0,
+  "error": 0.4045619541928619,
+  "regime": "GRIDLOCK",
+  "regime_score": 1.0,
+  "metrics": {
+    "avg_speed": 11.434770614235635,
+    "speed_variance": 191.7059046303573,
+    "pct_severe": 49.09312604785856,
+    "pct_stopped": 46.57826550830666,
+    "spatial_clustering": 0.5238095238095238,
+    "correlation_score": 1.0041737861590145,
+    "total_readings": 6561
+  },
+  "mean_tension": 0.38649245894001255,
+  "max_tension": 10.382904889979473,
+  "std_tension": 1.928562308652908,
+  "predicted_score": 0.5954380458071381,
+  "true_score": 1.0,
+  "critical_threshold": 0.0
+}

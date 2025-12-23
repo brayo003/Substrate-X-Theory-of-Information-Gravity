@@ -1,0 +1,5 @@
+source,distance_m,measured_force_N,error_margin_N,regime
+Kapner_2007,0.000052,1.2e-15,0.5e-15,Torsion_Balance
+Kapner_2007,0.0095,0.8e-15,0.4e-15,Torsion_Balance
+Hamilton_2015,0.000010,4.5e-16,1.0e-16,Atom_Interferometry
+Geraci_2008,0.000020,3.2e-15,0.8e-15,Optomechanical

@@ -1,0 +1,6 @@
+experiment,target,m_x_mev,coupling_limit,status,notes
+Atomki_2016,8Be,17.0,1.2e-3,SIGNAL,6.8 sigma bump
+Atomki_2019,4He,16.8,1.1e-3,SIGNAL,Confirmed resonance
+NA64_CERN,e-beam,17.0,2.1e-4,EXCLUSION,Ruled out pure vector e-coupling
+Atomki_2023,12C,17.03,1.3e-3,SIGNAL,Isoscalar M1 transition
+PI0_Decay,pion,17.0,8.0e-4,EXCLUSION,Limits g_p (protophobic necessity)

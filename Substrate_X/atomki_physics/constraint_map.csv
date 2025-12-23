@@ -1,0 +1,5 @@
+experiment,particle,mass_mev,coupling_limit,status
+Krasznahorkay_2016,8Be,17.0,1.2e-3,Anomaly_Source
+Krasznahorkay_2019,4He,16.8,1.1e-3,Anomaly_Confirmed
+NA64_CERN,X17,17.0,2.0e-4,Exclusion_Partial
+Atomki_2023,12C,17.03,1.3e-3,Anomaly_Confirmed

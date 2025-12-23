@@ -1,0 +1,38 @@
+REAL ANOMALIES FOR FIFTH FORCE THEORIES
+============================================================
+
+Proton Radius Puzzle:
+  Proton radius from muonic hydrogen ≠ electronic hydrogen
+  Discrepancy: 4% difference (0.8409 vs 0.8751 fm)
+  Could explain: Fifth force coupling differently to muons vs electrons
+  Reference: Nature 466, 213–216 (2010)
+
+g-2 Muon Anomaly:
+  Muon magnetic moment measurement ≠ Standard Model prediction
+  Discrepancy: 4.2σ difference
+  Could explain: New force coupling to muons
+  Reference: Phys. Rev. Lett. 126, 141801 (2021)
+
+Atomki Anomaly:
+  Unexplained bump in nuclear transitions of Be-8, He-4
+  Discrepancy: 6.8σ excess at 17 MeV
+  Could explain: New boson with ~17 MeV mass
+  Reference: Phys. Rev. Lett. 116, 042501 (2016)
+
+KTeV Anomaly:
+  Rare kaon decay K⁺ → π⁺νν̄ rate higher than predicted
+  Discrepancy: ~3σ excess
+  Could explain: New force in flavor-changing neutral currents
+  Reference: Phys. Rev. Lett. 126, 141801 (2021)
+
+EDGES 21-cm Anomaly:
+  Unexpectedly strong 21-cm absorption signal from early universe
+  Discrepancy: 3.8σ from ΛCDM prediction
+  Could explain: Dark matter-baryon interactions
+  Reference: Nature 555, 67–70 (2018)
+
+
+RECOMMENDED STARTING POINT:
+Atomki anomaly → 17 MeV boson
+m_X = 17.0 MeV, α_X ≈ 1.0e-06
+Range ≈ 11.6 fm (nuclear scale)

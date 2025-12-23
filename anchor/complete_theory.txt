@@ -1,0 +1,38 @@
+# COMPLETE SUBSTRATE X THEORY
+# ===========================
+
+FUNDAMENTAL EQUATION:
+  T = βE - γ(ρ)F
+
+DERIVED DENSITY DEPENDENCE:
+  γ(ρ) = γ₀ × (ρ/ρ₀)^0.016
+  with α = 0.016 from data
+
+PHYSICAL ORIGIN OF α:
+  Screening length: λ ∝ ρ^0.492
+  Collective interactions give α = 1 - 2δ = 0.016
+  Screening: λ decreases with density
+
+MEASURED PARAMETERS:
+  A = 2.70e-16 (γ/β = Aρ^α)
+  ρ₀ = 5.19e-22 kg/m³ (reference density)
+  γ₀/β = 1.21e-16 s⁻¹
+
+FUNDAMENTAL CONSTANTS TO DETERMINE:
+  β = elastic coupling coefficient [s/J]
+  γ₀ = baseline damping coefficient [J/m]
+  Related by: γ₀ = β × A × ρ₀^0.016
+
+TESTABLE PREDICTIONS:
+  Laboratory (vacuum): ρ = 1.0e-10 → γ/β = 1.85e-16 s⁻¹
+  Earth atmosphere (sea level): ρ = 1.2e+00 → γ/β = 2.71e-16 s⁻¹
+  ISS orbit: ρ = 1.0e-12 → γ/β = 1.72e-16 s⁻¹
+  Jupiter orbit: ρ = 1.0e-17 → γ/β = 1.43e-16 s⁻¹
+  Kuiper Belt: ρ = 1.0e-19 → γ/β = 1.32e-16 s⁻¹
+  Oort Cloud: ρ = 1.0e-23 → γ/β = 1.14e-16 s⁻¹
+
+CRITICAL LAB TEST:
+  Air at sea level (ρ = 1.2 kg/m³):
+  γ/β = 2.71e-16 s⁻¹
+  For v = 0.1 m/s: a_damp = 2.71e-17 m/s²
+  This should be measurable!

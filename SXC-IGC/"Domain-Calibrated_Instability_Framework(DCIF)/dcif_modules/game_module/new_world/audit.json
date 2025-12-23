@@ -1,0 +1,512 @@
+[
+  {
+    "attempt": 1,
+    "timestamp": "20251211T142247",
+    "params": {
+      "base_rate": 0.0005,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.85,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142247-e220109d",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0005,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.85,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 57,
+        "plateau_duration_ticks": 19877,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 10.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 2,
+    "timestamp": "20251211T142250",
+    "params": {
+      "base_rate": 0.0004,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.85,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142250-79585e72",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0004,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.85,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 60,
+        "plateau_duration_ticks": 19876,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 9.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 3,
+    "timestamp": "20251211T142254",
+    "params": {
+      "base_rate": 0.00030000000000000003,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.85,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142254-f98729fc",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.00030000000000000003,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.85,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 63,
+        "plateau_duration_ticks": 19875,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 6.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 4,
+    "timestamp": "20251211T142257",
+    "params": {
+      "base_rate": 0.00020000000000000004,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.85,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142257-9ec2100f",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.00020000000000000004,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.85,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 67,
+        "plateau_duration_ticks": 19873,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 3.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 5,
+    "timestamp": "20251211T142300",
+    "params": {
+      "base_rate": 0.00010000000000000003,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.85,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142300-804f4362",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.00010000000000000003,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.85,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 73,
+        "plateau_duration_ticks": 19870,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 0.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 1,
+    "timestamp": "20251211T142514",
+    "params": {
+      "base_rate": 0.0005,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.85,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142514-9824dc4e",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0005,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.85,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 20000,
+        "plateau_duration_ticks": 19644,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 0.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 2,
+    "timestamp": "20251211T142517",
+    "params": {
+      "base_rate": 0.0006000000000000001,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.7999999999999999,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142517-c9a2dc41",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0006000000000000001,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.7999999999999999,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 20000,
+        "plateau_duration_ticks": 19659,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 0.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 3,
+    "timestamp": "20251211T142521",
+    "params": {
+      "base_rate": 0.0007000000000000001,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.7499999999999999,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142521-314f71c2",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0007000000000000001,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.7499999999999999,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 20000,
+        "plateau_duration_ticks": 19672,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 0.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 4,
+    "timestamp": "20251211T142524",
+    "params": {
+      "base_rate": 0.0008050000000000002,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.6999999999999998,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142524-e075797a",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0008050000000000002,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.6999999999999998,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 20000,
+        "plateau_duration_ticks": 19683,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 0.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  },
+  {
+    "attempt": 5,
+    "timestamp": "20251211T142528",
+    "params": {
+      "base_rate": 0.0009257500000000001,
+      "ritual_reduction": 0.05,
+      "wraith_threshold": 0.6499999999999998,
+      "serpent_threshold": 0.98,
+      "grid_n": 200,
+      "steps": 20000,
+      "ritual_use_interval": 500
+    },
+    "result": {
+      "run_id": "20251211T142528-47d71aab",
+      "params": {
+        "grid_n": 200,
+        "dx": 1.0,
+        "dt": 0.5,
+        "steps": 20000,
+        "base_rate": 0.0009257500000000001,
+        "ritual_reduction": 0.05,
+        "wraith_threshold": 0.6499999999999998,
+        "serpent_threshold": 0.98,
+        "D_rho": 1.0,
+        "alpha_E": 1.5,
+        "tau_E": 0.5,
+        "alpha_F": 0.5,
+        "beta_F": 0.8,
+        "tau_F": 2.0,
+        "measure_front_level": 0.5,
+        "ritual_use_interval": 500
+      },
+      "metrics": {
+        "Tsat_ticks": 20000,
+        "plateau_duration_ticks": 19694,
+        "wave_front_speed_blocks_per_tick": 0.0,
+        "wraith_spawns_per_tension": 37.0,
+        "serpent_spawns_per_tension": 0.0,
+        "suppression_efficiency": 0.05
+      },
+      "pass": false,
+      "notes": "auto-eval",
+      "checks": {
+        "Tsat_ok": false,
+        "suppression_ok": false,
+        "wraith_ok": false,
+        "serpent_ok": false,
+        "plateau_ok": true
+      }
+    }
+  }
+]

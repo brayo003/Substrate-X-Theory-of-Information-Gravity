@@ -1,0 +1,9 @@
+{
+  "module": "ecology",
+  "coefficients": {
+    "alpha": 0.0,
+    "beta": 1.0113,
+    "gamma": 0.2278
+  },
+  "taxonomy": "Biodiversity-Weakened"
+}

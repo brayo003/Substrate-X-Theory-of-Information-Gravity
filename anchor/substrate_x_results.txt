@@ -1,0 +1,5 @@
+# Substrate X Analysis Results - GW150914
+# Constant model: η = 3.819660e-15 ± nan
+# Frequency model: η₀ = 3.819660e-15, α = -1.000000
+# SNR_GR = 2122.862226, SNR_best = 2122.862279
+# Implied η at 0.001 Hz = 3.819660e-10

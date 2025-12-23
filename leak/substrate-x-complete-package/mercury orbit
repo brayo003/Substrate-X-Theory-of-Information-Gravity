@@ -1,0 +1,4 @@
+Concept,Simple Explanation,The Key Piece of Math
+"The ""Force"" You Used",You started with the familiar Newtonian gravity pull (r2GM​) and added a tiny extra term. This total force only becomes accurate when near a massive object like the Sun.,Modified Radial Equation: ,Force∝−r2GM​+r4c23G2M2​
+The New Term,"This extra term (r4c23G2M2​) is the crucial correction. Because it includes the speed of light squared (c2), it signals that the modification is based on relativistic (Einsteinian) physics.",Correction Term: ,r4c23G2M2​
+The Result,"When the math was run with this correction, the predicted orbital shift for Mercury was 42.9 arcseconds/century. This is the precise, formerly unexplained anomaly in Mercury's orbit.",Final Formula for Shift Per Orbit: ,Δθ=pc26πGM​

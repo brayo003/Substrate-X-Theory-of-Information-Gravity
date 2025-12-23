@@ -1,0 +1,54 @@
+THE CAMOUFLAGE ENGINE MANUAL
+============================================================
+
+Techniques for hiding new physics from detection:
+
+Stueckelberg Mechanism:
+  Purpose: Quantum consistency
+  Analogy: Gives the force a 'quantum passport'
+  Used in: Your theory, massive gravity, hidden photons
+
+Quartic Screening (β term):
+  Purpose: Hides force in high density
+  Analogy: Force gets 'stage fright' around crowds
+  Used in: Your theory, chameleon fields, symmetrons
+
+Yukawa Suppression:
+  Purpose: Limited range
+  Analogy: Force has short 'attention span'
+  Used in: Your theory, WIMP mediators, extra dimensions
+
+Planck-Suppressed Coupling:
+  Purpose: Naturally weak
+  Analogy: Whispering across a crowded room
+  Used in: Your theory, quantum gravity, string theory
+
+
+Real applications:
+Chameleon Fields: Dark energy candidate that hides in dense regions
+Symmetrons: Screen fifth forces in laboratory vacuum
+Vainshtein Screening: Allows massive gravity to pass solar system tests
+Hidden Photons: Dark matter candidate that couples via kinetic mixing
+Axion-Like Particles: Solve Strong CP problem while evading detection
+
+
+def camouflage_force(r, density, m_S, alpha_S, beta):
+    """
+    Calculate force with all hiding mechanisms active
+    """
+    # Basic Yukawa suppression
+    hbar_c = 1.97327e-7  # eV·m
+    yukawa = np.exp(-m_S * r / hbar_c)
+    
+    # Quartic screening in dense matter
+    M_Pl = 2.435e18 * 1e9  # eV
+    X_field = alpha_S * density / (m_S**2 * M_Pl)
+    screening = np.exp(-beta * X_field**2 / M_Pl**2)
+    
+    # Planck-suppressed coupling
+    coupling = alpha_S / M_Pl
+    
+    # Total force (simplified)
+    force = coupling * yukawa * screening
+    
+    return force

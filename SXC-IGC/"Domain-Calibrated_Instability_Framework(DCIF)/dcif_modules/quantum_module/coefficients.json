@@ -1,0 +1,9 @@
+{
+  "module": "quantum",
+  "coefficients": {
+    "alpha": 0.0,
+    "beta": 1.1444,
+    "gamma": 0.1099
+  },
+  "taxonomy": "Stochastic-Sensitive"
+}

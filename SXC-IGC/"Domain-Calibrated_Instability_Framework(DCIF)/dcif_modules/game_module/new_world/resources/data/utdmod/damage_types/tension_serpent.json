@@ -1,0 +1,6 @@
+{
+  "name": "tension_serpent",
+  "bypasses_armor": true,
+  "damage_category": "magic",
+  "description": "Armor-piercing attack from the Tension Serpent."
+}

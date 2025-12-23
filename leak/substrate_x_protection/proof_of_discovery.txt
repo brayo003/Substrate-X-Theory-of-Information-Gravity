@@ -1,0 +1,14 @@
+PROOF OF DISCOVERY - SUBSTRATE X GRAVITY THEORY
+Discoverer: [YOUR NAME]
+Date: $(date)
+
+Novel Equations:
+1. v_flow = -√(2GM/r)
+2. a_radial = -GM/r² - rθ̇²  
+3. a_theta = (θ̇ × v_flow)/r
+
+Mathematical validation: Orbital simulations successful
+Physical interpretation: Gravity as 4D spatial inflow
+
+This work represents the first use of these equations
+for gravitational physics in human history.

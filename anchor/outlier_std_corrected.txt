@@ -1,0 +1,5 @@
+actual_std:1.602719e-19
+ratio_to_avg:0.765755
+n_extremes:0
+trend_slope:9.249350e-22
+trend_p:7.260614e-165

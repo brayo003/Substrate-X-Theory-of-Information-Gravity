@@ -1,0 +1,568 @@
+.TH chocolate\-heretic.cfg 5 2024-01-23 "Chocolate Doom 3.1.1"
+.SH NAME
+chocolate\-heretic.cfg \- Chocolate Heretic configuration file
+.SH DESCRIPTION
+.PP
+\fIchocolate\-heretic.cfg\fR
+is a configuration file for \fBchocolate\-heretic\fR(6).  This file acts
+as an auxiliary configuration file; the main configuration options
+are stored in \fBheretic.cfg\fR, which contains the same configuration
+options as Vanilla Heretic (for compatibility).  \fIchocolate\-heretic.cfg\fR
+contains configuration options that are specific to Chocolate\-Heretic
+only.
+.PP
+\fIchocolate\-heretic.cfg\fR is normally stored in the user's home directory,
+as \fI~/.local/share/chocolate\-heretic/chocolate\-heretic.cfg\fR.  The path can be
+overridden using the \fBXDG_DATA_HOME\fR environment variable (see the XDG
+Base Directory Specification).
+.PP
+The \fBchocolate\-heretic\-setup\fR(6) tool provides a simple to use front-end
+for editing \fIchocolate\-heretic.cfg\fR.
+.SH FILE FORMAT
+.PP
+The file format is the same as that used for \fBheretic.cfg\fR(5).
+.SH CONFIGURATION VARIABLES
+.TP
+.B video_driver
+Name of the SDL video driver to use.  If this is an empty string, the default video driver is used. 
+.TP
+.B window_position
+Position of the window on the screen when running in windowed mode. Accepted values are: "" (empty string) \- don't care, "center" \- place window at center of screen, "x,y" \- place window at the specified coordinates. 
+.TP
+.B fullscreen
+If non\-zero, the game will run in full screen mode.  If zero, the game will run in a window. 
+.TP
+.B video_display
+Index of the display on which the game should run. This has no effect if running in windowed mode (fullscreen=0) and window_position is not set to "center". 
+.TP
+.B aspect_ratio_correct
+If non\-zero, the screen will be stretched vertically to display correctly on a square pixel video mode. 
+.TP
+.B smooth_pixel_scaling
+If non\-zero, the screen will have smooth scaling. 
+.TP
+.B integer_scaling
+If non\-zero, forces integer scales for resolution\-independent rendering. 
+.TP
+.B window_width
+Window width when running in windowed mode. 
+.TP
+.B window_height
+Window height when running in windowed mode. 
+.TP
+.B fullscreen_width
+Width for screen mode when running fullscreen. If this and fullscreen_height are both set to zero, we run fullscreen as a desktop window that covers the entire screen, rather than ever switching screen modes. It should usually be unnecessary to set this value. 
+.TP
+.B fullscreen_height
+Height for screen mode when running fullscreen. See documentation for fullscreen_width. 
+.TP
+.B force_software_renderer
+If non\-zero, force the use of a software renderer. For use on systems lacking hardware acceleration. 
+.TP
+.B max_scaling_buffer_pixels
+Maximum number of pixels to use for intermediate scaling buffer. More pixels mean that the screen can be rendered more precisely, but there are diminishing returns on quality. The default limits to 16,000,000 pixels, which is enough to cover 4K monitor standards. 
+.TP
+.B startup_delay
+Number of milliseconds to wait on startup after the video mode has been set, before the game will start.  This allows the screen to settle on some monitors that do not display an image for a brief interval after changing video modes. 
+.TP
+.B graphical_startup
+If non\-zero, display the graphical startup screen. 
+.TP
+.B show_endoom
+If non\-zero, the ENDOOM text screen is displayed when exiting the game. If zero, the ENDOOM screen is not displayed. 
+.TP
+.B png_screenshots
+If non\-zero, save screenshots in PNG format. If zero, screenshots are saved in PCX format, as Vanilla Doom does. 
+.TP
+.B snd_samplerate
+Sound output sample rate, in Hz.  Typical values to use are 11025, 22050, 44100 and 48000. 
+.TP
+.B snd_cachesize
+Maximum number of bytes to allocate for caching converted sound effects in memory. If set to zero, there is no limit applied. 
+.TP
+.B snd_maxslicetime_ms
+Maximum size of the output sound buffer size in milliseconds. Sound output is generated periodically in slices. Higher values might be more efficient but will introduce latency to the sound output. The default is 28ms (one slice per tic with the 35fps timer). 
+.TP
+.B snd_pitchshift
+If non\-zero, sound effects will have their pitch varied up or down by a random amount during play. If zero, sound effects play back at their default pitch. 
+.TP
+.B snd_musiccmd
+External command to invoke to perform MIDI playback. If set to the empty string, SDL_mixer's internal MIDI playback is used. This only has any effect when snd_musicdevice is set to General MIDI output. 
+.TP
+.B snd_dmxoption
+Value to set for the DMXOPTION environment variable. If this contains "\-opl3", output for an OPL3 chip is generated when in OPL MIDI playback mode. 
+.TP
+.B opl_io_port
+The I/O port to use to access the OPL chip.  Only relevant when using native OPL music playback. 
+.TP
+.B use_libsamplerate
+Controls whether libsamplerate support is used for performing sample rate conversions of sound effects.  Support for this must be compiled into the program. If zero, libsamplerate support is disabled.  If non\-zero, libsamplerate is enabled. Increasing values roughly correspond to higher quality conversion; the higher the quality, the slower the conversion process.  Linear conversion = 1; Zero order hold = 2; Fast Sinc filter = 3; Medium quality Sinc filter = 4; High quality Sinc filter = 5. 
+.TP
+.B libsamplerate_scale
+Scaling factor used by libsamplerate. This is used when converting sounds internally back into integer form; normally it should not be necessary to change it from the default value. The only time it might be needed is if a PWAD file is loaded that contains very loud sounds, in which case the conversion may cause sound clipping and the scale factor should be reduced. The lower the value, the quieter the sound effects become, so it should be set as high as is possible without clipping occurring. 
+.TP
+.B autoload_path
+Full path to a directory in which WAD files and dehacked patches can be placed to be automatically loaded on startup. A subdirectory of this directory matching the IWAD name is checked to find the files to load. 
+.TP
+.B music_pack_path
+Full path to a directory containing configuration files for substitute music packs. These packs contain high quality renderings of game music to be played instead of using the system's built\-in MIDI playback. 
+.TP
+.B fsynth_chorus_active
+If 1, activate the FluidSynth chorus effects module. If 0, no chorus will be added to the output signal. 
+.TP
+.B fsynth_chorus_depth
+Specifies the modulation depth of the FluidSynth chorus. Default is 5.0, range is 0.0 to 256.0. 
+.TP
+.B fsynth_chorus_level
+Specifies the output amplitude of the FluidSynth chorus signal. Default is 0.35, range is 0.0 to 10.0. 
+.TP
+.B fsynth_chorus_nr
+Sets the voice count of the FluidSynth chorus signal. Default is 3, range is 0 to 99. 
+.TP
+.B fsynth_chorus_speed
+Sets the FluidSynth chorus modulation speed in Hz. Default is 0.3, range is 0.1 to 5.0. 
+.TP
+.B fsynth_midibankselect
+This setting defines how FluidSynth interprets Bank Select messages. The default is "gs". Other possible values are "gm", "xg" and "mma". 
+.TP
+.B fsynth_polyphony
+Sets the number of FluidSynth voices that can be played in parallel. Default is 256, range is 1 \- 65535. 
+.TP
+.B fsynth_reverb_active
+If 1, activate the FluidSynth reverb effects module. If 0, no reverb will be added to the output signal. 
+.TP
+.B fsynth_reverb_damp
+Sets the amount of FluidSynth reverb damping. Default is 0.4, range is 0.0 to 1.0. 
+.TP
+.B fsynth_reverb_level
+Sets the FluidSynth reverb amplitude. Default is 0.15, range is 0.0 \- 1.0. 
+.TP
+.B fsynth_reverb_roomsize
+Sets the room size(i.e. amount of wet) FluidSynth reverb. Default is 0.6, range is 0.0 \- 1.0. 
+.TP
+.B fsynth_reverb_width
+Sets the stereo spread of the FluidSynth reverb signal. Default is 0.4, range is 0.0 \- 100.0. 
+.TP
+.B fsynth_gain
+Fine tune the FluidSynth output level. Default is 1.0, range is 0.0 \- 10.0. 
+.TP
+.B fsynth_sf_path
+Full path to a soundfont file to use with FluidSynth MIDI playback. 
+.TP
+.B timidity_cfg_path
+Full path to a Timidity configuration file to use for MIDI playback. The file will be evaluated from the directory where it is evaluated, so there is no need to add "dir" commands into it. 
+.TP
+.B gus_patch_path
+Path to GUS patch files to use when operating in GUS emulation mode. 
+.TP
+.B gus_ram_kb
+Number of kilobytes of RAM to use in GUS emulation mode. Valid values are 256, 512, 768 or 1024. 
+.TP
+.B winmm_midi_device
+MIDI device for native Windows MIDI. 
+.TP
+.B winmm_complevel
+Compatibility level for native Windows MIDI, default 0. Valid values are 0 (Vanilla), 1 (Standard), 2 (Full). 
+.TP
+.B winmm_reset_type
+Reset device type for native Windows MIDI, default 1. Valid values are 0 (None), 1 (GM Mode), 2 (GS Mode), 3 (XG Mode). 
+.TP
+.B winmm_reset_delay
+Reset device delay for native Windows MIDI, default 0, median value 100 ms. 
+.TP
+.B vanilla_keyboard_mapping
+If non\-zero, the game behaves like Vanilla Doom, always assuming an American keyboard mapping.  If this has a value of zero, the native keyboard mapping of the keyboard is used. 
+.TP
+.B player_name
+Name to use in network games for identification.  This is only used on the "waiting" screen while waiting for the game to start. 
+.TP
+.B grabmouse
+If this is non\-zero, the mouse will be "grabbed" when running in windowed mode so that it can be used as an input device. When running full screen, this has no effect. 
+.TP
+.B novert
+If non\-zero, all vertical mouse movement is ignored.  This emulates the behavior of the "novert" tool available under DOS that performs the same function. 
+.TP
+.B mouse_acceleration
+Mouse acceleration factor.  When the speed of mouse movement exceeds the threshold value (mouse_threshold), the speed is multiplied by this value. 
+.TP
+.B mouse_threshold
+Mouse acceleration threshold.  When the speed of mouse movement exceeds this threshold value, the speed is multiplied by an acceleration factor (mouse_acceleration). 
+.TP
+.B mouseb_strafeleft
+Mouse button to strafe left. 
+.TP
+.B mouseb_straferight
+Mouse button to strafe right. 
+.TP
+.B mouseb_turnleft
+Mouse button to turn left. 
+.TP
+.B mouseb_turnright
+Mouse button to turn right. 
+.TP
+.B mouseb_use
+Mouse button to "use" an object, eg. a door or switch. 
+.TP
+.B mouseb_backward
+Mouse button to move backwards. 
+.TP
+.B mouseb_prevweapon
+Mouse button to cycle to the previous weapon. 
+.TP
+.B mouseb_nextweapon
+Mouse button to cycle to the next weapon. 
+.TP
+.B mouseb_invleft
+Mouse button to move to the left in the inventory. 
+.TP
+.B mouseb_invright
+Mouse button to move to the right in the inventory. 
+.TP
+.B mouseb_useartifact
+Mouse button to use artifact. 
+.TP
+.B dclick_use
+If non\-zero, double\-clicking a mouse button acts like pressing the "use" key to use an object in\-game, eg. a door or switch. 
+.TP
+.B joystick_guid
+SDL GUID string indicating the joystick to use. An empty string indicates that no joystick is configured. 
+.TP
+.B joystick_index
+Index of SDL joystick to use; this is only used in the case where multiple identical joystick devices are connected which have the same GUID, to distinguish between devices. 
+.TP
+.B use_analog
+If non\-zero, use analog movement when playing with a gamepad. 
+.TP
+.B joystick_x_axis
+Joystick axis to use to for horizontal (X) movement. 
+.TP
+.B joystick_x_invert
+If non\-zero, movement on the horizontal joystick axis is inverted. 
+.TP
+.B joystick_turn_sensitivity
+Joystick turn analog sensitivity, specified as a value between 0 and 20. 
+.TP
+.B joystick_y_axis
+Joystick axis to use to for vertical (Y) movement. 
+.TP
+.B joystick_y_invert
+If non\-zero, movement on the vertical joystick axis is inverted. 
+.TP
+.B joystick_strafe_axis
+Joystick axis to use to for strafing movement. 
+.TP
+.B joystick_strafe_invert
+If non\-zero, movement on the joystick axis used for strafing is inverted. 
+.TP
+.B joystick_move_sensitivity
+Joystick move and strafe analog sensitivity, specified as a value between 0 and 20. 
+.TP
+.B joystick_look_axis
+Joystick axis to use to for looking up and down. 
+.TP
+.B joystick_look_invert
+If non\-zero, movement on the joystick axis used for looking is inverted. 
+.TP
+.B joystick_look_sensitivity
+Joystick look analog sensitivity, specified as a value between 0 and 20. 
+.TP
+.B joystick_physical_button0
+The physical joystick button that corresponds to joystick virtual button #0. 
+.TP
+.B joystick_physical_button1
+The physical joystick button that corresponds to joystick virtual button #1. 
+.TP
+.B joystick_physical_button2
+The physical joystick button that corresponds to joystick virtual button #2. 
+.TP
+.B joystick_physical_button3
+The physical joystick button that corresponds to joystick virtual button #3. 
+.TP
+.B joystick_physical_button4
+The physical joystick button that corresponds to joystick virtual button #4. 
+.TP
+.B joystick_physical_button5
+The physical joystick button that corresponds to joystick virtual button #5. 
+.TP
+.B joystick_physical_button6
+The physical joystick button that corresponds to joystick virtual button #6. 
+.TP
+.B joystick_physical_button7
+The physical joystick button that corresponds to joystick virtual button #7. 
+.TP
+.B joystick_physical_button8
+The physical joystick button that corresponds to joystick virtual button #8. 
+.TP
+.B joystick_physical_button9
+The physical joystick button that corresponds to joystick virtual button #9. 
+.TP
+.B joystick_physical_button10
+The physical joystick button that corresponds to joystick virtual button #10. 
+.TP
+.B joystick_physical_button11
+The physical joystick button that corresponds to joystick virtual button #11. 
+.TP
+.B joystick_physical_button12
+The physical joystick button that corresponds to joystick virtual button #12. 
+.TP
+.B joystick_physical_button13
+The physical joystick button that corresponds to joystick virtual button #13. 
+.TP
+.B joystick_physical_button14
+The physical joystick button that corresponds to joystick virtual button #14. 
+.TP
+.B joystick_physical_button15
+The physical joystick button that corresponds to joystick virtual button #15. 
+.TP
+.B joystick_physical_button16
+The physical joystick button that corresponds to joystick virtual button #16. 
+.TP
+.B use_gamepad
+If non\-zero, use the SDL_GameController interface instead of the SDL_Joystick interface. 
+.TP
+.B gamepad_type
+Stores the SDL_GameControllerType of the last configured gamepad. 
+.TP
+.B joystick_x_dead_zone
+Joystick x axis dead zone, specified as a percentage of the axis max value. 
+.TP
+.B joystick_y_dead_zone
+Joystick y axis dead zone, specified as a percentage of the axis max value. 
+.TP
+.B joystick_strafe_dead_zone
+Joystick strafe axis dead zone, specified as a percentage of the axis max value. 
+.TP
+.B joystick_look_dead_zone
+Joystick look axis dead zone, specified as a percentage of the axis max value. 
+.TP
+.B joyb_strafeleft
+Joystick virtual button to make the player strafe left. 
+.TP
+.B joyb_straferight
+Joystick virtual button to make the player strafe right. 
+.TP
+.B joyb_menu_activate
+Joystick virtual button to activate the menu. 
+.TP
+.B joyb_toggle_automap
+Joystick virtual button to toggle the automap. 
+.TP
+.B joyb_prevweapon
+Joystick virtual button that cycles to the previous weapon. 
+.TP
+.B joyb_nextweapon
+Joystick virtual button that cycles to the next weapon. 
+.TP
+.B joyb_useartifact
+Joystick virtual button to activate artifact. 
+.TP
+.B joyb_invleft
+Joystick virtual button to move left in the inventory. 
+.TP
+.B joyb_invright
+Joystick virtual button to move right in the inventory. 
+.TP
+.B joyb_flyup
+Joystick virtual button to fly up. 
+.TP
+.B joyb_flydown
+Joystick virtual button to fly down. 
+.TP
+.B joyb_flycenter
+Joystick virtual button to center flying. 
+.TP
+.B key_pause
+Key to pause or unpause the game. 
+.TP
+.B key_menu_activate
+Key that activates the menu when pressed. 
+.TP
+.B key_menu_up
+Key that moves the cursor up on the menu. 
+.TP
+.B key_menu_down
+Key that moves the cursor down on the menu. 
+.TP
+.B key_menu_left
+Key that moves the currently selected slider on the menu left. 
+.TP
+.B key_menu_right
+Key that moves the currently selected slider on the menu right. 
+.TP
+.B key_menu_back
+Key to go back to the previous menu. 
+.TP
+.B key_menu_forward
+Key to activate the currently selected menu item. 
+.TP
+.B key_menu_confirm
+Key to answer 'yes' to a question in the menu. 
+.TP
+.B key_menu_abort
+Key to answer 'no' to a question in the menu. 
+.TP
+.B key_menu_help
+Keyboard shortcut to bring up the help screen. 
+.TP
+.B key_menu_save
+Keyboard shortcut to bring up the save game menu. 
+.TP
+.B key_menu_load
+Keyboard shortcut to bring up the load game menu. 
+.TP
+.B key_menu_volume
+Keyboard shortcut to bring up the sound volume menu. 
+.TP
+.B key_menu_detail
+Keyboard shortcut to toggle the detail level. 
+.TP
+.B key_menu_qsave
+Keyboard shortcut to quicksave the current game. 
+.TP
+.B key_menu_endgame
+Keyboard shortcut to end the game. 
+.TP
+.B key_menu_messages
+Keyboard shortcut to toggle heads\-up messages. 
+.TP
+.B key_menu_qload
+Keyboard shortcut to load the last quicksave. 
+.TP
+.B key_menu_quit
+Keyboard shortcut to quit the game. 
+.TP
+.B key_menu_gamma
+Keyboard shortcut to toggle the gamma correction level. 
+.TP
+.B key_spy
+Keyboard shortcut to switch view in multiplayer. 
+.TP
+.B key_menu_incscreen
+Keyboard shortcut to increase the screen size. 
+.TP
+.B key_menu_decscreen
+Keyboard shortcut to decrease the screen size. 
+.TP
+.B key_menu_screenshot
+Keyboard shortcut to save a screenshot. 
+.TP
+.B key_map_toggle
+Key to toggle the map view. 
+.TP
+.B key_map_north
+Key to pan north when in the map view. 
+.TP
+.B key_map_south
+Key to pan south when in the map view. 
+.TP
+.B key_map_east
+Key to pan east when in the map view. 
+.TP
+.B key_map_west
+Key to pan west when in the map view. 
+.TP
+.B key_map_zoomin
+Key to zoom in when in the map view. 
+.TP
+.B key_map_zoomout
+Key to zoom out when in the map view. 
+.TP
+.B key_map_maxzoom
+Key to zoom out the maximum amount when in the map view. 
+.TP
+.B key_map_follow
+Key to toggle follow mode when in the map view. 
+.TP
+.B key_map_grid
+Key to toggle the grid display when in the map view. 
+.TP
+.B key_map_mark
+Key to set a mark when in the map view. 
+.TP
+.B key_map_clearmark
+Key to clear all marks when in the map view. 
+.TP
+.B key_weapon1
+Key to select weapon 1. 
+.TP
+.B key_weapon2
+Key to select weapon 2. 
+.TP
+.B key_weapon3
+Key to select weapon 3. 
+.TP
+.B key_weapon4
+Key to select weapon 4. 
+.TP
+.B key_weapon5
+Key to select weapon 5. 
+.TP
+.B key_weapon6
+Key to select weapon 6. 
+.TP
+.B key_weapon7
+Key to select weapon 7. 
+.TP
+.B key_weapon8
+Key to select weapon 8. 
+.TP
+.B key_prevweapon
+Key to cycle to the previous weapon. 
+.TP
+.B key_nextweapon
+Key to cycle to the next weapon. 
+.TP
+.B key_arti_quartz
+Key to use "quartz flask" artifact. 
+.TP
+.B key_arti_urn
+Key to use "mystic urn" artifact. 
+.TP
+.B key_arti_bomb
+Key to use "timebomb of the ancients" artifact. 
+.TP
+.B key_arti_tome
+Key to use "tome of power" artifact. 
+.TP
+.B key_arti_ring
+Key to use "ring of invincibility" artifact. 
+.TP
+.B key_arti_chaosdevice
+Key to use "chaos device" artifact. 
+.TP
+.B key_arti_shadowsphere
+Key to use "shadowsphere" artifact. 
+.TP
+.B key_arti_wings
+Key to use "wings of wrath" artifact. 
+.TP
+.B key_arti_torch
+Key to use "torch" artifact. 
+.TP
+.B key_arti_morph
+Key to use "morph ovum" artifact. 
+.TP
+.B key_message_refresh
+Key to re\-display last message. 
+.TP
+.B key_demo_quit
+Key to quit the game when recording a demo. 
+.TP
+.B key_multi_msg
+Key to send a message during multiplayer games. 
+.TP
+.B key_multi_msgplayer1
+Key to send a message to player 1 during multiplayer games. 
+.TP
+.B key_multi_msgplayer2
+Key to send a message to player 2 during multiplayer games. 
+.TP
+.B key_multi_msgplayer3
+Key to send a message to player 3 during multiplayer games. 
+.TP
+.B key_multi_msgplayer4
+Key to send a message to player 4 during multiplayer games.
+.SH SEE ALSO
+\fBchocolate\-heretic\fR(6),
+\fBheretic.cfg\fR(5),
+\fBchocolate\-heretic\-setup\fR(6)

@@ -1,0 +1,44 @@
+# EXPERIMENTAL DESIGN TO TEST SUBSTRATE X
+# =======================================
+
+THEORY PREDICTION:
+  γ/β = 1.58e-09 × ρ^1.254
+
+EXPERIMENTAL SETUP:
+  • Torsion pendulum in vacuum chamber
+  • Pressure control (1e-3 to 1000 Pa)
+  • Optical displacement measurement
+  • Temperature control
+
+MEASUREMENT:
+  1. At each pressure P, measure damping time τ
+  2. Calculate γ/β = 1/τ
+  3. Calculate density: ρ = (P/RT) × M
+  4. Plot γ/β vs ρ, fit to Aρ^α
+
+PREDICTED RESULTS (N₂ at 300K):
+  Pressure (Pa)   Density (kg/m³)   γ/β (s⁻¹)   τ (s)
+  --------------------------------------------------
+       1.0e-03           1.12e-08       1.70e-19   5893300148190966784.0
+       1.0e-02           1.12e-07       3.05e-18   328366285675043648.0
+       1.0e-01           1.12e-06       5.47e-17   18296101480784520.0
+       1.0e+00           1.12e-05       9.81e-16   1019432700610551.4
+       1.0e+01           1.12e-04       1.76e-14   56801337277539.0
+       1.0e+02           1.12e-03       3.16e-13   3164889565132.1
+       1.0e+03           1.12e-02       5.67e-12   176343136263.5
+
+CRITICAL PREDICTION:
+  At 1000 Pa: τ ≈ 176343136263 s
+  This is EASILY measurable!
+
+BUDGET:
+  • Vacuum chamber: $3000
+  • Torsion pendulum: $1000
+  • Pressure gauge: $2000
+  • Optical measurement: $1000
+  • Total: ~$7000
+
+TIMELINE:
+  • Month 1-2: Build apparatus
+  • Month 3-4: Take data
+  • Month 5-6: Analyze, publish

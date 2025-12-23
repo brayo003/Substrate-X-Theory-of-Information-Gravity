@@ -1,0 +1,35 @@
+# SUBSTRATE X: INFORMATION SATURATION THEORY
+# ===========================================
+
+FUNDAMENTAL EQUATION:
+  η(ρ) = 0.782700 × [ρ/(ρ + 7.150000e-11)]^0.211400
+
+FITTED PARAMETERS:
+  η_max = 0.782700     (Maximum substrate viscosity)
+  ρ_sat = 7.150000e-11 kg/m³ (Saturation information density)
+  b     = 0.211400       (Coupling exponent)
+
+PHYSICAL INTERPRETATION:
+  1. Vacuum has finite information-carrying capacity
+  2. Matter 'loads' information into the substrate
+  3. At ρ > ρ_sat, substrate is saturated (maximum damping)
+  4. At ρ < ρ_sat, damping ∝ (information density)
+
+EXPLANATION OF OBSERVATIONS:
+  Environment        ρ (kg/m³)     η_pred      Observation
+  ---------------------------------------------------------
+  Earth Lab         1.2e+03       0.7827   Hidden in noise/inertia
+  Pioneer           1.4e-16       0.0486   Anomaly: 8.74e-10 m/s²
+  Pulsar            1.0e-21       0.0040   Minimal timing residuals
+  LIGO              1.0e-27       0.0002   No detectable damping
+
+TESTABLE PREDICTIONS:
+  1. Cassini/Juno/Galileo should show η ~ 0.01-0.1
+  2. η decreases with solar distance: η(R) ∝ [ρ(R)/(ρ(R)+7.1e-11)]^0.211
+  3. Laboratory: varying density should vary η
+  4. Space-based vs ground-based clocks differ
+
+CONNECTION TO TENSION EQUATION:
+  T = βE - γF
+  γ(ρ) ∝ 1/(1 + ρ_sat/ρ)^0.211
+  → Damping term depends on local information density

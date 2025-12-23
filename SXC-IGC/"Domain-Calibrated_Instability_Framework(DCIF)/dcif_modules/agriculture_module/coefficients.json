@@ -1,0 +1,13 @@
+{
+  "module": "agriculture_blight",
+  "coefficients": {
+    "alpha": 0.0,
+    "beta": 0.9416,
+    "gamma": 0.1074
+  },
+  "taxonomy": "Excitation-Dominant",
+  "anchors": {
+    "stable": {"E": 0.15, "F": 0.85, "T": 0.05},
+    "crisis": {"E": 0.92, "F": 0.10, "T": 0.85}
+  }
+}

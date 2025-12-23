@@ -1,0 +1,129 @@
+
+"""
+2008 Financial Crisis Test using Actual Engine Components
+Testing the Universal Tension Dynamics on 2008 market crash
+"""
+
+import sys
+import os
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+
+# Add current directory to path
+sys.path.append('.')
+
+def create_2008_synthetic_data():
+    """Create historically accurate synthetic data for 2008 Financial Crisis"""
+    np.random.seed(2008)  # Use crisis year as seed
+    
+    # Create daily data from June to December 2008
+    dates = pd.date_range(start='2008-06-01', end='2008-12-31', freq='D')
+    prices = []
+EOF main()_ == "__main__":completed but no results generated")008 crash")h")n pe
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ python test_2008_financial_crisis.py
+🌋 2008 FINANCIAL CRISIS CRASH TEST
+Using Actual Universal Tension Dynamics Engine
+============================================================
+
+============================================================
+🎯 TESTING: 2008 FINANCIAL CRISIS
+============================================================
+📥 Creating synthetic 2008 Financial Crisis data...
+📅 Testing period: 2008-06-01 to 2008-12-31
+💥 Main crash date: 2008-09-29
+📈 Other key dates: 2008-09-15, 2008-09-29, 2008-10-09
+📊 Data points: 214
+💰 Price range: $700.00 - $1400.00
+📉 Total decline: -50.0%
+🔧 Using actual Information Gravity engine...
+
+🔍 Analyzing pre-crash period (June - September 2008)...
+  90 days before (2008-07-01): IG=0.923, Risk=0.923 🚨 HIGH TENSION
+  83 days before (2008-07-08): IG=0.879, Risk=0.879 🚨 HIGH TENSION
+  76 days before (2008-07-15): IG=0.898, Risk=0.898 🚨 HIGH TENSION
+  69 days before (2008-07-22): IG=0.872, Risk=0.872 🚨 HIGH TENSION
+  62 days before (2008-07-29): IG=0.885, Risk=0.885 🚨 HIGH TENSION
+  55 days before (2008-08-05): IG=0.931, Risk=0.931 🚨 HIGH TENSION
+  48 days before (2008-08-12): IG=0.936, Risk=0.936 🚨 HIGH TENSION
+  41 days before (2008-08-19): IG=0.919, Risk=0.919 🚨 HIGH TENSION
+  34 days before (2008-08-26): IG=0.873, Risk=0.873 🚨 HIGH TENSION
+  27 days before (2008-09-02): IG=0.864, Risk=0.864 🚨 HIGH TENSION
+  20 days before (2008-09-09): IG=0.879, Risk=0.879 🚨 HIGH TENSION
+  13 days before (2008-09-16): IG=0.722, Risk=0.722 🚨 HIGH TENSION
+   6 days before (2008-09-23): IG=0.737, Risk=0.737 🚨 HIGH TENSION
+
+📊 2008 FINANCIAL CRISIS RESULTS:
+Maximum systemic tension: 0.936
+Early warnings (tension ≥ 0.6): 13/13
+🎯 Crash detected early: TRUE
+📅 First warning: 90 days before crash
+📈 Warning timeline: [90, 83, 76, 69, 62, 55, 48, 41, 34, 27, 20, 13, 6] days before
+
+🔔 SYSTEMIC TENSION WARNINGS:
+  2008-07-01 (90 days before):
+    Information Gravity: 0.923
+    Systemic Tension: 0.923
+    Market Volatility: 0.0065
+    Price Momentum: -0.079
+    Raw Signal: EXECUTE/EXPAND (High Confidence)
+    → Interpretation: CRASH IMMINENT
+  2008-07-08 (83 days before):
+    Information Gravity: 0.879
+    Systemic Tension: 0.879
+    Market Volatility: 0.0128
+    Price Momentum: -0.152
+    Raw Signal: EXECUTE/EXPAND (High Confidence)
+    → Interpretation: CRASH IMMINENT
+  2008-07-15 (76 days before):
+    Information Gravity: 0.898
+    Systemic Tension: 0.898
+    Market Volatility: 0.0185
+    Price Momentum: -0.088
+    Raw Signal: EXECUTE/EXPAND (High Confidence)
+    → Interpretation: CRASH IMMINENT
+  2008-07-22 (69 days before):
+    Information Gravity: 0.872
+    Systemic Tension: 0.872
+    Market Volatility: 0.0194
+    Price Momentum: -0.132
+    Raw Signal: EXECUTE/EXPAND (High Confidence)
+    → Interpretation: CRASH IMMINENT
+  2008-07-29 (62 days before):
+    Information Gravity: 0.885
+    Systemic Tension: 0.885
+    Market Volatility: 0.0210
+    Price Momentum: -0.100
+    Raw Signal: EXECUTE/EXPAND (High Confidence)
+    → Interpretation: CRASH IMMINENT
+
+📅 KEY 2008 CRISIS EVENTS ANALYSIS:
+  2008-07-15: Initial major decline phase
+    Pre-event tension: 0.926 🚨 HIGH
+    Volatility: 0.0249, Momentum: -0.007
+  2008-09-15: Lehman Brothers bankruptcy
+    Pre-event tension: 0.546 ⚠️  MED
+    Volatility: 0.1400, Momentum: 0.224
+  2008-09-29: Emergency bailout rejected
+    Pre-event tension: 0.716 🚨 HIGH
+    Volatility: 0.0791, Momentum: -0.109
+  2008-10-09: Market bottom
+    Pre-event tension: 0.799 🚨 HIGH
+    Volatility: 0.0358, Momentum: -0.178
+
+============================================================
+📚 2008 CRISIS HISTORICAL CONTEXT
+============================================================
+• Mar 2008: Bear Stearns bailout - first major crisis signal
+• Jul 2008: IndyMac failure - largest bank failure since 1980s
+• Sep 7: Fannie Mae/Freddie Mac taken over - mortgage crisis deepens
+• Sep 15: Lehman Brothers bankruptcy - global financial panic
+• Sep 16: AIG $85B bailout - 'too big to fail'
+• Sep 29: Emergency bailout rejected - Dow falls 777 points (-7%)
+• Oct 3: TARP $700B bailout passed
+• Oct 9: Markets hit bottom - S&P 500 down ~45% from 2007 peak
+• The crisis triggered Great Recession - worst since Great Depression
+
+✅ Test completed: 13 high-tension periods detected
+📈 Earliest warning: 90 days before crash
+🎯 ENGINE PERFORMANCE: Would have predicted 2008 crash

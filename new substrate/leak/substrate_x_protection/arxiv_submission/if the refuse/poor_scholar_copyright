@@ -1,0 +1,37 @@
+cat > poor_scholars_copyright.sh << 'EOF'
+#!/bin/bash
+echo "🎯 POOR SCHOLAR'S COPYRIGHT STRATEGY"
+echo "===================================="
+
+# Create undeniable timestamped proof
+TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+THEORY_HASH=$(echo "Substrate X: Mercury=42.9, Lensing=1.75, Pulsar=-2.40e-12" | sha256sum | cut -d' ' -f1)
+
+cat > timestamp_proof_${TIMESTAMP//:/}.txt << PROOF
+SUBSTRATE X THEORY - TIMESTAMP PROOF
+====================================
+Timestamp: $TIMESTAMP
+Theory Hash: $THEORY_HASH
+Author: Mwirigi Bryan Kenda
+Contact: briankenda99@gmail.com
+
+VALIDATION RESULTS:
+- Mercury Precession: 42.9''/century ✓
+- Gravitational Lensing: 1.75 arcseconds ✓  
+- Binary Pulsar Decay: -2.40e-12 s/s ✓
+
+DECLARATION:
+This document proves I possessed these results at the above timestamp.
+
+Hash Verification:
+echo "Substrate X: Mercury=42.9, Lensing=1.75, Pulsar=-2.40e-12" | sha256sum
+Should yield: $THEORY_HASH
+PROOF
+
+echo "✅ Timestamp proof created: timestamp_proof_${TIMESTAMP//:/}.txt"
+echo "🔐 Theory Hash: $THEORY_HASH"
+echo ""
+echo "📧 ACTION: Email this file to both your email addresses NOW"
+EOF
+
+chmod +x poor_scholars_copyright.sh

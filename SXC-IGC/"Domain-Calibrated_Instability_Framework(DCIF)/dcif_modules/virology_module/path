@@ -1,0 +1,9 @@
+    Define Anchors:
+
+        Stable State (T ≈ 0): A virus in a state of controlled, latent infection, or a fungal species present as a harmless commensal.
+
+        Crisis State (T ≈ 0.6): An active, symptomatic infection or a pathogenic fungal outbreak causing disease.
+
+    Find Data: Use publicly available datasets (e.g., from the CDC, WHO, or genomic repositories) for viral load (ρ), replication rates (E), and immune response markers (F).
+
+    Run Your Calibration Engine: Feed the anchor data into your solver to discover the α, β, γ that define that particular host-pathogen system.

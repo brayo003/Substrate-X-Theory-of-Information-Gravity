@@ -1,0 +1,6 @@
+phenomenon,experiment,status,x17_impact
+Muon_g-2,FNAL/BNL,4.2_sigma_tension,Positive_Correction
+Electron_g-2,LKB_Paris,Tension,Negative_Correction
+Kaon_Decay,NA62_CERN,Constraint,Invisible_Signature
+Stellar_Cooling,IAU,Limit,Trapping_Requirement
+Dark_Matter,Relic_Density,Theory,Mediator_Potential

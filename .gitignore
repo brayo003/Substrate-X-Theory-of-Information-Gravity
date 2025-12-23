@@ -1,0 +1,6 @@
+*.gz
+*.tar.gz
+github/
+private github/
+token
+*.tsv

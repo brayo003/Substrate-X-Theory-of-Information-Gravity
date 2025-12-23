@@ -1,0 +1,16 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+2025-12-22T10:31:28.311Z,-5.7199,145.4955,110.18,6.5,mww,71,33,4.015,0.9,us,us6000rwgh,2025-12-22T23:56:18.475Z,"42 km NNE of Goroka, Papua New Guinea",earthquake,4.89,6.214,0.044,50,reviewed,us,us
+2025-12-21T02:31:54.870Z,37.747166666667,-121.9455,10.03,3.9,mw,198,14,0.03936,0.2,nc,nc75283691,2025-12-22T05:32:49.313Z,"5 km SE of San Ramon, CA",earthquake,0.1,0.23,,10,reviewed,nc,nc
+2025-12-20T03:56:09.750Z,37.743666666667,-121.95316666667,9.63,3.95,mw,195,14,0.03807,0.22,nc,nc75283031,2025-12-23T04:30:22.632Z,"5 km SSE of San Ramon, CA",earthquake,0.12,0.26,,11,reviewed,nc,nc
+2025-12-20T03:49:28.110Z,37.742833333333,-121.95383333333,9.56,3.77,mw,189,24,0.03754,0.2,nc,nc75283016,2025-12-22T17:36:16.470Z,"5 km SSE of San Ramon, CA",earthquake,0.11,0.23,,9,reviewed,nc,nc
+2025-12-14T23:30:43.210Z,38.373,-122.604,3.13,4.03,mw,181,16,,0.16,nc,nc75279971,2025-12-22T23:40:46.380Z,"6 km W of Glen Ellen, CA",earthquake,0.1,0.25,,48,reviewed,nc,nc
+2025-12-12T02:44:11.625Z,40.9175,142.7451,10.678,6.7,mww,100,34,1.139,0.94,us,us6000ruc4,2025-12-14T03:32:18.425Z,"114 km ENE of Hachinohe, Japan",earthquake,8.46,4.134,0.065,23,reviewed,us,us
+2025-12-08T21:52:41.302Z,41.0034,143.1637,19,6.6,mww,129,29,1.011,0.55,us,us6000rtie,2025-12-12T02:57:41.744Z,"126 km S of Honchō, Japan",earthquake,5.73,1.718,0.068,21,reviewed,us,us
+2025-12-08T17:07:58.390Z,37.757666666667,-121.94466666667,9.62,3.6,ml,152,17,0.03081,0.13,nc,nc75276661,2025-12-20T03:59:24.903Z,"4 km SE of San Ramon, CA",earthquake,0.1,0.22,0.164,159,reviewed,nc,nc
+2025-12-08T14:15:10.460Z,41.0027,142.1714,45.452,7.6,mww,139,17,0.866,0.77,us,us6000rtdt,2025-12-20T11:42:52.784Z,"2025 Aomori Prefecture, Japan Earthquake",earthquake,8.88,4.269,0.024,166,reviewed,us,us
+2025-12-06T20:41:49.217Z,60.3586,-139.5457,10,7,mww,128,30,0.44,1.07,us,us6000rsy1,2025-12-22T20:51:54.917Z,"2025 Hubbard Glacier Earthquake",earthquake,4.12,1.809,0.026,143,reviewed,us,us
+2025-12-04T07:44:06.881Z,41.0259,78.4505,10,5.8,mww,115,27,2.425,0.75,us,us7000rfgy,2025-12-11T19:46:03.496Z,"138 km NNW of Tumxuk, China",earthquake,6.95,1.827,0.073,18,reviewed,us,us
+2025-12-01T06:56:36.600Z,38.385333333333,-122.60633333333,4.76,3.25,mw,163,16,0.04275,0.15,nc,nc75272501,2025-12-23T03:50:41.040Z,"6 km WSW of Kenwood, CA",earthquake,0.1,0.29,,6,reviewed,nc,nc
+2025-11-27T17:11:29.059Z,61.569519042969,-150.75079345703,69.433395385742,6,mww,225,13.682067871094,0.47020506858826,1.1860668337292,ak,ak2025xjbvhj,2025-12-22T17:21:43.184Z,"12 km WNW of Susitna, Alaska",earthquake,0,1.4379519224167,0.025,153,reviewed,ak,us
+2025-11-27T04:56:24.524Z,2.7573,95.9849,17,6.6,mww,176,41,2.936,0.94,us,us7000re2g,2025-12-19T02:44:17.271Z,"53 km NW of Sinabang, Indonesia",earthquake,3.58,1.828,0.062,25,reviewed,us,us
+2025-11-26T14:16:42.430Z,36.997333333333,-121.47566666667,2.92,3.98,mw,136,35,0.02887,0.18,nc,nc75269596,2025-12-21T14:26:56.423Z,"8 km E of Gilroy, CA",earthquake,0.12,0.41,,14,reviewed,nc,nc

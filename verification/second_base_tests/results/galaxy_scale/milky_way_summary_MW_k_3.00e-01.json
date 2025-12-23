@@ -1,0 +1,10 @@
+{
+  "smoothing_sigma": 2,
+  "k_eff": 0.3,
+  "v_total_8_15kpc_mean_kms": 184.8507610450455,
+  "v_newt_8_15kpc_mean_kms": 127.04774380236476,
+  "ratio_outer_mean": 1.0236856212913052,
+  "max_v_total_kms": 655.8255315855719,
+  "npz_file": "verification/second_base_tests/results/galaxy_scale/milky_way_MW_k_3.00e-01.npz",
+  "plot_file": "verification/second_base_tests/results/galaxy_scale/milky_way_rotation_MW_k_3.00e-01.png"
+}

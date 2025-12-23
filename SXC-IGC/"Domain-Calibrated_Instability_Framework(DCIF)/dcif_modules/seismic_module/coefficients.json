@@ -1,0 +1,10 @@
+{
+  "module": "seismic",
+  "coefficients": {
+    "alpha": 0.0,
+    "beta": 18.3916,
+    "gamma": 0.0403
+  },
+  "taxonomy": "High-Sensitivity-Trigger",
+  "description": "Models tectonic slip and moment dissipation. Beta is extremely high due to the low-energy threshold of seismic rupture."
+}

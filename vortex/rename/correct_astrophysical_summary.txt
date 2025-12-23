@@ -1,0 +1,10 @@
+CORRECT ASTROPHYSICAL ANALYSIS
+==================================================
+Neutron star: ρ_X/ρ_NS = 1.119e-24
+Cosmic today: Ω_X = 5.490e-71
+BBN: ΔH/H = 0.000e+00
+
+CONCLUSION:
+Parameters are astrophysically safe.
+All effects are < 10^-12 level.
+Theory not constrained by astrophysics.

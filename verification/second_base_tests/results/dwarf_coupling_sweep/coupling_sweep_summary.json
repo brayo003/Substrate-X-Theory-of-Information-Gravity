@@ -1,0 +1,79 @@
+[
+  {
+    "k_eff": 0.001,
+    "max_ratio": 0.2923906653000162,
+    "max_v_sub_kms": 3.3037525441243525,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 0.05312783555882398,
+    "ratio_2kpc": 0.035825314954622905,
+    "ratio_5kpc": 0.18857084919049497,
+    "outer_mean_ratio_r>=4kpc": 0.17298517537711583,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_1.0em03.npz"
+  },
+  {
+    "k_eff": 0.003,
+    "max_ratio": 0.5064354879584942,
+    "max_v_sub_kms": 5.722267262058317,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 0.09202011048404758,
+    "ratio_2kpc": 0.062051265698563986,
+    "ratio_5kpc": 0.3266142916243458,
+    "outer_mean_ratio_r>=4kpc": 0.29961911270937736,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_3.0em03.npz"
+  },
+  {
+    "k_eff": 0.01,
+    "max_ratio": 0.924620468920011,
+    "max_v_sub_kms": 10.447382865008887,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 0.1680049675207683,
+    "ratio_2kpc": 0.11328959314950018,
+    "ratio_5kpc": 0.5963133837540828,
+    "outer_mean_ratio_r>=4kpc": 0.5470271556353626,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_1.0em02.npz"
+  },
+  {
+    "k_eff": 0.03,
+    "max_ratio": 1.601489629887619,
+    "max_v_sub_kms": 18.095397928319894,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 0.29099313966992973,
+    "ratio_2kpc": 0.19622333130374134,
+    "ratio_5kpc": 1.0328450778953888,
+    "outer_mean_ratio_r>=4kpc": 0.9474788266803356,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_3.0em02.npz"
+  },
+  {
+    "k_eff": 0.1,
+    "max_ratio": 2.923906653000162,
+    "max_v_sub_kms": 33.037525441243524,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 0.5312783555882398,
+    "ratio_2kpc": 0.3582531495462291,
+    "ratio_5kpc": 1.8857084919049496,
+    "outer_mean_ratio_r>=4kpc": 1.7298517537711584,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_1.0em01.npz"
+  },
+  {
+    "k_eff": 0.3,
+    "max_ratio": 5.064354879584943,
+    "max_v_sub_kms": 57.222672620583175,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 0.9202011048404758,
+    "ratio_2kpc": 0.62051265698564,
+    "ratio_5kpc": 3.266142916243458,
+    "outer_mean_ratio_r>=4kpc": 2.9961911270937724,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_3.0em01.npz"
+  },
+  {
+    "k_eff": 1.0,
+    "max_ratio": 9.246204689200109,
+    "max_v_sub_kms": 104.47382865008888,
+    "max_v_newt_kms": 65.57894452739602,
+    "ratio_1kpc": 1.680049675207683,
+    "ratio_2kpc": 1.1328959314950018,
+    "ratio_5kpc": 5.963133837540828,
+    "outer_mean_ratio_r>=4kpc": 5.470271556353626,
+    "npz_file": "verification/second_base_tests/results/dwarf_coupling_sweep/dwarf_coupling_k_1.0e00.npz"
+  }
+]

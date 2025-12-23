@@ -1,0 +1,8 @@
+Consistent Screened Fifth Force Parameters
+==================================================
+m_S = 1.973e-04 eV
+α_S = 2.053e-31
+Range = 1.000 mm
+F_X/F_G at contact = 1.000e-03
+F_X/F_G at 1 mm = 3.679e-04
+Force between 1g masses at 1 mm = 2.46e-14 N

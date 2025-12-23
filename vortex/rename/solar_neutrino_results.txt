@@ -1,0 +1,11 @@
+SOLAR NEUTRINO FLUX MODIFICATIONS
+==================================================
+Reaction rate ratio: 1.000000
+Luminosity change: 0.0000%
+Average neutrino flux change: 0.0000%
+
+Individual flux changes:
+  pp: +0.0000%
+  ⁷Be: +0.0000%
+  ⁸B: +0.0000%
+  pep: +0.0000%

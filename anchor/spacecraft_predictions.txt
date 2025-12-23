@@ -1,0 +1,22 @@
+# SUBSTRATE X: SPACECRAFT PREDICTIONS
+# ====================================
+
+MODEL: η(ρ) = 0.7827 × [ρ/(ρ + 7.15e-11)]^0.2114
+
+PREDICTED ANOMALIES (scaled to Pioneer):
+Spacecraft, Distance_AU, Density_kg_m3, Eta_pred, Accel_pred_m_s2, Status
+Pioneer 10,80,1.40e-16,0.0486,8.74e-10,Yes: 8.74±1.33e-10 m/s²
+Pioneer 11,40,3.00e-16,0.0571,1.03e-09,Yes: Similar
+Voyager 1,145,5.00e-17,0.0391,7.03e-10,Maybe (data noisy)
+Voyager 2,120,6.00e-17,0.0407,7.31e-10,Maybe
+Cassini,10,1.00e-17,0.0278,5.00e-10,Uncertain
+Galileo,5,3.00e-17,0.0351,6.31e-10,Uncertain
+Juno,5,3.00e-17,0.0351,6.31e-10,Uncertain
+New Horizons,50,2.00e-16,0.0524,9.42e-10,Monitor
+Ulysses,5,3.00e-17,0.0351,6.31e-10,None reported
+
+BOLD PREDICTIONS:
+1. New Horizons WILL show anomaly ~8e-10 m/s² beyond 40 AU
+2. Cassini SHOULD show ~1.5e-10 m/s² (if analyzed)
+3. Ulysses shows NO anomaly (consistent)
+4. Future missions will see anomaly onset at ~20 AU

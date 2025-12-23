@@ -1,0 +1,197 @@
+                 SYSTEM EXCITATION COORDINATE - INSTABILITY GROWTH CLASS
+
+ SXC-IGC Engine )
+
+1. State Variable
+
+xₜ
+
+Scalar system tension / informational strain / instability density.
+
+Dimensionless after normalization.
+
+Must be signed. Zero is not a safe state.
+
+Interpretation:
+
+x ≈ 0 → metastable calm (linearly unstable for r > 0)
+x > 0 → amplifying stress
+x < 0 → dissipative relaxation
+
+2. Time Discretization
+
+Δt
+
+Fixed integration step.
+
+Controls numerical stability, not physical dynamics.
+
+Constraint:
+
+Δt ≪ min(1 / characteristic growth rate)
+
+Explicit numerical condition:
+
+Δt · max |f′(x)| < 1 over the explored state range.
+
+Chosen value:
+
+Δt = 0.05 (stable for |x| = O(1) and r ≈ 0.15)
+
+3. Deterministic Core (Drift)
+
+General update rule:
+
+xₜ₊₁ = xₜ + Δt · f(xₜ)
+
+with drift function:
+
+f(x) = r x + a x² − b x³
+
+All terms are required.
+
+(a) Linear Growth Rate
+
+r
+
+Baseline amplification coefficient.
+
+Encodes background instability of the substrate.
+
+r > 0 → latent runaway exists
+r < 0 → trivial decay, no tipping behavior
+
+Typical regime:
+
+0 < r ≲ 0.3
+
+Instance:
+
+r = 0.153267
+
+(b) Quadratic Feedback (Asymmetry / Bias)
+
+a
+
+Breaks x ↔ −x symmetry.
+
+Represents directional bias in accumulation.
+
+Controls skew of the effective potential.
+
+Interpretation:
+
+a > 0 → tension self-reinforces once present
+a = 0 → symmetric pitchfork bifurcation
+a < 0 → self-correcting bias
+
+Instance:
+
+a = 1.0
+
+(c) Cubic Saturation (Hard Constraint)
+
+b
+
+Enforces boundedness.
+
+Represents structural limits of the substrate.
+
+Interpretation:
+
+b > 0 → physical saturation ceiling
+b too small → artificial divergence
+b too large → overdamped suppression
+
+Instance:
+
+b = 1.0
+
+4. Stochastic Forcing
+
+ηₜ
+
+Additive zero-mean noise term.
+
+Models unresolved micro-fluctuations.
+
+Noise model:
+
+ηₜ ∼ 𝒩(0, σ²)
+
+σ controls tipping probability, not equilibrium location.
+
+Constraint:
+
+σ ≪ Δt · max |f(x)| within the metastable basin.
+
+Multiplicative noise is excluded to preserve statistical validity.
+
+5. Fixed Points (Structural Skeleton)
+
+Equilibria satisfy:
+
+f(x) = r x + a x² − b x³ = 0
+
+Factorization:
+
+x ( r + a x − b x² ) = 0
+
+Solutions:
+
+x₀ = 0
+
+x± = ( a ± √(a² + 4 b r) ) / (2 b)
+
+Interpretation:
+
+One trivial equilibrium.
+Two nontrivial branches (one stable, one unstable).
+
+6. Stability Classification
+
+Stability is determined by:
+
+f′(x) = r + 2 a x − 3 b x²
+
+At x = 0:
+
+Stable if r < 0
+Unstable if r > 0 (current regime)
+
+At x = x±:
+
+One branch satisfies f′(x) < 0 → stable attractor
+The other satisfies f′(x) > 0 → unstable repeller
+
+Tipping occurs via stochastic escape or slow parameter drift.
+
+7. Control Parameters (Meta-Layer)
+
+These parameters modify experiments, not physics:
+
+• Parameter drift: r(t), a(t), b(t)
+• Noise scheduling: σ(t)
+• Boundary policy: reflecting vs absorbing caps
+• Initialization ensemble: distribution of x₀
+
+8. Valid Operating Regime
+
+The model is physically interpretable only when:
+
+r > 0
+a ≠ 0
+b > 0
+σ small but nonzero
+Δt stable under Euler integration
+
+Outside this regime, the model loses physical interpretability.
+
+9. Minimal Canonical Instance
+
+xₜ₊₁ = xₜ + 0.05 ( 0.153267 xₜ + xₜ² − xₜ³ ) + ηₜ
+
+This fully specifies the SXC-IGC engine.
+	​
+
+That is the whole machine.

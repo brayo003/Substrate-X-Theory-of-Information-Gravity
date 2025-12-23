@@ -1,0 +1,10 @@
+{
+  "f_sub_Hz": 271.3411584004905,
+  "tau_sub_s": 0.0037469407481457947,
+  "Q_sub": 3.194054872907224,
+  "f_GR_Hz": 272.39591876812636,
+  "tau_GR_s": 0.003700703775830011,
+  "Q_GR": 3.166903225003332,
+  "waveform_plot": "verification/second_base_tests/results/ringdown_waveform.png",
+  "envelope_plot": "verification/second_base_tests/results/ringdown_envelope.png"
+}

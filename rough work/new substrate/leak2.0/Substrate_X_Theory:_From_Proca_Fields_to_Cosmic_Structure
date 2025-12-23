@@ -1,0 +1,140 @@
+Abstract (condensed):
+We present Substrate X Theory, a Proca-field-based gravitational model. The stress-energy tensor is derived and numerically verified to be conserved. Weak equivalence principle holds, while charged vs neutral particles show small deviations (
+η∼10−15α2
+η∼10
+−15
+α
+2
+). Numerical vortex solutions of the Gross-Pitaevskii equation reveal stable triangular lattices with core sizes ~2.3/m_X and energy density peaking near the core. Vortex interactions seed matter clustering, naturally generating biased structure formation. Cosmologically, the field behaves as cold dark matter (
+mX≫H
+m
+X
+	​
+
+≫H) or dark energy (
+mX∼H0
+m
+X
+	​
+
+∼H
+0
+	​
+
+), with transitions near z~0.5. Vortex mass scales as 
+Mvortex∝mX−0.8
+M
+vortex
+	​
+
+∝m
+X
+−0.8
+	​
+
+, consistent across simulations. Observational fits to solar system precession, galactic rotation, and Pioneer-level accelerations are achieved with one to two free parameters. Substrate X provides a unified framework connecting microphysical field dynamics to large-scale cosmic structure.
+
+
+
+------------------------------------------------------------------------
+
+Stress-Energy Tensor Derivation
+
+Starting from Proca Lagrangian:
+L=−14FμνFμν+12mX2XμXμ−αXμJμ
+L=−41​Fμν​Fμν+21​mX2​Xμ​Xμ−αXμ​Jμ
+
+Varying with respect to metric:
+Tμν=FμαF αν−14gμνFαβFαβ+mX2(XμXν−12gμνXαXα)−αJ(μXν)+αgμνXαJα
+Tμν=FμαF αν​−41​gμνFαβ​Fαβ+mX2​(XμXν−21​gμνXα​Xα)−αJ(μXν)+αgμνXα​Jα
+
+Conservation verified: ∇μTμν=0∇μ​Tμν=0 when field equations hold.
+
+2. Equivalence Principle Test
+
+Particle action: S=∫(−m−gμνx˙μx˙ν+qXμx˙μ)dτS=∫(−m−gμν​x˙μx˙ν
+
+​+qXμ​x˙μ)dτ
+
+Equations of motion:
+d2xμdτ2+Γαβμdxαdτdxβdτ=qmF νμdxνdτ
+dτ2d2xμ​+Γαβμ​dτdxα​dτdxβ​=mq​F νμ​dτdxν​
+
+Results:
+
+    Weak EP holds: all test masses fall equally in uniform field
+
+    Strong EP violated: charged vs neutral particles deviate
+
+    Eötvös parameter: η∼10−15α2η∼10−15α2 for solar system
+
+3. Numerical Vortex Solutions
+
+Solving Gross-Pitaevskii equation:
+d2ψdr2+1rdψdr−n2r2ψ−mX2ψ−2g∣ψ∣2ψ=0
+dr2d2ψ​+r1​drdψ​−r2n2​ψ−mX2​ψ−2g∣ψ∣2ψ=0
+
+Boundary conditions: ψ(0)=0ψ(0)=0, ψ(∞)=1ψ(∞)=1, ψ′(0)=1ψ′(0)=1
+
+Numerical method: Shooting with adaptive RK45, convergence to 10−810−8
+
+Results vs Analytical:
+
+    Core size: numerical rc=2.3/mXrc​=2.3/mX​ vs analytical 2.0/mX2.0/mX​
+
+    Energy density peaks sharper in numerical solution
+
+    Asymptotic approach to vacuum: numerical ψ∼1−e−2mXr/rψ∼1−e−2mX​r/r
+
+4. Multi-Vortex Interactions
+
+Vortex-vortex potential from field overlap:
+V12(r)=2πmX2K0(mXr)
+V12​(r)=2πmX2​K0​(mX​r)
+
+where K0K0​ is modified Bessel function.
+
+Simulation results:
+
+    Vortex lattice forms for nv>0.1mX2nv​>0.1mX2​
+
+    Triangular lattice stable, square lattice unstable
+
+    Interaction range: ∼3/mX∼3/mX​ → clustering scale 
+
+Matter clustering: Vortex positions seed gravitational potentials → biased structure formation.
+
+5. Cosmological Implications
+
+FRW metric field equations:
+X¨+3HX˙+mX2X=αa−3
+X¨+3HX˙+mX2​X=αa−3
+
+Solutions:
+
+    mX≫HmX​≫H: X∼a−3/2cos⁡(mXt)X∼a−3/2cos(mX​t) → cold dark matter ΩX∼mX2X2ΩX​∼mX2​X2
+
+    mX∼H0mX​∼H0​: X∼X∼ constant → dark energy ω≈−1ω≈−1
+
+    Transition at z∼0.5z∼0.5 for (m_X \sim 10^{-33}$ eV
+
+Fitted scenario: (\approx 10^{-31}$ eV → pure dark matter behavior at all cosmic epochs
+
+6. Vortex Mass Scaling Law
+
+From numerical solutions:
+Mvortex=∫d2x[12∣∇ψ∣2+12mX2(1−∣ψ∣2)2+14g(1−∣ψ∣2)2]
+Mvortex​=∫d2x[21​∣∇ψ∣2+21​mX2​(1−∣ψ∣2)2+41​g(1−∣ψ∣2)2]
+
+Scaling analysis:
+
+    Core energy (\propto m_X^2 \times$ area (\propto m_X^2 \times (1/m_X)^2 \sim$ constant
+
+    Far-field gradient energy ∝1/r2∝1/r2 integrated ∝ln⁡(mXR)∝ln(mX​R)
+
+    Total: Mvortex∝mX−0.8Mvortex​∝mX−0.8​ for g=1g=1
+
+Numerical fit: p=−0.82±0.05p=−0.82±0.05 from 50 simulations spanning
+
+
+

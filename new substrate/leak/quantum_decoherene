@@ -1,0 +1,21 @@
+Γ = Γ₀ + kω²
+k = 4.5 × 10⁻⁷ s
+
+QUESTION:
+Does quantum decoherence increase with rotation rate squared?
+
+EXPERIMENT:
+
+    Take trapped ion/qubit
+
+    Put on rotating stage
+
+    Measure coherence time at different rotation speeds
+
+    Check if Γ ∝ ω²
+
+PREDICTION:
+100 rad/s → ΔΓ = 4.5 × 10⁻³ s⁻¹
+200 rad/s → ΔΓ = 1.8 × 10⁻² s⁻¹
+
+TESTABLE NOW with existing quantum computers + rotation stages

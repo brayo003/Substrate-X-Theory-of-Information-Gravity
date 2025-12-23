@@ -1,0 +1,11 @@
+BIG BANG NUCLEOSYNTHESIS EFFECTS
+==================================================
+Hubble ratio H'/H: 1.000000
+Freeze-out T ratio: 1.000000
+n/p change: 0.000%
+Y₄ change: 0.0000
+D/H ratio change: 1.0000
+
+Observational constraints:
+Y₄ observed: 0.245 ± 0.003
+D/H observed: (2.527 ± 0.030) × 10⁻⁵
