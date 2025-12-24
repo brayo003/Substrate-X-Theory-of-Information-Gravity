@@ -31,6 +31,13 @@ The theory unfolds across seven phases:
 ## Core Prediction
 `Γ = Γ₀ + kω²` - Quantum decoherence increases with rotation rate squared
 
+
+## Citation & Attribution
+This research and the SXC-IGC V12 Engine are the original work of brian 003. 
+If you utilize this code, the $\alpha = 1.254$ scaling law, or the 1.5 saturation bound in your research, please cite:
+
+**brian 003, "Substrate X Theory of Information Gravity: Deterministic V12 Core," (2025). GitHub: https://github.com/brayo003/Substrate-X-Theory-of-Information-Gravity**
+
 ---
 
 *"Reality is information flowing in a universal substrate."*
