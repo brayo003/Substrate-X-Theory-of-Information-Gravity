@@ -115,9 +115,7 @@ Quantum decoherence increases with rotational velocity squared:
 2
 
 This scaling law (
-α=1.254
 α=1.254) and the saturation bound (
-1.5
 1.5) are central to SXC-IGC simulations.
 
 Citation
