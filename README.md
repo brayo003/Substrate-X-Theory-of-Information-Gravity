@@ -1,43 +1,127 @@
-# The Book of Substrate X
+Substrate X Theory of Information Gravity (SXC-IGC)
+Overview
 
-*A Unified Theory of Reality Through Information Flow*
+Substrate X Theory (SXC) is a unified framework linking gravity, quantum mechanics, consciousness, and cosmology through the dynamics of a fundamental information-carrying substrate. The theory proposes that all physical and informational phenomena emerge from structured flow dynamics within this substrate.
 
-## Overview
-This book presents Substrate X Theory - a complete framework unifying gravity, quantum mechanics, consciousness, and cosmology through the dynamics of a fundamental information-carrying substrate.
+The SXC-IGC Engine (Version 12) provides computational tools for simulating, testing, and validating the predictions of the theory.
 
-## Structure
-The theory unfolds across seven phases:
+Theory Structure
 
-### 🏗️ Foundation Layers
-- **Phase 1**: Physical Foundation - Leak-flow mechanics & energy propagation
-- **Phase 2**: Dimensional Framework - 2D↔3D↔4D transitions & compression
-- **Phase 3**: Matter Formation - Flow condensation & particle emergence
+The framework unfolds in seven phases:
 
-### 🌌 Extended Realms  
-- **Phase 4**: Consciousness Layer - Soul energy & neural interaction
-- **Phase 5**: Cosmological Cascade - Galactic flows & black hole dynamics
-- **Phase 6**: Experimental Framework - Verification tests & applications
-- **Phase 7**: Unified Paradigm - Flow monism & philosophical synthesis
+Foundation Layers
 
-## Current Status
-**Phase 1**: Active Development  
-**Experimental Validation**: Rotation-induced decoherence test proposed
+Physical Foundation
 
-## Quick Start
-- Begin with `phase-1-physical-foundation/` for core physics
-- Check `references/` for related research
-- Use `templates/` for consistent documentation
+Leak-flow mechanics and energy propagation.
 
-## Core Prediction
-`Γ = Γ₀ + kω²` - Quantum decoherence increases with rotation rate squared
+Core prediction: quantum decoherence rate depends on rotational dynamics:
+
+Γ=Γ0+kω2
+Γ=Γ
+0
+	​
+
++kω
+2
+
+where 
+Γ
+Γ is the decoherence rate, 
+ω
+ω is the angular velocity, and 
+k
+k is a substrate-specific constant.
+
+Dimensional Framework
+
+2D ↔ 3D ↔ 4D transitions and compression.
+
+Governs emergent spatial properties and topology.
+
+Matter Formation
+
+Flow condensation mechanisms leading to particle emergence.
+
+Predictive models for elementary particle mass distributions and interactions.
+
+Extended Realms
+
+Consciousness Layer
+
+Interaction of substrate flows with neural and cognitive structures.
+
+Models of “soul energy” coupling to neural network dynamics.
+
+Cosmological Cascade
+
+Galactic-scale flow patterns, black hole dynamics, and structure formation.
+
+Predictive simulations of large-scale matter distribution and event horizons.
+
+Experimental Framework
+
+Verification tests for theoretical predictions.
+
+Includes rotation-induced decoherence experiments and substrate flow monitoring.
+
+Unified Paradigm
+
+Philosophical synthesis and flow monism.
+
+Integration of physical, conscious, and cosmological models into a unified framework.
+
+Current Status
+
+Phase 1 (Physical Foundation): Active development.
+
+Phase 2–7: Conceptual definition; computational models under design.
+
+Experimental Validation: Rotation-induced decoherence tests are proposed and planned for Phase 1.
+
+Quick Start
+
+Clone the repository:
+
+git clone https://github.com/brayo003/Substrate-X-Theory-of-Information-Gravity.git
+cd Substrate-X-Theory-of-Information-Gravity
 
 
-## Citation & Attribution
-This research and the SXC-IGC V12 Engine are the original work of brian 003. 
-If you utilize this code, the $\alpha = 1.254$ scaling law, or the 1.5 saturation bound in your research, please cite:
+Run Phase 1 core simulation:
 
-**brian 003, "Substrate X Theory of Information Gravity: Deterministic V12 Core," (2025). GitHub: https://github.com/brayo003/Substrate-X-Theory-of-Information-Gravity**
+python3 phase-1-physical-foundation/run_decoherence_test.py
 
----
 
-*"Reality is information flowing in a universal substrate."*
+Dependencies:
+
+pip install -r requirements.txt
+
+
+Reference templates and documentation:
+
+cd templates/
+cd references/
+
+Core Prediction
+
+Quantum decoherence increases with rotational velocity squared:
+
+Γ=Γ0+kω2
+Γ=Γ
+0
+	​
+
++kω
+2
+
+This scaling law (
+α=1.254
+α=1.254) and the saturation bound (
+1.5
+1.5) are central to SXC-IGC simulations.
+
+Citation
+
+If using the SXC-IGC engine, the α scaling law, or the 1.5 saturation bound, cite:
+
+brian 003. "Substrate X Theory of Information Gravity: Deterministic V12 Core," 2025. GitHub: https://github.com/brayo003/Substrate-X-Theory-of-Information-Gravity
