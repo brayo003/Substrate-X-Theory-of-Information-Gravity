@@ -194,4 +194,3 @@ xₜ₊₁ = xₜ + 0.05 ( 0.153267 xₜ + xₜ² − xₜ³ ) + ηₜ
 This fully specifies the SXC-IGC engine.
 	​
 
-That is the whole machine.
