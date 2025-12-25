@@ -55,7 +55,7 @@ from SXC_V12_CORE import SXCOmegaEngine
 engine = SXCOmegaEngine()
 tension, phase = engine.step(signal=30)
 print(f"Tension: {tension}, Phase: {phase}")
-
+```
 Citation & License
 
 MIT License. Cite as:
