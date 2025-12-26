@@ -3,7 +3,13 @@
 # SXC-IGC Engine: Universal α-Scaling Framework
 
 ## Overview
-The SXC-IGC (System Excitation Coordinate – Instability Growth Class) is a deterministic simulation framework that models complex system dynamics through a non-linear instability law. By revealing universal scaling patterns across physical and biological domains, it provides a quantitative metric for structural resilience.
+Substrate X Theory of Information Gravity (SXC-IGC) proposes a formal framework for analyzing the limits of predictability in physical and information-structured systems. The theory models systems as evolving over an underlying substrate where information flow, coupling structure, and observability jointly determine whether valid inference is possible.
+
+Rather than extending predictive reach through statistical extrapolation or learned approximation, SXC-IGC characterizes the conditions under which prediction is well-defined, bounded, or invalid. System behavior is evaluated in terms of measurable state variables, interaction topology, and information degradation, with explicit detection of regimes where inference collapses due to coupling density, observer dependence, or structural instability.
+
+Within domains where governing dynamics are accessible and interactions can be decoupled, the framework yields constrained, validity-limited predictions. Outside those domains, it formally halts inference instead of producing spurious certainty. In this sense, SXC-IGC functions as an epistemic boundary detector rather than a universal predictive model.
+
+The framework is applicable to deterministic physical systems, controlled engineering environments, and information-structured processes, and is explicitly not intended for domains dominated by adaptive, reflexive, or semantically constructed dynamics
 
 ## Empirical Discovery: The α-Scaling Regimes
 Validation confirms two distinct scaling regimes. Biological systems exhibit significantly lower α values, indicating a superior ability to maintain integrity under substrate perturbation.
