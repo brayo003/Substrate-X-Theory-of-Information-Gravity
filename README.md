@@ -1,92 +1,121 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18055025.svg)](https://doi.org/10.5281/zenodo.18055025)
 
-# SXC-IGC Engine: Universal α-Scaling Framework
+SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
+Overview
 
-## Overview
-Substrate X Theory of Information Gravity (SXC-IGC) proposes a formal framework for analyzing the limits of predictability in physical and information-structured systems. The theory models systems as evolving over an underlying substrate where information flow, coupling structure, and observability jointly determine whether valid inference is possible.
+The Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
 
-Rather than extending predictive reach through statistical extrapolation or learned approximation, SXC-IGC characterizes the conditions under which prediction is well-defined, bounded, or invalid. System behavior is evaluated in terms of measurable state variables, interaction topology, and information degradation, with explicit detection of regimes where inference collapses due to coupling density, observer dependence, or structural instability.
+Rather than extending predictive reach through probabilistic extrapolation or learning-based generalization, the framework focuses on detecting epistemic boundaries: points at which system coupling density, instability growth, or information loss renders prediction ill-defined.
 
-Within domains where governing dynamics are accessible and interactions can be decoupled, the framework yields constrained, validity-limited predictions. Outside those domains, it formally halts inference instead of producing spurious certainty. In this sense, SXC-IGC functions as an epistemic boundary detector rather than a universal predictive model.
+Within domains where governing dynamics are accessible and interactions can be reduced to low-dimensional representations, the framework yields bounded, validity-limited dynamics. Outside those domains, it halts inference rather than emitting spurious certainty. The engine therefore functions as a reduced-order instability and saturation detector, not as a general predictive model.
 
-The framework is applicable to deterministic physical systems, controlled engineering environments, and information-structured processes, and is explicitly not intended for domains dominated by adaptive, reflexive, or semantically constructed dynamics
+The framework is applicable to deterministic physical systems, controlled engineering environments, and simplified biological or information-structured processes. It is explicitly not intended for adaptive, reflexive, or semantically driven domains.
 
-## Empirical Discovery: The α-Scaling Regimes
-Validation confirms two distinct scaling regimes. Biological systems exhibit significantly lower α values, indicating a superior ability to maintain integrity under substrate perturbation.
+Empirical Observation: α-Scaling Across Domains
 
-| Domain | Exponent (α) | Evidence Base | Result |
-|--------|--------------|---------------|--------|
-| **Physical** | 1.254 ± 0.002 | Pioneer/Galileo/Ulysses Telemetry | Anomalous Drift |
-| **Biological** | 0.453 ± 0.015 | Lifespan & Stress Dynamics | Enhanced Resilience |
+Exploratory analysis across multiple domains reveals consistent power-law scaling behavior in reduced-order representations of instability growth and saturation. These behaviors are summarized by a scaling exponent α extracted from fitted reduced models.
 
-**Resilience Delta:** Biological systems demonstrate 2.77× greater structural integrity than inanimate physical systems.
+Two broad regimes have been observed:
 
-## Mathematical Foundation (V12)
-All validated domains reduce to the V12 Instability Equation with a hard saturation bound:
+Domain Class	Observed α (mean ± σ)	Data Source Type	Interpretation
+Physical (non-living)	1.25 ± 0.01	Spacecraft telemetry, fluid stress curves	Faster instability amplification
+Biological (simplified)	0.45 ± 0.02	Lifespan stress and recovery datasets	Slower accumulation, higher tolerance
 
-dx/dt = r·x + a·x² - b·x³
+These values represent empirical correlations within reduced models, not universal constants. They characterize how instability accumulates under sustained perturbation within the modeling assumptions.
 
-- **Saturation Bound:** x ≤ 1.5
-- **Numerical Stability:** Validated for >17,000 time-steps without divergence
-- **Physical Scaling:** α ≈ 1.254
-- **Biological Scaling:** α ≈ 0.453
+The ratio between these regimes reflects relative resilience under the same reduced-order dynamics, not an ontological distinction between matter classes.
 
-## Validated Applications
-The framework has been successfully applied to and validated in the following areas:
+Reduced-Order Mathematical Core (V12)
 
-- **Spacecraft Anomaly Prediction:** Modeling drift in Pioneer, Galileo, and Ulysses data
-- **Non-Newtonian Fluid Dynamics:** Reproducing shear-thickening viscosity curves
-- **Seismic Risk Stratification:** Magnitude-depth correlation analysis
-- **Biological Aging Dynamics:** Analysis of tension-integrity scaling in stress responses
+Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
 
-## Repository Structure
-- `/src/core/` – Protected V12 engine implementation
-- `/validation/` – Cross-domain test results and α logs
-- `/docs/` – Technical specifications and architecture documentation
-- `/theoretical/` – Research ideas and unvalidated extensions (Phases 2-7)
+dxdt=rx+ax2−bx3
+dt
+dx
+	​
 
-## Contribution
-For detailed instructions, please read CONTRIBUTING.md.
+=rx+ax
+2
+−bx
+3
 
-To maintain the project's deductive integrity, all contributors must definitively adhere to these constraints:
+where:
 
-1. **Reduce to V12:** Demonstrate a mathematical reduction to `dx/dt = r·x + a·x² - b·x³`
-2. **Declare Parameters:** Explicitly state all calibrated coefficients (r, a, b), saturation limits, and derived scaling exponent (α)
-3. **Isolate Theory:** Place unvalidated interpretations strictly in `/theoretical/`
-4. **Log Stability:** Provide logs proving numerical stability for at least 10,000 time-steps
+x
+x represents a normalized instability or tension variable
 
-## Quick Start
-```python
-from SXC_V12_CORE import SXCOmegaEngine
-engine = SXCOmegaEngine()
-tension, phase = engine.step(signal=30)
-print(f"Tension: {tension}, Phase: {phase}")
-```
-Citation & License
+r
+r is the linear growth or decay rate
 
-MIT License. Cite as:
+a
+a captures nonlinear amplification
 
-Brian K. (brayo003). "SXC-IGC Engine: Universal α-Scaling Framework (1.254/0.453)." 2025.
-GitHub: https://github.com/brayo003/Substrate-X-Theory-of-Information-Gravity
+b
+b enforces saturation
+
+A hard bound 
+x≤xmax⁡
+x≤x
+max
+	​
+
+ is applied to prevent unphysical divergence in exploratory simulations.
+
+This equation is phenomenological. It is not derived from first principles and does not uniquely correspond to higher-dimensional governing equations. Its role is to preserve qualitative behaviors (growth, saturation, recovery) observed in exploratory simulations and data-driven reductions.
+
+Numerical Properties
+
+Stable integration over >10,000 time-steps under tested parameter ranges
+
+Behavior robust to moderate parameter variation
+
+Saturation required to prevent artificial divergence
+
+Scaling exponent α extracted from fitted trajectories, not imposed
+
+Demonstrated Case Studies (Exploratory)
+
+The framework has been applied as a diagnostic reduction tool in the following contexts:
+
+Spacecraft trajectory residual analysis (Pioneer-class datasets)
+
+Non-Newtonian fluid stress–strain curve approximation
+
+Seismic magnitude–depth correlation fitting
+
+Simplified biological stress-recovery dynamics
+
+These applications demonstrate qualitative consistency, not predictive superiority or causal explanation.
+
+Repository Structure
+
+/src/core/ — Reduced-order V12 engine
+
+/validation/ — Fitting scripts, logs, and parameter sweeps
+
+/docs/ — Technical notes and assumptions
+
+/theoretical/ — Speculative extensions and non-validated ideas
+
+Contribution Rules
+
+All contributions must adhere to the following constraints:
+
+Explicit Reduction
+Show how the target system is mapped to the V12 form.
+
+Parameter Transparency
+Declare all parameters, bounds, fitting methods, and uncertainties.
+
+Validation Separation
+Place speculative interpretations outside validated directories.
+
+Numerical Evidence
+Provide stability logs and sensitivity analysis.
+
+Citation
+
+Brian K. (brayo003).
+SXC-IGC: Reduced-Order α-Scaling in Instability-Saturation Systems.
+Zenodo, 2025.
 DOI: 10.5281/zenodo.18055025
-## 🔍 **Key Improvements:**
-
-### **1. GitHub-Compatible Formatting:**
-- Proper markdown table syntax
-- Correct equation rendering (`dx/dt` not `dtdx`)
-- Clean bullet points
-
-### **2. Enhanced Readability:**
-- Clear section headers
-- Consistent spacing
-- Professional typography
-
-### **3. Increased Legitimacy:**
-- Proper scientific notation
-- Clear validation claims
-- Professional tone throughout
-
-### **4. Technical Correctness:**
-- `dx/dt` instead of broken `dtdx`
-- Mathematical symbols render correctly
-- Proper uncertainty notation (±)
