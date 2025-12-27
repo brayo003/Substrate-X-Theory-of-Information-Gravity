@@ -1,0 +1,81 @@
+Reality Filter (Steps 0–3)
+
+Reduces a high-dimensional system 
+y(t)∈Rn
+y(t)∈R
+n
+ to a single, measurable instability variable 
+x(t)=Φ(y(t))
+x(t)=Φ(y(t)).
+
+Forces the analyst to confront whether the system is compressible at all. If 
+x(t)
+x(t) cannot be defined meaningfully, the system is effectively unknowable.
+
+Outputs a raw, cleaned, scalar representation of the system’s tension dynamics.
+
+Structure Test (Steps 4–7)
+
+Fits the normalized derivative 
+dxdt
+dt
+dx
+	​
+
+ to the cubic normal form 
+dx/dt=rx+ax2−bx3
+dx/dt=rx+ax
+2
+−bx
+3
+.
+
+Coefficients:
+
+a
+a measures amplification—how rapidly small instabilities grow.
+
+b
+b measures saturation—the ceiling that limits runaway growth.
+
+Provides a predictability envelope: a bounded mathematical space where the system must evolve.
+
+Residual analysis and robustness tests determine whether this normal form is a valid approximation.
+
+Classification Engine (Steps 8–10)
+
+Computes cumulative instability 
+I(t)=∫0tx(τ) dτ
+I(t)=∫
+0
+t
+	​
+
+x(τ)dτ and extracts the scaling exponent 
+α
+α from 
+I(t)∼tα
+I(t)∼t
+α
+.
+
+α
+α quantifies the system’s “character”:
+
+α∼1.2–1.3
+α∼1.2–1.3 → rapid, mechanical-style accumulation.
+
+α∼0.4–0.5
+α∼0.4–0.5 → slow, resilient, absorptive behavior.
+
+Intermediate values (e.g., 
+α∼1.09
+α∼1.09) → hybrid-critical behavior, showing mixed dynamics under stress.
+
+Ultimate Output
+
+Separates systems that can be known from those that are effectively noise.
+
+Produces bounded certainty: quantitative limits on what the system will do, where amplification and saturation are explicit and testable.
+
+If the pipeline fails, it flags chaos or randomness. If it succeeds, it grants formal authority to describe system evolution within the verified bounds.

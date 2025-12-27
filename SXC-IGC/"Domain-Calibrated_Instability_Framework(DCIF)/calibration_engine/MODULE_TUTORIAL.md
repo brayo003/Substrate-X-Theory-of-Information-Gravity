@@ -1,4 +1,4 @@
-# 📖 Build Your First DCII Module
+# Build Your First DCII Module
 ## Domain-Calibrated Instability Index (DCII) Framework Documentation
 
 ### **0. Purpose of This Tutorial**

@@ -1774,3 +1774,4 @@
 ./Substrate_X_Git/complete_physics_override.py:    alpha=1e-5,
 ./phase-1-physical-foundation/1.1-leak-flow-mechanics/substrate_physics.py:        self.alpha = 1e-10  # Information production per energy
 ./phase-1-physical-foundation/1.1-leak-flow-mechanics/substrate_physics.py:        info_production = self.alpha * energy
+SCALING_BRIDGE_ZETA: 2.0637 # Derived 2025-12-25 to bridge Baryon-Macro gap

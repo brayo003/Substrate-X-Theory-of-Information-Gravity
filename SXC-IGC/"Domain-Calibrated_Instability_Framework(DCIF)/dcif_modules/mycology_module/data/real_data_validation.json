@@ -1,0 +1,69 @@
+{
+  "calibration": {
+    "beta": 0.9799,
+    "gamma": 0.0644,
+    "beta_gamma_ratio": 15.21583850931677,
+    "interpretation": "Fungal growth is 15.2\u00d7 more sensitive than environmental resistance"
+  },
+  "datasets_analyzed": [
+    {
+      "dataset": "Validated Fungal Data v12",
+      "file": "validated_fungal_v12.csv",
+      "samples": 6,
+      "E": 0.3666666666666667,
+      "F": 0.5,
+      "T": 0.3270966666666667,
+      "state": "Slow Growth",
+      "emoji": "\ud83c\udf31",
+      "columns": [
+        "time_hours",
+        "temp_c",
+        "extension_rate_um_min",
+        "tension_x",
+        "biomass_mg"
+      ],
+      "summary_stats": {
+        "rows": 6,
+        "columns": 5,
+        "numeric_cols": 5
+      }
+    },
+    {
+      "dataset": "Test Fungal Data",
+      "file": "test_fungal_data.csv",
+      "samples": 6,
+      "E": 0.299,
+      "F": 0.25000000000000006,
+      "T": 0.2768901,
+      "state": "Slow Growth",
+      "emoji": "\ud83c\udf31",
+      "columns": [
+        "temperature",
+        "humidity",
+        "substrate",
+        "extension_rate_mm_per_day",
+        "biomass_g",
+        "resistance_level"
+      ],
+      "summary_stats": {
+        "rows": 6,
+        "columns": 6,
+        "numeric_cols": 5
+      }
+    }
+  ],
+  "averages": {
+    "E": 0.3328333333333333,
+    "F": 0.375,
+    "T": 0.30199338333333337
+  },
+  "cross_domain_position": {
+    "beta_gamma_ratio": 15.21583850931677,
+    "classification": "Growth-Dominant Systems",
+    "similar_domains": [
+      "Quantum Physics (\u03b2/\u03b3=24.1)",
+      "Other biological growth systems"
+    ],
+    "comparison": "4.2\u00d7 more fragile than social media, 9.3\u00d7 more fragile than financial markets"
+  }
+}

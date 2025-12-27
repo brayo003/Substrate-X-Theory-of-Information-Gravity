@@ -1,0 +1,7 @@
+temperature,humidity,substrate,extension_rate_mm_per_day,biomass_g,resistance_level
+15,60,"wood",0.5,0.2,0.8
+20,70,"wood",2.1,0.8,0.6
+25,80,"wood",5.3,2.5,0.4
+30,85,"wood",8.7,4.1,0.3
+35,90,"wood",4.2,3.2,0.5
+10,50,"soil",0.3,0.1,0.9
