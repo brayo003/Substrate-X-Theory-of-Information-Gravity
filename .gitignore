@@ -1,7 +1,36 @@
 *.gz
 *.tar.gz
-github/
-private github/
-token
 *.tsv
-anchor/*.hdf5
+*.hdf5
+__pycache__/
+
+# --- Environment & Credentials ---
+.env
+.venv/
+venv/
+ENV/
+*.pem
+*.key
+token*
+ghp_*
+
+# --- Python System Junk ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# --- IDE & OS Trash ---
+.vscode/
+.idea/
+.project
+.DS_Store
+Thumbs.db
+
+# --- Large Data & Research Artifacts ---
+*.log
+*.sqlite
+*.tmp
+node_modules/
+.ipynb_checkpoints/
