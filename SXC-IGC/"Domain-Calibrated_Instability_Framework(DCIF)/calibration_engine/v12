@@ -1,81 +1,64 @@
-Reality Filter (Steps 0–3)
+REALITY FILTER (STEPS 0–3)
 
-Reduces a high-dimensional system 
-y(t)∈Rn
-y(t)∈R
-n
- to a single, measurable instability variable 
-x(t)=Φ(y(t))
-x(t)=Φ(y(t)).
+Input
+High-dimensional system state:
+y(t) ∈ ℝⁿ
 
-Forces the analyst to confront whether the system is compressible at all. If 
-x(t)
-x(t) cannot be defined meaningfully, the system is effectively unknowable.
+Reduction
+Define a scalar instability variable:
+x(t) = Φ(y(t))
 
-Outputs a raw, cleaned, scalar representation of the system’s tension dynamics.
+Constraint
+Φ must be empirically meaningful and measurable.
 
-Structure Test (Steps 4–7)
+Decision
+If no such x(t) can be defined, the system is non-compressible and therefore not analyzable under SXC-IGC.
 
-Fits the normalized derivative 
-dxdt
-dt
-dx
-	​
+Output
+A cleaned, scalar time series x(t) representing system tension or instability density.
 
- to the cubic normal form 
-dx/dt=rx+ax2−bx3
-dx/dt=rx+ax
-2
-−bx
-3
-.
+STRUCTURE TEST (STEPS 4–7)
 
-Coefficients:
+Dynamics Fit
+Estimate the time derivative dx/dt and fit it to the V12 cubic normal form:
 
-a
-a measures amplification—how rapidly small instabilities grow.
+dx/dt = r·x + a·x² − b·x³
 
-b
-b measures saturation—the ceiling that limits runaway growth.
+Coefficient Roles
+r: linear growth or decay rate
+a: nonlinear amplification strength
+b: saturation strength enforcing boundedness
 
-Provides a predictability envelope: a bounded mathematical space where the system must evolve.
+Validation
+Residuals and robustness tests must confirm that the cubic form is a valid reduced-order approximation.
 
-Residual analysis and robustness tests determine whether this normal form is a valid approximation.
+Output
+A bounded dynamical envelope defining allowable system evolution.
 
-Classification Engine (Steps 8–10)
+CLASSIFICATION ENGINE (STEPS 8–10)
 
-Computes cumulative instability 
-I(t)=∫0tx(τ) dτ
-I(t)=∫
-0
-t
-	​
+Cumulative Instability
+Compute the integrated instability:
 
-x(τ)dτ and extracts the scaling exponent 
-α
-α from 
-I(t)∼tα
-I(t)∼t
-α
-.
+I(t) = ∫₀ᵗ x(τ) dτ
 
-α
-α quantifies the system’s “character”:
+Scaling Law
+Fit the temporal scaling:
 
-α∼1.2–1.3
-α∼1.2–1.3 → rapid, mechanical-style accumulation.
+I(t) ∼ t^α
 
-α∼0.4–0.5
-α∼0.4–0.5 → slow, resilient, absorptive behavior.
+Interpretation of α
+α ≈ 1.2–1.3 → fast accumulation, mechanically dominated dynamics
+α ≈ 0.4–0.5 → slow accumulation, resilient or absorptive dynamics
+Intermediate α → hybrid-critical behavior with mixed amplification and damping
 
-Intermediate values (e.g., 
-α∼1.09
-α∼1.09) → hybrid-critical behavior, showing mixed dynamics under stress.
+ULTIMATE OUTPUT
 
-Ultimate Output
+Binary Separation
+Distinguishes compressible, structured systems from noise-dominated or chaotic systems.
 
-Separates systems that can be known from those that are effectively noise.
+Bounded Certainty
+If successful, yields explicit limits on amplification, saturation, and long-term behavior.
 
-Produces bounded certainty: quantitative limits on what the system will do, where amplification and saturation are explicit and testable.
-
-If the pipeline fails, it flags chaos or randomness. If it succeeds, it grants formal authority to describe system evolution within the verified bounds.
+Failure Mode
+If reduction, fitting, or scaling fails, the system is classified as non-modelable within this framework.
