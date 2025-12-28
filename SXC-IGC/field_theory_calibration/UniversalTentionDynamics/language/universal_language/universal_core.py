@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-UNIVERSAL DYNAMICS CORE LANGUAGE
-The fundamental mathematical primitives for SXC-IGC engine
+Exploratory reaction–diffusion simulation with domain-themed presets
 """
 import numpy as np
 from typing import Tuple, Dict, Any
