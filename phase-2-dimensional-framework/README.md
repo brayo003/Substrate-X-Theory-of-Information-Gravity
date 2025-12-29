@@ -1,7 +1,7 @@
 # Phase 2: Dimensional Framework
 
 ## Overview
-Explores how Substrate X behaves across different dimensional scales - from 2D surface dynamics to 3D bulk properties and 4D spacetime emergence. This phase explains why reality appears 3D+time while being fundamentally interconnected across dimensions.
+A concept sketchbook to explores how Substrate X behaves across different dimensional scales - from 2D surface dynamics to 3D bulk properties and 4D spacetime emergence. This phase explains why reality appears 3D+time while being fundamentally interconnected across dimensions.
 
 ## Directory Structure
 
