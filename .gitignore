@@ -34,3 +34,5 @@ Thumbs.db
 *.tmp
 node_modules/
 .ipynb_checkpoints/
+.aider*
+.aider.tags.cache.v4/
