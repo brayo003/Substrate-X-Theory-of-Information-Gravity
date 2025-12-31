@@ -84,3 +84,12 @@ Contributions extend the framework; they do not redefine its core.
 
 Submissions failing the core requirement will be closed without further discussion.
 
+
+## Contributor License Agreement
+
+By submitting code to this repository:
+1. You grant brayo003 permission to use your contribution
+2. You confirm you have rights to contribute this code  
+3. You agree it will be licensed under MIT
+4. You retain copyright to your specific contribution
+
