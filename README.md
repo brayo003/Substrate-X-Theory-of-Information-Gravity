@@ -7,11 +7,11 @@ SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
 
 The Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution via measurable state variables, coupling structure, and saturation effects.
 
-    Primary Objective: Detecting epistemic boundaries where system coupling density or information loss renders inference ill-defined.
+  Primary Objective: Detecting epistemic boundaries where system coupling density or information loss renders inference ill-defined.
 
-    Operational Scope: Functions as a reduced-order instability and saturation detector, not a general predictive model.
+   Operational Scope: Functions as a reduced-order instability and saturation detector, not a general predictive model.
 
-    Applicability: Deterministic physical systems, controlled engineering, and simplified biological processes. (Excludes adaptive/reflexive domains).
+   Applicability: Deterministic physical systems, controlled engineering, and simplified biological processes. (Excludes adaptive/reflexive domains).
 
 2. Empirical Observation: α-Scaling Across Domains
 
@@ -43,9 +43,9 @@ I. The Core Substrate (Engine & Framework)
 
 The primary engine and the domain-calibrated frameworks for instability detection.
 
-    SXC_V12_CORE.py : The mathematical heart; cubic instability–saturation normal form.
+  SXC_V12_CORE.py : The mathematical heart; cubic instability–saturation normal form.
 
-    SXC-IGC/ : The operational environment.
+   SXC-IGC/ : The operational environment.
 
         authoritative_core/ : Validated logic gates.
 
