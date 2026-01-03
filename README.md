@@ -1,104 +1,116 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18055025.svg)](https://doi.org/10.5281/zenodo.18055025)
 SXC-IGC Engine
 α-Scaling in Reduced-Order Instability Systems
+SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
+1. Executive Overview
 
-Overview
-SXC-IGC Engine
-α-Scaling in Reduced-Order Instability Systems
-Overview
+The Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution via measurable state variables, coupling structure, and saturation effects.
 
-Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
+    Primary Objective: Detecting epistemic boundaries where system coupling density or information loss renders inference ill-defined.
 
-Rather than extending predictive reach through probabilistic extrapolation or learning-based generalization, the framework focuses on detecting epistemic boundaries: points at which system coupling density, instability growth, or information loss renders prediction ill-defined.
+    Operational Scope: Functions as a reduced-order instability and saturation detector, not a general predictive model.
 
-Within domains where governing dynamics are accessible and interactions can be reduced to low-dimensional representations, the framework yields bounded, validity-limited dynamics. Outside those domains, it halts inference rather than emitting spurious certainty. The engine therefore functions as a reduced-order instability and saturation detector, not as a general predictive model.
+    Applicability: Deterministic physical systems, controlled engineering, and simplified biological processes. (Excludes adaptive/reflexive domains).
 
-The framework is applicable to deterministic physical systems, controlled engineering environments, and simplified biological or information-structured processes. It is explicitly not intended for adaptive, reflexive, or semantically driven domains.
+2. Empirical Observation: α-Scaling Across Domains
 
-Empirical Observation
-α-Scaling Across Domains
+Consistent power-law scaling behavior is observed in reduced-order representations of instability growth. The scaling exponent α characterizes the rate of instability accumulation under sustained perturbation.
+Domain Class	Observed α (mean ±σ)	Data Source Type	Interpretation
+Physical	1.25±0.01	Spacecraft telemetry, fluid stress	Rapid instability amplification
+Biological	0.45±0.02	Lifespan stress/recovery datasets	High tolerance, slow accumulation
 
-Exploratory analysis across multiple domains reveals consistent power-law scaling behavior in reduced-order representations of instability growth and saturation. These behaviors are summarized by a scaling exponent α extracted from fitted reduced models.
+3. Reduced-Order Mathematical Core (V12​)
 
-Two broad regimes have been observed:
+System behavior is approximated by a cubic instability–saturation normal form:
+dtdx​=rx+ax2−bx3
 
-Observed Scaling Regimes
-Domain Class	Observed α (mean ± σ)	Data Source Type	Interpretation
-Physical (non-living)	1.25 ± 0.01	Spacecraft telemetry, fluid stress curves	Faster instability amplification
-Biological (simplified)	0.45 ± 0.02	Lifespan stress and recovery datasets	Slower accumulation, higher tolerance
+Variable Definitions:
 
-These values represent empirical correlations within reduced models, not universal constants. They characterize how instability accumulates under sustained perturbation within the modeling assumptions.
+    x: Normalized instability or tension variable.
 
-The ratio between these regimes reflects relative resilience under the same reduced-order dynamics, not an ontological distinction between matter classes.
+    r: Linear growth or decay rate.
 
-Reduced-Order Mathematical Core
-V12
+    a: Nonlinear amplification factor.
 
-Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
+    b: Saturation enforcement.
 
-dx/dt = r·x + a·x² − b·x³
+    Constraint: A hard bound x≤xmax​ is applied to prevent unphysical divergence.
 
-where:
+SXC-IGC: Theory of Information Gravity
+Authoritative Repository Architecture
+I. The Core Substrate (Engine & Framework)
 
-x represents a normalized instability or tension variable
-r is the linear growth or decay rate
-a captures nonlinear amplification
-b enforces saturation
+The primary engine and the domain-calibrated frameworks for instability detection.
 
-A hard bound
+    SXC_V12_CORE.py : The mathematical heart; cubic instability–saturation normal form.
 
-x ≤ xₘₐₓ
+    SXC-IGC/ : The operational environment.
 
-is applied to prevent unphysical divergence in exploratory simulations.
+        authoritative_core/ : Validated logic gates.
 
-This equation is phenomenological. It is not derived from first principles and does not uniquely correspond to higher-dimensional governing equations. Its role is to preserve qualitative behaviors (growth, saturation, recovery) observed in exploratory simulations and data-driven reductions.
+        Domain-Calibrated_Instability_Framework(DCIF)/ : The situational mapping logic.
 
-Numerical Properties
+        field_theory_calibration/ : Spatial/temporal parameter alignment.
 
-Stable integration over >10,000 time-steps under tested parameter ranges
-Behavior robust to moderate parameter variation
-Saturation required to prevent artificial divergence
-Scaling exponent α extracted from fitted trajectories, not imposed
+        UMDE/ : Unified Measurement & Data Environment.
 
-Demonstrated Case Studies
-Exploratory
+II. The Anchor (Theoretical Foundation & Evidence)
 
-The framework has been applied as a diagnostic reduction tool in the following contexts:
+The weight that grounds the theory in physical reality.
 
-Spacecraft trajectory residual analysis (Pioneer-class datasets)
-Non-Newtonian fluid stress–strain curve approximation
-Seismic magnitude–depth correlation fitting
-Simplified biological stress-recovery dynamics
+    anchor/ : Primary evidence reconstruction.
 
-These applications demonstrate qualitative consistency, not predictive superiority or causal explanation.
+        SXC_EVIDENCE_RECON.py : The script bridging raw data to IGC theory.
 
-Repository Structure
-GitHub Root: Substrate_X_Theory_of_Information_Gravity/
+        theoretical_derivation_fixed.py : The axiomatic proof.
 
-/SXC-IGC/ — Reduced-order V12 engine, instability framework, and core constraints
-/verification/ — Numerical validation, stability tests, and determinism checks
-/templates/ — Reusable experiment and reduction templates
-/speculative_theories/ — Non-validated extensions and exploratory ideas
-/references/ — External sources and citations
-/phase-* directories — Sequential conceptual and experimental layers
+        SYNOPSIS.md : High-level theoretical summary.
 
-This structure separates validated mechanisms from speculative material by construction.
+        complete_theory.txt : The definitive textual definition.
 
-Contribution Rules
-Mandatory Constraints
+III. Verification & Procedural Integrity
 
-Explicit Reduction
-Show how the target system is mapped to the V12 form.
+The gates through which data must pass to be considered "Discovery."
 
-Parameter Transparency
-Declare all parameters, bounds, fitting methods, and uncertainties.
+    verification/ : The testing suite.
 
-Validation Separation
-Place speculative interpretations outside validated directories.
+        substrate_x_dynamics.py : Active simulation of the substrate.
 
-Numerical Evidence
-Provide stability logs and sensitivity analysis.
+        scaling_law.py : Extraction of the α-scaling exponents.
 
+        ACTUAL_DISCOVERIES.md : Log of validated breakthroughs.
+
+        VALIDATION_CHECKLIST.md : Procedural constraints for new data.
+
+IV. The Developmental Progression (Phases)
+
+The chronological and conceptual evolution of the framework.
+
+    phase-1 through phase-7 : Discrete stages from Physical Foundation to the Unified Paradigm.
+
+    fundamental_prove/ : Early-stage proofs for the information-gravity constant.
+
+V. Global Documentation
+
+    README.md : The main portal.
+
+    ACCOMPLISHMENT_SUMMARY.md : The ledger of technical achievements.
+
+    CONTRIBUTING.md : Rules of the engine (Reduction, Transparency, Evidence).
+
+    PROJECT_COMPLETE.md : The final sign-off on the framework’s current state.
+
+5. Contribution Protocol
+
+All contributions must adhere to the following logic-consistent constraints:
+
+    Explicit Reduction: Demonstrate the mapping of the target system to the V12​ form.
+
+    Parameter Transparency: Declare all bounds, fitting methods, and uncertainties.
+
+    Validation Separation: Speculative interpretations must reside in /speculative_theories/.
+
+    Numerical Evidence: Provide stability logs and sensitivity analysis for every pull request.
 Citation
 Brian K. (brayo003).
 SXC-IGC: Reduced-Order α-Scaling in Instability-Saturation Systems.
