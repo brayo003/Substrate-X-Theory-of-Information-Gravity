@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18055025.svg)](https://doi.org/10.5281/zenodo.18055025)
-
-SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
+SXC-IGC Engine
+α-Scaling in Reduced-Order Instability Systems
 Overview
 
 Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
@@ -11,12 +11,14 @@ Within domains where governing dynamics are accessible and interactions can be r
 
 The framework is applicable to deterministic physical systems, controlled engineering environments, and simplified biological or information-structured processes. It is explicitly not intended for adaptive, reflexive, or semantically driven domains.
 
-Empirical Observation: α-Scaling Across Domains
+Empirical Observation
+α-Scaling Across Domains
 
 Exploratory analysis across multiple domains reveals consistent power-law scaling behavior in reduced-order representations of instability growth and saturation. These behaviors are summarized by a scaling exponent α extracted from fitted reduced models.
 
 Two broad regimes have been observed:
 
+Observed Scaling Regimes
 Domain Class	Observed α (mean ± σ)	Data Source Type	Interpretation
 Physical (non-living)	1.25 ± 0.01	Spacecraft telemetry, fluid stress curves	Faster instability amplification
 Biological (simplified)	0.45 ± 0.02	Lifespan stress and recovery datasets	Slower accumulation, higher tolerance
@@ -25,81 +27,55 @@ These values represent empirical correlations within reduced models, not univers
 
 The ratio between these regimes reflects relative resilience under the same reduced-order dynamics, not an ontological distinction between matter classes.
 
-Reduced-Order Mathematical Core (V12)
+Reduced-Order Mathematical Core
+V12 Normal Form
 
 Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
 
-dxdt=rx+ax2−bx3
-dt
-dx
-	​
-
-=rx+ax
-2
-−bx
-3
+dx/dt = r·x + a·x² − b·x³
 
 where:
 
-x
-x represents a normalized instability or tension variable
+• x represents a normalized instability or tension variable
+• r is the linear growth or decay rate
+• a captures nonlinear amplification
+• b enforces saturation
 
-r
-r is the linear growth or decay rate
+A hard bound
+x ≤ xₘₐₓ
 
-a
-a captures nonlinear amplification
-
-b
-b enforces saturation
-
-A hard bound 
-x≤xmax⁡
-x≤x
-max
-	​
-
- is applied to prevent unphysical divergence in exploratory simulations.
+is applied to prevent unphysical divergence in exploratory simulations.
 
 This equation is phenomenological. It is not derived from first principles and does not uniquely correspond to higher-dimensional governing equations. Its role is to preserve qualitative behaviors (growth, saturation, recovery) observed in exploratory simulations and data-driven reductions.
 
 Numerical Properties
 
-Stable integration over >10,000 time-steps under tested parameter ranges
+• Stable integration over >10,000 time-steps under tested parameter ranges
+• Behavior robust to moderate parameter variation
+• Saturation required to prevent artificial divergence
+• Scaling exponent α extracted from fitted trajectories, not imposed
 
-Behavior robust to moderate parameter variation
-
-Saturation required to prevent artificial divergence
-
-Scaling exponent α extracted from fitted trajectories, not imposed
-
-Demonstrated Case Studies (Exploratory)
+Demonstrated Case Studies
+Exploratory Applications
 
 The framework has been applied as a diagnostic reduction tool in the following contexts:
 
-Spacecraft trajectory residual analysis (Pioneer-class datasets)
-
-Non-Newtonian fluid stress–strain curve approximation
-
-Seismic magnitude–depth correlation fitting
-
-Simplified biological stress-recovery dynamics
+• Spacecraft trajectory residual analysis (Pioneer-class datasets)
+• Non-Newtonian fluid stress–strain curve approximation
+• Seismic magnitude–depth correlation fitting
+• Simplified biological stress-recovery dynamics
 
 These applications demonstrate qualitative consistency, not predictive superiority or causal explanation.
 
 Repository Structure
 
-/src/core/ — Reduced-order V12 engine
-
-/validation/ — Fitting scripts, logs, and parameter sweeps
-
-/docs/ — Technical notes and assumptions
-
-/theoretical/ — Speculative extensions and non-validated ideas
+• /src/core/ — Reduced-order V12 engine
+• /validation/ — Fitting scripts, logs, and parameter sweeps
+• /docs/ — Technical notes and assumptions
+• /theoretical/ — Speculative extensions and non-validated ideas
 
 Contribution Rules
-
-All contributions must adhere to the following constraints:
+Mandatory Constraints
 
 Explicit Reduction
 Show how the target system is mapped to the V12 form.
@@ -112,7 +88,6 @@ Place speculative interpretations outside validated directories.
 
 Numerical Evidence
 Provide stability logs and sensitivity analysis.
-
 Citation
 
 Brian K. (brayo003).
