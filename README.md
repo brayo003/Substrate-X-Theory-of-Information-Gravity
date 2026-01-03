@@ -88,11 +88,10 @@ These applications demonstrate qualitative consistency, not predictive superiori
 
 Repository Structure
 
-/src/core/ — Reduced-order V12 engine
 
 /validation/ — Fitting scripts, logs, and parameter sweeps
 
-/docs/ — Technical notes and assumptions
+/anchor/ — Technical notes and assumptions
 
 /theoretical/ — Speculative extensions and non-validated ideas
 
