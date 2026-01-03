@@ -1,6 +1,10 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18055025.svg)](https://doi.org/10.5281/zenodo.18055025)
 SXC-IGC Engine
 α-Scaling in Reduced-Order Instability Systems
+
+Overview
+SXC-IGC Engine
+α-Scaling in Reduced-Order Instability Systems
 Overview
 
 Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
@@ -28,7 +32,7 @@ These values represent empirical correlations within reduced models, not univers
 The ratio between these regimes reflects relative resilience under the same reduced-order dynamics, not an ontological distinction between matter classes.
 
 Reduced-Order Mathematical Core
-V12 Normal Form
+V12
 
 Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
 
@@ -36,12 +40,13 @@ dx/dt = r·x + a·x² − b·x³
 
 where:
 
-• x represents a normalized instability or tension variable
-• r is the linear growth or decay rate
-• a captures nonlinear amplification
-• b enforces saturation
+x represents a normalized instability or tension variable
+r is the linear growth or decay rate
+a captures nonlinear amplification
+b enforces saturation
 
 A hard bound
+
 x ≤ xₘₐₓ
 
 is applied to prevent unphysical divergence in exploratory simulations.
@@ -50,29 +55,34 @@ This equation is phenomenological. It is not derived from first principles and d
 
 Numerical Properties
 
-• Stable integration over >10,000 time-steps under tested parameter ranges
-• Behavior robust to moderate parameter variation
-• Saturation required to prevent artificial divergence
-• Scaling exponent α extracted from fitted trajectories, not imposed
+Stable integration over >10,000 time-steps under tested parameter ranges
+Behavior robust to moderate parameter variation
+Saturation required to prevent artificial divergence
+Scaling exponent α extracted from fitted trajectories, not imposed
 
 Demonstrated Case Studies
-Exploratory Applications
+Exploratory
 
 The framework has been applied as a diagnostic reduction tool in the following contexts:
 
-• Spacecraft trajectory residual analysis (Pioneer-class datasets)
-• Non-Newtonian fluid stress–strain curve approximation
-• Seismic magnitude–depth correlation fitting
-• Simplified biological stress-recovery dynamics
+Spacecraft trajectory residual analysis (Pioneer-class datasets)
+Non-Newtonian fluid stress–strain curve approximation
+Seismic magnitude–depth correlation fitting
+Simplified biological stress-recovery dynamics
 
 These applications demonstrate qualitative consistency, not predictive superiority or causal explanation.
 
 Repository Structure
+GitHub Root: Substrate_X_Theory_of_Information_Gravity/
 
-• /src/core/ — Reduced-order V12 engine
-• /validation/ — Fitting scripts, logs, and parameter sweeps
-• /docs/ — Technical notes and assumptions
-• /theoretical/ — Speculative extensions and non-validated ideas
+/SXC-IGC/ — Reduced-order V12 engine, instability framework, and core constraints
+/verification/ — Numerical validation, stability tests, and determinism checks
+/templates/ — Reusable experiment and reduction templates
+/speculative_theories/ — Non-validated extensions and exploratory ideas
+/references/ — External sources and citations
+/phase-* directories — Sequential conceptual and experimental layers
+
+This structure separates validated mechanisms from speculative material by construction.
 
 Contribution Rules
 Mandatory Constraints
@@ -88,8 +98,8 @@ Place speculative interpretations outside validated directories.
 
 Numerical Evidence
 Provide stability logs and sensitivity analysis.
-Citation
 
+Citation
 Brian K. (brayo003).
 SXC-IGC: Reduced-Order α-Scaling in Instability-Saturation Systems.
 Zenodo, 2025.
