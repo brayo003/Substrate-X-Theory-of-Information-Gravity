@@ -1,6 +1,3 @@
-phenomenon,experiment,status,x17_impact
-Muon_g-2,FNAL/BNL,4.2_sigma_tension,Positive_Correction
-Electron_g-2,LKB_Paris,Tension,Negative_Correction
-Kaon_Decay,NA62_CERN,Constraint,Invisible_Signature
-Stellar_Cooling,IAU,Limit,Trapping_Requirement
-Dark_Matter,Relic_Density,Theory,Mediator_Potential
+version https://git-lfs.github.com/spec/v1
+oid sha256:7a8412fe747d6d3efeb5a3f4c99c7490d3bd60169f7e5d45c4ab4490a5125dee
+size 298
