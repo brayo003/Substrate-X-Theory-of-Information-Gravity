@@ -113,6 +113,8 @@ Numerical Evidence
 Provide stability logs and sensitivity analysis.
 
 
+
+
 Citation
 Brian K. (brayo003).
 SXC-IGC: Reduced-Order α-Scaling in Instability-Saturation Systems.
