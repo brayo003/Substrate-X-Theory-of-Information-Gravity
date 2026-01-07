@@ -1,9 +1,3 @@
-{
-  "m1_Msun": 36.0,
-  "m2_Msun": 29.0,
-  "M_f_Msun": 62.0,
-  "a_f": 0.67,
-  "gr_freq_Hz": 272.39591876812636,
-  "gr_tau_s": 0.003700703775830011,
-  "gr_Q": 3.166903225003332
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6db048812e9e9ee0d9c2badc591061c2d3da94d4cdd9fbabe33b5dd394e9e63c
+size 176

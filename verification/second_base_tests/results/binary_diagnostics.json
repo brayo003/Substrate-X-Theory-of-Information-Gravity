@@ -1,9 +1,3 @@
-{
-  "fft_plot": "verification/second_base_tests/results/binary_fft.png",
-  "amplitude_plot": "verification/second_base_tests/results/binary_amplitude.png",
-  "flux_file": "verification/second_base_tests/results/binary_flux.npy",
-  "peak_frequency_Hz": 0.04070117376007359,
-  "peak_amplitude": 1.0606906927773385e-05,
-  "avg_flux": 2.3555876004727923e-13,
-  "expected_double_frequency": -5.2584487737382814e-08
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:26f79d2ff2bd4cb430e2ef01a9f8baace001807585b3de50edf1b739993b1214
+size 411

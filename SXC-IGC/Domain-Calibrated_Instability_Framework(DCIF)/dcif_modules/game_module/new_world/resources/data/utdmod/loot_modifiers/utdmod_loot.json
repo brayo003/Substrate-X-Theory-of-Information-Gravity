@@ -1,13 +1,3 @@
-{
-  "type": "minecraft:loot_modifier",
-  "conditions": [
-    {
-      "condition": "minecraft:random_chance",
-      "chance": 0.25
-    }
-  ],
-  "addition": {
-    "item": "minecraft:emerald",
-    "count": 1
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:91f151a82824178a48a0c25958c67e23a4c795d016f6717f05b1ab72d169c76f
+size 211

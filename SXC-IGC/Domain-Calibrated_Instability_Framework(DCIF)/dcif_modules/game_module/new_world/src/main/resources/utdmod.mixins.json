@@ -1,8 +1,3 @@
-{
-  "required": true,
-  "package": "com.utdmod.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "mixins": [],
-  "client": ["client.WorldRendererMixin"],
-  "injectors": { "defaultRequire": 1 }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1927ddfeab438ee216e2357f23e03f420bdd164b210fc216178df21e9a5ef122
+size 190

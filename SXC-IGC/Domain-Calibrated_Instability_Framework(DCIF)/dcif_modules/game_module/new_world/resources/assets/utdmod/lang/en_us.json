@@ -1,6 +1,3 @@
-{
-  "entity.utdmod.tension_serpent": "Tension Serpent",
-  "entity.utdmod.tension_wraith": "Tension Wraith",
-  "item.utdmod.signal_probe": "Signal Probe",
-  "block.utdmod.ritual_block": "Ritual Block"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9a32f92ec80c290d011ba53876d20ec02380f1b038770e662d72f01153d6a564
+size 202

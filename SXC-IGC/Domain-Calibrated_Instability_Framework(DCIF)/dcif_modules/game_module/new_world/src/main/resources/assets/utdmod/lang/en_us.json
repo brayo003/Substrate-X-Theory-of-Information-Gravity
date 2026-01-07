@@ -1,14 +1,3 @@
-{
-  "subtitles.utdmod.storm_ambient": "Storm rumbles",
-  "subtitles.utdmod.tension_pulse": "Tension pulses",
-  "subtitles.utdmod.tension_pulse_high": "Tension surges",
-  "subtitles.utdmod.cave_echo": "Echo pulses",
-
-  "itemGroup.utdmod.utd_group": "Under the Dome: Artifacts",
-
-  "block.utdmod.ritual_block": "Ceremonial Ritual Slab",
-  
-  "item.utdmod.signal_probe": "Signal Probe",
-  "item.utdmod.volatile_stim": "Volatile Stimulant",
-  "item.utdmod.stability_tonic": "Stability Tonic"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:aa33e5271ee8953173ec2db790eb096aa0884229ffd0e180b410d22feef589d5
+size 490

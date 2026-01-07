@@ -1,32 +1,3 @@
-{
-  "title": "The SXC-IGC Engine: Deterministic Multi-Domain Simulation and the Universal α=1.254 Scaling",
-  "description": "This repository contains the SXC-IGC (Substrate X Coupling - Information Gravity Control) engine, a deterministic framework validated across domains. Key discovery: γ/β ∝ ρ^1.254 scaling in spacecraft anomalies. The same engine reproduces non-Newtonian fluid behavior and accurately stratifies seismic risk, suggesting α=1.254 is a universal exponent for state transitions.",
-  "upload_type": "software",
-  "access_right": "open",
-  "license": "MIT",
-  "creators": [
-    {
-      "name": "[Your Name or GitHub Username]",
-      "affiliation": "Independent Researcher"
-    }
-  ],
-  "keywords": [
-    "complex-systems",
-    "scaling-laws",
-    "deterministic-simulation",
-    "non-newtonian-fluids",
-    "seismic-analysis",
-    "physics",
-    "computational-physics",
-    "open-source"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/brayo003/Substrate-X-Theory-of-Information-Gravity",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    }
-  ],
-  "publication_date": "2025-12-23",
-  "version": "v1.0.0"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a00e96db4dad745bd595f7eee5cb9675008ae8d30006084004ac2a1b6737576b
+size 1176

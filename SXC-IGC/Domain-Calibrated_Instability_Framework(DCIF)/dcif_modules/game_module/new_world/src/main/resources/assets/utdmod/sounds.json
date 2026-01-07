@@ -1,27 +1,3 @@
-{
-  "ritual_activate": {
-    "category": "block",
-    "subtitle": "subtitles.utdmod.ritual_activate",
-    "sounds": [ "utdmod:ritual_activate" ]
-  },
-  "ritual_ambient": {
-    "category": "block",
-    "subtitle": "subtitles.utdmod.ritual_ambient",
-    "sounds": [ "utdmod:ritual_ambient" ]
-  },
-  "tension_increase": {
-    "category": "player",
-    "subtitle": "subtitles.utdmod.tension_increase",
-    "sounds": [ "utdmod:heartbeat_fast" ]
-  },
-  "serpent_ambient": {
-    "category": "hostile",
-    "subtitle": "subtitles.utdmod.serpent_ambient",
-    "sounds": [ "utdmod:serpent_groan_1", "utdmod:serpent_groan_2" ]
-  },
-  "wraith_scream": {
-    "category": "hostile",
-    "subtitle": "subtitles.utdmod.wraith_scream",
-    "sounds": [ "utdmod:wraith_scream" ]
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a0b9519f133ce123296abd148eeb9712f9987bdfa06a535cda3d79a0c1a86829
+size 766

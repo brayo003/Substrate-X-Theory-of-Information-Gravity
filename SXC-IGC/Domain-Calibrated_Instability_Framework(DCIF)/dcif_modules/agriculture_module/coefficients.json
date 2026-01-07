@@ -1,13 +1,3 @@
-{
-  "module": "agriculture_blight",
-  "coefficients": {
-    "alpha": 0.0,
-    "beta": 0.9416,
-    "gamma": 0.1074
-  },
-  "taxonomy": "Excitation-Dominant",
-  "anchors": {
-    "stable": {"E": 0.15, "F": 0.85, "T": 0.05},
-    "crisis": {"E": 0.92, "F": 0.10, "T": 0.85}
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e8871dc165732e001280b1c043d23d2f5077426539180d404a26db8d6fbc2ec3
+size 274

@@ -1,7 +1,3 @@
-{
-  "delta1": 0.5,
-  "delta2": 0.3,
-  "keff_solar": 0.000379,
-  "use_case": "solar_system_scale",
-  "performance": "best_overall"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:57c8f8515a767dfc3d164e7d3f5fc4110b10595e6e27b49ac63d5191a14c599f
+size 131

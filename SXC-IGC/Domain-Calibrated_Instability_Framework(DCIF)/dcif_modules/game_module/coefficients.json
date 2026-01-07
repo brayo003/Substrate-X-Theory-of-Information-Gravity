@@ -1,9 +1,3 @@
-{
-  "module": "game_theory",
-  "coefficients": {
-    "alpha": 0.0,
-    "beta": 0.9633,
-    "gamma": 0.0402
-  },
-  "taxonomy": "Incentive-Volatile"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d1046abad1056c746306589dd7b40000eca4e0a68dcdef8a313096f8dbe1a826
+size 149

@@ -1,6 +1,3 @@
-{
-  "name": "tension_serpent",
-  "bypasses_armor": true,
-  "damage_category": "magic",
-  "description": "Armor-piercing attack from the Tension Serpent."
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8622c5d99fe69bf281cf123f9c987cd1ebf460b485a783c4d9b5e8845203cf49
+size 156

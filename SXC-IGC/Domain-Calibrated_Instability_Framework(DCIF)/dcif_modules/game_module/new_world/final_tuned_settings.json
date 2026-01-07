@@ -1,9 +1,3 @@
-{
-    "base_rate": 0.0010646125,
-    "ritual_reduction": 0.05,
-    "wraith_threshold": 0.6499999999999998,
-    "serpent_threshold": 0.98,
-    "grid_n": 200,
-    "steps": 20000,
-    "ritual_use_interval": 500
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d74e98ec06220d76ce208a2344666b2c2aa0d3951abdb833ad6f117f214f317c
+size 210

@@ -1,9 +1,3 @@
-{
-  "mean_abs_center": 0.00021221587520366488,
-  "horizon_radius_m": null,
-  "profile_plot": "verification/second_base_tests/results/collapse_profiles.png",
-  "central_bounds": [
-    -1.0305767055829436e-07,
-    0.000988873523547149
-  ]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:faa5c9c6baae0756fa45287b23c758fcbfea18853668e787ffd2db3dbd3e6248
+size 238

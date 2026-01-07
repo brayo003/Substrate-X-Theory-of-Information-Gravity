@@ -1,21 +1,3 @@
-{
-  "schemaVersion": 1,
-  "id": "utdmod",
-  "version": "1.0.0",
-  "name": "UTD Mod",
-  "description": "Internal UTD systems.",
-  "authors": [ "brayo" ],
-
-  "environment": "*",
-
-  "entrypoints": {
-    "main": [ "com.utdmod.UTDMod" ],
-    "client": [ "com.utdmod.UTDModClient" ]
-  },
-
-  "depends": {
-    "minecraft": "1.20.4",
-    "fabricloader": ">=0.15.10",
-    "fabric-api": "*"
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:340f47434b5b4c6b7b71285fcab7b3c78fddd10b76af192bfa96e725c903182a
+size 386

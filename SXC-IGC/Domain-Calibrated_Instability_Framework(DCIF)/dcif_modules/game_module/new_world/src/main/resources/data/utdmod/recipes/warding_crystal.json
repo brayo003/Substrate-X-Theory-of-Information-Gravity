@@ -1,16 +1,3 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " Q ",
-    "QGQ",
-    " Q "
-  ],
-  "key": {
-    "Q": { "item": "minecraft:quartz" },
-    "G": { "item": "minecraft:glowstone_dust" }
-  },
-  "result": {
-    "item": "utdmod:warding_crystal",
-    "count": 1
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ae53cef96156a0314ce54273675cf9c4329a341391480b2a7f895e8ac2f3e8e8
+size 271
