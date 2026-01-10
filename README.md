@@ -114,6 +114,9 @@ Numerical Evidence
 Provide stability logs and sensitivity analysis.
 
 
+"This software is licensed under GPL v3 for open-source use. For commercial integration or private licensing, please contact the author."
+
+
 Citation
 
 
