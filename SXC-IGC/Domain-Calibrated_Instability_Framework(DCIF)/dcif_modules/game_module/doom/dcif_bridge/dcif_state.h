@@ -2,13 +2,13 @@
 #define DCIF_STATE_H
 
 typedef struct {
-    double instability;
-    double saturation;
-    double resistance;
-    unsigned long epoch;
-} dcif_state_t;
+    double t_sys;
+    double signal;
+    double time;
+} SXC_Engine;
 
-void dcif_load_state(const char *path);
-dcif_state_t *dcif_get_state(void);
+extern SXC_Engine global_sxc_engine;
+
+void sxc_compute_tension(SXC_Engine* engine, double signal, double time);
 
 #endif

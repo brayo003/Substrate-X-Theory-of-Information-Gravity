@@ -81,3 +81,6 @@ doom_icon.c : $(top_builddir)/data/doom.png
 	$(top_builddir)/data/convert-icon $(top_builddir)/data/doom.png $@
 
 endif
+
+# SXC-IGC: Link DCIF Bridge into the static Doom library
+libdoom_a_SOURCES += ../../../../dcif_bridge/dcif_state.c

@@ -1,3 +1,4 @@
+#include "../../../../dcif_bridge/dcif_state.h"
 //
 // Copyright(C) 1993-1996 Id Software, Inc.
 // Copyright(C) 2005-2014 Simon Howard
@@ -124,6 +125,12 @@ void P_RunThinkers (void)
 
 void P_Ticker (void)
 {
+    int active_mobj_count = 0;
+    thinker_t *th;
+    for (th = thinkercap.next; th != &thinkercap; th = th->next) {
+        if (th->function.acp1 == (actionf_p1)P_MobjThinker) active_mobj_count++;
+    }
+    sxc_compute_tension(&global_sxc_engine, (double)active_mobj_count, (double)leveltime);
     int		i;
     
     // run the tic
