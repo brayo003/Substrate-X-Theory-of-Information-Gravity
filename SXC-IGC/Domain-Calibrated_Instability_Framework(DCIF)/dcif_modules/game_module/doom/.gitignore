@@ -1,0 +1,4 @@
+iwads/
+build/
+*.log
+engine/chocolate-doom/autom4te.cache
