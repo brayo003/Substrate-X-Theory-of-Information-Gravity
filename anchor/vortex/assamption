@@ -1,0 +1,273 @@
+ Test 1: First-Order Analytical Derivation of Vortex Kinetic Energy
+
+We assume a stable, massive object (the galactic center) induces a long-range, 1/r substrate flow v
+
+
+sub
+
+​ via the Proca-GP coupling. This flow is the Dark Matter energy.
+
+
+Step 1: Simplify the Stress-Energy Tensor (Tμν
+
+​)
+
+We focus on the contribution of the substrate's kinetic energy to the effective mass density, ρflow
+
+​. This comes from the T00
+
+​ component of the field's stress-energy tensor (Tfield
+
+μν
+
+​) in the non-relativistic limit.
+
+The T00
+
+​ term is the total energy density ρX
+
+​.
+
+
+ρX
+
+​≡T00
+
+​=2
+
+
+1
+
+​(X
+
+˙
+
+2
+
++mX
+
+2
+
+​X2
+
+)+…
+
+In the steady-state, non-relativistic limit, the dynamic component of the field potential is X
+
+˙
+
+≈v
+
+
+sub
+
+​.
+
+The relevant mass contribution is the Kinetic Energy Density (ρflow
+
+​):
+
+
+ρflow
+
+​≈2
+
+
+1
+
+​ρ0
+
+​∣v
+
+
+sub
+
+​∣2
+
+where ρ0
+
+​ is the ambient substrate rest density (vacuum energy).
+
+
+Step 2: Propose the Vortex Solution (First-Order GP)
+
+Based on established solutions for irrotational flow induced by a massive object in a superfluid (Bose-Einstein Condensate), the velocity field far from the core (r≫rcore
+
+​) is:
+
+
+∣v
+
+
+sub
+
+​(r)∣=2πr
+
+
+Γ
+
+​
+
+where Γ is the circulation (analogous to the angular momentum of the substrate vortex).
+
+
+Step 3: Compute the Kinetic Energy Density (ρflow
+
+​)
+
+Substitute the vortex flow solution into the energy density expression:
+
+
+ρflow
+
+​(r)=2
+
+
+1
+
+​ρ0
+
+​(2πr
+
+
+Γ
+
+​)2
+
+ρflow
+
+​(r)=r2
+
+
+Cvortex
+
+​
+
+​where Cvortex
+
+​=8π2
+
+
+ρ0
+
+​Γ2
+
+​
+
+This expression demonstrates that the vortex flow creates an energy density that decays as 1/r2
+
+.
+
+
+Step 4: Derive the Force and Circular Velocity
+
+For spherical symmetry, the velocity of a test particle vcirc
+
+​ is related to the enclosed mass/energy M(r) by:
+
+
+vcirc
+
+2
+
+​(r)=r
+
+
+GM(r)
+
+​
+
+The total enclosed mass Mflow
+
+​(r) from the substrate flow is found by integrating the density ρflow
+
+​(r) over a sphere of radius r:
+
+
+Mflow
+
+​(r)=∫0
+
+r
+
+​4πr′2
+
+ρflow
+
+​(r′
+
+)dr′
+
+=∫0
+
+r
+
+​4πr′2
+
+r′2
+
+
+Cvortex
+
+​
+
+​dr′
+
+Mflow
+
+​(r)=4πCvortex
+
+​r
+
+
+Now, substitute Mflow
+
+​(r) into the circular velocity equation:
+
+
+vcirc
+
+2
+
+​(r)=r
+
+
+G(4πCvortex
+
+​r)
+
+​
+
+vcirc
+
+2
+
+​(r)=4πGCvortex
+
+​
+
+
+Step 5: Analysis of the Result
+
+vcirc
+
+​(r)=4πGCvortex
+
+​
+
+
+
+​=Constant
+
+
+Prediction: The circular velocity is independent of radius r.
+
+Observational Match: This result perfectly matches the defining observational characteristic of Dark Matter—the flat galactic rotation curve observed far outside the luminous matter distribution.
+
+Conclusion
+
+The analytical first-order derivation confirms that the Vortex Flow Mechanism built into the SXC-IGC framework is capable of generating the required ρ∝1/r2
+
+ mass profile necessary to produce a constant circular velocity for galaxies. This successfully resolves the conflict posed by the static Yukawa term.
+
+

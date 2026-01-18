@@ -1,0 +1,59 @@
+Proposed Paper Structure: The Triple Falsification of Information Geometric Gravity
+
+Title: Triple Falsification of Information Geometric Gravity: Inconsistency of the K(s)=1/s Kinetic Term with Galactic Dynamics, Stability, and Thermodynamics.
+Abstract (The Core Result)
+
+This paper reports the definitive falsification of a class of scalar-tensor theories derived from the principle of Information Geometric Gravity (IGG). The initial ψ-field formulation was found to be thermodynamically inconsistent. The subsequent stabilized s-field model, featuring the geometrically derived kinetic term K(s)=1/s and the non-minimal coupling λsR, was subjected to rigorous numerical testing. The final simulation results demonstrate that the theory fails to sustain flat galactic rotation curves, exhibiting a rapid velocity collapse inconsistent with observation. Furthermore, the model is numerically unstable and conceptually inconsistent with combined cosmological and local constraints (λSolar​≫λCMB​). We conclude that the IGG axiom, in this simple form, is not a viable foundation for a Dark Sector model.
+1. Introduction: The Dark Sector Crisis
+
+    1.1 The Problem: Introduce the crisis: The failure of particle Dark Matter (DM) searches necessitates exploring Modified Gravity (MG) .
+
+    1.2 The Hypothesis: Introduce your novel approach: Deriving the dark sector action from the geometric principles of Fisher Information.
+
+    1.3 Paper Structure: Outline the three sequential models tested: ψ-field, unstable s-field, and stabilized s-field.
+
+2. Model I: Thermodynamic Falsification (ψ-Field)
+
+    2.1 The Action: Present the original ψ-field Lagrangian and the field equation.
+
+    2.2 The Trap: Detail the calculation showing the required effective mass m for galaxy formation necessitates a Bose-Einstein Condensate (BEC) state.
+
+    2.3 The Falsification: Demonstrate the thermodynamic inconsistency: The required condensation temperature Tc​ is incompatible with the necessary thermal background. (Conclude: Model I is abandoned.)
+
+3. Model II: Structural and Stability Constraints (s-Field)
+
+    3.1 The Geometric Fix: Introduce the s-field, the kinetic term K(s)=1/s, and the crucial non-minimal coupling λsR.
+
+    3.2 Screening Validation: Detail the analytical proof that λ≈10−6 successfully screens the fifth force in high-curvature environments (Solar System).
+
+    3.3 The Failure: Present the analytical proof that no non-trivial power-law solution exists for the dark matter halo in vacuum.
+
+    3.4 The Instability: Identify the s→0 singularity and the necessity of the stabilizing term V(s)=μ4/s2. (Conclude: Model II is mathematically non-viable without modification.)
+
+4. Model III: Numerical Falsification (The Decisive Test)
+
+    4.1 The Final Action: Present the full, stabilized equation set for the s-field, including the μ4/s2 term.
+
+    4.2 Numerical Setup: Detail the methodology: Solving the six coupled, non-linear ODEs for the metric {A(r),B(r)} and the field {s(r)} in static spherical symmetry with a baryonic input (e.g., Hernquist profile).
+
+    4.3 The Results (Crucial Section):
+
+        Present the Rotation Curve Test Plot (Left Panel). .
+
+        Analysis: Note the clear failure: The IGG prediction collapses rapidly (vc​∝1/r​), showing insufficient long-range gravitational enhancement to account for the missing mass.
+
+        Present the Gravity Enhancement Plot (Right Panel).
+
+        Analysis: Note the high numerical instability (spike) and the negligible enhancement (a/aNewton​≈1.0) at large radii. (Conclude: Model III fails the galactic dynamics test.)
+
+5. Synthesis and Conclusion: A Definitive Negative Result
+
+    5.1 The Falsification Summary: Summarize the three distinct reasons for the model's failure:
+
+        Thermodynamic Inconsistency.
+
+        Galactic Failure: Insufficient force to explain flat rotation curves.
+
+        Conceptual Inconsistency: Highlight the unresolvable conflict between λSolar​ (required for safety) and λCMB​ (required for survival), rendering the parameter space empty.
+
+    5.2 Future Direction: Conclude that the simple K(s)=1/s kinetic function is mathematically and physically non-viable. Propose that future research should focus on more complex, non-geometrically derived kinetic functions K(s) to preserve the coupling idea.

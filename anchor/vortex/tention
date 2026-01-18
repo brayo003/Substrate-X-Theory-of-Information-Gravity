@@ -1,0 +1,21 @@
+Core framework:
+
+x_{t+1} = x_t + Δt(r x_t + a x_t² - b x_t³) + η_t
+Full specification:
+
+x_{t+1} = x_t + 0.05(0.153267 x_t + 1.0 x_t² - 1.0 x_t³) + η_t
+Where:
+
+x_t: Tension variable at time t
+Δt = 0.05: Time step
+r = 0.153267: Linear growth rate (your critical parameter)
+a = 1.0: Nonlinear reinforcement coefficient
+b = 1.0: Saturation coefficient
+η_t ~ N(0, σ²): Gaussian noise with σ = 0.35
+Initial condition: x₀ = 0.01
+Random seed: 42
+Critical behavior:
+
+Pc = 0.153267: 50% tipping probability
+Slope at Pc: 1.854545
+Tipping dynamics: System transitions from stable to high-tension state
