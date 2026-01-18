@@ -1,0 +1,1777 @@
+./DCIF/SXC_V12_INTEGRATED_CORE.py:        self.alpha = 0.016
+./DCIF/SXC_V12_INTEGRATED_CORE.py:        return self.A * (rho_input ** self.alpha)
+./DCIF/DCIF_REALTIME_MONITOR.py:Uses Alpha = 0.016 (Validated via IGS PRN31)
+./DCIF/DCIF_REALTIME_MONITOR.py:        self.alpha = 0.016
+./DCIF/DCIF_REALTIME_MONITOR.py:        gamma = self.A * (volume_rho ** self.alpha)
+./DCIF/DCIF_REALTIME_MONITOR.py:    print("LOGIC: Alpha=0.016 | Baseline=1e-16")
+./vortex/rename/solar_neutrinos.py:alpha_S = 2.053e-31
+./vortex/rename/solar_neutrinos.py:alpha_EM = 1/137.036
+./vortex/rename/solar_neutrinos.py:Gamow_original = np.exp(-2*np.pi*Z1*Z2*alpha_EM*c/v_thermal)
+./vortex/rename/solar_neutrinos.py:Gamow_new = np.exp(-2*np.pi*Z1*Z2*(alpha_EM + alpha_S)*c/v_thermal)
+./vortex/rename/solar_neutrinos.py:beta = 4
+./vortex/rename/solar_neutrinos.py:epsilon_ratio = rho_ratio * X_ratio**2 * T_ratio**beta * rate_ratio
+./vortex/rename/final_test.py:        self.alpha_S = 2.05e-22  # Adjusted to give ~10^-3 ratio
+./vortex/rename/final_test.py:        base_ratio = 2 * self.alpha_S * self.M_Pl  # ~0.001
+./vortex/rename/final_test.py:    print(f"α_S = {theory.alpha_S:.2e}")
+./vortex/rename/final_test.py:    ax.fill_between(r_exp*1000, 0, bounds, alpha=0.3, color='red',
+./vortex/rename/final_test.py:    ax.axhline(y=1e-3, color='green', linestyle='--', alpha=0.5, label='1‰ of gravity')
+./vortex/rename/final_test.py:    ax.grid(True, alpha=0.3)
+./vortex/rename/correct_master_analysis.py:alpha_S_lab = 2.053e-31  # Coupling to BARYONS
+./vortex/rename/correct_master_analysis.py:print(f"Lab α_S (baryon): {alpha_S_lab:.3e}")
+./vortex/rename/correct_master_analysis.py:rho_X_ns = alpha_S_lab * (rho_b_ns**2) / (m_S_lab**2 * M_Pl_eV**2)
+./vortex/rename/correct_master_analysis.py:rho_X0 = alpha_S_lab * (rho_b0_num**2) / (m_S_lab**2 * M_Pl_eV**2)
+./vortex/rename/correct_master_analysis.py:rho_X_BBN = alpha_S_lab * (rho_b_BBN_num**2) / (m_S_lab**2 * M_Pl_eV**2)
+./vortex/rename/cmb_calculations.py:alpha_S = 2.053e-31
+./vortex/rename/cmb_calculations.py:P_X = alpha_S * rho_b_eV4**2 / (m_S**2 * M_Pl**2)
+./vortex/rename/target_parameters.py:alpha_max_vals = envelope[:, 1]
+./vortex/rename/target_parameters.py:alpha_max_interp = interp1d(m_S_vals, alpha_max_vals, bounds_error=False, fill_value='extrapolate')
+./vortex/rename/target_parameters.py:    alpha_max = float(alpha_max_interp(m_S))
+./vortex/rename/target_parameters.py:    alpha_target = alpha_max * 0.5
+./vortex/rename/target_parameters.py:    F_ratio_contact = 2 * alpha_target * M_Pl_eV
+./vortex/rename/target_parameters.py:        'alpha_max': alpha_max,
+./vortex/rename/target_parameters.py:        'alpha_target': alpha_target,
+./vortex/rename/target_parameters.py:print(f"Coupling: α_S = {optimal['alpha_target']:.3e}")
+./vortex/rename/target_parameters.py:print(f"  (Maximum allowed: {optimal['alpha_max']:.3e}, using 50% for testability)")
+./vortex/rename/target_parameters.py:    f.write(f"Coupling strength: α_S = {optimal['alpha_target']:.3e}\n")
+./vortex/rename/test_theory.py:    def __init__(self, m_S=2e-10, alpha_S=5e-21, beta=1.0):
+./vortex/rename/test_theory.py:        self.alpha_S = alpha_S
+./vortex/rename/test_theory.py:        self.beta = beta
+./vortex/rename/test_theory.py:        F_contact = self.alpha_S / (4 * np.pi * 6.67e-11 * self.M_Pl**2)
+./vortex/rename/test_theory.py:        ax.plot(r*1e3, theory, 'b-', linewidth=2, label='Substrate X Theory', alpha=0.7)
+./vortex/rename/test_theory.py:            ax.fill_between(r_exp*1e3, 0, bound, alpha=0.3, color='red', 
+./vortex/rename/test_theory.py:            ax.fill_between(r_exp*1e3, 0, bound, alpha=0.3, color='red',
+./vortex/rename/test_theory.py:        ax.grid(True, alpha=0.3)
+./vortex/rename/test_theory.py:    print(f"  α_S = {theory.alpha_S:.1e}")
+./vortex/rename/test_theory.py:    print(f"  β = {theory.beta}")
+./vortex/rename/test_theory_fixed.py:    def __init__(self, m_S=2e-10, alpha_S=5e-21):
+./vortex/rename/test_theory_fixed.py:        self.alpha_S = alpha_S  # dimensionless coupling
+./vortex/rename/test_theory_fixed.py:        return self.alpha_S / (4 * np.pi * self.G * self.M_Pl**2)
+./vortex/rename/test_theory_fixed.py:    print(f"  α_S = {theory.alpha_S:.1e}")
+./vortex/rename/test_theory_fixed.py:    ax.fill_between(r_exp*1e3, 0, bounds, alpha=0.3, color='red',
+./vortex/rename/test_theory_fixed.py:    ax.grid(True, alpha=0.3, which='both')
+./vortex/rename/quick_physics_check.py:alpha_S = 5e-21
+./vortex/rename/quick_physics_check.py:F_ratio = alpha_S / (4 * np.pi * G * M_Pl**2)
+./vortex/rename/quick_physics_check.py:print(f"Coupling α_S = {alpha_S:.1e}")
+./vortex/rename/actual_test.py:alpha_S = 5e-21  # dimensionless - FROM YOUR THEORY
+./vortex/rename/actual_test.py:print(f"2. Coupling: α_S = {alpha_S:.1e}")
+./vortex/rename/actual_test.py:F_ratio_base = 2 * alpha_S * M_Pl  # This is dimensionally correct
+./vortex/rename/actual_test.py:ax.fill_between(r_exp*1000, 0, bounds, alpha=0.3, color='red', 
+./vortex/rename/actual_test.py:ax.axhline(y=1e-3, color='green', linestyle='--', alpha=0.7, label='0.1% of gravity')
+./vortex/rename/actual_test.py:ax.axhline(y=1, color='black', linestyle=':', alpha=0.5, label='Equal to gravity')
+./vortex/rename/actual_test.py:ax.grid(True, alpha=0.3)
+./vortex/rename/fixed_neutron_star.py:alpha_S = 2.053e-31
+./vortex/rename/fixed_neutron_star.py:X_ns = alpha_S * rho_J / (m_S**2 * eV**2 * M_Pl)
+./vortex/rename/fixed_neutron_star.py:alpha_max = 1e-2 * m_S**2 * M_Pl**2 / rho_J  # Rough scaling
+./vortex/rename/fixed_neutron_star.py:print(f"Maximum allowed α_S < {alpha_max:.3e}")
+./vortex/rename/fixed_neutron_star.py:print(f"Our α_S = {alpha_S:.3e}")
+./vortex/rename/fixed_neutron_star.py:print(f"Ratio: {alpha_S/alpha_max:.3e}")
+./vortex/rename/fixed_neutron_star.py:if alpha_S < alpha_max:
+./vortex/rename/dark_matter_connection.py:alpha_S = 2.053e-31
+./vortex/rename/dark_matter_connection.py:F_ratio = 2 * alpha_S * M_Pl * yukawa_kpc
+./vortex/rename/dark_matter_connection.py:alpha_S_dm = alpha_S * (m_S_dm/m_S)**2  # Rough scaling
+./vortex/rename/dark_matter_connection.py:print(f"  Required α_S ≈ {alpha_S_dm:.3e}")
+./vortex/rename/final_perfect.py:alpha_S = force_target / (2 * M_Pl)
+./vortex/rename/final_perfect.py:print(f"   α_S = {alpha_S:.3e}")
+./vortex/rename/final_perfect.py:print(f"   F_X/F_G = 2α_S M_Pl = {2*alpha_S*M_Pl:.3e} ✓")
+./vortex/rename/final_perfect.py:    f.write(f"α_S = {alpha_S:.3e}\n")
+./vortex/rename/check_existing_data.py:alpha_S = 2.053e-31  # dimensionless
+./vortex/rename/check_existing_data.py:    F_X_over_FG = 2 * alpha_S * M_Pl
+./vortex/rename/fixed_predictive_theory.py:        self.alpha_S = 5e-21  # dimensionless - FROM YOUR THEORY
+./vortex/rename/fixed_predictive_theory.py:        print(f"α_S = {self.alpha_S:.1e}")
+./vortex/rename/fixed_predictive_theory.py:        self.force_ratio = 2 * self.alpha_S * M_Pl_eV
+./vortex/rename/fixed_predictive_theory.py:        beta = 1.0  # from your theory
+./vortex/rename/fixed_predictive_theory.py:        self.screening_length = self.M_Pl**2 / (self.m_S_eV * np.sqrt(beta))
+./vortex/rename/fixed_predictive_theory.py:        print(f"  α_S should be ~{1e-3/(2*2.435e18*1e9):.1e} (not {theory.alpha_S:.1e})")
+./vortex/rename/bbn_calculations.py:alpha_S = 2.053e-31
+./vortex/rename/neutron_star_calculations.py:alpha_S = 2.053e-31
+./vortex/rename/neutron_star_calculations.py:beta = 1.0
+./vortex/rename/neutron_star_calculations.py:L_screen_natural = M_Pl**2 / (m_S * np.sqrt(beta))
+./vortex/rename/neutron_star_calculations.py:P_X = alpha_S * rho_eV4**2 / (m_S**2 * M_Pl**2)
+./vortex/rename/concrete_predictions.py:    'alpha_S': 1.234e-33,  # Will be filled
+./vortex/rename/concrete_predictions.py:# Find max alpha for this m_S
+./vortex/rename/concrete_predictions.py:alpha_max_interp = interp1d(envelope[:, 0], envelope[:, 1], bounds_error=False, fill_value='extrapolate')
+./vortex/rename/concrete_predictions.py:alpha_max = float(alpha_max_interp(m_S_target))
+./vortex/rename/concrete_predictions.py:alpha_target = alpha_max * 0.5  # 50% below limit
+./vortex/rename/concrete_predictions.py:optimal['alpha_S'] = alpha_target
+./vortex/rename/concrete_predictions.py:print(f"  α_S = {optimal['alpha_S']:.3e}")
+./vortex/rename/concrete_predictions.py:            F_ratio = 2 * optimal['alpha_S'] * M_Pl_eV * yukawa
+./vortex/rename/concrete_predictions.py:ax1.grid(True, alpha=0.3)
+./vortex/rename/concrete_predictions.py:ax2.grid(True, alpha=0.3)
+./vortex/rename/concrete_predictions.py:ax3.grid(True, alpha=0.3, axis='y')
+./vortex/rename/concrete_predictions.py:            c='green', s=50, alpha=0.6, label='Detectable (3σ)')
+./vortex/rename/concrete_predictions.py:            c='red', s=30, alpha=0.3, label='Not detectable')
+./vortex/rename/concrete_predictions.py:ax4.grid(True, alpha=0.3)
+./vortex/rename/concrete_predictions.py:    f.write(f"- Coupling: α_S = {optimal['alpha_S']:.3e}\n")
+./vortex/rename/real_anomalies.py:alpha_X = 1e-6  # Rough estimate
+./vortex/rename/real_anomalies.py:print(f"  Coupling: α_X ≈ {alpha_X:.1e}")
+./vortex/rename/real_anomalies.py:    f.write(f"m_X = {m_X} MeV, α_X ≈ {alpha_X:.1e}\n")
+./vortex/rename/predictive_substrate_x_theory.py:        alpha_unified = 1/24
+./vortex/rename/predictive_substrate_x_theory.py:        b = 41/6  # SU(2) beta coefficient
+./vortex/rename/predictive_substrate_x_theory.py:        alpha_inv = 1/alpha_unified + (b/(2*np.pi)) * np.log(M_unified/mu)
+./vortex/rename/predictive_substrate_x_theory.py:        self.derived['alpha_S'] = 1/alpha_inv
+./vortex/rename/predictive_substrate_x_theory.py:        print(f"4. Coupling constant: α_S = {self.derived['alpha_S']:.3e}")
+./vortex/rename/predictive_substrate_x_theory.py:        g = np.sqrt(4 * np.pi * self.derived['alpha_S'])
+./vortex/rename/predictive_substrate_x_theory.py:        checks.append(self.derived['alpha_S'] > 1e-30 and 
+./vortex/rename/predictive_substrate_x_theory.py:                     self.derived['alpha_S'] < 1)
+./vortex/rename/predictive_substrate_x_theory.py:        f.write(f"Coupling: α_S = {theory.derived['alpha_S']:.3e}\n")
+./vortex/rename/quantum_gravity.py:alpha_S = 2.053e-31
+./vortex/rename/complete_picture.py:alpha_S = 2.053e-31
+./vortex/rename/complete_picture.py:F_ratio = 2 * alpha_S * M_Pl * np.exp(-m_S * r / hbar_c)
+./vortex/rename/complete_picture.py:ax1.axvline(x=1, color='red', linestyle='--', alpha=0.5, label='1 mm')
+./vortex/rename/complete_picture.py:ax1.grid(True, alpha=0.3)
+./vortex/rename/complete_picture.py:ax2.fill_between(r_bounds, 0, bounds, alpha=0.3, color='red', label='Excluded')
+./vortex/rename/complete_picture.py:ax2.grid(True, alpha=0.3)
+./vortex/rename/complete_picture.py:ax3.grid(True, alpha=0.3)
+./vortex/rename/complete_picture.py:            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.5),
+./vortex/rename/complete_picture.py:    f.write(f"  α_S = {alpha_S:.3e}\n")
+./vortex/rename/complete_picture.py:    f.write(f"  Strength = {2*alpha_S*M_Pl:.3e} × gravity at contact\n\n")
+./vortex/rename/complete_picture.py:    f.write(f"Prediction at 1 mm: {2*alpha_S*M_Pl*np.exp(-m_S*0.001/hbar_c):.3e} × gravity\n")
+./vortex/rename/parameter_space.py:                alpha_max = max_ratio / (2 * M_Pl_eV * yukawa)
+./vortex/rename/parameter_space.py:                    'alpha_max': alpha_max,
+./vortex/rename/parameter_space.py:        alpha_min = df_m['alpha_max'].min()
+./vortex/rename/parameter_space.py:        envelope.append((m_S, alpha_min))
+./vortex/rename/parameter_space.py:           delimiter=',', header='m_S_eV,alpha_max', comments='')
+./vortex/rename/parameter_space.py:        ax1.plot(df_r['m_S_eV'], df_r['alpha_max'], 
+./vortex/rename/parameter_space.py:                alpha=0.3, label=f'{exp} ({r:.1f} mm)' if r==0.1 else '')
+./vortex/rename/parameter_space.py:ax1.fill_between(envelope[:, 0], 0, envelope[:, 1], alpha=0.2, color='green', label='Allowed Region')
+./vortex/rename/parameter_space.py:ax1.grid(True, alpha=0.3)
+./vortex/rename/parameter_space.py:ax2.grid(True, alpha=0.3)
+./vortex/rename/parameter_space.py:ax2.axhline(y=1, color='red', linestyle='--', alpha=0.5, label='1 mm')
+./vortex/rename/parameter_space.py:ax2.axhline(y=0.1, color='orange', linestyle='--', alpha=0.5, label='0.1 mm')
+./vortex/rename/parameter_space.py:your_alpha = 2.053e-31
+./vortex/rename/parameter_space.py:# Find allowed alpha at your m_S
+./vortex/rename/parameter_space.py:allowed_alpha = envelope_interp(your_m_S)
+./vortex/rename/parameter_space.py:ax3.fill_between(envelope[:, 0], 0, envelope[:, 1], alpha=0.2, color='green', label='Allowed')
+./vortex/rename/parameter_space.py:ax3.plot(your_m_S, your_alpha, 'ro', markersize=10, label='Your Parameters')
+./vortex/rename/parameter_space.py:ax3.plot(your_m_S, allowed_alpha, 'go', markersize=10, label=f'Max allowed: {allowed_alpha:.2e}')
+./vortex/rename/parameter_space.py:ax3.grid(True, alpha=0.3)
+./vortex/rename/parameter_space.py:target_alpha = envelope_interp(target_m_S) * 0.5  # 50% below limit
+./vortex/rename/parameter_space.py:ax4.plot(target_m_S, target_alpha, 's', markersize=12, color='purple', 
+./vortex/rename/parameter_space.py:         label=f'Target: m_S={target_m_S:.2e} eV\nα={target_alpha:.2e}')
+./vortex/rename/parameter_space.py:testable_alpha = envelope_interp(testable_m_S) * 0.5
+./vortex/rename/parameter_space.py:ax4.fill_between(testable_m_S, 0, testable_alpha, alpha=0.3, color='purple', label='Testable Region')
+./vortex/rename/parameter_space.py:ax4.grid(True, alpha=0.3)
+./vortex/rename/parameter_space.py:print(f"  Your α_S = {your_alpha:.3e}")
+./vortex/rename/parameter_space.py:print(f"  Maximum allowed α_S = {allowed_alpha:.3e}")
+./vortex/rename/parameter_space.py:print(f"  Ratio (your/max) = {your_alpha/allowed_alpha:.2f}")
+./vortex/rename/parameter_space.py:if your_alpha > allowed_alpha:
+./vortex/rename/parameter_space.py:print(f"  α_S = {target_alpha:.3e} (50% below current limit)")
+./vortex/rename/parameter_space.py:print(f"  F_X/F_G at contact = {2*target_alpha*M_Pl_eV:.3e}")
+./vortex/rename/corrected_theory_test.py:alpha_S = 1e-30  # Adjusted for 0.1% force
+./vortex/rename/corrected_theory_test.py:force_ratio = 2 * alpha_S * M_Pl * 1e9  # GeV to eV
+./vortex/rename/dark_matter_connection_real.py:alpha_dm = a_obs/a0 / np.exp(-R_gal/lambda_dm)
+./vortex/rename/dark_matter_connection_real.py:print(f"  Required coupling: α = {alpha_dm:.2e}")
+./vortex/rename/dark_matter_connection_real.py:screening_solar = alpha_dm * np.exp(-R_solar/lambda_dm)
+./vortex/rename/dark_matter_connection_real.py:    f.write(f"  Coupling: α = {alpha_dm:.2e}\n")
+./vortex/rename/sanity_check.py:alpha_S = 2.053e-31
+./vortex/rename/sanity_check.py:F_ratio = 2 * alpha_S * M_Pl_eV
+./vortex/rename/sanity_check.py:rho_Lambda = m_S**4 / alpha_S  # eV^4, rough scaling
+./vortex/visibility_floor_map.py:    ax.scatter(d, s, s=300, color=c, label=name, alpha=0.7, edgecolor='black')
+./vortex/visibility_floor_map.py:ax.fill_between([0, 10], 0, floor_sensitivity, alpha=0.2, color='gray', 
+./vortex/visibility_floor_map.py:ax.grid(True, alpha=0.3)
+./vortex/camouflage_engine.py:def screening_function(density, m_S, alpha_S, beta):
+./vortex/camouflage_engine.py:    X_dense = alpha_S * density / (m_S**2 * M_Pl)
+./vortex/camouflage_engine.py:    screen = np.exp(-beta * X_dense**2 / M_Pl**2)
+./vortex/camouflage_engine.py:alpha_S = 6.324e-35
+./vortex/camouflage_engine.py:beta = 1.0
+./vortex/camouflage_engine.py:    screen = screening_function(dens, m_S, alpha_S, beta)
+./vortex/camouflage_engine.py:def camouflage_force(r, density, m_S, alpha_S, beta):
+./vortex/camouflage_engine.py:    X_field = alpha_S * density / (m_S**2 * M_Pl)
+./vortex/camouflage_engine.py:    screening = np.exp(-beta * X_field**2 / M_Pl**2)
+./vortex/camouflage_engine.py:    coupling = alpha_S / M_Pl
+./vortex/cosmological_evolution.py:beta = 1e-3  # Initial guess
+./vortex/cosmological_evolution.py:def s_field_derivatives(t, y, beta_val, X0_val):
+./vortex/cosmological_evolution.py:    xdotdot = -3 * H * xdot + r * x + a * x**2 + b * x**3 + beta_val * X0_val**2
+./vortex/cosmological_evolution.py:    rho_s = 0.5 * xdot**2 + 0.5 * r * x**2 + (a/3) * x**3 + (b/4) * x**4 - beta_val * X0_val**2 * x
+./vortex/cosmological_evolution.py:    args=(beta, X0),
+./Substrate_X/atomki_physics/x17_physics_engine.py:ALPHA_EM = 1/137.036
+./Substrate_X/atomki_physics/x17_physics_engine.py:    br = (coupling_gb**2 / ALPHA_EM) * (1 - (m_x/18.15e6)**2)**1.5
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:alpha_S_original = 2.053e-31
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:alpha_S_new = alpha_S_original / required_reduction
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:print(f"\nOriginal α_S: {alpha_S_original:.3e}")
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:print(f"New α_S (to fit Eöt-Wash): {alpha_S_new:.3e}")
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:F_X_1mm_new = 2 * alpha_S_new * M_Pl * F_g_1mm * yukawa_1mm
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:print(f"  α_S must be < {alpha_S_new:.3e}")
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:print(f"  That's {alpha_S_original/alpha_S_new:.1f}× smaller than your value")
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:    f.write(f"α_S < {alpha_S_new:.3e}\n")
+./Substrate_X/experimental_evidence/find_allowed_parameters.py:    f.write(f"F_X/F_G at contact < {2*alpha_S_new*M_Pl:.3e}\n")
+./Substrate_X/experimental_evidence/check_other_exps.py:    alpha_S = 2.053e-31
+./Substrate_X/experimental_evidence/check_other_exps.py:    return 2 * alpha_S * M_Pl * F_g * yukawa
+./Substrate_X/experimental_evidence/testable_predictions.py:alpha_S = 2.053e-31  # dimensionless
+./Substrate_X/experimental_evidence/testable_predictions.py:    F_X_over_FG = 2 * alpha_S * M_Pl
+./Substrate_X/experimental_evidence/compare_with_experiments.py:ax.fill_between(np.array(eotwash_data['distance'])*1000, 0, eotwash_data['max_force'], alpha=0.2, color='red', label='Excluded Region')
+./Substrate_X/experimental_evidence/compare_with_experiments.py:ax.grid(True, alpha=0.3)
+./Substrate_X/experimental_evidence/compare_with_experiments.py:ax.axvspan(0.05, 2.0, alpha=0.1, color='yellow', label='Critical test region')
+./leak/agebramath/substrate_x_experiments.py:def substrate_corrected_force(r, alpha):
+./leak/agebramath/substrate_x_experiments.py:    alpha controls the 'leak/puff' feedback strength.
+./leak/agebramath/substrate_x_experiments.py:    correction = alpha * np.exp(-r_mag / 1e7)
+./leak/agebramath/substrate_x_experiments.py:alpha_values = np.arange(0, 1.3, 0.1)
+./leak/agebramath/substrate_x_experiments.py:sols_alpha = {}
+./leak/agebramath/substrate_x_experiments.py:for alpha in alpha_values:
+./leak/agebramath/substrate_x_experiments.py:    def f(r, a=alpha):
+./leak/agebramath/substrate_x_experiments.py:    name = f"Substrate corrected alpha={alpha:.2f}"
+./leak/agebramath/substrate_x_experiments.py:    sols_alpha[alpha] = run_orbit(name, f)
+./leak/agebramath/substrate_x_experiments.py:# Plot alpha variants
+./leak/agebramath/substrate_x_experiments.py:for a in alpha_values:
+./leak/agebramath/substrate_x_experiments.py:    sol = sols_alpha.get(a)
+./leak/agebramath/substrate_x_experiments.py:        print(f"Skipping alpha={a:.1f} (integration failed)")
+./leak/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3); plt.axis('equal'); plt.legend()
+./leak/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:def substrate_corrected_force(r, alpha):
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:    alpha controls the 'leak/puff' feedback strength.
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:    correction = alpha * np.exp(-r_mag / 1e7)
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:alpha_values = np.arange(0, 1.3, 0.1)
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:sols_alpha = {}
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:for alpha in alpha_values:
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:    def f(r, a=alpha):
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:    name = f"Substrate corrected alpha={alpha:.2f}"
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:    sols_alpha[alpha] = run_orbit(name, f)
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:# Plot alpha variants
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:for a in alpha_values:
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:    sol = sols_alpha.get(a)
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:        print(f"Skipping alpha={a:.1f} (integration failed)")
+./leak/substrate-x-complete-package/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3); plt.axis('equal'); plt.legend()
+./leak/substrate-x-complete-package/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/substrate-x-complete-package/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/substrate-x-complete-package/agebramath/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/substrate-x-complete-package/substrate_x_experiments.py:def substrate_corrected_force(r, alpha):
+./leak/substrate-x-complete-package/substrate_x_experiments.py:    alpha controls the 'leak/puff' feedback strength.
+./leak/substrate-x-complete-package/substrate_x_experiments.py:    correction = alpha * np.exp(-r_mag / 1e7)
+./leak/substrate-x-complete-package/substrate_x_experiments.py:alpha_values = np.arange(0, 1.3, 0.1)
+./leak/substrate-x-complete-package/substrate_x_experiments.py:sols_alpha = {}
+./leak/substrate-x-complete-package/substrate_x_experiments.py:for alpha in alpha_values:
+./leak/substrate-x-complete-package/substrate_x_experiments.py:    def f(r, a=alpha):
+./leak/substrate-x-complete-package/substrate_x_experiments.py:    name = f"Substrate corrected alpha={alpha:.2f}"
+./leak/substrate-x-complete-package/substrate_x_experiments.py:    sols_alpha[alpha] = run_orbit(name, f)
+./leak/substrate-x-complete-package/substrate_x_experiments.py:# Plot alpha variants
+./leak/substrate-x-complete-package/substrate_x_experiments.py:for a in alpha_values:
+./leak/substrate-x-complete-package/substrate_x_experiments.py:    sol = sols_alpha.get(a)
+./leak/substrate-x-complete-package/substrate_x_experiments.py:        print(f"Skipping alpha={a:.1f} (integration failed)")
+./leak/substrate-x-complete-package/substrate_x_proof.py:plt.grid(True, alpha=0.3); plt.axis('equal'); plt.legend()
+./leak/substrate-x-complete-package/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/substrate-x-complete-package/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./leak/substrate-x-complete-package/substrate_x_proof.py:plt.grid(True, alpha=0.3)
+./verification/src/comprehensive_master_equation_verification.py:        alpha_dim_2nd = self.divide_dims(target_2nd, E_dim)  # I·M^-1·L^-2
+./verification/src/comprehensive_master_equation_verification.py:        alpha_E_2nd = self.multiply_dims(alpha_dim_2nd, E_dim)
+./verification/src/comprehensive_master_equation_verification.py:        print(f"αE (2nd order):    [{self.dim_to_str(alpha_E_2nd)}] - SECOND ORDER")
+./verification/src/comprehensive_master_equation_verification.py:        correct_terms.append(('Energy coupling', alpha_E_2nd, target_2nd))
+./verification/src/comprehensive_master_equation_verification.py:        alpha_dim = self.divide_dims(target, E_dim)
+./verification/src/comprehensive_master_equation_verification.py:        alpha_E = self.multiply_dims(alpha_dim, E_dim)
+./verification/src/comprehensive_master_equation_verification.py:        results.append(('αE', alpha_E, self.dims_equal(alpha_E, target)))
+./verification/src/comprehensive_master_equation_verification.py:        beta_dim = self.divide_dims(target, nabla_E_v)
+./verification/src/comprehensive_master_equation_verification.py:        beta_term = self.multiply_dims(beta_dim, nabla_E_v)
+./verification/src/comprehensive_master_equation_verification.py:        results.append(('β∇·(E v_sub)', beta_term, self.dims_equal(beta_term, target)))
+./verification/src/new_num_solv.py:                 tau=1e3, tau_irr=1e4, alpha=1e-10, beta=1e-10, gamma=1e-10, chi=1e6,
+./verification/src/new_num_solv.py:        self.alpha = alpha
+./verification/src/new_num_solv.py:        self.beta = beta
+./verification/src/new_num_solv.py:        nonlinear_flux = self.alpha * divergence_term
+./verification/src/new_num_solv.py:        mixed_term = self.beta * s * laplacian_s
+./verification/src/new_num_solv.py:        alpha=1e-10,
+./verification/src/new_num_solv.py:        beta=1e-10,
+./verification/second_base_tests/process_quantum.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_quantum.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_galaxy.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_galaxy.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/galaxy_scale_sim.py:        alpha=5e-11,
+./verification/second_base_tests/galaxy_scale_sim.py:        beta=5e-11,
+./verification/second_base_tests/galaxy_scale_sim.py:    plt.grid(True,alpha=0.3)
+./verification/second_base_tests/process_cosmic.py:    ax[0].grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_cosmic.py:    ax[1].grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_cosmic.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_ringdown.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_ringdown.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_collapse.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_binary.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_binary.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/dwarf_coupling_sweep.py:        alpha=5e-11,
+./verification/second_base_tests/dwarf_coupling_sweep.py:        beta=5e-11,
+./verification/second_base_tests/dwarf_coupling_sweep.py:    plt.grid(True, alpha=0.3)
+./verification/second_base_tests/dwarf_coupling_sweep.py:    plt.grid(True, which="both", alpha=0.3)
+./verification/second_base_tests/analyze_dwarf_galaxy.py:    ax2.plot(data['r_kpc'], data['ratio'], 'g-', alpha=0.5, lw=1, label='v_sub/v_newt')
+./verification/second_base_tests/analyze_dwarf_galaxy.py:    plt.grid(True, alpha=0.3)
+./verification/second_base_tests/analyze_dwarf_galaxy.py:    plt.grid(True, which='both', alpha=0.3)
+./verification/second_base_tests/run_second_base_suite.py:    plt.grid(True, which="both", ls="--", alpha=0.4)
+./verification/second_base_tests/run_second_base_suite.py:        alpha=5e-11,
+./verification/second_base_tests/run_second_base_suite.py:        beta=5e-11,
+./verification/second_base_tests/run_second_base_suite.py:        alpha=5e-13,
+./verification/second_base_tests/run_second_base_suite.py:        beta=1e-13,
+./verification/second_base_tests/run_second_base_suite.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/run_second_base_suite.py:        alpha=1e-20,
+./verification/second_base_tests/run_second_base_suite.py:        beta=1e-20,
+./verification/second_base_tests/run_second_base_suite.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/run_second_base_suite.py:        alpha=1e-10,
+./verification/second_base_tests/run_second_base_suite.py:        beta=1e-10,
+./verification/second_base_tests/run_second_base_suite.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/run_second_base_suite.py:        alpha=5e-11,
+./verification/second_base_tests/run_second_base_suite.py:        beta=5e-11,
+./verification/second_base_tests/run_second_base_suite.py:        alpha=5e-11,
+./verification/second_base_tests/run_second_base_suite.py:        beta=5e-11,
+./verification/second_base_tests/run_second_base_suite.py:        alpha=1e-11,
+./verification/second_base_tests/run_second_base_suite.py:        beta=1e-11,
+./verification/second_base_tests/run_second_base_suite.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/run_second_base_suite.py:        alpha=5e-2,     # Drastically increased substrate coupling
+./verification/second_base_tests/run_second_base_suite.py:        beta=5e-2,      # Drastically increased substrate coupling
+./verification/second_base_tests/run_second_base_suite.py:        plt.grid(True, which='both', alpha=0.3)
+./verification/second_base_tests/run_second_base_suite.py:        plt.grid(True, which='both', alpha=0.3)
+./verification/second_base_tests/run_second_base_suite.py:    plt.grid(True, alpha=0.3)
+./verification/second_base_tests/process_kepler.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/second_base_tests/process_kepler.py:    plt.grid(True, ls="--", alpha=0.4)
+./verification/natural_tests/run_natural_tests.py:        alpha=5e-11,
+./verification/natural_tests/run_natural_tests.py:        beta=5e-11,
+./quick_start.py:        alpha=1e-10,
+./quick_start.py:        beta=1e-10,
+./SXC-IGC/UniversalTentionDynamics/test_cosmic_dark_energy.py:        alpha=1e-8,
+./SXC-IGC/UniversalTentionDynamics/test_cosmic_inflation.py:    alpha=1e-12,         # Weak coupling
+./SXC-IGC/UniversalTentionDynamics/industries/urban_planning/standalone_parameter_sweep.py:        self.alpha, self.beta, self.gamma = 1.0, 0.6, 0.8
+./SXC-IGC/UniversalTentionDynamics/industries/urban_planning/standalone_parameter_sweep.py:        return (self.alpha * rho + self.beta * E * (1 - E) - 
+./SXC-IGC/UniversalTentionDynamics/industries/urban_planning/standalone_master_test.py:        self.alpha, self.beta, self.gamma = 1.2, 0.8, 1.0
+./SXC-IGC/UniversalTentionDynamics/industries/urban_planning/standalone_master_test.py:        return (self.alpha * rho + self.beta * E * (1 - E) - 
+./SXC-IGC/UniversalTentionDynamics/industries/energy/standalone_energy_validation.py:            self.alpha, self.beta, self.gamma = 0.8, 0.3, 1.2
+./SXC-IGC/UniversalTentionDynamics/industries/energy/standalone_energy_validation.py:            self.alpha, self.beta, self.gamma = 1.5, 0.6, 0.8
+./SXC-IGC/UniversalTentionDynamics/industries/energy/standalone_energy_validation.py:            self.alpha, self.beta, self.gamma = 0.9, 0.4, 1.0
+./SXC-IGC/UniversalTentionDynamics/industries/energy/standalone_energy_validation.py:            self.alpha, self.beta, self.gamma = 1.2, 0.7, 0.9
+./SXC-IGC/UniversalTentionDynamics/industries/energy/standalone_energy_validation.py:            self.alpha, self.beta, self.gamma = 0.8, 0.5, 1.1
+./SXC-IGC/UniversalTentionDynamics/industries/energy/standalone_energy_validation.py:        return (self.alpha * rho + self.beta * E * (1 - E) - 
+./SXC-IGC/UniversalTentionDynamics/industries/finance/standalone_finance_master_validation.py:            self.alpha, self.beta, self.gamma = 1.5, 0.6, 0.9
+./SXC-IGC/UniversalTentionDynamics/industries/finance/standalone_finance_master_validation.py:            self.alpha, self.beta, self.gamma = 0.8, 0.3, 1.2
+./SXC-IGC/UniversalTentionDynamics/industries/finance/standalone_finance_master_validation.py:            self.alpha, self.beta, self.gamma = 0.9, 0.4, 1.5
+./SXC-IGC/UniversalTentionDynamics/industries/finance/standalone_finance_master_validation.py:            self.alpha, self.beta, self.gamma = 1.2, 0.8, 1.0
+./SXC-IGC/UniversalTentionDynamics/industries/finance/standalone_finance_master_validation.py:        return (self.alpha * rho + self.beta * E * (1 - E) - 
+./SXC-IGC/UniversalTentionDynamics/test_cosmic_physics.py:    alpha=1e-20,        # Fundamental coupling
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:        self.alpha, self.beta, self.gamma = 1.2, 0.8, 1.0
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:            self.alpha * rho +
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:            self.beta * E * (1 - E) -
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:        self.alpha, self.beta, self.gamma = 1.0, 0.6, 0.8
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:        self.alpha, self.beta, self.gamma = 1.2, 0.8, 1.2  # More inhibition
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:        self.alpha, self.beta, self.gamma = 0.9, 0.5, 1.0
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_stable_core.py:        print(f"Reaction: α={self.alpha}, β={self.beta}, γ={self.gamma}")
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        alpha_eff = self.compute_adaptive_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_monitored.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        self.alpha = max(params.get('alpha', 1e-4), 0)      # Higher sensitivity
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        self.beta = params.get('beta', 0.8)                 # Stronger coupling
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        alpha_eff = self.compute_adaptive_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_excitable.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        alpha_eff = self.compute_adaptive_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        alpha_eff = self.compute_effective_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust_corrected.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        alpha_eff = self.compute_effective_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_temporal.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        self.alpha = params.get('alpha', 1e-5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        alpha_eff = self.compute_effective_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        drho_dt_explicit = (self.gamma + alpha_eff * F**2) * laplacian_rho - rho / self.tau_rho
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        alpha_eff = self.compute_adaptive_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        diffusion_coeff = self.gamma + alpha_eff * F**2  # Inhibition modulates diffusion
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_neural_dynamics.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        alpha_eff = self.compute_effective_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_universal_dt.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        self.alpha = max(params.get('alpha', 1e-5), 0)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        alpha_eff = self.compute_adaptive_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_adaptive_fixed.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        self.alpha = max(params.get('alpha', 1e-5), 0)      # Must be non-negative
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        self.beta = params.get('beta', 0.5)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        return self.alpha * stiffness_factor
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        alpha_eff = self.compute_effective_stiffness(rho)
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        diffusion_coeff = self.gamma + alpha_eff * F**2
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        dE_dt_explicit = self.beta * F - E / self.tau_E
+./SXC-IGC/UniversalTentionDynamics/core_engine/src/universal_dynamics_robust.py:        stiffness_modification = (alpha_eff - self.alpha) * F
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:        self.alpha = 1.2     # ρ → E coupling
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:        self.beta = 0.8      # E self-activation  
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:            self.alpha * rho +                    # ρ → E coupling
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:            self.beta * E * (1 - E) -            # E self-activation with saturation
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:        self.alpha, self.beta, self.gamma = 1.5, 1.0, 0.8
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:        self.alpha, self.beta, self.gamma = 2.0, 1.2, 0.6
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:        self.alpha, self.beta, self.gamma = 1.8, 0.9, 1.1
+./SXC-IGC/UniversalTentionDynamics/core_engine/universal_pde_core.py:        print(f"Reaction: α={self.alpha}, β={self.beta}, γ={self.gamma}")
+./SXC-IGC/UniversalTentionDynamics/test_full_cosmic_evolution.py:    alpha=1e-15,
+./SXC-IGC/UniversalTentionDynamics/test_full_cosmic_evolution.py:    alpha=1e-10,
+./SXC-IGC/UniversalTentionDynamics/test_full_cosmic_evolution.py:    alpha=1e-8,
+./SXC-IGC/UniversalTentionDynamics/study_urban_explosion.py:            alpha_eff = urban.compute_effective_stiffness(urban.rho)
+./SXC-IGC/UniversalTentionDynamics/study_urban_explosion.py:            max_stiffness = np.max(alpha_eff)
+./SXC-IGC/UniversalTentionDynamics/test_long_term_stability.py:    alpha_eff = engine.compute_effective_stiffness(engine.rho)
+./SXC-IGC/UniversalTentionDynamics/test_long_term_stability.py:    stiffness_ratio = np.max(alpha_eff) / engine.alpha
+./SXC-IGC/UniversalTentionDynamics/test_cosmic_refined.py:    alpha=1e-10,        # Adjusted coupling
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_stress_test.py:        T = (c['beta'] * E_shock) - (c['gamma'] * F_load)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/decoupling_strategy.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/decoupling_strategy.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V12_CORE.py:        self.beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V12_CORE.py:        inflow = E * self.beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:            'social_module':  {'E': 0.00, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75}, 
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:            'urban_module':   {'E': 0.60, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:            'finance_module': {'E': 0.50, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:                inflow = m['E'] * m['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:    ax1.axhline(y=1.0, color='#ff4444', linestyle=':', alpha=0.8, label='Firewall Threshold (1.0)')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:    ax1.axhline(y=0.4, color='#ffbb33', linestyle=':', alpha=0.8, label='Hysteresis Floor (0.4)')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:                    color='red', alpha=0.15, label='FIREWALL Active')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:                    color='yellow', alpha=0.05, label='PREDICTIVE Active')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:    ax1.grid(True, which='both', linestyle='--', alpha=0.1)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:            'social_module':  {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:            'urban_module':   {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:            'finance_module': {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:                inflow = m['E'] * m['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/sxc_igc_v7_ram.py:    v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/sxc_igc_v7_ram.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/compare_extremes.py:    alpha, beta, gamma = c['alpha'], c['beta'], c['gamma']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/compare_extremes.py:    x = (alpha * rho_grad) + (beta * E) - (gamma * F)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/ram_optimizer.py:    beta, gamma = c['beta'], c['gamma']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/ram_optimizer.py:    # 0.4 = beta*E - gamma*F -> gamma*F = beta*E - 0.4 -> F = (beta*E - 0.4)/gamma
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/ram_optimizer.py:    f_required = (beta * current_E - 0.4) / gamma
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v5.py:    state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v5.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * effective_F)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V3_EMERGENCY.py:        self.beta_calibrated = 3.56  # Corrected sensitivity
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V3_EMERGENCY.py:        # Using the calibrated Beta for high-sensitivity detection
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V3_EMERGENCY.py:        social_T = self.state['social_module']['E'] * self.beta_calibrated 
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/predictive_intervention.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/predictive_intervention.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/resilience_test.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/resilience_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:        # Module-specific coefficients (Calibrated Beta/Gamma)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7, 'crisis': False},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'urban_module':  {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6, 'crisis': False},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'finance_module':{'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8, 'crisis': False},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'seismic_module':{'E': 0.15, 'F': 0.9, 'T': 0.0, 'beta': 1.000, 'gamma': 0.5, 'crisis': False}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            new_tensions[name] = max(0.0, (m['beta'] * m['E']) - (m['gamma'] * m['F'] * damping_mod))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:            'social_module':  {'E': 0.00, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:            'urban_module':   {'E': 0.60, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:            'finance_module': {'E': 0.50, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:                mod['T'] += (mod['E'] * mod['beta'] - mod['T'] * mod['gamma']) * self.dt
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/redundancy_test.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/redundancy_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/engine_orchestrator.py:            self.alpha = coeffs['alpha']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/engine_orchestrator.py:            self.beta = coeffs['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/engine_orchestrator.py:        x = (self.alpha * rho_grad) + (self.beta * E) - (self.gamma * F)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7, 'crisis': False},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:            'urban_module':  {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6, 'crisis': False},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:            'finance_module':{'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8, 'crisis': False}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:                new_tensions[name] = max(0.0, (m['beta'] * m['E']) - (m['gamma'] * m['F'] * damping))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dynamic_cascade_v2.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * state[m]['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V1.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * self.state['viral_evolution']['E']) - (v_c['gamma'] * self.state['viral_evolution']['F'])))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V1.py:            self.state[m]['T'] = (c['beta'] * self.state[m]['E']) - (c['gamma'] * (self.state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/intervention_test.py:        state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/intervention_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dynamic_cascade_v3.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * state[m]['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/hybrid_strategy.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/hybrid_strategy.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V2.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * self.state['viral_evolution']['E']) - (v_c['gamma'] * self.state['viral_evolution']['F'])))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V2.py:            self.state[m]['T'] = (c['beta'] * self.state[m]['E']) - (c['gamma'] * (current_f * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/COMPARATIVE_STUDY.py:    ax.axhline(y=1.0, color='white', linestyle='--', alpha=0.3, label='Social Critical Threshold')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/COMPARATIVE_STUDY.py:    ax.fill_between(steps, 1.0, 5.0, alpha=0.1, color='red')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/COMPARATIVE_STUDY.py:    ax.grid(alpha=0.1)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:            'social_module':  {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:            'urban_module':   {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:            'finance_module': {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:                inflow = m['E'] * m['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:        # Calibrated Beta (3.5) and Gamma coefficients
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'urban_module': {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'finance_module': {'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.5, 'gamma': 0.8},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'seismic_module': {'E': 0.15, 'F': 0.9, 'T': 0.0, 'beta': 1.0, 'gamma': 0.5}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:        # Calculate Base Tensions: T = beta*E - gamma*F
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            new_tensions[name] = max(0.0, m['beta'] * m['E'] - m['gamma'] * m['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax1.axhline(y=0, color='black', linestyle='-', alpha=0.3)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax1.axvline(x=0, color='red', linestyle='--', alpha=0.5, label='Synchrony')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:                     color='green', alpha=0.3, label='Positive correlation')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:                     color='red', alpha=0.3, label='Negative correlation')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax1.grid(True, alpha=0.3)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    bars = ax2.bar(categories, values, color=colors, alpha=0.7)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax2.grid(True, alpha=0.3, axis='y')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:def calculate_optimal_beta():
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:        # Linear regression through origin: T = beta * E
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:        beta = np.sum(E * T) / np.sum(E**2)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:        calibrated_coeffs[module] = round(beta, 3)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:    print("CALIBRATED COEFFICIENTS (BETA):")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:    calculate_optimal_beta()
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V11_SENSITIVE.py:gamma, beta, dt = 0.8, 3.5, 0.05
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V11_SENSITIVE.py:    inflow = ((fin_e[i] * 0.7) + (geo_e[i] * 0.3)) * beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST_FINAL.py:beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST_FINAL.py:    inflow = total_excitation * beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    Generalized Solver for DCII coefficients beta (β) and gamma (γ) using 
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    T = β*E - γ*F. Assumes alpha is 0.0.
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    x = [beta, gamma]
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    Returns: (alpha, beta, gamma)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:        beta = x[0]
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:        alpha = 0.0
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:        return alpha, beta, gamma
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_INSIGHT.py:            'finance_module': {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.5, 'gamma': 0.8},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_INSIGHT.py:            'social_module':  {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_INSIGHT.py:            inflow = E_in * m['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/adaptive_topology.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/adaptive_topology.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.axhline(y=0, color='black', linestyle='-', alpha=0.3)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.axvline(x=0, color='red', linestyle='--', alpha=0.5, label='Synchrony (0 lag)')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:                     color='green', alpha=0.3, label='Positive correlation')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:                     color='red', alpha=0.3, label='Negative correlation')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.grid(True, alpha=0.3)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    bars = plt.bar(categories, values, color=colors, alpha=0.7)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.grid(True, alpha=0.3, axis='y')
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_2008_BACKTEST.py:gamma, beta, dt = 0.8, 3.5, 0.05
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_2008_BACKTEST.py:    inflow = ((fin_e[i] * 0.7) + (geo_e[i] * 0.3)) * beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/cascade_simulator.py:        state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * state[m]['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.ALPHA = np.nan
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.BETA = np.nan
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.ALPHA = alpha
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.BETA = beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        return alpha, beta, gamma
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:    alpha, beta, gamma = analyzer.run_calibration()
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:    if not np.isnan(beta):
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        print(f"EQUATION: T = {beta:.4f}E - {gamma:.4f}F")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        print(f"Alpha (Accumulation α): {alpha:.4f} (Negligible)")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        print(f"Beta (Excitation β):    {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        if beta / gamma > 5: # Use a higher ratio to signify "overwhelmingly dominant"
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        elif beta > gamma:
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:    ALPHA = 0.0000 
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:    BETA = 18.3916
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:            grad_rho_mag (float): Mean Accumulation Gradient (ignored due to ALPHA=0).
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:        T = (self.ALPHA * grad_rho_mag) + (self.BETA * E) - (self.GAMMA * F)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:    print(f"LOCKED EQUATION: T = {analyzer.BETA:.4f}E - {analyzer.GAMMA:.4f}F")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_FINAL.py:        self.beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_FINAL.py:        inflow = E * self.beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_MICRO_REGEN.py:beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_MICRO_REGEN.py:    inflow = E_noise * beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_AGING_SIM.py:beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_AGING_SIM.py:    inflow = E_noise * beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/biological_stress_overlay.py:    # Calculate Viral Tension: High Beta (0.9) vs Low Gamma (0.1)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/biological_stress_overlay.py:    state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/biological_stress_overlay.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * effective_F)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_REALITY.py:        self.beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_REALITY.py:        self.T_sys += (E * self.beta - gamma_eff * self.gamma * self.T_sys) * self.dt
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_ANCHOR.py:        self.beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_ANCHOR.py:        self.T_sys += (E * self.beta - gamma_eff * self.gamma * self.T_sys) * self.dt
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_MASTER_PROTOCOL.py:        self.beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_MASTER_PROTOCOL.py:        self.T_sys += (E * self.beta - gamma_eff * self.gamma * self.T_sys) * self.dt
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/quantum_module/calibrate_quantum.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/quantum_module/calibrate_quantum.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/quantum_module/calibrate_quantum.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:    T = beta*E - gamma*F
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/urban_module/calibrate_urban.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/urban_module/calibrate_urban.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/urban_module/calibrate_urban.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/cosmology_module/calibrate_cosmology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/cosmology_module/calibrate_cosmology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/cosmology_module/calibrate_cosmology.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:    Solves for alpha (gradient/gravity) and beta (excitation).
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:    T = alpha*G + beta*E. Damping (gamma) is assumed zero/negligible at the horizon.
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:alpha, beta, gamma = solve_black_hole_coefficients(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/muon_g2_analysis.py:    alpha_x = (g_mu**2) / (4 * np.pi)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/muon_g2_analysis.py:    # a_mu = (alpha_x / 2*pi) * L(m_x/m_mu)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/muon_g2_analysis.py:    contribution = (alpha_x / (2 * np.pi)) * (m_mu / m_x)**2
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/calibrate_physics.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/calibrate_physics.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/calibrate_physics.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/ecology_module/calibrate_ecology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/ecology_module/calibrate_ecology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/ecology_module/calibrate_ecology.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Quantum_Decoherence_Module/calibrate_quantum_decoherence.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Quantum_Decoherence_Module/calibrate_quantum_decoherence.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Quantum_Decoherence_Module/calibrate_quantum_decoherence.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.ALPHA = np.nan
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.BETA = np.nan
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.ALPHA = alpha
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.BETA = beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        return alpha, beta, gamma
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        if np.isnan(self.BETA) or np.isnan(self.GAMMA):
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        T = (self.BETA * E) - (self.GAMMA * F)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:    alpha, beta, gamma = analyzer.run_calibration()
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:    if not np.isnan(beta):
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        print(f"EQUATION: T = {beta:.4f}E - {gamma:.4f}F")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        print(f"Alpha (Accumulation α): {alpha:.4f} (Negligible)")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        print(f"Beta (Excitation β):    {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        if beta > gamma:
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Viral_Evolution_Module/calibrate_viral_evolution.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Viral_Evolution_Module/calibrate_viral_evolution.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Viral_Evolution_Module/calibrate_viral_evolution.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/mycology_module/calibrate_mycology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/mycology_module/calibrate_mycology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/mycology_module/calibrate_mycology.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/virology_module/calibrate_virology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/virology_module/calibrate_virology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/virology_module/calibrate_virology.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/calibrate_game_theory.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/calibrate_game_theory.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/calibrate_game_theory.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:  "alpha_E": 1.5,
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:  "alpha_F": 0.5,
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:  "beta_F": 0.8,
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:    dE = (cfg["alpha_E"] * rho - E) / cfg["tau_E"]
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:    dF = (cfg["alpha_F"] * rho + cfg["beta_F"] * E - F) / cfg["tau_F"]
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/energy_module/calibrate_energy.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/energy_module/calibrate_energy.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/energy_module/calibrate_energy.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/agriculture_module/calibrate_agriculture.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/agriculture_module/calibrate_agriculture.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/agriculture_module/calibrate_agriculture.py:print(f"Beta (Excitation): {beta:.4f}")
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v4.py:    state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v4.py:    new_state['finance_module']['T'] = (f_c['beta'] * state['finance_module']['E']) - (f_c['gamma'] * effective_F_fin)
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v4.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/breaking_point_test.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/breaking_point_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:        # Established Beta/Gamma calibration
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:            'social_module':  {'E': 0.10, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:            'urban_module':   {'E': 0.55, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:            'finance_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:                inflow = m['E'] * m['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST.py:beta = 3.5
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST.py:    inflow = total_excitation * beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:        # Parameters with established Beta/Gamma calibration
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:            'social_module':  {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:            'urban_module':   {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:            'finance_module': {'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:                # Inflow: Excitation * Beta
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:                inflow = m['E'] * m['beta']
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:            'urban_module':  {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:            'finance_module':{'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8}
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:                new_tensions[name] = max(0.0, (m['beta'] * m['E']) - (m['gamma'] * m['F'] * damping))
+./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_heatmap.py:                T = (c['beta'] * E_test) - (c['gamma'] * F_test)
+./quantt/solar_correlation.py:    alpha = 0.016
+./quantt/solar_correlation.py:    gamma_quiet = A_target * (rho_quiet**alpha)
+./quantt/solar_correlation.py:    gamma_storm = A_target * (rho_storm**alpha)
+./quantt/simplified_density_analysis.py:plt.grid(True, which="both", ls="-", alpha=0.2)
+./quantt/simplified_density_analysis.py:                 bbox=dict(boxstyle="round,pad=0.3", fc="yellow", alpha=0.7))
+./quantt/simplified_density_analysis.py:plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+./quantt/simplified_density_analysis.py:plt.fill_between(densities, -10, 10, alpha=0.2, color='green', label='±10%')
+./quantt/simplified_density_analysis.py:plt.fill_between(densities, -20, 20, alpha=0.1, color='yellow')
+./quantt/simplified_density_analysis.py:plt.grid(True, alpha=0.3)
+./quantt/parse_residuals.py:    # 2. Predicted Shift (4.536% from our alpha=0.016 calculation)
+./quantt/recalculation.py:    gamma_beta = 1.0 / tau
+./quantt/recalculation.py:    print(f"{name:25} {Q:>12} {tau:>12} {gamma_beta:>20.2e}")
+./quantt/recalculation.py:alpha_your = 1.254
+./quantt/recalculation.py:gamma_beta_your = A_your * (rho_air**alpha_your)
+./quantt/recalculation.py:print(f"γ/β = {A_your:.2e} × (1.2)^{alpha_your:.3f}")
+./quantt/recalculation.py:print(f"    = {gamma_beta_your:.2e} s⁻¹")
+./quantt/recalculation.py:print(f"    → τ = 1/γ/β = {1/gamma_beta_your:.0f} s")
+./quantt/recalculation.py:print(f"\nYours is too small by factor: {0.001/gamma_beta_your:.1e}")
+./quantt/recalculation.py:gamma_beta_real = 0.001  # s⁻¹ at sea level
+./quantt/recalculation.py:print(f"\nFor ρ = {rho_air} kg/m³, γ/β = {gamma_beta_real:.3e} s⁻¹:")
+./quantt/recalculation.py:for alpha in [0.0, 0.016, 0.1, 0.5, 1.0, 1.254, 2.0]:
+./quantt/recalculation.py:    A_calc = gamma_beta_real / (rho_air**alpha)
+./quantt/recalculation.py:    print(f"{alpha:>8.3f} {A_calc:>20.2e}")
+./quantt/recalculation.py:alpha_measured = 0.016
+./quantt/recalculation.py:A_correct = gamma_beta_real / (rho_air**alpha_measured)
+./quantt/recalculation.py:print(f"\nWith your measured α = {alpha_measured:.3f}:")
+./quantt/recalculation.py:print(f"A_correct = {gamma_beta_real:.3e} / (1.2^{alpha_measured:.3f})")
+./quantt/recalculation.py:gamma_beta_data = np.array([7.28e-14, 1.24e-21, 1.65e-07])  # s⁻¹
+./quantt/recalculation.py:    print(f"{labels[i]:15} {rho_data[i]:>15.1e} {gamma_beta_data[i]:>20.2e}")
+./quantt/recalculation.py:print(f"Extrapolated from Pioneer: γ/β = {gamma_beta_data[0] * (1.2/1.4e-16)**0.016:.2e} s⁻¹")
+./quantt/recalculation.py:print(f"Difference: {0.001/(gamma_beta_data[0] * (1.2/1.4e-16)**0.016):.1e}×")
+./quantt/recalculation.py:gamma_beta_pendulum = 0.001  # s⁻¹
+./quantt/recalculation.py:f_needed = (gamma_beta_pendulum * v_pioneer) / a_pioneer
+./quantt/recalculation.py:print(f"\nTo get γ/β = {gamma_beta_pendulum:.3e} s⁻¹ from Pioneer:")
+./quantt/recalculation.py:print(f"  = ({gamma_beta_pendulum:.3e} × {v_pioneer:.0f}) / {a_pioneer:.2e}")
+./quantt/recalculation.py:Then γ/β ≈ {gamma_beta_pendulum:.3e} s⁻¹
+./quantt/recalculation.py:τ = 1/γ/β = {1/gamma_beta_pendulum:.0f} s
+./quantt/recalculation.py:Q = ωτ ≈ 1 × {1/gamma_beta_pendulum:.0f} = {1/gamma_beta_pendulum:.0f}
+./quantt/recalculation.py:Your density scaling: γ/β = A × ρ^{alpha_measured:.3f}
+./quantt/recalculation.py:print(f"γ/β = {A_correct:.2e} × ρ^{alpha_measured:.3f}")
+./quantt/recalculation.py:    gb = A_correct * (rho**alpha_measured)
+./quantt/recalculation.py:From pendulum at Earth: γ/β = {gamma_beta_pendulum:.3e} s⁻¹
+./quantt/recalculation.py:From Pioneer (scaled): γ/β = {A_correct * (1.4e-16**alpha_measured):.2e} s⁻¹
+./quantt/recalculation.py:Ratio: {gamma_beta_pendulum/(A_correct * (1.4e-16**alpha_measured)):.1f}
+./quantt/recalculation.py:DENSITY DEPENDENCE: γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_measured:.3f}
+./quantt/recalculation.py:  • α = {alpha_measured:.3f} (extremely weak)
+./quantt/recalculation.py:  • γ/β ≈ {gamma_beta_pendulum:.3e} s⁻¹ at Earth
+./quantt/recalculation.py:  • Corresponds to pendulum τ ≈ {1/gamma_beta_pendulum:.0f} s
+./quantt/recalculation.py:    f.write(f"  Your α = {alpha_measured:.3f} (weak density dependence)\n")
+./quantt/recalculation.py:    f.write(f"  γ/β = {A_correct:.2e} × ρ^{alpha_measured:.3f}\n\n")
+./quantt/recalculation.py:        gb = A_correct * (rho**alpha_measured)
+./quantt/enhanced_density_analysis.py:def exp_model(rho, alpha, beta):
+./quantt/enhanced_density_analysis.py:    return alpha * np.exp(beta * rho)
+./quantt/enhanced_density_analysis.py:plt.grid(True, which="both", ls="-", alpha=0.2)
+./quantt/enhanced_density_analysis.py:                 bbox=dict(boxstyle="round,pad=0.3", fc="yellow", alpha=0.7))
+./quantt/enhanced_density_analysis.py:plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+./quantt/enhanced_density_analysis.py:plt.axhline(y=2, color='r', linestyle='--', alpha=0.3, label='2σ')
+./quantt/enhanced_density_analysis.py:plt.axhline(y=-2, color='r', linestyle='--', alpha=0.3)
+./quantt/enhanced_density_analysis.py:plt.grid(True, alpha=0.3)
+./quantt/fixed_density_analysis.py:plt.semilogx(rho_ext, log_eta_ext, 'b-', alpha=0.5, label='Linear extrapolation')
+./quantt/fixed_density_analysis.py:plt.fill_between(rho_ext[lab_idx], -20, 50, alpha=0.2, color='red', 
+./quantt/fixed_density_analysis.py:plt.grid(True, alpha=0.3)
+./quantt/fixed_density_analysis.py:plt.loglog(rho_plot, eta_linear, 'b:', alpha=0.3, label='Pure power law')
+./quantt/fixed_density_analysis.py:plt.grid(True, alpha=0.3)
+./quantt/enhanced_gw_test.py:- Adds frequency-dependent viscosity model: η(f) = eta0 * (f/100)**alpha
+./quantt/enhanced_gw_test.py:    Model: η(f) = eta0 * (f/100)^alpha
+./quantt/enhanced_gw_test.py:    eta0, alpha = params
+./quantt/enhanced_gw_test.py:    eta_f = eta0 * (freqs/100.0)**alpha
+./quantt/enhanced_gw_test.py:    # Initial guess: small eta0, negative alpha (viscosity decreases with freq)
+./quantt/enhanced_gw_test.py:    initial_guess = [max(eta0_guess, 1e-18), -1.0]  # [eta0, alpha]
+./quantt/enhanced_gw_test.py:    bounds = [(0, 1e-12), (-3, 2)]  # eta0, alpha bounds
+./quantt/enhanced_gw_test.py:    eta0_opt, alpha_opt = res.x
+./quantt/enhanced_gw_test.py:    print(f"  Optimal α:      {alpha_opt:.2f}")
+./quantt/enhanced_gw_test.py:    print(f"  At 100 Hz:      η = {eta0_opt * (100/100)**alpha_opt:.2e}")
+./quantt/enhanced_gw_test.py:    print(f"  At 1 Hz:        η = {eta0_opt * (1/100)**alpha_opt:.2e}")
+./quantt/enhanced_gw_test.py:    print(f"  At 0.001 Hz:    η = {eta0_opt * (0.001/100)**alpha_opt:.2e}")
+./quantt/enhanced_gw_test.py:    if alpha_opt < -0.5:
+./quantt/enhanced_gw_test.py:        print(f"\nConclusion: Strong frequency dependence (α = {alpha_opt:.2f})")
+./quantt/enhanced_gw_test.py:    return eta0_opt, alpha_opt, snr_opt
+./quantt/enhanced_gw_test.py:    plt.grid(True, alpha=0.3)
+./quantt/enhanced_gw_test.py:    eta0, alpha = freq_results[0], freq_results[1]
+./quantt/enhanced_gw_test.py:    eta_f = eta0 * (freqs/100)**alpha
+./quantt/enhanced_gw_test.py:    plt.title(f'Frequency-dependent viscosity\nη₀={eta0:.1e}, α={alpha:.2f}')
+./quantt/enhanced_gw_test.py:    plt.grid(True, alpha=0.3)
+./quantt/enhanced_gw_test.py:    plt.plot(time, strain.numpy()[:1000], 'b-', alpha=0.7)
+./quantt/enhanced_gw_test.py:    plt.grid(True, alpha=0.3)
+./quantt/experimental_test.py:alpha = 1.254
+./quantt/experimental_test.py:gamma_beta_air = A * (rho_air**alpha)
+./quantt/experimental_test.py:print(f"γ/β = {gamma_beta_air:.2e} s⁻¹")
+./quantt/experimental_test.py:print(f"   Damping time constant: τ = 1/(γ/β) = {1/gamma_beta_air:.0f} s")
+./quantt/experimental_test.py:print(f"   Quality factor: Q = ωτ = {1/gamma_beta_air:.0f}")
+./quantt/experimental_test.py:print(f"   Damping acceleration: a = (γ/β) × v = {gamma_beta_air * 0.1:.2e} m/s²")
+./quantt/experimental_test.py:print(f"   Damping: still τ = {1/gamma_beta_air:.0f} s")
+./quantt/experimental_test.py:print(f"   But Q = ωτ = {1e6/gamma_beta_air:.1e} (HUGE)")
+./quantt/experimental_test.py:print(f"Need to measure damping times of ~{1/gamma_beta_air:.0f} seconds")
+./quantt/experimental_test.py:print(f"Our predicted τ ~ {1/gamma_beta_air:.0f} s is SHORTER (more damping)")
+./quantt/experimental_test.py:    gb = A * (rho**alpha)
+./quantt/experimental_test.py:print(f"At 1000 Pa (~0.01 atm): τ ≈ {1/(A * ((1000*M_N2/(R*T))**alpha)):.0f} s")
+./quantt/experimental_test.py:1. Damping coefficient varies with density: γ/β ∝ ρ^{alpha:.3f}
+./quantt/experimental_test.py:2. At sea level air: γ/β ≈ {gamma_beta_air:.2e} s⁻¹
+./quantt/experimental_test.py:3. This gives damping time τ ≈ {1/gamma_beta_air:.0f} seconds
+./quantt/experimental_test.py:3. Verify γ/β ∝ ρ^{alpha:.3f}
+./quantt/experimental_test.py:    f.write(f"  γ/β = {A:.2e} × ρ^{alpha:.3f}\n\n")
+./quantt/experimental_test.py:        gb = A * (rho**alpha)
+./quantt/experimental_test.py:    f.write(f"  At 1000 Pa: τ ≈ {1/(A * ((1000*M_N2/(R*T))**alpha)):.0f} s\n")
+./quantt/theoretical_derivation_fixed.py:alpha_measured = 1.25
+./quantt/theoretical_derivation_fixed.py:epsilon = alpha_measured - 1.0
+./quantt/theoretical_derivation_fixed.py:print(f"Measured: α = {alpha_measured:.2f}")
+./quantt/theoretical_derivation_fixed.py:gamma_beta_data = np.array([7.28e-14, 1.24e-21, 1.65e-07])  # s⁻¹
+./quantt/theoretical_derivation_fixed.py:log_gb = np.log10(gamma_beta_data)
+./quantt/theoretical_derivation_fixed.py:alpha_fit = coeffs[0]
+./quantt/theoretical_derivation_fixed.py:print(f"From data fit: γ/β = {A:.2e} × ρ^{alpha_fit:.3f}")
+./quantt/theoretical_derivation_fixed.py:gamma_beta_at_rho0 = A * (rho0**alpha_fit)
+./quantt/theoretical_derivation_fixed.py:print(f"γ/β(ρ₀) = {A:.2e} × ({rho0:.2e})^{alpha_fit:.3f}")
+./quantt/theoretical_derivation_fixed.py:print(f"        = {gamma_beta_at_rho0:.2e} s⁻¹")
+./quantt/theoretical_derivation_fixed.py:print(f"γ/β = {gamma_beta_data[0]:.2e} s⁻¹")
+./quantt/theoretical_derivation_fixed.py:beta_guesses = [1e-10, 1e-5, 1, 1e5, 1e10]  # Various scales
+./quantt/theoretical_derivation_fixed.py:for beta in beta_guesses:
+./quantt/theoretical_derivation_fixed.py:    gamma0 = beta * A * (rho0**alpha_fit)
+./quantt/theoretical_derivation_fixed.py:    print(f"{beta:>15.1e} {gamma0:>20.2e} {gamma0:>20.2e}")
+./quantt/theoretical_derivation_fixed.py:  γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_fit:.3f}
+./quantt/theoretical_derivation_fixed.py:  α = {alpha_fit:.3f} (weakly superlinear)
+./quantt/theoretical_derivation_fixed.py:  γ₀/β = {gamma_beta_at_rho0:.2e} s⁻¹
+./quantt/theoretical_derivation_fixed.py:  γ₀ = β × {A:.2e} × ρ₀^{alpha_fit:.3f}
+./quantt/theoretical_derivation_fixed.py:  1. For any density ρ, predict γ/β = {A:.2e} × ρ^{alpha_fit:.3f}
+./quantt/theoretical_derivation_fixed.py:    gb_meas = gamma_beta_data[i]
+./quantt/theoretical_derivation_fixed.py:    gb_pred = A * (rho_data[i]**alpha_fit)
+./quantt/theoretical_derivation_fixed.py:delta = (1 - alpha_fit) / 2
+./quantt/theoretical_derivation_fixed.py:print(f"\nFrom your α = {alpha_fit:.3f}:")
+./quantt/theoretical_derivation_fixed.py:print(f"\nPredictions for γ/β = {A:.2e} × ρ^{alpha_fit:.3f}:")
+./quantt/theoretical_derivation_fixed.py:    gb_pred = A * (rho**alpha_fit)
+./quantt/theoretical_derivation_fixed.py:gb_air = A * (1.2**alpha_fit)
+./quantt/theoretical_derivation_fixed.py:2. DERIVED DENSITY DEPENDENCE: γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_fit:.3f}
+./quantt/theoretical_derivation_fixed.py:   • α = {alpha_fit:.3f} from your data
+./quantt/theoretical_derivation_fixed.py:   • γ₀/β = {gamma_beta_at_rho0:.2e} s⁻¹
+./quantt/theoretical_derivation_fixed.py:    f.write(f"  γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_fit:.3f}\n")
+./quantt/theoretical_derivation_fixed.py:    f.write(f"  with α = {alpha_fit:.3f} from data\n\n")
+./quantt/theoretical_derivation_fixed.py:    f.write(f"  Collective interactions give α = 1 - 2δ = {alpha_fit:.3f}\n")
+./quantt/theoretical_derivation_fixed.py:    f.write(f"  γ₀/β = {gamma_beta_at_rho0:.2e} s⁻¹\n\n")
+./quantt/theoretical_derivation_fixed.py:    f.write(f"  Related by: γ₀ = β × A × ρ₀^{alpha_fit:.3f}\n\n")
+./quantt/theoretical_derivation_fixed.py:        gb_pred = A * (rho**alpha_fit)
+./quantt/analyze_residuals.py:    # 1. Theoretical Inputs (Derived from your alpha = 0.016)
+./quantt/analyze_residuals.py:    alpha = 0.016
+./quantt/analyze_residuals.py:    measured_stutter = A_target * (rho_samples**alpha)
+./quantt/analyze_residuals.py:        gamma = A_target * (rho_samples[i]**alpha)
+./quantt/analyze_residuals.py:    print(f"CORRELATION LOGIC: IF Stutter ~ rho^{alpha}, Substrate X is VALID.")
+./quantt/analyze_cosmic.py:plt.plot(time_axis, event_strain, label='Observed Strain (Substrate X)', color='cyan', alpha=0.7)
+./quantt/analyze_cosmic.py:plt.grid(True, alpha=0.3)
+./quantt/theoretical_derivation.py:alpha_measured = 1.25
+./quantt/theoretical_derivation.py:epsilon = alpha_measured - 1.0
+./quantt/theoretical_derivation.py:print(f"Measured: α = {alpha_measured:.2f}")
+./quantt/theoretical_derivation.py:gamma_beta_data = np.array([7.28e-14, 1.24e-21, 1.65e-07])  # s⁻¹
+./quantt/theoretical_derivation.py:log_gb = np.log10(gamma_beta_data)
+./quantt/theoretical_derivation.py:alpha_fit = coeffs[0]
+./quantt/theoretical_derivation.py:print(f"From data fit: γ/β = {A:.2e} × ρ^{alpha_fit:.3f}")
+./quantt/theoretical_derivation.py:gamma_beta_at_rho0 = A * (rho0**alpha_fit)
+./quantt/theoretical_derivation.py:print(f"γ/β(ρ₀) = {A:.2e} × ({rho0:.2e})^{alpha_fit:.3f}")
+./quantt/theoretical_derivation.py:print(f"        = {gamma_beta_at_rho0:.2e} s⁻¹")
+./quantt/theoretical_derivation.py:print(f"γ/β = {gamma_beta_data[0]:.2e} s⁻¹")
+./quantt/theoretical_derivation.py:beta_guesses = [1e-10, 1e-5, 1, 1e5, 1e10]  # Various scales
+./quantt/theoretical_derivation.py:for beta in beta_guesses:
+./quantt/theoretical_derivation.py:    gamma0 = beta * A * (rho0**alpha_fit)
+./quantt/theoretical_derivation.py:    print(f"{beta:>15.1e} {gamma0:>20.2e} {gamma0:>20.2e}")
+./quantt/theoretical_derivation.py:  γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_fit:.3f}
+./quantt/theoretical_derivation.py:  α = {alpha_fit:.3f} (weakly superlinear)
+./quantt/theoretical_derivation.py:  γ₀/β = {gamma_beta_at_rho0:.2e} s⁻¹
+./quantt/theoretical_derivation.py:  γ₀ = β × {A:.2e} × ρ₀^{alpha_fit:.3f}
+./quantt/theoretical_derivation.py:  1. For any density ρ, predict γ/β = {A:.2e} × ρ^{alpha_fit:.3f}
+./quantt/theoretical_derivation.py:    gb_meas = gamma_beta_data[i]
+./quantt/theoretical_derivation.py:    gb_pred = A * (rho_data[i]**alpha_fit)
+./quantt/theoretical_derivation.py:delta = (1 - alpha_fit) / 2
+./quantt/theoretical_derivation.py:print(f"\nFrom your α = {alpha_fit:.3f}:")
+./quantt/theoretical_derivation.py:print(f"\nPredictions for γ/β = {A:.2e} × ρ^{alpha_fit:.3f}:")
+./quantt/theoretical_derivation.py:    gb_pred = A * (rho**alpha_fit)
+./quantt/theoretical_derivation.py:gb_air = A * (1.2**alpha_fit)
+./quantt/theoretical_derivation.py:2. DERIVED DENSITY DEPENDENCE: γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_fit:.3f}
+./quantt/theoretical_derivation.py:   • α = {alpha_fit:.3f} from your data
+./quantt/theoretical_derivation.py:   • γ₀/β = {gamma_beta_at_rho0:.2e} s⁻¹
+./quantt/theoretical_derivation.py:    f.write(f"  γ(ρ) = γ₀ × (ρ/ρ₀)^{alpha_fit:.3f}\n")
+./quantt/theoretical_derivation.py:    f.write(f"  with α = {alpha_fit:.3f} from data\n\n")
+./quantt/theoretical_derivation.py:    f.write(f"  Collective interactions give α = 1 - 2δ = {alpha_fit:.3f}\n")
+./quantt/theoretical_derivation.py:    f.write(f"  γ₀/β = {gamma_beta_at_rho0:.2e} s⁻¹\n\n")
+./quantt/theoretical_derivation.py:    f.write(f"  Related by: γ₀ = β × A × ρ₀^{alpha_fit:.3f}\n\n")
+./quantt/theoretical_derivation.py:        gb_pred = A * (rho**alpha_fit)
+./quantt/test_std_structure.py:plt.plot(times, stds, 'b.-', alpha=0.7)
+./quantt/test_std_structure.py:plt.grid(True, alpha=0.3)
+./quantt/test_std_structure.py:plt.hist(stds, bins=20, alpha=0.7)
+./quantt/dangerous_theory.py:alpha = 0.016
+./quantt/dangerous_theory.py:print(f"α = {alpha:.3f} means: γ ∝ ρ^{alpha:.3f}")
+./quantt/dangerous_theory.py:variation = (rho_max/rho_min)**alpha
+./quantt/dangerous_theory.py:print(f"But damping varies only: (ρ_max/ρ_min)^{alpha:.3f} = {variation:.2f}")
+./quantt/dangerous_theory.py:gamma_beta_universal = 0.001  # s⁻¹
+./quantt/dangerous_theory.py:print(f"UNIVERSAL BACKGROUND: γ/β ≈ {gamma_beta_universal:.3e} s⁻¹")
+./quantt/dangerous_theory.py:print(f"Everywhere, always: τ = 1/(γ/β) ≈ {1/gamma_beta_universal:.0f} seconds")
+./quantt/dangerous_theory.py:print(f"\nIf γ/β = {gamma_beta_universal:.3e} s⁻¹ universally:")
+./quantt/dangerous_theory.py:    Q_max = omega / gamma_beta_universal
+./quantt/dangerous_theory.py:AND: γ/β ≈ {gamma_beta_universal:.3e} s⁻¹
+./quantt/dangerous_theory.py:print(f"\nFor γ/β = {gamma_beta_universal:.3e} s⁻¹:")
+./quantt/dangerous_theory.py:    Q_max = omega / gamma_beta_universal
+./quantt/dangerous_theory.py:    stability_limit = gamma_beta_universal / omega
+./quantt/dangerous_theory.py:    f.write(f"  γ/β = {gamma_beta_universal:.3e} s⁻¹ (everywhere, always)\n")
+./quantt/dangerous_theory.py:    f.write(f"  α = {alpha:.3f} (varies only {variation:.1f}× across universe)\n\n")
+./quantt/SXC_EVIDENCE_RECON.py:    # Based on alpha = 0.016 and 16x density increase
+./quantt/SXC_EVIDENCE_RECON.py:    alpha = 0.016
+./quantt/SXC_EVIDENCE_RECON.py:    prediction_multiplier = (16)**alpha  # Ratio of shift
+./quantt/experimental_test_fixed.py:alpha = 1.254
+./quantt/experimental_test_fixed.py:print(f"with A = {A:.2e}, α = {alpha:.3f}")
+./quantt/experimental_test_fixed.py:gamma_beta_air = A * (rho_air**alpha)
+./quantt/experimental_test_fixed.py:print(f"γ/β = {gamma_beta_air:.2e} s⁻¹")
+./quantt/experimental_test_fixed.py:print(f"   Damping time constant: τ = 1/(γ/β) = {1/gamma_beta_air:.0f} s")
+./quantt/experimental_test_fixed.py:print(f"   Quality factor: Q = ωτ = {1/gamma_beta_air:.0f}")
+./quantt/experimental_test_fixed.py:print(f"   Damping acceleration: a = (γ/β) × v = {gamma_beta_air * 0.1:.2e} m/s²")
+./quantt/experimental_test_fixed.py:print(f"   Damping: still τ = {1/gamma_beta_air:.0f} s")
+./quantt/experimental_test_fixed.py:print(f"   But Q = ωτ = {1e6/gamma_beta_air:.1e} (HUGE)")
+./quantt/experimental_test_fixed.py:print(f"Need to measure damping times of ~{1/gamma_beta_air:.0f} seconds")
+./quantt/experimental_test_fixed.py:print(f"Our predicted τ ~ {1/gamma_beta_air:.0f} s is SHORTER (more damping)")
+./quantt/experimental_test_fixed.py:   • Compare with predicted: A = {A:.2e}, α = {alpha:.3f}
+./quantt/experimental_test_fixed.py:    gb = A * (rho**alpha)
+./quantt/experimental_test_fixed.py:tau_1000 = 1/(A * ((1000*M_N2/(R*T))**alpha))
+./quantt/experimental_test_fixed.py:1. Damping coefficient varies with density: γ/β ∝ ρ^{alpha:.3f}
+./quantt/experimental_test_fixed.py:2. At sea level air: γ/β ≈ {gamma_beta_air:.2e} s⁻¹
+./quantt/experimental_test_fixed.py:3. This gives damping time τ ≈ {1/gamma_beta_air:.0f} seconds
+./quantt/experimental_test_fixed.py:3. Verify γ/β ∝ ρ^{alpha:.3f}
+./quantt/experimental_test_fixed.py:    f.write(f"  γ/β = {A:.2e} × ρ^{alpha:.3f}\n\n")
+./quantt/experimental_test_fixed.py:        gb = A * (rho**alpha)
+./quantt/density_correlation_check.py:plt.grid(True, which="both", ls="-", alpha=0.2)
+./quantt/fix_inspection.py:            plt.hist(noise, bins=50, alpha=0.7)
+./Substrate_X_Git/diagnose_deeper_issue.py:        alpha=1e0, beta=1e0, gamma=1e0,  # Strong parameters
+./Substrate_X_Git/diagnose_deeper_issue.py:        alpha=1e0, beta=1e0, gamma=1e0,
+./Substrate_X_Git/diagnose_deeper_issue.py:        alpha=0, beta=0, gamma=0,  # No coupling
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:                 alpha=0.01, beta=0.5, gamma=0.2,  # Substrate parameters
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        self.alpha = alpha    # Diffusion
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        self.beta = beta      # Reaction  
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        self.dt = 0.1 * self.dx**2 / (4 * max(alpha, delta1, delta2))
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        print(f"Substrate: α={alpha}, β={beta}, γ={gamma}")
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:                diffusion = self.alpha * laplacian_rho[i,j]
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j])
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        'alpha': 0.01,
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        'beta': 0.8,
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:        axes[idx, 3].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver_fixed.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/debug_term_values.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/debug_term_values.py:    terms['energy'] = solver.alpha * solver.E
+./Substrate_X_Git/debug_term_values.py:    terms['energy_adv'] = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/fixed_calibration_complete.py:                    'alpha': 0.01, 'beta': 0.8, 'gamma': 0.3,
+./Substrate_X_Git/fixed_calibration_complete.py:                               cmap='viridis', s=100, alpha=0.7)
+./Substrate_X_Git/fixed_calibration_complete.py:                               cmap='plasma', s=100, alpha=0.7)
+./Substrate_X_Git/fixed_calibration_complete.py:                               cmap='hot_r', s=100, alpha=0.7)
+./Substrate_X_Git/fixed_calibration_complete.py:        axes[1,0].semilogy(x_pos, solar_vals, 'bo-', label='Computed', alpha=0.7)
+./Substrate_X_Git/fixed_calibration_complete.py:        axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/fixed_calibration_complete.py:        axes[1,1].plot(x_pos, galactic_vals, 'ro-', label='Computed', alpha=0.7)
+./Substrate_X_Git/fixed_calibration_complete.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_system_solver_working.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/complete_system_solver_working.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+./Substrate_X_Git/complete_system_solver_working.py:        'alpha': 1e-5,
+./Substrate_X_Git/complete_system_solver_working.py:        'beta': 1.0, 
+./Substrate_X_Git/standalone_solver.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/standalone_solver.py:        self.alpha = alpha
+./Substrate_X_Git/standalone_solver.py:        self.beta = beta
+./Substrate_X_Git/standalone_solver.py:        self.dt = 0.1 * min(self.dx, self.dy)**2 / (2 * alpha)
+./Substrate_X_Git/standalone_solver.py:        drho_dt = (self.alpha * laplacian_rho + 
+./Substrate_X_Git/standalone_solver.py:                  self.beta * self.rho * (1 - self.rho) +
+./Substrate_X_Git/standalone_solver.py:                alpha = self.dt / (self.tau + self.dt)
+./Substrate_X_Git/standalone_solver.py:                self.phi = (1 - alpha) * self.phi + alpha * new_phi
+./Substrate_X_Git/standalone_solver.py:        'alpha': 1e-5,
+./Substrate_X_Git/standalone_solver.py:        'beta': 1.0, 
+./Substrate_X_Git/optimal_balance_test_fixed.py:            return self.alpha
+./Substrate_X_Git/optimal_balance_test_fixed.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/optimal_balance_test_fixed.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/optimal_balance_test_fixed.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/optimal_balance_test_fixed.py:    alpha=1e-5,
+./Substrate_X_Git/enhanced_calibration.py:                        'alpha': 0.01,
+./Substrate_X_Git/enhanced_calibration.py:                        'beta': 0.8,
+./Substrate_X_Git/enhanced_calibration.py:                               cmap='viridis', s=100, alpha=0.7)
+./Substrate_X_Git/enhanced_calibration.py:                               cmap='plasma', s=100, alpha=0.7, norm='log')
+./Substrate_X_Git/enhanced_calibration.py:        axes[0,1].axhline(y=best_params['delta2'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/enhanced_calibration.py:        axes[0,1].axvline(x=best_params['delta1'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/enhanced_calibration.py:                               cmap='plasma', s=100, alpha=0.7)
+./Substrate_X_Git/enhanced_calibration.py:        axes[0,2].axhline(y=best_params['delta2'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/enhanced_calibration.py:        axes[0,2].axvline(x=best_params['delta1'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/enhanced_calibration.py:        axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/enhanced_calibration.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/enhanced_calibration.py:        axes[1,2].grid(True, alpha=0.3)
+./Substrate_X_Git/enhanced_calibration.py:        'alpha': 0.01,
+./Substrate_X_Git/enhanced_calibration.py:        'beta': 0.8,
+./Substrate_X_Git/enhanced_calibration.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/enhanced_calibration.py:    axes[1,2].grid(True, alpha=0.3)
+./Substrate_X_Git/quick_magnitude_fix.py:                 alpha=0.01, beta=0.8, gamma=0.3,
+./Substrate_X_Git/quick_magnitude_fix.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma,
+./Substrate_X_Git/quick_magnitude_fix.py:            self.alpha * self.F -
+./Substrate_X_Git/maximum_surgical_test.py:        self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/maximum_surgical_test.py:        print(f"   α_eff_max = {self.alpha_eff_max:.3f} (10,000× amplification)")
+./Substrate_X_Git/maximum_surgical_test.py:            return self.alpha
+./Substrate_X_Git/maximum_surgical_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/maximum_surgical_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/maximum_surgical_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/maximum_surgical_test.py:    alpha=1e-5, 
+./Substrate_X_Git/optimal_balance_test.py:            return self.alpha
+./Substrate_X_Git/optimal_balance_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/optimal_balance_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/optimal_balance_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/optimal_balance_test.py:    alpha=1e-5,
+./Substrate_X_Git/tests/debug_rhs.py:    alpha=1e-2,
+./Substrate_X_Git/tests/debug_rhs.py:    beta=1e-1, 
+./Substrate_X_Git/tests/debug_rhs.py:print(f"Parameters: α={solver.alpha_scaled:.2e}, β={solver.beta_scaled:.2e}, γ={solver.gamma_scaled:.2e}")
+./Substrate_X_Git/tests/debug_rhs.py:alpha_term = solver.alpha_scaled * solver.rho
+./Substrate_X_Git/tests/debug_rhs.py:print(f"Alpha*rho max: {np.max(np.abs(alpha_term)):.2e}")
+./Substrate_X_Git/tests/debug_rhs.py:beta_term = solver.beta_scaled * solver.s**2  
+./Substrate_X_Git/tests/debug_rhs.py:print(f"Beta*s² max: {np.max(np.abs(beta_term)):.2e}")
+./Substrate_X_Git/tests/test_mass_addition.py:    alpha=1e-2,
+./Substrate_X_Git/tests/test_mass_addition.py:    beta=1e-1,
+./Substrate_X_Git/tests/test_calibration_working.py:        'alpha': 1e-2,    # Physical parameter
+./Substrate_X_Git/tests/test_calibration_working.py:        'beta': 1e-1,     # Physical parameter  
+./Substrate_X_Git/tests/test_calibration_working.py:    print(f"Using parameters: α={test_params['alpha']:.1e}, β={test_params['beta']:.1e}, γ={test_params['gamma']:.1e}")
+./Substrate_X_Git/tests/test_calibration_working.py:    print(f"  α_scaled: {solver.alpha:.2e}")
+./Substrate_X_Git/tests/test_calibration_working.py:    print(f"  β_scaled: {solver.beta:.2e}") 
+./Substrate_X_Git/tests/test_k_eff_from_E.py:        alpha=1.0,
+./Substrate_X_Git/tests/test_k_eff_from_E.py:        beta=1.0,
+./Substrate_X_Git/tests/test_k_eff_from_E.py:    k_eff_E = np.max(np.abs(solver.E)) / (solver.alpha * mass_kg) if solver.alpha > 0 else 0
+./Substrate_X_Git/tests/test_solver.py:        alpha=1e-40,            # Primary source term
+./Substrate_X_Git/tests/test_solver.py:        beta=1e-25,             # Scale switch
+./Substrate_X_Git/tests/test_solver.py:    expected_alpha_scale = (L_char**3) / (T_char**2)  # 1e36 / 1e8 = 1e28
+./Substrate_X_Git/tests/test_solver.py:    expected_beta_scale = (L_char**2 * T_char)        # 1e24 * 1e4 = 1e28
+./Substrate_X_Git/tests/test_solver.py:    print(f"   Expected scales: α_scale={expected_alpha_scale:.1e}, "
+./Substrate_X_Git/tests/test_solver.py:          f"β_scale={expected_beta_scale:.1e}, γ_scale={expected_gamma_scale:.1e}")
+./Substrate_X_Git/tests/test_solver.py:    expected_alpha = 1e-40 / expected_alpha_scale
+./Substrate_X_Git/tests/test_solver.py:    expected_beta = 1e-25 / expected_beta_scale
+./Substrate_X_Git/tests/test_solver.py:    print(f"   Expected: α={expected_alpha:.1e}, β={expected_beta:.1e}, γ={expected_gamma:.1e}")
+./Substrate_X_Git/tests/test_solver.py:    print(f"   Actual:   α={solver.alpha:.1e}, β={solver.beta:.1e}, γ={solver.gamma:.1e}")
+./Substrate_X_Git/tests/test_solver.py:        # alpha, beta, gamma, chi
+./Substrate_X_Git/tests/test_solver.py:        (1e-42, 1e-25, 1e-40, 1.0),  # Lower alpha
+./Substrate_X_Git/tests/test_solver.py:        (1e-40, 1e-23, 1e-40, 1.0),  # Higher beta
+./Substrate_X_Git/tests/test_solver.py:                alpha=a,
+./Substrate_X_Git/tests/test_solver.py:                beta=b,
+./Substrate_X_Git/tests/test_k_eff.py:        alpha=1e-2,
+./Substrate_X_Git/tests/test_k_eff.py:        beta=1e-1,
+./Substrate_X_Git/tests/test_k_eff.py:        alpha=1e-2,
+./Substrate_X_Git/tests/test_k_eff.py:        beta=1e-1,
+./Substrate_X_Git/tests/test_final_calibration.py:            'alpha': 1e-10,  # Need to tune these
+./Substrate_X_Git/tests/test_final_calibration.py:            'beta': 1e-10,
+./Substrate_X_Git/tests/test_final_calibration.py:            'alpha': 1e-10,  # Same physical laws
+./Substrate_X_Git/tests/test_final_calibration.py:            'beta': 1e-10,
+./Substrate_X_Git/tests/test_final_calibration.py:            alpha=params['alpha'],
+./Substrate_X_Git/tests/test_final_calibration.py:            beta=params['beta'],
+./Substrate_X_Git/tests/test_final_calibration.py:    print("We need to tune alpha, beta, gamma so that:")
+./Substrate_X_Git/tests/debug_rhs_fixed.py:    alpha=1e-2,
+./Substrate_X_Git/tests/debug_rhs_fixed.py:    beta=1e-1, 
+./Substrate_X_Git/tests/debug_rhs_fixed.py:print(f"Parameters: α={solver.alpha:.2e}, β={solver.beta:.2e}, γ={solver.gamma:.2e}")
+./Substrate_X_Git/tests/debug_rhs_fixed.py:alpha_term = solver.alpha * solver.rho
+./Substrate_X_Git/tests/debug_rhs_fixed.py:print(f"Alpha*rho max: {np.max(np.abs(alpha_term)):.2e}")
+./Substrate_X_Git/tests/debug_rhs_fixed.py:print(f"Alpha*rho at center: {alpha_term[center_x, center_y]:.2e}")
+./Substrate_X_Git/tests/debug_rhs_fixed.py:beta_term = solver.beta * solver.s**2  
+./Substrate_X_Git/tests/debug_rhs_fixed.py:print(f"Beta*s² max: {np.max(np.abs(beta_term)):.2e}")
+./Substrate_X_Git/tests/debug_rhs_fixed.py:print(f"Beta*s² at center: {beta_term[center_x, center_y]:.2e}")
+./Substrate_X_Git/tests/test_proper_calibration.py:            alpha=1.0,
+./Substrate_X_Git/tests/test_proper_calibration.py:            beta=1.0,
+./Substrate_X_Git/tests/test_static_solver.py:            energy_term = solver.alpha * solver.E
+./Substrate_X_Git/tests/test_static_solver.py:            energy_advection_term = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/tests/test_static_solver.py:        alpha=1e-68,
+./Substrate_X_Git/tests/test_static_solver.py:        beta=1e-53, 
+./Substrate_X_Git/tests/test_static_solver.py:        alpha=1e-68,
+./Substrate_X_Git/tests/test_static_solver.py:        beta=1e-53,
+./Substrate_X_Git/tests/real_calibration.py:        {'alpha': 1e-10, 'beta': 1e-10, 'gamma': 1e-10, 'name': 'VERY WEAK'},
+./Substrate_X_Git/tests/real_calibration.py:        {'alpha': 1e-5, 'beta': 1e-5, 'gamma': 1e-5, 'name': 'WEAK'},
+./Substrate_X_Git/tests/real_calibration.py:        {'alpha': 1e0, 'beta': 1e0, 'gamma': 1e0, 'name': 'MODERATE'},
+./Substrate_X_Git/tests/real_calibration.py:        {'alpha': 1e5, 'beta': 1e5, 'gamma': 1e5, 'name': 'STRONG'},
+./Substrate_X_Git/tests/real_calibration.py:        {'alpha': 1e10, 'beta': 1e10, 'gamma': 1e10, 'name': 'VERY STRONG'},
+./Substrate_X_Git/tests/real_calibration.py:        print(f"\n🔬 Testing {params['name']}: α,β,γ = {params['alpha']:.0e}")
+./Substrate_X_Git/tests/real_calibration.py:            alpha=params['alpha'],
+./Substrate_X_Git/tests/real_calibration.py:            beta=params['beta'],
+./Substrate_X_Git/tests/real_calibration.py:            print(f"  Use these parameters: α,β,γ ≈ {params['alpha']:.0e}")
+./Substrate_X_Git/tests/real_calibration.py:    working_params = {'alpha': 1e10, 'beta': 1e10, 'gamma': 1e10}
+./Substrate_X_Git/tests/inspect_solver.py:    alpha=1e-2,
+./Substrate_X_Git/tests/inspect_solver.py:    beta=1e-1,
+./Substrate_X_Git/tests/inspect_methods.py:    alpha=1e-2,
+./Substrate_X_Git/tests/inspect_methods.py:    beta=1e-1,
+./Substrate_X_Git/tests/test_time_evolution.py:        'alpha': 1.0,      # Much stronger - we need to see ANY signal
+./Substrate_X_Git/tests/test_time_evolution.py:        'beta': 1.0,       # Strong nonlinearity
+./Substrate_X_Git/tests/test_time_evolution.py:    print(f"Using STRONG parameters: α={strong_params['alpha']:.1e}, β={strong_params['beta']:.1e}, γ={strong_params['gamma']:.1e}")
+./Substrate_X_Git/tests/test_time_evolution.py:    print(f"  α: {solver.alpha:.2e}")
+./Substrate_X_Git/tests/test_time_evolution.py:    print(f"  β: {solver.beta:.2e}") 
+./Substrate_X_Git/tests/test_parameter_tuning.py:            alpha=1.0,
+./Substrate_X_Git/tests/test_parameter_tuning.py:            beta=1.0, 
+./Substrate_X_Git/tests/inspect_fields.py:    alpha=1e-2,
+./Substrate_X_Git/tests/inspect_fields.py:    beta=1e-1,
+./Substrate_X_Git/tests/test_calibration_fixed.py:        'alpha': 1e-2,      # Much stronger - we want to see ANY signal
+./Substrate_X_Git/tests/test_calibration_fixed.py:        'beta': 1e-1,       # Strong nonlinearity
+./Substrate_X_Git/tests/test_calibration_fixed.py:    print(f"   α_physical = {strong_params['alpha']:.1e}")
+./Substrate_X_Git/tests/test_calibration_fixed.py:    print(f"   β_physical = {strong_params['beta']:.1e}") 
+./Substrate_X_Git/tests/test_calibration_fixed.py:    print(f"  α_scaled = {solver.alpha:.2e}")
+./Substrate_X_Git/tests/test_calibration_fixed.py:    print(f"  β_scaled = {solver.beta:.2e}")
+./Substrate_X_Git/tests/test_calibration_fixed.py:        alpha_term = solver.alpha * solver.rho
+./Substrate_X_Git/tests/test_calibration_fixed.py:        print(f"   Max alpha*rho: {np.max(np.abs(alpha_term)):.2e}")
+./Substrate_X_Git/tests/test_calibration_fixed.py:        beta_term = solver.beta * solver.s**2
+./Substrate_X_Git/tests/test_calibration_fixed.py:        print(f"   Max beta*s²: {np.max(np.abs(beta_term)):.2e}")
+./Substrate_X_Git/tests/debug_scaling_issue.py:            alpha=1.0,
+./Substrate_X_Git/tests/debug_scaling_issue.py:            beta=1.0,
+./Substrate_X_Git/tests/test_units.py:            alpha=1e-10,  # Will be scaled in __init__
+./Substrate_X_Git/tests/test_units.py:    def test_alphaE_units(self):
+./Substrate_X_Git/tests/test_units.py:        alphaE = self.solver.alpha * self.test_E
+./Substrate_X_Git/tests/test_units.py:        self.assertNotEqual(alphaE[16, 16], 0.0)
+./Substrate_X_Git/tests/test_units.py:        self.assertEqual(alphaE[0, 0], 0.0)
+./Substrate_X_Git/tests/test_units.py:        print(f"  α = {self.solver.alpha:.3e} [s] L / M")
+./Substrate_X_Git/tests/test_units.py:        print(f"  αE = {alphaE[16, 16]:.3e} [s]/T²")
+./Substrate_X_Git/tests/test_calibration_proper.py:                'alpha': 1e-2,
+./Substrate_X_Git/tests/test_calibration_proper.py:                'beta': 1e-1, 
+./Substrate_X_Git/tests/test_calibration_proper.py:        print(f"  Parameters: α={case['params']['alpha']:.1e}, β={case['params']['beta']:.1e}, γ={case['params']['gamma']:.1e}")
+./Substrate_X_Git/tests/test_calibration_proper.py:        print(f"  α_scaled: {solver.alpha:.2e}")
+./Substrate_X_Git/tests/test_calibration_proper.py:        print(f"  β_scaled: {solver.beta:.2e}") 
+./Substrate_X_Git/tests/simple_calibration.py:        alpha=1e-10,  # These control substrate response
+./Substrate_X_Git/tests/simple_calibration.py:        beta=1e-10,
+./Substrate_X_Git/tests/diagnose_math.py:        alpha=1e10,  # Strong coupling
+./Substrate_X_Git/tests/diagnose_math.py:        beta=1e10,
+./Substrate_X_Git/tests/diagnose_math.py:        alpha_term = solver.alpha * solver.E
+./Substrate_X_Git/tests/diagnose_math.py:        beta_term = solver.beta * solver.compute_divergence(solver.E * solver.v_sub)
+./Substrate_X_Git/tests/diagnose_math.py:        print(f"   αE term: {np.max(np.abs(alpha_term)):.2e}")
+./Substrate_X_Git/tests/diagnose_math.py:        print(f"   β∇·(E v_sub) term: {np.max(np.abs(beta_term)):.2e}") 
+./Substrate_X_Git/tests/diagnose_math.py:        {'alpha': 1e10, 'beta': 0, 'gamma': 0, 'name': 'α ONLY'},
+./Substrate_X_Git/tests/diagnose_math.py:        {'alpha': 0, 'beta': 1e10, 'gamma': 0, 'name': 'β ONLY'},
+./Substrate_X_Git/tests/diagnose_math.py:        {'alpha': 0, 'beta': 0, 'gamma': 1e10, 'name': 'γ ONLY'},
+./Substrate_X_Git/tests/diagnose_math.py:            alpha=test['alpha'],
+./Substrate_X_Git/tests/diagnose_math.py:            beta=test['beta'], 
+./Substrate_X_Git/tests/test_fixed_mass_addition.py:    physical_params = {'alpha': 1.0, 'beta': 1.0, 'gamma': 1.0, 'chi': 1.0, 'tau': 1e3}
+./Substrate_X_Git/tests/test_final_fix.py:            alpha=1.0, beta=1.0, gamma=1.0, chi=1.0, tau=1e3
+./Substrate_X_Git/tests/test_final_fix.py:        alpha=1.0, beta=1.0, gamma=1.0, chi=1.0, tau=1e3
+./Substrate_X_Git/tests/debug_measurement_location.py:        alpha=1.0, beta=1.0, gamma=1.0, chi=1.0, tau=1e3
+./Substrate_X_Git/tests/debug_measurement_location.py:            alpha=1.0, beta=1.0, gamma=1.0, chi=1.0, tau=1e3
+./Substrate_X_Git/tests/test_proper_substrate_physics.py:            alpha=1.0,  # These will now affect the DYNAMICS, not static field
+./Substrate_X_Git/tests/test_proper_substrate_physics.py:            beta=1.0,
+./Substrate_X_Git/tests/test_proper_substrate_physics.py:    """Understand what alpha, beta, gamma actually do"""
+./Substrate_X_Git/tests/test_proper_substrate_physics.py:        alpha=1e-5,  # Try different values
+./Substrate_X_Git/tests/test_proper_substrate_physics.py:        beta=1e-5,
+./Substrate_X_Git/tests/debug_F_field.py:            alpha=1.0,
+./Substrate_X_Git/tests/debug_F_field.py:            beta=1.0,
+./Substrate_X_Git/tests/debug_F_field.py:        alpha=1.0,
+./Substrate_X_Git/tests/debug_F_field.py:        beta=1.0, 
+./Substrate_X_Git/tests/test_calibration_fixed_final.py:        'alpha': 1.0,    # These showed the strongest effect
+./Substrate_X_Git/tests/test_calibration_fixed_final.py:        'beta': 1.0,     
+./Substrate_X_Git/tests/test_calibration_fixed_final.py:    print(f"Using parameters that showed effect: α={params['alpha']:.1e}, β={params['beta']:.1e}, γ={params['gamma']:.1e}")
+./Substrate_X_Git/tests/test_calibration_fixed_final.py:    print(f"  α: {solver.alpha:.2e}")
+./Substrate_X_Git/tests/test_calibration_fixed_final.py:    print(f"  β: {solver.beta:.2e}") 
+./Substrate_X_Git/tests/test_calibration.py:        'alpha': 1e-8,    # Coupling strength
+./Substrate_X_Git/tests/test_calibration.py:        'beta': 1e-5,     # Nonlinearity
+./Substrate_X_Git/tests/find_alpha_bug.py:def debug_alpha_term():
+./Substrate_X_Git/tests/find_alpha_bug.py:        alpha=1e10, beta=0, gamma=0,
+./Substrate_X_Git/tests/find_alpha_bug.py:    alpha_term = solver.alpha * solver.E
+./Substrate_X_Git/tests/find_alpha_bug.py:    print(f"  αE shape: {alpha_term.shape}")
+./Substrate_X_Git/tests/find_alpha_bug.py:    print(f"  αE max: {np.max(alpha_term):.2e}")
+./Substrate_X_Git/tests/find_alpha_bug.py:        beta_term = solver.beta * div_E_v_sub
+./Substrate_X_Git/tests/find_alpha_bug.py:        print(f"  β∇·(E v_sub) shape: {beta_term.shape}")
+./Substrate_X_Git/tests/find_alpha_bug.py:        print(f"  β∇·(E v_sub) max: {np.max(beta_term):.2e}")
+./Substrate_X_Git/tests/find_alpha_bug.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/tests/find_alpha_bug.py:    alpha_term = solver.alpha * solver.E
+./Substrate_X_Git/tests/find_alpha_bug.py:    print(f"αE term: {alpha_term.shape}, max={np.max(alpha_term):.2e}")
+./Substrate_X_Git/tests/find_alpha_bug.py:    beta_term = solver.beta * div_E_v_sub
+./Substrate_X_Git/tests/find_alpha_bug.py:    print(f"β∇·(E v_sub) term: {beta_term.shape}, max={np.max(beta_term):.2e}")
+./Substrate_X_Git/tests/find_alpha_bug.py:    debug_alpha_term()
+./Substrate_X_Git/tests/debug_measurement_location_fixed.py:        alpha=1.0, beta=1.0, gamma=1.0, chi=1.0, tau=1e3
+./Substrate_X_Git/tests/debug_measurement_location_fixed.py:            alpha=1.0, beta=1.0, gamma=1.0, chi=1.0, tau=1e3
+./Substrate_X_Git/test_final_calibration.py:    params = {'alpha': 1e-5, 'beta': 1e-5, 'gamma': 1e-5, 'chi': 1.0, 'tau': 1e3}
+./Substrate_X_Git/test_final_calibration.py:        alpha=1e-5, beta=1e-5, gamma=1e-5,
+./Substrate_X_Git/test_final_calibration.py:    alpha_term = solver.alpha * solver.E
+./Substrate_X_Git/test_final_calibration.py:    beta_term = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/test_final_calibration.py:    print(f"  αE term: {np.max(alpha_term):.6e}")
+./Substrate_X_Git/test_final_calibration.py:    print(f"  β∇·(E v_sub) term: {np.max(beta_term):.6e}")
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.01, 'gamma': 0.3, 'tau_F': 0.1, 'label': 'Current stable'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.008, 'gamma': 0.25, 'tau_F': 0.15, 'label': 'Slight reduction'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.006, 'gamma': 0.2, 'tau_F': 0.2, 'label': 'Moderate reduction'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.004, 'gamma': 0.15, 'tau_F': 0.25, 'label': 'Medium range'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.002, 'gamma': 0.1, 'tau_F': 0.3, 'label': 'Long range'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.001, 'gamma': 0.05, 'tau_F': 0.4, 'label': 'Very long range'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.005, 'gamma': 0.1, 'tau_F': 0.5, 'tau_E': 0.3, 'label': 'Slow relaxation'},
+./Substrate_X_Git/stable_propagation_fix.py:        {'alpha': 0.003, 'gamma': 0.08, 'tau_F': 0.6, 'tau_E': 0.4, 'label': 'Very slow F'},
+./Substrate_X_Git/stable_propagation_fix.py:        'beta': 0.8, 'delta1': 0.5, 'delta2': 0.3, 
+./Substrate_X_Git/stable_propagation_fix.py:                    'alpha': test['alpha'], 'gamma': test['gamma'], 
+./Substrate_X_Git/stable_propagation_fix.py:                print(f"{test['alpha']:6.4f} | {test['gamma']:6.3f} | {test['tau_F']:6.2f} | {test['label']:14} | {status:9} | {keff_solar:11.2e} | {keff_galactic:13.3f} | {propagation_ratio:9.3f}")
+./Substrate_X_Git/stable_propagation_fix.py:                    'alpha': test['alpha'], 'gamma': test['gamma'],
+./Substrate_X_Git/stable_propagation_fix.py:                print(f"{test['alpha']:6.4f} | {test['gamma']:6.3f} | {test['tau_F']:6.2f} | {test['label']:14} | ✅ STABLE  | {'MASK_ERR':11} | {'MASK_ERR':13} | {'-':9}")
+./Substrate_X_Git/stable_propagation_fix.py:                'alpha': test['alpha'], 'gamma': test['gamma'],
+./Substrate_X_Git/stable_propagation_fix.py:            print(f"{test['alpha']:6.4f} | {test['gamma']:6.3f} | {test.get('tau_F', 0.25):6.2f} | {test['label']:14} | {status:9} | {'-':11} | {'-':13} | {'-':9}")
+./Substrate_X_Git/stable_propagation_fix.py:    print(f"🏆 BEST PROPAGATION: α={best_prop['alpha']:.4f}, γ={best_prop['gamma']:.3f}")
+./Substrate_X_Git/stable_propagation_fix.py:    print(f"🏆 BEST GALACTIC: α={best_galactic['alpha']:.4f}, γ={best_galactic['gamma']:.3f}")
+./Substrate_X_Git/stable_propagation_fix.py:    alpha_stable = [r['alpha'] for r in stable_results]
+./Substrate_X_Git/stable_propagation_fix.py:    sc = axes[0].scatter(alpha_stable, gamma_stable, c=prop_stable, 
+./Substrate_X_Git/stable_propagation_fix.py:                        cmap='viridis', s=100, alpha=0.7)
+./Substrate_X_Git/stable_propagation_fix.py:    axes[1].grid(True, alpha=0.3)
+./Substrate_X_Git/test_gamma_alternatives_fixed.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/test_gamma_alternatives_fixed.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/check_solver_methods.py:solver = CompleteFieldTheorySolver(alpha=1e-5, delta1=25.0)
+./Substrate_X_Git/complete_500_step_dampened.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/complete_500_step_dampened.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/complete_500_step_dampened.py:        print(f"🔧 DAMPENED SOLVER: M={M_factor:.0f}, α_eff_max={self.alpha_eff_max:.3f}")
+./Substrate_X_Git/complete_500_step_dampened.py:            return self.alpha
+./Substrate_X_Git/complete_500_step_dampened.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/complete_500_step_dampened.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/complete_500_step_dampened.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/complete_500_step_dampened.py:    alpha=1e-5, beta=0.5, gamma=0.2,
+./Substrate_X_Git/delta_reduction_test.py:            return self.alpha
+./Substrate_X_Git/delta_reduction_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/delta_reduction_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/delta_reduction_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/delta_reduction_test.py:    alpha=1e-5,
+./Substrate_X_Git/complete_field_theory_solver.py:                 alpha=0.01, beta=0.5, gamma=0.2,  # Substrate parameters
+./Substrate_X_Git/complete_field_theory_solver.py:        self.alpha = alpha    # Diffusion
+./Substrate_X_Git/complete_field_theory_solver.py:        self.beta = beta      # Reaction  
+./Substrate_X_Git/complete_field_theory_solver.py:        self.dt = 0.1 * self.dx**2 / (4 * max(alpha, delta1, delta2))
+./Substrate_X_Git/complete_field_theory_solver.py:        print(f"Substrate: α={alpha}, β={beta}, γ={gamma}")
+./Substrate_X_Git/complete_field_theory_solver.py:                diffusion = self.alpha * laplacian_rho[i,j]
+./Substrate_X_Git/complete_field_theory_solver.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j])
+./Substrate_X_Git/complete_field_theory_solver.py:        'alpha': 0.01,
+./Substrate_X_Git/complete_field_theory_solver.py:        'beta': 0.8,
+./Substrate_X_Git/complete_field_theory_solver.py:        axes[idx, 3].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/complete_field_theory_solver.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/fixed_dampened_test.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/fixed_dampened_test.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/fixed_dampened_test.py:        print(f"🔧 DAMPENED SOLVER: M={M_factor:.0f}, α_eff_max={self.alpha_eff_max:.3f}")
+./Substrate_X_Git/fixed_dampened_test.py:            return self.alpha
+./Substrate_X_Git/fixed_dampened_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/fixed_dampened_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/fixed_dampened_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/fixed_dampened_test.py:    alpha=1e-5,
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:        print(f"🔧 STABILIZED SURGICAL SOLVER: M={M_factor:.0f}, α_eff_max={self.alpha_eff_max:.3f}")
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:            return self.alpha
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/stabilized_dt_evolution_fixed.py:    alpha=1e-5,
+./Substrate_X_Git/src/numerical_solver.py:                 tau=1e3, alpha=1e-40, beta=1e-25, gamma=1e-40, chi=1.0):
+./Substrate_X_Git/src/numerical_solver.py:        alpha : float
+./Substrate_X_Git/src/numerical_solver.py:        beta : float
+./Substrate_X_Git/src/numerical_solver.py:        self.alpha_base = alpha  # 1e-40
+./Substrate_X_Git/src/numerical_solver.py:        self.beta_base = beta    # 1e-25
+./Substrate_X_Git/src/numerical_solver.py:        # alpha: [s] L / M → divide by (L³/T²)
+./Substrate_X_Git/src/numerical_solver.py:        self.alpha = alpha / (self.L_char**3 / self.T_char**2)
+./Substrate_X_Git/src/numerical_solver.py:        # beta: [s] L / M → divide by (L² T)
+./Substrate_X_Git/src/numerical_solver.py:        self.beta = beta / (self.L_char**2 * self.T_char)
+./Substrate_X_Git/src/numerical_solver.py:        print(f"α = {alpha:.3e} → Scaled: {self.alpha:.3e} [s] L/M")
+./Substrate_X_Git/src/numerical_solver.py:        print(f"β = {beta:.3e} → Scaled: {self.beta:.3e} [s] L/M")
+./Substrate_X_Git/src/numerical_solver.py:        energy_term = self.alpha * self.E
+./Substrate_X_Git/src/numerical_solver.py:        energy_advection_term = self.beta * self.compute_divergence(E_v_sub)
+./Substrate_X_Git/src/numerical_solver.py:        alpha=1e-10,      # Energy coupling
+./Substrate_X_Git/src/numerical_solver.py:        beta=1e-10,       # Energy flow coupling
+./Substrate_X_Git/src/numerical_solver.py:        alpha=1e-10,
+./Substrate_X_Git/src/numerical_solver.py:        beta=1e-10,
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:                 tau=1e3, alpha=1e-40, beta=1e-25, gamma=1e-40, chi=1.0):
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        alpha : float
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        beta : float
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        self.alpha_base = alpha  # 1e-40
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        self.beta_base = beta    # 1e-25
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        # alpha: [s] L / M → divide by (L³/T²)
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        self.alpha = alpha / (self.L_char**3 / self.T_char**2)
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        # beta: [s] L / M → divide by (L² T)
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        self.beta = beta / (self.L_char**2 * self.T_char)
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        print(f"α = {alpha:.3e} → Scaled: {self.alpha:.3e} [s] L/M")
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        print(f"β = {beta:.3e} → Scaled: {self.beta:.3e} [s] L/M")
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        energy_term = self.alpha * self.E
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        energy_advection_term = self.beta * self.compute_divergence(E_v_sub)
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        alpha=1e-10,      # Energy coupling
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        beta=1e-10,       # Energy flow coupling
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        alpha=1e-10,
+./Substrate_X_Git/src/numerical_solver_fixed_gamma.py:        beta=1e-10,
+./Substrate_X_Git/src/information_gravity_coupling.py:            alpha = dt / (tau + dt)
+./Substrate_X_Git/src/information_gravity_coupling.py:            potential_next = (1 - alpha) * current_potential + alpha * new_potential
+./Substrate_X_Git/src/information_gravity_coupling.py:            'relaxation_factor': alpha if tau > 0 else 1.0
+./Substrate_X_Git/surgical_stiffness_test.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/surgical_stiffness_test.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/surgical_stiffness_test.py:        print(f"   Max stiffness: α_eff_max = {self.alpha_eff_max:.2e}")
+./Substrate_X_Git/surgical_stiffness_test.py:            return self.alpha
+./Substrate_X_Git/surgical_stiffness_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/surgical_stiffness_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/surgical_stiffness_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/surgical_stiffness_test.py:    alpha=1e-5, 
+./Substrate_X_Git/realistic_calibration.py:                    'alpha': 0.01,
+./Substrate_X_Git/realistic_calibration.py:                    'beta': 0.8,
+./Substrate_X_Git/realistic_calibration.py:                            s=final['E_rms']*100, alpha=0.7,
+./Substrate_X_Git/realistic_calibration.py:        axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/realistic_calibration.py:        axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/realistic_calibration.py:        axes[0,2].grid(True, alpha=0.3)
+./Substrate_X_Git/definitive_dt_reduction_test.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/definitive_dt_reduction_test.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/definitive_dt_reduction_test.py:        print(f"🔧 DT-STABILIZED SOLVER: M={M_factor:.0f}, α_eff_max={self.alpha_eff_max:.3f}")
+./Substrate_X_Git/definitive_dt_reduction_test.py:            return self.alpha
+./Substrate_X_Git/definitive_dt_reduction_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/definitive_dt_reduction_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/definitive_dt_reduction_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/definitive_dt_reduction_test.py:    alpha=1e-5,
+./Substrate_X_Git/proper_stiffness_fix.py:        print(f"🔧 PROPER STIFFNESS: α={self.alpha:.1e}, η={eta_scale}")
+./Substrate_X_Git/proper_stiffness_fix.py:            alpha_eff = self.alpha * (1.0 + self.eta_scale * rho**2)
+./Substrate_X_Git/proper_stiffness_fix.py:            stiffness_change = (alpha_eff - self.alpha) * F
+./Substrate_X_Git/proper_stiffness_fix.py:        solver = ProperStiffnessSolver(alpha=1e-5, delta1=25.0, eta_scale=eta)
+./Substrate_X_Git/complete_500_step_evolution.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/complete_500_step_evolution.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/complete_500_step_evolution.py:        print(f"🔧 CALIBRATED SOLVER: M={M_factor:.0f}, α_eff_max={self.alpha_eff_max:.3f}")
+./Substrate_X_Git/complete_500_step_evolution.py:            return self.alpha
+./Substrate_X_Git/complete_500_step_evolution.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/complete_500_step_evolution.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/complete_500_step_evolution.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/complete_500_step_evolution.py:    alpha=1e-5,
+./Substrate_X_Git/substrate_x_results/diagnose_deeper_issue.py:        alpha=1e0, beta=1e0, gamma=1e0,  # Strong parameters
+./Substrate_X_Git/substrate_x_results/diagnose_deeper_issue.py:        alpha=1e0, beta=1e0, gamma=1e0,
+./Substrate_X_Git/substrate_x_results/diagnose_deeper_issue.py:        alpha=0, beta=0, gamma=0,  # No coupling
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:                 alpha=0.01, beta=0.5, gamma=0.2,  # Substrate parameters
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        self.alpha = alpha    # Diffusion
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        self.beta = beta      # Reaction  
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        self.dt = 0.1 * self.dx**2 / (4 * max(alpha, delta1, delta2))
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        print(f"Substrate: α={alpha}, β={beta}, γ={gamma}")
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:                diffusion = self.alpha * laplacian_rho[i,j]
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j])
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:        axes[idx, 3].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver_fixed.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/debug_term_values.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/substrate_x_results/debug_term_values.py:    terms['energy'] = solver.alpha * solver.E
+./Substrate_X_Git/substrate_x_results/debug_term_values.py:    terms['energy_adv'] = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/substrate_x_results/complete_system_solver_working.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/substrate_x_results/complete_system_solver_working.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+./Substrate_X_Git/substrate_x_results/complete_system_solver_working.py:        'alpha': 1e-5,
+./Substrate_X_Git/substrate_x_results/complete_system_solver_working.py:        'beta': 1.0, 
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:                 tau=1e3, alpha=1e-40, beta=1e-25, gamma=1e-40, chi=1.0):
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        alpha : float
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        beta : float
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        self.alpha_base = alpha  # 1e-40
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        self.beta_base = beta    # 1e-25
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        # alpha: [s] L / M → divide by (L³/T²)
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        self.alpha = alpha / (self.L_char**3 / self.T_char**2)
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        # beta: [s] L / M → divide by (L² T)
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        self.beta = beta / (self.L_char**2 * self.T_char)
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        print(f"α = {alpha:.3e} → Scaled: {self.alpha:.3e} [s] L/M")
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        print(f"β = {beta:.3e} → Scaled: {self.beta:.3e} [s] L/M")
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        energy_term = self.alpha * self.E
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        energy_advection_term = self.beta * self.compute_divergence(E_v_sub)
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        alpha=1e-10,      # Energy coupling
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        beta=1e-10,       # Energy flow coupling
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        alpha=1e-10,
+./Substrate_X_Git/substrate_x_results/numerical_solver.py:        beta=1e-10,
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:        self.alpha = alpha
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:        self.beta = beta
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:        self.dt = 0.1 * min(self.dx, self.dy)**2 / (2 * alpha)
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:        drho_dt = (self.alpha * laplacian_rho + 
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:                  self.beta * self.rho * (1 - self.rho) +
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:                alpha = self.dt / (self.tau + self.dt)
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:                self.phi = (1 - alpha) * self.phi + alpha * new_phi
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:        'alpha': 1e-5,
+./Substrate_X_Git/substrate_x_results/standalone_solver.py:        'beta': 1.0, 
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:                        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:                        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:                               cmap='viridis', s=100, alpha=0.7)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:                               cmap='plasma', s=100, alpha=0.7, norm='log')
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[0,1].axhline(y=best_params['delta2'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[0,1].axvline(x=best_params['delta1'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:                               cmap='plasma', s=100, alpha=0.7)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[0,2].axhline(y=best_params['delta2'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[0,2].axvline(x=best_params['delta1'] if best_params else 1, color='red', linestyle='--', alpha=0.5)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        axes[1,2].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/enhanced_calibration.py:    axes[1,2].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/test_final_calibration.py:    params = {'alpha': 1e-5, 'beta': 1e-5, 'gamma': 1e-5, 'chi': 1.0, 'tau': 1e3}
+./Substrate_X_Git/substrate_x_results/test_final_calibration.py:        alpha=1e-5, beta=1e-5, gamma=1e-5,
+./Substrate_X_Git/substrate_x_results/test_final_calibration.py:    alpha_term = solver.alpha * solver.E
+./Substrate_X_Git/substrate_x_results/test_final_calibration.py:    beta_term = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/substrate_x_results/test_final_calibration.py:    print(f"  αE term: {np.max(alpha_term):.6e}")
+./Substrate_X_Git/substrate_x_results/test_final_calibration.py:    print(f"  β∇·(E v_sub) term: {np.max(beta_term):.6e}")
+./Substrate_X_Git/substrate_x_results/test_gamma_alternatives_fixed.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/substrate_x_results/test_gamma_alternatives_fixed.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:                 tau=1e3, alpha=1e-40, beta=1e-25, gamma=1e-40, chi=1.0):
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        alpha : float
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        beta : float
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        self.alpha_base = alpha  # 1e-40
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        self.beta_base = beta    # 1e-25
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        # alpha: [s] L / M → divide by (L³/T²)
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        self.alpha = alpha / (self.L_char**3 / self.T_char**2)
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        # beta: [s] L / M → divide by (L² T)
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        self.beta = beta / (self.L_char**2 * self.T_char)
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        print(f"α = {alpha:.3e} → Scaled: {self.alpha:.3e} [s] L/M")
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        print(f"β = {beta:.3e} → Scaled: {self.beta:.3e} [s] L/M")
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        energy_term = self.alpha * self.E
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        energy_advection_term = self.beta * self.compute_divergence(E_v_sub)
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        alpha=1e-10,      # Energy coupling
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        beta=1e-10,       # Energy flow coupling
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        alpha=1e-10,
+./Substrate_X_Git/substrate_x_results/numerical_solver_fixed_gamma.py:        beta=1e-10,
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:                 alpha=0.01, beta=0.5, gamma=0.2,  # Substrate parameters
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        self.alpha = alpha    # Diffusion
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        self.beta = beta      # Reaction  
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        self.dt = 0.1 * self.dx**2 / (4 * max(alpha, delta1, delta2))
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        print(f"Substrate: α={alpha}, β={beta}, γ={gamma}")
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:                diffusion = self.alpha * laplacian_rho[i,j]
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j])
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:        axes[idx, 3].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_field_theory_solver.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/information_gravity_coupling.py:            alpha = dt / (tau + dt)
+./Substrate_X_Git/substrate_x_results/information_gravity_coupling.py:            potential_next = (1 - alpha) * current_potential + alpha * new_potential
+./Substrate_X_Git/substrate_x_results/information_gravity_coupling.py:            'relaxation_factor': alpha if tau > 0 else 1.0
+./Substrate_X_Git/substrate_x_results/realistic_calibration.py:                    'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/realistic_calibration.py:                    'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/realistic_calibration.py:                            s=final['E_rms']*100, alpha=0.7,
+./Substrate_X_Git/substrate_x_results/realistic_calibration.py:        axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/realistic_calibration.py:        axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/realistic_calibration.py:        axes[0,2].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:                    'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:                    'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:                               cmap='viridis', s=100, alpha=0.7, norm='log')
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:                               cmap='plasma', s=100, alpha=0.7)
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:                               cmap='hot_r', s=100, alpha=0.7)
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:        axes[1,1].semilogy(x_pos, solar_vals, 'bo-', label='keff_solar', alpha=0.7)
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:        axes[1,1].semilogy(x_pos, galactic_vals, 'ro-', label='keff_galactic', alpha=0.7)
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/properly_scaled_calibration.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:                    'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:                    'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:                                 cmap='viridis', alpha=0.6, label=pattern)
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:        axes[0,1].bar(x_pos - width/2, solar_achieved, width, label='Achieved', alpha=0.7)
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:        axes[1,0].bar(x_pos - width/2, galactic_achieved, width, label='Achieved', alpha=0.7)
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/field_calibration_solver.py:        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/complete_system_solver.py:    def __init__(self, grid_size, domain_size, alpha=1e-10, beta=1e-10, gamma=1e-10, 
+./Substrate_X_Git/substrate_x_results/complete_system_solver.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+./Substrate_X_Git/substrate_x_results/complete_system_solver.py:        'alpha': 1e-5,    # E → s coupling
+./Substrate_X_Git/substrate_x_results/complete_system_solver.py:        'beta': 1e-5,     # ∇·(E v_sub) → s coupling  
+./Substrate_X_Git/substrate_x_results/complete_system_solver.py:            alpha=1e-5, beta=1e-5, gamma=1e-5,
+./Substrate_X_Git/substrate_x_results/analyze_calibration_results.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/analyze_calibration_results.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/analyze_calibration_results.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/analyze_calibration_results.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/analyze_calibration_results.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/analyze_calibration_results.py:        'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/fix_solver.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/substrate_x_results/fix_solver.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma, chi, tau)'''
+./Substrate_X_Git/substrate_x_results/fix_solver.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/substrate_x_results/fix_solver.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)'''
+./Substrate_X_Git/substrate_x_results/debug_rhs_shapes.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/substrate_x_results/debug_rhs_shapes.py:    energy_term = solver.alpha * solver.E
+./Substrate_X_Git/substrate_x_results/debug_rhs_shapes.py:    energy_advection_term = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/substrate_x_results/debug_rhs_shapes.py:        alpha=1e10, beta=1e10, gamma=1e10, 
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:    def __init__(self, grid_size=64, domain_size=1.0, alpha=0.01, beta=0.5, 
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        self.alpha = alpha    # Diffusion
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        self.beta = beta      # Reaction (logistic growth)
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        self.dt = 0.05 * self.dx**2 / (4 * alpha)
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        print(f"Parameters: α={alpha}, β={beta}, γ={gamma}, χ={chi}, τ={tau}")
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j]) * (self.rho[i,j] - 0.1)
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:                    self.alpha * laplacian + reaction + advection + noise[i,j]
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        'beta': 0.5,
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:        axes[idx, 3].grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/enhanced_solver.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/complete_system_solver_fixed.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/substrate_x_results/complete_system_solver_fixed.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+./Substrate_X_Git/substrate_x_results/complete_system_solver_fixed.py:        'alpha': 1e-5,
+./Substrate_X_Git/substrate_x_results/complete_system_solver_fixed.py:        'beta': 1.0, 
+./Substrate_X_Git/substrate_x_results/save_everything.py:            'alpha': 0.01,
+./Substrate_X_Git/substrate_x_results/save_everything.py:            'beta': 0.8,
+./Substrate_X_Git/substrate_x_results/stable_solver.py:    def __init__(self, grid_size=32, domain_size=1.0, alpha=0.1, beta=1.0, 
+./Substrate_X_Git/substrate_x_results/stable_solver.py:        self.alpha = alpha    # Diffusion coefficient
+./Substrate_X_Git/substrate_x_results/stable_solver.py:        self.beta = beta      # Reaction coefficient  
+./Substrate_X_Git/substrate_x_results/stable_solver.py:        self.dt = 0.1 * self.dx**2 / (4 * alpha)  # More conservative
+./Substrate_X_Git/substrate_x_results/stable_solver.py:        print(f"α={alpha}, β={beta}, γ={gamma}, χ={chi}")
+./Substrate_X_Git/substrate_x_results/stable_solver.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j])
+./Substrate_X_Git/substrate_x_results/stable_solver.py:                    self.alpha * laplacian + reaction + coupling
+./Substrate_X_Git/substrate_x_results/stable_solver.py:                    alpha_relax = self.dt / (self.tau + self.dt)
+./Substrate_X_Git/substrate_x_results/stable_solver.py:                    new_phi_smooth = (1 - alpha_relax) * self.phi + alpha_relax * new_phi
+./Substrate_X_Git/substrate_x_results/stable_solver.py:        'alpha': 0.01,        # Small diffusion
+./Substrate_X_Git/substrate_x_results/stable_solver.py:        'beta': 0.5,          # Moderate reaction
+./Substrate_X_Git/substrate_x_results/stable_solver.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/stable_solver.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/substrate_x_results/test_gamma_alternatives.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/substrate_x_results/test_gamma_alternatives.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/substrate_x_results/solver_with_feedback.py:        alpha=1e5, beta=1e5, gamma=1e5,  # Strong coupling
+./Substrate_X_Git/substrate_x_results/test_feedback_loop.py:        alpha=1e10, beta=1e10, gamma=1e10,  # Very strong
+./Substrate_X_Git/parameter_fix_test.py:            return self.alpha
+./Substrate_X_Git/parameter_fix_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/parameter_fix_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/parameter_fix_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/parameter_fix_test.py:    alpha=1e-5,
+./Substrate_X_Git/stiffness_functional_forms.py:        print(f"🔧 {stiffness_type.upper()} STIFFNESS: α={self.alpha:.1e}, η={eta_param}")
+./Substrate_X_Git/stiffness_functional_forms.py:            return self.alpha * (1.0 + self.eta_param * rho**2)
+./Substrate_X_Git/stiffness_functional_forms.py:            return self.alpha * np.exp(self.eta_param * rho)
+./Substrate_X_Git/stiffness_functional_forms.py:            return self.alpha * (1.0 + self.eta_param * rho) / (1.0 + 0.1 * self.eta_param * rho)
+./Substrate_X_Git/stiffness_functional_forms.py:            return self.alpha * (1.0 + self.eta_param * high_density_mask)
+./Substrate_X_Git/stiffness_functional_forms.py:            return self.alpha
+./Substrate_X_Git/stiffness_functional_forms.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/stiffness_functional_forms.py:            stiffness_term = alpha_eff * F
+./Substrate_X_Git/stiffness_functional_forms.py:            original_stiffness = self.alpha * F
+./Substrate_X_Git/stiffness_functional_forms.py:            alpha=1e-5, 
+./Substrate_X_Git/properly_scaled_calibration.py:                    'alpha': 0.01,
+./Substrate_X_Git/properly_scaled_calibration.py:                    'beta': 0.8,
+./Substrate_X_Git/properly_scaled_calibration.py:                               cmap='viridis', s=100, alpha=0.7, norm='log')
+./Substrate_X_Git/properly_scaled_calibration.py:                               cmap='plasma', s=100, alpha=0.7)
+./Substrate_X_Git/properly_scaled_calibration.py:                               cmap='hot_r', s=100, alpha=0.7)
+./Substrate_X_Git/properly_scaled_calibration.py:        axes[1,1].semilogy(x_pos, solar_vals, 'bo-', label='keff_solar', alpha=0.7)
+./Substrate_X_Git/properly_scaled_calibration.py:        axes[1,1].semilogy(x_pos, galactic_vals, 'ro-', label='keff_galactic', alpha=0.7)
+./Substrate_X_Git/properly_scaled_calibration.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/properly_scaled_calibration.py:        'alpha': 0.01,
+./Substrate_X_Git/properly_scaled_calibration.py:        'beta': 0.8,
+./Substrate_X_Git/properly_scaled_calibration.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/field_calibration_solver.py:                    'alpha': 0.01,
+./Substrate_X_Git/field_calibration_solver.py:                    'beta': 0.8,
+./Substrate_X_Git/field_calibration_solver.py:                                 cmap='viridis', alpha=0.6, label=pattern)
+./Substrate_X_Git/field_calibration_solver.py:        axes[0,1].bar(x_pos - width/2, solar_achieved, width, label='Achieved', alpha=0.7)
+./Substrate_X_Git/field_calibration_solver.py:        axes[1,0].bar(x_pos - width/2, galactic_achieved, width, label='Achieved', alpha=0.7)
+./Substrate_X_Git/field_calibration_solver.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/field_calibration_solver.py:        'alpha': 0.01,
+./Substrate_X_Git/field_calibration_solver.py:        'beta': 0.8,
+./Substrate_X_Git/proper_stiffness_test.py:            alpha_eff = self.alpha * (1.0 + self.eta_scale * rho**2)
+./Substrate_X_Git/proper_stiffness_test.py:            original_stiffness = self.alpha * F
+./Substrate_X_Git/proper_stiffness_test.py:            variable_stiffness = alpha_eff * F
+./Substrate_X_Git/proper_stiffness_test.py:        solver = WorkingStiffnessSolver(alpha=1e-5, delta1=25.0, eta_scale=eta)
+./Substrate_X_Git/scale_separation_patch.py:                 alpha=0.01, beta=0.8, gamma=0.3,
+./Substrate_X_Git/scale_separation_patch.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma,
+./Substrate_X_Git/scale_separation_patch.py:            self.alpha * eta_field * self.F -         # SCALE-SEPARATED mass term
+./Substrate_X_Git/scale_separation_patch.py:        'alpha': 0.01, 'beta': 0.8, 'gamma': 0.3,
+./Substrate_X_Git/scale_separation_patch.py:    axes[0].scatter(eta_bases, prop_ratios, s=100, alpha=0.7)
+./Substrate_X_Git/scale_separation_patch.py:    axes[0].grid(True, alpha=0.3)
+./Substrate_X_Git/scale_separation_patch.py:    axes[1].grid(True, alpha=0.3)
+./Substrate_X_Git/scale_separation_patch.py:        'damping_F': 0.1, 'alpha': 0.01, 'gamma': 0.3,
+./Substrate_X_Git/scale_separation_patch.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/scale_separation_patch.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/scale_separation_patch.py:    axes[1,2].grid(True, alpha=0.3)
+./Substrate_X_Git/working_stiffness_analysis.py:            alpha_eff = self.alpha * (1.0 + self.eta_scale * rho**2)
+./Substrate_X_Git/working_stiffness_analysis.py:            original_stiffness = self.alpha * F
+./Substrate_X_Git/working_stiffness_analysis.py:            variable_stiffness = alpha_eff * F
+./Substrate_X_Git/working_stiffness_analysis.py:        solver = WorkingStiffnessSolver(alpha=1e-5, delta1=25.0, eta_scale=eta)
+./Substrate_X_Git/complete_system_solver.py:    def __init__(self, grid_size, domain_size, alpha=1e-10, beta=1e-10, gamma=1e-10, 
+./Substrate_X_Git/complete_system_solver.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+./Substrate_X_Git/complete_system_solver.py:        'alpha': 1e-5,    # E → s coupling
+./Substrate_X_Git/complete_system_solver.py:        'beta': 1e-5,     # ∇·(E v_sub) → s coupling  
+./Substrate_X_Git/complete_system_solver.py:            alpha=1e-5, beta=1e-5, gamma=1e-5,
+./Substrate_X_Git/systematic_eta_test.py:    solver = SimpleEtaSolver(alpha=1e-5, delta1=25.0, eta=eta)
+./Substrate_X_Git/analyze_calibration_results.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/analyze_calibration_results.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/analyze_calibration_results.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/analyze_calibration_results.py:    axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/analyze_calibration_results.py:        'alpha': 0.01,
+./Substrate_X_Git/analyze_calibration_results.py:        'beta': 0.8,
+./Substrate_X_Git/galaxy_simulations/galaxy_scale_sim.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/galaxy_simulations/analyze_dwarf_galaxy.py:    ax2.plot(data['r_kpc'], data['ratio'], 'g-', alpha=0.5, lw=1, label='v_sub/v_newt')
+./Substrate_X_Git/galaxy_simulations/analyze_dwarf_galaxy.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/galaxy_simulations/analyze_dwarf_galaxy.py:    plt.grid(True, which='both', alpha=0.3)
+./Substrate_X_Git/fix_solver.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/fix_solver.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma, chi, tau)'''
+./Substrate_X_Git/fix_solver.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/fix_solver.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)'''
+./Substrate_X_Git/debug_rhs_shapes.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/debug_rhs_shapes.py:    energy_term = solver.alpha * solver.E
+./Substrate_X_Git/debug_rhs_shapes.py:    energy_advection_term = solver.beta * solver.compute_divergence(E_v_sub)
+./Substrate_X_Git/debug_rhs_shapes.py:        alpha=1e10, beta=1e10, gamma=1e10, 
+./Substrate_X_Git/galactic_scale_calibration.py:    def run_beta_gamma_sweep(self):
+./Substrate_X_Git/galactic_scale_calibration.py:        for beta, gamma in test_combinations:
+./Substrate_X_Git/galactic_scale_calibration.py:                    'alpha': 0.01, 'beta': beta, 'gamma': gamma,
+./Substrate_X_Git/galactic_scale_calibration.py:                    'beta': beta, 'gamma': gamma,
+./Substrate_X_Git/galactic_scale_calibration.py:                print(f"{beta:4.2f} | {gamma:5.2f} | {keff_solar:11.2e} | {keff_galactic:13.3f} | {solar_error:9.1f} | {galactic_error:13.1f} | {total_error:10.1f}")
+./Substrate_X_Git/galactic_scale_calibration.py:                print(f"{beta:4.2f} | {gamma:5.2f} | {'ERROR':11} | {'ERROR':13} | {'-':9} | {'-':13} | {'-':10}")
+./Substrate_X_Git/galactic_scale_calibration.py:        print(f"Overall best (total error): β={best_overall['beta']:.2f}, γ={best_overall['gamma']:.2f}")
+./Substrate_X_Git/galactic_scale_calibration.py:        print(f"\nBest galactic performance: β={best_galactic['beta']:.2f}, γ={best_galactic['gamma']:.2f}")
+./Substrate_X_Git/galactic_scale_calibration.py:            print(f"\nBest balanced: β={best_balanced['beta']:.2f}, γ={best_balanced['gamma']:.2f}")
+./Substrate_X_Git/galactic_scale_calibration.py:        beta_vals = [r['beta'] for r in results]
+./Substrate_X_Git/galactic_scale_calibration.py:        sc1 = axes[0,0].scatter(beta_vals, gamma_vals, c=keff_solar_vals, 
+./Substrate_X_Git/galactic_scale_calibration.py:                               cmap='viridis', s=100, alpha=0.7, norm='log')
+./Substrate_X_Git/galactic_scale_calibration.py:        sc2 = axes[0,1].scatter(beta_vals, gamma_vals, c=keff_galactic_vals, 
+./Substrate_X_Git/galactic_scale_calibration.py:                               cmap='plasma', s=100, alpha=0.7)
+./Substrate_X_Git/galactic_scale_calibration.py:        sc3 = axes[0,2].scatter(beta_vals, gamma_vals, c=galactic_errors, 
+./Substrate_X_Git/galactic_scale_calibration.py:                               cmap='hot_r', s=100, alpha=0.7)
+./Substrate_X_Git/galactic_scale_calibration.py:            axes[0,2].plot(best['beta'], best['gamma'], 'r*', markersize=15, label='Best Galactic')
+./Substrate_X_Git/galactic_scale_calibration.py:        sc4 = axes[1,0].scatter(beta_vals, gamma_vals, c=scale_ratios, 
+./Substrate_X_Git/galactic_scale_calibration.py:                               cmap='coolwarm', s=100, alpha=0.7)
+./Substrate_X_Git/galactic_scale_calibration.py:        unique_betas = sorted(set(beta_vals))
+./Substrate_X_Git/galactic_scale_calibration.py:        for beta in unique_betas[:4]:  # Plot first 4 for clarity
+./Substrate_X_Git/galactic_scale_calibration.py:            beta_mask = [b == beta for b in beta_vals]
+./Substrate_X_Git/galactic_scale_calibration.py:            if any(beta_mask):
+./Substrate_X_Git/galactic_scale_calibration.py:                gamma_subset = [g for g, m in zip(gamma_vals, beta_mask) if m]
+./Substrate_X_Git/galactic_scale_calibration.py:                keff_galactic_subset = [k for k, m in zip(keff_galactic_vals, beta_mask) if m]
+./Substrate_X_Git/galactic_scale_calibration.py:                             label=f'β={beta}', linewidth=2)
+./Substrate_X_Git/galactic_scale_calibration.py:        axes[1,1].grid(True, alpha=0.3)
+./Substrate_X_Git/galactic_scale_calibration.py:            axes[1,2].text(0.1, 0.8, f'β = {best["beta"]:.3f}')
+./Substrate_X_Git/galactic_scale_calibration.py:    results = calibrator.run_beta_gamma_sweep()
+./Substrate_X_Git/galactic_scale_calibration.py:            print(f"α=0.01, β={best['beta']:.3f}, γ={best['gamma']:.3f}")
+./Substrate_X_Git/enhanced_solver.py:    def __init__(self, grid_size=64, domain_size=1.0, alpha=0.01, beta=0.5, 
+./Substrate_X_Git/enhanced_solver.py:        self.alpha = alpha    # Diffusion
+./Substrate_X_Git/enhanced_solver.py:        self.beta = beta      # Reaction (logistic growth)
+./Substrate_X_Git/enhanced_solver.py:        self.dt = 0.05 * self.dx**2 / (4 * alpha)
+./Substrate_X_Git/enhanced_solver.py:        print(f"Parameters: α={alpha}, β={beta}, γ={gamma}, χ={chi}, τ={tau}")
+./Substrate_X_Git/enhanced_solver.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j]) * (self.rho[i,j] - 0.1)
+./Substrate_X_Git/enhanced_solver.py:                    self.alpha * laplacian + reaction + advection + noise[i,j]
+./Substrate_X_Git/enhanced_solver.py:        'alpha': 0.01,
+./Substrate_X_Git/enhanced_solver.py:        'beta': 0.5,
+./Substrate_X_Git/enhanced_solver.py:        axes[idx, 3].grid(True, alpha=0.3)
+./Substrate_X_Git/enhanced_solver.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/final_integrated_solution.py:                 alpha=1e-5, beta=0.8, gamma=0.3,
+./Substrate_X_Git/final_integrated_solution.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma,
+./Substrate_X_Git/final_integrated_solution.py:        print(f"   α={alpha:.1e} (REDUCED for long-range)")
+./Substrate_X_Git/final_integrated_solution.py:            self.alpha * eta_field * self.F -         # REDUCED α with η stabilization
+./Substrate_X_Git/final_integrated_solution.py:        'alpha': 1e-5,  # CRITICAL: Reduced for long-range
+./Substrate_X_Git/final_integrated_solution.py:        'beta': 0.8, 'gamma': 0.3,
+./Substrate_X_Git/final_integrated_solution.py:    axes[0].grid(True, alpha=0.3)
+./Substrate_X_Git/final_integrated_solution.py:    axes[1].grid(True, alpha=0.3)
+./Substrate_X_Git/surgical_galactic_boost.py:            return self.alpha
+./Substrate_X_Git/surgical_galactic_boost.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/surgical_galactic_boost.py:        alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/surgical_galactic_boost.py:        drho_dt = (self.gamma + alpha_eff * F**2) * laplacian_rho - rho / self.tau_rho
+./Substrate_X_Git/surgical_galactic_boost.py:        dE_dt = self.beta * F + laplacian_E - E / self.tau_E
+./Substrate_X_Git/surgical_galactic_boost.py:        dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/surgical_galactic_boost.py:        alpha=1e-5,
+./Substrate_X_Git/exponential_stiffness.py:        print(f"🔧 EXPONENTIAL STIFFNESS: α={self.alpha:.1e}, η_base={eta_base}, η_power={eta_power}, ρ_cut={rho_cutoff}")
+./Substrate_X_Git/exponential_stiffness.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/exponential_stiffness.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/exponential_stiffness.py:            stiffness_change = (alpha_eff - self.alpha) * F
+./Substrate_X_Git/exponential_stiffness.py:            center_stiffness = alpha_eff[center_idx, center_idx] / self.alpha
+./Substrate_X_Git/exponential_stiffness.py:            edge_stiffness = alpha_eff[0, 0] / self.alpha
+./Substrate_X_Git/exponential_stiffness.py:            alpha=1e-5, 
+./Substrate_X_Git/delta2_boost_test.py:            return self.alpha
+./Substrate_X_Git/delta2_boost_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/delta2_boost_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/delta2_boost_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/delta2_boost_test.py:    alpha=1e-5,
+./Substrate_X_Git/tanh_stiffness_test.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/tanh_stiffness_test.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/tanh_stiffness_test.py:        print(f"🔧 TANH STIFFNESS: M={M_factor:.0f}, alpha_eff_max={self.alpha_eff_max:.2e}")
+./Substrate_X_Git/tanh_stiffness_test.py:            return self.alpha
+./Substrate_X_Git/tanh_stiffness_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/tanh_stiffness_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/tanh_stiffness_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/tanh_stiffness_test.py:        alpha=1e-5, 
+./Substrate_X_Git/complete_override_fix.py:            return self.alpha
+./Substrate_X_Git/complete_override_fix.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/complete_override_fix.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/complete_override_fix.py:            dF_dt_base = dF_dt_base + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/complete_override_fix.py:    alpha=1e-5,
+./Substrate_X_Git/minimal_working_test.py:                 alpha=1e-5,  # CRITICAL: Reduced for long-range
+./Substrate_X_Git/minimal_working_test.py:                 beta=0.8, gamma=0.3,
+./Substrate_X_Git/minimal_working_test.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma,
+./Substrate_X_Git/minimal_working_test.py:        print(f"🔧 MINIMAL SOLVER: α={alpha:.1e} (reduced)")
+./Substrate_X_Git/minimal_working_test.py:        {'alpha': 1e-5, 'delta1': 0.5, 'delta2': 0.3},
+./Substrate_X_Git/minimal_working_test.py:        {'alpha': 1e-5, 'delta1': 5.0, 'delta2': 3.0},  # 10x sources
+./Substrate_X_Git/minimal_working_test.py:        {'alpha': 1e-5, 'delta1': 25.0, 'delta2': 15.0},  # 50x sources
+./Substrate_X_Git/minimal_working_test.py:        {'alpha': 1e-6, 'delta1': 25.0, 'delta2': 15.0},  # Even smaller α
+./Substrate_X_Git/minimal_working_test.py:        'beta': 0.8, 'gamma': 0.3, 'kappa': 0.5,
+./Substrate_X_Git/minimal_working_test.py:        print(f"\n🔬 Test {i+1}: α={case['alpha']:.1e}, δ₁={case['delta1']:.1f}")
+./Substrate_X_Git/minimal_working_test.py:    solver = CompleteFieldTheorySolver(alpha=0.01, delta1=25.0, delta2=15.0)
+./Substrate_X_Git/complete_system_solver_fixed.py:    def __init__(self, grid_size=32, domain_size=1e21, alpha=1e-5, beta=1.0, 
+./Substrate_X_Git/complete_system_solver_fixed.py:        super().__init__(dim, grid_size, domain_size, alpha, beta, gamma, chi, tau)
+./Substrate_X_Git/complete_system_solver_fixed.py:        'alpha': 1e-5,
+./Substrate_X_Git/complete_system_solver_fixed.py:        'beta': 1.0, 
+./Substrate_X_Git/fix_propagation_physics.py:        {'alpha': 0.001, 'gamma': 0.01, 'label': 'Very long range'},
+./Substrate_X_Git/fix_propagation_physics.py:        {'alpha': 0.001, 'gamma': 0.05, 'label': 'Long range'},
+./Substrate_X_Git/fix_propagation_physics.py:        {'alpha': 0.005, 'gamma': 0.01, 'label': 'Medium range'},
+./Substrate_X_Git/fix_propagation_physics.py:        {'alpha': 0.005, 'gamma': 0.05, 'label': 'Balanced'},
+./Substrate_X_Git/fix_propagation_physics.py:        {'alpha': 0.0001, 'gamma': 0.001, 'label': 'Extreme range'},  # Nearly massless
+./Substrate_X_Git/fix_propagation_physics.py:        'beta': 0.8, 'delta1': 0.5, 'delta2': 0.3, 
+./Substrate_X_Git/fix_propagation_physics.py:                    'alpha': test['alpha'], 'gamma': test['gamma'], 
+./Substrate_X_Git/fix_propagation_physics.py:                print(f"{test['alpha']:6.4f} | {test['gamma']:6.3f} | {test['label']:14} | {keff_solar:11.2e} | {keff_galactic:13.3f} | {prop_quality}")
+./Substrate_X_Git/fix_propagation_physics.py:                print(f"{test['alpha']:6.4f} | {test['gamma']:6.3f} | {test['label']:14} | {'MASK_ERR':11} | {'MASK_ERR':13} | ERROR")
+./Substrate_X_Git/fix_propagation_physics.py:            print(f"{test['alpha']:6.4f} | {test['gamma']:6.3f} | {test['label']:14} | {'ERROR':11} | {'ERROR':13} | FAILED")
+./Substrate_X_Git/fix_propagation_physics.py:    print(f"🏆 BEST PROPAGATION: α={best_prop['alpha']:.4f}, γ={best_prop['gamma']:.3f}")
+./Substrate_X_Git/fix_propagation_physics.py:    print(f"🏆 BEST GALACTIC: α={best_galactic['alpha']:.4f}, γ={best_galactic['gamma']:.3f}")
+./Substrate_X_Git/fix_propagation_physics.py:    alpha_vals = [r['alpha'] for r in results]
+./Substrate_X_Git/fix_propagation_physics.py:    sc = axes[0].scatter(alpha_vals, gamma_vals, c=prop_ratios, 
+./Substrate_X_Git/fix_propagation_physics.py:                        cmap='viridis', s=100, alpha=0.7)
+./Substrate_X_Git/fix_propagation_physics.py:    axes[1].grid(True, alpha=0.3)
+./Substrate_X_Git/save_everything.py:            'alpha': 0.01,
+./Substrate_X_Git/save_everything.py:            'beta': 0.8,
+./Substrate_X_Git/magnitude_boost_solution.py:                 alpha=0.01, beta=0.8, gamma=0.3,
+./Substrate_X_Git/magnitude_boost_solution.py:        super().__init__(grid_size, domain_size, alpha, beta, gamma,
+./Substrate_X_Git/magnitude_boost_solution.py:            self.alpha * eta_field * self.F -
+./Substrate_X_Git/magnitude_boost_solution.py:        'alpha': 0.01, 'beta': 0.8, 'gamma': 0.3,
+./Substrate_X_Git/magnitude_boost_solution.py:    axes[0,0].grid(True, alpha=0.3)
+./Substrate_X_Git/magnitude_boost_solution.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/magnitude_boost_solution.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/magnitude_boost_solution.py:        'alpha': 0.01, 'beta': 0.8, 'gamma': 0.3,
+./Substrate_X_Git/minimal_eta_test.py:s1 = SimpleEtaSolver(alpha=1e-5, delta1=25.0, eta=0.0)
+./Substrate_X_Git/minimal_eta_test.py:s2 = SimpleEtaSolver(alpha=1e-5, delta1=25.0, eta=10.0)
+./Substrate_X_Git/stable_solver.py:    def __init__(self, grid_size=32, domain_size=1.0, alpha=0.1, beta=1.0, 
+./Substrate_X_Git/stable_solver.py:        self.alpha = alpha    # Diffusion coefficient
+./Substrate_X_Git/stable_solver.py:        self.beta = beta      # Reaction coefficient  
+./Substrate_X_Git/stable_solver.py:        self.dt = 0.1 * self.dx**2 / (4 * alpha)  # More conservative
+./Substrate_X_Git/stable_solver.py:        print(f"α={alpha}, β={beta}, γ={gamma}, χ={chi}")
+./Substrate_X_Git/stable_solver.py:                reaction = self.beta * self.rho[i,j] * (1 - self.rho[i,j])
+./Substrate_X_Git/stable_solver.py:                    self.alpha * laplacian + reaction + coupling
+./Substrate_X_Git/stable_solver.py:                    alpha_relax = self.dt / (self.tau + self.dt)
+./Substrate_X_Git/stable_solver.py:                    new_phi_smooth = (1 - alpha_relax) * self.phi + alpha_relax * new_phi
+./Substrate_X_Git/stable_solver.py:        'alpha': 0.01,        # Small diffusion
+./Substrate_X_Git/stable_solver.py:        'beta': 0.5,          # Moderate reaction
+./Substrate_X_Git/stable_solver.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/stable_solver.py:    plt.grid(True, alpha=0.3)
+./Substrate_X_Git/tanh_stiffness_calibrator.py:        # Calculate maximum possible alpha_eff for diagnostics
+./Substrate_X_Git/tanh_stiffness_calibrator.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/tanh_stiffness_calibrator.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/tanh_stiffness_calibrator.py:        print(f"🔧 TANH STIFFNESS: M={M_factor:.0f}, alpha_eff_max={self.alpha_eff_max:.2e}, ρ_cut={rho_cutoff}, power={eta_power}")
+./Substrate_X_Git/tanh_stiffness_calibrator.py:            return self.alpha * 1.0
+./Substrate_X_Git/tanh_stiffness_calibrator.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/tanh_stiffness_calibrator.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/tanh_stiffness_calibrator.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/tau_reduction_test.py:            return self.alpha
+./Substrate_X_Git/tau_reduction_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/tau_reduction_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/tau_reduction_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/tau_reduction_test.py:    alpha=1e-5,
+./Substrate_X_Git/test_gamma_alternatives.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/test_gamma_alternatives.py:        alpha=1e10, beta=1e10, gamma=1e10,
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:def keff_scale(r: float, alpha: float) -> float:
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    return K_GAL * (r / R0) ** alpha
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:def eom(t, y, alpha):
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:def mercury_precession(alpha: float, n_orbits: int = 30) -> float:
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    """Return arcsec/century perihelion advance for a given alpha."""
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    def peri_event(t, y, alpha):
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:        args=(alpha,),
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:def fit_alpha():
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    """Find alpha such that predicted precession matches observation."""
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    # Choose alpha so that k_eff(1 AU) = 2e-4 while preserving k_eff(10 kpc) = K_GAL
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    alpha = np.log(target_k_au / K_GAL) / np.log(AU / R0)
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    return alpha, mercury_precession(alpha)
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    alpha_opt, precession = fit_alpha()
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    k_au = keff_scale(AU, alpha_opt)
+./Substrate_X_Git/validation/solar_system/mercury_precession_fit.py:    print("Optimal alpha : {:.4f}".format(alpha_opt))
+./Substrate_X_Git/validation/solar_system/mercury_substrate.py:    def __init__(self, k_eff=0.3, r0=3.086e20, alpha=0.8, chi=1e6, tau=1.6e6):  # alpha≈0.8 yields k_eff≈2×10⁻⁸ at 1 AU
+./Substrate_X_Git/validation/solar_system/mercury_substrate.py:        self.alpha = alpha
+./Substrate_X_Git/validation/solar_system/mercury_substrate.py:        return self.k_eff * (r / self.r0)**self.alpha
+./Substrate_X_Git/solver_with_feedback.py:        alpha=1e5, beta=1e5, gamma=1e5,  # Strong coupling
+./Substrate_X_Git/stabilized_dt_evolution.py:            self.alpha_eff_max = self.alpha * (1.0 + M_factor)
+./Substrate_X_Git/stabilized_dt_evolution.py:            self.alpha_eff_max = self.alpha
+./Substrate_X_Git/stabilized_dt_evolution.py:        print(f"🔧 STABILIZED SURGICAL SOLVER: M={M_factor:.0f}, α_eff_max={self.alpha_eff_max:.3f}")
+./Substrate_X_Git/stabilized_dt_evolution.py:            return self.alpha
+./Substrate_X_Git/stabilized_dt_evolution.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/stabilized_dt_evolution.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/stabilized_dt_evolution.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/stabilized_dt_evolution.py:    alpha=1e-5,
+./Substrate_X_Git/surgical_sharpness_test.py:            return self.alpha
+./Substrate_X_Git/surgical_sharpness_test.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/surgical_sharpness_test.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/surgical_sharpness_test.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/surgical_sharpness_test.py:    alpha=1e-5,
+./Substrate_X_Git/check_evolution_method.py:solver = CompleteFieldTheorySolver(alpha=1e-5, delta1=25.0)
+./Substrate_X_Git/diagnostic_hybrid_solver.py:            return self.alpha
+./Substrate_X_Git/diagnostic_hybrid_solver.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/diagnostic_hybrid_solver.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/diagnostic_hybrid_solver.py:            dF_dt_base = dF_dt_base + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/diagnostic_hybrid_solver.py:        alpha=1e-5,
+./Substrate_X_Git/fourier_scale_analysis.py:            return self.alpha
+./Substrate_X_Git/fourier_scale_analysis.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/fourier_scale_analysis.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/fourier_scale_analysis.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/fourier_scale_analysis.py:    ax2.loglog(k_rho[k_rho>0], P_rho[k_rho>0], 'r--', alpha=0.7, label='ρ field')
+./Substrate_X_Git/fourier_scale_analysis.py:            ax2.axvline(peak['k'], color='orange', linestyle=':', alpha=0.8)
+./Substrate_X_Git/fourier_scale_analysis.py:    ax2.grid(True, alpha=0.3)
+./Substrate_X_Git/fourier_scale_analysis.py:    alpha=1e-5,
+./Substrate_X_Git/field_propagation_analysis.py:        'alpha': 0.01, 'beta': 0.1, 'gamma': 0.3,  # Best overall
+./Substrate_X_Git/field_propagation_analysis.py:        circle = plt.Circle((0, 0), dist, fill=False, color='red', linestyle='--', alpha=0.7)
+./Substrate_X_Git/field_propagation_analysis.py:    axes[0,1].grid(True, alpha=0.3)
+./Substrate_X_Git/field_propagation_analysis.py:    axes[1,0].grid(True, alpha=0.3)
+./Substrate_X_Git/test_feedback_loop.py:        alpha=1e10, beta=1e10, gamma=1e10,  # Very strong
+./Substrate_X_Git/calibrated_stiffness.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/calibrated_stiffness.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/calibrated_stiffness.py:            stiffness_change = (alpha_eff - self.alpha) * F
+./Substrate_X_Git/calibrated_stiffness.py:            alpha=1e-5, delta1=25.0,
+./Substrate_X_Git/debug_stiffness.py:            alpha_eff = self.alpha * (1.0 + self.eta_scale * rho**2)
+./Substrate_X_Git/debug_stiffness.py:            modification = (alpha_eff - self.alpha) * F
+./Substrate_X_Git/debug_stiffness.py:    solver = DebugStiffnessSolver(alpha=1e-5, delta1=25.0, eta_scale=1000.0)
+./Substrate_X_Git/variable_stiffness_test.py:        print(f"🔧 VARIABLE STIFFNESS: α={self.alpha:.1e}, η_scale={eta_scale}")
+./Substrate_X_Git/variable_stiffness_test.py:        return self.alpha * (1.0 + self.eta_scale * rho**2)
+./Substrate_X_Git/variable_stiffness_test.py:        drho_dt = self.beta * E - rho / self.tau_rho + lap_rho
+./Substrate_X_Git/variable_stiffness_test.py:        alpha_eff = self.compute_effective_stiffness(rho) 
+./Substrate_X_Git/variable_stiffness_test.py:        # F field evolution using alpha_eff(ρ)
+./Substrate_X_Git/variable_stiffness_test.py:            alpha_eff * F -                         # VARIABLE STIFFNESS (mass) term
+./Substrate_X_Git/variable_stiffness_test.py:        'grid_size': 64, 'domain_size': 1.0, 'alpha': 1e-5, # Low alpha for propagation
+./Substrate_X_Git/variable_stiffness_test.py:        'beta': 0.5, 'gamma': 0.2, 'delta1': 25.0, 'delta2': 0.3, # High source
+./Substrate_X_Git/working_stiffness_fixed.py:            alpha_eff = self.alpha * (1.0 + self.eta_scale * rho**2)
+./Substrate_X_Git/working_stiffness_fixed.py:            original_stiffness = self.alpha * F
+./Substrate_X_Git/working_stiffness_fixed.py:            variable_stiffness = alpha_eff * F
+./Substrate_X_Git/working_stiffness_fixed.py:        solver = WorkingStiffnessSolver(alpha=1e-5, delta1=25.0, eta_scale=eta)
+./Substrate_X_Git/complete_physics_override.py:            return self.alpha
+./Substrate_X_Git/complete_physics_override.py:        return self.alpha * stiffness_factor
+./Substrate_X_Git/complete_physics_override.py:        # dE/dt: E is sourced by F (beta), damped by E (1), diffused (Laplacian)
+./Substrate_X_Git/complete_physics_override.py:        dE_dt = (self.beta * F + laplacian_E - E) / self.tau_E
+./Substrate_X_Git/complete_physics_override.py:            alpha_eff = self.compute_effective_stiffness(rho)
+./Substrate_X_Git/complete_physics_override.py:            dF_dt = dF_dt + (alpha_eff - self.alpha) * F
+./Substrate_X_Git/complete_physics_override.py:        drho_dt = (self.gamma * self.solve_laplacian(rho) + self.alpha * E - rho / self.tau_rho)
+./Substrate_X_Git/complete_physics_override.py:    alpha=1e-5,
+./phase-1-physical-foundation/1.1-leak-flow-mechanics/substrate_physics.py:        self.alpha = 1e-10  # Information production per energy
+./phase-1-physical-foundation/1.1-leak-flow-mechanics/substrate_physics.py:        info_production = self.alpha * energy
+SCALING_BRIDGE_ZETA: 2.0637 # Derived 2025-12-25 to bridge Baryon-Macro gap

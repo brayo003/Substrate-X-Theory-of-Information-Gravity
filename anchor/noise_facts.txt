@@ -1,0 +1,5 @@
+noise_std:1.908028e-19
+noise_mean:-5.435380e-22
+gaussian_p:6.320865e-03
+full_data_std:2.130770e-19
+data_length:16777216

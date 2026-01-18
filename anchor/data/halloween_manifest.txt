@@ -1,0 +1,2 @@
+https://cddis.nasa.gov/archive/gnss/products/1242/igs12423.clk.Z
+https://cddis.nasa.gov/archive/gnss/products/1242/igs12423.sp3.Z

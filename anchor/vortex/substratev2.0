@@ -1,0 +1,151 @@
+Substrate X Theory (SXC-IGC) - Final Sectorized Architecture v2.0
+Layer 0 — Foundational Assumptions (Pre-Physics)
+Status: Assumptions, not derived
+
+Spacetime is described by a metric theory of gravity (GR at large).
+Energy–momentum sources gravity via a stress–energy tensor.
+Collective media can carry gravitationally relevant energy without being baryonic.
+Emergent hydrodynamics is allowed to exist without a microscopic action.
+
+Layer 1 — Fundamental Conservative Sector (Action-Based)
+Status: Fundamental, exact, must pass Action Consistency
+Fields:
+
+Metric: gμνg_{\mu\nu}gμν​
+Short-range vector mediator: XμX_\muXμ​
+Superfluid scalar: ψ\psiψ
+Action:
+S=∫d4x−g[R16πG+LX+Lψ+Lmatter] S = \int d^4 x \sqrt{-g} \left[ \frac{R}{16\pi G} + \mathcal{L}_X + \mathcal{L}_\psi + \mathcal{L}_{\text{matter}} \right]S=∫d4x−g​[16πGR​+LX​+Lψ​+Lmatter​]
+Proca Sector (Screening Only):
+LX=−14FμνFμν+12mX2XμXμ−αXXμJmatterμ \mathcal{L}_X = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} + \frac{1}{2} m_X^2 X_\mu X^\mu - \alpha_X X_\mu J^{\mu}_{\text{matter}}LX​=−41​Fμν​Fμν+21​mX2​Xμ​Xμ−αX​Xμ​Jmatterμ​
+Superfluid Sector (Dark Matter Candidate):
+Lψ=∂μψ∗∂μψ−mψ2∣ψ∣2−λ2∣ψ∣4 \mathcal{L}_\psi = \partial_\mu \psi^* \partial^\mu \psi - m_\psi^2 |\psi|^2 - \frac{\lambda}{2} |\psi|^4Lψ​=∂μ​ψ∗∂μψ−mψ2​∣ψ∣2−2λ​∣ψ∣4
+Field Equations:
+
+Proca Equation:
+∂νFνμ+mX2Xμ=αXJmatterμ \partial_\nu F^{\nu\mu} + m_X^2 X^\mu = \alpha_X J^{\mu}_{\text{matter}}∂ν​Fνμ+mX2​Xμ=αX​Jmatterμ​
+
+Scalar Field Equation:
+□ψ+mψ2ψ+λ∣ψ∣2ψ=0 \Box \psi + m_\psi^2 \psi + \lambda |\psi|^2 \psi = 0□ψ+mψ2​ψ+λ∣ψ∣2ψ=0
+Stress-Energy Tensors:
+
+Proca Field:
+Tμν(X)=−FμαFνα+14gμνFαβFαβ+12mX2(XμXν−12gμνXαXα)+αX(XμJν+XνJμ−gμνXαJα) T_{\mu\nu}^{(X)} = -F_{\mu\alpha} F_{\nu}^\alpha + \frac{1}{4} g_{\mu\nu} F_{\alpha\beta} F^{\alpha\beta} + \frac{1}{2} m_X^2 (X_\mu X_\nu - \frac{1}{2} g_{\mu\nu} X_\alpha X^\alpha) + \alpha_X (X_\mu J_\nu + X_\nu J_\mu - g_{\mu\nu} X_\alpha J^\alpha)Tμν(X)​=−Fμα​Fνα​+41​gμν​Fαβ​Fαβ+21​mX2​(Xμ​Xν​−21​gμν​Xα​Xα)+αX​(Xμ​Jν​+Xν​Jμ​−gμν​Xα​Jα)
+
+Superfluid Field:
+Tμν(ψ)=∂μψ∗∂νψ+∂νψ∗∂μψ−gμν(∂αψ∗∂αψ−mψ2∣ψ∣2−λ2∣ψ∣4) T_{\mu\nu}^{(\psi)} = \partial_\mu \psi^* \partial_\nu \psi + \partial_\nu \psi^* \partial_\mu \psi - g_{\mu\nu} \left( \partial_\alpha \psi^* \partial^\alpha \psi - m_\psi^2 |\psi|^2 - \frac{\lambda}{2} |\psi|^4 \right)Tμν(ψ)​=∂μ​ψ∗∂ν​ψ+∂ν​ψ∗∂μ​ψ−gμν​(∂α​ψ∗∂αψ−mψ2​∣ψ∣2−2λ​∣ψ∣4)
+
+Layer 2 — Emergent Hydrodynamic Limit (Non-Fundamental)
+Status: Derived, effective, non-action-based
+Transformation:
+
+Madelung decomposition:
+ψ=ρeiθ,v=ℏmψ∇θ \psi = \sqrt{\rho} e^{i\theta}, \quad \mathbf{v} = \frac{\hbar}{m_\psi} \nabla \thetaψ=ρ​eiθ,v=mψ​ℏ​∇θ
+Resulting Equations:
+
+Continuity Equation:
+∂ρ∂t+∇⋅(ρv)=0 \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0∂t∂ρ​+∇⋅(ρv)=0
+
+Euler Equation (with Quantum Pressure):
+∂v∂t+(v⋅∇)v=−∇pρ+ℏ22mψ2∇(∇2ρρ) \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla) \mathbf{v} = -\frac{\nabla p}{\rho} + \frac{\hbar^2}{2m_\psi^2} \nabla \left( \frac{\nabla^2 \sqrt{\rho}}{\sqrt{\rho}} \right)∂t∂v​+(v⋅∇)v=−ρ∇p​+2mψ2​ℏ2​∇(ρ​∇2ρ​​)
+Key Emergent Solution:
+For rotating baryonic sources:
+∣v(r)∣∝1r⇒ρflow∝1r2 |v(r)| \propto \frac{1}{r} \Rightarrow \rho_{\text{flow}} \propto \frac{1}{r^2}∣v(r)∣∝r1​⇒ρflow​∝r21​
+Gravitational Consequence:
+M(r)∝r⇒vcirc=constant M(r) \propto r \Rightarrow v_{\text{circ}} = \text{constant}M(r)∝r⇒vcirc​=constant
+
+Layer 3 — Gravitational Backreaction
+Status: Derived, exact coupling
+Total Stress-Energy:
+Ttotalμν=Tmatterμν+TXμν+Tψμν T^{\mu\nu}_{\text{total}} = T^{\mu\nu}_{\text{matter}} + T^{\mu\nu}_X + T^{\mu\nu}_\psiTtotalμν​=Tmatterμν​+TXμν​+Tψμν​
+Field Equations:
+Gμν=8πGTtotalμν G_{\mu\nu} = 8\pi G T^{\mu\nu}_{\text{total}}Gμν​=8πGTtotalμν​
+Meaning:
+
+Flow kinetic energy gravitates.
+No modification of Einstein equations.
+No MOND interpolation.
+No extra forces.
+
+Layer 4 — DCII / Information–Instability Model
+Status: Phenomenological, diagnostic, not fundamental
+Nature:
+
+Open system
+Dissipative
+Irreversible
+Coarse-grained
+Equation (Schematic):
+∂ts+∇⋅(sv)=production−dissipation \partial_t s + \nabla \cdot (sv) = \text{production} - \text{dissipation}∂t​s+∇⋅(sv)=production−dissipation
+Usage:
+
+Detecting instability onset.
+Tracking flow-driven collapse.
+Comparing disparate systems (galaxies, markets, faults).
+
+Dimensional Parameters
+
+
+
+
+
+  
+    
+      Parameter
+      Constraint Source
+      Role
+    
+  
+  
+    
+      mXm_XmX​
+      Solar System
+      Large (mX>10−12 m−1m_X > 10^{-12} \, \text{m}^{-1}mX​>10−12m−1)
+    
+    
+      mψm_\psimψ​
+      Superfluid Scale
+      Ultra-light (mψ≈10−22 eV/c2m_\psi \approx 10^{-22} \, \text{eV}/c^2mψ​≈10−22eV/c2)
+    
+    
+      CvortexC_{\text{vortex}}Cvortex​
+      Galactic vcircv_{\text{circ}}vcirc​
+      ≈6.25×1019 kg/m\approx 6.25 \times 10^{19} \, \text{kg/m}≈6.25×1019kg/m
+    
+  
+
+
+
+Testable Predictions
+
+
+Solar System:
+
+Perihelion precession must be Newtonian (Δω/ω≈0\Delta \omega / \omega \approx 0Δω/ω≈0).
+
+
+Galactic (The Scaling Theorem):
+
+Emergent flow in the ψ-field produces a constant circular velocity:
+
+vcirc(r)=4πGCvortexforr≫Rdisk v_{\text{circ}}(r) = \sqrt{4 \pi G C_{\text{vortex}}} \quad \text{for} \quad r \gg R_{\text{disk}}vcirc​(r)=4πGCvortex​​forr≫Rdisk​
+
+Cosmological:
+
+The ψ-field contributes to ΩDM\Omega_{\text{DM}}ΩDM​ like Cold Dark Matter.
+
+
+Complete System of Equations (Compact Form)
+{Rμν−12gμνR=8πGTtotalμν∂νFνμ+mX2Xμ=αXJmatterμ□ψ+mψ2ψ+2λ∣ψ∣2ψ=0∇μTtotalμν=0\begin{cases}
+R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8\pi G T^{\mu\nu}_{\text{total}} \\
+\partial_\nu F^{\nu\mu} + m_X^2 X^\mu = \alpha_X J^{\mu}_{\text{matter}} \\
+\Box \psi + m_\psi^2 \psi + 2\lambda |\psi|^2 \psi = 0 \\
+\nabla_\mu T^{\mu\nu}_{\text{total}} = 0
+\end{cases}⎩⎨⎧​Rμν​−21​gμν​R=8πGTtotalμν​∂ν​Fνμ+mX2​Xμ=αX​Jmatterμ​□ψ+mψ2​ψ+2λ∣ψ∣2ψ=0∇μ​Ttotalμν​=0​
+
+Special Limits
+
+Massless Limit (mX→0m_X \to 0mX​→0): Proca field becomes Maxwell-like, losing its screening capability.
+Strong Field Limit: ψ-field reduces to the effective hydrodynamic limit (galactic regime).
+Quantum Limit: All dynamics are described by the operators in Fock space.
+

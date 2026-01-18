@@ -1,0 +1,24 @@
+SUBSTRATE X THEORY - COMPLETE PREDICTIONS
+============================================================
+Mediator mass: 1.393e-26 kg
+Coupling: α_S = 4.968e-02
+Range: 2.526e-17 m
+Force ratio: 2.660e+62
+
+============================================================
+PREDICTIONS:
+
+Force at 1.000 mm:
+  0.000000e+00 F_X/F_G
+
+Material dependence:
+  H: 1
+  He: 4
+  C: 12
+  Au: 197
+
+Temperature cutoff:
+  9.065229e+11 K
+
+Velocity dependence:
+  1.000000e+00 Enhancement at 1 km/s

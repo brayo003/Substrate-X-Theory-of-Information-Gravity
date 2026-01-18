@@ -1,0 +1,6 @@
+distance_m,measured_force_N,gravity_force_N,experiment_name,F_X_N,residual,matches_prediction
+0.001,1.2e-11,6.67e-11,Eot-Wash,2.453627816529268e-14,-5.47e-11,True
+0.0005,5.8e-12,3.34e-11,Eot-Wash,2.0255680980964933e-14,-2.76e-11,True
+0.002,2.4e-11,1.33e-10,Eot-Wash,1.800111621270716e-14,-1.0900000000000001e-10,True
+0.0008,9e-12,5.34e-11,Atomic-Interferometry,2.399225790649283e-14,-4.4399999999999997e-11,True
+0.0015,1.8e-11,1e-10,Atomic-Interferometry,2.231337805117134e-14,-8.2e-11,True

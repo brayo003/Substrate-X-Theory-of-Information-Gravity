@@ -1,0 +1,28 @@
+# SUBSTRATE X: DENSITY DEPENDENCE WITH SATURATION
+# ===============================================
+
+OBSERVATION: η ∝ ρ^b works at low densities but fails at high ρ
+
+DATA:
+  Solar System: ρ = 1.41e-16, η = 5.31e-02
+  Galactic Disk: ρ = 1.00e-21, η = 1.85e-02
+  Cosmic Void: ρ = 1.00e-27, η = 3.82e-16
+
+POWER LAW FIT (low density):
+  η = 2.771e+21 × ρ^1.2961
+  R² = 0.8099, p = 2.8719e-01
+
+PROBLEM: Extrapolation to lab gives η ≈ 2.71e+25
+  This is physically impossible
+
+SOLUTION: Saturation model η = η_max × [ρ/(ρ + ρ_sat)]^b
+  Fit: η_max = 0.7827, ρ_sat = 7.15e-11, b = 0.2114
+
+PREDICTION: η saturates at ~0.01-0.1 for ρ > 10⁻¹⁶ kg/m³
+  Constant in solar system, planetary atmospheres
+  Test with: Cassini, atmospheric density variations
+
+CRITICAL TEST:
+  Measure η at different altitudes (density variation)
+  Spacecraft at different solar distances
+  Laboratory with variable pressure/density

@@ -1,0 +1,43 @@
+NULL HYPOTHESIS PROTOCOL FOR FIFTH-FORCE SEARCHES
+======================================================================
+
+Null theory parameters:
+m_S = 1.973e-4 eV
+α_S = 6.324e-35
+β = 1.0
+
+Predicted signal: 2.3e-17 N at 1 mm (1g masses)
+
+Experimental protocol:
+
+BLIND ANALYSIS PROTOCOL:
+
+1. PRE-REGISTER prediction:
+   "Our null hypothesis is a screened fifth force with:
+    m_S = 1.973e-4 eV, α_S = 6.324e-35, β = 1.0
+    Predicted signal: 2.3e-17 N at 1 mm"
+
+2. COLLECT DATA (blinded):
+   - Hide true distances with offsets
+   - Encrypt force readings
+   - Lock true parameters
+
+3. ANALYSIS (blind):
+   - Fit data to your theory + systematic model
+   - Extract best-fit parameters
+   - Calculate χ²
+
+4. UNBLINDING:
+   - If extracted α_S ≈ 6.324e-35: Null confirmed
+   - If α_S > 6.324e-35: New physics candidate!
+   - If α_S < 6.324e-35: Better limits than expected
+
+5. INTERPRETATION:
+   - Null confirmed → Experiment working, no new physics
+   - Deviation found → Check systematics, then claim discovery
+
+
+Interpretation guide:
+- α_S measured ≈ 6.324e-35 → Null confirmed
+- α_S measured > 6.324e-35 → New physics candidate
+- α_S measured < 6.324e-35 → Better limits than null

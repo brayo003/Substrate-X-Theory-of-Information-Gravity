@@ -1,0 +1,23 @@
+WHITE PAPER: Millimetre-Scale Screened Fifth Force
+============================================================
+
+SUMMARY:
+A consistent theory exists with:
+  m_S = 1.973e-04 eV
+  α_S = 2.053e-31
+  Range = 1.000 mm
+  Strength = 9.998e-04 × gravity at contact
+
+PHYSICS CONNECTIONS:
+1. Extra dimensions of size ~1 mm
+2. String scale ~TeV (testable at colliders)
+3. Possible dark matter alternative (with smaller m_S)
+4. Quantum gravity phenomenology
+5. Fifth force experimental program
+
+EXPERIMENTAL STATUS:
+Prediction at 1 mm: 3.679e-04 × gravity
+Force between 1g masses: 2.46e-14 N
+Current sensitivity: ~1e-15 N
+Required improvement: 25×
+Plausibly testable within 5-10 years

@@ -1,0 +1,6 @@
+std_min:2.893178e-20
+std_max:4.364902e-19
+std_mean:2.092991e-19
+eta_min_ratio:0.019108
+eta_max_ratio:4.349251
+implied_eta_variation:227.614

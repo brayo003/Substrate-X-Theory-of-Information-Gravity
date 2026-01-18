@@ -1,0 +1,11 @@
+CMB POLARIZATION SIGNATURES
+==================================================
+Sound speed ratio: 107771448573914146057018727230650895011785916547072.000000
+Peak ℓ₁ shift: -220.00
+Tensor ratio change: 0.000%
+Screening scale ℓ: 0
+
+Detection prospects:
+Peak shifts: Below Planck sensitivity
+B-modes: Undetectable
+Small scales: CMB-S4 could test

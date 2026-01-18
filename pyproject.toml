@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "substrate-x-math"
+version = "0.1.0"
+description = "Mathematical kernel for Substrate X Theory of Information Gravity"
+authors = [{ name = "Brian Kenda" }]
+license = { text = "MIT" }
+dependencies = ["numpy"]

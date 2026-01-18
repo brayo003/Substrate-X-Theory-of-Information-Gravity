@@ -1,0 +1,27 @@
+# DANGEROUS THEORY: UNIVERSAL BACKGROUND CONSTANT
+# ==============================================
+
+CORE IDEA:
+  γ/β = 1.000e-03 s⁻¹ (everywhere, always)
+  α = 0.016 (varies only 3.4× across universe)
+
+PHYSICAL MEANING:
+  The universe has a FUNDAMENTAL DAMPING CONSTANT
+  All oscillators have minimum damping rate Γ_min = γ/β
+  All Q factors have maximum Q_max = ω/(γβ)
+
+EVIDENCE:
+  1. Pioneer residual (after thermal)
+  2. Pendulum floor (after air friction)
+  3. Universal τ_max ~ 1000 s for mechanical oscillators
+
+TESTABLE PREDICTIONS:
+  1. NO oscillator can have τ > ~1000 seconds
+  2. NO system can have Q > ω × 1000
+  3. Identical oscillators on Earth/space: same τ
+
+IMPLICATIONS:
+  • New fundamental constant
+  • Limit on all precision measurements
+  • Background field affecting everything
+  • Revolutionary if true
