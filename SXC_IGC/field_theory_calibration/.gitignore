@@ -1,0 +1,12 @@
+# Python caches
+ __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.npz
+*.png
+*.pdf
+.env/
+.venv/
+

@@ -1,0 +1,145 @@
+PROJECT GOAL (LOCKED)
+
+The project is Domain-Calibrated Instability Framework (DCIF).
+
+Core principles:
+
+Fixed mathematical structure
+
+Domain-specific calibration
+
+Explicit signal definitions
+
+Zero hidden normalization
+
+Zero universal constants
+
+Full reproducibility
+
+Any output that violates these principles is invalid.
+
+2. DEFINITION OF “COMPLETE” (ENFORCED)
+
+A module is NOT COMPLETE unless it contains ALL of the following:
+
+/<module_name>/
+├── signals.py                  # Explicit ρ, E, F definitions
+├── normalization.py            # All scaling logic, isolated
+├── data_generator.py           # Synthetic or real data source
+├── calibrate.py                # Uses calibration_engine ONLY
+├── coefficients.json           # α, β, γ + metadata
+├── validation_report.md        # Out-of-sample + failure modes
+├── README.md                   # Domain, assumptions, limits
+└── __init__.py
+
+
+If you generate fewer files, you have failed.
+
+3. CODE QUALITY REQUIREMENTS (STRICT)
+
+All code must:
+
+Be modular
+
+Be testable
+
+Separate concerns cleanly
+
+Contain docstrings explaining why, not just what
+
+Avoid magic numbers
+
+Avoid inline normalization
+
+Avoid hardcoded coefficients unless loaded from artifacts
+
+If any logic is “implied” instead of explicit, that is a failure.
+
+4. CALIBRATION RULES (ABSOLUTE)
+
+Calibration MUST use calibration_engine
+
+Targets MUST be human-defined
+
+Coefficients MUST be saved to disk
+
+Calibration MUST be reproducible
+
+No runtime coefficient fitting inside analyzers
+
+Analyzers consume coefficients.
+They do not invent them.
+
+5. OUTPUT FORMAT (MANDATORY)
+
+When asked to build or modify a module:
+
+First output: Directory tree
+
+Second output: Purpose of each file
+
+Third output: Full contents of each file
+
+Fourth output: Explanation of how this satisfies DCIF
+
+If any step is skipped, the response is invalid.
+
+6. PROHIBITED BEHAVIOR
+
+You are explicitly forbidden from:
+
+Producing “starter”, “example”, or “simplified” code
+
+Producing single-file modules
+
+Hiding logic inside notebooks
+
+Using vague placeholders like “TODO”
+
+Assuming future expansion instead of implementing it
+
+If the implementation is not ready to accept community contribution, it is incomplete.
+
+7. VALIDATION EXPECTATION
+
+Every module must include:
+
+At least two target regimes
+
+At least one out-of-sample validation
+
+A written failure analysis
+
+No validation → no module.
+
+8. INTERACTION RULE
+
+If the specification is insufficient:
+
+You must state what is missing
+
+You must refuse to generate code
+
+You must request clarification
+
+You are not allowed to guess silently.
+
+9. PHILOSOPHICAL CONSTRAINT
+
+This framework values:
+
+Honesty over ambition
+
+Structure over cleverness
+
+Reproducibility over novelty
+
+If a choice trades correctness for elegance, correctness wins.
+
+10. ACCEPTANCE CONDITION
+
+Before finishing any response, you must internally verify:
+
+“Could an external contributor use this without asking questions?”
+
+If the answer is no, the output is unacceptable.

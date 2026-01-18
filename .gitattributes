@@ -1,0 +1,2 @@
+*.json filter=lfs diff=lfs merge=lfs -text
+SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/*.gz filter=lfs diff=lfs merge=lfs -text

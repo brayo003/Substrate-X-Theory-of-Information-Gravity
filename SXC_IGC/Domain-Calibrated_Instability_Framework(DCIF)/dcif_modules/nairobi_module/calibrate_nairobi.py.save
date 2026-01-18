@@ -1,0 +1,16 @@
+def solve_hardened_nairobi():++
+    # Anchors: 2022 (Peak Stress) vs 2024 (Stabilization)
+    # E = Deviation from trend
+    # F = Real Rate (Nominal - Inflation)
+    
+    e_2022, f_2022, t_2022 = 1.6, 5.01, 7.66
+    e_2024, f_2024, t_2024 = -6.1, 10.58, 4.49
+    
+    A = np.array([[e_2022, -f_2022], [e_2024, -f_2024]])
+    b = np.array([t_2022, t_2024])
+    
+    beta, gamma = np.linalg.solve(A, b)
+    
+    print(f"--- NAIROBI DOMAIN: HARDENED COEFFICIENTS ---")
+    print(f"Beta (β - Sensitivity): {beta:.4f}")
+    print(f"Gamma (γ - Resilience): {gamma:.4f}") # Now expected to be positive
