@@ -1,0 +1,38 @@
+Core pieces only:
+
+State fields
+ρ(x,y,t): primary density
+E(x,y,t): excitation
+F(x,y,t): inhibition
+
+Dynamics template
+∂tρ = Dρ ∇²ρ + Rρ(ρ,E,F; params)
+∂tE = DE ∇²E + RE(ρ,E,F; params)
+∂tF = DF ∇²F + RF(ρ,E,F; params)
+
+Discrete update
+ρ ← ρ + dt * (Dρ * laplacian(ρ) + Rρ)
+E ← E + dt * (DE * laplacian(E) + RE)
+F ← F + dt * (DF * laplacian(F) + RF)
+
+Reaction slot
+Rρ(ρ,E,F) = your-domain-rules
+RE(ρ,E,F) = your-domain-rules
+RF(ρ,E,F) = your-domain-rules
+
+Boundary conditions
+periodic or no-flux
+
+Engine responsibilities
+grid allocation
+stability check
+adaptive dt
+numerical integration
+state storage
+
+User’s responsibilities
+define Dρ,DE,DF
+define Rρ,RE,RF
+define initial conditions
+define meaning of fields
+define domain-specific behavior

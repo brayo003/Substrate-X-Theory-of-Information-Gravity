@@ -1,0 +1,1475 @@
+                                 prediction
+python historical_crash_test.pyengine can feel system tension before collapses!"
+🌋 HISTORICAL CRASH DETECTION TEST
+Testing SXC-IGC on major market crashes...
+============================================================
+\n🎯 TESTING: 2008 FINANCIAL CRISIS
+========================================
+/home/lenovo/Git/Substrate X Theory of Information Gravity/historical_crash_test.py:17: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  data = yf.download(symbol, start=start_date, end=end_date, interval="1d")
+[*********************100%***********************]  1 of 1 completed
+📅 Testing period: 2008-08-15 to 2008-10-10
+💥 Crash date: 2008-09-29
+📈 Data points: 40
+🌌 UNIVERSAL PDE INTEGRATOR INITIALIZED (DYNAMIC T-M-V ENABLED)
+🔧 Stress threshold set to: 0.13
+🔧 Crash definition set to: severe_crash
+   Parameters: {'threshold_pct': -5.0, 'window_days': 1}
+🧠 Training PredictiveEngine...
+✅ Domain added: finance
+✅ Domain added: biophysics
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.10045579533396103), np.float64(0.07446587592412827)]
+   Step 10: Tensions = [np.float64(0.03598882680962434), np.float64(0.02694338555439867)]
+   Step 20: Tensions = [np.float64(0.03722583615628196), np.float64(0.029262733663876474)]
+   Step 30: Tensions = [np.float64(0.03608602132398238), np.float64(0.02665346814730279)]
+   Step 40: Tensions = [np.float64(0.036473971419758666), np.float64(0.026673887116809583)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.008 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11038961024692812), np.float64(0.08412940149668133)]
+   Step 10: Tensions = [np.float64(0.04041326909487871), np.float64(0.028584409000205188)]
+   Step 20: Tensions = [np.float64(0.03568857181446657), np.float64(0.027281852496948554)]
+   Step 30: Tensions = [np.float64(0.0354386335993632), np.float64(0.024906415607858327)]
+   Step 40: Tensions = [np.float64(0.037748757575672844), np.float64(0.027895217721486853)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.023 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11921524223028349), np.float64(0.0891136075586865)]
+   Step 10: Tensions = [np.float64(0.03611397448209373), np.float64(0.025706796537017466)]
+   Step 20: Tensions = [np.float64(0.04093106445353353), np.float64(0.02498177472386464)]
+   Step 30: Tensions = [np.float64(0.03796397230330001), np.float64(0.02522151091625332)]
+   Step 40: Tensions = [np.float64(0.03924541355588534), np.float64(0.024392371749016487)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11282840345539716), np.float64(0.08737477295884244)]
+   Step 10: Tensions = [np.float64(0.03329151791467015), np.float64(0.026818336217724528)]
+   Step 20: Tensions = [np.float64(0.03938094304787551), np.float64(0.0273696139689679)]
+   Step 30: Tensions = [np.float64(0.03569936896945025), np.float64(0.02736733846626736)]
+   Step 40: Tensions = [np.float64(0.03463296908060921), np.float64(0.026577499838438656)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.002 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12263380420714594), np.float64(0.0789437019127892)]
+   Step 10: Tensions = [np.float64(0.039649469762992356), np.float64(0.02708675133782482)]
+   Step 20: Tensions = [np.float64(0.036445828618756435), np.float64(0.027838318914868047)]
+   Step 30: Tensions = [np.float64(0.035277029902200815), np.float64(0.027416867876133198)]
+   Step 40: Tensions = [np.float64(0.0378931740735313), np.float64(0.026996011246133555)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12548768066430463), np.float64(0.08767744611897119)]
+   Step 10: Tensions = [np.float64(0.03735563882369287), np.float64(0.024111124754921633)]
+   Step 20: Tensions = [np.float64(0.03732677779387176), np.float64(0.027106971702477948)]
+   Step 30: Tensions = [np.float64(0.036026261921671646), np.float64(0.027058478003820143)]
+   Step 40: Tensions = [np.float64(0.038433884146459436), np.float64(0.02677712164254991)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12354296906971551), np.float64(0.08320118667349355)]
+   Step 10: Tensions = [np.float64(0.037138623524833075), np.float64(0.025298918751475052)]
+   Step 20: Tensions = [np.float64(0.03977314206474526), np.float64(0.02702664656214188)]
+   Step 30: Tensions = [np.float64(0.038018788504853705), np.float64(0.027700038746048882)]
+   Step 40: Tensions = [np.float64(0.03636115807384378), np.float64(0.028198978393101086)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.054 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12319691217808314), np.float64(0.0875002188582501)]
+   Step 10: Tensions = [np.float64(0.0389700207817697), np.float64(0.02554468066044657)]
+   Step 20: Tensions = [np.float64(0.03528123314978758), np.float64(0.027763296576026036)]
+   Step 30: Tensions = [np.float64(0.03581851877335901), np.float64(0.025746120738565796)]
+   Step 40: Tensions = [np.float64(0.03828459486036274), np.float64(0.025573152131247587)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.021 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1196329051386156), np.float64(0.08702476939251605)]
+   Step 10: Tensions = [np.float64(0.0381731670779176), np.float64(0.02805080974423071)]
+   Step 20: Tensions = [np.float64(0.03688446087463355), np.float64(0.025836735040542482)]
+   Step 30: Tensions = [np.float64(0.03861888052046147), np.float64(0.027233628872758243)]
+   Step 40: Tensions = [np.float64(0.0380530125799102), np.float64(0.02665751171198188)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.003 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1277665734005094), np.float64(0.07922743197522286)]
+   Step 10: Tensions = [np.float64(0.03658924648100224), np.float64(0.027626647777386684)]
+   Step 20: Tensions = [np.float64(0.038320541071094186), np.float64(0.028815478679215724)]
+   Step 30: Tensions = [np.float64(0.035508281030474056), np.float64(0.025594724257228307)]
+   Step 40: Tensions = [np.float64(0.03358241602811175), np.float64(0.026496371281802437)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12628543152078756), np.float64(0.08109635868184004)]
+   Step 10: Tensions = [np.float64(0.03711015541302749), np.float64(0.025930011291582167)]
+   Step 20: Tensions = [np.float64(0.03934973849579185), np.float64(0.02561029352554452)]
+   Step 30: Tensions = [np.float64(0.03801422944964937), np.float64(0.026772932742698523)]
+   Step 40: Tensions = [np.float64(0.03658792900173182), np.float64(0.025888170823549744)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.112 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11657848265723808), np.float64(0.0857607425980887)]
+   Step 10: Tensions = [np.float64(0.038584312334880196), np.float64(0.025663978790283676)]
+   Step 20: Tensions = [np.float64(0.037598584407055664), np.float64(0.024468960564421563)]
+   Step 30: Tensions = [np.float64(0.03685644318701268), np.float64(0.026657723839556037)]
+   Step 40: Tensions = [np.float64(0.03805292001574786), np.float64(0.025990957788376595)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.029 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1170640733618908), np.float64(0.0850934413023737)]
+   Step 10: Tensions = [np.float64(0.03928380694682555), np.float64(0.027212853133275317)]
+   Step 20: Tensions = [np.float64(0.037566143875859), np.float64(0.027493830950217547)]
+   Step 30: Tensions = [np.float64(0.04002693763530144), np.float64(0.02676448541329622)]
+   Step 40: Tensions = [np.float64(0.03987010202791074), np.float64(0.027764146009412884)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.031 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12179338903662348), np.float64(0.09140127827352676)]
+   Step 10: Tensions = [np.float64(0.03625302493099031), np.float64(0.025760204508241333)]
+   Step 20: Tensions = [np.float64(0.040107462545613405), np.float64(0.02812329132727992)]
+   Step 30: Tensions = [np.float64(0.03769203605803187), np.float64(0.027110532105823728)]
+   Step 40: Tensions = [np.float64(0.03872431170287526), np.float64(0.02644790147115579)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.025 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.13030163006464615), np.float64(0.08288738964950892)]
+   Step 10: Tensions = [np.float64(0.03730633691450816), np.float64(0.026961925164602253)]
+   Step 20: Tensions = [np.float64(0.035866131512409166), np.float64(0.027385685538829554)]
+   Step 30: Tensions = [np.float64(0.03902486741442766), np.float64(0.027483525655693085)]
+   Step 40: Tensions = [np.float64(0.03721863875389085), np.float64(0.025593507466252594)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.003 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1191156811215366), np.float64(0.0858267629207138)]
+   Step 10: Tensions = [np.float64(0.038393918595552586), np.float64(0.02596897950309779)]
+   Step 20: Tensions = [np.float64(0.038318433032654066), np.float64(0.026088574872146563)]
+   Step 30: Tensions = [np.float64(0.040500317969485486), np.float64(0.024322489516372735)]
+   Step 40: Tensions = [np.float64(0.039534351354676894), np.float64(0.02478638232841496)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.048 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12336189370748372), np.float64(0.08548694235856849)]
+   Step 10: Tensions = [np.float64(0.03654316601758098), np.float64(0.027558843066478177)]
+   Step 20: Tensions = [np.float64(0.035017233171447525), np.float64(0.02458857395979469)]
+   Step 30: Tensions = [np.float64(0.0364873182220779), np.float64(0.025972090315120502)]
+   Step 40: Tensions = [np.float64(0.03727145980868393), np.float64(0.025719361631211243)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.039 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12611138252475682), np.float64(0.0904095682559484)]
+   Step 10: Tensions = [np.float64(0.03844697053466955), np.float64(0.028452627066168006)]
+   Step 20: Tensions = [np.float64(0.03692041654163682), np.float64(0.025225570733248447)]
+   Step 30: Tensions = [np.float64(0.03665052271117427), np.float64(0.025482047078043496)]
+   Step 40: Tensions = [np.float64(0.03591376628909251), np.float64(0.02676946350074984)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.023 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12527126703425126), np.float64(0.08175512908687994)]
+   Step 10: Tensions = [np.float64(0.036653367672333716), np.float64(0.025860112863713085)]
+   Step 20: Tensions = [np.float64(0.038862815701938565), np.float64(0.027323773297390254)]
+   Step 30: Tensions = [np.float64(0.03536208795616032), np.float64(0.026112814912143484)]
+   Step 40: Tensions = [np.float64(0.03702979202502575), np.float64(0.027527890496781185)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.061 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1170273934310177), np.float64(0.08406638472892637)]
+   Step 10: Tensions = [np.float64(0.03673346371248279), np.float64(0.02597751902136734)]
+   Step 20: Tensions = [np.float64(0.03911795131713958), np.float64(0.028630094633150076)]
+   Step 30: Tensions = [np.float64(0.038821630533063096), np.float64(0.026059781803124613)]
+   Step 40: Tensions = [np.float64(0.040371816092837784), np.float64(0.026495045750238793)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.016 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1259767506298307), np.float64(0.0911078586110246)]
+   Step 10: Tensions = [np.float64(0.03802025299355613), np.float64(0.02469257316111908)]
+   Step 20: Tensions = [np.float64(0.03631821561597559), np.float64(0.025849550258340737)]
+   Step 30: Tensions = [np.float64(0.03579299088576042), np.float64(0.027223024884671786)]
+   Step 40: Tensions = [np.float64(0.036882686635717886), np.float64(0.028073856660792183)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.008 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11847076190877179), np.float64(0.08838727821272932)]
+   Step 10: Tensions = [np.float64(0.03795508827176359), np.float64(0.02672372443485966)]
+   Step 20: Tensions = [np.float64(0.039174334507479286), np.float64(0.025870142399323386)]
+   Step 30: Tensions = [np.float64(0.037169872337110624), np.float64(0.0272851138970329)]
+   Step 40: Tensions = [np.float64(0.03596110347865461), np.float64(0.026035895947909903)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.017 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12499703597112413), np.float64(0.08660626967235838)]
+   Step 10: Tensions = [np.float64(0.03562140542432579), np.float64(0.023762042188902002)]
+   Step 20: Tensions = [np.float64(0.03806990745425038), np.float64(0.025101876740058628)]
+   Step 30: Tensions = [np.float64(0.03713871104917514), np.float64(0.02666821481145576)]
+   Step 40: Tensions = [np.float64(0.036476580841469305), np.float64(0.024897601461467658)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12567016098372627), np.float64(0.09062896203395307)]
+   Step 10: Tensions = [np.float64(0.03488159865704438), np.float64(0.025779246070547355)]
+   Step 20: Tensions = [np.float64(0.03579425201340366), np.float64(0.027376185901363186)]
+   Step 30: Tensions = [np.float64(0.037599872116663345), np.float64(0.023335818167205705)]
+   Step 40: Tensions = [np.float64(0.037979971175844084), np.float64(0.026035105251481335)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.072 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12338358418475517), np.float64(0.08765639872718806)]
+   Step 10: Tensions = [np.float64(0.038457944985807485), np.float64(0.026995990882981817)]
+   Step 20: Tensions = [np.float64(0.036067672822916015), np.float64(0.027145578471091288)]
+   Step 30: Tensions = [np.float64(0.03682844964990258), np.float64(0.02671247621992137)]
+   Step 40: Tensions = [np.float64(0.03766099614123276), np.float64(0.026210238644548686)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+📊 Results:
+   Max stress probability: 0.112
+   Early warnings: 0
+   Crash detected early: False
+\n🎯 TESTING: 2020 COVID CRASH
+========================================
+/home/lenovo/Git/Substrate X Theory of Information Gravity/historical_crash_test.py:17: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  data = yf.download(symbol, start=start_date, end=end_date, interval="1d")
+[*********************100%***********************]  1 of 1 completed
+📅 Testing period: 2020-02-07 to 2020-04-03
+💥 Crash date: 2020-03-23
+📈 Data points: 40
+🌌 UNIVERSAL PDE INTEGRATOR INITIALIZED (DYNAMIC T-M-V ENABLED)
+🔧 Stress threshold set to: 0.13
+🔧 Crash definition set to: severe_crash
+   Parameters: {'threshold_pct': -5.0, 'window_days': 1}
+🧠 Training PredictiveEngine...
+✅ Domain added: finance
+✅ Domain added: biophysics
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.10333127057415405), np.float64(0.0718337947031216)]
+   Step 10: Tensions = [np.float64(0.03398755928490337), np.float64(0.027326917965077628)]
+   Step 20: Tensions = [np.float64(0.035913332232997204), np.float64(0.026412912339895726)]
+   Step 30: Tensions = [np.float64(0.03968835479545818), np.float64(0.02610642629456033)]
+   Step 40: Tensions = [np.float64(0.0388203912134391), np.float64(0.028786599368100615)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.036 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12059973785317138), np.float64(0.085613754357822)]
+   Step 10: Tensions = [np.float64(0.037908609410215025), np.float64(0.026095066025450423)]
+   Step 20: Tensions = [np.float64(0.034225016323018206), np.float64(0.0251674356334915)]
+   Step 30: Tensions = [np.float64(0.038719427041386666), np.float64(0.02342385584914894)]
+   Step 40: Tensions = [np.float64(0.03985338180431515), np.float64(0.026481902861550836)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.061 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12520966941256384), np.float64(0.09037146658823826)]
+   Step 10: Tensions = [np.float64(0.04053421418106978), np.float64(0.026106151400210838)]
+   Step 20: Tensions = [np.float64(0.03652742628460205), np.float64(0.02513705428703095)]
+   Step 30: Tensions = [np.float64(0.03491639007378081), np.float64(0.027802821814947046)]
+   Step 40: Tensions = [np.float64(0.04082092302575288), np.float64(0.026069455216070563)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.041 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1240091748093594), np.float64(0.08897107473809371)]
+   Step 10: Tensions = [np.float64(0.03494842113614754), np.float64(0.026960490206455183)]
+   Step 20: Tensions = [np.float64(0.0376891832335305), np.float64(0.027106189731969356)]
+   Step 30: Tensions = [np.float64(0.03590168841760056), np.float64(0.025921088033907216)]
+   Step 40: Tensions = [np.float64(0.035916031532592194), np.float64(0.024455533204002185)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1213990518134716), np.float64(0.08275235595721375)]
+   Step 10: Tensions = [np.float64(0.03966918290201256), np.float64(0.024755644390908552)]
+   Step 20: Tensions = [np.float64(0.041429433804734364), np.float64(0.027624749786143925)]
+   Step 30: Tensions = [np.float64(0.03710502399660819), np.float64(0.028281632655474273)]
+   Step 40: Tensions = [np.float64(0.036408645527295835), np.float64(0.029402884517055167)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12715345177822937), np.float64(0.08514933233265583)]
+   Step 10: Tensions = [np.float64(0.037987195509114294), np.float64(0.02392035118273282)]
+   Step 20: Tensions = [np.float64(0.03642038095354253), np.float64(0.026525177779545467)]
+   Step 30: Tensions = [np.float64(0.03699147515948508), np.float64(0.025789946187306217)]
+   Step 40: Tensions = [np.float64(0.03696926499818062), np.float64(0.027898868597598436)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.022 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12030782080914514), np.float64(0.08799413274360858)]
+   Step 10: Tensions = [np.float64(0.03818014227957598), np.float64(0.02642578315839241)]
+   Step 20: Tensions = [np.float64(0.037675070323354994), np.float64(0.029850377186914804)]
+   Step 30: Tensions = [np.float64(0.04011839163563679), np.float64(0.02459140033340397)]
+   Step 40: Tensions = [np.float64(0.03523597162651868), np.float64(0.027193018190140725)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.002 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12095973244324972), np.float64(0.08189797555055522)]
+   Step 10: Tensions = [np.float64(0.03707884548816851), np.float64(0.028186207317462957)]
+   Step 20: Tensions = [np.float64(0.03989952391540136), np.float64(0.02550482139721488)]
+   Step 30: Tensions = [np.float64(0.03906381418357263), np.float64(0.026279603288905926)]
+   Step 40: Tensions = [np.float64(0.037702640781813596), np.float64(0.027470596006828867)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.071 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11823164342109961), np.float64(0.08643892053218098)]
+   Step 10: Tensions = [np.float64(0.036744560420174044), np.float64(0.026895710354971937)]
+   Step 20: Tensions = [np.float64(0.037787642497783984), np.float64(0.025234414583326353)]
+   Step 30: Tensions = [np.float64(0.03990991223460727), np.float64(0.026573629966589907)]
+   Step 40: Tensions = [np.float64(0.03877526205784167), np.float64(0.026909191600873374)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.002 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12413990066167974), np.float64(0.0834777138447975)]
+   Step 10: Tensions = [np.float64(0.035383380430811455), np.float64(0.026914977161391157)]
+   Step 20: Tensions = [np.float64(0.03773976635323617), np.float64(0.02900878325475127)]
+   Step 30: Tensions = [np.float64(0.03592486569013105), np.float64(0.024985931439612613)]
+   Step 40: Tensions = [np.float64(0.04017567481122497), np.float64(0.027416838102114722)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11745364480901496), np.float64(0.08779079494141531)]
+   Step 10: Tensions = [np.float64(0.03962372865765341), np.float64(0.028133883076914112)]
+   Step 20: Tensions = [np.float64(0.037823605369050266), np.float64(0.026981862554161976)]
+   Step 30: Tensions = [np.float64(0.040999239955293), np.float64(0.02601070921320882)]
+   Step 40: Tensions = [np.float64(0.037241730564160254), np.float64(0.024854694953285843)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.022 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.13018406033541224), np.float64(0.08609545788537425)]
+   Step 10: Tensions = [np.float64(0.034360744827980745), np.float64(0.027319190010379982)]
+   Step 20: Tensions = [np.float64(0.03670551444319063), np.float64(0.02741221397724016)]
+   Step 30: Tensions = [np.float64(0.036720505225934154), np.float64(0.026868206801973007)]
+   Step 40: Tensions = [np.float64(0.03769263231637566), np.float64(0.024858268548195627)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11634689805227713), np.float64(0.08206899354395805)]
+   Step 10: Tensions = [np.float64(0.03890877128878413), np.float64(0.027620508463824137)]
+   Step 20: Tensions = [np.float64(0.037880744470140816), np.float64(0.027266964170840156)]
+   Step 30: Tensions = [np.float64(0.03706064774589304), np.float64(0.02678079998305986)]
+   Step 40: Tensions = [np.float64(0.0343885224035765), np.float64(0.02667823522952517)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.053 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1270286630055613), np.float64(0.08786851857810736)]
+   Step 10: Tensions = [np.float64(0.03768541131934064), np.float64(0.029263347189021172)]
+   Step 20: Tensions = [np.float64(0.03721209725796541), np.float64(0.024953122118602126)]
+   Step 30: Tensions = [np.float64(0.038397755446082746), np.float64(0.028203660748945567)]
+   Step 40: Tensions = [np.float64(0.03876740358323107), np.float64(0.027854694029947388)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.030 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12591321677929504), np.float64(0.08579515804853723)]
+   Step 10: Tensions = [np.float64(0.03698042531241853), np.float64(0.026000310486983435)]
+   Step 20: Tensions = [np.float64(0.03884142278816392), np.float64(0.028754882595561804)]
+   Step 30: Tensions = [np.float64(0.03819221106662271), np.float64(0.02664298697325257)]
+   Step 40: Tensions = [np.float64(0.03508404544298788), np.float64(0.024763112444536287)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.004 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12449215843522389), np.float64(0.08725017430748959)]
+   Step 10: Tensions = [np.float64(0.03627068811823575), np.float64(0.02667165945091367)]
+   Step 20: Tensions = [np.float64(0.04162189890263506), np.float64(0.025358952839069117)]
+   Step 30: Tensions = [np.float64(0.03705282358186767), np.float64(0.024279042442223037)]
+   Step 40: Tensions = [np.float64(0.03601678097190116), np.float64(0.024638679572799076)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.13025698137895356), np.float64(0.08729020091644032)]
+   Step 10: Tensions = [np.float64(0.03720760974221912), np.float64(0.025706850126441264)]
+   Step 20: Tensions = [np.float64(0.036381790226571994), np.float64(0.025082834756509027)]
+   Step 30: Tensions = [np.float64(0.03604756906494813), np.float64(0.02684053309063701)]
+   Step 40: Tensions = [np.float64(0.038574107951947254), np.float64(0.027050219708839165)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.013 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12111259079507072), np.float64(0.0860061286428167)]
+   Step 10: Tensions = [np.float64(0.037917213698757404), np.float64(0.026036860364622747)]
+   Step 20: Tensions = [np.float64(0.03535569861353458), np.float64(0.02538381853254726)]
+   Step 30: Tensions = [np.float64(0.0359456774408209), np.float64(0.026450581324142144)]
+   Step 40: Tensions = [np.float64(0.035406756573392324), np.float64(0.023703491063981036)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.076 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12326292895501147), np.float64(0.08995086324492604)]
+   Step 10: Tensions = [np.float64(0.03426154114338255), np.float64(0.025911399397923515)]
+   Step 20: Tensions = [np.float64(0.03779494665812015), np.float64(0.024963879708438323)]
+   Step 30: Tensions = [np.float64(0.03942362899323515), np.float64(0.02993037105688583)]
+   Step 40: Tensions = [np.float64(0.039545311714420134), np.float64(0.026881777306339904)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.049 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1257488172336468), np.float64(0.08053234697899604)]
+   Step 10: Tensions = [np.float64(0.038872287344140374), np.float64(0.027225970922874536)]
+   Step 20: Tensions = [np.float64(0.035895326576854895), np.float64(0.027447936409501224)]
+   Step 30: Tensions = [np.float64(0.03986437825800194), np.float64(0.025308940063869606)]
+   Step 40: Tensions = [np.float64(0.040742550077147124), np.float64(0.024982613729743686)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.106 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12640705120797588), np.float64(0.08049533740572394)]
+   Step 10: Tensions = [np.float64(0.037640974763828224), np.float64(0.025148656313758903)]
+   Step 20: Tensions = [np.float64(0.033902759585101507), np.float64(0.027402027778638552)]
+   Step 30: Tensions = [np.float64(0.03947760757138047), np.float64(0.025365235720574763)]
+   Step 40: Tensions = [np.float64(0.03461198487674905), np.float64(0.02722765813049627)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.049 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12221246847255465), np.float64(0.08496465289769636)]
+   Step 10: Tensions = [np.float64(0.03798847029082919), np.float64(0.025652871582482896)]
+   Step 20: Tensions = [np.float64(0.03767452596218501), np.float64(0.02459584881530471)]
+   Step 30: Tensions = [np.float64(0.037549335798381836), np.float64(0.02882160655071396)]
+   Step 40: Tensions = [np.float64(0.038259451563934295), np.float64(0.02755649239945623)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.020 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12031289785635933), np.float64(0.08488656508842105)]
+   Step 10: Tensions = [np.float64(0.04006605057739637), np.float64(0.026665738767676174)]
+   Step 20: Tensions = [np.float64(0.03842548594431407), np.float64(0.027595737977216275)]
+   Step 30: Tensions = [np.float64(0.03894876034010243), np.float64(0.02575867037581716)]
+   Step 40: Tensions = [np.float64(0.036566159236414104), np.float64(0.025976215105571444)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12408040003298525), np.float64(0.0854952360156484)]
+   Step 10: Tensions = [np.float64(0.03485149694483033), np.float64(0.026196612739993526)]
+   Step 20: Tensions = [np.float64(0.036549305436420945), np.float64(0.026439312629842254)]
+   Step 30: Tensions = [np.float64(0.038786519656123196), np.float64(0.029291302561593253)]
+   Step 40: Tensions = [np.float64(0.03886526321435688), np.float64(0.027637660871164503)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.124299473875544), np.float64(0.08154948542942062)]
+   Step 10: Tensions = [np.float64(0.04035247732265941), np.float64(0.026320702119785135)]
+   Step 20: Tensions = [np.float64(0.03613998473264276), np.float64(0.02686931113148263)]
+   Step 30: Tensions = [np.float64(0.03589544675450034), np.float64(0.02531914986250748)]
+   Step 40: Tensions = [np.float64(0.04097381002955738), np.float64(0.023685817637369357)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.069 ✅ Normal
+📊 Results:
+   Max stress probability: 0.106
+   Early warnings: 0
+   Crash detected early: False
+\n🎯 TESTING: BLACK MONDAY 1987
+========================================
+/home/lenovo/Git/Substrate X Theory of Information Gravity/historical_crash_test.py:17: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  data = yf.download(symbol, start=start_date, end=end_date, interval="1d")
+[*********************100%***********************]  1 of 1 completed
+📅 Testing period: 1987-09-04 to 1987-10-30
+💥 Crash date: 1987-10-19
+📈 Data points: 40
+🌌 UNIVERSAL PDE INTEGRATOR INITIALIZED (DYNAMIC T-M-V ENABLED)
+🔧 Stress threshold set to: 0.13
+🔧 Crash definition set to: severe_crash
+   Parameters: {'threshold_pct': -5.0, 'window_days': 1}
+🧠 Training PredictiveEngine...
+✅ Domain added: finance
+✅ Domain added: biophysics
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.10313106805103285), np.float64(0.07015020331209762)]
+   Step 10: Tensions = [np.float64(0.03545812694855571), np.float64(0.028008599078544187)]
+   Step 20: Tensions = [np.float64(0.037472222755796245), np.float64(0.026988375315600846)]
+   Step 30: Tensions = [np.float64(0.0371226950760359), np.float64(0.0266156366622023)]
+   Step 40: Tensions = [np.float64(0.03637516693145749), np.float64(0.02561953893481772)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.024 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1227575324132691), np.float64(0.08330137204283876)]
+   Step 10: Tensions = [np.float64(0.035434044155028745), np.float64(0.02662934907240954)]
+   Step 20: Tensions = [np.float64(0.03576196262826058), np.float64(0.027728734610190996)]
+   Step 30: Tensions = [np.float64(0.03447954753170611), np.float64(0.025252709546089016)]
+   Step 40: Tensions = [np.float64(0.038051103853063976), np.float64(0.025430804983739078)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.047 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12862578074883074), np.float64(0.08724573962826485)]
+   Step 10: Tensions = [np.float64(0.03818048673583218), np.float64(0.02648390252817887)]
+   Step 20: Tensions = [np.float64(0.0387090309171599), np.float64(0.027737208842041713)]
+   Step 30: Tensions = [np.float64(0.03598344958335927), np.float64(0.025212257737828897)]
+   Step 40: Tensions = [np.float64(0.0361799282225662), np.float64(0.02721272376844212)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1197644259239304), np.float64(0.08957921061705454)]
+   Step 10: Tensions = [np.float64(0.03553405152296211), np.float64(0.024176318446843217)]
+   Step 20: Tensions = [np.float64(0.037117734730010905), np.float64(0.02670937816673421)]
+   Step 30: Tensions = [np.float64(0.039838872226967886), np.float64(0.024616882416427642)]
+   Step 40: Tensions = [np.float64(0.03335316680520285), np.float64(0.029301645029917202)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12334093922583567), np.float64(0.08425860906264135)]
+   Step 10: Tensions = [np.float64(0.03907633098738591), np.float64(0.025122523937100245)]
+   Step 20: Tensions = [np.float64(0.03636068894136243), np.float64(0.026359839366052913)]
+   Step 30: Tensions = [np.float64(0.03622775010817459), np.float64(0.02624649513164972)]
+   Step 40: Tensions = [np.float64(0.03727015991696772), np.float64(0.028383310011342304)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.010 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11615567825770168), np.float64(0.0902182224441227)]
+   Step 10: Tensions = [np.float64(0.03851227728008026), np.float64(0.026527733526567964)]
+   Step 20: Tensions = [np.float64(0.035757870926508506), np.float64(0.02666907046472533)]
+   Step 30: Tensions = [np.float64(0.0363575239393179), np.float64(0.0286466188947374)]
+   Step 40: Tensions = [np.float64(0.03484092914300063), np.float64(0.02767432573799262)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11904020770295234), np.float64(0.0849241418982563)]
+   Step 10: Tensions = [np.float64(0.03611964312395432), np.float64(0.026602802569196476)]
+   Step 20: Tensions = [np.float64(0.03818145523184282), np.float64(0.029969524928600118)]
+   Step 30: Tensions = [np.float64(0.03726598507123333), np.float64(0.027137272334974826)]
+   Step 40: Tensions = [np.float64(0.04083465889963217), np.float64(0.02903393221661695)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.015 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11790559990585436), np.float64(0.08867181233951181)]
+   Step 10: Tensions = [np.float64(0.03749823096703482), np.float64(0.02469280936863263)]
+   Step 20: Tensions = [np.float64(0.03725659891350723), np.float64(0.02711482086348742)]
+   Step 30: Tensions = [np.float64(0.039725654528679946), np.float64(0.026711528725923375)]
+   Step 40: Tensions = [np.float64(0.037440442670494095), np.float64(0.026510239693577648)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.031 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12460931648073852), np.float64(0.08652151204966438)]
+   Step 10: Tensions = [np.float64(0.036270938752297484), np.float64(0.027432675985801184)]
+   Step 20: Tensions = [np.float64(0.038556804129210524), np.float64(0.028352096715892425)]
+   Step 30: Tensions = [np.float64(0.037583164837175054), np.float64(0.025915446903806986)]
+   Step 40: Tensions = [np.float64(0.03811624090860885), np.float64(0.027425481630944437)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12201035770291987), np.float64(0.08572847096181033)]
+   Step 10: Tensions = [np.float64(0.038846157974239674), np.float64(0.025664462660593326)]
+   Step 20: Tensions = [np.float64(0.03662927955365523), np.float64(0.025242498753164963)]
+   Step 30: Tensions = [np.float64(0.03722296589218198), np.float64(0.02547525711788172)]
+   Step 40: Tensions = [np.float64(0.03563151461950011), np.float64(0.0295205240293055)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.041 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11872404131788215), np.float64(0.08256185035542024)]
+   Step 10: Tensions = [np.float64(0.037294750541088044), np.float64(0.024512751743178178)]
+   Step 20: Tensions = [np.float64(0.040106761089107726), np.float64(0.028730514389425383)]
+   Step 30: Tensions = [np.float64(0.03300666024254686), np.float64(0.026687057685100306)]
+   Step 40: Tensions = [np.float64(0.03667744754464898), np.float64(0.025527529158057748)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12342136317527974), np.float64(0.08547304503816627)]
+   Step 10: Tensions = [np.float64(0.03880807852569341), np.float64(0.028077478895363953)]
+   Step 20: Tensions = [np.float64(0.03586329522051475), np.float64(0.026214117388887664)]
+   Step 30: Tensions = [np.float64(0.03415989869085588), np.float64(0.027595653956997215)]
+   Step 40: Tensions = [np.float64(0.035355749177715085), np.float64(0.025313525211084396)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.030 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12770762295111848), np.float64(0.08818177983803979)]
+   Step 10: Tensions = [np.float64(0.03631426614844577), np.float64(0.02547440763351256)]
+   Step 20: Tensions = [np.float64(0.03936624150661621), np.float64(0.02541434867866673)]
+   Step 30: Tensions = [np.float64(0.03846077014599484), np.float64(0.026001718984693875)]
+   Step 40: Tensions = [np.float64(0.03678282156783827), np.float64(0.028523595384367308)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1258526323977084), np.float64(0.08525030570487806)]
+   Step 10: Tensions = [np.float64(0.03549356769342322), np.float64(0.02488654195370034)]
+   Step 20: Tensions = [np.float64(0.03847914941265942), np.float64(0.02655709807315759)]
+   Step 30: Tensions = [np.float64(0.03698180442269253), np.float64(0.026438628518030118)]
+   Step 40: Tensions = [np.float64(0.03292705664246621), np.float64(0.028112321487616245)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.046 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12400371447819623), np.float64(0.08859762660998691)]
+   Step 10: Tensions = [np.float64(0.039376341898836154), np.float64(0.026366532373811487)]
+   Step 20: Tensions = [np.float64(0.03484739574704954), np.float64(0.025645155645598793)]
+   Step 30: Tensions = [np.float64(0.037589384922559164), np.float64(0.02659241424579139)]
+   Step 40: Tensions = [np.float64(0.035170684347784434), np.float64(0.028527071420767658)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.033 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11192250515622221), np.float64(0.0899958450593265)]
+   Step 10: Tensions = [np.float64(0.03523240725253444), np.float64(0.02908306918890729)]
+   Step 20: Tensions = [np.float64(0.03764388811224304), np.float64(0.0276920451818898)]
+   Step 30: Tensions = [np.float64(0.03790741832204231), np.float64(0.02633719959481641)]
+   Step 40: Tensions = [np.float64(0.03882713073844579), np.float64(0.028177892928970032)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.022 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11974292638041995), np.float64(0.08045735317785767)]
+   Step 10: Tensions = [np.float64(0.03737133169004668), np.float64(0.026612627919907202)]
+   Step 20: Tensions = [np.float64(0.034995247187557275), np.float64(0.027892018361816952)]
+   Step 30: Tensions = [np.float64(0.037662278620753165), np.float64(0.023660666705908717)]
+   Step 40: Tensions = [np.float64(0.03659436053887207), np.float64(0.026389896457864933)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1246574977315208), np.float64(0.0888237428795461)]
+   Step 10: Tensions = [np.float64(0.0405836424568902), np.float64(0.025958021461318752)]
+   Step 20: Tensions = [np.float64(0.039664410908764325), np.float64(0.02728785481081731)]
+   Step 30: Tensions = [np.float64(0.03680115318401156), np.float64(0.026718940292576803)]
+   Step 40: Tensions = [np.float64(0.03476550164417856), np.float64(0.024939577863036043)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.028 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12364717006524498), np.float64(0.08146485401237269)]
+   Step 10: Tensions = [np.float64(0.03762102388246078), np.float64(0.02619801457267944)]
+   Step 20: Tensions = [np.float64(0.03783634466372862), np.float64(0.02594649164133626)]
+   Step 30: Tensions = [np.float64(0.03948859743153209), np.float64(0.025957419724576478)]
+   Step 40: Tensions = [np.float64(0.0375688129530688), np.float64(0.02754289366843725)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1281740656203762), np.float64(0.08530132668913572)]
+   Step 10: Tensions = [np.float64(0.03840032682613949), np.float64(0.02532986213433494)]
+   Step 20: Tensions = [np.float64(0.03297832975664438), np.float64(0.027927727768127603)]
+   Step 30: Tensions = [np.float64(0.040225976261582724), np.float64(0.025745057865236152)]
+   Step 40: Tensions = [np.float64(0.03803629127797721), np.float64(0.02629549839856801)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12102163344447754), np.float64(0.08793797808495178)]
+   Step 10: Tensions = [np.float64(0.036595891800271896), np.float64(0.02777978435982396)]
+   Step 20: Tensions = [np.float64(0.03931113286479364), np.float64(0.0257098404634724)]
+   Step 30: Tensions = [np.float64(0.036583034068413234), np.float64(0.02608755038507083)]
+   Step 40: Tensions = [np.float64(0.03799867571181768), np.float64(0.026208148481716896)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.134 🚨 STRESS ALERT
+🚨 ENGINE DETECTED CRASH 10 DAYS EARLY on 1987-10-19
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11978717770447081), np.float64(0.0847200499844741)]
+   Step 10: Tensions = [np.float64(0.0429941746588072), np.float64(0.02671848281224652)]
+   Step 20: Tensions = [np.float64(0.03515241383163359), np.float64(0.0255752674245884)]
+   Step 30: Tensions = [np.float64(0.03836277389898773), np.float64(0.02906872268181969)]
+   Step 40: Tensions = [np.float64(0.03915648721835194), np.float64(0.025594366544519184)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.044 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12229258210759354), np.float64(0.08631558602395217)]
+   Step 10: Tensions = [np.float64(0.03599677157911014), np.float64(0.026339478716226092)]
+   Step 20: Tensions = [np.float64(0.03753377175706948), np.float64(0.023484347432813326)]
+   Step 30: Tensions = [np.float64(0.04066399729404861), np.float64(0.024017734013997778)]
+   Step 40: Tensions = [np.float64(0.03848235022740809), np.float64(0.024676185762358895)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.049 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11782750900324446), np.float64(0.08526400714020949)]
+   Step 10: Tensions = [np.float64(0.03916087567726237), np.float64(0.026847561808370883)]
+   Step 20: Tensions = [np.float64(0.03720299769490842), np.float64(0.026770827936854726)]
+   Step 30: Tensions = [np.float64(0.0372208871515843), np.float64(0.02829186595737034)]
+   Step 40: Tensions = [np.float64(0.03704877150605285), np.float64(0.026962211201882278)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.075 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12239989733789444), np.float64(0.08318514286207065)]
+   Step 10: Tensions = [np.float64(0.039768116353533375), np.float64(0.025671504493486187)]
+   Step 20: Tensions = [np.float64(0.037143249878668516), np.float64(0.02730347281646547)]
+   Step 30: Tensions = [np.float64(0.03693164871574921), np.float64(0.026049654874398503)]
+   Step 40: Tensions = [np.float64(0.03910673479164123), np.float64(0.027615767243121193)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.041 ✅ Normal
+📊 Results:
+   Max stress probability: 0.134
+   Early warnings: 1
+   Crash detected early: True
+   First warning: 10 days before crash
+\n🎯 TESTING: DOT-COM BUBBLE
+========================================
+/home/lenovo/Git/Substrate X Theory of Information Gravity/historical_crash_test.py:17: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  data = yf.download(symbol, start=start_date, end=end_date, interval="1d")
+[*********************100%***********************]  1 of 1 completed
+📅 Testing period: 2000-02-10 to 2000-04-06
+💥 Crash date: 2000-03-24
+📈 Data points: 40
+🌌 UNIVERSAL PDE INTEGRATOR INITIALIZED (DYNAMIC T-M-V ENABLED)
+🔧 Stress threshold set to: 0.13
+🔧 Crash definition set to: severe_crash
+   Parameters: {'threshold_pct': -5.0, 'window_days': 1}
+🧠 Training PredictiveEngine...
+✅ Domain added: finance
+✅ Domain added: biophysics
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.10267219597524911), np.float64(0.07355633047374725)]
+   Step 10: Tensions = [np.float64(0.03495866359121418), np.float64(0.028375331824913266)]
+   Step 20: Tensions = [np.float64(0.03566248957900147), np.float64(0.026504223290000704)]
+   Step 30: Tensions = [np.float64(0.03899528231100597), np.float64(0.02661416609947587)]
+   Step 40: Tensions = [np.float64(0.03806701329291202), np.float64(0.026939209000774626)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.047 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1238924243703291), np.float64(0.08396835122138194)]
+   Step 10: Tensions = [np.float64(0.03964015859967934), np.float64(0.027012295293214292)]
+   Step 20: Tensions = [np.float64(0.036911921442996), np.float64(0.024811390526310737)]
+   Step 30: Tensions = [np.float64(0.035735841183377436), np.float64(0.02476557600081903)]
+   Step 40: Tensions = [np.float64(0.0400309623343298), np.float64(0.02574439458042777)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.059 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12036811135822091), np.float64(0.08429369109445779)]
+   Step 10: Tensions = [np.float64(0.03792978818694591), np.float64(0.02600281607930193)]
+   Step 20: Tensions = [np.float64(0.036141109956868395), np.float64(0.028765195144547038)]
+   Step 30: Tensions = [np.float64(0.03316633022476399), np.float64(0.023377630622602147)]
+   Step 40: Tensions = [np.float64(0.037196650330124814), np.float64(0.027333674958553624)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12476936728879147), np.float64(0.08164740889824705)]
+   Step 10: Tensions = [np.float64(0.037179084910387336), np.float64(0.025895073448828312)]
+   Step 20: Tensions = [np.float64(0.03511574575209318), np.float64(0.028757488033895454)]
+   Step 30: Tensions = [np.float64(0.03847508279214159), np.float64(0.024517599722263386)]
+   Step 40: Tensions = [np.float64(0.0357826953582689), np.float64(0.027303196014664445)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11957717617281732), np.float64(0.09052376939175771)]
+   Step 10: Tensions = [np.float64(0.04170389698108992), np.float64(0.024995586305281894)]
+   Step 20: Tensions = [np.float64(0.033115451669383636), np.float64(0.02881570232895316)]
+   Step 30: Tensions = [np.float64(0.036041188635574414), np.float64(0.027110573056136966)]
+   Step 40: Tensions = [np.float64(0.03683114387882722), np.float64(0.02781389824468091)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.065 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12622934829690144), np.float64(0.08668694034765112)]
+   Step 10: Tensions = [np.float64(0.040719945904042355), np.float64(0.028347564540715072)]
+   Step 20: Tensions = [np.float64(0.034732064006271206), np.float64(0.025410479400062816)]
+   Step 30: Tensions = [np.float64(0.040167641851210634), np.float64(0.025603724335623683)]
+   Step 40: Tensions = [np.float64(0.03876517702589652), np.float64(0.02680134829459503)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.080 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1244644548759136), np.float64(0.08916967996976038)]
+   Step 10: Tensions = [np.float64(0.03907792900682703), np.float64(0.02846766075376836)]
+   Step 20: Tensions = [np.float64(0.03843756475870153), np.float64(0.026955684102664464)]
+   Step 30: Tensions = [np.float64(0.035395442604082075), np.float64(0.024569082152035522)]
+   Step 40: Tensions = [np.float64(0.03956106464056978), np.float64(0.026994777686154645)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.13337108338454803), np.float64(0.08742131860174368)]
+   Step 10: Tensions = [np.float64(0.036519609679828764), np.float64(0.02657825951113576)]
+   Step 20: Tensions = [np.float64(0.03544756371716372), np.float64(0.023366708663250354)]
+   Step 30: Tensions = [np.float64(0.03876494131778329), np.float64(0.028092894763184335)]
+   Step 40: Tensions = [np.float64(0.043136751615294185), np.float64(0.026969763919598627)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.034 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11676221623195356), np.float64(0.0899000488517024)]
+   Step 10: Tensions = [np.float64(0.04055955413841039), np.float64(0.026688475237324105)]
+   Step 20: Tensions = [np.float64(0.03845541078070958), np.float64(0.027319679057268183)]
+   Step 30: Tensions = [np.float64(0.033743923059162934), np.float64(0.02542794311415689)]
+   Step 40: Tensions = [np.float64(0.03734793351154659), np.float64(0.027773643245220626)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.072 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12956381108124013), np.float64(0.08281618307260553)]
+   Step 10: Tensions = [np.float64(0.0375239282197225), np.float64(0.02492658051085776)]
+   Step 20: Tensions = [np.float64(0.03769311712875044), np.float64(0.026354591247999753)]
+   Step 30: Tensions = [np.float64(0.0347745046372255), np.float64(0.025494523349087084)]
+   Step 40: Tensions = [np.float64(0.03626748970628359), np.float64(0.025163607627215378)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11944959123808892), np.float64(0.08922105725963753)]
+   Step 10: Tensions = [np.float64(0.03633549920354777), np.float64(0.02787384743384259)]
+   Step 20: Tensions = [np.float64(0.03611485049823682), np.float64(0.02663421059556479)]
+   Step 30: Tensions = [np.float64(0.039090554557246825), np.float64(0.0275261583692991)]
+   Step 40: Tensions = [np.float64(0.038872657187994916), np.float64(0.02643239387336876)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.005 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11988858065118209), np.float64(0.08266796876321039)]
+   Step 10: Tensions = [np.float64(0.03732022530406797), np.float64(0.026290703452744923)]
+   Step 20: Tensions = [np.float64(0.03529307773750039), np.float64(0.026066266408475612)]
+   Step 30: Tensions = [np.float64(0.038809983642771405), np.float64(0.026233014938266234)]
+   Step 40: Tensions = [np.float64(0.03516204307111224), np.float64(0.026197815665055753)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1205924631289746), np.float64(0.08853523280263731)]
+   Step 10: Tensions = [np.float64(0.038555386672852604), np.float64(0.025659880173606025)]
+   Step 20: Tensions = [np.float64(0.037244207539749274), np.float64(0.02841456959532305)]
+   Step 30: Tensions = [np.float64(0.03828283341325251), np.float64(0.02697475202985437)]
+   Step 40: Tensions = [np.float64(0.034840079035637336), np.float64(0.025012326728919638)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11914421766941671), np.float64(0.0880123202566997)]
+   Step 10: Tensions = [np.float64(0.036843878066086584), np.float64(0.028608497200519403)]
+   Step 20: Tensions = [np.float64(0.039459328343765594), np.float64(0.025289345773954055)]
+   Step 30: Tensions = [np.float64(0.03767889737340389), np.float64(0.027856693663957547)]
+   Step 40: Tensions = [np.float64(0.03660935405873426), np.float64(0.026959777646553502)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12540116547765529), np.float64(0.08984617475336096)]
+   Step 10: Tensions = [np.float64(0.035975617930204734), np.float64(0.029300127060932806)]
+   Step 20: Tensions = [np.float64(0.04065339520860827), np.float64(0.027830288820641143)]
+   Step 30: Tensions = [np.float64(0.0388921991669045), np.float64(0.02665751978485916)]
+   Step 40: Tensions = [np.float64(0.03496065617115722), np.float64(0.026513434667850874)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.014 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12761921534262272), np.float64(0.09106604581495856)]
+   Step 10: Tensions = [np.float64(0.03498885437549171), np.float64(0.0291938510294575)]
+   Step 20: Tensions = [np.float64(0.03703145229472007), np.float64(0.025408812340838475)]
+   Step 30: Tensions = [np.float64(0.03560042180777817), np.float64(0.027107594558420187)]
+   Step 40: Tensions = [np.float64(0.03329949211122341), np.float64(0.02688472353719402)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11881762460485817), np.float64(0.08334653016863428)]
+   Step 10: Tensions = [np.float64(0.03839582419206422), np.float64(0.025625627336460885)]
+   Step 20: Tensions = [np.float64(0.0376697742320196), np.float64(0.02827040008901507)]
+   Step 30: Tensions = [np.float64(0.03452934622725342), np.float64(0.026044350778140175)]
+   Step 40: Tensions = [np.float64(0.03782088731157602), np.float64(0.026350231111322755)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.020 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1270693974320471), np.float64(0.08706385126743911)]
+   Step 10: Tensions = [np.float64(0.03823034645909584), np.float64(0.02616110563680365)]
+   Step 20: Tensions = [np.float64(0.03563679960612964), np.float64(0.02840822630461491)]
+   Step 30: Tensions = [np.float64(0.03905528285270642), np.float64(0.028166231930657936)]
+   Step 40: Tensions = [np.float64(0.035692013240822835), np.float64(0.028072815990058533)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.045 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.11865986636723536), np.float64(0.08432332809003082)]
+   Step 10: Tensions = [np.float64(0.037340865591491114), np.float64(0.02725989063283894)]
+   Step 20: Tensions = [np.float64(0.0359318474095294), np.float64(0.029326616018438133)]
+   Step 30: Tensions = [np.float64(0.03352674941701378), np.float64(0.027256989612701565)]
+   Step 40: Tensions = [np.float64(0.037414783273615235), np.float64(0.027286116021519344)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.059 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1208117938731594), np.float64(0.08368565005394889)]
+   Step 10: Tensions = [np.float64(0.03949000398764972), np.float64(0.024457982169162937)]
+   Step 20: Tensions = [np.float64(0.0372820709951604), np.float64(0.02398449504562552)]
+   Step 30: Tensions = [np.float64(0.03731299348210841), np.float64(0.02831228065531587)]
+   Step 40: Tensions = [np.float64(0.04060854033779958), np.float64(0.02568932133505222)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.030 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12105474085187995), np.float64(0.08377166662157812)]
+   Step 10: Tensions = [np.float64(0.03650287646700776), np.float64(0.02445930067308056)]
+   Step 20: Tensions = [np.float64(0.037613642855140884), np.float64(0.026761898613830142)]
+   Step 30: Tensions = [np.float64(0.038280157340590294), np.float64(0.028628220691866137)]
+   Step 40: Tensions = [np.float64(0.036893969569381395), np.float64(0.02688857833647358)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.1209067270817411), np.float64(0.08563184353585446)]
+   Step 10: Tensions = [np.float64(0.0343634733807076), np.float64(0.027106728489256257)]
+   Step 20: Tensions = [np.float64(0.03506386238247982), np.float64(0.02588803801520483)]
+   Step 30: Tensions = [np.float64(0.04113695242141767), np.float64(0.025865795921386638)]
+   Step 40: Tensions = [np.float64(0.04062757072300773), np.float64(0.027245114241533343)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.001 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12097628604080701), np.float64(0.0840305149885613)]
+   Step 10: Tensions = [np.float64(0.03818278654618381), np.float64(0.028220717784212784)]
+   Step 20: Tensions = [np.float64(0.03573833372783235), np.float64(0.025873124231783035)]
+   Step 30: Tensions = [np.float64(0.0375397375854507), np.float64(0.02608542957947061)]
+   Step 40: Tensions = [np.float64(0.03944637031058787), np.float64(0.026928892021173524)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.000 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12200377235788926), np.float64(0.09073159306904055)]
+   Step 10: Tensions = [np.float64(0.039102140300355005), np.float64(0.02606057666888084)]
+   Step 20: Tensions = [np.float64(0.038442065748734926), np.float64(0.02827635063609902)]
+   Step 30: Tensions = [np.float64(0.03695223909812928), np.float64(0.028341572716108435)]
+   Step 40: Tensions = [np.float64(0.03820296025165032), np.float64(0.02801652402594576)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.022 ✅ Normal
+🧠 Training PredictiveEngine...
+⚠️ Warning: Domain finance already added. Skipping.
+⚠️ Warning: Domain biophysics already added. Skipping.
+📊 Financial metrics keys: ['mean', 'std', 'var', 'features_used']
+🧬 Biological metrics keys: ['mean', 'std', 'var', 'features_used']
+🔧 Injected data - Finance grid: (16, 16), Bio grid: (16, 16)
+   Step 0: Tensions = [np.float64(0.12972814917802866), np.float64(0.08385917874586381)]
+   Step 10: Tensions = [np.float64(0.038801558437812834), np.float64(0.02544055269210879)]
+   Step 20: Tensions = [np.float64(0.03308997252257645), np.float64(0.024573716279692324)]
+   Step 30: Tensions = [np.float64(0.03824944649092347), np.float64(0.028455332190124527)]
+   Step 40: Tensions = [np.float64(0.03338173651762875), np.float64(0.026642240383664192)]
+✅ Training completed
+🔮 Predicting stress probability for 5 days...
+   Predicted stress probability: 0.050 ✅ Normal
+📊 Results:
+   Max stress probability: 0.080
+   Early warnings: 0
+   Crash detected early: False
+\n============================================================
+🎯 FINAL CRASH DETECTION REPORT
+This proves if your engine can feel system tension before collapses!
+

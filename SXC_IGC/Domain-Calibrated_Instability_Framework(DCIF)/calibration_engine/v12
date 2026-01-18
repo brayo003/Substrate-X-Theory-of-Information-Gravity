@@ -1,0 +1,64 @@
+REALITY FILTER (STEPS 0–3)
+
+Input
+High-dimensional system state:
+y(t) ∈ ℝⁿ
+
+Reduction
+Define a scalar instability variable:
+x(t) = Φ(y(t))
+
+Constraint
+Φ must be empirically meaningful and measurable.
+
+Decision
+If no such x(t) can be defined, the system is non-compressible and therefore not analyzable under SXC-IGC.
+
+Output
+A cleaned, scalar time series x(t) representing system tension or instability density.
+
+STRUCTURE TEST (STEPS 4–7)
+
+Dynamics Fit
+Estimate the time derivative dx/dt and fit it to the V12 cubic normal form:
+
+dx/dt = r·x + a·x² − b·x³
+
+Coefficient Roles
+r: linear growth or decay rate
+a: nonlinear amplification strength
+b: saturation strength enforcing boundedness
+
+Validation
+Residuals and robustness tests must confirm that the cubic form is a valid reduced-order approximation.
+
+Output
+A bounded dynamical envelope defining allowable system evolution.
+
+CLASSIFICATION ENGINE (STEPS 8–10)
+
+Cumulative Instability
+Compute the integrated instability:
+
+I(t) = ∫₀ᵗ x(τ) dτ
+
+Scaling Law
+Fit the temporal scaling:
+
+I(t) ∼ t^α
+
+Interpretation of α
+α ≈ 1.2–1.3 → fast accumulation, mechanically dominated dynamics
+α ≈ 0.4–0.5 → slow accumulation, resilient or absorptive dynamics
+Intermediate α → hybrid-critical behavior with mixed amplification and damping
+
+ULTIMATE OUTPUT
+
+Binary Separation
+Distinguishes compressible, structured systems from noise-dominated or chaotic systems.
+
+Bounded Certainty
+If successful, yields explicit limits on amplification, saturation, and long-term behavior.
+
+Failure Mode
+If reduction, fitting, or scaling fails, the system is classified as non-modelable within this framework.

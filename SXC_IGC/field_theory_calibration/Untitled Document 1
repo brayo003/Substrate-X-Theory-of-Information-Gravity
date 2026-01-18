@@ -1,0 +1,69 @@
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ cat << 'EOF_RUN' > run_analysis.sh
+#!/bin/bash
+echo "🔍 Checking for data files..."
+echo ""
+
+# Check for common data file locations
+POSSIBLE_PATHS=(
+    "data/processed/edge_triplets.csv"
+    "data/edge_triplets.csv" 
+    "edge_triplets.csv"
+    "triplets.csv"
+    "outputs/edge_triplets.csv"
+)
+
+FOUND_FILE=""
+for path in "${POSSIBLE_PATHS[@]}"; do
+    if [ -f "$path" ]; then
+        FOUND_FILE="$path"
+        echo "✅ Found: $path"
+        echo "   Size: $(du -h "$path" | cut -f1)"
+        echo "   Lines: $(wc -l < "$path" | xargs) rows"
+        break
+./run_analysis.shysis.she found. Checking for any output..."A"
+🔍 Checking for data files...
+
+❌ No edge triplets file found!
+
+Possible solutions:
+1. Check if you've run the edge extraction pipeline
+2. Look for files with 'triplet' in the name:
+./checkpoints/stage2_sparse_triplets.parquet
+
+If you don't have data yet, we can create a sample:
+Create sample edge triplets? (y/n): y
+Creating sample data...
+✅ Created sample: data/processed/edge_triplets.csv
+
+🚀 Running spectral analysis...
+= = 0 ACCOMPLISHMENT_SUMMARY.md add_alert_threshold.py analysis analyze_cicd_class_vi.py analyze_collected_data.py analyze_dhw_timeseries.py analyze_new_ig_system.py analyze_private_forum_discovery.py analyze_real_class_vi.py analyze_ultra_rigid_class.py applications assets attempt2.nc BOOK_COMPLETE.md calculate_class_vi_utd.py calculate_nonlinear_factor.py calculate_universal_critical.py calculate_utd_parameters_calibrated.py calculate_utd_parameters.py check_metadata.py checkpoints check_variables.py cicd_automated_system.csv cicd_class_vi_boundary.csv classification_results.json collect_cicd_system.py collect_class_vi_data.py collect_class_vi_dataset.py collect_real_github_data.py collect_wikipedia_data_fixed.py collect_wikipedia_data.py compute_eigenvalues.py compute_steady_state.py config connect_finance_data_fixed.py connect_finance_data.py coral_reef_download.py core core_math corrected_crash_test.py create_final_research_conclusion.py create_final_utd_classification.py create_test_data.py critical_condition.py current_market_test.py data data_collection_plan.py data_ingestion.py debug_bio_physics_normalization.py debug_calculation.py debug_data_shapes.py debug_domain_details.py debug_domain_init.py debug_domain_states.py debug_engine_calculation.py debug_engine_ig.py debug_engine_metrics.py debug_engine_structure.py debug_field_evolution.py debug_ig_inputs.py debug_integrator_methods.py debug_max_vr.py debug_metrics_evolution.py debug_proper_domain_init.py debug_stress_injection.py debug_wikipedia_api.py define_wikipedia_targets.py demo_breakthrough_prediction.py deploy_inverse_engine.sh derive_universal_constant_fixed.py derive_universal_constant.py dhw_gbr_2020_fixed.nc dhw_gbr_2020.nc direct_check.py docs domains download_dhw_data_fixed.py download_dhw_data.py download_nasa_physical_data.py download_real_grid_data.py download_real_physical_data.py emergency_calibration_fix.py empirical_calibration.py erddapy estimate_recovery_timescale.py execute_experimental_validation.sh execute_final_boundary_test.py experimental_test_design.py final_boundary_conclusion.md final_boundary_determination.csv final_crisis_detector.py final_fixed_engine.py final_historical_test.py final_spectrum_visualization.py final_utd_calculation.py financial_data_setup.py find_dhw_variable.py find_real_variables.py fix_data_structure.py fix_engine_alignment.py fix_predictive_engine.py generate_test_data.py get_reef_data.py get_utd_data.py github guess_variables.py health_recovery_and_delta2.py historical_crash_test.py historical_crisis_suite_fixed.py historical_crisis_suite.py IG_SYSTEM_FIX_SUMMARY.md imhd implement_immediate_actions.sh implement_private_forum_collection.py improved_crisis_engine.py information_crisis_detector.py inspect INSTALL.md integrate_private_forum_analysis.py legal licence linear_stability_analysis_fixed.py linear_stability_analysis.py live_stress_dashboard.py logs manual_download.sh measurement_tools.py minimal_svb_test.py network_constructors.py noaacrwdhwDaily.nc?CRW_DHW%5B(2020-01-01T12:00:00Z):1:(2020-12-31T12:00:00Z)%5D%5B(20.0):1:(25.0)%5D%5B(150.0):1:(155.0)%5D np optimized_engine.pkl os outputs parameter_fit.py pd phase-1-physical-foundation phase-2-dimensional-framework phase-3-matter-formation phase-4-[phylosophy]consciousness-layer phase-5-cosmological-cascade phase-6-experimental-framework phase-7-unified-paradigm physical_anchor.py private_forum_analysis.csv private_forum_data_template.json private_forum_data_template.py private_forum_permission_template.json private_forum_research_plan.md private_forum_research_strategy.md private github production_engine.py PROJECT_COMPLETE.md properly_calibrated_engine.py quant quantt quick_start.py quick_test.py README.md real_class_vi_results.csv realistic_grid_frequency.csv real_seismic_measurements.csv real_time_trader.py real_weather_measurements.csv references requirements.txt robust_dynamic_engine.py rough work run_all_validation.sh run_analysis.sh run_class_vi_test.sh run_dashboard.sh run_universal_test.py run_validation_pipeline.py run_validation_test.py sanity_test.py scripts search_datasets.py sensitivity_analysis.py setup_github.sh setup_optimal_engine.py signal_validation.py simple_download.sh simplify_pde_system.py single_crisis_test.py social_timeseries.csv solver src stress_and_tauE.py stress_results.json Substrate_X_Git svb_blind_test_fixed.py svb_blind_test.py svb_final_test.py SXC-IGC symbolic_sweep_fixed.py symbolic_sweep.py sys systematic_tuning_workflow.py systemic_decay_detector.py system_taxonomy_mapper.py target_choice.md templates test_2008_financial_crisis.py test_2015_china_crash.py test_2017_bull_market.py test_data_coupler.py test_dot_com_bubble.py test_dynamic_thresholds.py test_engine_integration.py test_entropy.py test_final_system.py test_final_tuning.py test_fixed_ig_system.py test_fixed_system.py test_fix.py test_great_depression_final.py test_great_depression.py test_ig_coherence_final.py test_integration.py test_matrix.npz test_predictive.py tests test_threshold_tuning.py test_threshold_tuning_v2.py theory trace_ig_calculation.py tune_crash_definition.py tuning_logger.py tuning_log.json twitter_api_application.py universal_dynamics_engine universal_pde_engine.py universal_signal_processor.py universal_signal_processor_spectral.py universal_tension_detector.py universal_tension_dynamics_dynamic.py universal_tension_dynamics.py use_optimized_engine.py utd_cross_domain_correct.py utd_energy_grid_adapter.py utd_energy_grid_class_update.py utd_final_calibration.py utd_final_orchestrator.py UTD_FINAL_RESEARCH_PAPER.md utd_hard_bounded.py utd_measurements_20251130_003208.csv utd_orchestrator_fixed.py utd_orchestrator.py utd_orchestrator_scaled.py utd_orchestrator_working.py utd_physical_corrected.py utd_predictive_test_final.py utd_predictive_test.py utd_real_data_collector.py UTD_RESEARCH_SUMMARY.md utd_social_adapters.py utd_social_honest.py validate_dataset.py validated_historical_data.csv VALIDATION_CHECKLIST.md validation_pipeline.py validation_report.md verification visualize_complete_spectrum.py warnings wikipedia_all_edits_combined.csv wikipedia_collection.py wikipedia_edits_Bitcoin.csv wikipedia_edits_Climate_change.csv wikipedia_edits_COVID-19_pandemic.csv wikipedia_edits_George_W._Bush.csv wikipedia_final_classification.csv wikipedia_target_articles.csv wikipedia_utd_calibrated.csv wikipedia_utd_parameters.csv working_download.py xr yf 60
+   Building CSR matrix from /home/lenovo/Git/Substrate X Theory of Information Gravity/checkpoints/stage2_sparse_triplets.parquet...
+   ❌ Failed to build CSR matrix: 'utf-8' codec can't decode byte 0xd0 in position 7: invalid continuation byte
+Traceback (most recent call last):
+  File "/home/lenovo/Git/Substrate X Theory of Information Gravity/src/analysers.py", line 53, in build_csr_matrix
+    for chunk in pd.read_csv(triplets_path, sep=',', chunksize=chunk_size, header=None,
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 574, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 766, in pandas._libs.parsers.TextReader._get_header
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd0 in position 7: invalid continuation byte
+❌ Failed to build CSR matrix
+
+📊 Checking results...
+No results file found. Checking for any output...
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ 
+
+#kendrik
+
+

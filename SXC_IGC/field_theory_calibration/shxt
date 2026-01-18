@@ -1,0 +1,279 @@
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ cat << 'EOF_UPDATE_ANALYSER' > scripts/update_for_parquet.py
+#!/usr/bin/env python3
+import os
+import sys
+
+filepath = 'src/analysers.py'
+if not os.path.exists(filepath):
+    print(f"Error: {filepath} not found.")
+    sys.exit(1)
+
+with open(filepath, 'r') as f:
+    content = f.read()
+
+# Update build_csr_matrix to handle both CSV and Parquet
+new_build_function = '''
+def build_csr_matrix(triplets_path, max_edges=1000000):
+    """
+    Build sparse CSR matrix from edge triplets (CSV or Parquet).
+    Returns: csr_matrix, node_index
+    """
+    import pandas as pd
+    import numpy as np
+python3 scripts/update_for_parquet.pydle Parquet files")ef calculate_structural_
+✅ Updated existing build_csr_matrix function
+✅ Updated analysers.py to handle Parquet files
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ cat << 'EOF_INSPECT' > scripts/inspect_parquet.py
+#!/usr/bin/env python3
+"""
+Inspect the Parquet file structure.
+"""
+import pandas as pd
+import pyarrow.parquet as pq
+import os
+
+parquet_path = "checkpoints/stage2_sparse_triplets.parquet"
+
+if not os.path.exists(parquet_path):
+    print(f"File not found: {parquet_path}")
+    exit(1)
+
+print(f"🔍 Inspecting: {parquet_path}")
+print("=" * 60)
+
+# Method 1: Read metadata
+try:
+    parquet_file = pq.ParquetFile(parquet_path)
+    print(f"📊 Parquet Metadata:")
+python3 scripts/inspect_parquet.pytection: {e}")()col]].head()ll use 1)'}")', 'v
+🔍 Inspecting: checkpoints/stage2_sparse_triplets.parquet
+============================================================
+📊 Parquet Metadata:
+   Number of rows: 1,000,000
+   Number of columns: 3
+   Number of row groups: 1
+   File size: 34.17 MB
+
+📝 Column names:
+   0: src
+   1: dst
+   2: count
+
+============================================================
+📋 First few rows:
+❌ Error reading data: read_table() got an unexpected keyword argument 'nrows'
+Traceback (most recent call last):
+  File "/home/lenovo/Git/Substrate X Theory of Information Gravity/scripts/inspect_parquet.py", line 39, in <module>
+    df = pd.read_parquet(parquet_path, nrows=10)
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 669, in read_parquet
+    return impl.read(
+  File "/home/lenovo/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 265, in read
+    pa_table = self.api.parquet.read_table(
+TypeError: read_table() got an unexpected keyword argument 'nrows'
+
+============================================================
+🔍 Looking for edge triplet patterns...
+❌ Error in pattern detection: read_table() got an unexpected keyword argument 'nrows'
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ cat << 'EOF_FIXED_INSPECT' > scripts/inspect_parquet_fixed.py
+#!/usr/bin/env python3
+"""
+Inspect the Parquet file structure (fixed version).
+"""
+import pandas as pd
+import pyarrow.parquet as pq
+import os
+
+parquet_path = "checkpoints/stage2_sparse_triplets.parquet"
+
+if not os.path.exists(parquet_path):
+    print(f"File not found: {parquet_path}")
+    exit(1)
+
+print(f"🔍 Inspecting: {parquet_path}")
+print("=" * 60)
+
+# Read the first few rows properly
+try:
+    # Read entire file but just show first rows
+    df = pd.read_parquet(parquet_path)
+python3 scripts/inspect_parquet_fixed.py").sum().nlargest(5):")
+🔍 Inspecting: checkpoints/stage2_sparse_triplets.parquet
+============================================================
+✅ Successfully read Parquet file
+   Shape: (1000000, 3)
+   Columns: ['src', 'dst', 'count']
+   Data types:
+src       object
+dst       object
+count    float64
+dtype: object
+
+📋 First 10 rows:
+                                 src                                  dst  count
+        Category:Account_creators/ko         Category:Account_creators/ko    1.0
+          Category:Administrators/pl           Category:Administrators/pl    1.0
+            Category:Functioneers/en             Category:Functioneers/en    1.0
+            Category:Functioneers/pl             Category:Functioneers/pl    1.0
+                    Category:Help/pl                     Category:Help/pl    1.0
+         File:Wikifunctions-logo.svg          File:Wikifunctions-logo.svg    7.0
+File:Wikifunctions_in_7_minutes.webm File:Wikifunctions_in_7_minutes.webm    2.0
+                       Help:Contents                        Help:Contents    3.0
+    Special:MyLanguage/Help:Contents     Special:MyLanguage/Help:Contents    2.0
+Special:MyLanguage/Help:Multilingual Special:MyLanguage/Help:Multilingual    2.0
+
+📊 Summary statistics:
+               count
+count  999999.000000
+mean        2.417313
+std       222.600470
+min         1.000000
+25%         1.000000
+50%         1.000000
+75%         2.000000
+max    221568.000000
+
+🎯 Unique counts:
+   Unique src: 939,525
+   Unique dst: 939,525
+   Self-loops: 999,998
+
+📈 Weight (count) distribution:
+   Min: 1.0
+   Max: 221568.0
+   Mean: 2.42
+   Std: 222.60
+   Sum: 2,417,311.0
+
+🏆 Top 10 highest weight edges:
+                 src                  dst    count
+                   -                    - 221568.0
+                   -                    -  14681.0
+Wikipedia:Hauptseite Wikipedia:Hauptseite   8085.0
+     Dikembe_Mutombo      Dikembe_Mutombo   5712.0
+Wikipedia:Hauptseite Wikipedia:Hauptseite   4204.0
+      Deaths_in_2024       Deaths_in_2024   4070.0
+Apple_Network_Server Apple_Network_Server   2835.0
+         Gavin_Creel          Gavin_Creel   2754.0
+           Main_Page            Main_Page   1942.0
+Deadpool_&_Wolverine Deadpool_&_Wolverine   1921.0
+
+🔗 Most connected source nodes (outgoing):
+   -: 236,828
+   Wikipedia:Hauptseite: 12,289
+   Dikembe_Mutombo: 6,238
+   Deaths_in_2024: 4,070
+   Spezial:Suche: 3,743
+
+🔗 Most connected destination nodes (incoming):
+   -: 236,828
+   Wikipedia:Hauptseite: 12,289
+   Dikembe_Mutombo: 6,238
+   Deaths_in_2024: 4,070
+   Spezial:Suche: 3,743
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ # First, let me create a quick conversion script
+cat << 'EOF_CONVERT' > scripts/convert_parquet_to_csv.py
+#!/usr/bin/env python3
+"""
+Convert Parquet to CSV for compatibility.
+"""
+import pandas as pd
+import os
+
+input_path = "checkpoints/stage2_sparse_triplets.parquet"
+output_path = "data/processed/edge_triplets.csv"
+
+if not os.path.exists(input_path):
+    print(f"❌ Input file not found: {input_path}")
+    exit(1)
+
+print(f"📊 Reading: {input_path}")
+df = pd.read_parquet(input_path)
+
+print(f"✅ Read {len(df):,} rows")
+print(f"   Columns: {list(df.columns)}")
+
+python3 scripts/convert_parquet_to_csv.pyheader=False)))
+📊 Reading: checkpoints/stage2_sparse_triplets.parquet
+✅ Read 1,000,000 rows
+   Columns: ['src', 'dst', 'count']
+✅ Saved to: data/processed/edge_triplets.csv
+
+📋 Sample of converted data:
+        Category:Account_creators/ko         Category:Account_creators/ko 1.0
+          Category:Administrators/pl           Category:Administrators/pl 1.0
+            Category:Functioneers/en             Category:Functioneers/en 1.0
+            Category:Functioneers/pl             Category:Functioneers/pl 1.0
+                    Category:Help/pl                     Category:Help/pl 1.0
+         File:Wikifunctions-logo.svg          File:Wikifunctions-logo.svg 7.0
+File:Wikifunctions_in_7_minutes.webm File:Wikifunctions_in_7_minutes.webm 2.0
+                       Help:Contents                        Help:Contents 3.0
+    Special:MyLanguage/Help:Contents     Special:MyLanguage/Help:Contents 2.0
+Special:MyLanguage/Help:Multilingual Special:MyLanguage/Help:Multilingual 2.0
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ cat << 'EOF_RUN_FULL' > run_full_analysis.sh
+#!/bin/bash
+echo "🚀 COMPLETE ANALYSIS PIPELINE"
+echo "=" * 70
+
+# Step 1: Convert if needed
+if [ ! -f "data/processed/edge_triplets.csv" ]; then
+    echo "📊 Converting Parquet to CSV..."
+    python3 scripts/convert_parquet_to_csv.py
+fi
+
+# Step 2: Check the data
+echo -e "\n🔍 Data Overview:"
+python3 -c "
+import pandas as pd
+df = pd.read_csv('data/processed/edge_triplets.csv', header=None, names=['src', 'dst', 'weight'])
+print(f'Rows: {len(df):,}')
+print(f'Unique src: {df[\"src\"].nunique():,}')
+print(f'Unique dst: {df[\"dst\"].nunique():,}')
+print(f'Total weight: {df[\"weight\"].sum():,}')
+print(f'Average weight: {df[\"weight\"].mean():.2f}')
+./run_full_analysis.shysis.sh found. Check for errors above."x.npz", 0)))y_S', 0
+🚀 COMPLETE ANALYSIS PIPELINE
+= = 0 ACCOMPLISHMENT_SUMMARY.md add_alert_threshold.py analysis analyze_cicd_class_vi.py analyze_collected_data.py analyze_dhw_timeseries.py analyze_new_ig_system.py analyze_private_forum_discovery.py analyze_real_class_vi.py analyze_ultra_rigid_class.py applications assets attempt2.nc BOOK_COMPLETE.md calculate_class_vi_utd.py calculate_nonlinear_factor.py calculate_universal_critical.py calculate_utd_parameters_calibrated.py calculate_utd_parameters.py check_metadata.py checkpoints check_variables.py cicd_automated_system.csv cicd_class_vi_boundary.csv classification_results.json collect_cicd_system.py collect_class_vi_data.py collect_class_vi_dataset.py collect_real_github_data.py collect_wikipedia_data_fixed.py collect_wikipedia_data.py compute_eigenvalues.py compute_steady_state.py config connect_finance_data_fixed.py connect_finance_data.py coral_reef_download.py core core_math corrected_crash_test.py create_final_research_conclusion.py create_final_utd_classification.py create_test_data.py critical_condition.py current_market_test.py data data_collection_plan.py data_ingestion.py debug_bio_physics_normalization.py debug_calculation.py debug_data_shapes.py debug_domain_details.py debug_domain_init.py debug_domain_states.py debug_engine_calculation.py debug_engine_ig.py debug_engine_metrics.py debug_engine_structure.py debug_field_evolution.py debug_ig_inputs.py debug_integrator_methods.py debug_max_vr.py debug_metrics_evolution.py debug_proper_domain_init.py debug_stress_injection.py debug_wikipedia_api.py define_wikipedia_targets.py demo_breakthrough_prediction.py deploy_inverse_engine.sh derive_universal_constant_fixed.py derive_universal_constant.py dhw_gbr_2020_fixed.nc dhw_gbr_2020.nc direct_check.py docs domains download_dhw_data_fixed.py download_dhw_data.py download_nasa_physical_data.py download_real_grid_data.py download_real_physical_data.py emergency_calibration_fix.py empirical_calibration.py erddapy estimate_recovery_timescale.py execute_experimental_validation.sh execute_final_boundary_test.py experimental_test_design.py final_boundary_conclusion.md final_boundary_determination.csv final_crisis_detector.py final_fixed_engine.py final_historical_test.py final_spectrum_visualization.py final_utd_calculation.py financial_data_setup.py find_dhw_variable.py find_real_variables.py fix_data_structure.py fix_engine_alignment.py fix_predictive_engine.py generate_test_data.py get_reef_data.py get_utd_data.py github guess_variables.py health_recovery_and_delta2.py historical_crash_test.py historical_crisis_suite_fixed.py historical_crisis_suite.py IG_SYSTEM_FIX_SUMMARY.md imhd implement_immediate_actions.sh implement_private_forum_collection.py improved_crisis_engine.py information_crisis_detector.py inspect INSTALL.md integrate_private_forum_analysis.py legal licence linear_stability_analysis_fixed.py linear_stability_analysis.py live_stress_dashboard.py logs manual_download.sh measurement_tools.py minimal_svb_test.py network_constructors.py noaacrwdhwDaily.nc?CRW_DHW%5B(2020-01-01T12:00:00Z):1:(2020-12-31T12:00:00Z)%5D%5B(20.0):1:(25.0)%5D%5B(150.0):1:(155.0)%5D np optimized_engine.pkl os outputs parameter_fit.py pd phase-1-physical-foundation phase-2-dimensional-framework phase-3-matter-formation phase-4-[phylosophy]consciousness-layer phase-5-cosmological-cascade phase-6-experimental-framework phase-7-unified-paradigm physical_anchor.py private_forum_analysis.csv private_forum_data_template.json private_forum_data_template.py private_forum_permission_template.json private_forum_research_plan.md private_forum_research_strategy.md private github production_engine.py PROJECT_COMPLETE.md properly_calibrated_engine.py quant quantt quick_start.py quick_test.py README.md real_class_vi_results.csv realistic_grid_frequency.csv real_seismic_measurements.csv real_time_trader.py real_weather_measurements.csv references requirements.txt robust_dynamic_engine.py rough work run_all_validation.sh run_analysis.sh run_class_vi_test.sh run_dashboard.sh run_full_analysis.sh run_universal_test.py run_validation_pipeline.py run_validation_test.py sanity_test.py scripts search_datasets.py sensitivity_analysis.py setup_github.sh setup_optimal_engine.py signal_validation.py simple_download.sh simplify_pde_system.py single_crisis_test.py social_timeseries.csv solver src stress_and_tauE.py stress_results.json Substrate_X_Git svb_blind_test_fixed.py svb_blind_test.py svb_final_test.py SXC-IGC symbolic_sweep_fixed.py symbolic_sweep.py sys systematic_tuning_workflow.py systemic_decay_detector.py system_taxonomy_mapper.py target_choice.md templates test_2008_financial_crisis.py test_2015_china_crash.py test_2017_bull_market.py test_data_coupler.py test_dot_com_bubble.py test_dynamic_thresholds.py test_engine_integration.py test_entropy.py test_final_system.py test_final_tuning.py test_fixed_ig_system.py test_fixed_system.py test_fix.py test_great_depression_final.py test_great_depression.py test_ig_coherence_final.py test_integration.py test_matrix.npz test_predictive.py tests test_threshold_tuning.py test_threshold_tuning_v2.py theory trace_ig_calculation.py tune_crash_definition.py tuning_logger.py tuning_log.json twitter_api_application.py universal_dynamics_engine universal_pde_engine.py universal_signal_processor.py universal_signal_processor_spectral.py universal_tension_detector.py universal_tension_dynamics_dynamic.py universal_tension_dynamics.py use_optimized_engine.py utd_cross_domain_correct.py utd_energy_grid_adapter.py utd_energy_grid_class_update.py utd_final_calibration.py utd_final_orchestrator.py UTD_FINAL_RESEARCH_PAPER.md utd_hard_bounded.py utd_measurements_20251130_003208.csv utd_orchestrator_fixed.py utd_orchestrator.py utd_orchestrator_scaled.py utd_orchestrator_working.py utd_physical_corrected.py utd_predictive_test_final.py utd_predictive_test.py utd_real_data_collector.py UTD_RESEARCH_SUMMARY.md utd_social_adapters.py utd_social_honest.py validate_dataset.py validated_historical_data.csv VALIDATION_CHECKLIST.md validation_pipeline.py validation_report.md verification visualize_complete_spectrum.py warnings wikipedia_all_edits_combined.csv wikipedia_collection.py wikipedia_edits_Bitcoin.csv wikipedia_edits_Climate_change.csv wikipedia_edits_COVID-19_pandemic.csv wikipedia_edits_George_W._Bush.csv wikipedia_final_classification.csv wikipedia_target_articles.csv wikipedia_utd_calibrated.csv wikipedia_utd_parameters.csv working_download.py xr yf 70
+
+🔍 Data Overview:
+Rows: 1,000,000
+Unique src: 939,525
+Unique dst: 939,525
+Total weight: 2,417,311.0
+Average weight: 2.42
+
+🔮 1. Calculating Spectral Entropy (S)...
+   Building CSR matrix from /home/lenovo/Git/Substrate X Theory of Information Gravity/checkpoints/stage2_sparse_triplets.parquet...
+   Reading Parquet file...
+   Loaded 1,000,000 edges
+   ✅ Built matrix: (939527, 939527), NNZ: 939,525
+   Density: 0.000001
+   Saved matrix to temp_csr_matrix.npz
+   Calculating Structural Entropy via Randomized SVD (k=50)...
+   Saved matrix to temp_csr_matrix.npz for debugging
+   ✅ Structural Entropy S = 0.0678 bits (max possible: 5.64)
+   Eigenvalue range: [3.35e+05, 5.61e+10]
+   Effective rank: 50 components
+   ✅ Q Placeholder used (Wikipedia Norm): 0.557348
+   ✅ δ² Placeholder used (Wikipedia Norm): 0.0000000078
+
+--------------------------------------------------
+🔬 UTD Validation - Stage 3 Results
+S (Entropy): 0.067766
+Q (Coherence): 0.557348
+δ² (Volatility): 0.0000000078
+C (Information Gravity): 4842184.9920
+--------------------------------------------------
+⚠️ C is outside the established Class V boundary. Re-check data proxies or configuration.
+✅ Results saved to outputs/results_wiki_proxy.json
+
+📊 2. Calculating Complete Metrics (S, Q, δ²)...
+python3: can't open file '/home/lenovo/Git/Substrate X Theory of Information Gravity/run_complete_analysis.py': [Errno 2] No such file or directory
+
+ = = 0 ACCOMPLISHMENT_SUMMARY.md add_alert_threshold.py analysis analyze_cicd_class_vi.py analyze_collected_data.py analyze_dhw_timeseries.py analyze_new_ig_system.py analyze_private_forum_discovery.py analyze_real_class_vi.py analyze_ultra_rigid_class.py applications assets attempt2.nc BOOK_COMPLETE.md calculate_class_vi_utd.py calculate_nonlinear_factor.py calculate_universal_critical.py calculate_utd_parameters_calibrated.py calculate_utd_parameters.py check_metadata.py checkpoints check_variables.py cicd_automated_system.csv cicd_class_vi_boundary.csv classification_results.json collect_cicd_system.py collect_class_vi_data.py collect_class_vi_dataset.py collect_real_github_data.py collect_wikipedia_data_fixed.py collect_wikipedia_data.py compute_eigenvalues.py compute_steady_state.py config connect_finance_data_fixed.py connect_finance_data.py coral_reef_download.py core core_math corrected_crash_test.py create_final_research_conclusion.py create_final_utd_classification.py create_test_data.py critical_condition.py current_market_test.py data data_collection_plan.py data_ingestion.py debug_bio_physics_normalization.py debug_calculation.py debug_data_shapes.py debug_domain_details.py debug_domain_init.py debug_domain_states.py debug_engine_calculation.py debug_engine_ig.py debug_engine_metrics.py debug_engine_structure.py debug_field_evolution.py debug_ig_inputs.py debug_integrator_methods.py debug_max_vr.py debug_metrics_evolution.py debug_proper_domain_init.py debug_stress_injection.py debug_wikipedia_api.py define_wikipedia_targets.py demo_breakthrough_prediction.py deploy_inverse_engine.sh derive_universal_constant_fixed.py derive_universal_constant.py dhw_gbr_2020_fixed.nc dhw_gbr_2020.nc direct_check.py docs domains download_dhw_data_fixed.py download_dhw_data.py download_nasa_physical_data.py download_real_grid_data.py download_real_physical_data.py emergency_calibration_fix.py empirical_calibration.py erddapy estimate_recovery_timescale.py execute_experimental_validation.sh execute_final_boundary_test.py experimental_test_design.py final_boundary_conclusion.md final_boundary_determination.csv final_crisis_detector.py final_fixed_engine.py final_historical_test.py final_spectrum_visualization.py final_utd_calculation.py financial_data_setup.py find_dhw_variable.py find_real_variables.py fix_data_structure.py fix_engine_alignment.py fix_predictive_engine.py generate_test_data.py get_reef_data.py get_utd_data.py github guess_variables.py health_recovery_and_delta2.py historical_crash_test.py historical_crisis_suite_fixed.py historical_crisis_suite.py IG_SYSTEM_FIX_SUMMARY.md imhd implement_immediate_actions.sh implement_private_forum_collection.py improved_crisis_engine.py information_crisis_detector.py inspect INSTALL.md integrate_private_forum_analysis.py legal licence linear_stability_analysis_fixed.py linear_stability_analysis.py live_stress_dashboard.py logs manual_download.sh measurement_tools.py minimal_svb_test.py network_constructors.py noaacrwdhwDaily.nc?CRW_DHW%5B(2020-01-01T12:00:00Z):1:(2020-12-31T12:00:00Z)%5D%5B(20.0):1:(25.0)%5D%5B(150.0):1:(155.0)%5D np optimized_engine.pkl os outputs parameter_fit.py pd phase-1-physical-foundation phase-2-dimensional-framework phase-3-matter-formation phase-4-[phylosophy]consciousness-layer phase-5-cosmological-cascade phase-6-experimental-framework phase-7-unified-paradigm physical_anchor.py private_forum_analysis.csv private_forum_data_template.json private_forum_data_template.py private_forum_permission_template.json private_forum_research_plan.md private_forum_research_strategy.md private github production_engine.py PROJECT_COMPLETE.md properly_calibrated_engine.py quant quantt quick_start.py quick_test.py README.md real_class_vi_results.csv realistic_grid_frequency.csv real_seismic_measurements.csv real_time_trader.py real_weather_measurements.csv references requirements.txt robust_dynamic_engine.py rough work run_all_validation.sh run_analysis.sh run_class_vi_test.sh run_dashboard.sh run_full_analysis.sh run_universal_test.py run_validation_pipeline.py run_validation_test.py sanity_test.py scripts search_datasets.py sensitivity_analysis.py setup_github.sh setup_optimal_engine.py signal_validation.py simple_download.sh simplify_pde_system.py single_crisis_test.py social_timeseries.csv solver src stress_and_tauE.py stress_results.json Substrate_X_Git svb_blind_test_fixed.py svb_blind_test.py svb_final_test.py SXC-IGC symbolic_sweep_fixed.py symbolic_sweep.py sys systematic_tuning_workflow.py systemic_decay_detector.py system_taxonomy_mapper.py target_choice.md temp_csr_matrix.npz templates test_2008_financial_crisis.py test_2015_china_crash.py test_2017_bull_market.py test_data_coupler.py test_dot_com_bubble.py test_dynamic_thresholds.py test_engine_integration.py test_entropy.py test_final_system.py test_final_tuning.py test_fixed_ig_system.py test_fixed_system.py test_fix.py test_great_depression_final.py test_great_depression.py test_ig_coherence_final.py test_integration.py test_matrix.npz test_predictive.py tests test_threshold_tuning.py test_threshold_tuning_v2.py theory trace_ig_calculation.py tune_crash_definition.py tuning_logger.py tuning_log.json twitter_api_application.py universal_dynamics_engine universal_pde_engine.py universal_signal_processor.py universal_signal_processor_spectral.py universal_tension_detector.py universal_tension_dynamics_dynamic.py universal_tension_dynamics.py use_optimized_engine.py utd_cross_domain_correct.py utd_energy_grid_adapter.py utd_energy_grid_class_update.py utd_final_calibration.py utd_final_orchestrator.py UTD_FINAL_RESEARCH_PAPER.md utd_hard_bounded.py utd_measurements_20251130_003208.csv utd_orchestrator_fixed.py utd_orchestrator.py utd_orchestrator_scaled.py utd_orchestrator_working.py utd_physical_corrected.py utd_predictive_test_final.py utd_predictive_test.py utd_real_data_collector.py UTD_RESEARCH_SUMMARY.md utd_social_adapters.py utd_social_honest.py validate_dataset.py validated_historical_data.csv VALIDATION_CHECKLIST.md validation_pipeline.py validation_report.md verification visualize_complete_spectrum.py warnings wikipedia_all_edits_combined.csv wikipedia_collection.py wikipedia_edits_Bitcoin.csv wikipedia_edits_Climate_change.csv wikipedia_edits_COVID-19_pandemic.csv wikipedia_edits_George_W._Bush.csv wikipedia_final_classification.csv wikipedia_target_articles.csv wikipedia_utd_calibrated.csv wikipedia_utd_parameters.csv working_download.py xr yf 70
+🎯 FINAL RESULTS
+= = 0 ACCOMPLISHMENT_SUMMARY.md add_alert_threshold.py analysis analyze_cicd_class_vi.py analyze_collected_data.py analyze_dhw_timeseries.py analyze_new_ig_system.py analyze_private_forum_discovery.py analyze_real_class_vi.py analyze_ultra_rigid_class.py applications assets attempt2.nc BOOK_COMPLETE.md calculate_class_vi_utd.py calculate_nonlinear_factor.py calculate_universal_critical.py calculate_utd_parameters_calibrated.py calculate_utd_parameters.py check_metadata.py checkpoints check_variables.py cicd_automated_system.csv cicd_class_vi_boundary.csv classification_results.json collect_cicd_system.py collect_class_vi_data.py collect_class_vi_dataset.py collect_real_github_data.py collect_wikipedia_data_fixed.py collect_wikipedia_data.py compute_eigenvalues.py compute_steady_state.py config connect_finance_data_fixed.py connect_finance_data.py coral_reef_download.py core core_math corrected_crash_test.py create_final_research_conclusion.py create_final_utd_classification.py create_test_data.py critical_condition.py current_market_test.py data data_collection_plan.py data_ingestion.py debug_bio_physics_normalization.py debug_calculation.py debug_data_shapes.py debug_domain_details.py debug_domain_init.py debug_domain_states.py debug_engine_calculation.py debug_engine_ig.py debug_engine_metrics.py debug_engine_structure.py debug_field_evolution.py debug_ig_inputs.py debug_integrator_methods.py debug_max_vr.py debug_metrics_evolution.py debug_proper_domain_init.py debug_stress_injection.py debug_wikipedia_api.py define_wikipedia_targets.py demo_breakthrough_prediction.py deploy_inverse_engine.sh derive_universal_constant_fixed.py derive_universal_constant.py dhw_gbr_2020_fixed.nc dhw_gbr_2020.nc direct_check.py docs domains download_dhw_data_fixed.py download_dhw_data.py download_nasa_physical_data.py download_real_grid_data.py download_real_physical_data.py emergency_calibration_fix.py empirical_calibration.py erddapy estimate_recovery_timescale.py execute_experimental_validation.sh execute_final_boundary_test.py experimental_test_design.py final_boundary_conclusion.md final_boundary_determination.csv final_crisis_detector.py final_fixed_engine.py final_historical_test.py final_spectrum_visualization.py final_utd_calculation.py financial_data_setup.py find_dhw_variable.py find_real_variables.py fix_data_structure.py fix_engine_alignment.py fix_predictive_engine.py generate_test_data.py get_reef_data.py get_utd_data.py github guess_variables.py health_recovery_and_delta2.py historical_crash_test.py historical_crisis_suite_fixed.py historical_crisis_suite.py IG_SYSTEM_FIX_SUMMARY.md imhd implement_immediate_actions.sh implement_private_forum_collection.py improved_crisis_engine.py information_crisis_detector.py inspect INSTALL.md integrate_private_forum_analysis.py legal licence linear_stability_analysis_fixed.py linear_stability_analysis.py live_stress_dashboard.py logs manual_download.sh measurement_tools.py minimal_svb_test.py network_constructors.py noaacrwdhwDaily.nc?CRW_DHW%5B(2020-01-01T12:00:00Z):1:(2020-12-31T12:00:00Z)%5D%5B(20.0):1:(25.0)%5D%5B(150.0):1:(155.0)%5D np optimized_engine.pkl os outputs parameter_fit.py pd phase-1-physical-foundation phase-2-dimensional-framework phase-3-matter-formation phase-4-[phylosophy]consciousness-layer phase-5-cosmological-cascade phase-6-experimental-framework phase-7-unified-paradigm physical_anchor.py private_forum_analysis.csv private_forum_data_template.json private_forum_data_template.py private_forum_permission_template.json private_forum_research_plan.md private_forum_research_strategy.md private github production_engine.py PROJECT_COMPLETE.md properly_calibrated_engine.py quant quantt quick_start.py quick_test.py README.md real_class_vi_results.csv realistic_grid_frequency.csv real_seismic_measurements.csv real_time_trader.py real_weather_measurements.csv references requirements.txt robust_dynamic_engine.py rough work run_all_validation.sh run_analysis.sh run_class_vi_test.sh run_dashboard.sh run_full_analysis.sh run_universal_test.py run_validation_pipeline.py run_validation_test.py sanity_test.py scripts search_datasets.py sensitivity_analysis.py setup_github.sh setup_optimal_engine.py signal_validation.py simple_download.sh simplify_pde_system.py single_crisis_test.py social_timeseries.csv solver src stress_and_tauE.py stress_results.json Substrate_X_Git svb_blind_test_fixed.py svb_blind_test.py svb_final_test.py SXC-IGC symbolic_sweep_fixed.py symbolic_sweep.py sys systematic_tuning_workflow.py systemic_decay_detector.py system_taxonomy_mapper.py target_choice.md temp_csr_matrix.npz templates test_2008_financial_crisis.py test_2015_china_crash.py test_2017_bull_market.py test_data_coupler.py test_dot_com_bubble.py test_dynamic_thresholds.py test_engine_integration.py test_entropy.py test_final_system.py test_final_tuning.py test_fixed_ig_system.py test_fixed_system.py test_fix.py test_great_depression_final.py test_great_depression.py test_ig_coherence_final.py test_integration.py test_matrix.npz test_predictive.py tests test_threshold_tuning.py test_threshold_tuning_v2.py theory trace_ig_calculation.py tune_crash_definition.py tuning_logger.py tuning_log.json twitter_api_application.py universal_dynamics_engine universal_pde_engine.py universal_signal_processor.py universal_signal_processor_spectral.py universal_tension_detector.py universal_tension_dynamics_dynamic.py universal_tension_dynamics.py use_optimized_engine.py utd_cross_domain_correct.py utd_energy_grid_adapter.py utd_energy_grid_class_update.py utd_final_calibration.py utd_final_orchestrator.py UTD_FINAL_RESEARCH_PAPER.md utd_hard_bounded.py utd_measurements_20251130_003208.csv utd_orchestrator_fixed.py utd_orchestrator.py utd_orchestrator_scaled.py utd_orchestrator_working.py utd_physical_corrected.py utd_predictive_test_final.py utd_predictive_test.py utd_real_data_collector.py UTD_RESEARCH_SUMMARY.md utd_social_adapters.py utd_social_honest.py validate_dataset.py validated_historical_data.csv VALIDATION_CHECKLIST.md validation_pipeline.py validation_report.md verification visualize_complete_spectrum.py warnings wikipedia_all_edits_combined.csv wikipedia_collection.py wikipedia_edits_Bitcoin.csv wikipedia_edits_Climate_change.csv wikipedia_edits_COVID-19_pandemic.csv wikipedia_edits_George_W._Bush.csv wikipedia_final_classification.csv wikipedia_target_articles.csv wikipedia_utd_calibrated.csv wikipedia_utd_parameters.csv working_download.py xr yf 70
+❌ Results file not found. Check for errors above.
+= = 0 ACCOMPLISHMENT_SUMMARY.md add_alert_threshold.py analysis analyze_cicd_class_vi.py analyze_collected_data.py analyze_dhw_timeseries.py analyze_new_ig_system.py analyze_private_forum_discovery.py analyze_real_class_vi.py analyze_ultra_rigid_class.py applications assets attempt2.nc BOOK_COMPLETE.md calculate_class_vi_utd.py calculate_nonlinear_factor.py calculate_universal_critical.py calculate_utd_parameters_calibrated.py calculate_utd_parameters.py check_metadata.py checkpoints check_variables.py cicd_automated_system.csv cicd_class_vi_boundary.csv classification_results.json collect_cicd_system.py collect_class_vi_data.py collect_class_vi_dataset.py collect_real_github_data.py collect_wikipedia_data_fixed.py collect_wikipedia_data.py compute_eigenvalues.py compute_steady_state.py config connect_finance_data_fixed.py connect_finance_data.py coral_reef_download.py core core_math corrected_crash_test.py create_final_research_conclusion.py create_final_utd_classification.py create_test_data.py critical_condition.py current_market_test.py data data_collection_plan.py data_ingestion.py debug_bio_physics_normalization.py debug_calculation.py debug_data_shapes.py debug_domain_details.py debug_domain_init.py debug_domain_states.py debug_engine_calculation.py debug_engine_ig.py debug_engine_metrics.py debug_engine_structure.py debug_field_evolution.py debug_ig_inputs.py debug_integrator_methods.py debug_max_vr.py debug_metrics_evolution.py debug_proper_domain_init.py debug_stress_injection.py debug_wikipedia_api.py define_wikipedia_targets.py demo_breakthrough_prediction.py deploy_inverse_engine.sh derive_universal_constant_fixed.py derive_universal_constant.py dhw_gbr_2020_fixed.nc dhw_gbr_2020.nc direct_check.py docs domains download_dhw_data_fixed.py download_dhw_data.py download_nasa_physical_data.py download_real_grid_data.py download_real_physical_data.py emergency_calibration_fix.py empirical_calibration.py erddapy estimate_recovery_timescale.py execute_experimental_validation.sh execute_final_boundary_test.py experimental_test_design.py final_boundary_conclusion.md final_boundary_determination.csv final_crisis_detector.py final_fixed_engine.py final_historical_test.py final_spectrum_visualization.py final_utd_calculation.py financial_data_setup.py find_dhw_variable.py find_real_variables.py fix_data_structure.py fix_engine_alignment.py fix_predictive_engine.py generate_test_data.py get_reef_data.py get_utd_data.py github guess_variables.py health_recovery_and_delta2.py historical_crash_test.py historical_crisis_suite_fixed.py historical_crisis_suite.py IG_SYSTEM_FIX_SUMMARY.md imhd implement_immediate_actions.sh implement_private_forum_collection.py improved_crisis_engine.py information_crisis_detector.py inspect INSTALL.md integrate_private_forum_analysis.py legal licence linear_stability_analysis_fixed.py linear_stability_analysis.py live_stress_dashboard.py logs manual_download.sh measurement_tools.py minimal_svb_test.py network_constructors.py noaacrwdhwDaily.nc?CRW_DHW%5B(2020-01-01T12:00:00Z):1:(2020-12-31T12:00:00Z)%5D%5B(20.0):1:(25.0)%5D%5B(150.0):1:(155.0)%5D np optimized_engine.pkl os outputs parameter_fit.py pd phase-1-physical-foundation phase-2-dimensional-framework phase-3-matter-formation phase-4-[phylosophy]consciousness-layer phase-5-cosmological-cascade phase-6-experimental-framework phase-7-unified-paradigm physical_anchor.py private_forum_analysis.csv private_forum_data_template.json private_forum_data_template.py private_forum_permission_template.json private_forum_research_plan.md private_forum_research_strategy.md private github production_engine.py PROJECT_COMPLETE.md properly_calibrated_engine.py quant quantt quick_start.py quick_test.py README.md real_class_vi_results.csv realistic_grid_frequency.csv real_seismic_measurements.csv real_time_trader.py real_weather_measurements.csv references requirements.txt robust_dynamic_engine.py rough work run_all_validation.sh run_analysis.sh run_class_vi_test.sh run_dashboard.sh run_full_analysis.sh run_universal_test.py run_validation_pipeline.py run_validation_test.py sanity_test.py scripts search_datasets.py sensitivity_analysis.py setup_github.sh setup_optimal_engine.py signal_validation.py simple_download.sh simplify_pde_system.py single_crisis_test.py social_timeseries.csv solver src stress_and_tauE.py stress_results.json Substrate_X_Git svb_blind_test_fixed.py svb_blind_test.py svb_final_test.py SXC-IGC symbolic_sweep_fixed.py symbolic_sweep.py sys systematic_tuning_workflow.py systemic_decay_detector.py system_taxonomy_mapper.py target_choice.md temp_csr_matrix.npz templates test_2008_financial_crisis.py test_2015_china_crash.py test_2017_bull_market.py test_data_coupler.py test_dot_com_bubble.py test_dynamic_thresholds.py test_engine_integration.py test_entropy.py test_final_system.py test_final_tuning.py test_fixed_ig_system.py test_fixed_system.py test_fix.py test_great_depression_final.py test_great_depression.py test_ig_coherence_final.py test_integration.py test_matrix.npz test_predictive.py tests test_threshold_tuning.py test_threshold_tuning_v2.py theory trace_ig_calculation.py tune_crash_definition.py tuning_logger.py tuning_log.json twitter_api_application.py universal_dynamics_engine universal_pde_engine.py universal_signal_processor.py universal_signal_processor_spectral.py universal_tension_detector.py universal_tension_dynamics_dynamic.py universal_tension_dynamics.py use_optimized_engine.py utd_cross_domain_correct.py utd_energy_grid_adapter.py utd_energy_grid_class_update.py utd_final_calibration.py utd_final_orchestrator.py UTD_FINAL_RESEARCH_PAPER.md utd_hard_bounded.py utd_measurements_20251130_003208.csv utd_orchestrator_fixed.py utd_orchestrator.py utd_orchestrator_scaled.py utd_orchestrator_working.py utd_physical_corrected.py utd_predictive_test_final.py utd_predictive_test.py utd_real_data_collector.py UTD_RESEARCH_SUMMARY.md utd_social_adapters.py utd_social_honest.py validate_dataset.py validated_historical_data.csv VALIDATION_CHECKLIST.md validation_pipeline.py validation_report.md verification visualize_complete_spectrum.py warnings wikipedia_all_edits_combined.csv wikipedia_collection.py wikipedia_edits_Bitcoin.csv wikipedia_edits_Climate_change.csv wikipedia_edits_COVID-19_pandemic.csv wikipedia_edits_George_W._Bush.csv wikipedia_final_classification.csv wikipedia_target_articles.csv wikipedia_utd_calibrated.csv wikipedia_utd_parameters.csv working_download.py xr yf 70
+lenovo@pop-os:~/Git/Substrate X Theory of Information Gravity$ 
+
+

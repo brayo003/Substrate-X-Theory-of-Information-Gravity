@@ -1,0 +1,368 @@
+cat test_great_depression_final.py
+#!/usr/bin/env python3
+"""
+Great Depression Crash Test using Actual Engine Components
+Testing the Universal Tension Dynamics on 1929 stock market crash
+"""
+
+import sys
+import os
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+import yfinance as yf
+
+# Add current directory to path
+sys.path.append('.')
+
+def test_great_depression_with_actual_engine():
+    """Test using actual engine components on Great Depression data"""
+    
+    print("\n" + "="*60)
+    print("🎯 TESTING: GREAT DEPRESSION 1929 (ACTUAL ENGINE)")
+    print("="*60)
+    
+    # Try multiple symbols for historical data
+    symbols = ["^DJI", "DIA", "^GSPC"]  # Dow Jones, Dow ETF, S&P 500
+    
+    crash_date = "1929-10-29"
+    start_date = "1929-07-01"
+    end_date = "1929-12-31"
+    
+    data = None
+    used_symbol = None
+    
+    for symbol in symbols:
+        try:
+            print(f"📥 Trying {symbol}...")
+            temp_data = yf.download(symbol, start=start_date, end=end_date, interval="1d", auto_adjust=False)
+            if not temp_data.empty and len(temp_data) > 20:
+                data = temp_data
+                used_symbol = symbol
+                print(f"✅ Using {symbol} with {len(data)} data points")
+                break
+        except Exception as e:
+            print(f"❌ {symbol} failed: {e}")
+            continue
+    
+    if data is None:
+        print("❌ No suitable historical data found")
+        print("🔄 Creating historically accurate synthetic Great Depression data...")
+        data = create_historical_great_depression_data()
+        used_symbol = "SYNTHETIC_DJI"
+    
+    print(f"📅 Testing period: {data.index[0].strftime('%Y-%m-%d')} to {data.index[-1].strftime('%Y-%m-%d')}")
+    print(f"💥 Crash date: {crash_date}")
+    print(f"📈 Data points: {len(data)}")
+    print(f"📊 Symbol: {used_symbol}")
+    
+    # Use actual engine components
+    from theory.information_gravity_core import calculate_information_gravity
+    from applications.universal_risk_indicator import generate_risk_signal
+    
+    print("🔧 Using actual Information Gravity engine...")
+    
+    # Calculate returns and basic metrics
+    returns = data['Close'].pct_change().dropna()
+    volatility = returns.rolling(window=10, min_periods=5).std()
+    
+    # Create stability data for information gravity calculation
+    results = []
+    early_warnings = 0
+    max_risk_score = 0
+    warning_days = []
+    
+    crash_idx = data.index.get_indexer([pd.to_datetime(crash_date)], method='nearest')[0]
+    
+    print(f"\n🔍 Analyzing pre-crash period...")
+    
+    for days_before in range(min(60, crash_idx), 5, -5):
+        if crash_idx - days_before < 0:
+            continue
+            
+        test_date = data.index[crash_idx - days_before]
+        
+        # Get window of data leading to test date
+        window_start = test_date - timedelta(days=30)
+        window_data = data.loc[window_start:test_date]
+        
+        if len(window_data) < 10:
+            continue
+            
+        # Calculate metrics for information gravity - ensure scalar values
+        window_returns = window_data['Close'].pct_change().dropna()
+        recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+        momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+        
+        # Create stability data structure with scalar values
+        stability_data = {
+            'bio_physics_vr': max(0.1, min(0.9, 1 - recent_volatility * 10)),  # Inverse relationship
+            'planetary_momentum_error_ppm': abs(momentum) * 10000,  # Convert to ppm
+            'planetary_energy_error_ppm': recent_volatility * 5000,  # Volatility as energy error
+        }
+        
+        # Calculate information gravity score
+        ig_score = calculate_information_gravity(stability_data)
+        
+        # Generate risk signal
+        risk_signal, risk_score = generate_risk_signal(stability_data)
+        
+        # Track results
+        max_risk_score = max(max_risk_score, risk_score)
+        
+        if risk_score >= 0.6:  # High risk threshold
+            early_warnings += 1
+            warning_days.append(days_before)
+            status = "🚨 HIGH RISK"
+        elif risk_score >= 0.4:
+            status = "⚠️  ELEVATED"
+        else:
+            status = "✅ NORMAL"
+            
+        print(f"  {days_before:2d} days before: IG={ig_score:.3f}, Risk={risk_score:.3f} {status}")
+        
+        results.append({
+            'date': test_date,
+            'days_before_crash': days_before,
+            'ig_score': ig_score,
+            'risk_score': risk_score,
+            'signal': risk_signal
+        })
+    
+    # Summary
+    print(f"\n📊 ENGINE RESULTS:")
+    print(f"Maximum risk score: {max_risk_score:.3f}")
+    print(f"Early warnings (risk ≥ 0.6): {early_warnings}")
+    
+    if warning_days:
+        print(f"🎯 Crash detected early: TRUE")
+        print(f"📅 First warning: {min(warning_days)} days before crash")
+        print(f"📈 Warning timeline: {sorted(warning_days)} days before")
+        
+        # Show detailed warnings
+        print(f"\n🔔 RISK WARNINGS:")
+        for warning in sorted(warning_days)[:3]:  # Top 3 warnings
+            result = next(r for r in results if r['days_before_crash'] == warning)
+            print(f"  {result['date'].strftime('%Y-%m-%d')} ({warning} days before):")
+            print(f"    Information Gravity: {result['ig_score']:.3f}")
+            print(f"    Risk Score: {result['risk_score']:.3f}")
+            print(f"    Signal: {result['signal']}")
+    else:
+        print(f"❌ No high-risk warnings detected before crash")
+        
+    return results
+
+def create_historical_great_depression_data():
+    """Create historically accurate synthetic data for Great Depression"""
+    np.random.seed(1929)  # Use crash year as seed
+    
+    # Historical Dow Jones data points (approximate)
+    historical_points = {
+        '1929-09-03': 381.17,  # Peak
+        '1929-10-24': 299.47,  # Black Thursday
+        '1929-10-28': 260.64,  # Black Monday  
+        '1929-10-29': 230.07,  # Black Tuesday
+        '1929-11-13': 198.69,  # November low
+    }
+    
+    # Create daily data from July to December 1929
+    dates = pd.date_range(start='1929-07-01', end='1929-12-31', freq='D')
+    prices = []
+    current_price = 320.0  # Start in July below peak
+    
+    for date in dates:
+        date_str = date.strftime('%Y-%m-%d')
+        
+        # Use historical points when available
+        if date_str in historical_points:
+            current_price = historical_points[date_str]
+            prices.append(current_price)
+            continue
+            
+        # Determine phase-based volatility
+        if date < pd.Timestamp('1929-09-01'):
+            # Pre-peak: moderate volatility, slight upward bias
+            change = np.random.normal(0.08, 0.8)
+        elif date < pd.Timestamp('1929-10-20'):
+            # Initial decline: increasing negative bias
+            change = np.random.normal(-0.3, 1.2)
+        elif date < pd.Timestamp('1929-11-01'):
+            # Crash period: high negative volatility
+            change = np.random.normal(-2.0, 3.0)
+        else:
+            # Post-crash: continued decline
+            change = np.random.normal(-0.5, 1.5)
+            
+        current_price *= (1 + change / 100)
+        current_price = max(current_price, 180.0)  # Don't go too low in 1929
+        prices.append(current_price)
+    
+    data = pd.DataFrame({
+        'Close': prices,
+        'Open': [p * (1 + np.random.normal(0, 0.01)) for p in prices],
+        'High': [p * (1 + abs(np.random.normal(0, 0.02))) for p in prices],
+        'Low': [p * (1 - abs(np.random.normal(0, 0.02))) for p in prices],
+        'Volume': np.random.lognormal(14, 1.0, len(prices))
+    }, index=dates)
+    
+    # Increase volume during crash
+    crash_period = (data.index >= '1929-10-20') & (data.index <= '1929-10-30')
+    data.loc[crash_period, 'Volume'] *= 2.5
+    
+    return data
+
+def main():
+    print("🌋 GREAT DEPRESSION CRASH TEST")
+    print("Using Actual Universal Tension Dynamics Engine")
+    print("="*60)
+    
+    try:
+        results = test_great_depression_with_actual_engine()
+        
+        print("\n" + "="*60)
+        print("📚 HISTORICAL CONTEXT")
+        print("="*60)
+        print("• Jul 1929: Economic indicators start weakening")
+        print("• Sep 3, 1929: Dow peaks at 381.17")
+        print("• Oct 24: Black Thursday (-11%, panic selling)")
+        print("• Oct 28: Black Monday (-13%)")
+        print("• Oct 29: Black Tuesday (-12%, 16M shares traded)")
+        print("• Nov 13: Dow bottoms at 198.69 (-48% from peak)")
+        print("• The crash triggered 10-year Great Depression")
+        print("• Dow eventually fell 89% to 41.22 by 1932")
+        
+        if results:
+            print(f"\n✅ Test completed with {len(results)} analysis points")
+        else:
+            print(f"\n⚠️  Test completed with basic analysis only")
+            
+    except Exception as e:
+        print(f"❌ Test failed with error: {e}")
+        import traceback
+        traceback.print_exc()
+
+if __name__ == "__main__":
+    main()
+
+
+-------------------------------------------------------------------------
+
+python test_great_depression_final.py
+🌋 GREAT DEPRESSION CRASH TEST
+Using Actual Universal Tension Dynamics Engine
+============================================================
+
+============================================================
+🎯 TESTING: GREAT DEPRESSION 1929 (ACTUAL ENGINE)
+============================================================
+📥 Trying ^DJI...
+[*********************100%***********************]  1 of 1 completed
+
+1 Failed download:
+['^DJI']: YFPricesMissingError('possibly delisted; no price data found  (1d 1929-07-01 -> 1929-12-31) (Yahoo error = "Data doesn\'t exist for startDate = -1278187200, endDate = -1262372400")')
+📥 Trying DIA...
+[*********************100%***********************]  1 of 1 completed
+
+1 Failed download:
+['DIA']: YFPricesMissingError('possibly delisted; no price data found  (1d 1929-07-01 -> 1929-12-31) (Yahoo error = "Data doesn\'t exist for startDate = -1278187200, endDate = -1262372400")')
+📥 Trying ^GSPC...
+[*********************100%***********************]  1 of 1 completed
+✅ Using ^GSPC with 124 data points
+📅 Testing period: 1929-07-01 to 1929-12-30
+💥 Crash date: 1929-10-29
+📈 Data points: 124
+📊 Symbol: ^GSPC
+🔧 Using actual Information Gravity engine...
+
+🔍 Analyzing pre-crash period...
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  60 days before: IG=0.938, Risk=0.938 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  55 days before: IG=0.932, Risk=0.932 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  50 days before: IG=0.900, Risk=0.900 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  45 days before: IG=0.883, Risk=0.883 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  40 days before: IG=0.902, Risk=0.902 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  35 days before: IG=0.919, Risk=0.919 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  30 days before: IG=0.935, Risk=0.935 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  25 days before: IG=0.952, Risk=0.952 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  20 days before: IG=0.915, Risk=0.915 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  15 days before: IG=0.903, Risk=0.903 🚨 HIGH RISK
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:93: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  recent_volatility = float(window_returns.std()) if len(window_returns) > 1 else 0.0
+/home/lenovo/Git/Substrate X Theory of Information Gravity/test_great_depression_final.py:94: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  momentum = float((window_data['Close'].iloc[-1] / window_data['Close'].iloc[0] - 1)) if len(window_data) > 1 else 0.0
+  10 days before: IG=0.901, Risk=0.901 🚨 HIGH RISK
+
+📊 ENGINE RESULTS:
+Maximum risk score: 0.952
+Early warnings (risk ≥ 0.6): 11
+🎯 Crash detected early: TRUE
+📅 First warning: 10 days before crash
+📈 Warning timeline: [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60] days before
+
+🔔 RISK WARNINGS:
+  1929-10-15 (10 days before):
+    Information Gravity: 0.901
+    Risk Score: 0.901
+    Signal: EXECUTE/EXPAND (High Confidence)
+  1929-10-08 (15 days before):
+    Information Gravity: 0.903
+    Risk Score: 0.903
+    Signal: EXECUTE/EXPAND (High Confidence)
+  1929-10-01 (20 days before):
+    Information Gravity: 0.915
+    Risk Score: 0.915
+    Signal: EXECUTE/EXPAND (High Confidence)
+
+============================================================
+📚 HISTORICAL CONTEXT
+============================================================
+• Jul 1929: Economic indicators start weakening
+• Sep 3, 1929: Dow peaks at 381.17
+• Oct 24: Black Thursday (-11%, panic selling)
+• Oct 28: Black Monday (-13%)
+• Oct 29: Black Tuesday (-12%, 16M shares traded)
+• Nov 13: Dow bottoms at 198.69 (-48% from peak)
+• The crash triggered 10-year Great Depression
+• Dow eventually fell 89% to 41.22 by 1932
+
+✅ Test completed with 11 analysis points
+

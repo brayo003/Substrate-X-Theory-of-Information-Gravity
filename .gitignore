@@ -1,0 +1,7 @@
+*.iso
+*.bin
+*.iso
+game_module/
+data/raw/
+__pycache__/
+.DS_Store
