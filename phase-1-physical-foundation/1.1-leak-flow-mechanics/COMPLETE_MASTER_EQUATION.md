@@ -90,24 +90,46 @@ where:
     S = \alpha E + \beta \nabla\cdot(E\mathbf{v}_{\text{sub}}) + \gamma F
 
 Key Physical Constants
+
+
 Constant	Units	Physical Meaning
+
 α	info/(J·s)	Information per unit energy per time
+
 β	info·s/J	Information from energy flow
+
 γ	info/(N·s)	Information from force
+
 χ	m/s	Coherence speed
+
 τ	s	Damping time constant
+
 c	m/s	Causal propagation speed
+
 σ_irr	info/(m³·s)	Irreversible loss
+
 D = c²τ	m²/s	Effective diffusivity
+
+
 Special Cases
+
+
 Steady State (∂s/∂t = ∂²s/∂t² = 0)
+
 c2τ∇2s=∇⋅(svsub+χsu)−αE−β∇⋅(Evsub)−γF+σirr
+
 c2τ∇2s=∇⋅(svsub​+χsu)−αE−β∇⋅(Evsub​)−γF+σirr​
+
 Weak-Field Limit (∇²s → 0, spatial variations small)
+
 ∇⋅(svsub)≈αE
+
 ∇⋅(svsub​)≈αE
+
 Diffusion Limit (τ → 0)
+
 ∂s∂t=D∇2s−∇⋅(svsub+χsu)+αE+β∇⋅(Evsub)+γF−σirr
+
 ∂t∂s​=D∇2s−∇⋅(svsub​+χsu)+αE+β∇⋅(Evsub​)+γF−σirr​
 
 where D = c²τ
