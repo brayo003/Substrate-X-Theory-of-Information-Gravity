@@ -5,6 +5,7 @@ Reader Orientation and Scope Control
 This document specifies the architecture of the Universal Multi-Domain Engine (UMDE). It does not include theories of consciousness, intelligence, agency, or meaning.
 
 The UMDE is an execution framework for a fixed set of dynamical equations (SXC–IGC). Its purpose is to apply these equations consistently across domains without contamination by domain-specific assumptions, control logic, or narrative interpretation.
+
 What This Document Is
 
     A formal architectural specification
@@ -59,5 +60,7 @@ All claims must be traceable to:
     A monitored metric
 
 The engine produces dynamics.
+
 Interpretation is external.
+
 Meaning is not computed.
