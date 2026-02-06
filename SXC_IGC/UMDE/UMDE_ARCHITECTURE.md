@@ -1,5 +1,8 @@
 Universal Multi-Domain Engine (UMDE)
+
+
 Three-Layer Architecture for Cross-Domain Dynamical Simulation
+
 Abstract
 
 The UMDE implements the SXC–IGC field equations via a strictly layered architecture that separates immutable dynamics from domain-specific adaptation and adaptive control. This separation ensures mathematical invariance, numerical stability, and cross-domain applicability.
