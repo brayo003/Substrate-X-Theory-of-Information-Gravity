@@ -4,7 +4,7 @@ SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
 
 Overview
 
-Substrate X – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
+Substrate X coupling – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
 
 Rather than extending predictive reach through probabilistic extrapolation or learning-based generalization, the framework focuses on detecting epistemic boundaries: points at which system coupling density, instability growth, or information loss renders prediction ill-defined.
 
