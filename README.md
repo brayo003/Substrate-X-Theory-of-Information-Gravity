@@ -33,29 +33,15 @@ The ratio between these regimes reflects relative resilience under the same redu
 
 Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
 
-dxdt=rx+ax2−bx3
-dtdx
+$$\frac{dx}{dt} = rx + ax^2 - bx^3$$
 
+Where:
+* $x$ represents a normalized instability or tension variable
+* $r$ is the linear growth or decay rate
+* $a$ captures nonlinear amplification
+* $b$ enforces saturation
 
-where:
-
-
-x represents a normalized instability or tension variable
-
-
-r is the linear growth or decay rate
-
-
-a captures nonlinear amplification
-
-
-b enforces saturation
-
-A hard bound
-
-x≤xmax
-
-is applied to prevent unphysical divergence in exploratory simulations.
+A hard bound $x \le x_{max}$ is applied to prevent unphysical divergence in exploratory simulations.
 
 This equation is phenomenological. It is not derived from first principles and does not uniquely correspond to higher-dimensional governing equations. Its role is to preserve qualitative behaviors (growth, saturation, recovery) observed in exploratory simulations and data-driven reductions.
 
