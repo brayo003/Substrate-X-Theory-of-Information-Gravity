@@ -18,7 +18,8 @@ Exploratory analysis across multiple domains reveals consistent power-law scalin
 
 ### Two broad regimes have been observed:
 
-Domain Class Observed α (mean ± σ) Data Source Type Interpretation
+#### Domain Class Observed α (mean ± σ) Data Source Type Interpretation
+
 Physical (non-living) 1.25 ± 0.01 Spacecraft telemetry, fluid stress curves Faster instability amplification
 
 Biological (simplified) 0.45 ± 0.02 Lifespan stress and recovery datasets Slower accumulation, higher tolerance
