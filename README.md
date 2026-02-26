@@ -110,24 +110,25 @@ These applications demonstrate qualitative consistency, not predictive superiori
 
 All contributions must adhere to the following constraints:
 
-Explicit Reduction
+### Explicit Reduction
 
 Show how the target system is mapped to the V12 form.
 
-Parameter Transparency
+### Parameter Transparency
 
 Declare all parameters, bounds, fitting methods, and uncertainties.
 
-Validation Separation
+### Validation Separation
 
 Place speculative interpretations outside validated directories.
 
-Numerical Evidence
+### Numerical Evidence
 
 Provide stability logs and sensitivity analysis.
 
 
-License
+
+## License
 
 This project is dual-licensed:
 
@@ -135,8 +136,6 @@ This project is dual-licensed:
 
 • Commercial License — required for proprietary or enterprise integration
 
-
-Citation
 
 
 ## Citation
