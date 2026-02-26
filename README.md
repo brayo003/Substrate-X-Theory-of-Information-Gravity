@@ -34,14 +34,8 @@ The ratio between these regimes reflects relative resilience under the same redu
 Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
 
 dxdt=rx+ax2−bx3
-dt
-dx
+dtdx
 
-
-=rx+ax
-2
-−bx
-3
 
 where:
 
