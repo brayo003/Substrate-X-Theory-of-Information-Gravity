@@ -130,7 +130,12 @@ This project is dual-licensed:
 Citation
 
 
-Brian K. (brayo003).
-SXC-IGC: Reduced-Order α-Scaling in Instability-Saturation Systems.
-Zenodo, 2025.
+## Citation
+
+If you use SXC-IGC in academic work, please cite:
+
+Kenda Mwirigi (2025).
+
+*SXC-IGC: A Deterministic Reduced-Order Instability Framework.*
+
 DOI: 10.5281/zenodo.18055025
