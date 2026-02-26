@@ -1,8 +1,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18055025.svg)](https://doi.org/10.5281/zenodo.18055025)
 
-SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
+# SXC-IGC Engine: α-Scaling in Reduced-Order Instability Systems
 
-Overview
+## Overview
 
 Substrate X coupling – Information-Gravity Constraint (SXC-IGC) framework is a constraint-based methodology for identifying predictability limits in physical and information-structured systems. It models system evolution in terms of measurable state variables, coupling structure, and saturation effects, and explicitly distinguishes regimes where inference is valid from regimes where inference collapses.
 
@@ -12,21 +12,23 @@ Within domains where governing dynamics are accessible and interactions can be r
 
 The framework is applicable to deterministic physical systems, controlled engineering environments, and simplified biological or information-structured processes. It is explicitly not intended for adaptive, reflexive, or semantically driven domains.
 
-Empirical Observation: α-Scaling Across Domains
+## Empirical Observation: α-Scaling Across Domains
 
 Exploratory analysis across multiple domains reveals consistent power-law scaling behavior in reduced-order representations of instability growth and saturation. These behaviors are summarized by a scaling exponent α extracted from fitted reduced models.
 
-Two broad regimes have been observed:
+### Two broad regimes have been observed:
 
 Domain Class Observed α (mean ± σ) Data Source Type Interpretation
 Physical (non-living) 1.25 ± 0.01 Spacecraft telemetry, fluid stress curves Faster instability amplification
+
 Biological (simplified) 0.45 ± 0.02 Lifespan stress and recovery datasets Slower accumulation, higher tolerance
+
 
 These values represent empirical correlations within reduced models, not universal constants. They characterize how instability accumulates under sustained perturbation within the modeling assumptions.
 
 The ratio between these regimes reflects relative resilience under the same reduced-order dynamics, not an ontological distinction between matter classes.
 
-Reduced-Order Mathematical Core (V12)
+## Reduced-Order Mathematical Core (V12)
 
 Across validated test cases, system behavior can be approximated by a cubic instability–saturation normal form:
 
@@ -42,21 +44,24 @@ dx
 
 where:
 
-x
+
 x represents a normalized instability or tension variable
 
-r
+
 r is the linear growth or decay rate
 
-a
+
 a captures nonlinear amplification
 
-b
+
 b enforces saturation
 
 A hard bound
-x≤xmax⁡
+
+x≤xmax
+⁡
 x≤x
+
 max
 
 
@@ -64,7 +69,7 @@ is applied to prevent unphysical divergence in exploratory simulations.
 
 This equation is phenomenological. It is not derived from first principles and does not uniquely correspond to higher-dimensional governing equations. Its role is to preserve qualitative behaviors (growth, saturation, recovery) observed in exploratory simulations and data-driven reductions.
 
-Numerical Properties
+## Numerical Properties
 
 Stable integration over >10,000 time-steps under tested parameter ranges
 
@@ -74,9 +79,9 @@ Saturation required to prevent artificial divergence
 
 Scaling exponent α extracted from fitted trajectories, not imposed
 
-Demonstrated Case Studies (Exploratory)
+## Demonstrated Case Studies (Exploratory)
 
-The framework has been applied as a diagnostic reduction tool in the following contexts:
+### The framework has been applied as a diagnostic reduction tool in the following contexts:
 
 Spacecraft trajectory residual analysis (Pioneer-class datasets)
 
@@ -88,16 +93,20 @@ Simplified biological stress-recovery dynamics
 
 These applications demonstrate qualitative consistency, not predictive superiority or causal explanation.
 
-Repository Structure
+## Repository Structure
+
+* /authoritative_core/ — The foundational mathematical models and core logic of the SXC-IGC framework.
+
+* /Domain-Calibrated_Instability_Framework(DCIF)/ — The domain-specific experimental modules applying the reduction equation.
+
+* /field_theory_calibration/ — Parameter calibration and scaling adjustments specific to field theory and continuous applications.
+
+* /Topological_Navigation/ — The predictive sensory layer (V12-G) utilizing complex Gamma function mapping to detect topological poles and preempt systemic failures.
+
+* /UMDE/ — The Universal Multi-Domain Engine; a three-layer execution architecture ensuring strict separation between immutable core PDEs, domain mapping, and adaptive control.
 
 
-/validation/ — Fitting scripts, logs, and parameter sweeps
-
-/anchor/ — Technical notes and assumptions
-
-/theoretical/ — Speculative extensions and non-validated ideas
-
-Contribution Rules
+## Contribution Rules
 
 All contributions must adhere to the following constraints:
 
