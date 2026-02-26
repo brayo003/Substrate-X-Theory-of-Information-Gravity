@@ -119,6 +119,7 @@ License
 This project is dual-licensed:
 
 • MIT License — for academic and open research use
+
 • Commercial License — required for proprietary or enterprise integration
 
 
