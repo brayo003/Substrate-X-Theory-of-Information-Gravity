@@ -102,15 +102,19 @@ Contribution Rules
 All contributions must adhere to the following constraints:
 
 Explicit Reduction
+
 Show how the target system is mapped to the V12 form.
 
 Parameter Transparency
+
 Declare all parameters, bounds, fitting methods, and uncertainties.
 
 Validation Separation
+
 Place speculative interpretations outside validated directories.
 
 Numerical Evidence
+
 Provide stability logs and sensitivity analysis.
 
 
