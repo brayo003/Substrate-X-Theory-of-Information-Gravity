@@ -60,11 +60,6 @@ b enforces saturation
 A hard bound
 
 x≤xmax
-⁡
-x≤x
-
-max
-
 
 is applied to prevent unphysical divergence in exploratory simulations.
 
