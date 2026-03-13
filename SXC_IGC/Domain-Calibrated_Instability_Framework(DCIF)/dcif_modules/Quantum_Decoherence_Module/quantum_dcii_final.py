@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 """
 QUANTUM DCII MODULE - FINAL CORRECT VERSION
 Uses your original calibration with realistic anchor points

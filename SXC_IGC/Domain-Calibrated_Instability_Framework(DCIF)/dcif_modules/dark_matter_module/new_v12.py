@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 G = 6.67430e-11

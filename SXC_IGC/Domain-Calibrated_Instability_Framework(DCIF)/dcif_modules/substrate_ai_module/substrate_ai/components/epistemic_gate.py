@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 from substrate_correct_reflection import EpistemicStatus
 
 class EpistemicGate:

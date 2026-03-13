@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 T_sys = 0.0

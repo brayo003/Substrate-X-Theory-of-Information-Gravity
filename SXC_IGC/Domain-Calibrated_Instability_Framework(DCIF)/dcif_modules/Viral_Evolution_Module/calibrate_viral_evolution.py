@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 def solve_dcii_coefficients_two_anchor(e_s, f_s, t_s, e_c, f_c, t_c):

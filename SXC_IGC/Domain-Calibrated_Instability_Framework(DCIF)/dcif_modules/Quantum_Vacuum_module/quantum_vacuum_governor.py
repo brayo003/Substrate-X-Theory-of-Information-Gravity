@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import gamma

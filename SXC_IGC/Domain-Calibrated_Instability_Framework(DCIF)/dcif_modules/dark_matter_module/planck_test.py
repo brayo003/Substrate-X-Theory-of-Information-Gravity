@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 # Save as: planck_test.py
 import numpy as np
 from new_v12 import MasterBridgeV12

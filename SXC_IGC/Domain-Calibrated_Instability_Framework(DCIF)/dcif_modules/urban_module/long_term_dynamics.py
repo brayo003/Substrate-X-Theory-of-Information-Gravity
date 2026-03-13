@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 #!/usr/bin/env python3
 """
 URBAN LONG-TERM DYNAMICS TESTS

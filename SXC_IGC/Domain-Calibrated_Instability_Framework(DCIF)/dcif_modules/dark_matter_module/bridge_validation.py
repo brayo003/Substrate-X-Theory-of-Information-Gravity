@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 print("=== [QFT-GR BRIDGE] Phase 4: Corrected Planck-Scale Alignment ===")

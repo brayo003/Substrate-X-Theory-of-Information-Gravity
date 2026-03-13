@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 def angular_correlation(theta, m_x=17.01e6, e_total=17.23e6):

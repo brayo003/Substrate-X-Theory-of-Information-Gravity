@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 def calculate_axial_suppression(energy_mev, m_x=17.01):

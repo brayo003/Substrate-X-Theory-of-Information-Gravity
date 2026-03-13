@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 # --- [1] PHYSICAL PARAMETERS (SXC-IGC CONSTRAINTS) ---

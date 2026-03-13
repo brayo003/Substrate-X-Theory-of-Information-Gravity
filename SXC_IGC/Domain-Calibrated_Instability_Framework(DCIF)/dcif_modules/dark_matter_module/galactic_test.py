@@ -1,3 +1,4 @@
+# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 import sys
 sys.path.insert(0, '/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/assets/qftgrbrigbe/b')
