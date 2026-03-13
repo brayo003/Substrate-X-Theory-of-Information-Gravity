@@ -1,0 +1,370 @@
+.TH chocolate\-heretic 6 2017-11-27 "Chocolate Doom 3.1.1"
+.SH NAME
+chocolate\-heretic \- historically compatible Heretic engine
+.SH SYNOPSIS
+.B chocolate\-heretic
+.RI [ options ]
+.SH DESCRIPTION
+.PP
+Chocolate Heretic is a port of Raven Software's 1994 game
+.I Heretic
+that aims to behave as similar to the original DOS version of Heretic as
+possible.
+.SH GENERAL OPTIONS
+.TP
+.BI \-config\~ file
+Load main configuration from the specified file, instead of the default. 
+.TP
+.BI \-extraconfig\~ file
+Load additional configuration from the specified file, instead of the default. 
+.TP
+.BI \-file\~ "file\~\c
+\&.\|.\|.
+Load the specified PWAD files.  Each succeeding argument is treated as a PWAD file name until one starts with a dash or the argument list is exhausted. 
+.TP
+.BI \-iwad\~ file
+Specify an IWAD file to use. 
+.TP
+.B \-nomusic
+Disable music. 
+.TP
+.B \-nomusicpacks
+Disable substitution music packs. 
+.TP
+.B \-nosfx
+Disable sound effects. 
+.TP
+.B \-nosound
+Disable all sound output. 
+.TP
+.B \-ravpic
+Take screenshots when F1 is pressed. 
+.TP
+.BI \-response\~ file
+Load extra command\-line arguments from the given response file.  Arguments read from the file are inserted into the command line, replacing this argument.  A response file can also be loaded using the abbreviated syntax '@file.rsp'. 
+.TP
+.BI \-savedir\~ directory
+Specify a path from which to load and save games.  If the directory does not exist then it will automatically be created. 
+.TP
+.B \-version
+Print the program version and exit. 
+.SH GAME START OPTIONS
+.TP
+.BI \-episode\~ n
+Start playing episode n (1\-4). 
+.TP
+.BI \-loadgame\~ s
+Load the game in savegame slot s. 
+.TP
+.B \-nomonsters
+Disable monsters. 
+.TP
+.B \-respawn
+Monsters respawn after being killed. 
+.TP
+.BI \-skill\~ skill
+Set the game skill, 1\-5 (1: easiest, 5: hardest).  A skill of 0 disables all monsters. 
+.TP
+.BI \-warp\~ "x y"
+Start a game immediately, warping to level ExMy. 
+.SH DISPLAY OPTIONS
+.TP
+.B \-1
+Don't scale up the screen.  Implies \-window. 
+.TP
+.B \-2
+Double up the screen to 2x its normal size.  Implies \-window. 
+.TP
+.B \-3
+Double up the screen to 3x its normal size.  Implies \-window. 
+.TP
+.BI \-display\~ x
+Specify the display number on which to show the screen. 
+.TP
+.B \-fullscreen
+Run in fullscreen mode. 
+.TP
+.BI \-geometry\~ W x H
+Specify the dimensions of the window.  Implies \-window. 
+.TP
+.BI \-height\~ H
+Specify the screen height, in pixels.  Implies \-window. 
+.TP
+.B \-noblit
+Disable blitting the screen. 
+.TP
+.B \-nograbmouse
+Don't grab the mouse when running in windowed mode. 
+.TP
+.B \-nomouse
+Disable the mouse. 
+.TP
+.BI \-width\~ W
+Specify the screen width, in pixels.  Implies \-window. 
+.TP
+.B \-window
+Run in a window. 
+.SH NETWORKING OPTIONS
+.TP
+.B \-autojoin
+Automatically search the local LAN for a multiplayer server and join it. 
+.TP
+.BI \-connect\~ address
+Connect to a multiplayer server running on the given address. 
+.TP
+.B \-deathmatch
+Start a deathmatch game. 
+.TP
+.BI \-dup\~ n
+Reduce the resolution of the game by a factor of n, reducing the amount of network bandwidth needed. 
+.TP
+.BI \-extratics\~ n
+Send n extra tics in every packet as insurance against dropped packets. 
+.TP
+.BI \-nodes\~ n
+Autostart the netgame when n nodes (clients) have joined the server. 
+.TP
+.B \-oldsync
+Use original network client sync code rather than the improved sync code. 
+.TP
+.BI \-port\~ n
+Use the specified UDP port for communications, instead of the default (2342). 
+.TP
+.B \-privateserver
+When running a server, don't register with the global master server. Implies \-server. 
+.TP
+.B \-server
+Start a multiplayer server, listening for connections. 
+.TP
+.BI \-servername\~ name
+When starting a network server, specify a name for the server. 
+.TP
+.B \-solo\-net
+Start the game playing as though in a netgame with a single player.  This can also be used to play back single player netgame demos. 
+.TP
+.BI \-timer\~ n
+For multiplayer games: exit each level after n minutes. 
+.SH DEHACKED AND WAD MERGING
+.TP
+.BI \-aa\~ "file\~\c
+\&.\|.\|.
+Equivalent to "\-af <files> \-as <files>". 
+.TP
+.BI \-af\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of NWT's \-af option, merging flats into the main IWAD directory.  Multiple files may be specified. 
+.TP
+.BI \-as\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of NWT's \-as option, merging sprites into the main IWAD directory.  Multiple files may be specified. 
+.TP
+.BI \-deh\~ "file\~\c
+\&.\|.\|.
+Load the given dehacked patch(es) 
+.TP
+.BI \-hhever\~ version
+Select the Heretic version number that was used to generate the HHE patch to be loaded.  Patches for each of the Vanilla Heretic versions (1.0, 1.2, 1.3) can be loaded, but the correct version number must be specified. 
+.TP
+.BI \-merge\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of deutex's \-merge option, merging a PWAD into the main IWAD.  Multiple files may be specified. 
+.TP
+.B \-noautoload
+Disable auto\-loading of .wad files. 
+.TP
+.B \-nocheats
+Ignore cheats in dehacked files. 
+.TP
+.BI \-nwtmerge\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of NWT's \-merge option.  Multiple files may be specified. 
+.SH DEMO OPTIONS
+.TP
+.B \-demoextend
+Record or playback a demo without automatically quitting after either level exit or player respawn. 
+.TP
+.B \-longtics
+Record or playback a demo with high resolution turning. 
+.TP
+.BI \-maxdemo\~ size
+Specify the demo buffer size (KiB) 
+.TP
+.BI \-playdemo\~ demo
+Play back the demo named demo.lmp. 
+.TP
+.BI \-record\~ x
+Record a demo named x.lmp. 
+.TP
+.BI \-recordfrom\~ "save\-num demo\-name"
+Load a game from the given savegame slot and record a demo from it.  Equivalent to \-loadgame <save\-num> \-record <demo\-name>. 
+.TP
+.B \-shortticfix
+Smooth out low resolution turning when recording a demo. 
+.TP
+.B \-strictdemos
+When recording or playing back demos, disable any extensions of the vanilla demo format \- record demos as vanilla would do, and play back demos as vanilla would do. 
+.TP
+.BI \-timedemo\~ demo
+Play back the demo named demo.lmp, determining the framerate of the screen. 
+.SH COMPATIBILITY
+.TP
+.BI \-setmem\~ version
+Specify DOS version to emulate for NULL pointer dereference emulation.  Supported versions are: dos622, dos71, dosbox. The default is to emulate DOS 7.1 (Windows 98). 
+.SH OBSCURE AND LESS\-USED OPTIONS
+.TP
+.B \-cdrom
+[windows only] Save configuration data and savegames in c:\\heretic.cd, allowing play from CD. 
+.TP
+.BI \-dumpsubstconfig\~ file
+Read all MIDI files from loaded WAD files, dump an example substitution music config file to the specified file, and quit. 
+.TP
+.BI \-mb\~ mb
+Specify the heap size, in MiB. 
+.TP
+.B \-mmap
+Use the OS's virtual memory subsystem to map WAD files directly into memory. 
+.TP
+.B \-noartiskip
+Allow artifacts to be used when the run key is held down. 
+.TP
+.B \-nogui
+If specified, don't show a GUI window for error messages when the game exits with an error.
+.SH IWAD SEARCH PATHS
+To play, an IWAD file is needed.
+This is a large file containing all of the levels, graphics,
+sound effects, music and other material that make up the game.
+IWAD files are named according to the game; the standard names are:
+.TP
+.IR doom.wad ,\~\c
+.IR doom1.wad ,\~\c
+.IR doom2.wad ,\~\c
+.IR tnt.wad ,\~\c
+.I plutonia.wad
+Doom, Doom II, Final Doom
+.TP
+.IR heretic.wad ,\~\c
+.IR hexen.wad ,\~\c
+.I strife.wad
+Heretic, Hexen and Strife (commercial Doom engine games).
+.TP
+.IR hacx.wad ,\~\c
+.I chex.wad
+Hacx and Chex Quest - more obscure games based on the Doom engine.
+.TP
+.IR freedm.wad ,\~\c
+.IR freedoom1.wad ,\~\c
+.I freedoom2.wad
+The Freedoom open content IWAD files.
+.LP
+The following directory paths are searched in order to find an IWAD:
+.TP
+Current working directory
+Any IWAD files found in the current working directory will be used in
+preference to IWADs found in any other directories.
+.TP
+.I DOOMWADDIR
+This environment variable can be set to contain a path to a single
+directory in which to look for IWAD files.
+This environment variable is supported by most Doom source ports.
+.TP
+.I DOOMWADPATH
+This environment variable, if set, can contain a colon-separated list of
+directories in which to look for IWAD files, or alternatively full paths to
+specific IWAD files.
+.TP
+.I $HOME/.local/share/games/doom
+Writeable directory in the user's home directory.
+The path can be overridden using the
+.I \%XDG_DATA_HOME
+environment variable (see the XDG Base Directory Specification).
+.TP
+.I /usr/local/share/doom
+.TQ
+.I /usr/local/share/games/doom
+.TQ
+.I /usr/share/doom
+.TQ
+.I /usr/share/games/doom
+System-wide locations that can be accessed by all users.
+The path
+.I /usr/share/games/doom
+is a standard path that is supported by most Doom source ports.
+These paths can be overridden using the
+.I \%XDG_DATA_DIRS
+environment variable (see the XDG Base Directory Specification).
+.LP
+The above can be overridden on a one-time basis by using the
+.B \-iwad
+command line parameter to provide the path to an IWAD file to use.This
+parameter can also be used to specify the name of a particular IWAD to use
+from one of the above paths.
+For example,
+.RB \(lq "\-iwad doom.wad" \(rq
+will search the above paths for the file
+.I doom.wad
+to use.
+.SH ENVIRONMENT
+This section describes environment variables that control
+Chocolate Heretic's behavior.
+.TP
+.I DOOMWADDIR
+.TQ
+.I DOOMWADPATH
+See section \(lqIWAD SEARCH PATHS\(rq above.
+.TP
+.I PCSOUND_DRIVER
+When running in PC speaker sound effect mode, this environment variable
+specifies a PC speaker driver to use for sound effect playback.
+Valid options are
+.RB \(lq Linux \(rq
+for the Linux console mode driver,
+.RB \(lq BSD \(rq
+for the NetBSD/OpenBSD PC speaker driver,
+and
+.RB \(lq SDL \(rq
+for SDL-based emulated PC speaker playback (using the digital output).
+.TP
+.I OPL_DRIVER
+When using OPL MIDI playback, this environment variable specifies an
+OPL backend driver to use.
+Valid options are
+.RB \(lq SDL \(rq
+for an SDL-based software emulated OPL chip,
+.RB \(lq Linux \(rq
+for the Linux hardware OPL driver,
+and
+.RB \(lq OpenBSD \(rq
+for the OpenBSD/NetBSD hardware OPL driver.
+.IP
+Generally speaking, a real hardware OPL chip sounds better than software
+emulation; however, modern machines do not often include one.
+If present, it may still require extra work to set up and elevated
+security privileges to access.
+.SH FILES
+.TP
+.I $HOME/.local/share/chocolate\-doom/heretic.cfg
+The main configuration file for Chocolate Heretic.
+See \fBheretic.cfg\fR(5).
+.TP
+.I $HOME/.local/share/chocolate\-doom/chocolate\-heretic.cfg
+Extra configuration values that are specific to Chocolate Heretic and not
+present in Vanilla Heretic.
+See \fBchocolate\-heretic.cfg\fR(5).
+.SH SEE ALSO
+\fBchocolate\-doom\fR(6),
+\fBchocolate\-hexen\fR(6),
+\fBchocolate\-server\fR(6),
+\fBchocolate\-setup\fR(6)
+.SH AUTHOR
+Chocolate Heretic is part of the Chocolate Doom project, written and
+maintained by Simon Howard.
+It is based on the Heretic source code,
+released by Raven Software.
+.SH COPYRIGHT
+Copyright \(co id Software Inc.
+Copyright \(co Raven Software Inc.
+Copyright \(co 2005-2013 Simon Howard.
+.PP
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.

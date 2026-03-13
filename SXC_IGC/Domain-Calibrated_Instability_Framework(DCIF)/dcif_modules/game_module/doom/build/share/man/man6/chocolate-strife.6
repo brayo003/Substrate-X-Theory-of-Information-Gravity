@@ -1,0 +1,450 @@
+.TH chocolate\-strife 6 2018-01-15 "Chocolate Doom 3.1.1"
+.SH NAME
+chocolate\-strife \- historically compatible Strife engine
+.SH SYNOPSIS
+.B chocolate\-strife
+.RI [ options ]
+.SH DESCRIPTION
+.PP
+Chocolate Strife is an accurate and complete recreation of
+Rogue Entertainment's
+.IR "Strife: Quest for the Sigil" .
+It was created through
+more than two years of reverse engineering effort with the blessings
+of the original programmers of the game;
+see section \(lqHISTORY\(rq below.
+.SH GENERAL OPTIONS
+.TP
+.BI \-config\~ file
+Load main configuration from the specified file, instead of the default. 
+.TP
+.B \-devparm
+Developer mode. Implies \-nograph. 
+.TP
+.BI \-extraconfig\~ file
+Load additional configuration from the specified file, instead of the default. 
+.TP
+.BI \-file\~ "file\~\c
+\&.\|.\|.
+Load the specified PWAD files.  Each succeeding argument is treated as a PWAD file name until one starts with a dash or the argument list is exhausted. 
+.TP
+.BI \-iwad\~ file
+Specify an IWAD file to use. 
+.TP
+.B \-nograph
+Disable graphical introduction sequence 
+.TP
+.B \-nomusic
+Disable music. 
+.TP
+.B \-nomusicpacks
+Disable substitution music packs. 
+.TP
+.B \-nosfx
+Disable sound effects. 
+.TP
+.B \-nosound
+Disable all sound output. 
+.TP
+.B \-novoice
+Disable voice dialog and show dialog as text instead, even if voices.wad can be found. 
+.TP
+.BI \-response\~ file
+Load extra command\-line arguments from the given response file.  Arguments read from the file are inserted into the command line, replacing this argument.  A response file can also be loaded using the abbreviated syntax '@file.rsp'. 
+.TP
+.BI \-savedir\~ directory
+Specify a path from which to load and save games.  If the directory does not exist then it will automatically be created. 
+.TP
+.B \-version
+Print the program version and exit. 
+.SH GAME START OPTIONS
+.TP
+.B \-fast
+Monsters move faster. 
+.TP
+.BI \-loadgame\~ s
+Load the game in slot s. 
+.TP
+.B \-nomonsters
+Disable monsters. 
+.TP
+.B \-random
+Items respawn at random locations 
+.TP
+.B \-respawn
+Respawn monsters after they are killed. 
+.TP
+.BI \-skill\~ skill
+Set the game skill, 1\-5 (1: easiest, 5: hardest).  A skill of 0 disables all monsters. 
+.TP
+.BI \-turbo\~ x
+Turbo mode.  The player's speed is multiplied by x%.  If unspecified, x defaults to 200.  Values are rounded up to 10 and down to 400. 
+.TP
+.BI \-warp\~ x
+Start a game immediately, warping to level x. 
+.SH DISPLAY OPTIONS
+.TP
+.B \-1
+Don't scale up the screen.  Implies \-window. 
+.TP
+.B \-2
+Double up the screen to 2x its normal size.  Implies \-window. 
+.TP
+.B \-3
+Double up the screen to 3x its normal size.  Implies \-window. 
+.TP
+.BI \-display\~ x
+Specify the display number on which to show the screen. 
+.TP
+.B \-fullscreen
+Run in fullscreen mode. 
+.TP
+.BI \-geometry\~ W x H
+Specify the dimensions of the window.  Implies \-window. 
+.TP
+.BI \-height\~ H
+Specify the screen height, in pixels.  Implies \-window. 
+.TP
+.B \-noblit
+Disable blitting the screen. 
+.TP
+.B \-nodraw
+Disable rendering the screen entirely. 
+.TP
+.B \-nograbmouse
+Don't grab the mouse when running in windowed mode. 
+.TP
+.B \-nomouse
+Disable the mouse. 
+.TP
+.BI \-width\~ W
+Specify the screen width, in pixels.  Implies \-window. 
+.TP
+.B \-window
+Run in a window. 
+.SH NETWORKING OPTIONS
+.TP
+.B \-altdeath
+Start a deathmatch game.  Weapons do not stay in place and all items respawn after 30 seconds. 
+.TP
+.B \-autojoin
+Automatically search the local LAN for a multiplayer server and join it. 
+.TP
+.B \-avg
+Austin Virtual Gaming: end levels after 20 minutes. 
+.TP
+.BI \-connect\~ address
+Connect to a multiplayer server running on the given address. 
+.TP
+.B \-dedicated
+Start a dedicated server, routing packets but not participating in the game itself. 
+.TP
+.BI \-dup\~ n
+Reduce the resolution of the game by a factor of n, reducing the amount of network bandwidth needed. 
+.TP
+.BI \-extratics\~ n
+Send n extra tics in every packet as insurance against dropped packets. 
+.TP
+.B \-left
+Run as the left screen in three screen mode. 
+.TP
+.B \-localsearch
+Search the local LAN for running servers. 
+.TP
+.BI \-nodes\~ n
+Autostart the netgame when n nodes (clients) have joined the server. 
+.TP
+.B \-oldsync
+Use original network client sync code rather than the improved sync code. 
+.TP
+.BI \-port\~ n
+Use the specified UDP port for communications, instead of the default (2342). 
+.TP
+.B \-privateserver
+When running a server, don't register with the global master server. Implies \-server. 
+.TP
+.BI \-query\~ address
+Query the status of the server running on the given IP address. 
+.TP
+.B \-right
+Run as the right screen in three screen mode. 
+.TP
+.B \-search
+Query the Internet master server for a global list of active servers. 
+.TP
+.B \-server
+Start a multiplayer server, listening for connections. 
+.TP
+.BI \-servername\~ name
+When starting a network server, specify a name for the server. 
+.TP
+.B \-solo\-net
+Start the game playing as though in a netgame with a single player.  This can also be used to play back single player netgame demos. 
+.TP
+.BI \-timer\~ n
+For multiplayer games: exit each level after n minutes. 
+.SH DEHACKED AND WAD MERGING
+.TP
+.BI \-aa\~ "file\~\c
+\&.\|.\|.
+Equivalent to "\-af <files> \-as <files>". 
+.TP
+.BI \-af\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of NWT's \-af option, merging flats into the main IWAD directory.  Multiple files may be specified. 
+.TP
+.BI \-as\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of NWT's \-as option, merging sprites into the main IWAD directory.  Multiple files may be specified. 
+.TP
+.BI \-deh\~ "file\~\c
+\&.\|.\|.
+Load the given dehacked patch(es) 
+.TP
+.BI \-merge\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of deutex's \-merge option, merging a PWAD into the main IWAD.  Multiple files may be specified. 
+.TP
+.B \-noautoload
+Disable auto\-loading of .wad files. 
+.TP
+.B \-nocheats
+Ignore cheats in dehacked files. 
+.TP
+.BI \-nwtmerge\~ "file\~\c
+\&.\|.\|.
+Simulates the behavior of NWT's \-merge option.  Multiple files may be specified. 
+.SH DEMO OPTIONS
+.TP
+.BI \-maxdemo\~ size
+Specify the demo buffer size (KiB) 
+.TP
+.BI \-playdemo\~ demo
+Play back the demo named demo.lmp. 
+.TP
+.BI \-record\~ x
+Record a demo named x.lmp. 
+.TP
+.B \-solo\-net
+Play back a demo recorded in a netgame with a single player. 
+.TP
+.B \-strictdemos
+When recording or playing back demos, disable any extensions of the vanilla demo format \- record demos as vanilla would do, and play back demos as vanilla would do. 
+.TP
+.BI \-timedemo\~ demo
+Play back the demo named demo.lmp, determining the framerate of the screen. 
+.SH COMPATIBILITY
+.TP
+.BI \-donut\~ "x y"
+Use the specified magic values when emulating behavior caused by memory overruns from improperly constructed donuts. In Vanilla Strife this can differ depending on the operating system.  The default (if this option is not specified) is to emulate the behavior when running under Windows 98. 
+.TP
+.BI \-gameversion\~ version
+Emulate a specific version of Strife. Valid values are "1.2" and "1.31". 
+.TP
+.BI \-setmem\~ version
+Specify DOS version to emulate for NULL pointer dereference emulation.  Supported versions are: dos622, dos71, dosbox. The default is to emulate DOS 7.1 (Windows 98). 
+.TP
+.BI \-spechit\~ n
+Use the specified magic value when emulating spechit overruns. 
+.SH OBSCURE AND LESS\-USED OPTIONS
+.TP
+.B \-cdrom
+[windows only] Save configuration data and savegames in c:\\strife.cd, allowing play from CD. 
+.TP
+.BI \-dumpsubstconfig\~ file
+Read all MIDI files from loaded WAD files, dump an example substitution music config file to the specified file, and quit. 
+.TP
+.B \-flip
+Flip player gun sprites (broken). 
+.TP
+.BI \-mb\~ mb
+Specify the heap size, in MiB. 
+.TP
+.B \-mmap
+Use the OS's virtual memory subsystem to map WAD files directly into memory. 
+.TP
+.B \-nogui
+If specified, don't show a GUI window for error messages when the game exits with an error. 
+.TP
+.B \-work
+Set Rogue playtesting mode (god mode; no cliping mode toggled by backspace).
+.SH IWAD SEARCH PATHS
+To play, an IWAD file is needed.
+This is a large file containing all of the levels, graphics,
+sound effects, music and other material that make up the game.
+IWAD files are named according to the game; the standard names are:
+.TP
+.IR doom.wad ,\~\c
+.IR doom1.wad ,\~\c
+.IR doom2.wad ,\~\c
+.IR tnt.wad ,\~\c
+.I plutonia.wad
+Doom, Doom II, Final Doom
+.TP
+.IR heretic.wad ,\~\c
+.IR hexen.wad ,\~\c
+.I strife.wad
+Heretic, Hexen and Strife (commercial Doom engine games).
+.TP
+.IR hacx.wad ,\~\c
+.I chex.wad
+Hacx and Chex Quest - more obscure games based on the Doom engine.
+.TP
+.IR freedm.wad ,\~\c
+.IR freedoom1.wad ,\~\c
+.I freedoom2.wad
+The Freedoom open content IWAD files.
+.LP
+The following directory paths are searched in order to find an IWAD:
+.TP
+Current working directory
+Any IWAD files found in the current working directory will be used in
+preference to IWADs found in any other directories.
+.TP
+.I DOOMWADDIR
+This environment variable can be set to contain a path to a single
+directory in which to look for IWAD files.
+This environment variable is supported by most Doom source ports.
+.TP
+.I DOOMWADPATH
+This environment variable, if set, can contain a colon-separated list of
+directories in which to look for IWAD files, or alternatively full paths to
+specific IWAD files.
+.TP
+.I $HOME/.local/share/games/doom
+Writeable directory in the user's home directory.
+The path can be overridden using the
+.I \%XDG_DATA_HOME
+environment variable (see the XDG Base Directory Specification).
+.TP
+.I /usr/local/share/doom
+.TQ
+.I /usr/local/share/games/doom
+.TQ
+.I /usr/share/doom
+.TQ
+.I /usr/share/games/doom
+System-wide locations that can be accessed by all users.
+The path
+.I /usr/share/games/doom
+is a standard path that is supported by most Doom source ports.
+These paths can be overridden using the
+.I \%XDG_DATA_DIRS
+environment variable (see the XDG Base Directory Specification).
+.LP
+The above can be overridden on a one-time basis by using the
+.B \-iwad
+command line parameter to provide the path to an IWAD file to use.This
+parameter can also be used to specify the name of a particular IWAD to use
+from one of the above paths.
+For example,
+.RB \(lq "\-iwad doom.wad" \(rq
+will search the above paths for the file
+.I doom.wad
+to use.
+.SH ENVIRONMENT
+This section describes environment variables that control
+Chocolate Strife's behavior.
+.TP
+.I DOOMWADDIR
+.TQ
+.I DOOMWADPATH
+See section \(lqIWAD SEARCH PATHS\(rq above.
+.TP
+.I PCSOUND_DRIVER
+When running in PC speaker sound effect mode, this environment variable
+specifies a PC speaker driver to use for sound effect playback.
+Valid options are
+.RB \(lq Linux \(rq
+for the Linux console mode driver,
+.RB \(lq BSD \(rq
+for the NetBSD/OpenBSD PC speaker driver,
+and
+.RB \(lq SDL \(rq
+for SDL-based emulated PC speaker playback (using the digital output).
+.TP
+.I OPL_DRIVER
+When using OPL MIDI playback, this environment variable specifies an
+OPL backend driver to use.
+Valid options are
+.RB \(lq SDL \(rq
+for an SDL-based software emulated OPL chip,
+.RB \(lq Linux \(rq
+for the Linux hardware OPL driver,
+and
+.RB \(lq OpenBSD \(rq
+for the OpenBSD/NetBSD hardware OPL driver.
+.IP
+Generally speaking, a real hardware OPL chip sounds better than software
+emulation; however, modern machines do not often include one.
+If present, it may still require extra work to set up and elevated
+security privileges to access.
+.SH FILES
+.TP
+.I $HOME/.local/share/chocolate\-doom/strife.cfg
+The main configuration file for Chocolate Strife.
+See \fBstrife.cfg\fR(5).
+.TP
+.I $HOME/.local/share/chocolate\-doom/chocolate\-strife.cfg
+Extra configuration values that are specific to Chocolate
+Strife and not present in Vanilla Strife.
+See \fBchocolate\-strife.cfg\fR(5).
+.SH SEE ALSO
+\fBchocolate\-doom\fR(6),
+\fBchocolate\-server\fR(6),
+\fBchocolate\-setup\fR(6)
+.SH HISTORY
+The source code for Strife was lost, which means, unlike the code for
+all the other commercial games using the Doom engine, it cannot be
+released.
+The only access we have to the code is the binary executable file.
+Reverse engineering tools were employed to disassemble and decompile the
+executables, which were cross-referenced against the Linux Doom and
+DOS Heretic sources and painstakingly combed over multiple times,
+instruction by instruction, to ensure that the resulting
+Chocolate-Doom-based executable is as close as possible to the original.
+.SH LEGALITY
+Reverse engineering is a protected activity so long as the original code
+is not used directly in the product.
+Due to the vast amount of information lost through the process of
+compilation, and the need to refactor large portions of code in order to
+eliminate non-portable idioms or to adapt them properly to Chocolate
+Doom's framework, the resulting code behaves the same, but is not the
+.I same
+code.
+.PP
+In addition, James Monroe and John Carmack have both stated that they
+have no objections to the project.
+Because they are the original authors of the code, and neither Rogue nor
+their publisher, Velocity, Inc., exist any longer as legal entities,
+this is effectively legal permission.
+.SH BUGS
+Chocolate Strife is almost, but not entirely perfect, in
+recreating the behavior of Vanilla Strife.
+Help us by reporting any discrepancies you might notice between this
+executable and the vanilla DOS program.
+.PP
+However, do
+.I not
+report any glitch that you can replicate in the vanilla EXE as a bug.
+The point of Chocolate Strife, like Chocolate Doom before it,
+is to be as bug-compatible with the original game as possible.
+Also be aware that some glitches are impossible to compatibly recreate,
+and wherever this is the case, Chocolate Strife has erred on
+the side of not crashing the program, for example by initializing
+pointers to
+.I NULL
+rather than using them without setting a value first.
+.SH AUTHORS
+Chocolate Strife is part of the Chocolate Doom project.
+It was reverse engineered from the DOS versions of Strife by James Haley
+and Samuel Villarreal.
+Chocolate Doom was written and maintained by Simon Howard, and is based
+on the LinuxDoom source code released by Id Software.
+.SH COPYRIGHT
+Copyright \(co id Software Inc.
+Copyright \(co 2005-2013 Simon Howard, James Haley, Samuel Villarreal.
+.PP
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
