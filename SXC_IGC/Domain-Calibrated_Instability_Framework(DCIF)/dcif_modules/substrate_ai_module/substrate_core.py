@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 class SubstrateDynamics:
     def __init__(self):
         self.r, self.a, self.b = 0.153, 1.0, 1.0

@@ -1,36 +1,43 @@
-# V12_SYNC_VERIFIED: 2026-03-13
+import pandas as pd
 import numpy as np
+import glob
 
-class SXCV12Universal:
-    def __init__(self):
-        # UNIVERSAL CONSTANTS: DYNAMIC INTEGRATION CALIBRATION
-        self.V_LIMIT = 108.0   # Global asymptotic limit
-        self.K_SAT = 0.55      # Strong Coupling (High 'Grip' at low signal)
-        self.BETA = 0.125      # Logarithmic Excitation Drive
-        self.GAMMA = 0.045     # Dynamic Dissipation
-        
-        self.T_sys = 0.0       # START AT ZERO (Natural Accumulation)
-        self.last_r = 0.0
+def run_cosmology_scan():
+    print("--- Substrate-X: Galactic Rotation Scan [SPARC Dataset] ---")
+    files = glob.glob("data/sparc/*.dat")
+    
+    # Global Conflict Factor (Consistent with Nairobi & Energy)
+    conflict_factor = 2.8
+    beta = 1.0  # Scale of Information Gravity
 
-    def compute_tension(self, signal, r):
-        """
-        Dynamic Information Integration:
-        Tension builds as a function of radial distance (dr).
-        """
-        dr = max(r - self.last_r, 0.1)
-        self.last_r = r
+    for file in files[:5]: # Testing first 5 galaxies
+        df = pd.read_table(file, sep='\s+', skiprows=3, names=['Rad', 'Vobs', 'Vgas', 'Vdisk', 'Vbulge'])
         
-        # Logarithmic Sensitivity: Softens the 'Cusp' problem
-        E = np.log1p(signal) 
+        # Calculate Classical Predicted Velocity (Newtonian)
+        # V_newton = sqrt(Vgas^2 + Vdisk^2 + Vbulge^2)
+        df['V_classical'] = np.sqrt(df['Vgas']**2 + df['Vdisk']**2 + df['Vbulge']**2)
         
-        inflow = E * self.BETA
-        outflow = self.GAMMA * self.T_sys
+        # Calculate Substrate-X Tangle Point
+        # Tangle occurs where Disk and Gas substrates interfere significantly
+        tangle_threshold = df['V_classical'].median()
         
-        # Integration step based on actual spatial delta
-        self.T_sys += (inflow - outflow) * dr
-        return self.T_sys
+        def calculate_sxc_v(row):
+            v_base = row['V_classical']
+            # If the base signal is in the 'Tangle Zone', apply the 2.8x Tension
+            if v_base > tangle_threshold:
+                return v_base * np.sqrt(conflict_factor) # Square root because V^2 proportional to Force
+            return v_base
 
-    def get_velocity(self, v_bar, tension):
-        # Saturation Law: V_sub = V_lim * (1 - e^(-K*T))
-        v_sub = self.V_LIMIT * (1 - np.exp(-self.K_SAT * tension))
-        return np.sqrt(v_bar**2 + v_sub**2)
+        df['V_SXC'] = df.apply(calculate_sxc_v, axis=1)
+        
+        error_classical = np.mean(np.abs(df['Vobs'] - df['V_classical']))
+        error_sxc = np.mean(np.abs(df['Vobs'] - df['V_SXC']))
+        
+        print(f"Galaxy: {file.split('/')[-1]}")
+        print(f"  Classical Error: {error_classical:.2f}")
+        print(f"  Substrate-X Error: {error_sxc:.2f}")
+        print(f"  Improvement: {((error_classical - error_sxc) / error_classical) * 100:.1f}%")
+        print("-" * 30)
+
+if __name__ == "__main__":
+    run_cosmology_scan()

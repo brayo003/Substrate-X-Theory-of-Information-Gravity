@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 #!/usr/bin/env python3
 """
 SUBSTRATE-AWARE AI: An AI that knows when it's about to break down.

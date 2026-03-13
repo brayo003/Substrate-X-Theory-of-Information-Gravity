@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 def check_extreme_limits(g_n, m_x_mev):

@@ -1,43 +1,36 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 import pandas as pd
 import numpy as np
 
 def run_energy_scan():
-    print("--- Substrate-X: Energy Snap-Scan [PJM 2024] ---")
+    print("--- Substrate-X: Energy Snap-Scan [Calibrated Trigger] ---")
     
-    # 1. Load the localized substrate
     df = pd.read_csv("energy_load_2024.csv")
     load_col = [c for c in df.columns if 'Load' in c or 'MW' in c][0]
     
-    # 2. Calibration Constants (from your previous run)
-    beta = 0.9880
-    gamma = 0.1862
-    
-    # 3. Calculate Tension (T) and Curvature (K) for every hour
-    # T = (E * beta) - (E_mean * gamma)
-    # K = T / capacity_threshold
+    beta, gamma = 0.9855, 0.1857
     e_mean = df[load_col].mean()
-    e_max = df[load_col].max()
-    
-    # We define the 'Fracture Threshold' as the 95th percentile of observed load
     threshold = df[load_col].quantile(0.95)
-    
-    df['Tension'] = (df[load_col] * beta) - (e_mean * gamma)
-    df['K_Factor'] = df['Tension'] / (threshold * (beta - gamma))
+    # The 'Tangle Point': Conflict starts at 70% of the threshold
+    tangle_point = threshold * 0.70 
+    conflict_factor = 2.8
 
-    # 4. Find the 'Critical Hours'
-    critical_events = df[df['K_Factor'] >= 1.0]
+    df['Classical_Tension'] = (df[load_col] * beta) - (e_mean * gamma)
+    df['Classical_K'] = df['Classical_Tension'] / (threshold * (beta - gamma))
+
+    def calculate_sxc_tension(val):
+        # Interference begins as the field approaches the threshold
+        signal = val * conflict_factor if val > tangle_point else val
+        return (signal * beta) - (e_mean * gamma)
+
+    df['SXC_Tension'] = df[load_col].apply(calculate_sxc_tension)
+    df['SXC_K'] = df['SXC_Tension'] / (threshold * (beta - gamma))
+
+    classical_snaps = len(df[df['Classical_K'] >= 1.0])
+    sxc_snaps = len(df[df['SXC_K'] >= 1.0])
     
-    print(f"Total Hours Scanned: {len(df)}")
-    print(f"Critical Fracture Hours (K >= 1.0): {len(critical_events)}")
-    
-    if len(critical_events) > 0:
-        peak_event = df.iloc[df['K_Factor'].idxmax()]
-        print(f"\n[!] MAX CURVATURE DETECTED")
-        print(f"Peak K: {peak_event['K_Factor']:.4f}")
-        print(f"Peak Load: {peak_event[load_col]:,.2f} MW")
-    else:
-        print("\n[STATUS] Substrate remained Elastic throughout 2024.")
+    print(f"Classical Fracture Hours: {classical_snaps}")
+    print(f"Substrate-X Ghost Snaps: {sxc_snaps}")
+    print(f"Hidden Instability Ratio: {sxc_snaps / (classical_snaps if classical_snaps > 0 else 1):.2f}x")
 
 if __name__ == "__main__":
     run_energy_scan()

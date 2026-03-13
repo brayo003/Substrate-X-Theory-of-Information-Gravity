@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 def bridge_v12(x, r, a, b, dt=0.01):

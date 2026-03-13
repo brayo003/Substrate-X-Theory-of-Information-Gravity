@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 #!/usr/bin/env python3
 """
 DEMONSTRATE: How our system would have handled your HLE failures

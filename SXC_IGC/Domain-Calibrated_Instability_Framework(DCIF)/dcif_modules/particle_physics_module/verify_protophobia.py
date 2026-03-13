@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 
 # Experimental Limit from NA48/2 (CERN)

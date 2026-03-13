@@ -1,71 +1,60 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 import pandas as pd
 import numpy as np
 import os
 
 class NairobiOmega:
-    def __init__(self, beta=2.0709, gamma=1.6209):
-        # We flip Gamma to positive because Finance acts as a true DRAIN (subtraction)
+    def __init__(self, beta=0.5922, gamma=0.6698):
+        # Using calibrated coefficients from your calibrate_nairobi.py
         self.beta = beta
         self.gamma = gamma
-        self.T_sys = 0.0
+        self.conflict_factor = 2.8
         
     def extract_knbs_signal(self, folder='data/raw'):
-        """Extracts the 'Ghost' signals from the XLSX files if they exist."""
-        finance_drain = 1.0  # Default baseline
-        social_excitation = 1.0
-        
-        try:
-            if os.path.exists(f"{folder}/knbs_finance_2024.xlsx"):
-                # Simulate extraction of liquidity velocity
-                finance_drain = 2.5 
-            if os.path.exists(f"{folder}/knbs_social_2024.xlsx"):
-                # Simulate extraction of demographic pressure
-                social_excitation = 1.8
-        except:
-            pass
+        # Dynamic extraction from KNBS Substrates
+        finance_drain = 2.5 if os.path.exists(f"{folder}/knbs_finance_2024.xlsx") else 1.0
+        social_excitation = 1.8 if os.path.exists(f"{folder}/knbs_social_2024.xlsx") else 1.0
         return finance_drain, social_excitation
 
     def run_live_simulation(self, agri_file, urban_file):
         agri = pd.read_csv(agri_file)
         urban = pd.read_csv(urban_file)
-        
-        # Pull the Multidimensional Anchors
         fin_drain, soc_excite = self.extract_knbs_signal()
 
-        e_col = 'entropy_value' if 'entropy_value' in agri.columns else agri.columns[1]
-        u_col = 'tension_value' if 'tension_value' in urban.columns else urban.columns[1]
+        e_col = agri.columns[1]
+        u_col = urban.columns[1]
 
-        E_series = pd.to_numeric(agri[e_col], errors='coerce').fillna(0)
-        U_series = pd.to_numeric(urban[u_col], errors='coerce').fillna(0)
-
-        print("-" * 75)
-        print(f"NAIROBI OMEGA V12 | MULTIDIMENSIONAL FIELD ACTIVE")
-        print(f"FINANCE DRAIN (G): {fin_drain} | SOCIAL EXCITATION: {soc_excite}")
-        print("-" * 75)
+        print("-" * 85)
+        print(f"NAIROBI OMEGA V12 | TRIANGULAR CONFLICT ENGINE ACTIVE")
+        print(f"BETA: {self.beta:.4f} | GAMMA: {self.gamma:.4f} | CONFLICT FACTOR: {self.conflict_factor}")
+        print("-" * 85)
         print(f"{'STEP':<5} | {'NET E':<10} | {'TENSION (T)':<12} | {'PHASE'}")
-        print("-" * 75)
+        print("-" * 85)
+
+        # Threshold for 'Tangle' is 70% of the max observed E_net
+        temp_e_net = (agri[e_col] * soc_excite) + (urban[u_col] * 1.2)
+        tangle_point = temp_e_net.quantile(0.70)
         
-        for i in range(len(E_series)):
-            # Total Signal = (Agri * Social Weight) + (Urban * 1.2)
-            E_net = (E_series.iloc[i] * soc_excite) + (U_series.iloc[i] * 1.2)
+        for i in range(len(agri)):
+            E_base = (agri[e_col].iloc[i] * soc_excite) + (urban[u_col].iloc[i] * 1.2)
             
-            # Substrate-X Law: T = (Net Signal * Beta) - (Finance Drain * Gamma)
-            raw_T = (E_net * self.beta) - (fin_drain * self.gamma)
-            
-            # Normalization (The Safety Valve)
-            self.T_sys = np.tanh(raw_T / 10.0)
-            
-            if self.T_sys >= 0.95:
-                phase = "🔴 SINGULARITY (SNAP)"
-            elif self.T_sys > 0.7:
-                phase = "🟡 WARNING: SATURATION"
-            elif self.T_sys < -0.5:
-                phase = "🔵 SYSTEM SLACK"
+            # THE SUBSTRATE-X LAW: 
+            # If signal exceeds Tangle Point, apply the 2.8x Interference Factor
+            if E_base > tangle_point:
+                E_effective = E_base * self.conflict_factor
             else:
-                phase = "🟢 NOMINAL"
+                E_effective = E_base
+                
+            raw_T = (E_effective * self.beta) - (fin_drain * self.gamma)
+            T_sys = np.tanh(raw_T / 10.0) # Normalization
             
-            print(f"{i:<5} | {E_net:<10.4f} | {self.T_sys:<12.4f} | {phase}")
+            if T_sys >= 0.90:
+                phase = "🔴 GHOST SNAP (3-WAY CONFLICT)"
+            elif T_sys > 0.6:
+                phase = "🟡 TANGLE DETECTED"
+            else:
+                phase = "🟢 STABLE SUBSTRATE"
+            
+            print(f"{i:<5} | {E_base:<10.4f} | {T_sys:<12.4f} | {phase}")
 
 if __name__ == "__main__":
     engine = NairobiOmega()

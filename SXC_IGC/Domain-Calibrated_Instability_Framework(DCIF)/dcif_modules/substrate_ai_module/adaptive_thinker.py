@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 from enum import Enum
 
 class ThinkingStrategy(Enum):

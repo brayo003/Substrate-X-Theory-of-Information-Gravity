@@ -1,4 +1,3 @@
-# V12_SYNC_VERIFIED: 2026-03-13
 import numpy as np
 import time
 from fetch_ecosystem_data import EcosystemDataFetcher
