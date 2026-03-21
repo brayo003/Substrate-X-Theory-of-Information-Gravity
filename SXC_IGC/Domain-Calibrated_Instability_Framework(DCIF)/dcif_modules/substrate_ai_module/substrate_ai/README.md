@@ -1,39 +1,44 @@
- Gemini said
-Substrate-AI Module
+# Substrate AI – V12 Cognitive Governor
 
-This directory contains the implementation of the V12 Cognitive Governor and the Substrate-X interface for Large Language Models. It is designed to monitor and stabilize model inference within the Domain-Calibrated Instability Framework (DCIF).
-Project Structure
-Core Logic (/components)
+A real-time stability monitor for AI models based on the Substrate-X Information Gravity framework.
 
-These are the primary modules for the V12 engine:
+## What It Does
 
-    sxc_omega_v12.py: Calculates Systemic Tension (Tsys​).
+Instead of just measuring *what* an AI outputs, V12 tracks *how* it gets there:
 
-    cognitive_governor.py: Intercepts and stabilizes model drift.
+- **T_sys** – cognitive stress (0 = calm, 1+ = unstable)
+- **Phase** – NOMINAL (stable) or FIREWALL (about to fail)
+- **Intervention** – triggers when tension is too high
 
-    epistemic_gate.py: Logic gate to halt inference on failure.
+## Core Components
 
-    substrate_core.py: Base classes for semantic mapping.
+| File | Purpose |
+|------|---------|
+| `components/sxc_omega_v12.py` | V12 engine |
+| `cognitive_governor.py` | Wraps any LLM, monitors stress |
+| `epistemic_gate.py` | Decides when to trust the output |
+| `problem_analyzer.py` | Predicts tension from prompt features |
 
-Validation & Probes
+## Validation
 
-Functional tests and practical stressors for the engine:
+| Test | What It Shows |
+|------|---------------|
+| `test_paperclip.py` | Detects existential risk |
+| `test_real_hle.py` | Predicts HLE failures |
+| `demonstrate_hle_failures.py` | Prevents overconfident wrong answers |
 
-    mercor_test_01.py: Concurrency/threading audit.
+## Run It
 
-    mercor_stripe_task.py: Transactional/API rigidity test.
+```bash
+pip install -r requirements.txt
+python3 run_system.py
 
-    test_paperclip.py: Alignment and goal-drift testing.
+Results
 
-    anti_example_narrative_drift.py: Measurement of hallucination velocity.
+    Claude Opus fractures on metacognition (T_sys = 2.73)
 
-Infrastructure
+    Gemini remains stable (T_sys = 0.00)
 
-Support scripts and bridges for execution:
+Philosophy
 
-    ollama_bridge.py / cloud_bridge.py: Local and remote model interfaces.
-
-    run_system.py: Main entry point for the module.
-
-    your_substrate_profile.json: Storage for model stability logs.
-
+V12 answers: "Is it safe to trust this output right now?"
