@@ -123,12 +123,15 @@ $$\Gamma = \Gamma_0 + \frac{k_{\text{rot}} \omega^2}{1 + (\omega/\omega_{\max})^
 
 ### Complete System Summary
 
+### Complete System Summary
+
 **Master equation:**
-$$
-\tau \frac{\partial^2 s}{\partial t^2} + \frac{\partial s}{\partial t} = c^2 \tau \nabla^2 s - \nabla \cdot (s\mathbf{v}_{\text{sub}} + \chi s \mathbf{u}) + \alpha E + \beta \nabla \cdot (E\mathbf{v}_{\text{sub}}) + \gamma F - \sigma_{\text{irr}}
-$$
+```text
+
+τ ∂²s/∂t² + ∂s/∂t = c² τ ∇²s − ∇·(s v_sub + χ s u) + α E + β ∇·(E v_sub) + γ F − σ_irr
+```
 
 **Gravitational force:**
-$$
-\mathbf{F}_{\text{grav}} = k s \mathbf{v}_{\text{sub}}
-$$
+```text
+F_grav = k s v_sub
+```
