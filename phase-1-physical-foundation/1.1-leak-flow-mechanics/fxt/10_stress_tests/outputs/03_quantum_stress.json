@@ -1,0 +1,25 @@
+{
+  "named_channel_max_envelope_error": {
+    "amplitude_damping": 0.12499987635035138,
+    "bit_flip": 0.49250221158976104,
+    "depolarizing": 0.07407370863218887,
+    "mixed_pauli": 0.08243690352895863,
+    "pure_z": 0.0
+  },
+  "named_channel_population_excursion": {
+    "amplitude_damping": 0.49250221158976115,
+    "bit_flip": 1.1102230246251565e-16,
+    "depolarizing": 1.1102230246251565e-16,
+    "mixed_pauli": 1.1102230246251565e-16,
+    "pure_z": 0.0
+  },
+  "random_general_pauli_GKSL": {
+    "best_max_error": 0.0006123993770493774,
+    "fraction_with_error_below_1e-3": 0.0016666666666666668,
+    "samples": 600
+  },
+  "seed": 404,
+  "status": "PARTIAL",
+  "target": "pure sigma_z GKSL coherence with Gamma_phi=0.7",
+  "verdict": "The exact pure-dephasing channel is reproduced by z dephasing (and mixtures calibrated to the same transverse decay); Ramsey envelope data alone do not establish a unique microscopic channel. Population-sensitive data reject amplitude damping but not all Pauli alternatives."
+}

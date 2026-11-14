@@ -1,0 +1,70 @@
+{
+  "assumption_removal": {
+    "dependency_graph": {
+      "GKSL_form": [
+        "Born",
+        "Markov",
+        "secular",
+        "stationary bath"
+      ],
+      "pure_dephasing": [
+        "longitudinal sigma_z coupling"
+      ],
+      "quadratic_rate": [
+        "linear coupling",
+        "rotation variance \u221d omega^2",
+        "Born",
+        "Markov",
+        "stationary bath",
+        "single-exponential correlation"
+      ]
+    },
+    "result": "Removing Born, Markov, stationarity, or single-exponential correlation removes the derivational route to the stated time-local quadratic-rate equation; this suite does not claim it survives."
+  },
+  "dimension_check": {
+    "Gamma_dimensions_M_L_T_info": [
+      0,
+      0,
+      -1,
+      0
+    ],
+    "expected": [
+      0,
+      0,
+      -1,
+      0
+    ],
+    "passes": true
+  },
+  "reference_equation": "Gamma_phi=8 g^2 s0^2 r_q^2 tau omega_rot^2/(3 hbar^2)",
+  "seed": 0,
+  "singularity_search": {
+    "analytic_divergence_at_hbar_zero": true,
+    "hbar_scan_finite": true
+  },
+  "status": "PARTIAL",
+  "symbolic": {
+    "limits": {
+      "g_to_0": "0",
+      "hbar_to_0": "oo",
+      "omega_to_0": "0",
+      "tau_to_0": "0"
+    },
+    "log_derivatives": {
+      "g": "2",
+      "hbar": "-2",
+      "omega": "2",
+      "r_q": "2",
+      "s0": "2",
+      "tau": "1"
+    }
+  },
+  "validity_map": {
+    "green": "<0.01",
+    "grid_red_fraction": 0.23203125,
+    "metric": "tau*Gamma",
+    "red": ">=0.1",
+    "yellow": "0.01\u20130.1"
+  },
+  "verdict": "Algebra and dimensions pass, but the mathematical formula alone does not establish approximation validity."
+}

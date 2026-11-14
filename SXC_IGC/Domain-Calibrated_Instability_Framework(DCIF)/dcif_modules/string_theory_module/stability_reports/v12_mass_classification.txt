@@ -1,0 +1,240 @@
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  0.5000
+Input b (Governor):     0.2000
+Peak Tension (T_sys):   0.7736
+Distance to Shatter:    0.2264
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  0.5000
+Input b (Governor):     0.7000
+Peak Tension (T_sys):   0.3356
+Distance to Shatter:    0.6644
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  0.5000
+Input b (Governor):     1.2000
+Peak Tension (T_sys):   0.2343
+Distance to Shatter:    0.7657
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  0.5000
+Input b (Governor):     1.7000
+Peak Tension (T_sys):   0.1857
+Distance to Shatter:    0.8143
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.0000
+Input b (Governor):     0.2000
+Peak Tension (T_sys):   1.5472
+Distance to Shatter:    -0.5472
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.0000
+Input b (Governor):     0.7000
+Peak Tension (T_sys):   0.6712
+Distance to Shatter:    0.3288
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.0000
+Input b (Governor):     1.2000
+Peak Tension (T_sys):   0.4686
+Distance to Shatter:    0.5314
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.0000
+Input b (Governor):     1.7000
+Peak Tension (T_sys):   0.3715
+Distance to Shatter:    0.6285
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.5000
+Input b (Governor):     0.2000
+Peak Tension (T_sys):   2.3208
+Distance to Shatter:    -1.3208
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.5000
+Input b (Governor):     0.7000
+Peak Tension (T_sys):   1.0068
+Distance to Shatter:    -0.0068
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.5000
+Input b (Governor):     1.2000
+Peak Tension (T_sys):   0.7029
+Distance to Shatter:    0.2971
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  1.5000
+Input b (Governor):     1.7000
+Peak Tension (T_sys):   0.5572
+Distance to Shatter:    0.4428
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.0000
+Input b (Governor):     0.2000
+Peak Tension (T_sys):   3.0944
+Distance to Shatter:    -2.0944
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.0000
+Input b (Governor):     0.7000
+Peak Tension (T_sys):   1.3423
+Distance to Shatter:    -0.3423
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.0000
+Input b (Governor):     1.2000
+Peak Tension (T_sys):   0.9371
+Distance to Shatter:    0.0629
+-----------------------------------
+VERDICT: MARGINAL (Edge of Swampland)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.0000
+Input b (Governor):     1.7000
+Peak Tension (T_sys):   0.7430
+Distance to Shatter:    0.2570
+-----------------------------------
+VERDICT: LANDSCAPE (Deeply Stable)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.5000
+Input b (Governor):     0.2000
+Peak Tension (T_sys):   3.8680
+Distance to Shatter:    -2.8680
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.5000
+Input b (Governor):     0.7000
+Peak Tension (T_sys):   1.6779
+Distance to Shatter:    -0.6779
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.5000
+Input b (Governor):     1.2000
+Peak Tension (T_sys):   1.1714
+Distance to Shatter:    -0.1714
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  2.5000
+Input b (Governor):     1.7000
+Peak Tension (T_sys):   0.9287
+Distance to Shatter:    0.0713
+-----------------------------------
+VERDICT: MARGINAL (Edge of Swampland)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  3.0000
+Input b (Governor):     0.2000
+Peak Tension (T_sys):   4.6416
+Distance to Shatter:    -3.6416
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  3.0000
+Input b (Governor):     0.7000
+Peak Tension (T_sys):   2.0135
+Distance to Shatter:    -1.0135
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  3.0000
+Input b (Governor):     1.2000
+Peak Tension (T_sys):   1.4057
+Distance to Shatter:    -0.4057
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------
+
+⚛️ V12 CLASSIFICATION REPORT
+-----------------------------------
+Input Beta (Coupling):  3.0000
+Input b (Governor):     1.7000
+Peak Tension (T_sys):   1.1144
+Distance to Shatter:    -0.1144
+-----------------------------------
+VERDICT: SWAMPLAND (Physical Breach)
+-----------------------------------

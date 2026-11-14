@@ -1,0 +1,76 @@
+{
+  "urban_calibration": {
+    "\u03b2": 0.398,
+    "\u03b3": 0.262,
+    "\u03b2/\u03b3": 1.5,
+    "domain": "urban_planning",
+    "discovery": "Cities are 1.5\u00d7 more sensitive to growth than infrastructure"
+  },
+  "nyc_data_analysis": [
+    {
+      "file": "snap_2.csv",
+      "rows": 1000,
+      "E": 0.11341015886400041,
+      "F": 0.03,
+      "T": 0.03727724322787217,
+      "status": "\ud83d\udfe2 Flowing",
+      "description": "Efficient urban system"
+    },
+    {
+      "file": "nyc_traffic_24h.csv",
+      "rows": 1000,
+      "E": 0.1552079673618043,
+      "F": 0.03,
+      "T": 0.05391277100999812,
+      "status": "\ud83d\udfe2 Flowing",
+      "description": "Efficient urban system"
+    },
+    {
+      "file": "snap_0.csv",
+      "rows": 1000,
+      "E": 0.15874371874999998,
+      "F": 0.03,
+      "T": 0.05532000006249999,
+      "status": "\ud83d\udfe2 Flowing",
+      "description": "Efficient urban system"
+    },
+    {
+      "file": "snap_3.csv",
+      "rows": 1000,
+      "E": 0.14627925923048235,
+      "F": 0.03,
+      "T": 0.05035914517373198,
+      "status": "\ud83d\udfe2 Flowing",
+      "description": "Efficient urban system"
+    },
+    {
+      "file": "snap_1.csv",
+      "rows": 1000,
+      "E": 0.13885654038229966,
+      "F": 0.03,
+      "T": 0.04740490307215527,
+      "status": "\ud83d\udfe2 Flowing",
+      "description": "Efficient urban system"
+    }
+  ],
+  "summary": {
+    "datasets_analyzed": 5,
+    "average_tension": 0.04885481250925151,
+    "validation_status": "SUCCESS",
+    "scientific_implication": "Urban \u03b2/\u03b3=1.5 confirms cities as Balanced-Growth systems"
+  },
+  "cross_domain_position": {
+    "more_fragile_than": [
+      "Financial Markets",
+      "Dark Matter"
+    ],
+    "less_fragile_than": [
+      "Social Media",
+      "Fungal Networks",
+      "Quantum Systems",
+      "Seismic Systems"
+    ],
+    "closest_match": "Financial Markets (\u03b2/\u03b3=1.63)",
+    "classification": "Balanced-Growth Systems"
+  }
+}

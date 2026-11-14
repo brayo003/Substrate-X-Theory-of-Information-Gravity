@@ -1,0 +1,60 @@
+{
+  "world_a": {
+    "config": {
+      "name": "World A \u2014 \u03c4=0.5  (overdamped)",
+      "tau": 0.5,
+      "c": 1.0
+    },
+    "mean_q": -0.9676,
+    "cooperation_rate": 0.0,
+    "build_rate": 0.0,
+    "final_needs": {
+      "hunger": 0.42,
+      "energy": 0.424,
+      "stress": 0.0
+    },
+    "regime_distribution": {
+      "overdamped": 50
+    },
+    "action_distribution": {
+      "rest": 81,
+      "forage": 53,
+      "explore": 116,
+      "build": 0,
+      "cooperate": 0
+    }
+  },
+  "world_b": {
+    "config": {
+      "name": "World B \u2014 \u03c4=10.0 (coherent)",
+      "tau": 10.0,
+      "c": 1.0
+    },
+    "mean_q": 8.9555,
+    "cooperation_rate": 0.62,
+    "build_rate": 0.0,
+    "final_needs": {
+      "hunger": 0.71,
+      "energy": 0.167,
+      "stress": 0.0
+    },
+    "regime_distribution": {
+      "coherent": 50
+    },
+    "action_distribution": {
+      "rest": 50,
+      "forage": 45,
+      "explore": 0,
+      "build": 0,
+      "cooperate": 155
+    }
+  },
+  "divergence": {
+    "delta_q": 9.9231,
+    "delta_cooperation": 0.62,
+    "delta_build": 0.0,
+    "delta_hunger": 0.29,
+    "delta_energy": -0.257,
+    "delta_stress": 0.0
+  }
+}

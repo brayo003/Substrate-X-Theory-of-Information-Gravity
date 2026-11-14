@@ -1,0 +1,179 @@
+{
+  "primary_metric": "coord_completion_rate",
+  "metric_direction": "higher_is_better",
+  "bonferroni_alpha": 0.0125,
+  "summary": {
+    "baseline": {
+      "n": 10,
+      "mean": 0.937877,
+      "std": 0.071303,
+      "mean_resources": 78.568,
+      "coordination_rate": 0.42
+    },
+    "spectral": {
+      "n": 10,
+      "mean": 0.954231,
+      "std": 0.038089,
+      "mean_resources": 80.922,
+      "coordination_rate": 0.4282
+    },
+    "time_reversed": {
+      "n": 10,
+      "mean": 0.974014,
+      "std": 0.039817,
+      "mean_resources": 81.726,
+      "coordination_rate": 0.4327
+    },
+    "shuffled": {
+      "n": 10,
+      "mean": 0.954487,
+      "std": 0.059767,
+      "mean_resources": 81.066,
+      "coordination_rate": 0.4297
+    },
+    "constant": {
+      "n": 10,
+      "mean": 0.961789,
+      "std": 0.050864,
+      "mean_resources": 81.416,
+      "coordination_rate": 0.4327
+    }
+  },
+  "comparisons": {
+    "spectral_vs_baseline": {
+      "cond_a": "spectral",
+      "cond_b": "baseline",
+      "metric": "coord_completion_rate",
+      "n_pairs": 10,
+      "mean_a": 0.954231,
+      "mean_b": 0.937877,
+      "mean_diff": 0.016354,
+      "std_diff": 0.058866,
+      "ci_95": [
+        -0.017149,
+        0.051109
+      ],
+      "t": 0.8785,
+      "p_raw": null,
+      "p_bonferroni": null,
+      "cohens_d": 0.2778,
+      "significant": false,
+      "direction": "spectral_better",
+      "bonferroni_alpha": 0.0125
+    },
+    "spectral_vs_time_reversed": {
+      "cond_a": "spectral",
+      "cond_b": "time_reversed",
+      "metric": "coord_completion_rate",
+      "n_pairs": 10,
+      "mean_a": 0.954231,
+      "mean_b": 0.974014,
+      "mean_diff": -0.019783,
+      "std_diff": 0.040367,
+      "ci_95": [
+        -0.042603,
+        0.004101
+      ],
+      "t": -1.5498,
+      "p_raw": null,
+      "p_bonferroni": null,
+      "cohens_d": -0.4901,
+      "significant": false,
+      "direction": "spectral_worse",
+      "bonferroni_alpha": 0.0125
+    },
+    "spectral_vs_shuffled": {
+      "cond_a": "spectral",
+      "cond_b": "shuffled",
+      "metric": "coord_completion_rate",
+      "n_pairs": 10,
+      "mean_a": 0.954231,
+      "mean_b": 0.954487,
+      "mean_diff": -0.000256,
+      "std_diff": 0.036143,
+      "ci_95": [
+        -0.0188,
+        0.023663
+      ],
+      "t": -0.0224,
+      "p_raw": null,
+      "p_bonferroni": null,
+      "cohens_d": -0.0071,
+      "significant": false,
+      "direction": "spectral_worse",
+      "bonferroni_alpha": 0.0125
+    },
+    "spectral_vs_constant": {
+      "cond_a": "spectral",
+      "cond_b": "constant",
+      "metric": "coord_completion_rate",
+      "n_pairs": 10,
+      "mean_a": 0.954231,
+      "mean_b": 0.961789,
+      "mean_diff": -0.007558,
+      "std_diff": 0.03417,
+      "ci_95": [
+        -0.025964,
+        0.014462
+      ],
+      "t": -0.6995,
+      "p_raw": null,
+      "p_bonferroni": null,
+      "cohens_d": -0.2212,
+      "significant": false,
+      "direction": "spectral_worse",
+      "bonferroni_alpha": 0.0125
+    }
+  },
+  "lead_lag": {
+    "lags": [
+      -10,
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "cross_correlations": [
+      0.083764,
+      0.126735,
+      0.147548,
+      0.15494,
+      0.147537,
+      0.123798,
+      0.127635,
+      0.135679,
+      0.152953,
+      0.174286,
+      0.203839,
+      0.244087,
+      0.238465,
+      0.202555,
+      0.16139,
+      0.109773,
+      0.050857,
+      0.01801,
+      0.019986,
+      0.05133,
+      0.105771
+    ],
+    "peak_lag": 1,
+    "peak_xcorr": 0.244087,
+    "contemporaneous": 0.203839
+  }
+}

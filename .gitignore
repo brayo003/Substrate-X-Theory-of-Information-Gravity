@@ -1,0 +1,48 @@
+# Ignore all data files
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore finance / trading directories and logs
+finance/
+data/
+market_data/
+backtests/
+logs/
+*.log
+
+# Ignore sensitive credentials / API keys
+.env
+config_secrets.*
+*.key
+*.pem
+
+# Python caches and artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archives and binary bundles
+*.zip
+*.tar.gz
+*.bin
+.git_bak/
+.aider.tags.cache.v4/
+SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/substrate_ai_module/_archive/
+*.tsv.gz
+*.tsv.gz
+*.csv
+*.npy
+*.npz
+*.tsv.gz
+*.csv
+*.npy
+*.npz

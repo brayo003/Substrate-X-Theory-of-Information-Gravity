@@ -1,0 +1,197 @@
+{
+  "constants": {
+    "C11_GPa": 165.7,
+    "C12_GPa": 63.9,
+    "C44_GPa": 79.6,
+    "rho_kg_m3": 2330.0
+  },
+  "operational_gms_tests": {
+    "gapless": "omega_b(k) = v_b(n)|k| + O(k^2), so omega_b(0)=0",
+    "distinguishability": "NOT TESTED: requires a coarse-grained observable map",
+    "minimal_support": "NOT TESTED: requires a branch-resolved kinetic closure",
+    "prw_mapping": "NOT DERIVED: requires reciprocal branch-preserving scattering"
+  },
+  "mode_count_tested": 12,
+  "gapless_elastic_mode_count": 12,
+  "unique_speed_count": 9,
+  "speed_range_m_per_s": [
+    4673.91629816279,
+    9356.246144529563
+  ],
+  "coherence_length_at_tau_1us_mm": [
+    9.34783259632558,
+    18.712492289059124
+  ],
+  "modes": [
+    {
+      "direction": "[100]",
+      "branch": "TA1",
+      "speed_m_per_s": 5844.920027575687,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.0
+    },
+    {
+      "direction": "[100]",
+      "branch": "TA2",
+      "speed_m_per_s": 5844.920027575687,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.0
+    },
+    {
+      "direction": "[100]",
+      "branch": "LA",
+      "speed_m_per_s": 8433.023172523966,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 1.0
+    },
+    {
+      "direction": "[110]",
+      "branch": "TA1",
+      "speed_m_per_s": 4673.91629816279,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.0
+    },
+    {
+      "direction": "[110]",
+      "branch": "TA2",
+      "speed_m_per_s": 5844.920027575687,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.0
+    },
+    {
+      "direction": "[110]",
+      "branch": "LA",
+      "speed_m_per_s": 9134.192706246664,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.9999999999999998
+    },
+    {
+      "direction": "[111]",
+      "branch": "TA1",
+      "speed_m_per_s": 5094.247646552559,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 4.163336342344337e-17
+    },
+    {
+      "direction": "[111]",
+      "branch": "TA2",
+      "speed_m_per_s": 5094.247646552561,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 1.1102230246251565e-16
+    },
+    {
+      "direction": "[111]",
+      "branch": "LA",
+      "speed_m_per_s": 9356.246144529563,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 1.0
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "TA1",
+      "speed_m_per_s": 4893.089750176558,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.07290948397745523
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "TA2",
+      "speed_m_per_s": 5626.044336855586,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.04276101893327641
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "LA",
+      "speed_m_per_s": 9156.820294310097,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.9964214481864233
+    }
+  ],
+  "counterexample": [
+    {
+      "direction": "generic_[123]",
+      "branch": "TA1",
+      "speed_m_per_s": 4893.089750176558,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.07290948397745523
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "LA",
+      "speed_m_per_s": 9156.820294310097,
+      "gapless_in_elastic_limit": true,
+      "distinguishability_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "minimal_support_status": "NOT_TESTED_BY_EIGENVALUE_CALCULATION",
+      "prw_mapping_status": "CONDITIONAL_BRANCH_RESOLVED_KINETIC_ASSUMPTION",
+      "polarization_alignment_abs": 0.9964214481864233
+    }
+  ],
+  "prw_maps_for_counterexample": [
+    {
+      "branch": "TA1",
+      "direction": "generic_[123]",
+      "speed_m_per_s": 4893.089750176558,
+      "right_left_mapping": [
+        "d n_+ / dt + 4893.090 d n_+ / ds = -gamma (n_+ - n_-)",
+        "d n_- / dt - 4893.090 d n_- / ds = +gamma (n_+ - n_-)"
+      ],
+      "telegrapher_speed": 4893.089750176558
+    },
+    {
+      "branch": "LA",
+      "direction": "generic_[123]",
+      "speed_m_per_s": 9156.820294310097,
+      "right_left_mapping": [
+        "d n_+ / dt + 9156.820 d n_+ / ds = -gamma (n_+ - n_-)",
+        "d n_- / dt - 9156.820 d n_- / ds = +gamma (n_+ - n_-)"
+      ],
+      "telegrapher_speed": 9156.820294310097
+    }
+  ],
+  "verdict": "ELASTIC_MODE_SPEED_NONUNIQUENESS",
+  "bound_audit": {
+    "derived_from_elasticity": "branch speeds lie in [4673.916, 9356.246] m/s for sampled directions",
+    "not_derived_from_gms": "c <= v_s requires an independent definition of v_s as a maximum admissible signal speed",
+    "recommended_bound": "c <= v_max, where v_max is the maximum group/front speed over all allowed branches and directions"
+  }
+}

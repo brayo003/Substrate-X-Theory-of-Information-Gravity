@@ -1,0 +1,134 @@
+{
+  "backend_gradient_computation": {
+    "test_name": "backend_gradient_computation",
+    "field_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.07
+      ],
+      [
+        0.4,
+        0.0,
+        0.0,
+        0.2,
+        0.105
+      ]
+    ],
+    "backend_gradients": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.01,
+        0.02
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.035,
+        0.07
+      ],
+      [
+        -0.4,
+        -0.2,
+        0.1,
+        0.0525,
+        -0.09500000000000001
+      ]
+    ],
+    "constant_row_gradient": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gradient_correct": true
+  },
+  "backend_q_computation": {
+    "test_name": "backend_q_computation",
+    "test_squared_magnitudes": [
+      0.0,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "backend_Q_values": [
+      -1.0,
+      -0.5,
+      0.0,
+      1.0
+    ],
+    "reference_Q_values": [
+      -1.0,
+      -0.5,
+      0.0,
+      1.0
+    ],
+    "formulas_identical": true
+  },
+  "coordinate_system_validity": {
+    "test_name": "coordinate_system_validity",
+    "feature_names": [
+      "math_symbols",
+      "abstract_terms",
+      "technical_density",
+      "complexity_words",
+      "length_score"
+    ],
+    "analysis": {
+      "has_metric_structure": false,
+      "has_physical_interpretation": false,
+      "supports_coordinate_transformations": false,
+      "coordinate_spacing": "unknown",
+      "coordinate_meaning": "abstract text features, not physical space"
+    },
+    "valid_coordinates": false
+  },
+  "s_field_validity": {
+    "test_name": "s_field_validity",
+    "s_backend": [
+      0.045,
+      0.7050000000000001
+    ],
+    "analysis": {
+      "is_scalar": true,
+      "has_physical_units": false,
+      "represents_information_density": false,
+      "defined_over_physical_space": false,
+      "construction_method": "sum of normalized text features",
+      "theoretical_requirement": "information density in physical space (info/m\u00b3)"
+    },
+    "valid_s_field": false
+  },
+  "parameter_validity": {
+    "test_name": "parameter_validity",
+    "analysis": {
+      "c_backend": 1.0,
+      "tau_backend": 0.5,
+      "c_has_units": false,
+      "tau_has_units": false,
+      "c_empirically_grounded": false,
+      "tau_empirically_grounded": false,
+      "c_theoretical_requirement": "m/s (propagation speed)",
+      "tau_theoretical_requirement": "s (damping time)"
+    },
+    "valid_parameters": false
+  },
+  "summary": {
+    "total_tests": 5,
+    "passed_tests": 2,
+    "operationalization_valid": false
+  }
+}

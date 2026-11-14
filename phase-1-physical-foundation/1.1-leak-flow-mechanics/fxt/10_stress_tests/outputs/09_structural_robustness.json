@@ -1,0 +1,16 @@
+{
+  "interpretation": "Among the tested generators, exact preservation of energy-basis populations selects a longitudinal channel. It does not uniquely select a microscopic substrate interaction: many longitudinal classical/quantum baths yield the same effective channel.",
+  "result": {
+    "max_mixed_population_excursion": 0.3494028940438989,
+    "minimum_nonzero_mix_population_excursion": 0.00041097058420080934,
+    "pure_z_population_excursion": 0.0
+  },
+  "status": "PARTIAL",
+  "tested_alternatives": [
+    "sigma_z",
+    "sigma_x/sigma_y transverse proxy",
+    "mixed cos(a)sigma_z+sin(a)sigma_x",
+    "amplitude jump sigma_-"
+  ],
+  "verdict": "Effective pure-dephasing operator selection is robust conditional on the observable requirement, but microscopic uniqueness is not demonstrated."
+}

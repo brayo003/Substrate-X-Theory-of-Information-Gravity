@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "transformation": "s,J,s0 -> a(s,J,s0); g -> g/a",
+  "checks": {
+    "interaction_invariant": true,
+    "rate_invariant": true,
+    "g_changes_with_normalization": true
+  },
+  "conclusion": "The frozen equations determine only normalization-invariant products; they cannot numerically determine g without an additional bridge or independent calibration."
+}

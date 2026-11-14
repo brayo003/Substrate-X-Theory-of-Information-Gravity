@@ -1,0 +1,353 @@
+{
+  "audit": "Theorem_CUT_stress_test",
+  "date": "2026-10-10",
+  "command": "python 04_validations/theorem_cut_stress_test.py",
+  "verdict": "THEOREM CUT AS STATED IS TOO STRONG \u2014 scale freedom survives SE1\u2013SE4",
+  "tests": {
+    "Q1_scale_freedom": {
+      "test": "Q1_scale_freedom",
+      "reference_a_m": 1e-06,
+      "reference_dt_s": 2e-10,
+      "reference_c_m_per_s": 5000.0,
+      "rescale_a_cases": [
+        {
+          "k": 0.001,
+          "a_m": 1e-09,
+          "dt_s": 2e-10,
+          "c_m_per_s": 5.0,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        },
+        {
+          "k": 0.1,
+          "a_m": 1e-07,
+          "dt_s": 2e-10,
+          "c_m_per_s": 499.99999999999994,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        },
+        {
+          "k": 1.0,
+          "a_m": 1e-06,
+          "dt_s": 2e-10,
+          "c_m_per_s": 5000.0,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": false
+        },
+        {
+          "k": 10.0,
+          "a_m": 9.999999999999999e-06,
+          "dt_s": 2e-10,
+          "c_m_per_s": 49999.99999999999,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        },
+        {
+          "k": 1000.0,
+          "a_m": 0.001,
+          "dt_s": 2e-10,
+          "c_m_per_s": 5000000.0,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        }
+      ],
+      "rescale_dt_cases": [
+        {
+          "k": 0.001,
+          "a_m": 1e-06,
+          "dt_s": 2e-07,
+          "c_m_per_s": 5.0,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        },
+        {
+          "k": 0.1,
+          "a_m": 1e-06,
+          "dt_s": 2e-09,
+          "c_m_per_s": 499.99999999999994,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        },
+        {
+          "k": 1.0,
+          "a_m": 1e-06,
+          "dt_s": 2e-10,
+          "c_m_per_s": 5000.0,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": false
+        },
+        {
+          "k": 10.0,
+          "a_m": 1e-06,
+          "dt_s": 2.0000000000000002e-11,
+          "c_m_per_s": 49999.99999999999,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        },
+        {
+          "k": 1000.0,
+          "a_m": 1e-06,
+          "dt_s": 2e-13,
+          "c_m_per_s": 5000000.0,
+          "SE1_satisfied": true,
+          "SE2_satisfied": true,
+          "SE3_satisfied": true,
+          "SE4_satisfied": true,
+          "c_changed": true
+        }
+      ],
+      "rescale_both_same_cases": [
+        {
+          "k": 0.001,
+          "a_m": 1e-09,
+          "dt_s": 2e-13,
+          "c_m_per_s": 5000.0,
+          "c_unchanged": true
+        },
+        {
+          "k": 0.1,
+          "a_m": 1e-07,
+          "dt_s": 2.0000000000000002e-11,
+          "c_m_per_s": 4999.999999999999,
+          "c_unchanged": true
+        },
+        {
+          "k": 1.0,
+          "a_m": 1e-06,
+          "dt_s": 2e-10,
+          "c_m_per_s": 5000.0,
+          "c_unchanged": true
+        },
+        {
+          "k": 10.0,
+          "a_m": 9.999999999999999e-06,
+          "dt_s": 2e-09,
+          "c_m_per_s": 4999.999999999999,
+          "c_unchanged": true
+        },
+        {
+          "k": 1000.0,
+          "a_m": 0.001,
+          "dt_s": 2.0000000000000002e-07,
+          "c_m_per_s": 5000.0,
+          "c_unchanged": true
+        }
+      ],
+      "all_rescaled_a_satisfy_SE1_to_SE4": true,
+      "all_rescaled_dt_satisfy_SE1_to_SE4": true,
+      "all_rescaled_a_give_different_c": true,
+      "all_rescaled_dt_give_different_c": true,
+      "rescaling_both_same_preserves_c": true,
+      "conclusion": "SE1\u2013SE4 DO NOT fix the numerical value of c. Rescaling a \u2192 ka (k \u2260 1) satisfies all four conditions but changes c \u2192 kc. Rescaling dt \u2192 dt/k also satisfies all four conditions and also changes c \u2192 kc. Only the RATIO c = a/dt is preserved under simultaneous rescaling a \u2192 ka, dt \u2192 kdt. Therefore SE1\u2013SE4 fix c only UP TO independent rescalings of the length unit and the time unit. A fifth condition is needed to fix the numerical value.",
+      "theorem_cut_verdict": "THEOREM CUT AS STATED IS TOO STRONG. It claims SE1\u2013SE4 are sufficient for a unique numerical speed c. But for any k > 0, (SE1: k\u00b7a, SE2, SE3: dt, SE4) also satisfies all four conditions and gives c \u2192 kc. The theorem gives uniqueness ONLY if the numerical values of a and dt are treated as pre-fixed \u2014 i.e., if the metric and time unit are externally given. That is an implicit fifth condition.",
+      "status": "FAIL"
+    },
+    "Q2_necessity": {
+      "test": "Q2_necessity",
+      "results": {
+        "without_SE1": {
+          "axioms_held": [
+            "SE2",
+            "SE3",
+            "SE4"
+          ],
+          "axiom_removed": "SE1 (metric embedding)",
+          "counterexample": "Without SE1 there is no spatial scale a. c = a/dt cannot be computed without a. Any positive real can serve as c \u2014 complete non-uniqueness.",
+          "is_necessary": true
+        },
+        "without_SE2": {
+          "axioms_held": [
+            "SE1",
+            "SE3",
+            "SE4"
+          ],
+          "axiom_removed": "SE2 (isotropy)",
+          "counterexample": {
+            "a_x": 1e-06,
+            "a_y": 1.5e-06,
+            "dt": 2e-10,
+            "c_x_m_per_s": 5000.0,
+            "c_y_m_per_s": 7500.0,
+            "description": "Anisotropic embedding gives c_x \u2260 c_y. Two propagation speeds."
+          },
+          "is_necessary": true
+        },
+        "without_SE3": {
+          "axioms_held": [
+            "SE1",
+            "SE2",
+            "SE4"
+          ],
+          "axiom_removed": "SE3 (uniform time step)",
+          "counterexample": {
+            "a": 1e-06,
+            "dt_short": 1e-10,
+            "dt_long": 3e-10,
+            "c_short": 10000.0,
+            "c_long": 3333.333333333333,
+            "description": "Different dt per morphism \u2192 different c per morphism."
+          },
+          "is_necessary": true
+        },
+        "without_SE4": {
+          "axioms_held": [
+            "SE1",
+            "SE2",
+            "SE3"
+          ],
+          "axiom_removed": "SE4 (single branch)",
+          "counterexample": {
+            "a_branch1": 1e-06,
+            "a_branch2": 2e-06,
+            "dt": 2e-10,
+            "c_branch1": 5000.0,
+            "c_branch2": 10000.0,
+            "description": "Two branches with different step lengths \u2192 two speeds."
+          },
+          "is_necessary": true
+        }
+      },
+      "all_four_necessary": true,
+      "caveat": "These necessity results hold for uniqueness-of-ratio c = a/dt given fixed a and dt. They do NOT establish necessity for uniqueness of the numerical value in m/s, because (as shown in Q1) SE1\u2013SE4 together do not fix the numerical value either.",
+      "status": "PASS"
+    },
+    "Q3_what_SE1_to_SE4_fix": {
+      "test": "Q3_what_SE1_to_SE4_fix",
+      "reference_c_m_per_s": 5000.0,
+      "free_family_size": 9,
+      "distinct_c_values_under_SE1_to_SE4": [
+        50.0,
+        500.0,
+        5000.0,
+        50000.0,
+        500000.0
+      ],
+      "n_distinct_c_values": 5,
+      "conclusion": "SE1\u2013SE4 admit a 2-parameter family of valid (a, dt) pairs: a \u2192 k_a*a, dt \u2192 k_t*dt for any k_a, k_t > 0. This gives 5 distinct c values in the tested grid. In continuous parameter space, infinitely many c values are possible. SE1\u2013SE4 do NOT uniquely fix c in m/s. They fix c only when a and dt are themselves fixed \u2014 which requires a fifth condition.",
+      "what_is_fixed": "c as a ratio a/dt, given specific numerical a and dt",
+      "what_is_not_fixed": "the numerical values of a, dt, or c in physical units",
+      "remaining_freedom": "2-parameter group: (a, dt) -> (k_a*a, k_t*dt), k_a,k_t > 0",
+      "status": "PASS"
+    },
+    "Q4_fifth_condition": {
+      "test": "Q4_fifth_condition",
+      "SE5_candidates": {
+        "SE5a_anchor_length": {
+          "statement": "Fix a to a physical length: a = n * l_Planck or a = r_q * f",
+          "type": "Empirical / physical identification",
+          "derivable_from_Ax1_Ax5": false,
+          "derivable_from_SE1_SE4": false,
+          "fixes_scale": true,
+          "example": "a = r_q ~ 100 nm \u2192 dt = a/c_acoustic, c = c_acoustic",
+          "problem": "r_q and c_acoustic must be measured; introduces new empirical parameters"
+        },
+        "SE5b_anchor_time": {
+          "statement": "Fix dt to a physical time: dt = n * t_Planck or dt = 1/omega_qubit",
+          "type": "Empirical / physical identification",
+          "derivable_from_Ax1_Ax5": false,
+          "derivable_from_SE1_SE4": false,
+          "fixes_scale": true,
+          "example": "dt = 1/omega_qubit ~ 2e-10 s (for 5 GHz qubit)",
+          "problem": "omega_qubit must be measured; makes c depend on qubit design"
+        },
+        "SE5c_anchor_c_to_measurement": {
+          "statement": "Require c_CCA = v_acoustic for the specific physical substrate",
+          "type": "Empirical identification / constitutive relation",
+          "derivable_from_Ax1_Ax5": false,
+          "derivable_from_SE1_SE4": false,
+          "fixes_scale": true,
+          "example": "c = v_LA(silicon) \u2248 8435 m/s (for [100] propagation)",
+          "problem": "This is the GAP-7 assumption: identifying CCA speed with phonon speed. The identification is not derived.",
+          "circularity_check": "This makes c = v_acoustic, which is what GAP-7 is trying to derive. It is not a new axiom \u2014 it is the same unproved identification."
+        },
+        "SE5d_empirical_calibration": {
+          "statement": "Calibrate c by fitting to a measured observable (e.g., xi_c from qubit data)",
+          "type": "Empirical / calibration",
+          "derivable_from_Ax1_Ax5": false,
+          "derivable_from_SE1_SE4": false,
+          "fixes_scale": true,
+          "example": "c = xi_c_measured / (2 * tau_B_measured) from Ramsey experiment",
+          "problem": "This makes c a measured parameter, not a derived one. Consistent but not foundational.",
+          "status": "This is the honest position: c is an empirical input."
+        }
+      },
+      "all_SE5_are_empirical": true,
+      "corrected_theorem_CUT": "THEOREM CUT (CORRECTED): Let C be a CCA satisfying Ax1\u2013Ax5 with additional axioms SE1\u2013SE4 (metric embedding, isotropy, uniform time step, single branch). Then for any choice of physical units (length unit L and time unit T), the propagation speed in those units is c = a/dt, where a is the step length in L and dt is the time step in T. The ratio c is unique given the axioms AND the unit system. The numerical value of c in SI units (m/s) is NOT determined by SE1\u2013SE4 alone \u2014 it requires a fifth condition SE5 that anchors the unit system to a physical observable. SE5 is ALWAYS an empirical input.",
+      "implication_for_gap7": "GAP-7 is not just 'which derivation route works.' It is: can the numerical value of c be derived without empirical calibration? Theorem NU + Q1 show the answer is NO. SE1\u2013SE4 give c = a/dt as a ratio in chosen units. SE5 (empirical) is required to set those units. This means c will ALWAYS be a calibrated parameter in the theory, not a derived constant like e/m_e in atomic physics.",
+      "distinction_NU_meanings": {
+        "representation_non_uniqueness": "The same abstract CCA admits embeddings with different c values. This is PROVED by Theorem NU and Q1. It is a mathematical theorem about abstract CCA structures.",
+        "physical_non_identifiability": "No physical prediction of the theory can select c without additional empirical information. This is SUPPORTED by the representation non-uniqueness (if different embeddings are all physically admissible) but requires specifying which embeddings count as 'physically admissible.' The current theory does not specify this \u2014 the admissibility criterion is itself an open question.",
+        "relationship": "Representation non-uniqueness does NOT automatically prove physical non-identifiability. To bridge the gap one must show that all representations satisfying SE1\u2013SE4 are physically equivalent, or that the theory has no way to distinguish between them. The PASS results in V13 (different c, same temporal PSD) support physical non-identifiability from temporal observables, but the spatial observable \u03be_c DOES distinguish them. The full non-identifiability claim requires that \u03be_c is not independently measurable without assuming c \u2014 which is a separate analysis, not proved here."
+      },
+      "status": "PASS"
+    },
+    "Q5_restated_theorem": {
+      "test": "Q5_restated_theorem",
+      "theorem_NU_correct": "THEOREM NU (Non-Uniqueness of Speed \u2014 Representation Level): For any CCA C satisfying Ax1\u2013Ax5 and any c > 0, there exists a metric embedding satisfying SE1\u2013SE4 that assigns propagation speed c to C. PROOF: Choose a = c * dt for any dt > 0. Q1 confirms this. STATUS: PROVED (representation-level non-uniqueness).",
+      "theorem_CUT_correct": "THEOREM CUT (Conditional Uniqueness \u2014 Corrected): Let C be a CCA satisfying Ax1\u2013Ax5. Let an embedding satisfying SE1\u2013SE4 be given, with specific numerical values a_0 \u2208 \u211d_{>0} [m] and dt_0 \u2208 \u211d_{>0} [s] for the spatial step and time step. Then the propagation speed c = a_0/dt_0 is uniquely and deterministically computed from a_0 and dt_0. HOWEVER: a_0 and dt_0 themselves are FREE parameters of the embedding \u2014 they are not determined by Ax1\u2013Ax5 or by SE1\u2013SE4 alone. A fifth condition SE5 must supply the numerical values of a_0 or dt_0 (or their ratio c = a_0/dt_0 directly). SE5 is always empirical. STATUS: CORRECTED \u2014 prior audit's sufficiency claim was too strong.",
+      "SE5_description": "SE5 (Scale anchoring): The numerical value of the spatial step a or the time step dt must be supplied by an empirical observation. This is a constitutive relation between the abstract CCA structure and the physical system it represents. It is the same in character as choosing a = r_q (qubit size) or dt = 1/omega_q (qubit period) or c = v_acoustic (acoustic speed). All three are physical identifications, not mathematical derivations.",
+      "five_axiom_structure": {
+        "SE1": {
+          "content": "Metric embedding \u03c6: O \u2192 R^d",
+          "fixes": "Existence of a and dt as variables",
+          "derivable": false
+        },
+        "SE2": {
+          "content": "Isotropy: equal step length a in all directions",
+          "fixes": "Single speed c (not multiple c_b)",
+          "derivable": false
+        },
+        "SE3": {
+          "content": "Uniform time step dt per morphism",
+          "fixes": "dt is a constant (not function of morphism)",
+          "derivable": false
+        },
+        "SE4": {
+          "content": "Single branch",
+          "fixes": "One speed per direction (not multi-branch spectrum)",
+          "derivable": false
+        },
+        "SE5": {
+          "content": "Scale anchor: numerical value of a or dt",
+          "fixes": "Numerical value of c in physical units",
+          "derivable": "ALWAYS EMPIRICAL"
+        }
+      },
+      "prior_audit_error": "The prior audit (CCA_GEOMETRIC_TRANSPORT_STRUCTURE_AUDIT.md) claimed SE1\u2013SE4 are sufficient for a unique numerical speed. This is incorrect. V14 in the prior script fixed specific numerical values of a and dt within the test code, which is equivalent to implicitly adding SE5. The test passed because SE5 was present (implicitly), not because SE1\u2013SE4 alone suffice.",
+      "corrected_gap7_statement": "GAP-7 requires not just SE1\u2013SE4 but also SE5 (scale anchoring). SE5 is always empirical. Therefore c will always be a calibrated parameter, not a derived constant, unless the theory gains a new principle that fixes the physical scale of the CCA lattice from within (e.g., from the large-N conjecture or from a quantum of information theory that fixes the lattice spacing to a natural unit).",
+      "what_would_close_gap7_completely": [
+        "A derivation of the CCA lattice spacing a from a dimensionful physical constant (e.g., Planck length, Bohr radius, phonon wavelength) \u2014 none currently exists.",
+        "A proof that the theory's predictions are independent of c (i.e., c drops out) \u2014 false: \u03be_c = c/\u03bb appears in the spatial correlator.",
+        "An experimental measurement of c via P3 ratio \u03be_c/(2\u03c4_B), treating c as an empirical primitive \u2014 this is honest but not a derivation."
+      ],
+      "status": "PASS"
+    }
+  }
+}

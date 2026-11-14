@@ -1,0 +1,164 @@
+V12 / SXCOmega — EMPIRICAL VALIDATION REPORT
+Generated: 2026-07-18 04:48 UTC
+
+========================================================================
+1. DATASET SUMMARY
+========================================================================
+  total_ticks                  25473670
+  start                        2023-01-01T22:04:01.067000+00:00
+  end                          2025-10-24T20:59:59.384000+00:00
+  trading_days                 307
+  median_gap_sec               0.203
+  p99_gap_sec                  9.682
+  spread_mean_pips             0.4982007697481294
+  spread_p99_pips              1.9001960754394531
+  ask_min                      1.0177500247955322
+  ask_max                      1.1918799877166748
+
+========================================================================
+2. V12 CONTINUOUS STATE HISTORY
+========================================================================
+  Total bars analysed    : 72,954
+  FIREWALL bars          : 10,621  (14.6 %)
+  NOMINAL bars           : 62,333  (85.4 %)
+  FIREWALL episodes      : 181
+  NOMINAL  episodes      : 182
+  FIREWALL dur  median   : 215 min
+  FIREWALL dur  p90      : 515 min
+  FIREWALL dur  max      : 2060 min
+  NOMINAL  dur  median   : 1185 min
+  NOMINAL  dur  p90      : 4046 min
+
+  T_sys descriptive statistics:
+    count        72954.0000
+    mean         0.7250
+    std          0.1326
+    min          0.0243
+    25%          0.6484
+    50%          0.7338
+    75%          0.8183
+    max          1.0318
+
+========================================================================
+3. CONTEMPORANEOUS VALIDATION  (FIREWALL vs NOMINAL)
+========================================================================
+
+Mann-Whitney U tests with rank-biserial effect size
+---------------------------------------------------
+  Label                    FW mean   NM mean       r          p  sig
+  -----------------------------------------------------------------
+  realized_vol              0.0005    0.0002   0.788   0.00e+00  ***
+  atr                       0.0008    0.0004   0.761   0.00e+00  ***
+  tick_density            658.6980  296.3999   0.634   0.00e+00  ***
+  range_pct                 0.0006    0.0003   0.570   0.00e+00  ***
+  abs_return                0.0003    0.0002   0.333   0.00e+00  ***
+  adx                      27.5454   23.7786   0.195  1.73e-226  ***
+  spread_abs                0.5232    0.5733   0.127   3.08e-98  ***
+  spread_norm               1.0931    1.3449   0.015   1.28e-02    *
+  trend_persist            -0.0583   -0.0600   0.008   1.75e-01   ns
+  breakout                  0.1076    0.1240  -0.016   1.73e-06  ***
+  drawdown                 -0.0012   -0.0007  -0.224  1.32e-300  ***
+
+  Significance codes: *** p<0.001  ** p<0.01  * p<0.05  ns = not significant
+  Positive r → FIREWALL has higher values; negative r → NOMINAL higher.
+
+========================================================================
+4. PREDICTIVE VALIDATION  (Spearman ρ: T_sys vs future labels)
+========================================================================
+  Label                   k=   1  k=   3  k=   6  k=  12
+  --------------------------------------------------------
+  realized_vol            +0.273***  +0.271***  +0.263***  +0.240***
+  atr                     +0.296***  +0.291***  +0.281***  +0.253***
+  adx                     +0.080***  +0.076***  +0.070***  +0.052***
+  spread_norm             -0.082***  -0.093***  -0.104***  -0.119***
+  spread_abs              -0.052***  -0.066***  -0.083***  -0.109***
+  tick_density            +0.266***  +0.253***  +0.238***  +0.209***
+  range_pct               +0.216***  +0.208***  +0.198***  +0.179***
+  breakout                -0.011**  -0.015***  -0.016***  -0.015***
+  trend_persist           +0.036***  +0.033***  +0.029***  +0.025***
+  drawdown                +0.028***  +0.003ns  -0.026***  -0.068***
+  abs_return              +0.113***  +0.110***  +0.106***  +0.096***
+
+  * = p<0.05 against T_sys(t) predicting label(t+k)
+
+Lead/lag cross-correlation peak (T_sys vs realized_vol)
+-------------------------------------------------------
+  Peak correlation: r=-0.213 at lag=-24 bars (-120 min)
+  Positive lag means T_sys leads realized volatility.
+
+========================================================================
+5. POST-FIREWALL FORWARD WINDOW  (ratio to NOMINAL baseline)
+========================================================================
+  Horizon                 rv           atr        spread           adx    abs_return
+  ------------------------------------------------------------------------------------
+     5 min            2.499         2.362         0.919         1.326         2.225
+    15 min            2.506         2.365         0.898         1.341         2.153
+    30 min            2.487         2.357         0.874         1.347         2.067
+    60 min            2.428         2.285         0.842         1.330         1.975
+
+  Values > 1.0 indicate post-FIREWALL conditions exceed NOMINAL baseline.
+
+========================================================================
+6. PERMUTATION TESTS  (empirical null distribution)
+========================================================================
+  Label                    Observed r   Null p95     p_perm  sig
+  --------------------------------------------------------------
+  realized_vol                 0.7884     0.0112     0.0000  ***
+  atr                          0.7612     0.0109     0.0000  ***
+  spread_abs                   0.1275     0.0122     0.0000  ***
+  adx                          0.1947     0.0118     0.0000  ***
+  abs_return                   0.3331     0.0115     0.0000  ***
+
+========================================================================
+7. STABILITY ANALYSIS
+========================================================================
+
+Rank-biserial r by year (realized_vol)
+--------------------------------------
+  2023  r=+0.690  p=0.000e+00  ***  (n_fw=1391, n_nm=4580)
+  2024  r=+0.759  p=1.944e-169  ***  (n_fw=484, n_nm=5516)
+  2025  r=+0.797  p=0.000e+00  ***  (n_fw=8746, n_nm=52237)
+
+Rank-biserial r by trading session (realized_vol)
+-------------------------------------------------
+  asia      r=+0.916  p=0.000e+00  ***
+  london    r=+0.723  p=0.000e+00  ***
+  ny        r=+0.603  p=0.000e+00  ***
+  late      r=+0.832  p=0.000e+00  ***
+
+========================================================================
+8. FAILURE CASES AND LIMITATIONS
+========================================================================
+  Labels where FIREWALL ≠ NOMINAL is NOT significant (p >= 0.05):
+    trend_persist  (p=0.175)
+
+  Known limitations:
+  - V12 parameters (β=3.5, γ=0.8) are fixed; no per-instrument calibration.
+  - Composite signal is unweighted mean of 6 normalised signals.
+  - Composite is scaled ×100 for the excitation_flux piecewise function.
+  - γ decays over time and is not reset between analysis windows.
+  - 2025 CSV data has limited coverage; data imbalance possible.
+  - Spread signal is itself a V12 input, so spread comparison is partially circular.
+
+========================================================================
+9. FINAL CONCLUSION
+========================================================================
+  Q1. Does V12 consistently identify meaningful market regimes?
+  ANSWER: YES.  4/4 key market labels differ
+    significantly between FIREWALL and NOMINAL (p<0.05).
+
+  Q2. Does FIREWALL correspond to objectively unstable market conditions?
+  ANSWER: YES.  FIREWALL bars have significantly higher realized
+    volatility (r=0.788, ***).
+
+  Q3. Does NOMINAL correspond to objectively stable market conditions?
+  ANSWER: YES (by complementarity to Q2).  NOMINAL periods have
+    significantly lower realized volatility than FIREWALL periods.
+
+  Q4. Does V12 contain statistically significant predictive information?
+  ANSWER: YES.  T_sys predicts future realized volatility
+    (best: rho_k1: ρ=+0.273, ***).
+
+========================================================================
+END OF REPORT
+========================================================================

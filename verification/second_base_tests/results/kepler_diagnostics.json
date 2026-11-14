@@ -1,0 +1,8 @@
+{
+  "residual_plot": "verification/second_base_tests/results/kepler_residuals.png",
+  "orbit_plot": "verification/second_base_tests/results/kepler_orbit.png",
+  "residual_std": 1.055456322885219,
+  "perihelion_m": 150000000750.0,
+  "aphelion_m": 335410196624.96844,
+  "mean_ratio": 2.5654228523003394e-14
+}

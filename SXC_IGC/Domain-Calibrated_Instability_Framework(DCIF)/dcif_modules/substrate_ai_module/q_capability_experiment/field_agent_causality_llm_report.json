@@ -1,0 +1,811 @@
+{
+  "experiment_config": {
+    "experiment_id": "field_agent_causality_llm_v1",
+    "experiment_start": "2026-08-09T18:14:31.402765+00:00",
+    "experiment_end": "2026-08-09T20:08:35.431288+00:00",
+    "elapsed_seconds": 6843.989098072052,
+    "ollama_model": "qwen2.5-coder:1.5b",
+    "llm_temperature": 0.7,
+    "llm_max_tokens": 64,
+    "llm_timeout": 360,
+    "seed": "controlled_field_causality_llm_v1_fixed_seed",
+    "target_ticks": 10,
+    "completed_ticks_a": 10,
+    "completed_ticks_b": 10,
+    "c_nominal_a": 1.0,
+    "c_nominal_b": 2.0,
+    "tau_nominal": 1.0,
+    "entity_type": "human",
+    "entity_name": "TestAgent",
+    "initial_needs": {
+      "hunger": 0.9,
+      "thirst": 0.8,
+      "energy": 0.1
+    },
+    "cooldown_ticks_override": 1,
+    "cooldown_seconds_override": 0.0,
+    "importance_threshold_override": 0.0
+  },
+  "control_validation": {
+    "all_passed": true,
+    "checks": {
+      "world_a_entity_count": true,
+      "world_b_entity_count": true,
+      "entity_type_a": true,
+      "entity_type_b": true,
+      "same_entity_type": true,
+      "c_nominal_a": true,
+      "c_nominal_b": true,
+      "c_nominal_differs": true,
+      "tau_identical": true,
+      "field_isolated": true,
+      "field_state_isolated": true,
+      "llm_enabled_a": true,
+      "llm_enabled_b": true,
+      "ollama_reachable": true,
+      "model_available": true,
+      "cooldown_ticks_a": true,
+      "cooldown_ticks_b": true,
+      "cooldown_secs_a": true,
+      "cooldown_secs_b": true,
+      "importance_threshold_a": true,
+      "importance_threshold_b": true
+    },
+    "failures": [],
+    "available_models": [
+      "qwen2.5-coder:1.5b",
+      "gemma2:2b",
+      "gemma2:latest",
+      "deepseek-coder:latest"
+    ]
+  },
+  "llm_call_counts": {
+    "world_a_total": 10,
+    "world_a_successful": 1,
+    "world_b_total": 10,
+    "world_b_successful": 3
+  },
+  "field_trajectories": {
+    "world_a": [
+      {
+        "tick": 10,
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 1.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.5,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      }
+    ],
+    "world_b": [
+      {
+        "tick": 10,
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.029374149959043194,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 2.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.25,
+        "propagating_power_fraction": 1.6761687909823352e-34,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      }
+    ]
+  },
+  "divergence_analysis": {
+    "first_divergence_tick": 1,
+    "first_divergence_layer": "FIELD_PARAMS",
+    "layer_divergence_ticks": {
+      "FIELD_PARAMS": 1,
+      "SPECTRAL_OBSERVABLE": 1,
+      "PERCEPTION": 2,
+      "LLM_INPUT": 2,
+      "LLM_OUTPUT": 1,
+      "PLAN": null,
+      "ACTION": null,
+      "STATE": null,
+      "MEMORY": 1
+    }
+  },
+  "classification": {
+    "label": "MEMORY_COUPLING_DETECTED",
+    "reason": "Field differs \u2192 perception differs \u2192 LLM output differs \u2192 memory differs",
+    "perception_differs": true,
+    "output_differs": true,
+    "plan_differs": false,
+    "state_differs": false,
+    "memory_differs": true,
+    "first_divergence_tick": 1,
+    "first_divergence_layer": "FIELD_PARAMS"
+  },
+  "llm_call_log_a": [
+    {
+      "world": "world_a_c1",
+      "tick": 1,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 0\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- None\n\nEnvironment:\n- location: village_center\n\nTransport Regime: unknown\nQ Regime: unknown\nSpectral Regime: unknown\nSpectral Dominant K: 0.0000\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "b86ed1316ff37775bb250d76f065eb3110686ab7cecd5b9a6376019bbfbf0559",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360113.0075454712
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 2,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 1\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-0000469d4ef2', 'revision_id': '00000000-0000-0000-0000-0000c3ab927d'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: boundary\nQ Regime: boundary\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "bc47d8583da8a5fe984758f0bb68f390093497270ed3d0f7b2eaab4b9f681c8e",
+      "response_text": "I am hungry, thirsty, and tired, so I need to find food, water, and rest.",
+      "response_hash": "9d1babfe181b1fb5117a534b93f5db155d9f0708f7f0b14f7d3c3855b22bb5ec",
+      "success": true,
+      "error": "",
+      "latency_ms": 270736.368894577
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 3,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 2\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000064c8782e', 'revision_id': '00000000-0000-0000-0000-0000bf485dfe'}\n- {'intent': 'I am hungry, thirsty, and tired, so I need to find food, water, and rest.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-0000469d4ef2', 'revision_id': '00000000-0000-0000-0000-0000c3ab927d'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "428a2d1d33559b9e32211e9c828453ab251b0b98f073ddcb42619a6dfc7523cd",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360111.4373207092
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 4,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 3\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-000065a3c846', 'revision_id': '00000000-0000-0000-0000-0000f02fc975'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000064c8782e', 'revision_id': '00000000-0000-0000-0000-0000bf485dfe'}\n- {'intent': 'I am hungry, thirsty, and tired, so I need to find food, water, and rest.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-0000469d4ef2', 'revision_id': '00000000-0000-0000-0000-0000c3ab927d'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "ba2277f60661bc0e620b279bb5e11788a12cb89aff51b154e123060c027c44ac",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360120.8016872406
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 5,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 4\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00008339cbdf', 'revision_id': '00000000-0000-0000-0000-0000efc08d14'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-000065a3c846', 'revision_id': '00000000-0000-0000-0000-0000f02fc975'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000064c8782e', 'revision_id': '00000000-0000-0000-0000-0000bf485dfe'}\n- {'intent': 'I am hungry, thirsty, and tired, so I need to find food, water, and rest.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-0000469d4ef2', 'revision_id': '00000000-0000-0000-0000-0000c3ab927d'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "27e365c8542cabf841b986adfdde4c6e15c6dffad8315f43f1e6dd19a520250b",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360112.78557777405
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 6,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 5\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b9e75174', 'revision_id': '00000000-0000-0000-0000-0000eff8383c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00008339cbdf', 'revision_id': '00000000-0000-0000-0000-0000efc08d14'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-000065a3c846', 'revision_id': '00000000-0000-0000-0000-0000f02fc975'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000064c8782e', 'revision_id': '00000000-0000-0000-0000-0000bf485dfe'}\n- {'intent': 'I am hungry, thirsty, and tired, so I need to find food, water, and rest.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "87633554d64d54773079f5e3381f10067666ff188d6fcf74774f78309ddd013d",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360111.1743450165
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 7,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 6\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00009af07a82', 'revision_id': '00000000-0000-0000-0000-00004564d06e'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b9e75174', 'revision_id': '00000000-0000-0000-0000-0000eff8383c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00008339cbdf', 'revision_id': '00000000-0000-0000-0000-0000efc08d14'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-000065a3c846', 'revision_id': '00000000-0000-0000-0000-0000f02fc975'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000064c8782e', 'revision_id': '00000000-0000-0000-0000-0000bf485dfe'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "1b2b37934deb5109694b800d21da8d04d470e062cfc0de5e9d11708e3cd153c3",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360118.02315711975
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 8,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 7\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00005696d55d', 'revision_id': '00000000-0000-0000-0000-00002eb9d8e2'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00009af07a82', 'revision_id': '00000000-0000-0000-0000-00004564d06e'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b9e75174', 'revision_id': '00000000-0000-0000-0000-0000eff8383c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00008339cbdf', 'revision_id': '00000000-0000-0000-0000-0000efc08d14'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-000065a3c846', 'revision_id': '00000000-0000-0000-0000-0000f02fc975'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "d265bcb48e30cc8b9e5f41b2d7afca0a86ece598c05ec851d9a77559ae6a8044",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360115.27585983276
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 9,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 8\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7099999999999999, 'warmth': 1.0, 'comfort': 0.9600000000000002, 'social': 0.5399999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00007b205725', 'revision_id': '00000000-0000-0000-0000-0000eb36b85e'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00005696d55d', 'revision_id': '00000000-0000-0000-0000-00002eb9d8e2'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00009af07a82', 'revision_id': '00000000-0000-0000-0000-00004564d06e'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b9e75174', 'revision_id': '00000000-0000-0000-0000-0000eff8383c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00008339cbdf', 'revision_id': '00000000-0000-0000-0000-0000efc08d14'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "e595a8082c66bb583129c59c33e0c1ebf2ebd524f6601b79cd2d22dc2da572ae",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360113.28887939453
+    },
+    {
+      "world": "world_a_c1",
+      "tick": 10,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 9\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.6949999999999998, 'warmth': 1.0, 'comfort': 0.9800000000000002, 'social': 0.5199999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000f1640d7e', 'revision_id': '00000000-0000-0000-0000-0000c8142583'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7099999999999999, 'warmth': 1.0, 'comfort': 0.9600000000000002, 'social': 0.5399999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00007b205725', 'revision_id': '00000000-0000-0000-0000-0000eb36b85e'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00005696d55d', 'revision_id': '00000000-0000-0000-0000-00002eb9d8e2'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00009af07a82', 'revision_id': '00000000-0000-0000-0000-00004564d06e'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b9e75174', 'revision_id': '00000000-0000-0000-0000-0000eff8383c'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "8740a9b3f441dd6df44ed1952095f5c78dab76bc41ea96c91ed396eff0220934",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360115.3199672699
+    }
+  ],
+  "llm_call_log_b": [
+    {
+      "world": "world_b_c2",
+      "tick": 1,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 0\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- None\n\nEnvironment:\n- location: village_center\n\nTransport Regime: unknown\nQ Regime: unknown\nSpectral Regime: unknown\nSpectral Dominant K: 0.0000\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "b86ed1316ff37775bb250d76f065eb3110686ab7cecd5b9a6376019bbfbf0559",
+      "response_text": "I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).",
+      "response_hash": "df128255764439f5078b57d972d613dc6cb90aa5a51306c776fe15579077e9b4",
+      "success": true,
+      "error": "",
+      "latency_ms": 223877.86388397217
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 2,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 1\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-00005cf151f0', 'revision_id': '00000000-0000-0000-0000-0000f6836c49'}\n- {'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: boundary\nQ Regime: boundary\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "dbfd66e530f93443d77b5eae921a083aebe168a10645cd035b7dbe8009ed6890",
+      "response_text": "I want to eat a meal and drink water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).",
+      "response_hash": "61148de7bb3d447d0d2960cbeda4a51fb737c7d2347e771e8ec454af62787bec",
+      "success": true,
+      "error": "",
+      "latency_ms": 236803.129196167
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 3,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 2\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000020d8a250', 'revision_id': '00000000-0000-0000-0000-00006ad8cbe0'}\n- {'intent': 'I want to eat a meal and drink water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-00005cf151f0', 'revision_id': '00000000-0000-0000-0000-0000f6836c49'}\n- {'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "873f3dfe3d6c241b5426098e3009100cdaf1d88250006306fd3931acb67538a2",
+      "response_text": "I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10). I want to complete these tasks in order to maintain my health and well-being.",
+      "response_hash": "ecb0c838c5b75fd02e189fe3d3643bdf5945df9f7beadd976af0c71b04c173e9",
+      "success": true,
+      "error": "",
+      "latency_ms": 344117.1488761902
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 4,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 3\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-0000ad197776', 'revision_id': '00000000-0000-0000-0000-00004c485ea9'}\n- {'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10). I want to complete these tasks in order to maintain my health and well-being.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000020d8a250', 'revision_id': '00000000-0000-0000-0000-00006ad8cbe0'}\n- {'intent': 'I want to eat a meal and drink water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-00005cf151f0', 'revision_id': '00000000-0000-0000-0000-0000f6836c49'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "74345de972b9619d9639dc1eb35e29153f6017a99e0421a1dda8dfc93c10bfc2",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360113.3804321289
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 5,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 4\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000a6a6c0bb', 'revision_id': '00000000-0000-0000-0000-0000cadbd554'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-0000ad197776', 'revision_id': '00000000-0000-0000-0000-00004c485ea9'}\n- {'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10). I want to complete these tasks in order to maintain my health and well-being.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000020d8a250', 'revision_id': '00000000-0000-0000-0000-00006ad8cbe0'}\n- {'intent': 'I want to eat a meal and drink water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "03bfe23b052533a6b8702fdae2477785f33e9dad35b3eba555488a0e39c1abd1",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360132.90762901306
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 6,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 5\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000ceb21c33', 'revision_id': '00000000-0000-0000-0000-00001c2d92e3'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000a6a6c0bb', 'revision_id': '00000000-0000-0000-0000-0000cadbd554'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-0000ad197776', 'revision_id': '00000000-0000-0000-0000-00004c485ea9'}\n- {'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10). I want to complete these tasks in order to maintain my health and well-being.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000020d8a250', 'revision_id': '00000000-0000-0000-0000-00006ad8cbe0'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "ac5f740ca664e603abe39e82c7915c66a4afc2df10cae0e7f2b33fc6e5ad1071",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360119.5635795593
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 7,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 6\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000c7deb457', 'revision_id': '00000000-0000-0000-0000-0000b24846fe'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000ceb21c33', 'revision_id': '00000000-0000-0000-0000-00001c2d92e3'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000a6a6c0bb', 'revision_id': '00000000-0000-0000-0000-0000cadbd554'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-0000ad197776', 'revision_id': '00000000-0000-0000-0000-00004c485ea9'}\n- {'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10). I want to complete these tasks in order to maintain my health and well-being.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "ae4dc2cc13cf48445c9ef47315dfd0038e6d73433ac8201886d44d5feecf2380",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360114.48884010315
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 8,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 7\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000063331a5d', 'revision_id': '00000000-0000-0000-0000-00007b88ec9c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000c7deb457', 'revision_id': '00000000-0000-0000-0000-0000b24846fe'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000ceb21c33', 'revision_id': '00000000-0000-0000-0000-00001c2d92e3'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000a6a6c0bb', 'revision_id': '00000000-0000-0000-0000-0000cadbd554'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-0000ad197776', 'revision_id': '00000000-0000-0000-0000-00004c485ea9'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "c9b73ed9b720b9d93e1faf751155ec148e76317b030514bd64a4f81592a71c26",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360127.1653175354
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 9,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 8\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7099999999999999, 'warmth': 1.0, 'comfort': 0.9600000000000002, 'social': 0.5399999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b77c4fc5', 'revision_id': '00000000-0000-0000-0000-0000ff725524'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000063331a5d', 'revision_id': '00000000-0000-0000-0000-00007b88ec9c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000c7deb457', 'revision_id': '00000000-0000-0000-0000-0000b24846fe'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000ceb21c33', 'revision_id': '00000000-0000-0000-0000-00001c2d92e3'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000a6a6c0bb', 'revision_id': '00000000-0000-0000-0000-0000cadbd554'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "b7638c316e93095d1db414d0ae00047b28fe87c6b9714e3d4c60af5f7df52b83",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360119.38667297363
+    },
+    {
+      "world": "world_b_c2",
+      "tick": 10,
+      "model": "qwen2.5-coder:1.5b",
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "prompt": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 9\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.6949999999999998, 'warmth': 1.0, 'comfort': 0.9800000000000002, 'social': 0.5199999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00002ed81d7a', 'revision_id': '00000000-0000-0000-0000-00003e9f3de1'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7099999999999999, 'warmth': 1.0, 'comfort': 0.9600000000000002, 'social': 0.5399999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b77c4fc5', 'revision_id': '00000000-0000-0000-0000-0000ff725524'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000063331a5d', 'revision_id': '00000000-0000-0000-0000-00007b88ec9c'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000c7deb457', 'revision_id': '00000000-0000-0000-0000-0000b24846fe'}\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000ceb21c33', 'revision_id': '00000000-0000-0000-0000-00001c2d92e3'}\n\nEnvironment:\n- location: village_center\n\nTransport Regime: stable\nQ Regime: stable\nSpectral Regime: overdamped\nSpectral Dominant K: 0.2463\n\nBased on your current situation, needs, and environment, what do you want to do?\n\nProvide your response as a single sentence describing your intent and reasoning.\n",
+      "prompt_hash": "30d0517e613b6630836066649624e24f9d00c5fad20efffe1a6636de358b8d1a",
+      "response_text": "",
+      "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "success": false,
+      "error": "LLM invocation failed after 1 retries",
+      "latency_ms": 360115.3120994568
+    }
+  ],
+  "tick_traces_a": [
+    {
+      "tick": 1,
+      "world": "A",
+      "field_params": {
+        "c_nominal": 1.0,
+        "tau_nominal": 1.0
+      },
+      "spectral_before": {},
+      "spectral_after": {
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 1.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.5,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      },
+      "llm_calls_this_tick": 1,
+      "llm_inputs": [
+        {
+          "prompt_hash": "b86ed1316ff37775bb250d76f065eb3110686ab7cecd5b9a6376019bbfbf0559",
+          "prompt_preview": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 0\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- None\n\nEnvironment:\n- location: village_center\n\nTransport Regime: unknown\nQ Regime: unknown\nSpectral Regime: unknown\nSpectr"
+        }
+      ],
+      "llm_outputs": [
+        {
+          "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "response_preview": "",
+          "success": false,
+          "latency_ms": 360113.0075454712
+        }
+      ],
+      "plans": [],
+      "entity_state": {
+        "entity_id": "00000000-0000-0000-0000-0000a5b6b6cb",
+        "type": "human",
+        "location": "village_center",
+        "needs": {
+          "hunger": 0.9,
+          "thirst": 0.8,
+          "energy": 0.1
+        },
+        "inventory": {
+          "items": [
+            "{'identifier': 'food', 'quantity': 2.0, 'properties': mappingproxy({})}",
+            "{'identifier': 'water', 'quantity': 3.0, 'properties': mappingproxy({})}"
+          ],
+          "capacity": null,
+          "component_type": "InventoryComponent"
+        }
+      },
+      "memory_snapshot": [
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-0000469d4ef2', 'revision_id': '00000000-0000-0000-0000-0000c3ab927d'}",
+          "timestamp": "2026-08-09 18:20:31.763838+00:00"
+        }
+      ],
+      "cumulative_llm_calls": 1,
+      "cumulative_llm_success": 0
+    },
+    {
+      "tick": 10,
+      "world": "A",
+      "field_params": {
+        "c_nominal": 1.0,
+        "tau_nominal": 1.0
+      },
+      "spectral_before": {
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 1.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.5,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      },
+      "spectral_after": {
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 1.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.5,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      },
+      "llm_calls_this_tick": 1,
+      "llm_inputs": [
+        {
+          "prompt_hash": "8740a9b3f441dd6df44ed1952095f5c78dab76bc41ea96c91ed396eff0220934",
+          "prompt_preview": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 9\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'need"
+        }
+      ],
+      "llm_outputs": [
+        {
+          "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "response_preview": "",
+          "success": false,
+          "latency_ms": 360115.3199672699
+        }
+      ],
+      "plans": [],
+      "entity_state": {
+        "entity_id": "00000000-0000-0000-0000-0000a5b6b6cb",
+        "type": "human",
+        "location": "village_center",
+        "needs": {
+          "hunger": 0.9,
+          "thirst": 0.8,
+          "energy": 0.1
+        },
+        "inventory": {
+          "items": [
+            "{'identifier': 'food', 'quantity': 2.0, 'properties': mappingproxy({})}",
+            "{'identifier': 'water', 'quantity': 3.0, 'properties': mappingproxy({})}"
+          ],
+          "capacity": null,
+          "component_type": "InventoryComponent"
+        }
+      },
+      "memory_snapshot": [
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.6799999999999998, 'warmth': 1.0, 'comfort': 1.0, 'social': 0.4999999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000e4a4d20d', 'revision_id': '00000000-0000-0000-0000-00009f60b6c1'}",
+          "timestamp": "2026-08-09 20:02:34.952615+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.6949999999999998, 'warmth': 1.0, 'comfort': 0.9800000000000002, 'social': 0.5199999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000f1640d7e', 'revision_id': '00000000-0000-0000-0000-0000c8142583'}",
+          "timestamp": "2026-08-09 19:50:34.017246+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7099999999999999, 'warmth': 1.0, 'comfort': 0.9600000000000002, 'social': 0.5399999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00007b205725', 'revision_id': '00000000-0000-0000-0000-0000eb36b85e'}",
+          "timestamp": "2026-08-09 19:38:33.057529+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00005696d55d', 'revision_id': '00000000-0000-0000-0000-00002eb9d8e2'}",
+          "timestamp": "2026-08-09 19:26:32.097002+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00009af07a82', 'revision_id': '00000000-0000-0000-0000-00004564d06e'}",
+          "timestamp": "2026-08-09 19:14:31.177102+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b9e75174', 'revision_id': '00000000-0000-0000-0000-0000eff8383c'}",
+          "timestamp": "2026-08-09 19:02:30.220333+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00008339cbdf', 'revision_id': '00000000-0000-0000-0000-0000efc08d14'}",
+          "timestamp": "2026-08-09 18:50:29.316409+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-000065a3c846', 'revision_id': '00000000-0000-0000-0000-0000f02fc975'}",
+          "timestamp": "2026-08-09 18:38:44.376586+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000064c8782e', 'revision_id': '00000000-0000-0000-0000-0000bf485dfe'}",
+          "timestamp": "2026-08-09 18:28:46.885128+00:00"
+        },
+        {
+          "kind": "intention",
+          "content": "{'intent': 'I am hungry, thirsty, and tired, so I need to find food, water, and rest.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}",
+          "timestamp": "2026-08-09 18:28:46.571574+00:00"
+        }
+      ],
+      "cumulative_llm_calls": 10,
+      "cumulative_llm_success": 1
+    }
+  ],
+  "tick_traces_b": [
+    {
+      "tick": 1,
+      "world": "B",
+      "field_params": {
+        "c_nominal": 2.0,
+        "tau_nominal": 1.0
+      },
+      "spectral_before": {},
+      "spectral_after": {
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.029374149959043194,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 2.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.25,
+        "propagating_power_fraction": 1.6761687909823352e-34,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      },
+      "llm_calls_this_tick": 1,
+      "llm_inputs": [
+        {
+          "prompt_hash": "b86ed1316ff37775bb250d76f065eb3110686ab7cecd5b9a6376019bbfbf0559",
+          "prompt_preview": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 0\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- None\n\nEnvironment:\n- location: village_center\n\nTransport Regime: unknown\nQ Regime: unknown\nSpectral Regime: unknown\nSpectr"
+        }
+      ],
+      "llm_outputs": [
+        {
+          "response_hash": "df128255764439f5078b57d972d613dc6cb90aa5a51306c776fe15579077e9b4",
+          "response_preview": "I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).",
+          "success": true,
+          "latency_ms": 223877.86388397217
+        }
+      ],
+      "plans": [],
+      "entity_state": {
+        "entity_id": "00000000-0000-0000-0000-0000cfe5af3a",
+        "type": "human",
+        "location": "village_center",
+        "needs": {
+          "hunger": 0.9,
+          "thirst": 0.8,
+          "energy": 0.1
+        },
+        "inventory": {
+          "items": [
+            "{'identifier': 'food', 'quantity': 2.0, 'properties': mappingproxy({})}",
+            "{'identifier': 'water', 'quantity': 3.0, 'properties': mappingproxy({})}"
+          ],
+          "capacity": null,
+          "component_type": "InventoryComponent"
+        }
+      },
+      "memory_snapshot": [
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.92, 'thirst': 0.8300000000000001, 'energy': 0.085, 'warmth': 1.0, 'comfort': 0.8200000000000001, 'social': 0.6799999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'sleeping'})}), 'tick_id': '00000000-0000-0000-0000-00005cf151f0', 'revision_id': '00000000-0000-0000-0000-0000f6836c49'}",
+          "timestamp": "2026-08-09 18:24:15.831610+00:00"
+        },
+        {
+          "kind": "intention",
+          "content": "{'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10).', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}",
+          "timestamp": "2026-08-09 18:24:15.642669+00:00"
+        }
+      ],
+      "cumulative_llm_calls": 1,
+      "cumulative_llm_success": 1
+    },
+    {
+      "tick": 10,
+      "world": "B",
+      "field_params": {
+        "c_nominal": 2.0,
+        "tau_nominal": 1.0
+      },
+      "spectral_before": {
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.029374149959043194,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 2.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.25,
+        "propagating_power_fraction": 1.6761687909823352e-34,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      },
+      "spectral_after": {
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.029374149959043194,
+        "dominant_regime": "overdamped",
+        "weighted_D": -1.0,
+        "spectral_entropy": 3.178404066278161e-32,
+        "c_nominal": 2.0,
+        "tau_nominal": 1.0,
+        "k_critical": 0.25,
+        "propagating_power_fraction": 1.6761687909823352e-34,
+        "overdamped_power_fraction": 1.0,
+        "critical_power_fraction": 0.0,
+        "spectral_resolution": 2.0408163265306123,
+        "num_modes": 2500
+      },
+      "llm_calls_this_tick": 1,
+      "llm_inputs": [
+        {
+          "prompt_hash": "30d0517e613b6630836066649624e24f9d00c5fad20efffe1a6636de358b8d1a",
+          "prompt_preview": "You are TestAgent, a villager and farmer in a simulation world.\n\nCurrent Situation:\n- Location: village_center\n- Current tick: 9\n\nYour Needs:\n- hunger: 0.90\n- thirst: 0.80\n- energy: 0.10\n\nYour Inventory:\n- Empty\n\nNearby Entities:\n- None\n\nCurrent Goals:\n- None\n\nRecent Events:\n- {'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'need"
+        }
+      ],
+      "llm_outputs": [
+        {
+          "response_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "response_preview": "",
+          "success": false,
+          "latency_ms": 360115.3120994568
+        }
+      ],
+      "plans": [],
+      "entity_state": {
+        "entity_id": "00000000-0000-0000-0000-0000cfe5af3a",
+        "type": "human",
+        "location": "village_center",
+        "needs": {
+          "hunger": 0.9,
+          "thirst": 0.8,
+          "energy": 0.1
+        },
+        "inventory": {
+          "items": [
+            "{'identifier': 'food', 'quantity': 2.0, 'properties': mappingproxy({})}",
+            "{'identifier': 'water', 'quantity': 3.0, 'properties': mappingproxy({})}"
+          ],
+          "capacity": null,
+          "component_type": "InventoryComponent"
+        }
+      },
+      "memory_snapshot": [
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.6799999999999998, 'warmth': 1.0, 'comfort': 1.0, 'social': 0.4999999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000655255dc', 'revision_id': '00000000-0000-0000-0000-00007749a7ec'}",
+          "timestamp": "2026-08-09 20:08:35.430215+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.6949999999999998, 'warmth': 1.0, 'comfort': 0.9800000000000002, 'social': 0.5199999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-00002ed81d7a', 'revision_id': '00000000-0000-0000-0000-00003e9f3de1'}",
+          "timestamp": "2026-08-09 19:56:34.480771+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7099999999999999, 'warmth': 1.0, 'comfort': 0.9600000000000002, 'social': 0.5399999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000b77c4fc5', 'revision_id': '00000000-0000-0000-0000-0000ff725524'}",
+          "timestamp": "2026-08-09 19:44:33.530035+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 1.0, 'energy': 0.7249999999999999, 'warmth': 1.0, 'comfort': 0.9400000000000002, 'social': 0.5599999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000063331a5d', 'revision_id': '00000000-0000-0000-0000-00007b88ec9c'}",
+          "timestamp": "2026-08-09 19:32:32.562760+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9800000000000002, 'energy': 0.7399999999999999, 'warmth': 1.0, 'comfort': 0.9200000000000002, 'social': 0.5799999999999998}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000c7deb457', 'revision_id': '00000000-0000-0000-0000-0000b24846fe'}",
+          "timestamp": "2026-08-09 19:20:31.654728+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 1.0, 'thirst': 0.9500000000000002, 'energy': 0.7549999999999999, 'warmth': 1.0, 'comfort': 0.9000000000000001, 'social': 0.5999999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000ceb21c33', 'revision_id': '00000000-0000-0000-0000-00001c2d92e3'}",
+          "timestamp": "2026-08-09 19:08:30.717580+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9800000000000001, 'thirst': 0.9200000000000002, 'energy': 0.7699999999999999, 'warmth': 1.0, 'comfort': 0.8800000000000001, 'social': 0.6199999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-0000a6a6c0bb', 'revision_id': '00000000-0000-0000-0000-0000cadbd554'}",
+          "timestamp": "2026-08-09 18:56:29.785278+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9600000000000001, 'thirst': 0.8900000000000001, 'energy': 0.7849999999999999, 'warmth': 1.0, 'comfort': 0.8600000000000001, 'social': 0.6399999999999999}), 'component_type': 'NeedsComponent'})}), 'metadata': mappingproxy({'status': 'awake', 'last_action': 'Wake'})}), 'tick_id': '00000000-0000-0000-0000-0000ad197776', 'revision_id': '00000000-0000-0000-0000-00004c485ea9'}",
+          "timestamp": "2026-08-09 18:44:28.813668+00:00"
+        },
+        {
+          "kind": "intention",
+          "content": "{'intent': 'I am eating a meal and drinking water in the village center, feeling hungry (0.90) and thirsty (0.80), and need energy (0.10). I want to complete these tasks in order to maintain my health and well-being.', 'reasoning': 'Generated from natural language response', 'confidence': 0.7}",
+          "timestamp": "2026-08-09 18:44:28.497510+00:00"
+        },
+        {
+          "kind": "action_outcome",
+          "content": "{'action': 'domain.needs', 'state_change': mappingproxy({'components': mappingproxy({'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.9400000000000001, 'thirst': 0.8600000000000001, 'energy': 0.435, 'warmth': 1.0, 'comfort': 0.8400000000000001, 'social': 0.6599999999999999}), 'component_type': 'NeedsComponent'})})}), 'tick_id': '00000000-0000-0000-0000-000020d8a250', 'revision_id': '00000000-0000-0000-0000-00006ad8cbe0'}",
+          "timestamp": "2026-08-09 18:32:43.965747+00:00"
+        }
+      ],
+      "cumulative_llm_calls": 10,
+      "cumulative_llm_success": 3
+    }
+  ]
+}

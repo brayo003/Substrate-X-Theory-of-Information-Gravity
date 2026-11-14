@@ -1,0 +1,8 @@
+{
+  "beta": 0.9481,
+  "gamma": 0.0142,
+  "tau": 0.1,
+  "beta_gamma_ratio": 66.76760563380282,
+  "quantum_property": "Exponential saturation",
+  "interpretation": "Quantum systems are 66.8\u00d7 more sensitive to excitation than damping"
+}

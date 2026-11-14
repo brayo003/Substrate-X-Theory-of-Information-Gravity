@@ -1,0 +1,11 @@
+{
+  "done": [
+    "run_EURUSD",
+    "run_BTCUSDT",
+    "run_ETHUSDT",
+    "run_XAUUSD",
+    "run_NAS100",
+    "run_USOIL",
+    "run_UKOIL"
+  ]
+}

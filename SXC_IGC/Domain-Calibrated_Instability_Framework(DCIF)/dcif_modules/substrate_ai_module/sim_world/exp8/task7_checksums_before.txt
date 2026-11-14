@@ -1,0 +1,17 @@
+1603d2fb1484c5f50cea18aa2b4a0ca3  EXP7_REPORT.md
+7945e329198cd94ce38c6f131600a1f2  EXP7_SCIENTIFIC_AUDIT.md
+ef7072b256c38237197e53c7807c289d  exp7/__init__.py
+5956c6ca46cb2be07141b4695a2c99fe  exp7/collective_computation.py
+12b47d71e9eec98d8ef82bc41d559add  exp7/config.py
+19d1173851a5f9c947672218a7712815  exp7/hazard_behaviour.py
+7a669f4832adb670b31d8b45620b4e7c  exp7/integrity.py
+094eba31888a00c40be3df2148893f8b  exp7/memory.py
+0bc946d4013c25c27e559093316a3d30  exp7/runner.py
+c2a878b79d6a344371bdd8e3d9983569  exp7/task6_checksums_after.txt
+be29a6399f4bbb4405ee47fde66aabe5  exp7/task6_checksums_before.txt
+48a466a4981a20278a19bf60a1fb5b4f  exp7_collective_computation.py
+9d87c4790142f8be2b7c1d86d95b8ee0  exp7_configuration.json
+e5d18dcc4daa0663255d27ab237febe0  exp7_hazard_behaviour.py
+54ee32613dc4c4c73ba72ae073ec8e2c  exp7_nonlinear_specific_advantage.py
+6d8da831850f34f8b599c5aca8a6427a  exp7_pilot_results.json
+a6cb7dfbe7ce0fad7e4dc84f530f2d9f  exp7_results.json

@@ -1,0 +1,124 @@
+{
+  "report_title": "Corrected Bounded Validation — Transport OS / Q Regime System",
+  "report_date": "2026-10-11",
+  "git_commit": "6738ed05",
+  "git_description": "Restore lost leak-flow mechanics derivations and physics test scripts",
+  "run_timestamp_utc": "2026-10-11T10:13:44Z",
+
+  "commands": {
+    "corrected_audit": "python3 corrected_audit.py",
+    "original_validation": "python3 bounded_validation.py",
+    "working_directory": "calibration_engine/eg/finance_module/"
+  },
+
+  "input_files": {
+    "2026_eurusd_1min": {
+      "path": "data/2026/eurusd-m1-bid-2026-01-01-2026-07-22.csv",
+      "rows": 224700,
+      "columns": ["timestamp", "open", "high", "low", "close"],
+      "timestamp_format": "Unix milliseconds UTC",
+      "date_range": "2026-01-01T00:00:00Z to 2026-07-21T23:59:00Z",
+      "price_type": "bid only — no ask column",
+      "note": "Genuinely untouched before bounded_validation.py ran (0 cache parquets for 2026)"
+    },
+    "cache_monthly_parquets": {
+      "path": "cache/ohlc_transport_YYYY_MM.parquet",
+      "files": 34,
+      "total_bars": 210505,
+      "date_range": "2023-01-01T22:00:00Z to 2025-10-24T20:55:00Z",
+      "source": "Derived from BI5 ticks (2023-2024) + eurusd_ticks_2025.csv (2025)",
+      "columns_include": ["open", "high", "low", "close", "tr_Q", "T_sys", "phase",
+                          "atr_14", "rsi_14", "macd", "adx_14", "composite_norm"]
+    },
+    "q_series_full": {
+      "path": "cache/q_series_full.parquet",
+      "bars": 210505,
+      "columns": ["Q", "year", "month"],
+      "note": "Used for Q forward-vol test (Section 6)"
+    },
+    "phase1_performance_by_regime": {
+      "path": "results/phase1/performance_by_regime.csv",
+      "date": "2026-07-22",
+      "note": "Used by Phase 2 OS calibration — shares data with Phase 2 evaluation (circular)"
+    },
+    "phase1_trade_log": {
+      "path": "results/phase1/trade_log_full.csv",
+      "rows": 655,
+      "note": "In-sample 2023-2025 NY_Continuation trades (Phase 1, original 29-strategy run)"
+    },
+    "checkpoint_manifest": {
+      "path": "checkpoints/checkpoint_manifest.json",
+      "q_quantiles": {
+        "q05": -0.9979956145675514,
+        "q95": 1.7322887804197729,
+        "n_bars": 209689,
+        "coherent_fraction": 0.20118365770259766
+      }
+    },
+    "original_oos_trade_log": {
+      "path": "results/bounded_validation/test_a_trade_log_2026.csv",
+      "rows": 76,
+      "note": "PRESERVED — uses wrong signal (RSI+MACD+ADX 14-21h); not overwritten"
+    }
+  },
+
+  "frozen_configuration": {
+    "q05": -0.9979956145675514,
+    "q95": 1.7322887804197729,
+    "transport_c": 1.0,
+    "transport_tau": 5.0,
+    "hold_bars_5min": 24,
+    "atr_stop_mult": 1.5,
+    "atr_target_mult": 2.5,
+    "risk_fraction_strong_coherent": 0.25,
+    "strategy_name": "NY_Continuation",
+    "strategy_source": "strategy_library.py lines 469-483",
+    "cost_3pip_rt": 0.00030,
+    "cost_5pip_rt": 0.00050,
+    "cost_7pip_rt": 0.00070
+  },
+
+  "strategy_signal_definition": {
+    "name": "NY_Continuation",
+    "file": "strategy_library.py",
+    "lines": "469-483",
+    "logic": "hour(UTC)==13 AND EMA(9,close) crosses above/below EMA(21,close)",
+    "note": "Different from bounded_validation.py generate_ny_continuation_signals() which uses RSI+MACD+ADX at hours 14-21"
+  },
+
+  "outputs": {
+    "corrected_verdict": "results/bounded_validation_corrected/CORRECTED_BOUNDED_VERDICT.md",
+    "execution_audit": "results/bounded_validation_corrected/execution_audit.md",
+    "statistical_audit": "results/bounded_validation_corrected/statistical_audit.md",
+    "reproducibility_manifest": "results/bounded_validation_corrected/reproducibility_manifest.json",
+    "changes_limitations": "results/bounded_validation_corrected/changes_and_limitations.md",
+    "corrected_trade_log_same_close": "results/bounded_validation_corrected/correct_strategy_same_close_2026.csv",
+    "corrected_trade_log_next_open": "results/bounded_validation_corrected/correct_strategy_next_open_2026.csv",
+    "original_signal_next_open": "results/bounded_validation_corrected/orig_signal_next_open_2026.csv",
+    "tsys_vs_fwdvol": "results/bounded_validation_corrected/tsys_vs_fwdvol.csv",
+    "regime_outcomes_in_sample": "results/bounded_validation_corrected/test_c_regime_outcomes.csv",
+    "full_audit_json": "results/bounded_validation_corrected/corrected_audit_results.json",
+    "execution_log": "results/bounded_validation_corrected/execution_log.txt"
+  },
+
+  "preserved_original_outputs": {
+    "directory": "results/bounded_validation/",
+    "files": [
+      "test_a_trade_log_2026.csv",
+      "test_c_regime_outcomes.csv",
+      "test_d_q_vs_fwd_vol.csv",
+      "bounded_validation_results.json"
+    ],
+    "note": "None overwritten. Original 76-trade result preserved for comparison."
+  },
+
+  "data_split_summary": {
+    "calibration_period": "2023-01-01 to 2025-10-24",
+    "calibration_bars": 210505,
+    "oos_period": "2026-01-01 to 2026-07-21",
+    "oos_1min_rows": 224700,
+    "oos_5min_bars": 44940,
+    "oos_cache_parquets_before_test": 0,
+    "circular_overlap": "Phase 1 discovery and Phase 2 OS calibration both use 2023-2025 data; Phase 2 evaluation also uses 2023-2025 data. The 2026 test is the only genuinely independent evaluation."
+  }
+}

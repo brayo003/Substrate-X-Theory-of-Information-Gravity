@@ -1,0 +1,216 @@
+========================================================================
+  COUNTERFACTUAL ECONOMIC AUDIT — TRADING OPERATING SYSTEM
+  BTCUSDT + ETHUSDT  |  Full available history
+========================================================================
+
+── BASELINE PERFORMANCE ──────────────────────────────────────────────
+  Bars processed         : 314,496
+  Trades                 : 14,105
+  Net PnL (ret units)    : -3.294032
+  Gross Profit           : 19.766777
+  Gross Loss             : 23.060809
+  Profit Factor          : 0.8572
+  Expectancy             : -0.000234
+  Win Rate               : 0.328
+  Avg Trade              : -0.000234
+  Median Trade           : -0.001039
+  Max Drawdown           : 3.320456
+  Exposure %             : 27.80%
+  Capital Hours          : 7285.58 h
+  Avg Hold (bars)        : 6.2
+  Avg Idle (bars)        : 11.1
+  Trades/Day             : 12.917
+  Trades/Week            : 90.42
+  Avg Wait Between Entry : 11.1 bars
+
+── Gate A — Warmup (WARMUP_BARS) ──
+  Bars processed         : 314,496
+  Trades                 : 14,115
+  Net PnL                : -3.286118
+  Profit Factor          : 0.8575
+  Expectancy             : -0.000233
+  Win Rate               : 0.328
+  Max Drawdown           : 3.311432
+  Exposure %             : 27.82%
+  Trades/Day             : 12.926
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : +0.007914
+  Δ Profit Factor        : +0.0004
+  Δ Expectancy           : +0.000001
+  Δ Win Rate             : +0.000
+  Δ Max Drawdown         : -0.009024
+  Δ Exposure %           : +0.02%
+  Δ Trades               : +10
+  Δ Capital Hours        : +5.08 h
+  CLASSIFICATION         : Economically_Neutral
+
+── Gate B — df==None propagation ──
+  NOTE: Gate B (df==None) is architecturally downstream of Gate A.
+  In the replay engine both gates share the same warmup predicate.
+  Disabling Gate B independently while Gate A is active produces
+  zero observable difference. Results below confirm this.
+  Bars processed         : 314,496
+  Trades                 : 14,105
+  Net PnL                : -3.294032
+  Profit Factor          : 0.8572
+  Expectancy             : -0.000234
+  Win Rate               : 0.328
+  Max Drawdown           : 3.320456
+  Exposure %             : 27.80%
+  Trades/Day             : 12.917
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : +0.000000
+  Δ Profit Factor        : +0.0000
+  Δ Expectancy           : +0.000000
+  Δ Win Rate             : +0.000
+  Δ Max Drawdown         : +0.000000
+  Δ Exposure %           : +0.00%
+  Δ Trades               : +0
+  Δ Capital Hours        : +0.00 h
+  CLASSIFICATION         : Economically_Neutral
+
+── Gate C — Q sentinel / NaN rejection ──
+  Bars processed         : 314,496
+  Trades                 : 14,105
+  Net PnL                : -3.294032
+  Profit Factor          : 0.8572
+  Expectancy             : -0.000234
+  Win Rate               : 0.328
+  Max Drawdown           : 3.320456
+  Exposure %             : 27.80%
+  Trades/Day             : 12.917
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : +0.000000
+  Δ Profit Factor        : +0.0000
+  Δ Expectancy           : +0.000000
+  Δ Win Rate             : +0.000
+  Δ Max Drawdown         : +0.000000
+  Δ Exposure %           : +0.00%
+  Δ Trades               : +0
+  Δ Capital Hours        : +0.00 h
+  CLASSIFICATION         : Economically_Neutral
+
+── Gate D — Scheduler NO_TRADE ──
+  Bars processed         : 314,496
+  Trades                 : 15,862
+  Net PnL                : -3.511959
+  Profit Factor          : 0.8641
+  Expectancy             : -0.000221
+  Win Rate               : 0.344
+  Max Drawdown           : 3.530986
+  Exposure %             : 31.72%
+  Trades/Day             : 14.526
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : -0.217927
+  Δ Profit Factor        : +0.0069
+  Δ Expectancy           : +0.000012
+  Δ Win Rate             : +0.016
+  Δ Max Drawdown         : +0.210529
+  Δ Exposure %           : +3.92%
+  Δ Trades               : +1757
+  Δ Capital Hours        : +1027.58 h
+  CLASSIFICATION         : Economically_Beneficial
+
+── Gate E — Strategy zero-output ──
+  NOTE: Gate E cannot be isolated without altering strategy logic.
+  The strategy functions produce 0 when their entry conditions are
+  not met. Disabling Gate E allows 0-signal bars to reach the broker,
+  but the broker receives signal=0 and opens no position.
+  No counterfactual positions are possible without modifying strategies.
+  Classification: Structurally Inert — experiment proceeds to confirm.
+  Bars processed         : 314,496
+  Trades                 : 14,105
+  Net PnL                : -3.294032
+  Profit Factor          : 0.8572
+  Expectancy             : -0.000234
+  Win Rate               : 0.328
+  Max Drawdown           : 3.320456
+  Exposure %             : 27.80%
+  Trades/Day             : 12.917
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : +0.000000
+  Δ Profit Factor        : +0.0000
+  Δ Expectancy           : +0.000000
+  Δ Win Rate             : +0.000
+  Δ Max Drawdown         : +0.000000
+  Δ Exposure %           : +0.00%
+  Δ Trades               : +0
+  Δ Capital Hours        : +0.00 h
+  CLASSIFICATION         : Economically_Neutral
+
+── Gate F — One-position-per-symbol ──
+  Bars processed         : 314,496
+  Trades                 : 14,062
+  Net PnL                : -2.987315
+  Profit Factor          : 0.8692
+  Expectancy             : -0.000212
+  Win Rate               : 0.326
+  Max Drawdown           : 3.025696
+  Exposure %             : 28.35%
+  Trades/Day             : 12.877
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : +0.306717
+  Δ Profit Factor        : +0.0121
+  Δ Expectancy           : +0.000021
+  Δ Win Rate             : -0.002
+  Δ Max Drawdown         : -0.294761
+  Δ Exposure %           : +0.55%
+  Δ Trades               : -43
+  Δ Capital Hours        : +144.75 h
+  CLASSIFICATION         : Economically_Harmful
+
+── Gate G — ATR/price sanity ──
+  Bars processed         : 314,496
+  Trades                 : 14,105
+  Net PnL                : -3.294032
+  Profit Factor          : 0.8572
+  Expectancy             : -0.000234
+  Win Rate               : 0.328
+  Max Drawdown           : 3.320456
+  Exposure %             : 27.80%
+  Trades/Day             : 12.917
+  ── Deltas vs BASELINE ──
+  Δ Net PnL              : +0.000000
+  Δ Profit Factor        : +0.0000
+  Δ Expectancy           : +0.000000
+  Δ Win Rate             : +0.000
+  Δ Max Drawdown         : +0.000000
+  Δ Exposure %           : +0.00%
+  Δ Trades               : +0
+  Δ Capital Hours        : +0.00 h
+  CLASSIFICATION         : Economically_Neutral
+
+── DELTA TABLE ───────────────────────────────────────────────────────
+         experiment  delta_net_pnl  delta_profit_factor  delta_expectancy  delta_win_rate  delta_max_drawdown  delta_exposure_pct  delta_n_trades
+    EXP_A_no_warmup       +0.00791             +0.00037          +0.00000        +0.00012            -0.00902            +0.01940              10
+   EXP_B_no_df_none       +0.00000             +0.00000          +0.00000        +0.00000            +0.00000            +0.00000               0
+EXP_C_no_q_sentinel       +0.00000             +0.00000          +0.00000        +0.00000            +0.00000            +0.00000               0
+  EXP_D_no_no_trade       -0.21793             +0.00691          +0.00001        +0.01553            +0.21053            +3.92088            1757
+  EXP_E_no_sig_zero       +0.00000             +0.00000          +0.00000        +0.00000            +0.00000            +0.00000               0
+    EXP_F_multi_pos       +0.30672             +0.01207          +0.00002        -0.00248            -0.29476            +0.55231             -43
+EXP_G_no_atr_sanity       +0.00000             +0.00000          +0.00000        +0.00000            +0.00000            +0.00000               0
+
+── GATE RANKING BY |Δ Net PnL| ──────────────────────────────────────
+  EXP_F_multi_pos                |ΔPnL|=0.306717  [Economically_Harmful]
+  EXP_D_no_no_trade              |ΔPnL|=0.217927  [Economically_Beneficial]
+  EXP_A_no_warmup                |ΔPnL|=0.007914  [Economically_Neutral]
+  EXP_B_no_df_none               |ΔPnL|=0.000000  [Economically_Neutral]
+  EXP_C_no_q_sentinel            |ΔPnL|=0.000000  [Economically_Neutral]
+  EXP_E_no_sig_zero              |ΔPnL|=0.000000  [Economically_Neutral]
+  EXP_G_no_atr_sanity            |ΔPnL|=0.000000  [Economically_Neutral]
+
+── EXECUTIVE CONCLUSION ─────────────────────────────────────────────
+  Gates creating measurable economic value (removing them hurts PnL):
+    • Gate D — Scheduler NO_TRADE
+  Gates destroying measurable economic value (removing them helps PnL):
+    • Gate F — One-position-per-symbol
+  Gates that merely reduce capital utilization without improving returns:
+    • Gate A — Warmup (WARMUP_BARS)
+    • Gate B — df==None propagation
+    • Gate C — Q sentinel / NaN rejection
+    • Gate E — Strategy zero-output
+    • Gate G — ATR/price sanity
+  Gates that cannot yet be economically justified (insufficient trades):
+    None.
+
+========================================================================

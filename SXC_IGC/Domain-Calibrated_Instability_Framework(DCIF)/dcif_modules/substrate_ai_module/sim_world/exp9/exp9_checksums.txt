@@ -1,0 +1,36 @@
+# Task 9 output checksums (MD5)
+# Generated after final report/docs freeze
+
+73e9795c69a0fe2a8fc3ff8b149fa96c  exp9/EXP9_ARCHITECTURAL_SPECIFICATION.md
+2f9bc070737bd2fee6715970185a3e82  exp9/EXP9_BASELINE_FAIRNESS_AUDIT.md
+a772d2c5f9b6fcabc969990943ffe870  exp9/EXP9_EXPERIMENTAL_PROTOCOL.md
+a950ed51eb5f3ef001bf9261d8fa7300  exp9/EXP9_EXPERIMENTAL_REPORT.md
+29ab63b046c6f0b910e18a47e51b237b  exp9/EXP9_NUMERICAL_VALIDATION.md
+b68caf171ae0bbcfa2507b382689074a  exp9/EXP9_PRESERVATION_CHECK.md
+fb4566e4b08a9d17d1cdd8a7d54a203d  exp9/EXP9_PRE_IMPLEMENTATION_AUDIT.md
+8e5c09904dc2ba3d5e66ff78bc4915c7  exp9/__init__.py
+6a407ed03b904c9643d9abc9cbfff257  exp9/agents.py
+b84294bdf4ea47934f6c41aca474e82e  exp9/config.py
+9d9eea85a0f2aa9a478e3188c9edcd06  exp9/env.py
+3d096d10db701e914b54d821efbd5a5c  exp9/exp9_configuration.json
+f190505aa972afeb1aef52d348b5da9b  exp9/exp9_pilot_results.json
+08032c21970a9d0fbc6270ef8f0dc779  exp9/exp9_raw_per_seed.json
+8d8a2b8c97e908a4c91053290fc79a69  exp9/exp9_results.json
+407c3d02bc7eae6c134dacb7f787cb63  exp9/experiments.py
+6f8d3254b2d12a45de1324020ac073e9  exp9/field_backend.py
+6e895e85613a5f855b538652b17a9290  exp9/numerical.py
+a950495e02dfa744a03b67cfb0ea8c17  exp9/runner.py
+ab3b0a1eb33355037dac04f9eebc313f  exp9/statistics.py
+a9f9ecdbd7e6159958bbc391251e3052  exp9/task6_checksums_after.txt
+621bbeee4bf12d1d7a7d0fb321464e32  exp9/task6_checksums_before.txt
+3383712d4f81dfec5431a1e959a3ac91  exp9/task7_checksums_after.txt
+acdce7c33c3e0f495ce81c5bf8516b5f  exp9/task7_checksums_before.txt
+7fba3779effb63f6d2488b44ad1e3d9c  exp9/task8_checksums_after.txt
+311cf0c2fc766277e7974da62b664833  exp9/task8_checksums_before.txt
+07d36761bf57d3be23394e662ba6eafe  exp9_autonomous_collective.py
+3d096d10db701e914b54d821efbd5a5c  exp9_configuration.json
+8d8a2b8c97e908a4c91053290fc79a69  exp9_results.json
+f190505aa972afeb1aef52d348b5da9b  exp9_pilot_results.json
+a950ed51eb5f3ef001bf9261d8fa7300  EXP9_EXPERIMENTAL_REPORT.md
+bb528798ba038a2eb71a8679e4606558  tests/test_exp9_interface.py
+40d260d007dd6b39ddff862099c4cab2  tests/test_exp9_ablations.py

@@ -1,0 +1,169 @@
+HONEST TEST: 2015 China Market Crash
+Testing if the engine can detect this major crisis that wasn't in our training data
+"""
+
+import numpy as np
+import pandas as pd
+import yfinance as yf
+from datetime import datetime, timedelta
+
+class HonestCrisisDetector:
+    def __init__(self):
+        # Same calibrated thresholds from our validation
+        self.crisis_vol_threshold = 0.010
+        self.extreme_vol_threshold = 0.018
+        self.momentum_crisis_threshold = -0.08
+        self.extreme_momentum_threshold = -0.15
+    
+    def detect_crisis(self, price_series):
+        """Same multi-factor detection from our production engine"""
+        if price_series is None or len(price_series) < 22:
+            return {'error': 'Insufficient data'}
+        
+        try:
+            returns = price_series.pct_change().dropna()
+            vol = returns.std()
+python test_2015_china_crash.pyd to improve the detection logic.")generalization
+🔍 HONEST TEST: 2015 CHINA MARKET CRASH
+============================================================
+Testing if our engine detects a crisis NOT in our training data
+
+📈 2015 CHINA CRASH TIMELINE:
+• June 12: Shanghai Composite peaks at 5,166
+• June 15-19: -13% crash, largest weekly drop since 2008
+• July 8: -30% from peak, 1,400 stocks suspended
+• August 24-25: 'Black Monday' -8.5% crash
+• Total decline: -43% from June peak
+
+
+FXI - iShares China Large-Cap ETF:
+----------------------------------------
+[*********************100%***********************]  1 of 1 completed
+  Pre-Crash Peak: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 1: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 2: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Bottom: ✅ DETECTED
+     Crisis Score: 0.82 - 🚨 EXTREME CRISIS
+     Volatility: 0.0204 (2.0%)
+     Momentum: -0.128 (-12.8%)
+     Drawdown: -15.5%
+[*********************100%***********************]  1 of 1 completed
+  Full Crash Period: ✅ DETECTED
+     Crisis Score: 0.88 - 🚨 EXTREME CRISIS
+     Volatility: 0.0229 (2.3%)
+     Momentum: -0.105 (-10.5%)
+     Drawdown: -26.8%
+
+MCHI - iShares MSCI China ETF:
+----------------------------------------
+[*********************100%***********************]  1 of 1 completed
+  Pre-Crash Peak: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 1: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 2: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Bottom: ✅ DETECTED
+     Crisis Score: 0.82 - 🚨 EXTREME CRISIS
+     Volatility: 0.0226 (2.3%)
+     Momentum: -0.135 (-13.5%)
+     Drawdown: -16.3%
+[*********************100%***********************]  1 of 1 completed
+  Full Crash Period: ✅ DETECTED
+     Crisis Score: 0.88 - 🚨 EXTREME CRISIS
+     Volatility: 0.0240 (2.4%)
+     Momentum: -0.109 (-10.9%)
+     Drawdown: -26.6%
+
+ASHR - Xtrackers Harvest CSI 300 China A-Shares ETF:
+----------------------------------------
+[*********************100%***********************]  1 of 1 completed
+  Pre-Crash Peak: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 1: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 2: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Bottom: ✅ DETECTED
+     Crisis Score: 1.0 - 🚨 EXTREME CRISIS
+     Volatility: 0.0420 (4.2%)
+     Momentum: -0.231 (-23.1%)
+     Drawdown: -29.6%
+[*********************100%***********************]  1 of 1 completed
+  Full Crash Period: ✅ DETECTED
+     Crisis Score: 1.0 - 🚨 EXTREME CRISIS
+     Volatility: 0.0495 (5.0%)
+     Momentum: -0.179 (-17.9%)
+     Drawdown: -40.7%
+
+YINN - Direxion Daily China 3x Bull ETF:
+----------------------------------------
+[*********************100%***********************]  1 of 1 completed
+  Pre-Crash Peak: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 1: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Week 2: ❌ Insufficient data points
+[*********************100%***********************]  1 of 1 completed
+  Crash Bottom: ✅ DETECTED
+     Crisis Score: 1.0 - 🚨 EXTREME CRISIS
+     Volatility: 0.0618 (6.2%)
+     Momentum: -0.359 (-35.9%)
+     Drawdown: -41.5%
+[*********************100%***********************]  1 of 1 completed
+  Full Crash Period: ✅ DETECTED
+     Crisis Score: 1.0 - 🚨 EXTREME CRISIS
+     Volatility: 0.0691 (6.9%)
+     Momentum: -0.311 (-31.1%)
+     Drawdown: -64.4%
+
+============================================================
+TESTING MAJOR CHINESE STOCKS (if available):
+
+BABA:
+[*********************100%***********************]  1 of 1 completed
+  ✅ DETECTED - 🚨 CRISIS (Score: 0.76)
+  Volatility: 0.0174, Drawdown: -22.8%
+
+JD:
+[*********************100%***********************]  1 of 1 completed
+  ✅ DETECTED - 🚨 EXTREME CRISIS (Score: 1.0)
+  Volatility: 0.0325, Drawdown: -29.5%
+
+BIDU:
+[*********************100%***********************]  1 of 1 completed
+  ✅ DETECTED - 🚨 EXTREME CRISIS (Score: 0.88)
+  Volatility: 0.0297, Drawdown: -28.2%
+
+TCEHY:
+[*********************100%***********************]  1 of 1 completed
+  ✅ DETECTED - 🚨 EXTREME CRISIS (Score: 0.82)
+  Volatility: 0.0307, Drawdown: -19.6%
+
+============================================================
+📊 ANALYZING ACTUAL 2015 CRASH PATTERNS:
+============================================================
+[*********************100%***********************]  1 of 1 completed
+FXI (iShares China Large-Cap) 2015 Crash Analysis:
+  Peak Price: $52.21
+  Bottom Price: $33.58
+  Total Decline: -35.7%
+  Volatility: 0.0222 (2.2% daily)
+  Worst Day: -7.2%
+  Best Day: 7.1%
+  Trading Days: 105
+
+Engine Analysis at Crash Bottom (2015-09-04):
+  Crisis Score: 0.94
+  Level: 🚨 EXTREME CRISIS
+  Detection: ✅ SUCCESS
+
+============================================================
+🎯 HONEST ASSESSMENT:
+This test uses REAL 2015 data that was NOT in our training set.
+If the engine detects this crash, it demonstrates real generalization.
+If it misses, we need to improve the detection logic.
+============================================================

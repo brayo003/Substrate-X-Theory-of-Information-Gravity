@@ -1,0 +1,2 @@
+repo_root=/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity
+branch=main

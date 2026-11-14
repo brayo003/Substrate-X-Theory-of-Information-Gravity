@@ -1,0 +1,363 @@
+Given the framework you've established, I would evaluate candidate control parameters by a single criterion:
+
+Can varying X produce a residual qubit frequency shift that survives exhaustive modeling of known physics?
+
+At H01, you are not trying to generate a substrate current. You are testing whether any unexplained coherent signal exists. The parameter should therefore maximize experimental control and minimize conventional ambiguity.
+
+Candidate X	Experimental control	Standard-model background	Isolation difficulty	H01 suitability
+Physical rotation ω
+rot
+	​
+
+	Low–moderate	Large (vibration, acceleration, magnetic pickup, thermal drift, Coriolis/inertial effects)	High	Moderate
+Controlled strain / vibration	Very high	Large but well modeled	Moderate	Good positive control, poor new-physics search
+Magnetic-field modulation	Excellent	Completely expected Zeeman response	Very low	Positive control only
+Electric-field modulation	Excellent	Completely expected Stark response	Very low	Positive control only
+Temperature modulation	Good	Known frequency shifts and decoherence	Moderate	Systematics study only
+Optical illumination	Good	Known heating and AC Stark effects	Moderate	Positive control only
+Gravitational potential changes	Extremely poor	Tiny signal	Very high	Not practical
+Rotation
+
+Rotation is the only candidate on your list that naturally overlaps with the frozen C2 prediction.
+
+Advantages:
+
+directly related to the existing transport derivation,
+already appears in the frozen equations,
+no new theoretical assumption is introduced simply by rotating the apparatus.
+
+Disadvantages:
+
+mechanically the most difficult experiment,
+introduces numerous conventional effects that must be modeled independently,
+any observed shift has many plausible standard explanations.
+
+Therefore rotation is scientifically the most relevant, but experimentally the hardest.
+
+Strain or vibration
+
+These are excellent engineering tests.
+
+A controlled piezoelectric actuator can generate precisely known motion.
+
+If the spectroscopy pipeline cannot correctly recover the expected frequency response under controlled strain, then it is not ready for a rotation experiment.
+
+However, observing a strain-induced shift says nothing about C2 because elasticity already predicts such effects.
+
+Magnetic modulation
+
+This should definitely be part of H01, but only as calibration.
+
+It answers questions like:
+
+Does spectroscopy recover known Zeeman shifts?
+Is the frequency extraction unbiased?
+Are systematic errors under control?
+
+It cannot support a substrate hypothesis because the expected interaction is already understood.
+
+What H01 should optimize
+
+I would structure H01 as a hierarchy rather than selecting a single parameter.
+
+Stage 1 — Measurement validation
+
+Use known fields:
+
+magnetic field,
+electric field (if applicable),
+controlled strain.
+
+Success criterion:
+
+Δω
+q
+	​
+
+
+matches established physics within experimental uncertainty.
+
+Stage 2 — Residual search
+
+Introduce controlled physical rotation while continuously monitoring:
+
+magnetic field,
+acceleration,
+vibration,
+temperature,
+microwave leakage,
+timing and control electronics.
+
+Construct a standard-model prediction,
+
+Δω
+SM
+	​
+
+(ω
+rot
+	​
+
+),
+
+before examining residuals.
+
+Define
+
+Δω
+res
+	​
+
+=Δω
+meas
+	​
+
+−Δω
+SM
+	​
+
+.
+
+Only if
+
+Δω
+res
+	​
+
+
+=0
+
+persists under repeated experiments does it become reasonable to consider a new interaction.
+
+What not to do
+
+One point is especially important.
+
+Do not define
+
+J=f(ω
+rot
+	​
+
+)
+
+during H01.
+
+Doing so would implicitly assume the very substrate relation that H01 is supposed to test.
+
+Instead, H01 should remain agnostic:
+
+ω
+rot
+	​
+
+⟶Δω
+q
+	​
+
+
+is the measured relationship.
+
+Only after establishing a reproducible residual beyond standard physics would it become appropriate to hypothesize an intermediate variable such as J.
+
+Recommendation
+
+For H01, the most rigorous sequence is:
+
+Validate the spectroscopy pipeline using magnetic-field modulation and controlled strain, where the expected responses are already known.
+Perform the primary residual search using physical rotation as the externally controlled parameter X, because it is the only candidate directly connected to the frozen v01 derivation without introducing new theoretical assumptions.
+Analyze all conventional mechanisms before attributing any residual to a new substrate interaction.
+
+This ordering preserves the central principle adopted for v02: first establish whether any unexplained coherent phenomenon exists; only then formulate hypotheses about a substrate field or an operational definition of J.
+
+
+
+
+
+
+
+Meta-Analysis: Choosing the First Control Parameter X for H01
+
+You have committed to Path B (controlled residual search) as the primary route. This is the only route that can produce a genuinely novel result — but it carries the burden of proving that any observed effect is not explainable by known physics.
+
+Your question is now concrete and operational:
+
+    What real, controllable parameter X should H01 use first — physical rotation, controlled strain/vibration, magnetic-field modulation, or another candidate?
+
+I will analyse each candidate against the v02 criteria you have established. My conclusion will be stated at the end, but I will not choose for you — I will expose the logical trade-offs so that you can decide.
+The Selection Criteria for H01's X
+
+From your stated v02 commitments, H01's control parameter must satisfy:
+Criterion	Requirement
+1. Controllability	X must be externally settable with known precision, ideally continuously variable.
+2. Noise Modelability	The standard physics response to X (EM, thermal, vibrational) must be calculable or measurable with existing instruments.
+3. Residual Detectability	If a qubit spectroscopy shift ΔE(X) is observed beyond the modelled noise, it must be plausibly attributable to a substrate effect—not to an unmodelled systematic.
+4. Theory Connection	X should ideally connect to the frozen v01 derivation (i.e., appear in the transport equations or the dephasing formula) to give the residual a predicted functional form to test against.
+5. No New Physics Pre-Assumed	X must not implicitly assume the existence of a substrate field, a new coupling, or a detector mechanism. The experiment discovers, it does not presuppose.
+Candidate 1: Physical Rotation (ω_rot)
+Aspect	Analysis
+Controllability	Excellent. Motor-controlled rotation stages offer precise, continuous frequency control from µHz to kHz (or higher with spin stands).
+Noise Modelability	Difficult but tractable. Rotation induces: (a) centrifugal strain on wiring/mounts, (b) EM pickup from motor drivers, (c) mechanical vibrations, (d) eddy currents in conductive shields, (e) thermal gradients from friction. Each must be separately monitored with accelerometers, B-field probes, thermocouples, and strain gauges. This is an engineering challenge, not a theoretical obstruction.
+Residual Detectability	If, after subtracting all known rotation-induced artifacts, a qubit shift ΔE ∝ ω_rot (coherent) or Γ_φ ∝ ω_rot² (incoherent) remains, that residual is geometrically unique: it scales with the rotational frequency and the qubit's position r_q. No known EM or thermal effect has that exact spatial signature (a linear velocity dependence with a fixed axis). This makes it a strong candidate for a genuinely novel residual.
+Theory Connection	Direct. The frozen v01 derivation explicitly connects ω_rot to the substrate current variance: ⟨(δJ)²⟩ ∝ ω_rot². This means v01 gives a specific predicted functional form for the dephasing residual. For the spectroscopy shift, if J itself scales with ω_rot (as J = s₀ · r · ω_rot), then ΔE ∝ ω_rot. This is a testable prediction that distinguishes rotation from other candidates.
+New Physics Pre-Assumption	None. The experiment does not assume the substrate exists—it just spins a qubit and looks for an unexplained shift. If none is found, the result is a null result, not a failure.
+Falsification Clarity	High. Pre-register the noise budget. If the observed shift is within the modelled vibration/EM/thermal budget, H01 is falsified for that parameter range. If a residual remains and scales as ω_rot or ω_rot² with the predicted geometry, it warrants further investigation.
+
+Verdict: Strong primary candidate.
+Candidate 2: Controlled Strain / Vibration (Piezo Actuation)
+Aspect	Analysis
+Controllability	Excellent. Piezo actuators provide precise, high-frequency strain control (DC to MHz) with known amplitude.
+Noise Modelability	Tractable but complex. Strain couples to qubits via: (a) deformation potential (shifts energy levels), (b) piezoelectric fields (if the qubit is on a piezoelectric substrate), (c) changes in capacitance/inductance. These are standard solid-state effects, well-characterised. The noise budget includes thermal expansion, residual strain from mounting, and acoustic resonances.
+Residual Detectability	If a residual shift is observed beyond the standard strain-coupling models, it would be evidence of an additional strain-dependent coupling. However, any strain-dependent shift that is not predicted by known material properties could be attributed to a new coupling—but it is not specific to C2. The substrate theory does not predict a unique functional form for strain coupling. The residual would be "anomalous strain coupling," not "substrate current."
+Theory Connection	Weak. v01 does not predict a specific scaling of J with strain. If you use strain, you are defining J as a function of strain after the fact—which is Path A (identifying J with a known field) by the back door. This violates the "no new physics pre-assumed" criterion unless the strain is used only to probe a residual, and the residual's scaling is then compared to v01's predictions (which do not mention strain).
+New Physics Pre-Assumption	Risk of circularity. If you observe a strain-dependent shift, you could always fit it to a new coupling constant. But that constant would not be g—it would be a strain–qubit coupling constant. To connect it to g, you would need an additional postulate linking strain to J. That is a new assumption.
+Falsification Clarity	Moderate. You can falsify "known strain coupling" by showing the shift exceeds the standard deformation-potential prediction. But you cannot falsify "unknown strain coupling" without extensive materials characterisation.
+
+Verdict: Weak primary candidate. Better suited as a control to measure known strain couplings, but not ideal for discovering a C2-specific residual.
+Candidate 3: Magnetic-Field Modulation
+Aspect	Analysis
+Controllability	Excellent. Coils and power supplies provide precise, clean DC/AC magnetic fields.
+Noise Modelability	Trivial. The Zeeman effect is one of the best-characterised phenomena in physics. The qubit's energy shift ΔE = g_eff μ_B B is known to exquisite precision.
+Residual Detectability	Zero. There is no "residual" to find—the entire shift is accounted for by standard QED. If you observe a shift, you have measured the magnetic moment. If you do not observe a shift, your apparatus is broken. This cannot yield a new substrate effect.
+Theory Connection	None. v01 does not involve magnetic fields. Identifying J with B would be Path A (known-field calibration).
+New Physics Pre-Assumption	Irrelevant. This cannot test for new physics.
+Falsification Clarity	Not applicable. This is a positive control, not a discovery probe.
+
+Verdict: Reject as primary. Use only as a positive control to validate the qubit spectroscopy pipeline.
+Candidate 4: Temperature Gradient
+Aspect	Analysis
+Controllability	Moderate. Heaters and coolers can create gradients, but thermal time constants are slow, and gradients are hard to stabilise.
+Noise Modelability	Difficult. Thermal gradients cause strain, EM pickup (Seebeck effect), and changes in qubit parameters.
+Residual Detectability	If a residual shift scales with the temperature gradient, it could be evidence of a thermoelectric or thermomechanical coupling—but again, this is not specific to C2.
+Theory Connection	Weak. v01 does not involve temperature. Adding temperature would require introducing thermodynamics (which you explicitly rejected as a v02 assumption for now).
+New Physics Pre-Assumption	High. You would be assuming the substrate has a temperature, which requires a new postulate.
+
+Verdict: Reject. Too many confounders, too weak a theory connection, and requires adding thermodynamics prematurely.
+Candidate 5: Spatial Displacement (Moving the Qubit Relative to a Fixed Environment)
+Aspect	Analysis
+Controllability	Moderate. Move the qubit chip with a translation stage.
+Noise Modelability	Difficult. Moving the qubit changes its coupling to everything—stray fields, thermal gradients, mechanical resonances.
+Residual Detectability	If a shift scales with position in a way that matches a gradient in s₀ (the background substrate density), it could be evidence. But this is a static measurement—it does not modulate J, it maps a field. To extract J, you would need to know the gradient of s₀, which is itself unknown.
+Theory Connection	Weak. v01 predicts J = s₀ · v, so a gradient in s₀ would produce a position-dependent J. But without a model for s₀'s spatial variation, this is just a field-mapping exercise.
+New Physics Pre-Assumption	None, but it cannot yield a controlled modulation of J—it only maps the static field.
+
+Verdict: Reject as primary. Use only as a secondary characterisation tool after a residual has been found via rotation.
+Synthesis: Which X for H01?
+Candidate	Controllability	Noise Modelability	Residual Uniqueness	Theory Connection	New Assumptions	Verdict
+Rotation (ω_rot)	Excellent	Hard but tractable	High — unique spatial/geometric signature	Direct — v01's ω_rot appears in transport	None	Primary
+Strain/Vibration	Excellent	Moderate	Low — not C2-specific	Weak — no v01 prediction	Risk of new coupling	Reject
+Magnetic Field	Excellent	Trivial	Zero — known physics	None	None	Positive control only
+Temperature Gradient	Moderate	Difficult	Low — not C2-specific	Weak — no v01 prediction	Requires thermodynamics	Reject
+Spatial Displacement	Moderate	Difficult	Low — static mapping	Weak	None	Secondary only
+My Adversarial Recommendation
+
+Use Physical Rotation (ω_rot) as H01's first control parameter.
+
+Reasons:
+
+    It is the only candidate that directly tests the frozen v01 derivation. The formula Γ_φ ∝ ω_rot² and the current variance ⟨(δJ)²⟩ ∝ ω_rot² are the only quantitative predictions v01 makes that involve an externally controllable parameter. If you use strain or temperature, you are testing a new hypothesis that v01 did not predict—which is legitimate but is a different hypothesis, not a test of the existing theory.
+
+    It provides a unique spatial signature. A rotation-induced shift scales with r_q (the distance from the rotation axis). No known EM, thermal, or strain effect has exactly that geometry when properly modelled. If a residual is found, it cannot be easily explained away as a miscalibrated magnetic moment.
+
+    It does not pre-assume the substrate's existence. You are simply spinning a qubit and looking for an unexplained energy shift. The null result is meaningful: it tells you that, within your noise floor, rotation does not produce a substrate current above a certain bound.
+
+    It allows a clean bridge later. If a residual is found and scales as ω_rot (coherent shift) or ω_rot² (dephasing), you can then define:
+    text
+
+J_eff = s_0 · r_q · ω_rot
+g = (ℏ/2) · (dΔω_q / dJ_eff)
+
+    This gives g in terms of a measured slope and a known geometry (r_q). The only remaining unknowns are s_0 (the background density) and A_eff, T_eff (which are geometric). Those become the next v02 hypotheses, but they are now well-defined.
+
+What the First Rotation Experiment Must Include (Adversarial Checklist)
+
+Before you run H01 with rotation, you must pre-register:
+
+    Vibration monitoring: Accelerometers on the qubit mount, with known transfer functions from vibration to qubit frequency (via strain or EM pickup).
+
+    EM pickup monitoring: B-field probes near the qubit, with known coupling from motor drivers.
+
+    Thermal monitoring: Thermocouples on the qubit and mount, with known thermal frequency shifts.
+
+    Strain monitoring: Strain gauges on the mount, with known deformation-potential coupling.
+
+    Control condition: A "no rotation" run with the motor powered but decoupled (to measure motor-driver EM pickup alone).
+
+    Pre-registered analysis: The method for subtracting all known contributions, and the criterion for declaring a residual "unexplained" (e.g., > 3σ above the combined noise budget).
+
+    Standard competitor: A model of all known rotation-induced artifacts (centrifugal strain, eddy currents, vibration) that predicts the expected shift. The residual is the difference between data and this model.
+
+If, after all this, a residual remains and scales as ω_rot or ω_rot² with the predicted geometry, then you have a warrant to invoke a substrate field. Until then, you have only a null result or a calibration of known artifacts.
+Decision Point
+
+Do you accept Rotation (ω_rot) as H01's first control parameter?
+
+If yes, the next step is to design the hypothesis card for this specific experiment, including:
+
+    The exact geometry (qubit position r_q, rotation axis).
+
+    The predicted residual functional form (linear for spectroscopy, quadratic for dephasing).
+
+    The noise budget and control runs.
+
+    The criterion for declaring a positive residual.
+
+If no, tell me which alternative you prefer, and I will analyse its specific requirements with equal rigour.
+
+
+To select the first controlled parameter $X$ for H01, the guiding rule for Path B is strict: the ideal parameter $X$ must maximize potential coupling while minimizing classical artifact overlap.In a residual search, the bottleneck is almost never detector sensitivity; it is systematic false positives. If altering $X$ inadvertently heats the mixing chamber, induces microphonics, or leaks stray magnetic flux into the Josephson junctions, any observed spectroscopy shift $\Delta\omega_q$ will be claimed by standard condensed matter physics before Substrate $J$ can even enter the conversation.Here is how the top candidate parameters rank against three strict experimental criteria: EM decoupling, cryogenic feasibility, and artifact isolation.Candidate Evaluation Matrix1. Magnetic Field Modulation ($X = B$ or $\nabla B$)Mechanism: Sweeping external Helmholtz coils or localized micro-coils near the sample.The Problem: Extreme classical background. Transmons and spin qubits are exquisitely sensitive to flux and Zeeman shifts.Verdict: Reject for $X_1$. Disentangling a true residual anomaly from a $10^{-6}$ magnetic flux leakage or shielding nonlinearity is an experimental nightmare. You would spend years arguing over stray flux modeling rather than testing new physics.2. Controlled Physical Rotation ($X = \Omega$)Mechanism: Rotating the sample or the entire cryostat stage to couple to background inertial/substrate frames.The Problem: Cryogenic microphonics and heating. Rotating anything inside a sub-20 mK dilution refrigerator introduces mechanical friction, eddy-current heating, and intense vibrational noise that modulates qubit flux lines and wire bonds.Verdict: High theoretical value, poor initial candidate. Save this for later iterations if a stationary setup demands an anisotropic frame check.3. Controlled Strain / Piezoelectric Vibration ($X = \epsilon$)Mechanism: Driving a cryogenic piezo actuator to apply mechanical strain or acoustic waves to the substrate chip.The Problem: Direct material coupling. Strain alters the lattice constant, which directly modifies the Josephson critical current $I_c$, charging energy $E_C$, and Two-Level System (TLS) defect distribution.Verdict: Strong candidate, but noisy. While piezo drive can be cleanly modulated at lock-in frequencies, separating $J$-coupling from standard strain-induced Josephson energy shifts requires a near-perfect material strain model.4. External Dynamic Mass Proximity / Gravitational Gradient ($X = \rho \cdot V$)Mechanism: Modulating a heavy, dense, non-magnetic, electrically grounded mass (e.g., a high-purity tungsten or lead rotor/chopper) outside the cryostat or vacuum shield at a fixed frequency $f_X$.The Advantage: Unmatched background isolation. Because the mass sits outside the thermal and electromagnetic shielding:RF and DC magnetic cross-talk is zero.Direct thermal heating of the mixing chamber is zero.Mechanical coupling can be damped out via independent vibration-isolated optical tables.Verdict: Primary Choice ($X_1$).Recommended Choice for H01: Dynamic Mass ProximityThe cleanest starting parameter $X_1$ is an externally modulated local mass density gradient:$$X_1 = \nabla \Phi_{\text{mass}}(t)$$By rotating or oscillating a segmented tungsten mass outside the cryostat wall at a reference frequency $f_{\text{mod}}$ (e.g., 10–35 Hz), you can perform lock-in spectroscopy on the qubit transition frequency $\omega_q$.Why this wins for Path B:If $\Delta\omega_q$ shows a phase-locked response at $f_{\text{mod}}$ that scales with mass geometry, yet zero response occurs when replacing the tungsten mass with an optically identical, low-density aluminum mass, no standard Maxwell-Boltzmann or BCS condensed matter mechanism can explain it. You immediately isolate a residual shift cleanly outside known standard-model EM/thermal channels.Summary MatrixParameter XControl PrecisionClassical Artifact RiskCryo FeasibilityPrimary Artifact SourceMagnetic Flux ($B$)HighExtremeHighFlux leakage / Zeeman shiftPhysical Rotation ($\Omega$)ModerateHighVery LowMicrophonics / Friction heatingPiezo Strain ($\epsilon$)HighModerate-HighModerateDirect $E_J$/$I_c$ material strainMass Proximity ($\nabla \Phi$)HighVery LowVery HighResidual acoustic transmission
+
+Shall we proceed with formalizing the Mass Proximity ($X_1$) experimental protocol (chopping frequencies, vibration damping controls, and lock-in baseline checks), or do you want to explore the Piezo Strain path as a compact, chip-scale alternative?
+
+
+
+
+
+
+
+Before scoring candidates, one thing has to be settled first: which qubit platform this runs on, because it determines which X is even physically accessible, and that constraint changes the ranking below more than any other factor.
+
+Why platform comes first
+
+The frozen theory's own prediction is specifically about rotation (Γ_φ = k_rot ω_rot²), derived from frame kinematics (v_sub|rotating = v_sub|lab − ω_rot × r). So rotation is the theory-motivated choice — it's literally the variable the existing equations are about, and a residual found there would connect directly to k_rot's already-fitted empirical value. But superconducting transmons (the platform behind the IBM data referenced throughout the frozen documents) sit in a fixed dilution refrigerator — you cannot spin a dilution fridge. MEASUREMENT_PROTOCOL.md already flags this: "cloud qubits... do not provide control of the proposed substrate current." So if the platform stays fixed-cryostat transmons, rotation is off the table as a directly applied control, and you'd instead be limited to Earth's rotation (sidereal-period modulation) — real, but with a tiny, slow signal and enormous confounds (diurnal thermal cycling, lab HVAC, building settling — all of which also vary on a ~24h period).
+
+If the platform can be an NV center or trapped ion instead, physical rotation on a controlled turntable/rotation stage becomes genuinely feasible at room temperature or with portable cryogenics, and directly tests the frozen ω_rot variable.
+
+Candidate comparison for X
+Candidate X	Matches theory's own ω_rot variable?	Physically controllable cleanly?	Known conventional explanation already exists?	Net verdict
+Physical rotation (turntable)	Yes — directly	Only on room-temp/portable platforms (NV, trapped ion); not fixed-cryostat transmons	Yes, several: Coriolis-induced mechanical strain, slip-ring RF pickup, motor vibration, centrifugal wire tension, rotating-frame Sagnac phase in any optical control lines	Best theoretical match, worst practical cleanliness — every rotation apparatus is itself a small noise generator
+Sidereal rotation (Earth's own spin, fixed apparatus)	Yes — passively	Trivially "controllable" (no apparatus needed) but signal is tiny and slow	Yes: 24h thermal, power-grid, human-activity cycles all share the period	Theoretically clean (no motor to confound), but signal-to-confound ratio is poor without months of averaging
+Strain/vibration (piezo actuator)	No — this is a different variable, not ω_rot	Yes, easy, fast, precise amplitude control	Yes, well-characterized in NV centers (strain-Hamiltonian coupling is textbook)	Clean pipeline validation (good positive control), but doesn't test the actual frozen claim
+Magnetic field modulation	No	Yes, very easy	Yes, essentially completely — Zeeman coupling explains ~all of the response	Almost entirely Path A; poor for residual-hunting since there's nothing left over by construction
+My recommendation
+
+Given the goal is genuinely a residual search tied to the frozen theory's own claim, physical rotation is the only candidate that tests ω_rot itself rather than a generalization — but it only makes sense to attempt if you're not locked into a fixed-cryostat transmon. If NV centers or trapped ions are on the table, that's the platform to pick specifically because it makes rotation accessible.
+
+If the platform is fixed at transmons/IBM-style hardware, I'd say don't force rotation — instead run strain/vibration first as the pipeline-validation positive control (Path A, cheap, fast, rules out whether your measurement chain can even detect a small coupling at all), and treat sidereal modulation as the actual Path B residual test, with the explicit understanding that it needs a long integration time and a very careful subtraction of the 24-hour environmental cycle (which is itself measurable and controllable — you can characterize the lab's diurnal thermal/EM baseline on a qubit with the "substrate coupling" mechanism deliberately disabled or shielded, as its own control run).
+
+Which is closer to your actual situation — do you have access to a platform where physical rotation is mechanically feasible, or are we working within a fixed-cryostat constraint?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

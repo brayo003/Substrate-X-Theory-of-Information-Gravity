@@ -1,0 +1,14 @@
+{
+    "module": "Domain-Calibrated_Instability_Framework(DCIF)",
+    "tissue_type": "Lung (TCGA-LUAD)",
+    "metrics": {
+        "healthy_baseline_tax": 44.83,
+        "observed_malignant_tax": 53.79,
+        "persistence_delta_pct": 19.99
+    },
+    "diagnostic_verdict": "CRITICAL_SATURATION",
+    "recommended_intervention": {
+        "target_regulatory_drain_gamma": 1.0,
+        "required_efficacy_increase": 25.0
+    }
+}

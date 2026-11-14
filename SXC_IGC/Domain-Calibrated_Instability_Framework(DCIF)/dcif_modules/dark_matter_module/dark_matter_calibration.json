@@ -1,0 +1,36 @@
+{
+  "alpha": 0.0,
+  "beta": 0.9185,
+  "gamma": 22.5543,
+  "systems": {
+    "dwarf_galaxy": {
+      "E": 0.1,
+      "F": 0.005,
+      "T": 0.02
+    },
+    "milky_way": {
+      "E": 0.3,
+      "F": 0.01,
+      "T": 0.05
+    },
+    "cluster_core": {
+      "E": 0.6,
+      "F": 0.0156,
+      "T": 0.2
+    },
+    "bullet_cluster": {
+      "E": 0.95,
+      "F": 0.001,
+      "T": 0.85
+    }
+  },
+  "interpretation": {
+    "gamma_meaning": "Extreme sensitivity of DM tension to interaction changes",
+    "damping_trend": "F increases with system scale, crashes in collisions",
+    "testable_predictions": [
+      "All cluster collisions: F \u2248 0.001",
+      "DM in clusters: 3\u00d7 stickier than in dwarfs",
+      "\u03b3 \u2248 22.5 should appear in DM studies"
+    ]
+  }
+}

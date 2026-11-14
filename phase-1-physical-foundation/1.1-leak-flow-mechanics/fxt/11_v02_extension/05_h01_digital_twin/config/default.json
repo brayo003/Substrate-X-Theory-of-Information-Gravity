@@ -1,0 +1,19 @@
+{
+  "scenario": "frozen_law_shaped_injection",
+  "seed": 20260727,
+  "rotation_rad_s": [-40, -25, -12, -5, 0, 5, 12, 25, 40],
+  "ramsey_times_s": [0.0, 0.000004, 0.000008, 0.000012, 0.000016, 0.000020, 0.000024, 0.000028, 0.000032, 0.000036, 0.000040],
+  "shots_per_time": 3000,
+  "omega_q_rad_s": 3141592.653589793,
+  "gamma0_s_inv": 18000.0,
+  "k_injected_s": 1.5,
+  "beta_injected": 0.0,
+  "magnetic_hz_per_rad_s": 0.0,
+  "thermal_hz_per_rad_s2": 0.0,
+  "thermal_gamma_per_rad_s2": 0.0,
+  "vibration_monitor_bias": 0.0,
+  "vibration_gamma_per_rad_s2": 0.20,
+  "monitor_fractional_noise": 0.05,
+  "analysis_omits_vibration": false,
+  "train_fraction": 0.67
+}

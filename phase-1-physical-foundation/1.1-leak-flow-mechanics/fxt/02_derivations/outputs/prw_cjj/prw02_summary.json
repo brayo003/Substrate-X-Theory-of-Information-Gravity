@@ -1,0 +1,56 @@
+{
+  "task": "prw_02_spatial_correlator",
+  "status": "COMPLETE",
+  "main_result": {
+    "C_JJ_spatial_integrated": "S_JJ(\u0394x, \u03c9=0) = S\u2080 \u00b7 exp(-|\u0394x| / \u03be_c)",
+    "xi_c_definition": "\u03be_c = v/\u03bb = 2c\u03c4  (coherence length = 2 \u00d7 propagation speed \u00d7 relaxation time)",
+    "normalised_correlation": "C_\u0393(d) = exp(-d / \u03be_c)   [MAIN PREDICTION]",
+    "derivation_route": "telegrapher Green's function G_q(\u0394x,t) integrated over t gives exp(-\u03bb|\u0394x|/v)"
+  },
+  "key_identification": {
+    "xi_c_in_PRW_params": "\u03be_c = v/\u03bb = c/\u03bb = 2c\u03c4   (c=PRW speed, \u03bb=reversal rate, \u03c4=1/(2\u03bb))",
+    "xi_c_from_data": "\u03be_c = 2 \u00d7 c \u00d7 T\u2082*   if \u03c4 = T\u2082* (requires independent measurement of c)",
+    "single_param_links_two_observables": "\u03c4_B controls BOTH the NM Gaussian onset (C(t) ~ exp(-\u0393t\u00b2/2\u03c4_B)) AND the spatial correlation length \u03be_c = 2c\u03c4_B. These are independent observables tied to one parameter."
+  },
+  "competing_mechanisms": {
+    "C2_PRW_substrate": {
+      "form": "exp(-d / xi_c)",
+      "xi_c": "xi_c = v/lambda = 2*c*tau_B  (c = substrate wave speed)",
+      "key_constraint": "xi_c = 2 * c * T2star  (same tau links spatial and temporal)",
+      "distinguishable_from_phonon": "YES if c != v_sound_Si"
+    },
+    "phonon_bath": {
+      "form": "exp(-d / xi_ph)",
+      "xi_c": "xi_ph = v_ph / (2 * gamma_scatter)",
+      "key_constraint": "v_ph ~ 6000 m/s for Si, gamma_scatter ~ T^5 at low T",
+      "distinguishable_from_C2": "YES if temperature dependence or speed differs"
+    },
+    "magnetic_field_gradient": {
+      "form": "constant (d-independent)",
+      "xi_c": "infinite (uniform common-mode)",
+      "key_constraint": "correlation does NOT decay with distance",
+      "distinguishable_from_C2": "YES: look for d-dependence"
+    },
+    "direct_crosstalk": {
+      "form": "1/d^3 (dipole) or 1/d (1D coupled lines)",
+      "xi_c": "no characteristic length",
+      "key_constraint": "power law, not exponential",
+      "distinguishable_from_C2": "YES: exponential vs power law differ at large d"
+    },
+    "common_electronics": {
+      "form": "constant (d-independent)",
+      "xi_c": "infinite",
+      "key_constraint": "affects all qubits equally; spatial structure only from wiring",
+      "distinguishable_from_C2": "YES: no d-dependence"
+    },
+    "TLS_charge_noise": {
+      "form": "1/d^2 or exp(-d/xi_TLS) depending on TLS density",
+      "xi_c": "set by TLS density and coupling range",
+      "key_constraint": "TLS bath gives roughly 1/f noise spectrum; C2 gives Lorentzian",
+      "distinguishable_from_C2": "PARTIAL: spectral shape + spatial form together"
+    }
+  },
+  "max_numerical_error": 0.4936557181651481,
+  "numerical_status": "WARN",
+  "next_task": "prw_03_ibm_spatial_test.py \u2014 download IBM data, fit \u03be_c"
+}

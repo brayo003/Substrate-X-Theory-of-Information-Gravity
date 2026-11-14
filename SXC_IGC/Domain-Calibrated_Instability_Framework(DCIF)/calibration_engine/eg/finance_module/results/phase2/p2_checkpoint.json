@@ -1,0 +1,64 @@
+{
+  "stages_complete": [
+    "calibrate",
+    "os_replay",
+    "baselines",
+    "statistics",
+    "plots",
+    "reports"
+  ],
+  "os_config": {
+    "q_thresholds": {
+      "q05": -0.9979956145675514,
+      "q95": 1.7322887804197729
+    },
+    "layer1_strategy": {
+      "Deep_Incoherent": "NO_TRADE",
+      "Mod_Incoherent": "NO_TRADE",
+      "Transition": "NO_TRADE",
+      "Weak_Coherent": "NO_TRADE",
+      "Strong_Coherent": "NY_Continuation"
+    },
+    "layer1_confidence": {
+      "Deep_Incoherent": "Weak",
+      "Mod_Incoherent": "Weak",
+      "Transition": "Weak",
+      "Weak_Coherent": "Weak",
+      "Strong_Coherent": "Weak"
+    },
+    "no_trade_regimes": [
+      "Weak_Coherent",
+      "Deep_Incoherent",
+      "Transition",
+      "Mod_Incoherent"
+    ],
+    "layer2_risk": {
+      "Deep_Incoherent": 0.0,
+      "Mod_Incoherent": 0.0,
+      "Transition": 0.0,
+      "Weak_Coherent": 0.0,
+      "Strong_Coherent": 0.25
+    },
+    "layer3_stop": {
+      "Deep_Incoherent": 1.5,
+      "Mod_Incoherent": 1.5,
+      "Transition": 1.5,
+      "Weak_Coherent": 1.5,
+      "Strong_Coherent": 1.875
+    },
+    "layer3_target": {
+      "Deep_Incoherent": 2.5,
+      "Mod_Incoherent": 2.5,
+      "Transition": 2.5,
+      "Weak_Coherent": 2.5,
+      "Strong_Coherent": 2.5
+    },
+    "layer3_trailing": {
+      "Deep_Incoherent": false,
+      "Mod_Incoherent": false,
+      "Transition": false,
+      "Weak_Coherent": false,
+      "Strong_Coherent": false
+    }
+  }
+}

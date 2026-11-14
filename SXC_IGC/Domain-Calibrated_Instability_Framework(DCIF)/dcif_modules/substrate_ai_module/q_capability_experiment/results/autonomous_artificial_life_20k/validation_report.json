@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-08-10T14:41:33.423070+00:00",
+  "checks": {
+    "entity_count_a_eq_3": true,
+    "entity_count_b_eq_3": true,
+    "field_c_a_correct": true,
+    "field_c_b_correct": true,
+    "field_tau_a_correct": true,
+    "field_tau_b_correct": true,
+    "field_c_differs": true,
+    "kernels_isolated": true,
+    "field_objects_isolated": true,
+    "cooldown_ticks_a": true,
+    "cooldown_ticks_b": true,
+    "cooldown_secs_a": true,
+    "cooldown_secs_b": true,
+    "importance_threshold_a": true,
+    "importance_threshold_b": true,
+    "ollama_reachable": true,
+    "model_available": true
+  },
+  "all_passed": true
+}

@@ -1,0 +1,55 @@
+1. The Spectral View (The Macro Window)
+
+    What it does: Measures market structure across a slice of time (e.g., Fourier/wavelet transforms, Hurst exponents, principal component variance, or volatility clusters).
+
+    Why you're attracted to it: Regimes don't exist in a single tick. A "trending," "mean-reverting," or "high-volatility" market is a wave property that requires a time window to detect.
+
+    The trap: It trails reality. By the time a spectral window cleanly confirms a regime, the market might already be changing.
+
+2. The Pointwise View (The Micro Trigger)
+
+    What it does: Fires a discrete buy/sell order based on the exact current price, a immediate order book tick, or a single indicator crossing a threshold right now.
+
+    Why you're attracted to it: You need a precise, zero-lag signal to actually enter the market and execute a trade.
+
+    The trap: It is noisy. A single price tick knows nothing about the overall structure—it can easily trick your bot into buying a fake breakout during a dead regime.
+
+
+
+
+
+
+============================
+https://github.com/alphanume-markets/Alphanume-Strategy-Lab
+============================
+
+
+
+
+
+
+Hypothetically, for a finance bot, you would not automatically use the current spectral transport observable.
+
+The distinction is:
+
+Q_old = 4c²τ²|∇ln(s)|² - 1 was inherently wrong for the specific claim it was being asked to make: an exact classifier of the telegraph equation's propagation regime. The amplitude sweep demonstrated a structural mismatch, not merely poor calibration.
+D(k) = 4c²τ²|k|² - 1 is the correct modal transport discriminant for the validated telegraph dynamics.
+The structured spectral observable is the appropriate field-level representation when multiple modes coexist.
+
+For a hypothetical finance bot, the correct choice would depend on what the financial state variable actually represents.
+
+If you built a financial analogue whose dynamics genuinely had a validated dispersion/transport structure, then the spectral representation could be useful. For example, if price/order-flow dynamics were decomposed into temporal or spatial frequencies and you established that a particular discriminant separated empirically distinct regimes, you could use that discriminant as a regime feature.
+
+But you would not import D(k) merely because it worked for the substrate. The equation determines the observable.
+
+Likewise, you would not resurrect Q_old just because a finance dataset happened to correlate with it. Correlation would make it a potentially useful feature, not make it the theoretically correct transport discriminator.
+
+So the hierarchy is:
+
+validated dynamics → mathematically derived observable → independent validation → backend feature
+
+not:
+
+existing Q → new domain → tune until profitable.
+
+For a finance bot, conventional quantities such as volatility, realized variance, momentum, autocorrelation, spectral power, liquidity, spread, order-flow imbalance, and regime-transition statistics would generally be more defensible starting observables unless the bot's underlying model supplied a stronger theoretical invariant.

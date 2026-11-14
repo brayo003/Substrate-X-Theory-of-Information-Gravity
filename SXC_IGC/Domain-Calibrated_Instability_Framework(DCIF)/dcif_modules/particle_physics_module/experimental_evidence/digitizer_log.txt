@@ -1,0 +1,8 @@
+WORK LOG: EXPERIMENTAL DATA EXTRACTION
+--------------------------------------
+1. SOURCE: Kapner et al. (2007) - Fig 4 residuals.
+   METHOD: WebPlotDigitizer -> residuals_kapner.csv
+2. SOURCE: Hamilton et al. (2015) - Table S2.
+   METHOD: Manual entry from Supplementary Material -> surface_force_hamilton.csv
+3. SOURCE: Geraci et al. (2008) - Constraint plot.
+   METHOD: WebPlotDigitizer -> mems_geraci.csv

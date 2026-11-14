@@ -1,0 +1,138 @@
+{
+  "existing_c2_interaction": {
+    "operator": "H_int = g J_C2(x_q,t) sigma_z",
+    "status": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT",
+    "consequence": "existing assumptions do not determine any branch matrix element"
+  },
+  "conditional_completion": {
+    "new_assumption": "B(x,t) = kappa div(u(x,t)) replaces the unspecified C2 current observable",
+    "plane_wave_matrix_element": "B_b proportional to i k kappa (n dot e_b) q_b",
+    "weight": "w_b(n) = |n dot e_b(n)|^2",
+    "status": "NEW_CONSTITUTIVE_IDENTIFICATION_NOT_DERIVED_FROM_C2"
+  },
+  "constants": {
+    "C11_GPa": 165.7,
+    "C12_GPa": 63.9,
+    "C44_GPa": 79.6,
+    "rho_kg_m3": 2330.0
+  },
+  "modes": [
+    {
+      "direction": "[100]",
+      "branch": "TA1",
+      "speed_m_per_s": 5844.920027575687,
+      "polarization_alignment_abs": 0.0,
+      "scalar_dilatation_weight": 0.0
+    },
+    {
+      "direction": "[100]",
+      "branch": "TA2",
+      "speed_m_per_s": 5844.920027575687,
+      "polarization_alignment_abs": 0.0,
+      "scalar_dilatation_weight": 0.0
+    },
+    {
+      "direction": "[100]",
+      "branch": "LA",
+      "speed_m_per_s": 8433.023172523966,
+      "polarization_alignment_abs": 1.0,
+      "scalar_dilatation_weight": 1.0
+    },
+    {
+      "direction": "[110]",
+      "branch": "TA1",
+      "speed_m_per_s": 4673.91629816279,
+      "polarization_alignment_abs": 0.0,
+      "scalar_dilatation_weight": 0.0
+    },
+    {
+      "direction": "[110]",
+      "branch": "TA2",
+      "speed_m_per_s": 5844.920027575687,
+      "polarization_alignment_abs": 0.0,
+      "scalar_dilatation_weight": 0.0
+    },
+    {
+      "direction": "[110]",
+      "branch": "LA",
+      "speed_m_per_s": 9134.192706246664,
+      "polarization_alignment_abs": 0.9999999999999998,
+      "scalar_dilatation_weight": 0.9999999999999996
+    },
+    {
+      "direction": "[111]",
+      "branch": "TA1",
+      "speed_m_per_s": 5094.247646552559,
+      "polarization_alignment_abs": 4.163336342344337e-17,
+      "scalar_dilatation_weight": 1.7333369499485123e-33
+    },
+    {
+      "direction": "[111]",
+      "branch": "TA2",
+      "speed_m_per_s": 5094.247646552561,
+      "polarization_alignment_abs": 1.1102230246251565e-16,
+      "scalar_dilatation_weight": 1.232595164407831e-32
+    },
+    {
+      "direction": "[111]",
+      "branch": "LA",
+      "speed_m_per_s": 9356.246144529563,
+      "polarization_alignment_abs": 1.0,
+      "scalar_dilatation_weight": 1.0
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "TA1",
+      "speed_m_per_s": 4893.089750176558,
+      "polarization_alignment_abs": 0.07290948397745523,
+      "scalar_dilatation_weight": 0.0053157928538588
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "TA2",
+      "speed_m_per_s": 5626.044336855586,
+      "polarization_alignment_abs": 0.04276101893327641,
+      "scalar_dilatation_weight": 0.0018285047402120237
+    },
+    {
+      "direction": "generic_[123]",
+      "branch": "LA",
+      "speed_m_per_s": 9156.820294310097,
+      "polarization_alignment_abs": 0.9964214481864233,
+      "scalar_dilatation_weight": 0.992855702405929
+    }
+  ],
+  "generic_direction_result": {
+    "direction": "[123]",
+    "coupled_branches": [
+      {
+        "direction": "generic_[123]",
+        "branch": "TA1",
+        "speed_m_per_s": 4893.089750176558,
+        "polarization_alignment_abs": 0.07290948397745523,
+        "scalar_dilatation_weight": 0.0053157928538588
+      },
+      {
+        "direction": "generic_[123]",
+        "branch": "TA2",
+        "speed_m_per_s": 5626.044336855586,
+        "polarization_alignment_abs": 0.04276101893327641,
+        "scalar_dilatation_weight": 0.0018285047402120237
+      },
+      {
+        "direction": "generic_[123]",
+        "branch": "LA",
+        "speed_m_per_s": 9156.820294310097,
+        "polarization_alignment_abs": 0.9964214481864233,
+        "scalar_dilatation_weight": 0.992855702405929
+      }
+    ],
+    "transport_outcome": "MULTIPLE_SPEEDS",
+    "reason": "both transverse weights are nonzero in anisotropic cubic silicon"
+  },
+  "high_symmetry_result": {
+    "result": "transverse scalar-dilatation weights vanish only on sampled high-symmetry directions",
+    "interpretation": "longitudinal-only coupling is geometry-dependent, not an exact material-wide selection"
+  },
+  "verdict": "NO_UNIQUE_C_FROM_EXISTING_COUPLING; CONDITIONAL_SCALAR_COMPLETION_HAS_GENERIC_TRANSVERSE_LEAKAGE"
+}

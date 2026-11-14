@@ -1,0 +1,104 @@
+{
+  "n_total": 360,
+  "n_vanilla": 180,
+  "n_wrapped": 180,
+  "vanilla_accuracy": 0.1556,
+  "wrapped_accuracy": 0.0722,
+  "prediction_metrics": {
+    "n": 180,
+    "TP": 121,
+    "FP": 13,
+    "FN": 46,
+    "TN": 0,
+    "precision": 0.9029850746268657,
+    "recall": 0.7245508982035929,
+    "f1": 0.8039867109634552,
+    "far": 1.0,
+    "miss_rate": 0.2754491017964072,
+    "accuracy": 0.6722222222222223
+  },
+  "failure_prediction_horizon": {
+    "total_failures": 167,
+    "predicted_failures": 121,
+    "warned_before_llm": 121,
+    "warned_after_llm": 0,
+    "prediction_rate": 0.725
+  },
+  "mcnemar": {
+    "b": 4,
+    "c": 19,
+    "chi2": 8.5217,
+    "p_value": 0.0035,
+    "n_pairs": 180
+  },
+  "bootstrap_ci": {
+    "diff_mean": -0.0833,
+    "ci_lo": -0.15,
+    "ci_hi": -0.0167,
+    "n_boot": 2000
+  },
+  "roc_auc": 0.1165,
+  "pr_auc": 0.8375,
+  "suite_stats": {
+    "suite1_long_context": {
+      "vanilla_acc": 0.267,
+      "wrapped_acc": 0.167,
+      "acc_diff": -0.1,
+      "n_vanilla": 30,
+      "n_wrapped": 30,
+      "q_mean_fail": -0.2477,
+      "q_mean_pass": -0.9481,
+      "q_mean_all": -0.3644
+    },
+    "suite2_contradiction": {
+      "vanilla_acc": 0.3,
+      "wrapped_acc": 0.1,
+      "acc_diff": -0.2,
+      "n_vanilla": 30,
+      "n_wrapped": 30,
+      "q_mean_fail": -0.3579,
+      "q_mean_pass": -0.8454,
+      "q_mean_all": -0.4066
+    },
+    "suite3_multistep": {
+      "vanilla_acc": 0.0,
+      "wrapped_acc": 0.0,
+      "acc_diff": 0.0,
+      "n_vanilla": 30,
+      "n_wrapped": 30,
+      "q_mean_fail": -0.104,
+      "q_mean_pass": null,
+      "q_mean_all": -0.104
+    },
+    "suite4_code": {
+      "vanilla_acc": 0.0,
+      "wrapped_acc": 0.0,
+      "acc_diff": 0.0,
+      "n_vanilla": 30,
+      "n_wrapped": 30,
+      "q_mean_fail": -0.4435,
+      "q_mean_pass": null,
+      "q_mean_all": -0.4435
+    },
+    "suite5_hallucination": {
+      "vanilla_acc": 0.167,
+      "wrapped_acc": 0.067,
+      "acc_diff": -0.1,
+      "n_vanilla": 30,
+      "n_wrapped": 30,
+      "q_mean_fail": -0.5125,
+      "q_mean_pass": -0.9113,
+      "q_mean_all": -0.5391
+    },
+    "suite6_recovery": {
+      "vanilla_acc": 0.2,
+      "wrapped_acc": 0.1,
+      "acc_diff": -0.1,
+      "n_vanilla": 30,
+      "n_wrapped": 30,
+      "q_mean_fail": -0.2801,
+      "q_mean_pass": -0.9615,
+      "q_mean_all": -0.3483
+    }
+  }
+}

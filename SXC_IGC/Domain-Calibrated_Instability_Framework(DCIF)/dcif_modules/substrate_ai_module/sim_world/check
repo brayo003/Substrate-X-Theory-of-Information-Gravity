@@ -1,0 +1,987 @@
+# TASK 6 CORRECTIVE EXPERIMENT — STRICT SCIENTIFIC IMPLEMENTATION AND VALIDATION PROTOCOL
+
+## Project: SXC-IGC / sim_world
+
+You are implementing the corrective version of Task 6. Your objective is to determine whether the nonlinear spatial-temporal substrate provides genuine persistent information storage, collective information processing, and measurable multi-agent utility.
+
+This is a scientific experiment, not a code-generation exercise. A simulation that executes successfully, produces graphs, or reports statistically significant differences is not sufficient. The implementation must test the stated hypotheses without information leakage, architectural confounds, invalid measurements, or unsupported conclusions.
+
+**Your highest priority is experimental validity. Do not optimize for obtaining a positive result.**
+
+---
+
+# PART I — PRESERVATION AND INITIAL AUDIT
+
+## 1. Preserve the original experiment
+
+The original Task 6 implementation and results must remain unchanged.
+
+Preserve:
+
+- `exp6_nonlinear_advantage.py`
+- `exp6_pilot_results.json`
+- `exp6_results.json`
+- `EXP6_NONLINEAR_ADVANTAGE_REPORT.md`
+
+Do not overwrite, rename, delete, or silently modify these files.
+
+Create a separate corrective experiment using appropriately named files, for example:
+
+- `exp6_corrected_nonlinear_advantage.py`
+- `exp6_corrected_pilot_results.json`
+- `exp6_corrected_results.json`
+- `EXP6_CORRECTED_REPORT.md`
+
+Additional modules, configuration files, tests and audit documents may be created as necessary.
+
+## 2. Audit the original implementation
+
+Before writing corrective code, inspect the complete original implementation, relevant substrate modules, solver, data structures, tests and report.
+
+Create `EXP6_CORRECTIVE_AUDIT.md`.
+
+Document each identified defect, its location, scientific consequence and corrective action.
+
+The audit must explicitly address:
+
+1. The original nonlinear field's initial condition of 1.0, which is above the unstable equilibrium for the selected bistable parameters.
+2. The possibility of spontaneous global transition without deposits.
+3. Access to undiscovered resource coordinates in agent movement decisions.
+4. Hazard avoidance being counted after an agent has already entered a hazard.
+5. Shared task-claim state bypassing architecture-specific coordination.
+6. Incorrect or insufficient information-recovery measurements.
+7. Duplicate-work metrics counting repeated observations as separate duplication events.
+8. Paired effect sizes being calculated using an unpaired pooled standard deviation.
+9. Composite-score weighting and multiple-comparison correction.
+10. The missing controlled collective-information-processing experiment.
+11. Solver failures, resets, boundary behaviour and numerical convergence.
+12. Whether all conditions receive comparable information, computational resources and observation opportunities.
+
+Do not assume that the original report's conclusions are established merely because the original code executed successfully.
+
+The original results must remain available as exploratory historical results. Do not combine them with corrected confirmatory results.
+
+---
+
+# PART II — THE RESEARCH HYPOTHESIS
+
+## 3. Research question
+
+Test the following proposition:
+
+A nonlinear, spatially extended, temporally persistent substrate can encode, retain, propagate and combine information deposited by multiple agents, enabling useful collective behaviour that cannot be explained merely by ordinary shared memory, direct messaging or conventional stigmergic signalling.
+
+Separate this proposition into four independently testable claims.
+
+### Claim A — Information encoding
+
+An agent's deposit produces a measurable substrate-state change that represents identifiable information.
+
+### Claim B — Persistent information storage
+
+The information remains recoverable after the depositing agent has left and its direct activity has ceased.
+
+### Claim C — Collective information processing
+
+Deposits from multiple agents interact to produce a combined state that another agent can recover and use.
+
+### Claim D — Functional advantage
+
+The substrate produces a measurable capability or performance advantage in a collective task compared with relevant conventional communication and memory architectures.
+
+These claims must be evaluated separately.
+
+Do not infer Claim C from Claim B. Do not infer Claim D from Claim C.
+
+---
+
+# PART III — NON-NEGOTIABLE EXPERIMENTAL CONSTRAINTS
+
+Every constraint below is mandatory.
+
+## 4. Information-access constraints
+
+### C1 — No hidden environmental information
+
+Agents may access only:
+
+- Their own sensor observations.
+- Their own internal state and experiences.
+- Information received through their assigned communication mechanism.
+- Information recovered through their assigned memory mechanism.
+
+Agents must not inspect undiscovered resource coordinates, hidden hazard locations, unobserved task states or any other ground-truth environment data.
+
+### C2 — No global oracle
+
+Ground-truth environmental information may be accessed by the evaluation and scoring system only.
+
+It must never enter an agent's decision-making pathway.
+
+### C3 — No unintended shared state
+
+Conditions must not communicate through global dictionaries, variables, shared task claims or other state unavailable to that architecture.
+
+Shared evaluation state is permitted only if it is inaccessible to agents and cannot influence their actions.
+
+### C4 — No hidden information through helper functions
+
+Audit all helper functions, environment interfaces, callbacks and movement-selection functions.
+
+A function that indirectly returns hidden environmental information is still an information leak.
+
+### C5 — Decision invariance test
+
+Construct a test in which hidden environmental truth is changed while all agent-visible information remains identical.
+
+Agent decisions must remain identical until the agents receive new observations or legitimate communications.
+
+A failure invalidates the affected experiment.
+
+## 5. Mathematical and numerical constraints
+
+### C6 — Correct bistable initialization
+
+The nonlinear field must start in the intended low-state basin.
+
+It must not start above the unstable equilibrium.
+
+### C7 — Demonstrated deposit-triggered transitions
+
+The experiment must demonstrate that local deposits cause transitions that would not occur in the undisturbed field.
+
+### C8 — Matched initial conditions
+
+Linear and nonlinear substrate conditions must use identical initial conditions, spatial perturbations, environmental conditions and relevant solver settings.
+
+### C9 — Solver integrity
+
+The implementation must verify the actual equation, discretization, timestep, boundary conditions, numerical stability and convergence.
+
+### C10 — No silent solver recovery
+
+Solver failures, invalid states, resets and numerical instability must be recorded.
+
+Do not silently reset a field and continue treating the trial as an ordinary successful trial.
+
+## 6. Architectural constraints
+
+### C11 — Genuine architecture-specific decisions
+
+Every agent must make decisions using the actual communication or memory mechanism assigned to its experimental condition.
+
+### C12 — No common coordination oracle
+
+Task allocation, resource discovery and hazard coordination must not use global state that makes the architectures functionally equivalent.
+
+### C13 — Fair comparison
+
+Control relevant differences in:
+
+- Available information.
+- Memory capacity.
+- Communication opportunities.
+- Signal channels.
+- Computational cost.
+- Update frequency.
+- Sensor range.
+- Agent population.
+- Environmental conditions.
+
+Where architectures inherently differ, document the difference rather than pretending they are identical.
+
+### C14 — No selective reporting
+
+Report all experimental conditions, failures, exclusions, parameter settings, solver resets and negative outcomes.
+
+---
+
+# PART IV — MATHEMATICAL AND DYNAMICAL VALIDATION
+
+## 7. Equation under test
+
+Use the implemented nonlinear reaction-telegraph equation:
+
+\[
+\tau s_{tt}+s_t
+=
+c^2\tau\nabla^2s+rs+as^2-bs^3.
+\]
+
+The corresponding first-order system is:
+
+\[
+s_t=v
+\]
+
+\[
+v_t=
+\frac{
+c^2\tau\nabla^2s+rs+as^2-bs^3-v
+}{\tau}.
+\]
+
+Use the candidate bistable parameter set:
+
+\[
+r=-0.5,\qquad a=2,\qquad b=1.
+\]
+
+The homogeneous equilibria are:
+
+\[
+s_0=0
+\]
+
+\[
+s_-=\frac{2-\sqrt{2}}{2}
+\approx0.292893
+\]
+
+\[
+s_+=\frac{2+\sqrt{2}}{2}
+\approx1.707107.
+\]
+
+The stability classification is:
+
+| Equilibrium | Stability | Interpretation |
+|---|---|---|
+| \(s_0=0\) | Stable | Low-state basin |
+| \(s_-\approx0.292893\) | Unstable | Separatrix |
+| \(s_+\approx1.707107\) | Stable | High-state basin |
+
+The original initialization at 1.0 is not acceptable for this experiment because it is above the separatrix.
+
+Select an initial background below the unstable equilibrium. A value of zero is a possible starting point, but do not blindly hardcode it without checking the implementation's field representation, deposit operation, numerical noise and boundary treatment.
+
+Demonstrate experimentally that the chosen initialization remains in the low-state basin without deposits.
+
+## 8. Gate G1 — Mathematical verification
+
+Pass only if:
+
+1. The implemented equilibria agree with the analytical values within documented numerical tolerances.
+2. The stability classification agrees with linear stability analysis.
+3. The implemented solver actually evolves the specified equation.
+4. The linear limit \(r=a=b=0\) reproduces the existing linear solver.
+5. Timestep convergence is demonstrated.
+6. Spatial-resolution convergence is demonstrated.
+7. Boundary conditions are explicitly documented and tested.
+8. Field values remain numerically valid throughout the tested parameter range.
+
+## 9. Gate G2 — Dynamical verification
+
+Perform the following controlled tests.
+
+### Test 1 — Undisturbed field
+
+Initialize the field in the low-state basin.
+
+Run it for at least the full duration of an ordinary experiment.
+
+Pass only if it remains in the low-state basin without spontaneous global transition.
+
+### Test 2 — Subthreshold deposit
+
+Apply a deposit too weak to cross the separatrix.
+
+Pass only if it does not produce an unintended persistent high-state transition.
+
+### Test 3 — Superthreshold deposit
+
+Apply a deposit sufficiently strong to cross the separatrix locally.
+
+Pass only if it produces the expected local transition.
+
+### Test 4 — Deposit removal
+
+Remove the external deposit after the transition.
+
+Pass only if the transitioned region remains in the high state for a measurable duration.
+
+### Test 5 — Spatial localization
+
+Verify that the transition remains spatially localized under the selected conditions.
+
+Measure the spatial extent and propagation of the high-state region.
+
+Do not assume that all spreading is undesirable; quantify it and establish whether it is consistent with the intended mechanism.
+
+### Test 6 — Multiple deposits
+
+Apply two spatially separated deposits.
+
+Verify whether the resulting regions remain distinguishable and whether their interaction behaves as predicted.
+
+### Test 7 — Linear ablation
+
+Remove the nonlinear reaction terms.
+
+Verify that the bistable transition disappears.
+
+For every test, record:
+
+- Initial field state.
+- Deposit amplitude and shape.
+- Local field maximum.
+- Local field mean.
+- Time of threshold crossing.
+- Transition persistence.
+- Spatial extent.
+- Global field statistics.
+- Solver errors and resets.
+
+A visual plot alone does not pass G2.
+
+---
+
+# PART V — EXPERIMENTAL ARCHITECTURES
+
+## 10. Required conditions
+
+Implement and compare six architectures.
+
+| Condition | Information mechanism |
+|---|---|
+| 1. Independent | Individual sensors and local state only |
+| 2. Direct messaging | Explicit agent-to-agent messages |
+| 3. Blackboard | Conventional shared structured memory |
+| 4. Digital pheromone | Conventional spatial signal grids |
+| 5. Linear substrate | Spatial-temporal field without nonlinear reaction |
+| 6. Nonlinear substrate | Spatial-temporal field with nonlinear reaction |
+
+Use identical:
+
+- Agent populations.
+- Environment generation rules.
+- Task distributions.
+- Sensor ranges.
+- Movement rules.
+- Random seeds.
+- Observation opportunities.
+- Trial durations.
+- Relevant computational budgets.
+
+Implement each architecture as a separate information-access pathway.
+
+### Direct messaging
+
+Agents must explicitly send and receive messages.
+
+Record message count, payload size, communication delay and communication cost.
+
+### Blackboard
+
+Agents must write and read structured shared records.
+
+Record memory capacity, writes, reads and access cost.
+
+### Digital pheromone
+
+Use explicit spatial signal channels with documented deposit, diffusion, decay and readout behaviour.
+
+Record channel count, grid resolution, memory cost and update cost.
+
+### Linear substrate
+
+Use the same substrate infrastructure and comparable initial conditions, but remove the nonlinear reaction terms.
+
+### Nonlinear substrate
+
+Use the validated reaction-telegraph dynamics and explicit encoding/readout rules.
+
+Do not give the nonlinear substrate hidden access to additional environmental information.
+
+## 11. Gate G3 — No-oracle verification
+
+Pass only if code inspection and runtime tests establish that:
+
+- Agent movement cannot read hidden resource coordinates.
+- Agents cannot inspect the full hazard list.
+- Agents cannot inspect hidden task assignments.
+- Ground truth is accessed only by the evaluation layer.
+- Architecture-specific memory is isolated.
+- The decision-invariance test passes.
+
+## 12. Gate G4 — Architectural integrity
+
+Pass only if:
+
+1. Every architecture has a distinct, documented information pathway.
+2. Runtime traces show agents actually reading and using that pathway.
+3. No architecture receives unintended information through global variables or helper functions.
+4. Task allocation uses the architecture's actual communication mechanism.
+5. Scoring state is isolated from decision state.
+6. Differences in memory capacity, channel count and computational cost are documented.
+
+---
+
+# PART VI — THE THREE FUNCTIONAL EXPERIMENTS
+
+These experiments must be implemented and reported separately.
+
+Do not collapse them into a single aggregate simulation.
+
+## 13. Experiment A — Persistent spatial memory
+
+### Research question
+
+Can the substrate retain useful information about an event after the depositing agent has left?
+
+### Procedure
+
+1. An agent encounters a resource.
+2. It deposits an encoded signal through its assigned architecture.
+3. The agent leaves the region.
+4. Other agents arrive after controlled delays.
+5. They attempt to recover the event's location and encoded information.
+6. Repeat with different delays and spatial distances.
+7. Repeat for all six architectures.
+
+Control for continued agent activity. The depositing agent must not remain nearby and continually refresh the signal unless the experiment explicitly tests refresh behaviour.
+
+### Measurements
+
+Record:
+
+- Event detection accuracy.
+- Localization error.
+- Signal-strength recovery error.
+- Information persistence duration.
+- False-positive detections.
+- False-negative detections.
+- Recovery after the depositing agent disconnects.
+- Memory and communication cost.
+
+### Gate G5 — Persistent memory
+
+Pass only if:
+
+1. Deposited information remains measurable after the depositing agent leaves.
+2. Other agents can recover the relevant information.
+3. Recovery remains possible at controlled time delays.
+4. The recovered information is not attributable to initial conditions or hidden coordinates.
+5. The effect is reproducible across independent seeds.
+6. The nonlinear substrate's performance is compared against the linear substrate and conventional baselines.
+
+Longer signal lifetime alone is insufficient.
+
+The retained signal must remain informative and recoverable.
+
+---
+
+## 14. Experiment B — Multi-agent collective information processing
+
+### Research question
+
+Can information deposited independently by multiple agents combine into a useful collective state?
+
+This is the central experiment of Task 6.
+
+Do not substitute resource discovery, longer signal persistence or another coordination task for this experiment.
+
+### Three-agent design
+
+Use three agents:
+
+- Agent A deposits information \(X\).
+- Agent B deposits information \(Y\).
+- Agent C receives no direct communication from A or B and attempts to recover the combined state through the assigned architecture.
+
+### Required experimental cases
+
+| Case | Input |
+|---|---|
+| Control 1 | No deposit |
+| Control 2 | \(X\) only |
+| Control 3 | \(Y\) only |
+| Test | \(X+Y\) |
+
+Then implement an interaction task in which the correct output depends on the relationship between \(X\) and \(Y\), rather than merely their independent presence.
+
+The task must distinguish:
+
+- \(X\) alone.
+- \(Y\) alone.
+- \(X\) and \(Y\) together.
+- \(X\) and \(Y\) together in a specified spatial or temporal relationship.
+
+Use more than one input combination where needed to prevent a trivial fixed response.
+
+### Required controls
+
+Run the same input-output task using:
+
+- Direct messaging.
+- Blackboard.
+- Digital pheromone.
+- Linear substrate.
+- Nonlinear substrate.
+
+The no-communication condition must also be included as a baseline.
+
+### Readout requirements
+
+Agent C must recover the relevant combined state through its assigned information mechanism.
+
+Any learned readout must:
+
+- Be trained only on designated training data.
+- Use independent held-out evaluation seeds.
+- Avoid access to hidden ground truth at inference time.
+- Have its architecture and training procedure documented.
+- Be compared with equivalent conventional readouts where applicable.
+
+### Gate G6 — Collective processing
+
+Pass only if:
+
+1. Agent C correctly recovers the relevant combined information.
+2. The combined state is distinguishable from the individual input states.
+3. The result is reproducible across independent seeds.
+4. The output depends on the interaction of the deposits, not a hardcoded lookup or global variable.
+5. The readout produces a measurable improvement on the defined interaction task.
+6. The effect survives comparison against conventional architectures under comparable information and resource budgets.
+7. The result is not explained by the substrate merely storing two independent signals.
+
+If the substrate only preserves two separate deposits, report multiplexed persistent memory. Do not call that collective information processing.
+
+If the combined state produces a useful output that cannot be recovered from either input alone, report the specific interaction capability demonstrated.
+
+---
+
+## 15. Experiment C — Agentic coordination
+
+### Research question
+
+Does substrate-mediated information produce useful improvements in actual multi-agent behaviour?
+
+Implement three independent task classes.
+
+### Task C1 — Distributed resource discovery
+
+Agents must discover resources through their own observations and legitimate information sharing.
+
+They must not inspect the coordinates of undiscovered resources.
+
+Measure:
+
+- Resource discovery rate.
+- Time to discovery.
+- Time to task completion.
+- Duplicate exploration.
+- Unique redundant visits.
+- False resource detections.
+- Communication volume.
+- Computational cost.
+
+Define duplicate work as distinct redundant exploration or assignment events.
+
+Do not count every repeated sensor observation on the same resource as a separate duplicate event.
+
+### Gate G7 — Resource discovery
+
+Pass only if agents discover resources through permitted information pathways and the metrics are calculated from valid ground truth without leaking it into decisions.
+
+### Task C2 — Hazard detection and avoidance
+
+Agents must receive hazard information through their assigned architecture.
+
+Hazard information must affect their route selection before they enter the hazardous region.
+
+Implement an actual avoidance policy.
+
+Measure:
+
+- Actual hazard exposure ticks.
+- Unique hazard-entry events.
+- Avoided hazard crossings.
+- False-positive hazard detections.
+- Detour distance.
+- Time lost through avoidance.
+- Hazard information recovery accuracy.
+
+### Gate G8 — Hazard avoidance
+
+Pass only if:
+
+1. Agents respond to hazard information before entering the hazard.
+2. The route-selection logic genuinely uses the assigned information mechanism.
+3. Actual exposure is measured independently from the decision to avoid.
+4. False positives and detour costs are measured.
+5. The scoring system does not classify an agent already inside a hazard as having avoided it.
+
+### Task C3 — Distributed task allocation
+
+Agents must coordinate task selection and assignment through their assigned architecture.
+
+Do not use a common global `task_claimed` dictionary or equivalent shared oracle in the decision pathway.
+
+The evaluation system may maintain a separate ground-truth record of completed tasks and assignment conflicts.
+
+Measure:
+
+- Correct assignment rate.
+- Duplicate assignments.
+- Unassigned tasks.
+- Task completion time.
+- Total work.
+- Coordination messages or writes.
+- Resource consumption.
+
+### Gate G9 — Task allocation
+
+Pass only if:
+
+1. Task selection uses the assigned communication or memory mechanism.
+2. Assignment conflicts are measured independently.
+3. No common hidden task state coordinates the architectures.
+4. All conditions are evaluated against the same task distribution.
+5. Results are reproducible.
+
+---
+
+# PART VII — MEASUREMENT AND STATISTICAL VALIDITY
+
+## 16. Information-recovery measurements
+
+Do not rely on a single average accuracy score based on similarity to a smooth proximity field.
+
+That measurement can produce misleadingly high accuracy when most locations contain no event.
+
+Construct balanced evaluation datasets containing:
+
+- Event-present and event-absent probes.
+- Multiple event locations.
+- Multiple signal intensities.
+- Multiple event ages.
+- Multiple spatial separations.
+- Simultaneous events.
+- Overlapping or interacting events.
+- Different event categories where the architecture supports them.
+
+Report:
+
+- Precision.
+- Recall.
+- F1 score.
+- False-positive rate.
+- False-negative rate.
+- Localization error.
+- Age-estimation error.
+- Signal-strength estimation error.
+- Event-separation accuracy.
+- Calibration where probabilistic predictions are actually produced.
+
+Do not interpret a signed field value as a probability without a valid probabilistic transformation and calibration test.
+
+## 17. Duplicate-work measurements
+
+Define unique redundant exploration events.
+
+A repeated observation of the same resource by the same agent across consecutive ticks must not automatically count as a new duplicate.
+
+Report:
+
+- Number of unique duplicate visits.
+- Number of redundant assignments.
+- Number of agents independently visiting the same target.
+- Duplicate-work fraction with an explicit denominator.
+- Sensitivity to agent dwell time.
+
+## 18. Composite score
+
+A composite score may be included as a secondary summary, but it must not replace individual metrics.
+
+If a composite is used:
+
+1. Define it before confirmatory trials.
+2. Justify each metric and weight.
+3. Explain how each component is normalized.
+4. Perform sensitivity analysis over reasonable alternative weights.
+5. Report every component separately.
+6. Do not declare success if the composite improves while a critical primary outcome deteriorates.
+
+## 19. Gate G10 — Statistical integrity
+
+Before confirmatory trials:
+
+- Define the primary hypothesis.
+- Define the primary endpoint.
+- Define the comparison family.
+- Define the multiplicity correction.
+- Define exclusions.
+- Define the minimum meaningful effect.
+- Determine sample size using a power analysis.
+- Freeze the analysis procedure.
+
+Use paired random seeds across architectures.
+
+For paired comparisons, report:
+
+- Raw paired mean difference.
+- Confidence interval for the paired difference.
+- Appropriate paired statistical test.
+- Paired standardized effect size \(d_z\), calculated from the within-seed differences.
+- Exact sample size.
+- Test statistic.
+- P-value.
+- Multiplicity-adjusted P-value where applicable.
+
+Do not calculate paired effect sizes using an unpaired pooled standard deviation.
+
+Use a validated statistical library where available. If custom statistical routines are necessary, test them against known distributions and trusted reference implementations.
+
+Consider paired permutation or bootstrap procedures where bounded, zero-inflated or non-normal outcomes make ordinary paired t-test assumptions questionable.
+
+The primary comparison must be clearly distinguished from exploratory comparisons.
+
+If the controlled collective-processing task is the primary hypothesis, the analysis plan must state this explicitly.
+
+A statistically significant secondary metric does not rescue a failed primary endpoint.
+
+---
+
+# PART VIII — EXECUTION ORDER
+
+## 20. Mandatory implementation sequence
+
+Follow this order exactly.
+
+### Phase 1 — Preservation and audit
+
+1. Preserve original Task 6 files.
+2. Inspect the original implementation and relevant substrate modules.
+3. Produce `EXP6_CORRECTIVE_AUDIT.md`.
+4. Map each defect to its constraint and corrective implementation.
+
+### Phase 2 — Mathematical and numerical validation
+
+1. Implement or correct nonlinear initialization.
+2. Verify analytical equilibria.
+3. Verify stability.
+4. Run undisturbed-field tests.
+5. Run subthreshold and superthreshold deposit tests.
+6. Run deposit-removal tests.
+7. Run spatial-localization tests.
+8. Run multiple-deposit tests.
+9. Run linear-ablation tests.
+10. Run numerical convergence tests.
+
+Do not proceed to agentic experiments if G1 or G2 fails.
+
+### Phase 3 — Information-access and architecture validation
+
+1. Remove hidden resource-coordinate access.
+2. Remove hidden hazard and task-state access.
+3. Isolate decision state from scoring state.
+4. Implement architecture-specific interfaces.
+5. Verify that each condition uses its actual interface.
+6. Run decision-invariance tests.
+7. Audit runtime decision traces.
+
+Do not proceed to confirmatory agentic experiments if G3 or G4 fails.
+
+### Phase 4 — Persistent-memory experiment
+
+Implement Experiment A.
+
+Run controlled delays, spatial distances and event recovery tests.
+
+Evaluate G5.
+
+### Phase 5 — Collective-processing experiment
+
+Implement Experiment B.
+
+Run all required input combinations, controls and baselines.
+
+Evaluate G6.
+
+This phase is mandatory. It must not be omitted or replaced by the agentic coordination experiment.
+
+### Phase 6 — Agentic coordination experiment
+
+Implement Experiment C.
+
+Run resource discovery, hazard avoidance and task allocation separately.
+
+Evaluate G7, G8 and G9.
+
+### Phase 7 — Pilot and confirmatory experiments
+
+1. Run pilot trials.
+2. Inspect numerical stability and variance.
+3. Estimate sample-size requirements.
+4. Freeze the experimental configuration and statistical plan.
+5. Run independent confirmatory trials.
+6. Preserve all raw results.
+
+Do not tune parameters after inspecting confirmatory results and then report those same trials as confirmatory evidence.
+
+If a material parameter change is required, create a new exploratory or confirmatory experiment with a new protocol and new trials.
+
+### Phase 8 — Final report
+
+Produce:
+
+- `EXP6_CORRECTED_REPORT.md`
+- `exp6_corrected_results.json`
+- `exp6_corrected_pilot_results.json`
+- Any required plots and analysis files.
+- A complete test log.
+- A gate-verification matrix.
+
+The report must clearly separate mathematical validity, information retention, collective processing, agentic utility and comparative advantage.
+
+---
+
+# PART IX — FINAL ACCEPTANCE AND CLAIMS
+
+## 21. Acceptance ladder
+
+Use the following five levels.
+
+### Level 1 — Mathematical validity
+
+Requires G1 and G2.
+
+Permitted conclusion:
+
+"The implemented system exhibits the specified nonlinear bistable field dynamics under the tested numerical and parameter conditions."
+
+### Level 2 — Persistent information storage
+
+Requires G1–G5.
+
+Permitted conclusion:
+
+"The substrate functions as a persistent, spatially distributed information medium under the tested conditions."
+
+### Level 3 — Collective information processing
+
+Requires G1–G6.
+
+Permitted conclusion:
+
+"Multiple independently deposited inputs produce a useful combined state that another agent can recover and use."
+
+Only make this claim if the controlled collective-processing experiment actually passes.
+
+### Level 4 — Agentic utility
+
+Requires G1–G9.
+
+Permitted conclusion:
+
+"Substrate-mediated information provides measurable utility for the tested multi-agent coordination tasks."
+
+### Level 5 — Comparative advantage
+
+Requires G1–G10 and a robust advantage over relevant conventional baselines.
+
+Permitted conclusion:
+
+"The tested nonlinear substrate provides a measurable specialized advantage over the tested alternatives under the specified experimental conditions."
+
+Do not generalize beyond the tested conditions.
+
+## 22. Permitted outcomes
+
+There are three legitimate overall outcomes.
+
+**Outcome A — No demonstrated capability**
+
+The mathematical system may work, but persistent information retention, recovery or collective processing fails.
+
+Conclusion: no useful substrate-memory capability has been demonstrated.
+
+**Outcome B — Specialized capability**
+
+Persistent memory or collective information processing works, but conventional architectures match or outperform it.
+
+Conclusion: a genuine capability has been demonstrated, but no comparative advantage has been established.
+
+**Outcome C — Specialized advantage**
+
+A reproducible capability or performance advantage survives matched controls, independent seeds, appropriate statistical testing and comparison against conventional baselines.
+
+Conclusion: a specialized comparative advantage has been demonstrated within the tested scope.
+
+A negative scientific result is acceptable if the experiment itself passes its validity requirements. Do not manufacture positive findings.
+
+---
+
+# PART X — STRICT PROHIBITIONS
+
+The following actions are prohibited:
+
+1. Do not overwrite the original Task 6 results.
+2. Do not silently change the original experiment and present it as a correction without preserving provenance.
+3. Do not initialize the bistable field above its unstable equilibrium.
+4. Do not claim deposit-triggered memory without proving the undisturbed field remains in the low-state basin.
+5. Do not expose hidden environmental coordinates to agents.
+6. Do not use a shared global state to coordinate architectures that are supposed to be independent.
+7. Do not count post-entry hazard detection as hazard avoidance.
+8. Do not measure duplicate work by counting every repeated sensor observation.
+9. Do not treat a single scalar field as multiple semantic channels without demonstrating that the encoding and readout can distinguish them.
+10. Do not interpret persistent signals as proof of collective information processing.
+11. Do not omit the controlled \(X\), \(Y\), \(X+Y\) experiment.
+12. Do not use a composite score to hide failure in a critical metric.
+13. Do not use unpaired effect sizes for paired experimental designs.
+14. Do not claim statistical confirmation from exploratory pilot results.
+15. Do not silently exclude failed trials or solver resets.
+16. Do not tune confirmatory parameters after seeing confirmatory results.
+17. Do not claim comparative advantage merely because the nonlinear substrate beats the independent-agent baseline.
+18. Do not claim that the theory has been proven by a successful simulation.
+
+---
+
+# PART XI — REQUIRED FINAL DELIVERABLE
+
+The final report must contain the following sections:
+
+1. Executive summary.
+2. Original Task 6 defects and corrective actions.
+3. Mathematical model and parameter specification.
+4. Analytical equilibrium and stability verification.
+5. Numerical solver and convergence verification.
+6. Initial-state and deposit-triggered transition results.
+7. Information-access and no-oracle audit.
+8. Architecture implementation and fairness audit.
+9. Experiment A: persistent spatial memory.
+10. Experiment B: collective information processing.
+11. Experiment C: agentic coordination.
+12. Statistical methodology.
+13. Confirmatory results.
+14. Individual metric comparisons.
+15. Failure analysis and limitations.
+16. Gate-by-gate acceptance matrix.
+17. Overall outcome: A, B or C.
+18. Exact scientific claims supported by the evidence.
+19. Claims that remain unestablished.
+20. Recommended next experiment, justified by the actual findings.
+
+For every gate, report exactly one of:
+
+- **PASS** — Required evidence was produced and verified.
+- **FAIL** — The requirement was tested and not satisfied.
+- **NOT TESTED** — The required experiment or audit was not performed.
+- **BLOCKED** — Another failure prevented the test from being validly executed.
+
+Every PASS must reference its supporting test, source file, result record or analysis section.
+
+A gate must not be marked PASS merely because the relevant code exists.
+
+---
+
+# FINAL EXECUTION DIRECTIVE
+
+Implement this experiment as a rigorous scientific investigation of the nonlinear substrate.
+
+The central question is not whether the code can produce a persistent field pattern. It is whether independently deposited information can form a useful collective state, whether agents can recover and act on that state, and whether the resulting capability offers something measurable beyond established communication and shared-memory architectures.
+
+Preserve the original work. Correct the scientific design. Validate each layer independently. Execute the controlled collective-information experiment. Compare against genuine conventional baselines. Report what the evidence establishes and nothing more.
+
+**Do not skip gates. Do not substitute experiments. Do not declare success prematurely.**

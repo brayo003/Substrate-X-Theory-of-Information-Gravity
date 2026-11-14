@@ -1,0 +1,8 @@
+{
+  "module": "finance_module",
+  "coefficients": {
+    "beta": 3.5,
+    "gamma": 0.9,
+    "lambda": 0.04
+  }
+}

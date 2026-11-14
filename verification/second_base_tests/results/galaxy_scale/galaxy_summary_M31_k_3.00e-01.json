@@ -1,0 +1,10 @@
+{
+  "smoothing_sigma": 2,
+  "k_eff": 0.3,
+  "v_total_8_15kpc_mean_kms": 243.3918725249736,
+  "v_newt_8_15kpc_mean_kms": 188.44225707520297,
+  "ratio_outer_mean": 0.7809459934711698,
+  "max_v_total_kms": 972.8279323678961,
+  "npz_file": "verification/second_base_tests/results/galaxy_scale/galaxy_M31_k_3.00e-01.npz",
+  "plot_file": "verification/second_base_tests/results/galaxy_scale/galaxy_rotation_M31_k_3.00e-01.png"
+}

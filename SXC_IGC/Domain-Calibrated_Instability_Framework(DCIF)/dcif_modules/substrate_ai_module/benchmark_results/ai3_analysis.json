@@ -1,0 +1,196 @@
+{
+  "accuracy_by_mode": {
+    "vanilla": {
+      "n": 180,
+      "correct": 28,
+      "acc": 0.1556
+    },
+    "wrapped": {
+      "n": 180,
+      "correct": 13,
+      "acc": 0.0722
+    },
+    "observer": {
+      "n": 180,
+      "correct": 68,
+      "acc": 0.3778
+    }
+  },
+  "q_stats_by_outcome": {
+    "pass_Q_pre": {
+      "mean": -0.3086,
+      "std": 0.3092,
+      "n": 68
+    },
+    "fail_Q_pre": {
+      "mean": -0.1892,
+      "std": 0.2902,
+      "n": 112
+    },
+    "pass_Q_post": {
+      "mean": -0.9516,
+      "std": 0.034,
+      "n": 68
+    },
+    "fail_Q_post": {
+      "mean": -0.6136,
+      "std": 0.4002,
+      "n": 112
+    },
+    "delta_pre": 0.1193,
+    "delta_post": 0.338
+  },
+  "pearson_spearman": {
+    "pearson_r": -0.4599,
+    "pearson_p": 0.0,
+    "spearman_r": -0.584,
+    "spearman_p": 0.0,
+    "n": 180
+  },
+  "mutual_information": {
+    "MI": 0.1903,
+    "NMI": 0.287,
+    "H_S": 0.663,
+    "n": 180
+  },
+  "cohens_d": {
+    "cohens_d": -1.0622,
+    "n_pass": 68,
+    "n_fail": 112,
+    "mean_pass": -0.9516,
+    "mean_fail": -0.6136
+  },
+  "bootstrap_ci_pearson": {
+    "ci_lo": -0.5263,
+    "ci_hi": -0.3944,
+    "n_boot": 2000
+  },
+  "calibration": {
+    "bins": [
+      {
+        "conf_mean": 0.0696,
+        "acc": 0.0,
+        "n": 36
+      },
+      {
+        "conf_mean": 0.7826,
+        "acc": 0.1111,
+        "n": 36
+      },
+      {
+        "conf_mean": 0.9188,
+        "acc": 0.3889,
+        "n": 36
+      },
+      {
+        "conf_mean": 0.9569,
+        "acc": 0.6389,
+        "n": 36
+      },
+      {
+        "conf_mean": 0.9785,
+        "acc": 0.75,
+        "n": 36
+      }
+    ]
+  },
+  "roc_auc_observer": {
+    "auc": 0.8477,
+    "n": 180
+  },
+  "precision_recall": {
+    "at_Q0": {
+      "precision": 1.0,
+      "recall": 0.1786,
+      "f1": 0.303,
+      "tp": 20,
+      "fp": 0,
+      "fn": 92
+    },
+    "best": {
+      "threshold": -0.939,
+      "tp": 88,
+      "fp": 17,
+      "fn": 24,
+      "precision": 0.8381,
+      "recall": 0.7857,
+      "f1": 0.8111
+    }
+  },
+  "mcnemar": {
+    "A_vs_B": {
+      "b": 50,
+      "c": 10,
+      "chi2": 25.35,
+      "p": 0.0,
+      "n_pairs": 180
+    },
+    "A_vs_C": {
+      "b": 4,
+      "c": 19,
+      "chi2": 8.5217,
+      "p": 0.0035,
+      "n_pairs": 180
+    },
+    "B_vs_C": {
+      "b": 4,
+      "c": 59,
+      "chi2": 46.2857,
+      "p": 0.0,
+      "n_pairs": 180
+    }
+  },
+  "lead_time": {
+    "total_failures": 112,
+    "warned_pre_llm": 27,
+    "warned_post_llm": 20,
+    "only_post_warning": 7,
+    "no_warning": 78,
+    "pre_lead_rate": 0.241,
+    "threshold_used": 0.0
+  },
+  "per_suite_q": {
+    "suite1_long_context": {
+      "n_pass": 14,
+      "n_fail": 16,
+      "q_pass_mean": -0.9562,
+      "q_fail_mean": -0.736,
+      "q_sep": -0.2202
+    },
+    "suite2_contradiction": {
+      "n_pass": 15,
+      "n_fail": 15,
+      "q_pass_mean": -0.9567,
+      "q_fail_mean": -0.8467,
+      "q_sep": -0.11
+    },
+    "suite3_multistep": {
+      "n_pass": 3,
+      "n_fail": 27,
+      "q_pass_mean": -0.9461,
+      "q_fail_mean": -0.251,
+      "q_sep": -0.6951
+    },
+    "suite4_code": {
+      "n_pass": 27,
+      "n_fail": 3,
+      "q_pass_mean": -0.9455,
+      "q_fail_mean": 0.0846,
+      "q_sep": -1.0301
+    },
+    "suite5_hallucination": {
+      "n_pass": 4,
+      "n_fail": 26,
+      "q_pass_mean": -0.9511,
+      "q_fail_mean": -0.7558,
+      "q_sep": -0.1954
+    },
+    "suite6_recovery": {
+      "n_pass": 5,
+      "n_fail": 25,
+      "q_pass_mean": -0.9598,
+      "q_fail_mean": -0.7229,
+      "q_sep": -0.2369
+    }
+  }
+}

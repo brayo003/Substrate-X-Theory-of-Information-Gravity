@@ -1,0 +1,31 @@
+{
+  "elasticities": {
+    "g": 2.0,
+    "hbar": -2.0,
+    "omega_rot": 2.0,
+    "r_q": 2.0,
+    "s0": 2.0,
+    "tau": 1.0
+  },
+  "hidden_parameter_check": {
+    "finding": "k_rot is not constant under changes in its defining frozen parameters. Treating it as an empirical constant requires those parameters to be fixed or independently controlled.",
+    "k_rot_dependencies": [
+      "g",
+      "s0",
+      "r_q",
+      "tau",
+      "hbar"
+    ]
+  },
+  "method": "exact logarithmic derivatives of frozen rate; equal independent one-decade test widths solely for ranking",
+  "ranked_equal_width": [
+    "g",
+    "s0",
+    "r_q",
+    "omega_rot",
+    "hbar",
+    "tau"
+  ],
+  "status": "PARTIAL",
+  "verdict": "The rate is quadratically sensitive to g, s0, r_q, omega_rot, and hbar; no uncertainty budget supplied by the frozen repository permits a numerical experimental confidence claim."
+}

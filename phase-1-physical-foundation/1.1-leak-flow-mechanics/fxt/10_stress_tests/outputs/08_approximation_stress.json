@@ -1,0 +1,19 @@
+{
+  "controls": {
+    "Born_proxy": "g tau_B (dimensionless proxy after frozen normalization)",
+    "Markov": "tau_B Gamma_phi",
+    "secular_note": "for pure sigma_z coupling it is algebraically inactive; no independent numerical threshold supplied by frozen sources"
+  },
+  "fractions": {
+    "green": 0.214,
+    "red": 0.5739,
+    "yellow": 0.2121
+  },
+  "status": "PARTIAL",
+  "thresholds": {
+    "green": "both controls < 0.01",
+    "red": "max control >= 0.1",
+    "yellow": "max control in [0.01,0.1)"
+  },
+  "verdict": "Validity is a region, not a pass/fail property. The red region must not be cited as validation of the Markov-Born derivation."
+}

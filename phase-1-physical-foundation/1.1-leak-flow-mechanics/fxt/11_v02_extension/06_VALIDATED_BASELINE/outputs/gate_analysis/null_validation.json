@@ -1,0 +1,8 @@
+{
+  "seed": 20260728,
+  "trials": 500,
+  "mean_of_fitted_residual_means": -9.258620729539715e-05,
+  "sd_of_fitted_residual_means": 0.007189903525041527,
+  "mean_reduced_chi_squared": 0.9693333825454704,
+  "false_residual_rule": "No extra residual model is fitted; test is whether conventional fitted residual means are biased."
+}

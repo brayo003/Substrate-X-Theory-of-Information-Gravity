@@ -1,0 +1,10 @@
+{
+  "isotope": "12C",
+  "transition_state": "17.23 MeV",
+  "ground_state": "0.0 MeV",
+  "excitation_type": "M1 (Isoscalar)",
+  "x17_signature": {
+    "observed_peak_angle": "140 degrees",
+    "statistical_significance": "7.1 sigma"
+  }
+}

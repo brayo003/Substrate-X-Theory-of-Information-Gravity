@@ -1,0 +1,38 @@
+{
+  "falsification_criteria": {
+    "Markov_failure": "tau Gamma >= 0.1",
+    "finite_memory_failure": "max envelope mismatch > 0.01"
+  },
+  "log_uniform_ranges": {
+    "g": [
+      -5,
+      1
+    ],
+    "omega_rot": [
+      -4,
+      3
+    ],
+    "r_q": [
+      -3,
+      2
+    ],
+    "s0": [
+      -3,
+      2
+    ],
+    "tau": [
+      -5,
+      2
+    ]
+  },
+  "results": {
+    "combined_failure_fraction": 0.17217,
+    "finite_memory_failure_fraction": 0.17217,
+    "markov_failure_fraction": 0.14254,
+    "worst_tauGamma": 8.178451492032559e+17
+  },
+  "samples": 100000,
+  "seed": 10010,
+  "status": "FAIL",
+  "verdict": "The unrestricted admissible-positive search readily finds regions violating the frozen Markov condition. This falsifies any universal-domain claim, not the conditional weak-coupling derivation."
+}

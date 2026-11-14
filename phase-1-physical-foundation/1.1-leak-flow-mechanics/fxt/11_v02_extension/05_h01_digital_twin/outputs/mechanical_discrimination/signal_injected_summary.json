@@ -1,0 +1,8 @@
+{
+  "label": "signal_injected",
+  "injected_k_s": 1.5,
+  "scope": "synthetic discrimination benchmark only",
+  "rmse_mechanical_only": 684.8076759590853,
+  "rmse_mechanical_plus_quadratic": 336.45072877395,
+  "quadratic_coefficient_estimate": 1.5636694770893258
+}

@@ -1,0 +1,17 @@
+{
+  "assumption_ablation": {
+    "Born": "No computation can validate a factorized system-bath state from the reduced equation; weak coupling is indispensable to the stated derivation.",
+    "Markov": "Finite correlation produces a nonexponential initial slip; maximum mismatch grows with tau_B Gamma.",
+    "Secular": "For longitudinal sigma_z coupling [H_S,sigma_z]=0, no +/-2 omega_q transverse terms occur; secular removal does not alter this pure-dephasing algebra, but it is relevant to mixed/transverse alternatives.",
+    "Stationary bath": "Without time-translation-invariant C_JJ, the integral used to define a constant rate is not justified.",
+    "single_exponential_correlation": "The integral rate can remain defined, but the finite-time envelope need not be the single exponential used by the Markov reduction."
+  },
+  "markov_counterexample": {
+    "at_tauGamma_0_01": 0.00885495876216047,
+    "at_tauGamma_1": 0.33945558631157874,
+    "at_tauGamma_10": 0.698413211138507,
+    "metric": "max_t |finite-memory envelope - exp(-Gamma t)|"
+  },
+  "status": "PARTIAL",
+  "verdict": "The quadratic Markov rate is not established outside its small tau_B Gamma region; this is a derivational limitation, not a numerical failure."
+}

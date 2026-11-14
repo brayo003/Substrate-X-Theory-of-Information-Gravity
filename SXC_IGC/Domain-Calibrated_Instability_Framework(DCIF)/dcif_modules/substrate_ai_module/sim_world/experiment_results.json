@@ -1,0 +1,286 @@
+{
+  "phase6": {
+    "baseline": {
+      "condition": "baseline",
+      "tau": 3.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.568,
+      "build_rate": 0.0,
+      "forage_rate": 0.168,
+      "rest_rate": 0.264,
+      "final_hunger": 0.74,
+      "final_energy": 0.212,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 66,
+        "forage": 42,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 142
+      }
+    },
+    "legacy_q": {
+      "condition": "legacy_q",
+      "tau": 3.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.572,
+      "build_rate": 0.0,
+      "forage_rate": 0.168,
+      "rest_rate": 0.26,
+      "final_hunger": 0.746,
+      "final_energy": 0.1846,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 65,
+        "forage": 42,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 143
+      }
+    },
+    "spectral": {
+      "condition": "spectral",
+      "tau": 3.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.596,
+      "build_rate": 0.0,
+      "forage_rate": 0.172,
+      "rest_rate": 0.232,
+      "final_hunger": 0.746,
+      "final_energy": 0.1376,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 58,
+        "forage": 43,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 149
+      }
+    },
+    "ablation": {
+      "condition": "ablation",
+      "tau": 3.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.612,
+      "build_rate": 0.0,
+      "forage_rate": 0.176,
+      "rest_rate": 0.212,
+      "final_hunger": 0.734,
+      "final_energy": 0.1926,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 53,
+        "forage": 44,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 153
+      }
+    }
+  },
+  "phase7": [
+    {
+      "condition": "spectral",
+      "tau": 0.3,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.0,
+      "build_rate": 0.0,
+      "forage_rate": 0.212,
+      "rest_rate": 0.324,
+      "final_hunger": 0.42,
+      "final_energy": 0.424,
+      "final_stress": 0.0,
+      "task_success_rate": 1.0,
+      "action_counts": {
+        "rest": 81,
+        "forage": 53,
+        "explore": 116,
+        "build": 0,
+        "cooperate": 0
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 0.5,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.0,
+      "build_rate": 0.0,
+      "forage_rate": 0.212,
+      "rest_rate": 0.324,
+      "final_hunger": 0.42,
+      "final_energy": 0.424,
+      "final_stress": 0.0,
+      "task_success_rate": 1.0,
+      "action_counts": {
+        "rest": 81,
+        "forage": 53,
+        "explore": 116,
+        "build": 0,
+        "cooperate": 0
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 0.75,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.0,
+      "build_rate": 0.0,
+      "forage_rate": 0.212,
+      "rest_rate": 0.324,
+      "final_hunger": 0.42,
+      "final_energy": 0.424,
+      "final_stress": 0.0,
+      "task_success_rate": 1.0,
+      "action_counts": {
+        "rest": 81,
+        "forage": 53,
+        "explore": 116,
+        "build": 0,
+        "cooperate": 0
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 1.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.0,
+      "build_rate": 0.0,
+      "forage_rate": 0.212,
+      "rest_rate": 0.324,
+      "final_hunger": 0.42,
+      "final_energy": 0.424,
+      "final_stress": 0.0,
+      "task_success_rate": 1.0,
+      "action_counts": {
+        "rest": 81,
+        "forage": 53,
+        "explore": 116,
+        "build": 0,
+        "cooperate": 0
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 1.5,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.152,
+      "build_rate": 0.0,
+      "forage_rate": 0.204,
+      "rest_rate": 0.312,
+      "final_hunger": 0.456,
+      "final_energy": 0.4089,
+      "final_stress": 0.0,
+      "task_success_rate": 0.4,
+      "action_counts": {
+        "rest": 78,
+        "forage": 51,
+        "explore": 83,
+        "build": 0,
+        "cooperate": 38
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 2.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.212,
+      "build_rate": 0.0,
+      "forage_rate": 0.204,
+      "rest_rate": 0.308,
+      "final_hunger": 0.434,
+      "final_energy": 0.4066,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 77,
+        "forage": 51,
+        "explore": 69,
+        "build": 0,
+        "cooperate": 53
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 3.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.596,
+      "build_rate": 0.0,
+      "forage_rate": 0.172,
+      "rest_rate": 0.232,
+      "final_hunger": 0.746,
+      "final_energy": 0.1376,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 58,
+        "forage": 43,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 149
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 5.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.62,
+      "build_rate": 0.0,
+      "forage_rate": 0.18,
+      "rest_rate": 0.2,
+      "final_hunger": 0.71,
+      "final_energy": 0.1667,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 50,
+        "forage": 45,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 155
+      }
+    },
+    {
+      "condition": "spectral",
+      "tau": 10.0,
+      "n_ticks": 50,
+      "n_agents": 5,
+      "coordination_rate": 0.62,
+      "build_rate": 0.0,
+      "forage_rate": 0.18,
+      "rest_rate": 0.2,
+      "final_hunger": 0.71,
+      "final_energy": 0.1667,
+      "final_stress": 0.0,
+      "task_success_rate": 0.0,
+      "action_counts": {
+        "rest": 50,
+        "forage": 45,
+        "explore": 0,
+        "build": 0,
+        "cooperate": 155
+      }
+    }
+  ],
+  "notes": {
+    "baseline": "No substrate signal (c_spectral=0 constant).",
+    "legacy_q": "Local gradient Q normalised to [-1,+1] (deprecated quantity).",
+    "spectral": "Corrected C_spectral = f_prop - f_over from background-subtracted FFT.",
+    "ablation": "Spectral C_spectral values shuffled randomly \u2014 same distribution, wrong timing.",
+    "phase7": "Spectral condition repeated across tau values to find operating point."
+  }
+}

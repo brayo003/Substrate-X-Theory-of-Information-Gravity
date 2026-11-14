@@ -1,0 +1,9 @@
+{
+  "IS_rising_bars_p50": 1.0,
+  "IS_rising_bars_p70": 2.0,
+  "A_RISING_BARS_used": 8,
+  "IS_diverge_p70": 0.13081173601608043,
+  "C_DIV_THRESH_used": 0.04,
+  "IS_vol_spike_rate": 0.26061522223315475,
+  "TOTAL_RT_pip": 5.0
+}

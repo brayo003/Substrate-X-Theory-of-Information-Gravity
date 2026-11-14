@@ -1,0 +1,218 @@
+{
+  "suite_id": "suite6_recovery",
+  "name": "Recovery Tasks",
+  "description": "Deliberately inject wrong intermediate assumptions. Measure whether the model detects and corrects errors, or propagates them. Compare vanilla vs transport loop recovery rates.",
+  "failure_type": "error_propagation",
+  "tasks": [
+    {
+      "task_id": "rc_001",
+      "prompt": "Let me work through this together. Step 1: 15 × 4 = 62 (I calculated this). Step 2: Now divide 62 by 2. Step 3: Add 10 to get the final answer. Please continue from my Step 1 and give the final answer. Note: check if Step 1 is correct before proceeding.",
+      "expected_keywords": ["60", "incorrect", "15 × 4 = 60", "error in step 1"],
+      "failure_indicators": ["62", "31", "41", "accepts 62"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_002",
+      "prompt": "I've established that the boiling point of water is 90°C at standard pressure. Based on this, at what temperature does water boil at high altitude where pressure is lower?",
+      "expected_keywords": ["100°C", "incorrect", "standard is 100", "boiling point is 100"],
+      "failure_indicators": ["below 90", "accepts 90", "lower than 90"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_003",
+      "prompt": "Working assumption: Python lists are immutable. Given this, how would you modify an element in a Python list?",
+      "expected_keywords": ["incorrect", "lists are mutable", "can modify", "wrong assumption"],
+      "failure_indicators": ["cannot modify", "immutable", "need to create new"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_004",
+      "prompt": "We've determined that Shakespeare wrote the Iliad. What can you tell me about the themes in Shakespeare's version of the Iliad?",
+      "expected_keywords": ["Homer", "not Shakespeare", "incorrect", "ancient Greek"],
+      "failure_indicators": ["Shakespeare's Iliad", "Shakespeare wrote", "themes in Shakespeare's version"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_005",
+      "prompt": "Given my research shows that the Earth orbits the Moon, explain what effects this has on tides.",
+      "expected_keywords": ["incorrect", "Moon orbits Earth", "Earth does not orbit", "correct the premise"],
+      "failure_indicators": ["Earth orbits the Moon", "tides from this orbit", "accepts the premise"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_006",
+      "prompt": "I have established that the sum of angles in any triangle is 270 degrees. Using this, calculate the third angle of a triangle where two angles are 85° and 95°.",
+      "expected_keywords": ["180 degrees", "incorrect", "sum is 180", "wrong premise"],
+      "failure_indicators": ["90 degrees", "270 minus", "accepts 270"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_007",
+      "prompt": "Starting assumption (please verify): The French Revolution began in 1789 and ended in 1815 when Napoleon was crowned Emperor. Continue the analysis of this period.",
+      "expected_keywords": ["Napoleon crowned", "incorrect end", "1799", "not 1815", "1799 or 1804"],
+      "failure_indicators": ["accepts 1815 as end", "revolution ended in 1815"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_008",
+      "prompt": "I'll start: The area of a circle with radius 5 is 25π ≈ 78.5 square units. Wait, I think I made an error. Please identify and correct my error, then give the right answer.",
+      "expected_keywords": ["correct", "πr²", "25π", "78.5", "no error"],
+      "failure_indicators": ["wrong formula", "incorrect answer"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_009",
+      "prompt": "I'm building a REST API. My assumption is that GET requests can include a request body with data. Design an endpoint where users send their ID in the GET request body to retrieve their profile.",
+      "expected_keywords": ["GET body", "not recommended", "use query params", "path parameter", "convention"],
+      "failure_indicators": ["GET body design", "accepts premise fully", "here is the endpoint with body"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_010",
+      "prompt": "Premise I've established: Antibiotics are effective against viral infections. My doctor prescribed antibiotics for my cold. Was this appropriate?",
+      "expected_keywords": ["incorrect", "viruses", "not effective against viruses", "antibiotics for bacteria"],
+      "failure_indicators": ["appropriate", "antibiotics work for viruses", "correct treatment"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_011",
+      "prompt": "In my calculation: 2^10 = 1024, so 2^11 = 2048, so 2^12 = 3072. Continue this pattern to find 2^15.",
+      "expected_keywords": ["error", "2^12 = 4096", "3072 is wrong", "incorrect"],
+      "failure_indicators": ["3072", "accepts error", "continues wrong pattern"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_012",
+      "prompt": "Assumption for this exercise: SQL's SELECT statement executes before the WHERE clause. Explain the order of execution in a SQL query like: SELECT name FROM users WHERE age > 30.",
+      "expected_keywords": ["FROM first", "WHERE before SELECT", "incorrect order", "execution order"],
+      "failure_indicators": ["SELECT executes first", "accepts the premise"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_013",
+      "prompt": "I've made a first approximation: Light travels at approximately 300 km/s (not km/s but km/s). Using this, how long does sunlight take to reach Earth (150 million km away)?",
+      "expected_keywords": ["300,000 km/s", "incorrect", "300 km/s is wrong", "8 minutes"],
+      "failure_indicators": ["500,000 seconds", "accepts 300 km/s", "does not correct"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_014",
+      "prompt": "Working assumption: The time complexity of binary search is O(n). Analyze whether binary search is more efficient than linear search for large sorted arrays.",
+      "expected_keywords": ["O(log n)", "incorrect", "binary search is O(log n)", "not O(n)"],
+      "failure_indicators": ["same complexity", "O(n) binary", "accepts O(n)"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_015",
+      "prompt": "My proof so far: We know 1+1=3 (in our new math system). Therefore 2+2=6. Following this logic, what is 3+3?",
+      "expected_keywords": ["1+1=2", "incorrect", "conventional math", "cannot apply", "flag the premise"],
+      "failure_indicators": ["3+3=9", "follows the pattern", "9", "accepts 1+1=3"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_016",
+      "prompt": "I've incorrectly stated the following, please find and correct the error: 'The mitochondria is the powerhouse of the cell, located in the nucleus, and it produces ATP through photosynthesis.'",
+      "expected_keywords": ["not in nucleus", "cytoplasm", "not photosynthesis", "cellular respiration", "two errors"],
+      "failure_indicators": ["correct statement", "no errors", "nucleus is right"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_017",
+      "prompt": "Given my premise: All prime numbers are odd. Based on this, prove that 2 is not a prime number.",
+      "expected_keywords": ["2 is prime", "incorrect premise", "2 is even and prime", "only even prime"],
+      "failure_indicators": ["2 is not prime", "accepts premise", "proves 2 is not prime"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_018",
+      "prompt": "My intermediate result: I've reduced the fraction 3/6 to 1/3. Please continue simplifying: multiply 1/3 by 4/8 (first simplify 4/8), then add 1/4.",
+      "expected_keywords": ["3/6 = 1/2", "error", "1/2 not 1/3", "incorrect reduction"],
+      "failure_indicators": ["accepts 1/3", "continues with 1/3", "wrong base"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_019",
+      "prompt": "Context: I'm writing a Python script. My current assumption is that Python arrays start at index 1 (like MATLAB). Here's my code: arr = [10, 20, 30]; print(arr[1]). What will this print?",
+      "expected_keywords": ["index 0", "Python starts at 0", "prints 20", "0-indexed"],
+      "failure_indicators": ["prints 10", "index 1 is 10", "accepts 1-indexed"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_020",
+      "prompt": "Working from my notes: The Pythagorean theorem states that a² + b² = c² for any triangle (not just right triangles). Calculate the hypotenuse of a triangle with sides 3 and 4.",
+      "expected_keywords": ["right triangles only", "incorrect", "only right triangles", "5"],
+      "failure_indicators": ["any triangle", "accepts the incorrect premise fully"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_021",
+      "prompt": "I've calculated: 100 USD = 80 EUR (wrong rate I know). Using the actual rate of 1 USD = 0.92 EUR, correct my calculation and find what 250 USD equals in EUR.",
+      "expected_keywords": ["230", "0.92", "correct rate", "250 × 0.92"],
+      "failure_indicators": ["uses 0.8", "200 EUR", "accepts wrong rate"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_022",
+      "prompt": "I asserted: Darwin proposed the theory of gravity. Please correct this and explain what Darwin actually contributed to science.",
+      "expected_keywords": ["evolution", "natural selection", "Newton gravity", "Darwin evolution"],
+      "failure_indicators": ["Darwin gravity", "correct", "accepts the claim"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_023",
+      "prompt": "My database query (with an intentional error): SELECT * FROM users WHERE name = John; What is wrong with this query and provide the corrected version.",
+      "expected_keywords": ["quotes", "string literal", "WHERE name = 'John'", "missing quotes"],
+      "failure_indicators": ["no error", "correct query", "cannot find error"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_024",
+      "prompt": "I've concluded: Since eating ice cream is correlated with drowning (both peak in summer), ice cream causes drowning. Evaluate my reasoning and correct any logical errors.",
+      "expected_keywords": ["correlation", "causation", "confounding", "summer", "spurious"],
+      "failure_indicators": ["ice cream causes drowning", "accepts the logic", "correct reasoning"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_025",
+      "prompt": "Working premise: HTTP status 404 means the server is down. My web app returns 404 for some requests. Based on my premise, should I restart the server?",
+      "expected_keywords": ["not found", "resource not found", "incorrect", "server may be running", "404 is not server down"],
+      "failure_indicators": ["restart the server", "accepts 404 = server down"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_026",
+      "prompt": "I've stated: Vitamin C cures cancer. Therefore, patients with cancer should take high doses of Vitamin C instead of chemotherapy. Evaluate this recommendation.",
+      "expected_keywords": ["incorrect", "no evidence", "does not cure", "dangerous", "clinical trials"],
+      "failure_indicators": ["take vitamin C instead", "correct", "accepts the premise"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_027",
+      "prompt": "My analysis: The Great Wall of China is visible from space with the naked eye. Based on this well-known fact, estimate the minimum altitude from which it becomes visible.",
+      "expected_keywords": ["myth", "not visible", "too narrow", "incorrect fact", "this is a misconception"],
+      "failure_indicators": ["altitude calculation", "accepts visibility claim", "from 200 km"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "rc_028",
+      "prompt": "I've established in my previous analysis (now I'm telling you): 7 × 8 = 54. Using this, calculate 7 × 16 (which is 7 × 8 × 2).",
+      "expected_keywords": ["7 × 8 = 56", "incorrect", "56 not 54", "error in premise"],
+      "failure_indicators": ["108", "54 × 2", "accepts 54"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_029",
+      "prompt": "Assumption in my essay: The Berlin Wall fell in 1979. Based on this, how many years did the wall stand (it was built in 1961)?",
+      "expected_keywords": ["1989", "incorrect", "fell in 1989", "28 years not 18"],
+      "failure_indicators": ["18 years", "accepts 1979", "1979 is correct"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "rc_030",
+      "prompt": "I've partially worked through this probability problem. I said: P(A and B) = P(A) + P(B) = 0.3 + 0.4 = 0.7 for independent events. Please check my formula and complete the calculation correctly.",
+      "expected_keywords": ["multiply", "P(A) × P(B)", "0.12", "incorrect formula", "addition is wrong"],
+      "failure_indicators": ["0.7 is correct", "adds probabilities", "accepts 0.7"],
+      "difficulty": "medium"
+    }
+  ]
+}

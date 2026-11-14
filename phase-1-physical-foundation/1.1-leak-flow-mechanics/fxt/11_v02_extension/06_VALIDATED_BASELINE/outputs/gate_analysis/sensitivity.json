@@ -1,0 +1,146 @@
+[
+  {
+    "parameter": "effective_field",
+    "perturbation": -0.1,
+    "max_absolute_contrast_change": 0.16392873098256,
+    "rms_contrast_change": 0.08175290083070118
+  },
+  {
+    "parameter": "effective_field",
+    "perturbation": -0.01,
+    "max_absolute_contrast_change": 0.02086609622161975,
+    "rms_contrast_change": 0.009170463989284028
+  },
+  {
+    "parameter": "effective_field",
+    "perturbation": 0.01,
+    "max_absolute_contrast_change": 0.021770848658056043,
+    "rms_contrast_change": 0.009265900097720535
+  },
+  {
+    "parameter": "effective_field",
+    "perturbation": 0.1,
+    "max_absolute_contrast_change": 0.21685562765381222,
+    "rms_contrast_change": 0.08902270232505459
+  },
+  {
+    "parameter": "rotation_phase",
+    "perturbation": -0.1,
+    "max_absolute_contrast_change": 0.2565073679597271,
+    "rms_contrast_change": 0.12593202195912936
+  },
+  {
+    "parameter": "rotation_phase",
+    "perturbation": -0.01,
+    "max_absolute_contrast_change": 0.0650006868280399,
+    "rms_contrast_change": 0.023961567731776975
+  },
+  {
+    "parameter": "rotation_phase",
+    "perturbation": 0.01,
+    "max_absolute_contrast_change": 0.05913094261648218,
+    "rms_contrast_change": 0.02372348279056331
+  },
+  {
+    "parameter": "rotation_phase",
+    "perturbation": 0.1,
+    "max_absolute_contrast_change": 0.38539757518955087,
+    "rms_contrast_change": 0.17708165627722722
+  },
+  {
+    "parameter": "readout_contrast",
+    "perturbation": -0.1,
+    "max_absolute_contrast_change": 0.020989395134967503,
+    "rms_contrast_change": 0.013996352659843232
+  },
+  {
+    "parameter": "readout_contrast",
+    "perturbation": -0.01,
+    "max_absolute_contrast_change": 0.002098939513496767,
+    "rms_contrast_change": 0.001399635265984322
+  },
+  {
+    "parameter": "readout_contrast",
+    "perturbation": 0.01,
+    "max_absolute_contrast_change": 0.0020989395134967392,
+    "rms_contrast_change": 0.0013996352659843244
+  },
+  {
+    "parameter": "readout_contrast",
+    "perturbation": 0.1,
+    "max_absolute_contrast_change": 0.020989395134967476,
+    "rms_contrast_change": 0.013996352659843234
+  },
+  {
+    "parameter": "readout_offset",
+    "perturbation": -0.1,
+    "max_absolute_contrast_change": 0.010000000000000009,
+    "rms_contrast_change": 0.010000000000000007
+  },
+  {
+    "parameter": "readout_offset",
+    "perturbation": -0.01,
+    "max_absolute_contrast_change": 0.0010000000000000009,
+    "rms_contrast_change": 0.001000000000000001
+  },
+  {
+    "parameter": "readout_offset",
+    "perturbation": 0.01,
+    "max_absolute_contrast_change": 0.0010000000000000009,
+    "rms_contrast_change": 0.001000000000000001
+  },
+  {
+    "parameter": "readout_offset",
+    "perturbation": 0.1,
+    "max_absolute_contrast_change": 0.010000000000000009,
+    "rms_contrast_change": 0.010000000000000007
+  },
+  {
+    "parameter": "T2",
+    "perturbation": -0.1,
+    "max_absolute_contrast_change": 0.0005867181907535379,
+    "rms_contrast_change": 0.0002717197785544594
+  },
+  {
+    "parameter": "T2",
+    "perturbation": -0.01,
+    "max_absolute_contrast_change": 5.086487536740125e-05,
+    "rms_contrast_change": 2.3551504754952813e-05
+  },
+  {
+    "parameter": "T2",
+    "perturbation": 0.01,
+    "max_absolute_contrast_change": 4.937584695755004e-05,
+    "rms_contrast_change": 2.2861159362287364e-05
+  },
+  {
+    "parameter": "T2",
+    "perturbation": 0.1,
+    "max_absolute_contrast_change": 0.0004353911804281241,
+    "rms_contrast_change": 0.0002015570772506352
+  },
+  {
+    "parameter": "rotation_frequency",
+    "perturbation": -0.1,
+    "max_absolute_contrast_change": 0.09816010209258406,
+    "rms_contrast_change": 0.05974940413139749
+  },
+  {
+    "parameter": "rotation_frequency",
+    "perturbation": -0.01,
+    "max_absolute_contrast_change": 0.01044858663237376,
+    "rms_contrast_change": 0.005801788347139537
+  },
+  {
+    "parameter": "rotation_frequency",
+    "perturbation": 0.01,
+    "max_absolute_contrast_change": 0.010392846565518365,
+    "rms_contrast_change": 0.005731036022612092
+  },
+  {
+    "parameter": "rotation_frequency",
+    "perturbation": 0.1,
+    "max_absolute_contrast_change": 0.09547349752019726,
+    "rms_contrast_change": 0.05326810831524941
+  }
+]

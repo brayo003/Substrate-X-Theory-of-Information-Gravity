@@ -1,0 +1,1479 @@
+SXC-X candidate v0.1
+1. First: what survives from everything you said
+
+The strongest structure is this:
+
+Substrate X is an always-existing field whose local state is characterized not merely by a field value, but by the set of physically accessible transitions available to that state. Physical configurations constrain this set. X evolves through neighboring configurations, and a transition cannot simply terminate. When the current continuation becomes impossible, X must reorganize within the remaining allowed configuration space.
+
+That is the candidate.
+
+Everything else — gravity, matter, dimensional reduction, memory, expansion, black holes — becomes something we attempt to derive from it.
+
+That is a much better starting point than C2.
+
+2. What we must kill
+
+Several things from the earlier picture cannot be retained literally.
+
+Kill 1: "X is information"
+
+Too vague.
+
+We need:
+
+X is the physical structure whose possible configurations generate distinguishability.
+	​
+
+
+Information is then not a second substance.
+
+It is a property of the configuration structure.
+
+Kill 2: "X wants maximum configuration space"
+
+We cannot have X "want" anything.
+
+That is teleology.
+
+Replace it with:
+
+X evolves subject to a viability/continuation constraint.
+	​
+
+
+If several continuations remain possible, the dynamics determine which occurs.
+
+We do not assume maximum entropy, maximum freedom, minimum energy, etc. yet.
+
+Kill 3: "gravity is simply X flowing inward"
+
+That is still an interpretation.
+
+The more fundamental statement is:
+
+A mass configuration modifies the locally admissible X-transition structure.
+	​
+
+
+Only after deriving the resulting dynamics can we call the emergent large-scale behavior gravity.
+
+Kill 4: "2D contains no information"
+
+We cannot use this.
+
+It is not established physics, and it is unnecessary.
+
+The meaningful claim is:
+
+dimensional reduction means a reduction in independently accessible degrees of freedom.
+	​
+
+
+That is mathematically definable.
+
+Kill 5: "black holes contain no information"
+
+Also not something we can assume.
+
+Instead:
+
+At sufficiently strong constraint, the locally accessible configuration space may collapse in dimensionality or distinguishability.
+
+Whether that happens in an actual black hole becomes a prediction to test.
+
+3. The key mathematical change
+
+C2 treated X essentially as a scalar density/current:
+
+s,J.
+
+That is too shallow.
+
+Our new X must have two layers.
+
+Layer 1: actual state
+
+Call it
+
+q(x,t).
+
+This represents the current local configuration of X.
+
+Layer 2: admissible transition structure
+
+Call it
+
+K(x,t).
+
+This tells us which changes to q are physically possible.
+
+So:
+
+q(x,t)∈C(x,t)
+	​
+
+
+and
+
+q
+˙
+	​
+
+(x,t)∈K[q;C].
+	​
+
+
+Here:
+
+C = locally available configuration space
+K = allowed directions of evolution
+q = actual X state
+
+This is the central mathematical structure.
+
+4. Why this fits what you were saying
+
+You repeatedly gave the example:
+
+A→B,C,D,E
+
+then something happens and:
+
+A→B,C.
+
+The naive interpretation says:
+
+Two states disappeared.
+
+Our interpretation says:
+
+The transition structure changed.
+
+Mathematically:
+
+K
+A
+(0)
+	​
+
+={B,C,D,E}
+
+becomes
+
+K
+A
+(1)
+	​
+
+={B,C}.
+
+The physical event has changed the admissible future.
+
+That is exactly your statement:
+
+"The crucial difference is that the two states permit different subsequent transitions."
+
+This is potentially profound because state is no longer defined solely by instantaneous appearance.
+
+Two regions can have:
+
+q
+A
+	​
+
+=q
+B
+	​
+
+
+but
+
+K
+A
+	​
+
+
+=K
+B
+	​
+
+.
+
+Therefore they are physically distinguishable through their future behavior.
+
+That gives us a rigorous place for your history idea.
+
+5. History enters naturally
+
+You said that two apparently identical rocks can have different X states because of what happened to them.
+
+We therefore cannot generally write:
+
+K(t)=K[q(t)].
+
+Instead:
+
+K(t)=K[q(t),H(t)]
+	​
+
+
+where H(t) represents the relevant accumulated X history.
+
+But we should not make H an arbitrary memory variable. That would destroy predictivity.
+
+The eventual theory must determine what information about the past survives.
+
+For example, perhaps:
+
+H(t)=∫
+−∞
+t
+	​
+
+K(t−t
+′
+)S(t
+′
+)dt
+′
+
+for some kernel K.
+
+Or perhaps history is encoded geometrically in q itself.
+
+We do not know yet.
+
+That is a mathematical problem now, not a philosophical one.
+
+6. The continuation constraint
+
+This is the most important primitive rule we have.
+
+You said:
+
+X cannot be opposed / cannot terminate.
+
+We should formalize it carefully.
+
+Let an X trajectory be:
+
+q(t).
+
+Its allowed evolution belongs to:
+
+q
+˙
+	​
+
+(t)∈K(q,t).
+
+Then a physically valid trajectory must satisfy:
+
+q
+˙
+	​
+
+(t)∈K(q,t)∀t.
+	​
+
+
+Suppose the current trajectory approaches a boundary where its intended continuation becomes forbidden.
+
+Then:
+
+q
+˙
+	​
+
+preferred
+	​
+
+∈
+/
+K.
+
+The system cannot continue that way.
+
+Therefore it must find another admissible direction:
+
+q
+˙
+	​
+
+actual
+	​
+
+∈K.
+
+This is essentially a viability constraint.
+
+That mathematical concept already exists in dynamical-systems theory, but our physical interpretation of what generates the admissible set would be new if we can derive it.
+
+7. This gives us your reorganization mechanism
+
+You said:
+
+"An inward X-flow cannot terminate locally."
+
+Now suppose:
+
+J
+X
+	​
+
+
+is an emergent X-flow.
+
+Initially:
+
+J
+X
+	​
+
+=−J
+r
+	​
+
+r
+^
+.
+
+It flows inward.
+
+But the local configuration space becomes increasingly constrained.
+
+Eventually:
+
+J
+X
+inward
+	​
+
+∈
+/
+K.
+
+The inward direction becomes dynamically unavailable.
+
+The flow therefore cannot simply disappear.
+
+It must satisfy:
+
+J
+X
+new
+	​
+
+∈K.
+
+The simplest possible decomposition is:
+
+J
+X
+new
+	​
+
+=J
+r
+	​
+
+r
+^
++J
+⊥
+	​
+
+	​
+
+
+where J
+⊥
+	​
+
+ is the reorganized component.
+
+In spherical geometry, the natural consequence can be circulation:
+
+J
+X
+	​
+
+=J
+r
+	​
+
+r
+^
++J
+θ
+	​
+
+θ
+^
++J
+ϕ
+	​
+
+ϕ
+^
+	​
+
+.
+
+And under stronger constraint, an outward component may emerge:
+
+J
+r
+	​
+
+>0.
+
+But here is the critical distinction:
+
+We cannot yet claim that the outward component must exist.
+
+The continuation rule forces reorganization.
+
+It does not yet mathematically force outward reorganization.
+
+That is one of our first hard problems.
+
+8. Dimensional reduction can now be defined properly
+
+You said:
+
+"One spatial direction becomes unavailable."
+
+Good.
+
+We can represent the locally accessible directions using a matrix.
+
+Define a configuration-space metric:
+
+G
+ij
+	​
+
+(x,t).
+
+The number of independent accessible directions is related to its rank:
+
+d
+eff
+	​
+
+(x,t)=rankG.
+
+Then:
+
+d
+eff
+	​
+
+=3
+
+means three locally accessible spatial degrees of freedom.
+
+A dimensional transition would be:
+
+3→2
+	​
+
+
+when:
+
+rankG:3→2.
+
+This is far more precise than "gravity pulls things into 2D."
+
+It says:
+
+A sufficiently constrained X configuration loses one independently accessible direction.
+
+Now we have something we can actually calculate.
+
+9. Matter
+
+You chose:
+
+Matter is a stable configuration of X.
+
+That is the right choice for this architecture.
+
+So matter is not another fundamental substance.
+
+We write a matter configuration schematically as:
+
+M
+i
+	​
+
+=A
+i
+	​
+
+[q]
+
+where A
+i
+	​
+
+ is a stable localized configuration of X.
+
+A particle would then have to be something like:
+
+q
+particle
+	​
+
+(x,t)
+
+that persists under the X dynamics.
+
+But "stable" must eventually mean mathematically something precise.
+
+Possible mechanisms include:
+
+a stable attractor,
+a topological configuration,
+a localized nonlinear solution,
+a conserved winding,
+a dynamically trapped state,
+or something else.
+
+We do not choose yet.
+
+This is another major derivation target.
+
+10. Gravity becomes a feedback problem
+
+Now your central intuition can be represented without assuming Newton's law.
+
+Matter is:
+
+M=A[q].
+
+Matter modifies the admissible X structure:
+
+K=K[q,M].
+
+X then evolves:
+
+q→q
+′
+.
+
+The changed X configuration modifies the geometry:
+
+q
+′
+→G
+μν
+	​
+
+.
+
+Matter then responds:
+
+G
+μν
+	​
+
+→M-trajectory.
+
+So the complete loop becomes:
+
+M→K
+X
+	​
+
+→X→G→M
+	​
+
+
+This is much closer to what you have been describing than "mass creates a scalar gravitational potential."
+
+11. There is an important distinction here
+
+We have not yet derived:
+
+F=
+r
+2
+GMm
+	​
+
+.
+
+We have only established a possible microscopic route through which an attractive interaction might emerge.
+
+That is good.
+
+Because if we inserted 1/r
+2
+ now, we would repeat C2.
+
+The challenge is:
+
+Can the geometry of the admissible X configurations itself produce 1/r
+2
+?
+
+If yes, we have something.
+
+If no, this candidate may die.
+
+12. Your "mass means existence" idea needs translation
+
+You said:
+
+if mass exists, something exists, and stable internal configuration must exist.
+
+That is useful, but we should not say:
+
+M
+
+=0⇒G
+
+=0
+
+as an axiom.
+
+Instead:
+
+A persistent localized X configuration necessarily modifies its surrounding admissible transition structure.
+	​
+
+
+Then gravitational behavior becomes one possible macroscopic consequence.
+
+The stronger claim is:
+
+M
+1
+	​
+
+>M
+2
+	​
+
+⇒larger configuration-space restriction.
+
+That must eventually be derived from how the stable X configuration couples to surrounding X.
+
+13. Why your stone/earth example becomes meaningful
+
+Earth is a massive stable X configuration.
+
+A meteor approaches.
+
+The surrounding X configuration is not equivalent to empty space.
+
+The meteor therefore evolves according to:
+
+q
+˙
+	​
+
+meteor
+	​
+
+∈K
+Earth
+	​
+
+.
+
+The macroscopic trajectory could emerge as:
+
+r
+¨
+=−∇Φ
+X
+	​
+
+
+where Φ
+X
+	​
+
+ is not fundamental.
+
+It would be an effective potential generated by the configuration-space structure.
+
+Then Newtonian gravity would be an approximation:
+
+Φ
+X
+	​
+
+→−
+r
+GM
+	​
+
+.
+
+Again: we have not derived this.
+
+But now we know exactly what has to be derived.
+
+14. The most interesting part: gravitational attraction and collapse
+
+Your model says stronger inward configuration progressively restricts X.
+
+Represent that with a scalar restriction measure:
+
+χ(x,t).
+
+For example, one possibility is:
+
+χ=
+d
+0
+	​
+
+d
+0
+	​
+
+−d
+eff
+	​
+
+	​
+
+.
+
+Then:
+
+0≤χ≤1.
+
+Where:
+
+χ=0: unrestricted configuration
+χ→1: extreme restriction
+
+But do not assume this exact definition is correct. It is scaffolding.
+
+Then increasing gravitational concentration could correspond to:
+
+χ(r)↑.
+
+At some critical value:
+
+χ=χ
+c
+	​
+
+
+the current X configuration may no longer possess a viable inward continuation.
+
+That produces:
+
+χ→χ
+c
+	​
+
+⇒configuration reorganization
+	​
+
+
+This is the first place where a genuine critical phenomenon could arise.
+
+15. Black holes become a phase transition, not a mysterious object
+
+This is one of the strongest reinterpretations available.
+
+Instead of:
+
+black hole = enormous gravity.
+
+We investigate:
+
+black hole=regime where the admissible X configuration undergoes a critical transition.
+	​
+
+
+Potentially:
+
+d
+eff
+	​
+
+:3→2
+
+or perhaps some other reduction.
+
+And the causal structure changes because the allowed transition cone changes.
+
+That is a mathematically meaningful hypothesis.
+
+If the transition produces an event horizon with the correct Schwarzschild structure, we have something extraordinary.
+
+If it doesn't, we kill it.
+
+16. Cosmic expansion can also be reframed
+
+You said inward and outward are two aspects of one deeper state.
+
+We can represent the local X flow as:
+
+J
+X
+	​
+
+=J
+inward
+	​
+
++J
+reorganized
+	​
+
+.
+
+But cosmological expansion should not be inserted as "outward X."
+
+We instead ask whether global conservation/continuation of X forces the large-scale configuration metric to evolve:
+
+G
+ij
+	​
+
+(t)→a
+2
+(t)G
+ij
+	​
+
+(0).
+
+Then:
+
+a
+˙
+>0
+
+could emerge from the global constraint.
+
+That is the correct target.
+
+17. Your energy idea also becomes cleaner
+
+You said energy is something that produces substrate kinetic state.
+
+We can distinguish:
+
+X state
+q
+X evolution
+q
+˙
+	​
+
+physical energy
+
+something that modifies the available transition structure.
+
+Eventually we need a map:
+
+E→K
+X
+	​
+
+.
+
+But we should not declare:
+
+E∝∣
+q
+˙
+	​
+
+∣
+2
+
+until the dynamics force that structure.
+
+If a conserved quadratic form emerges naturally, excellent.
+
+If not, we don't use it.
+
+18. Information finally has somewhere to live
+
+Earlier you said information is not something you can point at.
+
+Correct.
+
+Under this framework, information can be represented by the structure of distinguishable possible configurations.
+
+Let:
+
+Ω
+X
+	​
+
+(x,t)
+
+be the measure of locally distinguishable admissible configurations.
+
+Then a candidate information measure would be:
+
+I
+X
+	​
+
+=f(Ω
+X
+	​
+
+).
+
+The logarithm:
+
+I
+X
+	​
+
+=klogΩ
+X
+	​
+
+
+is an obvious candidate because it has strong precedent in statistical mechanics and information theory.
+
+But we do not assume the logarithm yet.
+
+The theory has to determine f.
+
+This is another potential source of genuinely new physics.
+
+19. Your "information cannot disappear abruptly" becomes mathematically useful
+
+Suppose:
+
+I
+X
+	​
+
+(t)
+
+changes.
+
+If X transitions continuously:
+
+q(t)→q(t+dt),
+
+then the configuration structure cannot arbitrarily jump unless the theory contains a genuine discontinuity.
+
+Therefore information loss might have to occur through a dynamical pathway:
+
+Ω
+1
+	​
+
+→Ω
+2
+	​
+
+→Ω
+3
+	​
+
+.
+
+If the configuration-space rank changes discretely, however, then we could have a genuine phase transition.
+
+That gives us a potential explanation for your distinction between ordinary information decay and extreme gravitational regimes.
+
+20. Now the biggest danger
+
+We currently have a beautiful conceptual architecture.
+
+That is not evidence that it is true.
+
+There are still four places where we could accidentally cheat:
+
+Cheat 1
+
+Define K specifically so that gravity emerges.
+
+Cheat 2
+
+Define d
+eff
+	​
+
+ so that black holes become dimensional collapse.
+
+Cheat 3
+
+Choose f(Ω) so that information reproduces entropy.
+
+Cheat 4
+
+Choose the coupling between matter and X so that Newton's law comes out.
+
+If we do any of those, we have merely rebuilt C2 in fancier language.
+
+Therefore the next phase has to be brutally restrictive.
+
+21. The actual mathematical program
+
+We now have five mathematical objects to construct.
+
+Object 1 — X configuration space
+C
+X
+	​
+
+.
+
+What is one possible state?
+
+Object 2 — admissible transition structure
+K
+X
+	​
+
+(q,C).
+
+Which transitions are allowed?
+
+Object 3 — continuation law
+
+Something of the form:
+
+q
+˙
+	​
+
+∈K
+X
+	​
+
+.
+
+What happens when the preferred continuation leaves K
+X
+	​
+
+?
+
+Object 4 — physical coupling
+K
+X
+	​
+
+=F(q,M,E,F,…).
+
+This is where matter, energy and force alter the available configurations.
+
+But the form of F must be derived from the primitive X rule rather than selected to reproduce known physics.
+
+Object 5 — emergent geometry
+G
+μν
+	​
+
+=G[C
+X
+	​
+
+].
+
+This is where "spacetime curvature" enters.
+
+If we can derive this rather than postulate it, we have crossed a major boundary.
+
+22. The first equation I would actually investigate
+
+There is a particularly clean mathematical formulation.
+
+Let:
+
+q(x,t)
+
+be the X configuration.
+
+Let:
+
+C(q,x,t)
+
+be the locally admissible configuration manifold.
+
+The evolution is:
+
+q
+˙
+	​
+
+=P
+K(q)
+	​
+
+F[q]
+	​
+
+
+where F[q] is the unconstrained tendency of the field and P
+K
+	​
+
+ projects it onto the allowed transition set.
+
+This gives us:
+
+Ordinary regime
+
+If:
+
+F[q]∈K,
+
+then:
+
+q
+˙
+	​
+
+=F[q].
+
+Nothing unusual happens.
+
+Constraint regime
+
+If:
+
+F[q]∈
+/
+K,
+
+then:
+
+q
+˙
+	​
+
+=P
+K
+	​
+
+F[q].
+
+X reorganizes.
+
+That is almost exactly your verbal description:
+
+"It does not do the forbidden thing. It starts to reorganise."
+
+The mathematics now exists.
+
+23. But projection alone is not enough
+
+This is crucial.
+
+A projection equation is conventional mathematics.
+
+It does not yet make SXC-IGC new.
+
+We need the structure of:
+
+K
+
+to itself emerge from a primitive rule.
+
+That is our central problem.
+
+The real target is therefore:
+
+Primitive X rule⇒K⇒geometry⇒known physics
+	​
+
+
+not:
+
+K⇒whatever physics we want.
+24. The first falsification target
+
+Before touching quantum mechanics or cosmology, we should attack the simplest possible isolated configuration.
+
+Thought experiment
+
+One stable localized X configuration.
+
+No other matter.
+
+Static and spherically symmetric.
+
+Require only:
+
+X exists everywhere.
+The localized configuration restricts surrounding X configurations.
+X cannot terminate.
+The configuration is stationary.
+Far away, X approaches its unrestricted state.
+
+Then ask:
+
+What radial equation does the continuation constraint force?
+
+If it gives:
+
+Φ(r)∝−
+r
+1
+	​
+
+
+and therefore:
+
+a(r)∝−
+r
+2
+1
+	​
+
+,
+
+without putting 1/r or 1/r
+2
+ into the equations, we have our first serious survivor.
+
+If it instead gives:
+
+e
+−r/ξ
+,
+
+or arbitrary power laws depending on free choices, we know immediately that the gravitational claim has not been derived.
+
+This test is vastly more important than running another QPU experiment.
+
+25. The second target
+
+Then take two stable X configurations.
+
+Ask whether the theory inevitably gives:
+
+V(r)∝−
+r
+1
+	​
+
+
+and whether:
+
+F∝
+r
+2
+M
+1
+	​
+
+M
+2
+	​
+
+	​
+
+.
+
+The crucial part is not merely reproducing Newtonian gravity.
+
+It must explain universality:
+
+Why does the same geometric acceleration apply to different matter configurations?
+
+Your framework potentially has an answer:
+
+Matter follows the same underlying admissible X geometry regardless of its internal composition.
+
+But that must come out of the equations.
+
+26. The third target
+
+Increase the central configuration until the admissible transition space changes rank.
+
+Then determine whether there is a critical value:
+
+χ=χ
+c
+	​
+
+
+at which:
+
+d
+eff
+	​
+
+:3→2
+
+or another mathematically necessary transition occurs.
+
+Then calculate the resulting metric.
+
+The required result is not "something black-hole-like."
+
+The test is:
+
+g
+μν
+X
+	​
+
+=
+?
+g
+μν
+Schwarzschild
+	​
+
+
+in the appropriate limit.
+
+That would be an extraordinarily strong result.
+
+Failure kills that branch.
+
+27. The fourth target
+
+Take a propagating disturbance in unconstrained X.
+
+Derive its maximum propagation velocity.
+
+If:
+
+ω(k)
+
+emerges from the continuation law, we can compare it with the previous telegrapher result.
+
+The desired situation is not merely:
+
+telegrapher equation.
+
+We want a microscopic derivation where the finite propagation speed follows from the configuration constraint itself.
+
+Then ask whether the speed is:
+
+c
+
+and whether c is universal or emerges from the same structure that produces geometry.
+
+That would be much stronger than C2's free v.
+
+28. The fifth target is information
+
+Only after the X dynamics survive should we derive:
+
+I
+X
+	​
+
+=f(Ω
+X
+	​
+
+).
+
+Then ask whether ordinary entropy emerges.
+
+Then ask whether quantum behavior can emerge from the configuration structure.
+
+Not before.
+
+Your instinct that consciousness should be left alone is correct. It contributes nothing to the present foundational problem.
+
+29. What we have, honestly
+
+We have not discovered a new physical theory yet.
+
+But we have moved from:
+
+"Substrate X might be some information flow."
+
+to a concrete candidate:
+
+	​
+
+X exists everywhere;
+X possesses local configurations;
+each configuration has an admissible transition structure;
+physical configurations constrain that structure;
+X evolves through neighboring configurations;
+an X-transition cannot terminate;
+when continuation becomes impossible, X must reorganize;
+matter is a stable localized X configuration;
+geometry may be the coarse-grained structure of X accessibility.
+	​
+
+	​
+
+
+That is a legitimate research hypothesis.
+
+The most important new ingredient is:
+
+transition-space constraint
+	​
+
+
+rather than density/current.
+
+That is the candidate structure that was genuinely absent from C2.
+
+30. The decisive next move
+
+We should now stop writing conceptual prose and build the minimal mathematical toy model.
+
+Not the full theory.
+
+Not quantum mechanics.
+
+Not cosmology.
+
+Not consciousness.
+
+Not a simulation of everything.
+
+One isolated spherical X configuration.
+
+We need to construct, from first principles:
+
+C
+X
+	​
+
+K
+X
+	​
+
+continuation rule
+stationary spherical solution
+
+and see what radial law comes out.
+
+There are only three intellectually acceptable outcomes:
+
+Outcome A
+
+A nontrivial radial law emerges with no hand-inserted Newtonian structure.
+
+Then we continue.
+
+Outcome B
+
+The equations permit infinitely many radial laws and require an arbitrary choice.
+
+Then this candidate is underdetermined and we modify the primitive rule.
+
+Outcome C
+
+The continuation principle mathematically cannot produce an attractive field.
+
+Then this particular formulation dies.
+
+That is exactly the kind of test we needed after the C2 failure: the new microscopic constraint must constrain the mathematics strongly enough that the observable is forced rather than selected.
+
+The project has now reached the point where the next artifact should be a formal X Configuration-Space / Continuation Dynamics v0.1, not another conceptual manifesto.

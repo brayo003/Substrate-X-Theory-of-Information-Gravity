@@ -1,0 +1,32 @@
+{
+  "conservation": {
+    "max_hermiticity_error": 0.0,
+    "max_trace_error": 2.220446049250313e-16,
+    "minimum_eigenvalue": 0.08952942181214676
+  },
+  "pathology": {
+    "cancellation_floor": 5.934527539603317e-23,
+    "euler_unstable_fraction_error_gt_1e-2": 0.29545454545454547,
+    "tolerance_errors": [
+      1.6403934098495847e-15,
+      5.582038374480926e-15,
+      8.175177625513712e-18,
+      1.0144450050398391e-18,
+      7.577200610876365e-20,
+      9.365961092159007e-21,
+      5.934527539603317e-23
+    ]
+  },
+  "scope": {
+    "gamma_range": [
+      0.0001,
+      10000.0
+    ],
+    "long_time_scaled": "t=100/gamma",
+    "random_states": 12,
+    "stiff_solver": "BDF"
+  },
+  "seed": 20260727,
+  "status": "PASS",
+  "verdict": "The exact GKSL implementation is stable under adaptive stiff integration; explicit Euler has a measurable failure region and must not be used without a step-size check."
+}

@@ -1,0 +1,41 @@
+{
+  "task": "nm_02_parameter_space",
+  "status": "PASS",
+  "regime_boundaries": {
+    "Markov": "NMP < 0.1",
+    "Transitional": "0.1 <= NMP < 1.0",
+    "NonMarkovian": "NMP >= 1.0"
+  },
+  "regime_statistics": {
+    "Markov_regime_NMP_lt_0.1": {
+      "NMP_range": [
+        0.01,
+        0.09433732216299774
+      ],
+      "max_mismatch": 0.07133689174363489,
+      "description": "Exponential decay. Markov approximation valid."
+    },
+    "Transitional_regime_0.1_to_1.0": {
+      "NMP_range": [
+        0.10446897695733762,
+        0.9855323535263146
+      ],
+      "max_mismatch": 0.32807438961761476,
+      "description": "Mixed. Gaussian onset becoming visible."
+    },
+    "NonMarkovian_regime_NMP_gt_1.0": {
+      "NMP_range": [
+        1.0913767146512738,
+        31.622776601683793
+      ],
+      "max_mismatch": 0.8269824129827337,
+      "description": "Gaussian initial decay. Markov approximation fails badly."
+    }
+  },
+  "T2star_ratio_at_NMP3": 2.8409702312325895,
+  "T2star_ratio_meaning": "At NMP=3, exact T2* is 2.84x longer than Markov predicts. Measuring T2* alone is not enough \u2014 the SHAPE of the decay differs.",
+  "key_diagnostic": "Plot log(C(t)) vs t^2 at early times. Non-Markovian: straight line (Gaussian). Markovian: curves upward (exponential onset).",
+  "gamma_dataset_median_Gamma_Hz": 31678.2,
+  "tau_B_for_NMP1_at_median_Gamma_us": 31.567450170779903,
+  "next_task": "nm_03_model_fit.py \u2014 fit both models to gamma_dataset.csv"
+}

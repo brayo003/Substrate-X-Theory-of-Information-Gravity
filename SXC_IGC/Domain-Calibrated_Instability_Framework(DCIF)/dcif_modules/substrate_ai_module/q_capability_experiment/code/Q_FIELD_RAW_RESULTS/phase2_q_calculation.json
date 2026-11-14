@@ -1,0 +1,160 @@
+{
+  "field_construction": {
+    "success": true,
+    "field_shape": [
+      6,
+      5
+    ],
+    "s_field_shape": [
+      6
+    ],
+    "s_field_values": [
+      0.145,
+      0.545,
+      0.62,
+      0.6000000000000001,
+      0.34,
+      0.12
+    ],
+    "spatial_coordinates": [
+      "math_symbols",
+      "abstract_terms",
+      "technical_density",
+      "complexity_words",
+      "length_score"
+    ],
+    "temporal_range": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "gradient_computation": {
+    "success": true,
+    "gradient_field_shape": [
+      6,
+      5
+    ],
+    "log_gradient_field_shape": [
+      6,
+      5
+    ],
+    "avg_gradient_magnitude": 0.20596294924292413,
+    "avg_log_gradient_magnitude": 0.6722865208200801,
+    "squared_magnitudes": [
+      1.25,
+      0.08006480935948154,
+      0.2510405827263268,
+      0.25,
+      0.263840830449827,
+      1.25
+    ]
+  },
+  "log_gradient_computation": {
+    "success": true,
+    "squared_magnitudes": [
+      1.25,
+      0.08006480935948154,
+      0.2510405827263268,
+      0.25,
+      0.263840830449827,
+      1.25
+    ]
+  },
+  "q_calculation": {
+    "success": true,
+    "default_q_values": [
+      0.25,
+      -0.9199351906405184,
+      -0.7489594172736732,
+      -0.75,
+      -0.736159169550173,
+      0.25
+    ],
+    "parameter_sensitivity": [
+      {
+        "c": 1.0,
+        "tau": 0.5,
+        "q_values": [
+          0.25,
+          -0.9199351906405184,
+          -0.7489594172736732,
+          -0.75,
+          -0.736159169550173,
+          0.25
+        ]
+      },
+      {
+        "c": 2.0,
+        "tau": 0.5,
+        "q_values": [
+          4.0,
+          -0.6797407625620738,
+          0.0041623309053071544,
+          0.0,
+          0.05536332179930792,
+          4.0
+        ]
+      },
+      {
+        "c": 1.0,
+        "tau": 1.0,
+        "q_values": [
+          4.0,
+          -0.6797407625620738,
+          0.0041623309053071544,
+          0.0,
+          0.05536332179930792,
+          4.0
+        ]
+      },
+      {
+        "c": 0.5,
+        "tau": 0.5,
+        "q_values": [
+          -0.6875,
+          -0.9799837976601297,
+          -0.9372398543184183,
+          -0.9375,
+          -0.9340397923875432,
+          -0.6875
+        ]
+      }
+    ],
+    "note": "Parameters are NOT empirically grounded - using arbitrary values"
+  },
+  "regime_classification": {
+    "success": true,
+    "regimes": [
+      "coherent",
+      "overdamped",
+      "overdamped",
+      "overdamped",
+      "overdamped",
+      "coherent"
+    ],
+    "regime_changes": [
+      [
+        0,
+        "coherent",
+        1,
+        "overdamped"
+      ],
+      [
+        4,
+        "overdamped",
+        5,
+        "coherent"
+      ]
+    ],
+    "note": "Regime classification based on theoretical Q thresholds"
+  },
+  "summary": {
+    "total_steps": 5,
+    "successful_steps": 5,
+    "q_can_be_calculated": true
+  }
+}

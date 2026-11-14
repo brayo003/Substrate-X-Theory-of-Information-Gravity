@@ -1,0 +1,292 @@
+{
+  "version": "1.2.4",
+  "global_flux": 0.01,
+  "modules": {
+    "social": {
+      "beta": 3.448,
+      "gamma": 0.8,
+      "tier": "TIER_II_MESO"
+    },
+    "seismic": {
+      "beta": 18.3916,
+      "gamma": 0.0403,
+      "tier": "TIER_III_MICRO"
+    },
+    "dark_matter": {
+      "beta": 1.2308,
+      "gamma": 31.9231,
+      "tier": "TIER_0_COSMIC"
+    },
+    "urban": {
+      "beta": 3.383,
+      "gamma": 0.7,
+      "tier": "TIER_II_MESO"
+    },
+    "cosmology": {
+      "beta": 0.8261,
+      "gamma": 0.0558,
+      "tier": "TIER_III_MICRO"
+    },
+    "black_hole": {
+      "beta": 0.0892,
+      "gamma": 0.0,
+      "tier": "TIER_V_NULL"
+    },
+    "particle_physics": {
+      "beta": 0.8671,
+      "gamma": 0.0852,
+      "tier": "TIER_III_MICRO"
+    },
+    "ecology": {
+      "beta": 1.0113,
+      "gamma": 0.2278,
+      "tier": "TIER_II_MESO"
+    },
+    "quantum_decoherence": {
+      "beta": 0.9533,
+      "gamma": 0.0393,
+      "tier": "TIER_III_MICRO"
+    },
+    "finance": {
+      "beta": 3.5,
+      "gamma": 0.9,
+      "tier": "TIER_II_MESO"
+    },
+    "viral_evolution": {
+      "beta": 0.9,
+      "gamma": 0.1,
+      "tier": "TIER_II_MESO"
+    },
+    "mycology": {
+      "beta": 0.9855,
+      "gamma": 0.1051,
+      "tier": "TIER_II_MESO"
+    },
+    "virology": {
+      "beta": 0.72,
+      "gamma": 0.0789,
+      "tier": "TIER_III_MICRO"
+    },
+    "logistics": {
+      "beta": -20.52960800667225,
+      "gamma": -3.719766472060055e-05,
+      "tier": "TIER_IV_NANO"
+    },
+    "energy": {
+      "beta": 0.9855,
+      "gamma": 0.1857,
+      "tier": "TIER_II_MESO"
+    },
+    "agriculture": {
+      "beta": 0.9416,
+      "gamma": 0.1074,
+      "tier": "TIER_II_MESO"
+    }
+  },
+  "shatter_analysis": [
+    {
+      "pair": "social<->black_hole",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "seismic<->black_hole",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "dark_matter<->black_hole",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "urban<->black_hole",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "cosmology<->black_hole",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->particle_physics",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->ecology",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->quantum_decoherence",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->finance",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->viral_evolution",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->mycology",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->virology",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->logistics",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->energy",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "black_hole<->agriculture",
+      "tension": 1000000.0
+    },
+    {
+      "pair": "dark_matter<->logistics",
+      "tension": 8582.037242
+    },
+    {
+      "pair": "finance<->logistics",
+      "tension": 241.970673
+    },
+    {
+      "pair": "social<->logistics",
+      "tension": 215.087265
+    },
+    {
+      "pair": "urban<->logistics",
+      "tension": 188.203857
+    },
+    {
+      "pair": "ecology<->logistics",
+      "tension": 61.260405
+    },
+    {
+      "pair": "logistics<->energy",
+      "tension": 49.942491
+    },
+    {
+      "pair": "logistics<->agriculture",
+      "tension": 28.892784
+    },
+    {
+      "pair": "mycology<->logistics",
+      "tension": 28.274465
+    },
+    {
+      "pair": "viral_evolution<->logistics",
+      "tension": 26.903412
+    },
+    {
+      "pair": "particle_physics<->logistics",
+      "tension": 22.924668
+    },
+    {
+      "pair": "virology<->logistics",
+      "tension": 21.231014
+    },
+    {
+      "pair": "cosmology<->logistics",
+      "tension": 15.020948
+    },
+    {
+      "pair": "seismic<->logistics",
+      "tension": 10.854023
+    },
+    {
+      "pair": "quantum_decoherence<->logistics",
+      "tension": 10.585189
+    },
+    {
+      "pair": "dark_matter<->quantum_decoherence",
+      "tension": 8.102939
+    },
+    {
+      "pair": "seismic<->dark_matter",
+      "tension": 7.901377
+    },
+    {
+      "pair": "dark_matter<->cosmology",
+      "tension": 5.701003
+    },
+    {
+      "pair": "dark_matter<->virology",
+      "tension": 4.026045
+    },
+    {
+      "pair": "dark_matter<->particle_physics",
+      "tension": 3.726869
+    },
+    {
+      "pair": "dark_matter<->viral_evolution",
+      "tension": 3.172341
+    },
+    {
+      "pair": "dark_matter<->mycology",
+      "tension": 3.017435
+    },
+    {
+      "pair": "dark_matter<->agriculture",
+      "tension": 2.952389
+    },
+    {
+      "pair": "dark_matter<->energy",
+      "tension": 1.699127
+    },
+    {
+      "pair": "dark_matter<->ecology",
+      "tension": 1.381437
+    },
+    {
+      "pair": "dark_matter<->urban",
+      "tension": 0.436264
+    },
+    {
+      "pair": "social<->dark_matter",
+      "tension": 0.379289
+    },
+    {
+      "pair": "dark_matter<->finance",
+      "tension": 0.334983
+    },
+    {
+      "pair": "quantum_decoherence<->finance",
+      "tension": 0.209444
+    },
+    {
+      "pair": "seismic<->finance",
+      "tension": 0.203773
+    },
+    {
+      "pair": "social<->quantum_decoherence",
+      "tension": 0.184054
+    },
+    {
+      "pair": "social<->seismic",
+      "tension": 0.179015
+    },
+    {
+      "pair": "urban<->quantum_decoherence",
+      "tension": 0.158678
+    },
+    {
+      "pair": "seismic<->urban",
+      "tension": 0.154273
+    },
+    {
+      "pair": "cosmology<->finance",
+      "tension": 0.14191
+    },
+    {
+      "pair": "social<->cosmology",
+      "tension": 0.124067
+    },
+    {
+      "pair": "urban<->cosmology",
+      "tension": 0.106245
+    }
+  ]
+}

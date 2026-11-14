@@ -1,0 +1,81 @@
+{
+  "passed": 15,
+  "total": 15,
+  "tests": [
+    {
+      "name": "no_task_announcement",
+      "status": "PASS",
+      "detail": "No task keys in agent_states. Cooperation on inactive ticks: 19 (confirms gate removed)"
+    },
+    {
+      "name": "no_future_schedule_in_context",
+      "status": "PASS",
+      "detail": "signal_to_agents is scalar \u2208 [-1,+1] at all ticks; no task keys present"
+    },
+    {
+      "name": "precursor_independent_of_agent_rng",
+      "status": "PASS",
+      "detail": "Schedule deterministic for same seed. Different seeds produce different schedules: True. Precursors: 4 in 50 ticks"
+    },
+    {
+      "name": "precursor_enters_field",
+      "status": "PASS",
+      "detail": "Precursor \u0394c_spectral=+0.1050  (before=-0.3494, after=-0.2444)"
+    },
+    {
+      "name": "agent_perturbations_toggleable",
+      "status": "PASS",
+      "detail": "All three conditions run. spectral\u2260precursor_only: True  (confirms perturbation toggles)"
+    },
+    {
+      "name": "c_spectral_from_solver",
+      "status": "PASS",
+      "detail": "c_spectral_actual \u2208 [-0.4846,-0.3431], baseline signal_to_agents=0.0 always"
+    },
+    {
+      "name": "online_shuffled_no_future",
+      "status": "PASS",
+      "detail": "All 49 non-initial ticks: shuffled signal within past c_spectral range (causality verified)"
+    },
+    {
+      "name": "online_delayed_no_future",
+      "status": "PASS",
+      "detail": "Delay=5: signal_to_agents[t] == c_spectral_actual[t-5] for t>=5; warmup ticks use fallback (causally valid)"
+    },
+    {
+      "name": "running_mean_causal",
+      "status": "PASS",
+      "detail": "running_mean[t] == mean(c_spectral_actual[0..t-1]) for all 30 ticks"
+    },
+    {
+      "name": "paired_conditions_share_schedule",
+      "status": "PASS",
+      "detail": "All 7 conditions share identical task and precursor schedules at seed=77"
+    },
+    {
+      "name": "rng_isolation",
+      "status": "PASS",
+      "detail": "Schedule identical across conditions. c_spectral first tick: baseline=-0.0429 spectral=-0.0429"
+    },
+    {
+      "name": "records_complete",
+      "status": "PASS",
+      "detail": "All 5 ticks: 15 required fields present, exp_id correct"
+    },
+    {
+      "name": "no_future_in_analysis_features",
+      "status": "PASS",
+      "detail": "online_delayed correctly uses only past observations (delay=5)"
+    },
+    {
+      "name": "modal_validation_regression",
+      "status": "PASS",
+      "detail": "6/6 modal validation tests passed"
+    },
+    {
+      "name": "exp2_records_preserved",
+      "status": "PASS",
+      "detail": "All EXP2 source and data files present: ['exp2_environment.py', 'exp2_runner.py', 'exp2_diagnostics.py', 'exp2_main_results.json']"
+    }
+  ]
+}

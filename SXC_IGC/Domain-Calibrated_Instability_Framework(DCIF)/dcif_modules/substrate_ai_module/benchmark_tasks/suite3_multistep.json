@@ -1,0 +1,248 @@
+{
+  "suite_id": "suite3_multistep",
+  "name": "Multi-Step Planning",
+  "description": "Tasks requiring 10-20 explicit reasoning steps. Detects abandonment, shortcutting, looping, and collapse. Tests whether Q predicts reasoning breakdown.",
+  "failure_type": "planning_collapse",
+  "tasks": [
+    {
+      "task_id": "ms_001",
+      "prompt": "Plan a 7-day road trip from New York to Los Angeles. You must: visit at least 4 major cities, stay within a $500 total budget for accommodation, drive no more than 8 hours per day, include one national park, list the route day by day with driving times and accommodation costs.",
+      "expected_keywords": ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
+      "failure_indicators": ["cannot plan", "too complex", "insufficient information"],
+      "difficulty": "high",
+      "min_steps": 7
+    },
+    {
+      "task_id": "ms_002",
+      "prompt": "Solve this step by step: A farmer has a fox, a chicken, and a bag of grain. He needs to cross a river in a boat that can only carry him and one item. The fox will eat the chicken if left alone together. The chicken will eat the grain if left alone together. List every step needed to get all three across safely.",
+      "expected_keywords": ["chicken first", "return", "fox", "grain", "bring chicken back"],
+      "failure_indicators": ["impossible", "cannot", "unclear"],
+      "difficulty": "medium",
+      "min_steps": 7
+    },
+    {
+      "task_id": "ms_003",
+      "prompt": "Algorithm: Sort the following list using bubble sort, showing every pass: [64, 34, 25, 12, 22, 11, 90]. Show each comparison and swap. Count total comparisons and swaps.",
+      "expected_keywords": ["pass", "swap", "sorted", "[11, 12, 22, 25, 34, 64, 90]"],
+      "failure_indicators": ["cannot", "use a different algorithm", "skip"],
+      "difficulty": "medium",
+      "min_steps": 6
+    },
+    {
+      "task_id": "ms_004",
+      "prompt": "Plan the construction of a bookshelf from scratch. Include: materials list, tools required, step-by-step assembly (at least 10 steps), safety precautions, and estimated time for each step. The shelf should be 180cm tall with 5 shelves.",
+      "expected_keywords": ["step", "wood", "screws", "measure", "cut", "assemble"],
+      "failure_indicators": ["cannot detail", "too complex"],
+      "difficulty": "medium",
+      "min_steps": 10
+    },
+    {
+      "task_id": "ms_005",
+      "prompt": "Trace through this program step by step: x=1; y=2; for i in range(5): x = x + y; y = x - 1; print(x, y). After each iteration of the loop, show the values of x, y, and i. What does the program print in total?",
+      "expected_keywords": ["i=0", "i=1", "i=2", "i=3", "i=4"],
+      "failure_indicators": ["cannot trace", "too complex"],
+      "difficulty": "medium",
+      "min_steps": 5
+    },
+    {
+      "task_id": "ms_006",
+      "prompt": "Create a meal plan for one week (Monday-Sunday) that meets these constraints: no repeated main dishes, total weekly cost under $50, includes at least 2 vegetarian dinners, 1 fish dish, breakfast and dinner each day. List each meal with estimated cost.",
+      "expected_keywords": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "failure_indicators": ["cannot", "too complex", "insufficient"],
+      "difficulty": "high",
+      "min_steps": 14
+    },
+    {
+      "task_id": "ms_007",
+      "prompt": "Solve this logic puzzle step by step: 5 houses in a row, each a different color. 5 nationalities, 5 pets, 5 drinks, 5 jobs. Clue 1: The Englishman lives in the red house. Clue 2: The Spaniard owns a dog. Clue 3: Coffee is drunk in the green house. Clue 4: The Ukrainian drinks tea. Clue 5: The green house is immediately to the right of the ivory house. Clue 6: The snail owner works as a teacher. Clue 7: The diplomat lives in the yellow house. Clue 8: Milk is drunk in the middle house. Clue 9: The Norwegian lives in the first house. Clue 10: The person who works as a manager lives next to the person with the fox. Who drinks water? Who owns the zebra?",
+      "expected_keywords": ["Norwegian", "Japanese", "zebra", "water"],
+      "failure_indicators": ["cannot solve", "too many clues", "impossible"],
+      "difficulty": "high",
+      "min_steps": 10
+    },
+    {
+      "task_id": "ms_008",
+      "prompt": "Write a detailed recipe for homemade sourdough bread, including: starter preparation (3 days), dough mixing and fermentation schedule, baking steps, timing for each phase, and troubleshooting for common failures. Be specific with times, temperatures, and quantities.",
+      "expected_keywords": ["starter", "flour", "water", "ferment", "bake", "temperature"],
+      "failure_indicators": ["cannot detail", "too complex"],
+      "difficulty": "medium",
+      "min_steps": 10
+    },
+    {
+      "task_id": "ms_009",
+      "prompt": "Debug this pseudocode step by step and identify all errors:\nfunction calculate_average(numbers):\n  total = 0\n  for i in range(1, len(numbers)):\n    total = total + numbers[i]\n  average = total / len(numbers)\n  return average\nTest with numbers = [10, 20, 30, 40, 50]. What result does this code produce? What result should it produce? List all bugs.",
+      "expected_keywords": ["off by one", "index 0", "bug", "30", "should be 30"],
+      "failure_indicators": ["no bugs", "correct", "cannot"],
+      "difficulty": "medium",
+      "min_steps": 5
+    },
+    {
+      "task_id": "ms_010",
+      "prompt": "Plan a software project to build a simple todo list app. Create: (1) user stories, (2) technical requirements, (3) database schema, (4) API endpoints, (5) frontend components, (6) testing plan. Each section should have at least 3 items. Estimate development time for each component.",
+      "expected_keywords": ["user stories", "API", "database", "frontend", "testing"],
+      "failure_indicators": ["cannot detail", "too broad"],
+      "difficulty": "high",
+      "min_steps": 6
+    },
+    {
+      "task_id": "ms_011",
+      "prompt": "Trace the execution of Euclid's algorithm to find GCD(48, 18): Start: GCD(48, 18). Apply: GCD(a,b) = GCD(b, a mod b). Continue until remainder is 0. Show every step. What is the GCD?",
+      "expected_keywords": ["GCD(18, 12)", "GCD(12, 6)", "GCD(6, 0)", "6"],
+      "failure_indicators": ["cannot", "unclear", "wrong GCD"],
+      "difficulty": "low",
+      "min_steps": 3
+    },
+    {
+      "task_id": "ms_012",
+      "prompt": "Create an investment plan for saving $10,000 in 2 years starting from $0. Assume: income $3,000/month, rent $800/month, food $400/month, transport $200/month, utilities $150/month. List monthly budget, identify discretionary spending categories, calculate how much can be saved per month, and show month-by-month savings milestones.",
+      "expected_keywords": ["monthly", "savings", "milestone", "$416", "24 months"],
+      "failure_indicators": ["cannot", "insufficient info", "too complex"],
+      "difficulty": "medium",
+      "min_steps": 10
+    },
+    {
+      "task_id": "ms_013",
+      "prompt": "Explain step by step how to perform CPR on an adult. Include: check for responsiveness, call for help, positioning, hand placement, compression rate and depth, rescue breaths, when to stop. Each step should be numbered and detailed.",
+      "expected_keywords": ["check", "call", "compress", "30 compressions", "2 breaths", "rate"],
+      "failure_indicators": ["cannot detail", "see a doctor"],
+      "difficulty": "low",
+      "min_steps": 7
+    },
+    {
+      "task_id": "ms_014",
+      "prompt": "Plan a 5-step scientific experiment to test whether plants grow faster with classical music vs silence. Include: hypothesis, control group, experimental group, variables to control, measurement method, statistical analysis method, expected duration.",
+      "expected_keywords": ["hypothesis", "control", "experimental", "variable", "measure", "statistics"],
+      "failure_indicators": ["cannot", "not scientific"],
+      "difficulty": "medium",
+      "min_steps": 7
+    },
+    {
+      "task_id": "ms_015",
+      "prompt": "Decompose this problem into subtasks and solve each: Calculate the area of a garden that has an irregular shape: a 10m x 8m rectangle with a semicircle of radius 3m removed from one end and a triangular protrusion of base 4m and height 5m added to the other end. Show each geometric calculation separately then combine.",
+      "expected_keywords": ["rectangle", "semicircle", "triangle", "area", "80", "14.1", "10"],
+      "failure_indicators": ["cannot calculate", "too complex"],
+      "difficulty": "high",
+      "min_steps": 5
+    },
+    {
+      "task_id": "ms_016",
+      "prompt": "Create a detailed timeline for organizing a conference: 6 months before event, 3 months before, 2 months before, 1 month before, 2 weeks before, 1 week before, day before, day of event. For each time point list at least 3 specific tasks.",
+      "expected_keywords": ["6 months", "3 months", "venue", "speakers", "registration", "day of"],
+      "failure_indicators": ["cannot plan", "too vague"],
+      "difficulty": "medium",
+      "min_steps": 8
+    },
+    {
+      "task_id": "ms_017",
+      "prompt": "Solve step by step: A tank has two pipes. Pipe A fills the tank in 6 hours. Pipe B fills the tank in 4 hours. Pipe C drains the tank in 12 hours. All three operate simultaneously. How long to fill the tank from empty? Show the rate calculation for each pipe and the combined rate.",
+      "expected_keywords": ["1/6", "1/4", "1/12", "combined", "3 hours", "3.0"],
+      "failure_indicators": ["cannot", "unclear", "wrong"],
+      "difficulty": "medium",
+      "min_steps": 5
+    },
+    {
+      "task_id": "ms_018",
+      "prompt": "Break down the process of starting a small business into phases. Phase 1: Idea validation (steps 1-3). Phase 2: Legal setup (steps 4-6). Phase 3: Financial setup (steps 7-9). Phase 4: Marketing (steps 10-12). Phase 5: Launch (steps 13-15). List each specific step with a one-sentence description.",
+      "expected_keywords": ["Step 1", "Step 5", "Step 10", "Step 15", "validation", "legal", "launch"],
+      "failure_indicators": ["cannot detail", "too broad"],
+      "difficulty": "medium",
+      "min_steps": 15
+    },
+    {
+      "task_id": "ms_019",
+      "prompt": "Perform binary search on the sorted array [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] to find the value 23. Show every step: initial range, mid-point calculation, comparison, new range. How many comparisons are needed?",
+      "expected_keywords": ["mid", "compare", "23", "found", "3 comparisons"],
+      "failure_indicators": ["cannot", "linear search"],
+      "difficulty": "medium",
+      "min_steps": 3
+    },
+    {
+      "task_id": "ms_020",
+      "prompt": "Create a detailed plan for learning a new programming language in 3 months. Week by week breakdown: Weeks 1-2 (basics), Weeks 3-4 (data structures), Weeks 5-6 (OOP), Weeks 7-8 (standard library), Weeks 9-10 (projects), Weeks 11-12 (advanced topics). Include specific topics and practice exercises for each period.",
+      "expected_keywords": ["Week 1", "Week 3", "Week 7", "Week 11", "basics", "project"],
+      "failure_indicators": ["cannot plan", "too general"],
+      "difficulty": "medium",
+      "min_steps": 12
+    },
+    {
+      "task_id": "ms_021",
+      "prompt": "Trace through this recursion manually for factorial(5): factorial(n) = n * factorial(n-1); factorial(0) = 1. Show the call stack growing and unwinding. What is the final result?",
+      "expected_keywords": ["factorial(4)", "factorial(3)", "factorial(2)", "factorial(1)", "factorial(0)", "120"],
+      "failure_indicators": ["cannot trace", "too complex"],
+      "difficulty": "low",
+      "min_steps": 6
+    },
+    {
+      "task_id": "ms_022",
+      "prompt": "Design a fitness routine for a complete beginner to run a 5K in 8 weeks. Week-by-week progression: distances, run/walk intervals, cross-training days, rest days. Include safety notes and progression criteria for each week.",
+      "expected_keywords": ["Week 1", "Week 4", "Week 8", "run", "walk", "5K"],
+      "failure_indicators": ["cannot plan", "consult a doctor only"],
+      "difficulty": "medium",
+      "min_steps": 8
+    },
+    {
+      "task_id": "ms_023",
+      "prompt": "Step by step: Implement a queue using two stacks. Describe the enqueue and dequeue operations. Then manually trace these operations: enqueue(1), enqueue(2), enqueue(3), dequeue(), enqueue(4), dequeue(), dequeue(). Show the state of both stacks after each operation.",
+      "expected_keywords": ["stack1", "stack2", "dequeue returns 1", "dequeue returns 2", "dequeue returns 3"],
+      "failure_indicators": ["cannot implement", "too complex"],
+      "difficulty": "high",
+      "min_steps": 7
+    },
+    {
+      "task_id": "ms_024",
+      "prompt": "Plan a home renovation project: replace kitchen flooring. Steps should include: measurement and planning, material selection and purchasing, removing old flooring, subfloor preparation, laying new flooring, finishing and trim. Estimate time for each step and list required tools/materials.",
+      "expected_keywords": ["measure", "purchase", "remove", "prepare", "lay", "finish"],
+      "failure_indicators": ["hire a professional only", "cannot detail"],
+      "difficulty": "medium",
+      "min_steps": 6
+    },
+    {
+      "task_id": "ms_025",
+      "prompt": "Evaluate this argument step by step: Premise 1: All A are B. Premise 2: All B are C. Premise 3: Some C are D. Conclusion: Some A are D. Is this argument valid? For each step, identify whether it follows necessarily. Provide a formal logic evaluation.",
+      "expected_keywords": ["invalid", "does not necessarily follow", "some C are D"],
+      "failure_indicators": ["valid", "follows", "correct"],
+      "difficulty": "high",
+      "min_steps": 4
+    },
+    {
+      "task_id": "ms_026",
+      "prompt": "Create a step-by-step guide for incident response when a server goes down in production. Include: detection phase (steps 1-3), initial response (steps 4-6), investigation (steps 7-9), resolution (steps 10-12), post-incident (steps 13-15). Each step should be actionable and specific.",
+      "expected_keywords": ["alert", "escalate", "investigate", "logs", "restore", "post-mortem"],
+      "failure_indicators": ["cannot detail", "call vendor"],
+      "difficulty": "medium",
+      "min_steps": 15
+    },
+    {
+      "task_id": "ms_027",
+      "prompt": "Manually execute Dijkstra's algorithm on this graph: Nodes A,B,C,D,E. Edges: A-B(4), A-C(2), B-C(1), B-D(5), C-D(8), C-E(10), D-E(2). Find the shortest path from A to E. Show the distance table update at each step.",
+      "expected_keywords": ["A→B→D→E", "A to E", "distance 11", "11"],
+      "failure_indicators": ["cannot", "too complex"],
+      "difficulty": "high",
+      "min_steps": 5
+    },
+    {
+      "task_id": "ms_028",
+      "prompt": "Plan a negotiation strategy for getting a 15% salary increase. Phase 1: Research (3 steps). Phase 2: Preparation (3 steps). Phase 3: The conversation (5 steps including handling objections). Phase 4: Follow-up (2 steps). List specific actions and talking points for each step.",
+      "expected_keywords": ["research", "market rate", "prepare", "conversation", "follow up"],
+      "failure_indicators": ["cannot help", "too personal"],
+      "difficulty": "medium",
+      "min_steps": 13
+    },
+    {
+      "task_id": "ms_029",
+      "prompt": "Design and trace through a simple state machine for a traffic light: States: RED, GREEN, YELLOW. Transitions: RED→GREEN (after 30s), GREEN→YELLOW (after 25s), YELLOW→RED (after 5s). Starting from RED, list the sequence of states and times for the first 3 complete cycles (total duration ~180s).",
+      "expected_keywords": ["RED", "GREEN", "YELLOW", "30s", "25s", "5s", "cycle"],
+      "failure_indicators": ["cannot design", "too complex"],
+      "difficulty": "low",
+      "min_steps": 9
+    },
+    {
+      "task_id": "ms_030",
+      "prompt": "Emergency action plan: You discover a gas leak in your home. Plan the exact sequence of actions: Step 1 through Step 12, covering: immediate safety, evacuation, alerting authorities, when to re-enter, what to check before entering, documentation. Include timing estimates for each step.",
+      "expected_keywords": ["evacuate", "call", "do not switch", "gas company", "ventilate"],
+      "failure_indicators": ["stay inside", "turn on lights", "cannot"],
+      "difficulty": "low",
+      "min_steps": 8
+    }
+  ]
+}

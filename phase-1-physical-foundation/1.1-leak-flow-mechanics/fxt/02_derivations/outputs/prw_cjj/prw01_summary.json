@@ -1,0 +1,16 @@
+{
+  "task": "prw_01_cjj_derivation",
+  "status": "COMPLETE",
+  "result": {
+    "C_JJ_local": "C_JJ(t) = (s0 * v^2 / 2) * exp(-2*lambda*t) = S0 * exp(-t/tau_B)",
+    "S0": "s0 * v^2 / 2  (equilibrium current variance at one point)",
+    "tau_B": "1 / (2*lambda) = tau  (PRW relaxation time -- SAME as transport tau)",
+    "S_JJ_omega": "S_JJ(omega) = 2*S0*tau_B / (1 + omega^2*tau_B^2)  [LORENTZIAN]",
+    "Gamma_phi_omega": "Gamma_Markov / (1 + omega_q^2 * tau_B^2)  [DECREASING with omega]"
+  },
+  "critical_finding": "The PRW gives a LORENTZIAN spectrum, not super-Ohmic (omega^2). The previously assumed S_JJ ~ omega^2 was NOT derived from the substrate. The PRW-derived dephasing rate DECREASES with qubit frequency, while the old assumption gave an INCREASING rate. The gamma_dataset data is approximately flat, which is consistent with the PRW prediction (low-frequency white noise regime, omega << 1/tau_B), but inconsistent with the super-Ohmic assumption (which would show strong omega^2 growth across the measured range).",
+  "tau_B_identification": "tau_B = 1/(2*lambda) is IDENTICAL to the PRW transport relaxation time tau. There is only ONE timescale in the PRW. The bath correlation time and the transport relaxation time are the same parameter. This is a key unification: the substrate memory time IS the transport damping time.",
+  "what_was_assumed_before": "S_JJ(omega) = S0 * delta(omega) [white noise, tau_B->0 Markov limit] OR S_JJ(omega) ~ omega^2 [super-Ohmic, imported without derivation]",
+  "what_PRW_actually_gives": "Lorentzian with tau_B = tau = 1/(2*lambda)",
+  "next_task": "prw_02_monte_carlo.py \u2014 verify with Monte Carlo simulation"
+}

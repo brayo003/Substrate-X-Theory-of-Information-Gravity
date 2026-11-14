@@ -1,0 +1,8 @@
+{
+  "module": "social_module",
+  "coefficients": {
+    "beta": 3.448,
+    "gamma": 0.8,
+    "lambda": 0.05
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "world_A": {
+    "total_calls": 30,
+    "successful_calls": 30,
+    "failed_calls": 0,
+    "timeout_calls": 0,
+    "avg_latency_s": 62.23631141980489,
+    "min_latency_s": 3.1515095233917236,
+    "max_latency_s": 98.13303470611572,
+    "calls_per_entity": {
+      "Agent_1": 10,
+      "Agent_2": 10,
+      "Agent_3": 10
+    }
+  },
+  "world_B": {
+    "total_calls": 30,
+    "successful_calls": 30,
+    "failed_calls": 0,
+    "timeout_calls": 0,
+    "avg_latency_s": 57.424471195538835,
+    "min_latency_s": 1.987823247909546,
+    "max_latency_s": 86.51162075996399,
+    "calls_per_entity": {
+      "Agent_1": 10,
+      "Agent_2": 10,
+      "Agent_3": 10
+    }
+  },
+  "verification": {
+    "llm_calls_world_A_gt_0": true,
+    "llm_calls_world_B_gt_0": true
+  }
+}

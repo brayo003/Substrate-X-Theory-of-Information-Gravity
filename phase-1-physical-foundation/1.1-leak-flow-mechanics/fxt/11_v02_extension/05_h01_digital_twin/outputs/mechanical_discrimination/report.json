@@ -1,0 +1,21 @@
+{
+  "status": "SIMULATION_COMPLETE",
+  "purpose": "tests whether changing mechanical transfer breaks Omega^2 degeneracy",
+  "signal_case": {
+    "label": "signal_injected",
+    "injected_k_s": 1.5,
+    "scope": "synthetic discrimination benchmark only",
+    "rmse_mechanical_only": 684.8076759590853,
+    "rmse_mechanical_plus_quadratic": 336.45072877395,
+    "quadratic_coefficient_estimate": 1.5636694770893258
+  },
+  "null_case": {
+    "label": "null",
+    "injected_k_s": 0.0,
+    "scope": "synthetic discrimination benchmark only",
+    "rmse_mechanical_only": 445.2814426538553,
+    "rmse_mechanical_plus_quadratic": 446.34068959439645,
+    "quadratic_coefficient_estimate": 0.04495994198620257
+  },
+  "interpretation": "Success means the synthetic design can separate its own declared models; it is not evidence for a substrate contribution."
+}

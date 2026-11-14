@@ -1,0 +1,9 @@
+{
+  "module": "black_hole",
+  "coefficients": {
+    "alpha": 0.9324,
+    "beta": 0.0892,
+    "gamma": 0.0
+  },
+  "taxonomy": "Gravity-Overwhelming"
+}

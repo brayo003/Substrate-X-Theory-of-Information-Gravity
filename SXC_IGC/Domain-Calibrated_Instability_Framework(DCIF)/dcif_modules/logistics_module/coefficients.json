@@ -1,0 +1,9 @@
+{
+    "module": "logistics_empirical",
+    "coefficients": {
+        "beta": -20.52960800667225,
+        "gamma": -3.719766472060055e-05
+    },
+    "ratio": 551905.8295964125,
+    "state": "BRITTLE [SNAP]"
+}

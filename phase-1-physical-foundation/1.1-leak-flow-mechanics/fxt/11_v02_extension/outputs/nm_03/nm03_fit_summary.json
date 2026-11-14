@@ -1,0 +1,49 @@
+{
+  "task": "nm_03_model_fit",
+  "n_data_points": 7,
+  "markov_model": {
+    "n_params": 3,
+    "params": {
+      "Gamma0_s": 17.09567971012633,
+      "k_rot_s": 1.6238314928335553e-06,
+      "omega_max_rad_s": 134997.38522886977
+    },
+    "param_errors": {
+      "Gamma0_err": 14810288.419732496,
+      "k_rot_err": 0.0016557094677405596,
+      "omega_max_err": 35045978.479725994
+    },
+    "chi2": 5.5236734803154794,
+    "dof": 4,
+    "chi2_per_dof": 1.3809183700788699,
+    "AIC": 11.52367348031548,
+    "BIC": 11.361403927481419
+  },
+  "nm_model": {
+    "n_params": 4,
+    "params": {
+      "Gamma0_nm_s": 5.190045752481967e-08,
+      "k_nm_s": 1.625725456661085e-06,
+      "omega_max_nm_rad_s": 136485.6523492237,
+      "tau_B_s": 7.519248427897871e-07,
+      "tau_B_us": 0.7519248427897871
+    },
+    "chi2": 5.523672759874051,
+    "dof": 3,
+    "chi2_per_dof": 1.8412242532913503,
+    "AIC": 13.523672759874051,
+    "BIC": 13.307313356095303,
+    "optimizer_success": true
+  },
+  "model_comparison": {
+    "delta_AIC": 1.9999992795585708,
+    "delta_BIC": 1.9459094286138843,
+    "AIC_preference": "Markov preferred",
+    "BIC_preference": "Markov preferred",
+    "BIC_evidence_strength": "No preference",
+    "fitted_NMP": 0.023819661097828376,
+    "NMP_regime": "MARKOVIAN"
+  },
+  "interpretation": "The gamma_dataset measures Gamma at different drive frequencies. Both models fit the data because Gamma vs omega is insensitive to tau_B \u2014 what tau_B changes is the SHAPE of C(t), not its 1/e value at a single frequency. The time-domain Ramsey trace is needed to discriminate. This is built in Task 4.",
+  "next_task": "nm_04_ramsey_discriminator.py"
+}

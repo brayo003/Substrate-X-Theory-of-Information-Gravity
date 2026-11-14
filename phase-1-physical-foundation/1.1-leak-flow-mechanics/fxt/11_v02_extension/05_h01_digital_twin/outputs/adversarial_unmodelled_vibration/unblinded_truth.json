@@ -1,0 +1,6 @@
+{
+  "k_injected_s": 0.0,
+  "beta_injected": 0.0,
+  "vibration_gamma_per_rad_s2": 1.5,
+  "analysis_omits_vibration": true
+}

@@ -1,0 +1,149 @@
+{
+  "Q4_transport_consistency": {
+    "TA1": {
+      "telegrapher_equation": "tau_b d\u00b2s_b/dt\u00b2 + ds_b/dt = 4893.1\u00b2 tau_b d\u00b2s_b/dx\u00b2",
+      "conserved_quantity": "Q_b = integral s_b dx  (per branch, source-free)",
+      "decoupled_from_other_branches": true,
+      "note": "Coupling between branches requires inter-branch scattering, not in C2"
+    },
+    "TA2": {
+      "telegrapher_equation": "tau_b d\u00b2s_b/dt\u00b2 + ds_b/dt = 5626.0\u00b2 tau_b d\u00b2s_b/dx\u00b2",
+      "conserved_quantity": "Q_b = integral s_b dx  (per branch, source-free)",
+      "decoupled_from_other_branches": true,
+      "note": "Coupling between branches requires inter-branch scattering, not in C2"
+    },
+    "LA": {
+      "telegrapher_equation": "tau_b d\u00b2s_b/dt\u00b2 + ds_b/dt = 9156.8\u00b2 tau_b d\u00b2s_b/dx\u00b2",
+      "conserved_quantity": "Q_b = integral s_b dx  (per branch, source-free)",
+      "decoupled_from_other_branches": true,
+      "note": "Coupling between branches requires inter-branch scattering, not in C2"
+    },
+    "_total_field_status": {
+      "S_is_single_telegrapher": "False",
+      "reason": "S = sum w_b s_b satisfies a single telegrapher equation only if all v_b equal. Otherwise S satisfies a higher-order PDE (product of B telegrapher operators).",
+      "order_of_PDE_for_S": 6,
+      "wave_speeds": [
+        4893.09,
+        5626.04,
+        9156.82
+      ],
+      "internal_consistency": "VALID \u2013 each branch is independently consistent"
+    }
+  },
+  "Q5_observable_comparison_equal_tau": {
+    "single_branch_LA": {
+      "tau": 1e-06,
+      "xi": 0.01831364,
+      "Gamma_phi": 2e-06,
+      "PSD_at_0": 2e-06
+    },
+    "multibranch": {
+      "taus": {
+        "TA1": 1e-06,
+        "TA2": 1e-06,
+        "LA": 1e-06
+      },
+      "xis": {
+        "TA1": 0.00978618,
+        "TA2": 0.01125208,
+        "LA": 0.01831364
+      },
+      "Gamma_phi": 2.000002e-06,
+      "PSD_at_0": 2.000002e-06
+    },
+    "functional_form_comparison": {
+      "multibranch_C2_PSD_equals_conventional_Drude": "True",
+      "reason": "The C2 per-branch Lorentzian S_JJ(omega)=2S0*tau/(1+omega\u00b2tau\u00b2) is algebraically identical to the Drude/Ornstein-Uhlenbeck bath spectral density. A multi-branch C2 model and a multi-component conventional phonon bath produce exactly the same PSD if they share the same (w_b, tau_b) parameters. The two models are observationally indistinguishable from temporal measurements alone."
+    },
+    "spatial_discriminability": {
+      "multi_branch_K0_sum_differs_from_single_K0": false,
+      "ratio_variation_fraction": 0.0011991212864189546,
+      "interpretation": "If tau_b differ between branches, the spatial correlator is a sum of K0 functions with different length scales xi_b = 2*v_b*tau_b. This DOES differ from a single-K0 prediction in shape, but only if the xi_b values are well separated AND measured spatially."
+    },
+    "conventional_null_status": "INDISTINGUISHABLE from temporal measurements. Potentially distinguishable spatially ONLY IF xi_b values differ by more than experimental resolution AND a single-K0 null is rejected."
+  },
+  "Q5_observable_comparison_proportional_tau": {
+    "single_branch_LA": {
+      "tau": 5.460410928684849e-08,
+      "xi": 0.001,
+      "Gamma_phi": 1.0920821857369698e-07,
+      "PSD_at_0": 1.0920821857369698e-07
+    },
+    "multibranch": {
+      "taus": {
+        "TA1": 1.0218491791485543e-07,
+        "TA2": 8.887245735899496e-08,
+        "LA": 5.460410928684849e-08
+      },
+      "xis": {
+        "TA1": 0.001,
+        "TA2": 0.001,
+        "LA": 0.001
+      },
+      "Gamma_phi": 1.0983956055649643e-07,
+      "PSD_at_0": 1.0983956055649643e-07
+    },
+    "functional_form_comparison": {
+      "multibranch_C2_PSD_equals_conventional_Drude": "True",
+      "reason": "The C2 per-branch Lorentzian S_JJ(omega)=2S0*tau/(1+omega\u00b2tau\u00b2) is algebraically identical to the Drude/Ornstein-Uhlenbeck bath spectral density. A multi-branch C2 model and a multi-component conventional phonon bath produce exactly the same PSD if they share the same (w_b, tau_b) parameters. The two models are observationally indistinguishable from temporal measurements alone."
+    },
+    "spatial_discriminability": {
+      "multi_branch_K0_sum_differs_from_single_K0": false,
+      "ratio_variation_fraction": 1.2851747807035464e-16,
+      "interpretation": "If tau_b differ between branches, the spatial correlator is a sum of K0 functions with different length scales xi_b = 2*v_b*tau_b. This DOES differ from a single-K0 prediction in shape, but only if the xi_b values are well separated AND measured spatially."
+    },
+    "conventional_null_status": "INDISTINGUISHABLE from temporal measurements. Potentially distinguishable spatially ONLY IF xi_b values differ by more than experimental resolution AND a single-K0 null is rejected."
+  },
+  "Q5_discriminability_table": {
+    "temporal_PSD": "C2-multi == Drude-multi: indistinguishable",
+    "spatial_correlator": "C2-multi K0-sum == Drude-multi K0-sum: indistinguishable",
+    "P3_ratio": {
+      "single_branch_C2": "xi/(2*tau) = c = single value",
+      "multi_branch_C2": "xi_b/(2*tau_b) = v_b, varies by 65.0%",
+      "conventional_bath": "no P3 ratio defined",
+      "discriminability": "P3 ratio is the only place where single-branch C2 differs. Multi-branch C2 kills even this discriminator."
+    }
+  },
+  "Q6_classification": {
+    "internal_consistency": {
+      "verdict": "CONSISTENT",
+      "reason": "Each branch independently satisfies the telegrapher equation. Conservation of Q_b = integral s_b dx holds per branch. The coupled system is well-posed as B independent telegrapher equations.",
+      "cost": "The total density S = sum w_b s_b satisfies a 2B-th order PDE, not the single telegrapher equation. The C2 transport layer in its current 1D, single-speed form does NOT directly accommodate multi-branch propagation without reformulation."
+    },
+    "requires_new_assumption": "Multi-branch PRW requires: (1) specifying B branch speeds v_1,...,v_B, (2) specifying B reversal rates lambda_1,...,lambda_B, (3) specifying coupling weights w_1,...,w_B, (4) specifying whether branches exchange population (inter-branch scattering). None of these are determined by the existing C2 axioms.",
+    "new_parameters_introduced": {
+      "single_branch": [
+        "v",
+        "lambda",
+        "g"
+      ],
+      "B_branches": [
+        "v_1..v_B",
+        "lambda_1..lambda_B",
+        "g_1..g_B",
+        "w_1..w_B"
+      ],
+      "increase": "2 free parameters \u2192 4B free parameters"
+    },
+    "prediction_status": {
+      "temporal_dephasing": "Multi-branch Gamma_phi = sum w_b * g_b^2 * 2 S0 tau_b. This has MORE free parameters than single-branch but same functional form. It is observationally indistinguishable from a multi-component Drude bath.",
+      "spatial_correlator": "Multi-branch C(r) = sum w_b K0(r/xi_b). This CAN differ from single-K0 in shape if xi_b are well separated. But: (a) xi_b = 2 v_b tau_b, so one must also know tau_b per branch; (b) a conventional bath with two timescales produces the same K0 sum. Discriminating C2 from conventional requires that the xi_b values are PREDICTED (not fitted) from the theory.",
+      "prediction_without_fitting": "NONE \u2013 all branch speeds and rates remain free."
+    },
+    "does_multibranch_add_new_prediction": {
+      "verdict": "NO",
+      "reason": "A multi-branch C2 model with B free (v_b, lambda_b, w_b) triples is observationally equivalent to a conventional B-component Lorentzian bath with B free (Omega_b, S_b) pairs. Both produce the same PSD and the same spatial K0 sum. Neither makes a parameter-free prediction. The C2 label on the bath does not generate a distinct observable.",
+      "exception_condition": "A distinct prediction would arise ONLY IF the branch speeds v_b and reversal rates lambda_b were predicted from first principles (e.g., from material constants). Then the xi_b values would be fixed numbers, not fitted parameters, and the K0 sum shape would be a true prediction. But that requires the microscopic coupling derivation that is currently absent."
+    },
+    "reformulation_verdict": "The C2 theory CAN be reformulated for multiple branch speeds in a mathematically consistent way. The reformulation is a straightforward generalization: replace one (v, lambda) pair with B (v_b, lambda_b) pairs. However: (1) it contradicts assumption A-PRW1 (single uniform speed), which must be relaxed; (2) it multiplies free parameters by B; (3) it produces no new observable prediction unless the v_b values are independently derived. The reformulation is legitimate but not scientifically productive without the missing microscopic derivation."
+  },
+  "summary": {
+    "multi_branch_internally_consistent": true,
+    "multi_branch_contradicts_A_PRW1": true,
+    "multi_branch_adds_new_parameters": true,
+    "multi_branch_adds_new_predictions": false,
+    "multi_branch_kills_P3_discriminator": true,
+    "reformulation_is_productive": false,
+    "reason": "Multi-branch C2 is consistent but not productive: it erases the only surviving discriminator (P3 ratio uniqueness) without adding any new observable that conventional phonon physics cannot match. The only path to a genuine prediction is deriving the branch speeds and reversal rates from the theory's own axioms."
+  }
+}

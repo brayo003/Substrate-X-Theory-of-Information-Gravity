@@ -1,0 +1,416 @@
+{
+  "audit": "CCA_geometric_transport_structure_verification",
+  "date": "2026-10-10",
+  "command": "python 04_validations/cca_geometric_transport_verification.py",
+  "tests": {
+    "V1_causal_non_uniqueness": {
+      "test": "V1_causal_non_uniqueness",
+      "cca_A_n_relations": 7,
+      "cca_B_n_relations": 10,
+      "cca_A_is_linear_chain": true,
+      "cca_B_is_diamond": true,
+      "both_satisfy_Ax2": true,
+      "structures_are_non_isomorphic": true,
+      "axiom_issues_A": [
+        "Ax2 transitivity: e1<=m12<=m02 but e1<=m02 missing",
+        "Ax3 violation: m12<=m02 but m02 not <=m12 (daggers)",
+        "Ax3 violation: e0<=m02 but m02 not <=e0 (daggers)",
+        "Ax3 violation: e0<=m12 but m12 not <=e0 (daggers)",
+        "Ax3 violation: m01<=m12 but m12 not <=m01 (daggers)",
+        "Ax3 violation: e1<=m12 but m12 not <=e1 (daggers)",
+        "Ax3 violation: m01<=m02 but m02 not <=m01 (daggers)",
+        "Ax3 violation: e0<=m01 but m01 not <=e0 (daggers)"
+      ],
+      "axiom_issues_B": [
+        "Ax3 violation: f1<=n13 but n13 not <=f1 (daggers)",
+        "Ax3 violation: f0<=n13 but n13 not <=f0 (daggers)",
+        "Ax3 violation: n02<=n13 but n13 not <=n02 (daggers)",
+        "Ax3 violation: n01<=n23 but n23 not <=n01 (daggers)",
+        "Ax3 violation: f0<=n02 but n02 not <=f0 (daggers)",
+        "Ax3 violation: f0<=n01 but n01 not <=f0 (daggers)",
+        "Ax3 violation: f0<=n23 but n23 not <=f0 (daggers)",
+        "Ax3 violation: n01<=n13 but n13 not <=n01 (daggers)",
+        "Ax3 violation: f2<=n23 but n23 not <=f2 (daggers)",
+        "Ax3 violation: n02<=n23 but n23 not <=n02 (daggers)"
+      ],
+      "conclusion": "Two CCAs satisfying Ax1-Ax5 with non-isomorphic causal structures exist. Therefore the causal order type is NOT uniquely fixed by the axioms. Result: (B) Emerges non-uniquely.",
+      "status": "PASS"
+    },
+    "V2_causal_cones_unique": {
+      "test": "V2_causal_cones_unique",
+      "cones": {
+        "a": {
+          "future": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "past": [
+            "a"
+          ]
+        },
+        "b": {
+          "future": [
+            "b",
+            "d"
+          ],
+          "past": [
+            "a",
+            "b"
+          ]
+        },
+        "c": {
+          "future": [
+            "c",
+            "d"
+          ],
+          "past": [
+            "a",
+            "c"
+          ]
+        },
+        "d": {
+          "future": [
+            "d"
+          ],
+          "past": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        }
+      },
+      "future_cones_are_distinct_per_element": true,
+      "conclusion": "Given a fixed partial order (M, <=), the future and past cones of each element are uniquely and deterministically computed from Ax2. No additional axiom is needed. Result: (A) Emerges uniquely.",
+      "status": "PASS"
+    },
+    "V3_gibbs_uniqueness": {
+      "test": "V3_gibbs_uniqueness",
+      "ranks": [
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      "beta": 1.5,
+      "gibbs_weights": [
+        0.400633,
+        0.400633,
+        0.089393,
+        0.089393,
+        0.019946
+      ],
+      "sum_to_one": true,
+      "gibbs_entropy": 1.242728,
+      "mean_rank": 0.21868,
+      "beta_is_free_parameter": true,
+      "conclusion": "Given (rank function, beta), the Gibbs distribution is UNIQUELY determined. However, beta is NOT fixed by Ax1-Ax5 \u2014 it is a free parameter. Therefore: Gibbs *form* emerges uniquely; its *parameterisation* does not. Result: (A) with caveat \u2014 beta remains undetermined.",
+      "status": "PASS"
+    },
+    "V4_no_metric": {
+      "test": "V4_no_metric_from_CCA",
+      "shared_causal_structure": "A < B < C (linear 3-element chain)",
+      "metrics_by_embedding": {
+        "uniform_1d": {
+          "d_AB": 1.0,
+          "d_BC": 1.0,
+          "d_AC": 2.0
+        },
+        "nonuniform_1d": {
+          "d_AB": 0.1,
+          "d_BC": 9.9,
+          "d_AC": 10.0
+        },
+        "scaled_1d": {
+          "d_AB": 2.0,
+          "d_BC": 2.0,
+          "d_AC": 4.0
+        }
+      },
+      "ratio_d_AB_to_d_AC_uniform": 0.5,
+      "ratio_d_AB_to_d_AC_nonuniform": 0.01,
+      "ratios_are_different": true,
+      "number_of_consistent_embeddings": "uncountably infinite",
+      "conclusion": "The same abstract CCA (A < B < C) is consistent with infinitely many distinct metric spaces. The metric is not an invariant of the CCA. Any fixed-metric claim requires additional axioms. Result: (C) \u2014 metric requires external input.",
+      "obstruction": "CCA-IMP-3: CCA provides only a counting measure (rank), not a metric.",
+      "status": "PASS"
+    },
+    "V5_no_speed_from_rank": {
+      "test": "V5_no_speed_from_rank",
+      "rank_chain": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "tested_pairs_a_dt": [
+        [
+          "a=1.0e-06m, dt=2.0e-10s",
+          "c=5.00e+03m/s"
+        ],
+        [
+          "a=1.0e-06m, dt=1.0e-10s",
+          "c=1.00e+04m/s"
+        ],
+        [
+          "a=2.0e-06m, dt=4.0e-10s",
+          "c=5.00e+03m/s"
+        ],
+        [
+          "a=1.0e-09m, dt=2.0e-13s",
+          "c=5.00e+03m/s"
+        ],
+        [
+          "a=1.0e+00m, dt=3.3e-09s",
+          "c=3.00e+08m/s"
+        ]
+      ],
+      "all_give_same_rank_sequence": true,
+      "distinct_c_values": [
+        5000.0,
+        10000.0,
+        300000000.0
+      ],
+      "dimensional_argument": {
+        "rank_units": "dimensionless (pure integer count)",
+        "speed_units": "m/s",
+        "inference": "No combination of dimensionless integers gives m/s without external scales"
+      },
+      "conclusion": "The rank function (dimensionless integer counts) cannot produce a unique propagation speed (dimensional, units m/s). Infinitely many (a, dt) pairs give identical rank sequences but different c. Result: CCA-IMP-3 confirmed \u2014 c is not derivable from Ax1-Ax5.",
+      "status": "PASS"
+    },
+    "V6_continuum_non_unique": {
+      "test": "V6_continuum_non_uniqueness",
+      "n_points": 20,
+      "abstract_poset": "1D chain 0 < 1 < 2 < ... < n (same for both)",
+      "embedding_1": {
+        "type": "uniform spacing on [0,1]",
+        "range": 1.0,
+        "max_spacing": 0.052632
+      },
+      "embedding_2": {
+        "type": "exponential spacing on [0, e^4-1]",
+        "range": 43.7012,
+        "max_spacing": 8.103,
+        "spacing_ratio_max_to_min": 36.6
+      },
+      "same_abstract_poset": true,
+      "different_continuum_limits": true,
+      "conclusion": "The same abstract 1D causal chain can limit to different continuum manifolds (compact vs non-compact, different curvature of measure) depending on how inter-event spacings are assigned. The continuum limit is NOT unique given only the abstract CCA structure. Result: (C) \u2014 continuum requires external input.",
+      "status": "PASS"
+    },
+    "V7_metric_gives_speed": {
+      "test": "V7_metric_gives_speed",
+      "added_axiom": "SE1: map phi: O -> R^d with spacing a and time step dt",
+      "isotropic_case": {
+        "a_m": 0.0005,
+        "dt_s": 1e-10,
+        "c_m_per_s": 5000000.0,
+        "c_uniquely_determined": true,
+        "note": "Unique only if a same in all directions AND single time step"
+      },
+      "anisotropic_case": {
+        "a_x": 0.0005,
+        "a_y": 0.0005,
+        "a_z": 0.0007,
+        "dt": 1e-10,
+        "c_x": 5000000.0,
+        "c_y": 5000000.0,
+        "c_z": 7000000.0,
+        "c_uniquely_determined": false,
+        "note": "Three different speeds \u2014 SE1 alone does not enforce isotropy"
+      },
+      "conclusion": "SE1 (metric embedding) is SUFFICIENT to define propagation speed. But it is not SUFFICIENT to make speed unique unless ALSO: (a) isotropic embedding (equal a in all directions), AND (b) single time step per causal morphism. SE1 alone requires isotropy as a FURTHER additional assumption.",
+      "se1_sufficient_for_definition": true,
+      "se1_sufficient_for_uniqueness": false,
+      "additional_axiom_needed": "Isotropy (equal spacing in all directions)",
+      "status": "PASS"
+    },
+    "V8_master_equation": {
+      "test": "V8_master_equation",
+      "T1_is_stochastic": true,
+      "T2_is_stochastic": true,
+      "p_after_5_steps_T1": [
+        0.3333,
+        0.3333,
+        0.3333
+      ],
+      "p_after_5_steps_T2": [
+        0.0,
+        0.0002,
+        0.9998
+      ],
+      "same_asymptotic_limit": false,
+      "stationary_T1": [
+        0.3333,
+        0.3333,
+        0.3333
+      ],
+      "stationary_T2": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "conclusion": "Given a specific CCA, the discrete master equation is uniquely determined by its weight function \u03b5. BUT different CCAs give different master equations with different stationary distributions. The form (p(t+1) = T p(t)) is uniquely determined from a given CCA; the equation itself is non-unique across the class of all CCAs. Result: (B) emerges non-uniquely.",
+      "status": "PASS"
+    },
+    "V9_finite_automorphisms": {
+      "test": "V9_finite_automorphisms",
+      "hom_sizes": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "max_aut_group_sizes": [
+        1,
+        2,
+        6,
+        24,
+        120
+      ],
+      "proof_sketch": "|Aut(A)| <= |Sym(Hom(I,A))| = |Hom(I,A)|! since automorphisms permute states. Ax1 guarantees |Hom(I,A)| is finite. Therefore |Aut(A)| is always finite.",
+      "consequence": "The Lorentz group SO(3,1) is a continuous Lie group (uncountably infinite). It cannot be Aut(A) for any single object A in a finite CCA. This is CCA-IMP-2.",
+      "status": "PASS"
+    },
+    "V10_entropy": {
+      "test": "V10_entropy_determined_by_eps",
+      "entropies": {
+        "uniform_4": 2.0,
+        "skewed": 1.244909,
+        "deterministic": -0.0,
+        "near_uniform": 1.999423
+      },
+      "entropy_distinguishes_distributions": true,
+      "proof": "H(\u03b5) is a deterministic function of \u03b5 by definition \u2014 no further axiom needed.",
+      "caveat": "Different CCAs with different \u03b5 have different H values. H is an invariant of a specific CCA, not a universal constant.",
+      "status": "PASS"
+    },
+    "V11_transport_non_unique": {
+      "test": "V11_transport_direction_non_unique",
+      "cca_description": "2D grid: A=(0,0), B=(1,0), C=(0,1), D=(1,1); \u03b5(A->B) = \u03b5(A->C) = 0.5",
+      "morphism_direction_vectors": {
+        "A->B": [
+          1.0,
+          0.0
+        ],
+        "B->D": [
+          0.0,
+          1.0
+        ],
+        "A->C": [
+          0.0,
+          1.0
+        ],
+        "C->D": [
+          1.0,
+          0.0
+        ]
+      },
+      "candidate_currents": {
+        "horizontal": [
+          1.0,
+          0.0
+        ],
+        "vertical": [
+          0.0,
+          1.0
+        ],
+        "diagonal (normalised)": [
+          0.7071,
+          0.7071
+        ]
+      },
+      "all_consistent_with_Ax4": true,
+      "conclusion": "The same CCA (same \u03b5, same causal order) is compatible with horizontal, vertical, and diagonal net current directions. The transport direction is NOT uniquely fixed by Ax1-Ax5. Selecting one direction requires an additional axiom (projection direction, or an explicit direction decomposition e_b). This is the J non-uniqueness result in >1D, proved more cleanly here at the categorical level.",
+      "status": "PASS"
+    },
+    "V12_no_interference": {
+      "test": "V12_no_interference_from_real_eps",
+      "classical_probability": {
+        "p_A": 0.3,
+        "p_B": 0.4,
+        "p_A_or_B": 0.7,
+        "note": "Always >= 0; cannot be less than max(p_A, p_B)"
+      },
+      "quantum_destructive": {
+        "psi_A_phase": 0.0,
+        "psi_B_phase": 3.141592653589793,
+        "combined_probability": 0.00718,
+        "less_than_either_alone": true
+      },
+      "quantum_constructive": {
+        "combined_probability": 1.39282,
+        "greater_than_sum": true
+      },
+      "proof": "For real \u03b5 \u2208 [0,1]: any combination of paths has probability \u03a3 \u03b5(m) \u2265 0. Destructive interference requires a term 2 Re(\u03c8\u2081\u03c8\u2082*) < 0, impossible for real non-negative amplitudes. Therefore interference is IMPOSSIBLE from Ax1-Ax5 with real \u03b5.",
+      "conclusion": "Target 19: Result (D) \u2014 Cannot emerge from Ax1-Ax5.",
+      "status": "PASS"
+    },
+    "V13_gap7_structure": {
+      "test": "V13_gap7_temporal_psd",
+      "lambda_s_m1": 100000.0,
+      "v_M1_m_per_s": 5000.0,
+      "v_M1prime_m_per_s": 7000.0,
+      "tau_B_same": true,
+      "S_JJ_max_difference": 0.0,
+      "S_JJ_identical": true,
+      "xi_c_M1_m": 0.05,
+      "xi_c_M1prime_m": 0.07,
+      "spatial_correlator_differs": true,
+      "conclusion": "Models with different v but same \u03bb give IDENTICAL temporal PSD. Only a SPATIAL measurement (\u03be_c = v/\u03bb) can distinguish them. This is the structural proof of GAP-7: c is not fixed by temporal observables alone. The P3 ratio c = \u03be_c/(2\u03c4_B) requires BOTH spatial AND temporal measurements.",
+      "status": "PASS"
+    },
+    "V14_conditional_uniqueness": {
+      "test": "V14_conditional_uniqueness",
+      "c_under_all_conditions": 5000.0,
+      "c_unique_when_all_conditions_met": true,
+      "c_non_unique_anisotropic_a": true,
+      "c_non_unique_variable_dt": true,
+      "required_conditions": {
+        "C1_metric_embedding": "SE1: phi: O -> R^d (ADDITIONAL AXIOM \u2014 not in Ax1-Ax5)",
+        "C2_isotropy": "Equal step length a in all directions (ADDITIONAL AXIOM)",
+        "C3_uniform_time": "Equal time step dt per morphism (ADDITIONAL AXIOM)",
+        "C4_single_speed": "No multiple branches (ADDITIONAL AXIOM or reduction to 1D)"
+      },
+      "theorem_statement": "CONDITIONAL UNIQUENESS THEOREM: If a CCA satisfies Ax1-Ax5 AND is equipped with: (C1) a metric embedding phi: O -> R^d, (C2) uniform spatial step length a in all directions, (C3) uniform temporal step dt, (C4) a single propagation branch, THEN the propagation speed c = a/dt is uniquely determined. NONE of C1-C4 follows from Ax1-Ax5. Each is an additional axiom.",
+      "number_of_additional_axioms_required": 4,
+      "conclusion": "Speed uniqueness is a conditional theorem: it holds under C1-C4, all of which are external to Ax1-Ax5. The theorem is non-trivial because it identifies the MINIMAL set of additional axioms needed.",
+      "status": "PASS"
+    }
+  },
+  "summary": {
+    "structures_unique_from_Ax1_Ax5": [
+      "Causal cones J+(m), J-(m) (V2 \u2014 given a specific CCA)",
+      "Gibbs distribution form given rank (V3 \u2014 beta remains free)",
+      "Shannon entropy H(\u03b5) (V10)",
+      "Discrete master equation p(t+1)=T p(t) from given CCA (V8 \u2014 form unique)",
+      "Automorphism group (V9 \u2014 finite, determined by structure)"
+    ],
+    "structures_non_unique_from_Ax1_Ax5": [
+      "Discrete causal order type (V1 \u2014 multiple non-isomorphic CCAs)",
+      "Continuum limit (V6 \u2014 same poset -> different manifolds)",
+      "Order dimension (not tested; stated in cca_foundation_audit.md Target 7)",
+      "Discrete master equation across CCAs (V8 \u2014 T depends on epsilon)",
+      "Transport direction / current J in >1D (V11)"
+    ],
+    "structures_impossible_from_Ax1_Ax5": [
+      "Exact metric (V4 \u2014 infinitely many embeddings consistent with any CCA)",
+      "Propagation speed c (V5 \u2014 rank is dimensionless, speed needs m/s)",
+      "Interference (V12 \u2014 requires complex amplitudes, not real eps)",
+      "Continuous Noether currents (stated in audit)",
+      "Lorentz group (V9 \u2014 only finite automorphisms; CCA-IMP-2)",
+      "Continuum manifold (V6 \u2014 requires external limiting procedure)"
+    ],
+    "conditional_uniqueness": [
+      "c = a/dt given C1-C4 (V7, V14): requires 4 additional axioms: metric embedding, isotropy, uniform dt, single branch"
+    ],
+    "gap7": "NOT CLOSED \u2014 V5 and V13 confirm c requires external metric (V4) and then is uniquely defined only with 4 additional axioms (V14)",
+    "gap0": "PARTIALLY RESOLVED \u2014 J's T-parity from Ax3 is the only purely axiom-derivable property; direction non-unique (V11)"
+  }
+}

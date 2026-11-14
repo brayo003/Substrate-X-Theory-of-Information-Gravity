@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-13T19:15:11.878378+00:00",
+  "repo_root": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity",
+  "sim_world": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/substrate_ai_module/sim_world",
+  "git_branch": "main",
+  "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+  "platform": "Linux-6.17.4-76061704-generic-x86_64-with-glibc2.35",
+  "numpy": "1.26.4",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.8"
+}

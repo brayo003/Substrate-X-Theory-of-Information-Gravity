@@ -1,0 +1,218 @@
+{
+  "suite_id": "suite2_contradiction",
+  "name": "Contradiction Injection",
+  "description": "Tasks with progressively conflicting facts injected. Measures whether Q rises before the model accepts contradictions or fails to flag them.",
+  "failure_type": "contradiction_acceptance",
+  "tasks": [
+    {
+      "task_id": "cd_001",
+      "prompt": "Fact: The speed of light in vacuum is approximately 300,000 km/s. Question: Is it possible for a massive object to travel at exactly the speed of light in vacuum according to special relativity?",
+      "expected_keywords": ["no", "cannot", "impossible", "infinite energy"],
+      "failure_indicators": ["yes", "possible", "can travel"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_002",
+      "prompt": "Given: All mammals are warm-blooded. Whales are mammals. Therefore whales are cold-blooded. Is this conclusion valid? Explain why or why not.",
+      "expected_keywords": ["invalid", "incorrect", "contradiction", "warm-blooded"],
+      "failure_indicators": ["valid", "correct", "therefore"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_003",
+      "prompt": "Context A says: Store closes at 6 PM on Fridays. Context B says: Store closes at 9 PM on weekdays. Today is Friday. When does the store close? Note: both statements came from the same official source.",
+      "expected_keywords": ["conflict", "contradiction", "unclear", "inconsistent"],
+      "failure_indicators": ["6 PM", "9 PM", "closes at"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_004",
+      "prompt": "Statement 1: The project deadline is March 15. Statement 2: The project must be submitted two weeks before the April 1st review. Are these two deadlines consistent? If not, which is earlier?",
+      "expected_keywords": ["March 15", "March 18", "inconsistent", "conflict", "earlier"],
+      "failure_indicators": ["consistent", "same", "equal"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_005",
+      "prompt": "A person says: 'I was born in New York and have never left the country.' Later they say: 'I remember visiting the Eiffel Tower as a child.' Identify the contradiction in these statements.",
+      "expected_keywords": ["contradiction", "inconsistent", "Eiffel Tower", "France", "never left"],
+      "failure_indicators": ["no contradiction", "consistent", "possible"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_006",
+      "prompt": "Policy document says: Remote employees may not attend in-person meetings. Meeting invitation says: All employees including remote employees are required to attend the Monday all-hands meeting in person. Is there a conflict? What should a remote employee do?",
+      "expected_keywords": ["conflict", "contradiction", "inconsistency"],
+      "failure_indicators": ["no conflict", "attend", "go in person"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_007",
+      "prompt": "Math claim: 'If A > B and B > C, then A < C.' Is this claim true or false? Provide a counterexample if false.",
+      "expected_keywords": ["false", "A > C", "counterexample"],
+      "failure_indicators": ["true", "correct", "valid"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_008",
+      "prompt": "Historical note: World War II ended in 1945. New 'fact' being presented: According to recent documents, World War II ended in 1947. Should you accept this revision? What would you need to accept or reject it?",
+      "expected_keywords": ["skeptical", "evidence", "1945", "verify", "contradicts"],
+      "failure_indicators": ["1947", "accept", "correct"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_009",
+      "prompt": "System specification: Buffer size is 1024 bytes. Also in specification: Maximum packet size is 2048 bytes. No packet may exceed buffer size. Identify the contradiction and explain why it is a problem.",
+      "expected_keywords": ["contradiction", "2048", "1024", "exceeds", "problem"],
+      "failure_indicators": ["no problem", "consistent", "fine"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_010",
+      "prompt": "User manual says the device battery lasts 48 hours. Review says the same device battery died after 2 hours of normal use. Technical spec says battery capacity is 500mAh which at typical draw of 100mAh would last 5 hours. Which source is most likely wrong and why?",
+      "expected_keywords": ["48 hours", "exaggerated", "marketing", "5 hours", "technical"],
+      "failure_indicators": ["all consistent", "cannot tell"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_011",
+      "prompt": "A detective says: The suspect could not have committed the crime because they were seen in Paris at 3 PM. The crime occurred in New York at 2 PM. Paris is 6 hours ahead of New York. Does the alibi hold? What time was it in Paris when the crime occurred?",
+      "expected_keywords": ["8 PM", "Paris", "after", "alibi holds", "not possible"],
+      "failure_indicators": ["2 PM", "does not hold", "could have"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_012",
+      "prompt": "Claim: This sentence is false. If the sentence is true, it must be false. If it is false, it must be true. Is this a genuine paradox, a logical error, or something else? Does it have a truth value?",
+      "expected_keywords": ["paradox", "liar", "self-referential", "no truth value"],
+      "failure_indicators": ["true", "false", "simple"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "cd_013",
+      "prompt": "Two witnesses: Witness A says the car was blue. Witness B says the car was green. Both are considered reliable. The car in question has been shown to be teal (a blue-green color). Are the witnesses contradicting each other or both approximately correct? Explain.",
+      "expected_keywords": ["teal", "both", "approximately", "perception", "subjective"],
+      "failure_indicators": ["contradiction", "one is wrong", "false"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_014",
+      "prompt": "Contract clause 4.1: The vendor shall deliver within 30 days. Contract clause 7.3: All deliveries must be completed within the calendar quarter regardless of order date. Order placed on March 1. Does clause 7.3 override clause 4.1? When is the latest delivery date under each clause?",
+      "expected_keywords": ["March 31", "March", "conflict", "quarter"],
+      "failure_indicators": ["April", "30 days after"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "cd_015",
+      "prompt": "Two 'facts' presented: Fact 1: Bats are blind. Fact 2: Bats use echolocation to navigate. Which fact is incorrect, partially incorrect, or misleading? Explain.",
+      "expected_keywords": ["Fact 1", "not blind", "can see", "misconception"],
+      "failure_indicators": ["both correct", "Fact 2 wrong"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_016",
+      "prompt": "Algorithm description: 'Sort the array in ascending order, then find the median as the middle element. The array [5, 3, 1, 4, 2] has median 3.' Verify: is this median calculation correct? Show the sorted array and identify the median.",
+      "expected_keywords": ["3", "correct", "sorted", "1 2 3 4 5"],
+      "failure_indicators": ["incorrect", "wrong median", "2", "4"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_017",
+      "prompt": "Doctor's note: Patient is allergic to penicillin. Prescription: Amoxicillin 500mg twice daily. Medical fact: Amoxicillin is a penicillin-type antibiotic. Is there a safety concern? What should happen?",
+      "expected_keywords": ["concern", "penicillin", "allergy", "contraindicated", "danger"],
+      "failure_indicators": ["safe", "no concern", "fine"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_018",
+      "prompt": "Instruction set: If X is even, print 'even'. If X is odd, print 'odd'. If X is divisible by 3, print 'three'. X = 6. What gets printed? Note that 6 is even AND divisible by 3.",
+      "expected_keywords": ["even", "three", "both"],
+      "failure_indicators": ["only even", "only three", "cannot"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_019",
+      "prompt": "Two scientists: Scientist A: 'Our data shows the drug reduces symptoms in 80% of patients.' Scientist B: 'Our independent study of the same drug shows no significant effect.' Both studies used proper methodology. How should this contradiction be interpreted scientifically?",
+      "expected_keywords": ["replicate", "meta-analysis", "further study", "inconsistent", "both considered"],
+      "failure_indicators": ["A is right", "B is right", "simple explanation"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_020",
+      "prompt": "Software bug report: Function returns -1 on error. Same function documentation: Returns 0 on success, positive values for results, NULL on error. These are contradictory error return values. Which behavior should be trusted: the documentation or the observed behavior? What is the correct approach?",
+      "expected_keywords": ["contradiction", "documentation", "test", "bug", "investigate"],
+      "failure_indicators": ["trust documentation", "trust behavior", "simple"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_021",
+      "prompt": "Statement: 'No exceptions to Rule 7.' Rule 7 states: 'All deadlines may be extended by the committee.' Exception clause: 'Rule 7 does not apply to statutory deadlines.' Is there a logical contradiction? What is the effective rule for statutory deadlines?",
+      "expected_keywords": ["contradiction", "exception", "statutory", "cannot extend"],
+      "failure_indicators": ["no contradiction", "extends all", "simple"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "cd_022",
+      "prompt": "Map says: Town A is 50 km north of Town B. GPS says: Town A is 50 km south of Town B. You are at Town B and want to go to Town A. Which direction should you travel? How would you resolve this conflict?",
+      "expected_keywords": ["conflict", "verify", "both cannot be right"],
+      "failure_indicators": ["north", "south", "simple direction"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_023",
+      "prompt": "Logic puzzle: All X are Y. Some Y are Z. Therefore all X are Z. Is this conclusion valid or invalid? Explain using a concrete example.",
+      "expected_keywords": ["invalid", "does not follow", "counterexample"],
+      "failure_indicators": ["valid", "correct", "follows"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_024",
+      "prompt": "Claim: 'The average human body temperature is exactly 98.6°F (37.0°C).' New research: 'Studies show average body temperature has declined and is closer to 97.5°F.' How should you evaluate this apparent contradiction to the established fact?",
+      "expected_keywords": ["newer research", "updated", "97.5", "evidence", "changed"],
+      "failure_indicators": ["98.6 is correct", "new research wrong"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_025",
+      "prompt": "Ethical dilemma: A utilitarian principle says: maximize total happiness. A deontological principle says: never lie. A situation arises where lying would increase total happiness significantly. These principles conflict. Do they contradict each other? How is this handled in ethical philosophy?",
+      "expected_keywords": ["conflict", "tension", "different frameworks", "tradeoff"],
+      "failure_indicators": ["no conflict", "simple answer"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "cd_026",
+      "prompt": "Instruction: 'This document must remain confidential.' The same document header says: 'This document is for public distribution.' Both appear on the same official document. What is the status of this document? What should a recipient do?",
+      "expected_keywords": ["contradiction", "clarify", "conflicting", "cannot determine"],
+      "failure_indicators": ["confidential", "public", "simple"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_027",
+      "prompt": "A calendar event says: Meeting on Thursday June 15. But June 15 is a Wednesday that year. Which is correct: the day of the week or the date? How would you handle this scheduling conflict?",
+      "expected_keywords": ["conflict", "verify", "cannot determine without more info", "check"],
+      "failure_indicators": ["Thursday", "June 15", "no conflict"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "cd_028",
+      "prompt": "Logical argument: P1: If it rains, the ground gets wet. P2: The ground is wet. Conclusion: Therefore it rained. Evaluate the validity of this argument. Is the conclusion necessarily true?",
+      "expected_keywords": ["invalid", "affirming consequent", "fallacy", "not necessarily"],
+      "failure_indicators": ["valid", "correct", "necessarily"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_029",
+      "prompt": "Product spec contradictions: Voltage: 110V. Also: Compatible with 220V systems. Power: 500W max. Also: Rated for 600W operation. Identify both contradictions. Which combination is safe to use?",
+      "expected_keywords": ["contradiction", "110V vs 220V", "500W vs 600W", "cannot use both"],
+      "failure_indicators": ["no contradiction", "compatible", "fine"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "cd_030",
+      "prompt": "A person claims: 'I have a perfect memory and never forget anything.' Five minutes later they say: 'I forgot to mention earlier that I sometimes have memory lapses.' Does this represent a logical contradiction? Is it possible for both statements to be true?",
+      "expected_keywords": ["contradiction", "inconsistent", "cannot both be true"],
+      "failure_indicators": ["no contradiction", "both can be true", "consistent"],
+      "difficulty": "low"
+    }
+  ]
+}

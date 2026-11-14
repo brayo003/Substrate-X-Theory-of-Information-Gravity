@@ -1,0 +1,36 @@
+{
+  "condition_number": Infinity,
+  "data_model": "synthetic Gamma=k omega^2 with known Gaussian noise",
+  "eigenvalues": [
+    0.0,
+    33162.99250296099
+  ],
+  "fisher_information": [
+    [
+      16581.496251480494,
+      16581.496251480494
+    ],
+    [
+      16581.496251480494,
+      16581.496251480494
+    ]
+  ],
+  "practical_identifiability": {
+    "credible_ridge_mass_delta_chi2_lt_2_30": 0.9425318125233204,
+    "posterior_grid_shape": [
+      160,
+      160
+    ],
+    "profile_minimum": 26.32802979561645
+  },
+  "seed": 13,
+  "status": "PARTIAL",
+  "structural_identifiability": {
+    "g": false,
+    "g_times_s0": true,
+    "k_rot": true,
+    "reason": "rate contains g^2 s0^2 only",
+    "s0": false
+  },
+  "verdict": "A rate-versus-frequency experiment identifies only the composite coefficient. The singular Fisher matrix quantitatively rules out separate recovery of g and s0 without an additional observable or externally fixed parameter."
+}

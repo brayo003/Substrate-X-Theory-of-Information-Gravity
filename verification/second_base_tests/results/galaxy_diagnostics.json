@@ -1,0 +1,7 @@
+{
+  "ratio_plot": "verification/second_base_tests/results/galaxy_ratio.png",
+  "stability_plot": "verification/second_base_tests/results/galaxy_stability.png",
+  "outer_ratio_mean": 8.860107085483598,
+  "outer_ratio_std": 3.88741031593094,
+  "outer_velocity_rel_std": 0.04337511446215032
+}

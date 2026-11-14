@@ -1,0 +1,205 @@
+{
+  "model": "SCW deterministic graph-rewrite toy model",
+  "status": "exploratory; not a validated physical theory",
+  "exhaustive_replay_sequences_checked": 511,
+  "all_replays_deterministic_and_states_valid": true,
+  "order_sensitivity_test": {
+    "sequence_1": "ABB",
+    "sequence_2": "BBA",
+    "observation_1": {
+      "boundary_0_reaches_3": true,
+      "closure_count": 2,
+      "closure_parity": 0,
+      "orientation_balance": -2,
+      "strand_count": 6
+    },
+    "observation_2": {
+      "boundary_0_reaches_3": true,
+      "closure_count": 3,
+      "closure_parity": 1,
+      "orientation_balance": 0,
+      "strand_count": 6
+    },
+    "same_observation": false,
+    "history_1": [
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "B",
+        "strand_added": [
+          1,
+          2
+        ],
+        "cycle_closed": true,
+        "closure_count_after": 1
+      },
+      {
+        "interaction": "B",
+        "strand_added": [
+          1,
+          0
+        ],
+        "cycle_closed": true,
+        "closure_count_after": 2
+      }
+    ],
+    "history_2": [
+      {
+        "interaction": "B",
+        "strand_added": [
+          1,
+          2
+        ],
+        "cycle_closed": true,
+        "closure_count_after": 1
+      },
+      {
+        "interaction": "B",
+        "strand_added": [
+          1,
+          0
+        ],
+        "cycle_closed": true,
+        "closure_count_after": 2
+      },
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": true,
+        "closure_count_after": 3
+      }
+    ]
+  },
+  "same_coarse_state_different_future_test": {
+    "initial_coarse_signatures_equal": true,
+    "initial_observations_equal": true,
+    "probe_sequence": "AAAB",
+    "final_observation_1": {
+      "boundary_0_reaches_3": true,
+      "closure_count": 0,
+      "closure_parity": 0,
+      "orientation_balance": 7,
+      "strand_count": 7
+    },
+    "final_observation_2": {
+      "boundary_0_reaches_3": true,
+      "closure_count": 1,
+      "closure_parity": 1,
+      "orientation_balance": 1,
+      "strand_count": 7
+    },
+    "same_final_observation": false,
+    "history_1": [
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "B",
+        "strand_added": [
+          1,
+          2
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      }
+    ],
+    "history_2": [
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "A",
+        "strand_added": [
+          0,
+          1
+        ],
+        "cycle_closed": false,
+        "closure_count_after": 0
+      },
+      {
+        "interaction": "B",
+        "strand_added": [
+          1,
+          2
+        ],
+        "cycle_closed": true,
+        "closure_count_after": 1
+      }
+    ]
+  },
+  "shortest_order_witness": {
+    "length": 3,
+    "forward": "ABB",
+    "reverse": "BBA",
+    "forward_observation": {
+      "boundary_0_reaches_3": true,
+      "closure_count": 2,
+      "closure_parity": 0,
+      "orientation_balance": -2,
+      "strand_count": 6
+    },
+    "reverse_observation": {
+      "boundary_0_reaches_3": true,
+      "closure_count": 3,
+      "closure_parity": 1,
+      "orientation_balance": 0,
+      "strand_count": 6
+    }
+  },
+  "limitations": [
+    "The routing rule is stipulated, not derived.",
+    "The readout is a structural observable, not a quantum measurement rule.",
+    "No quantum system has been coupled yet.",
+    "No empirical or uniquely quantum prediction has been established.",
+    "A graph-rewrite formalism is not automatically novel mathematics."
+  ]
+}

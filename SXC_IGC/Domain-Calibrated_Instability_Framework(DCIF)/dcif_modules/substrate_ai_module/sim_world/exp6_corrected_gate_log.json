@@ -1,0 +1,509 @@
+{
+  "math": {
+    "G1": {
+      "gate": "G1",
+      "checks": {
+        "equilibria": {
+          "pass": true,
+          "computed": [
+            0.0,
+            0.292893218813,
+            1.707106781187
+          ],
+          "expected": [
+            0.0,
+            0.2928932188134524,
+            1.7071067811865475
+          ],
+          "tolerance": 1e-06
+        },
+        "stability": {
+          "pass": true,
+          "growth_rates": {
+            "0.0": -0.5,
+            "0.292893218813": 0.41421356237208035,
+            "1.707106781187": -2.41421356237592
+          },
+          "classification": {
+            "0.0": "stable",
+            "0.292893218813": "unstable",
+            "1.707106781187": "stable"
+          }
+        },
+        "equation_identity_homogeneous": {
+          "pass": true,
+          "analytic_s": 0.5003125,
+          "numeric_s": 0.5003125,
+          "abs_err": 0.0
+        },
+        "linear_limit": {
+          "pass": true,
+          "max_abs_diff": 0.0
+        },
+        "timestep_convergence": {
+          "pass": true,
+          "means_after_t20": {
+            "0.05": 1.7071302407723432,
+            "0.025": 1.7071321533215131,
+            "0.0125": 1.707132778177293
+          },
+          "target_s_plus": 1.7071067811865475
+        },
+        "spatial_resolution": {
+          "pass": true,
+          "by_n": {
+            "20": {
+              "max": 1.5806228167057739,
+              "frac_high": 0.01,
+              "finite": true
+            },
+            "30": {
+              "max": 1.5228793707323474,
+              "frac_high": 0.013333333333333334,
+              "finite": true
+            },
+            "40": {
+              "max": 1.5666608195648872,
+              "frac_high": 0.01,
+              "finite": true
+            }
+          },
+          "note": "Superthreshold deposit produces high-state across resolutions; zero-Laplacian BCs documented as pre-existing limitation."
+        },
+        "boundary_conditions": {
+          "pass": true,
+          "scheme": "zero-Laplacian at boundary nodes (pre-existing; see BOUNDARY_CONDITION_INVESTIGATION.md)",
+          "near_corner_deposit_stats": {
+            "mean": 0.010295293563148237,
+            "max": 1.1517321998279835,
+            "min": 2.4637503108157345e-251,
+            "std": 0.08182057378988485,
+            "frac_above_separatrix": 0.012222222222222223,
+            "frac_high": 0.0033333333333333335,
+            "finite": true
+          }
+        },
+        "numerical_validity": {
+          "pass": true,
+          "stats_after_exp_c_duration": {
+            "mean": 0.02089105539644742,
+            "max": 1.432972037717844,
+            "min": -3.34163351208717e-36,
+            "std": 0.13061175067061612,
+            "frac_above_separatrix": 0.017777777777777778,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "solver_errors": []
+        }
+      },
+      "pass": true
+    },
+    "G2": {
+      "gate": "G2",
+      "tests": {
+        "T1_undisturbed": {
+          "pass": true,
+          "initial": {
+            "mean": 0.0,
+            "max": 0.0,
+            "min": 0.0,
+            "std": 0.0,
+            "frac_above_separatrix": 0.0,
+            "frac_high": 0.0,
+            "finite": true
+          },
+          "final": {
+            "mean": 0.0,
+            "max": 0.0,
+            "min": 0.0,
+            "std": 0.0,
+            "frac_above_separatrix": 0.0,
+            "frac_high": 0.0,
+            "finite": true
+          },
+          "solver_errors": [],
+          "deposit_amp": 0.0
+        },
+        "T2_subthreshold": {
+          "pass": true,
+          "deposit_amp": 0.15,
+          "after_deposit": {
+            "mean": 0.0014091090248737107,
+            "max": 0.12456710525993767,
+            "min": 2.0776790548839024e-69,
+            "std": 0.010183165856000558,
+            "frac_above_separatrix": 0.0,
+            "frac_high": 0.0,
+            "finite": true
+          },
+          "final": {
+            "mean": 0.00020748053295573728,
+            "max": 0.004598557009081983,
+            "min": -0.0036809834575118423,
+            "std": 0.000848254001291662,
+            "frac_above_separatrix": 0.0,
+            "frac_high": 0.0,
+            "finite": true
+          },
+          "extent": {
+            "n_high_cells": 0,
+            "centroid_ix": NaN,
+            "centroid_iy": NaN,
+            "bbox_dix": 0,
+            "bbox_diy": 0
+          },
+          "solver_errors": []
+        },
+        "T3_superthreshold": {
+          "pass": true,
+          "deposit_amp": 1.2,
+          "after_deposit": {
+            "mean": 0.011272872198989686,
+            "max": 0.9965368420795013,
+            "min": 1.662143243907122e-68,
+            "std": 0.08146532684800446,
+            "frac_above_separatrix": 0.013333333333333334,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "final": {
+            "mean": 0.02089105539644742,
+            "max": 1.432972037717844,
+            "min": -3.34163351208717e-36,
+            "std": 0.13061175067061612,
+            "frac_above_separatrix": 0.017777777777777778,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "time_of_threshold_crossing": 0,
+          "extent": {
+            "n_high_cells": 4,
+            "centroid_ix": 14.5,
+            "centroid_iy": 14.5,
+            "bbox_dix": 2,
+            "bbox_diy": 2
+          },
+          "local_max_final": 1.432972037717844,
+          "solver_errors": []
+        },
+        "T4_deposit_removal_persistence": {
+          "pass": true,
+          "after_transition": {
+            "mean": 0.014381530182222685,
+            "max": 1.1740529112477995,
+            "min": 8.237067259513247e-69,
+            "std": 0.09757843944511918,
+            "frac_above_separatrix": 0.013333333333333334,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "after_further_evolution_no_deposit": {
+            "mean": 0.02089105539644742,
+            "max": 1.432972037717844,
+            "min": -3.34163351208717e-36,
+            "std": 0.13061175067061612,
+            "frac_above_separatrix": 0.017777777777777778,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "extent_mid": {
+            "n_high_cells": 4,
+            "centroid_ix": 14.5,
+            "centroid_iy": 14.5,
+            "bbox_dix": 2,
+            "bbox_diy": 2
+          },
+          "extent_final": {
+            "n_high_cells": 4,
+            "centroid_ix": 14.5,
+            "centroid_iy": 14.5,
+            "bbox_dix": 2,
+            "bbox_diy": 2
+          },
+          "persistence_duration_ticks": 40
+        },
+        "T5_spatial_localization": {
+          "pass": true,
+          "final_stats": {
+            "mean": 0.017250484326449156,
+            "max": 1.3114458574567671,
+            "min": 3.814486270916064e-69,
+            "std": 0.1125182300050222,
+            "frac_above_separatrix": 0.017777777777777778,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "extent": {
+            "n_high_cells": 4,
+            "centroid_ix": 14.5,
+            "centroid_iy": 14.5,
+            "bbox_dix": 2,
+            "bbox_diy": 2
+          },
+          "note": "Spreading quantified; partial spread consistent with reaction-diffusion fronts is allowed if not whole-domain."
+        },
+        "T6_multiple_deposits": {
+          "pass": true,
+          "deposit_locations": [
+            [
+              12.0,
+              25.0
+            ],
+            [
+              38.0,
+              25.0
+            ]
+          ],
+          "local_left": {
+            "mean": 0.30964725376401536,
+            "max": 1.364107237237501
+          },
+          "local_right": {
+            "mean": 0.30964725376401514,
+            "max": 1.3641072372375003
+          },
+          "local_midpoint": {
+            "mean": 0.0020301331529054534,
+            "max": 0.019552612710588915
+          },
+          "extent": {
+            "n_high_cells": 12,
+            "centroid_ix": 14.5,
+            "centroid_iy": 14.5,
+            "bbox_dix": 18,
+            "bbox_diy": 2
+          },
+          "regions_distinguishable": true,
+          "note": "Field indexed as s[ix,iy] matching meshgrid(indexing='ij'). Distinguishability uses local maxima vs midpoint."
+        },
+        "T7_linear_ablation": {
+          "pass": true,
+          "after_deposit": {
+            "mean": 0.011272872198989686,
+            "max": 0.9965368420795013,
+            "min": 1.662143243907122e-68,
+            "std": 0.08146532684800446,
+            "frac_above_separatrix": 0.013333333333333334,
+            "frac_high": 0.0044444444444444444,
+            "finite": true
+          },
+          "final_linear": {
+            "mean": 0.011272872198989639,
+            "max": 0.37337555880853457,
+            "min": 1.662143243907122e-68,
+            "std": 0.04902891021571966,
+            "frac_above_separatrix": 0.013333333333333334,
+            "frac_high": 0.0,
+            "finite": true
+          },
+          "note": "With r=a=b=0, persistent bistable high-state must not appear."
+        }
+      },
+      "pass": true
+    },
+    "proceed_to_agentic": true
+  },
+  "oracle": {
+    "G3": {
+      "gate": "G3",
+      "pass": true,
+      "decision_invariance": {
+        "pass": true,
+        "per_condition": {
+          "independent": {
+            "decision_A": [
+              10.0,
+              10.0
+            ],
+            "decision_B": [
+              10.0,
+              10.0
+            ],
+            "identical": true,
+            "hidden_worlds_differ": true,
+            "decision_fn_has_env_param": false,
+            "source_leak_tokens": false
+          },
+          "direct_msg": {
+            "decision_A": [
+              10.0,
+              10.0
+            ],
+            "decision_B": [
+              10.0,
+              10.0
+            ],
+            "identical": true,
+            "hidden_worlds_differ": true,
+            "decision_fn_has_env_param": false,
+            "source_leak_tokens": false
+          },
+          "blackboard": {
+            "decision_A": [
+              10.0,
+              10.0
+            ],
+            "decision_B": [
+              10.0,
+              10.0
+            ],
+            "identical": true,
+            "hidden_worlds_differ": true,
+            "decision_fn_has_env_param": false,
+            "source_leak_tokens": false
+          },
+          "pheromone": {
+            "decision_A": [
+              10.0,
+              10.0
+            ],
+            "decision_B": [
+              10.0,
+              10.0
+            ],
+            "identical": true,
+            "hidden_worlds_differ": true,
+            "decision_fn_has_env_param": false,
+            "source_leak_tokens": false
+          },
+          "linear_sub": {
+            "decision_A": [
+              10.0,
+              10.0
+            ],
+            "decision_B": [
+              10.0,
+              10.0
+            ],
+            "identical": true,
+            "hidden_worlds_differ": true,
+            "decision_fn_has_env_param": false,
+            "source_leak_tokens": false
+          },
+          "nonlinear_sub": {
+            "decision_A": [
+              10.0,
+              10.0
+            ],
+            "decision_B": [
+              10.0,
+              10.0
+            ],
+            "identical": true,
+            "hidden_worlds_differ": true,
+            "decision_fn_has_env_param": false,
+            "source_leak_tokens": false
+          }
+        }
+      },
+      "inspection_notes": {
+        "movement_helper_forbids_resource_list": true,
+        "hazard_list_not_in_decision_signature": true,
+        "ground_truth_eval_only": "Experiment C scoring may read env; agent decide/move must not."
+      }
+    },
+    "G4": {
+      "gate": "G4",
+      "pass": true,
+      "pathway_traces": {
+        "pass": true,
+        "traces": {
+          "independent": {
+            "writes": 2,
+            "reads": 1,
+            "query_value": 0.0,
+            "list_known_count": 0,
+            "uses_list_known": false,
+            "spatial_only": false,
+            "zero_comm": true,
+            "failed": false,
+            "pathway_ok": true
+          },
+          "direct_msg": {
+            "writes": 2,
+            "reads": 2,
+            "query_value": 1.0,
+            "list_known_count": 1,
+            "uses_list_known": true,
+            "spatial_only": false,
+            "zero_comm": false,
+            "failed": false,
+            "pathway_ok": true
+          },
+          "blackboard": {
+            "writes": 2,
+            "reads": 2,
+            "query_value": 1.0,
+            "list_known_count": 1,
+            "uses_list_known": true,
+            "spatial_only": false,
+            "zero_comm": false,
+            "failed": false,
+            "pathway_ok": true
+          },
+          "pheromone": {
+            "writes": 2,
+            "reads": 1,
+            "query_value": 1.0,
+            "list_known_count": 0,
+            "uses_list_known": false,
+            "spatial_only": true,
+            "zero_comm": false,
+            "failed": false,
+            "pathway_ok": true
+          },
+          "linear_sub": {
+            "writes": 2,
+            "reads": 1,
+            "query_value": 0.314416045235977,
+            "list_known_count": 0,
+            "uses_list_known": false,
+            "spatial_only": true,
+            "zero_comm": false,
+            "failed": false,
+            "pathway_ok": true
+          },
+          "nonlinear_sub": {
+            "writes": 2,
+            "reads": 1,
+            "query_value": 0.314416045235977,
+            "list_known_count": 0,
+            "uses_list_known": false,
+            "spatial_only": true,
+            "zero_comm": false,
+            "failed": false,
+            "pathway_ok": true
+          }
+        }
+      },
+      "isolation": {
+        "pass": true,
+        "architectures_contain_task_claimed": false,
+        "separate_backend_instances_isolated": true
+      },
+      "fairness_documentation": {
+        "matched": [
+          "agent population",
+          "environment generation rules",
+          "sensor radius",
+          "movement speed",
+          "trial duration",
+          "paired seeds",
+          "observation opportunities (same sensor model)",
+          "substrate IC and perturbations (linear vs nonlinear)"
+        ],
+        "inherent_differences": {
+          "independent": "no shared writes; zero communication cost",
+          "direct_msg": "TTL=8; explicit payloads; list_known available",
+          "blackboard": "stale=20; structured global records; list_known",
+          "pheromone": "multi-grid channels; cells=900 per channel; evap=0.05",
+          "linear_sub": "single scalar field; linear telegraph; no bistable persistence",
+          "nonlinear_sub": "single scalar field; bistable reaction; same grid/dt as linear"
+        },
+        "encoding_limitation": "A single scalar substrate cannot provide independent semantic channels without spatial/amplitude encoding. Multi-channel claims require demonstrated separable readout; Exp B tests interaction via spatial relationship, not claimed multi-semantic multiplexing."
+      }
+    },
+    "proceed": true
+  }
+}

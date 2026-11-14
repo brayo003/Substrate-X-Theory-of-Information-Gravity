@@ -1,0 +1,894 @@
+{
+  "EXPERIMENT": "Controlled Field-to-Agent Causality Test",
+  "STATUS": "INTERVENTION_NOT_POSSIBLE",
+  "TIMESTAMP": "2026-08-09T08:25:41.441436",
+  "CONFIGURATION": {
+    "baseline_ticks": 10,
+    "intervention_tick": 10,
+    "post_intervention_ticks": 20,
+    "total_ticks": 30
+  },
+  "WORLD_A": {
+    "entity_count": 7,
+    "field_condition": "baseline",
+    "final_state": {
+      "tick": 10,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00004a6eb9b1",
+        "tick_id": "00000000-0000-0000-0000-0000124198ef"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-00002a584de8"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 10,
+        "memory_id": "1465398013"
+      }
+    }
+  },
+  "WORLD_B": {
+    "entity_count": 7,
+    "field_condition": "coherent (intervention)",
+    "final_state": {
+      "tick": 10,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00006f804c5c",
+        "tick_id": "00000000-0000-0000-0000-00003e3629ff"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000a11b5c15"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 10,
+        "memory_id": "1576841054"
+      }
+    }
+  },
+  "FIRST_DIVERGENCE": {
+    "tick": null,
+    "layer": null,
+    "observable": null
+  },
+  "CAUSAL_CHAIN": "field \u2192 perception \u2192 cognition \u2192 action \u2192 state \u2192 memory",
+  "RESULT": "NO_BEHAVIORAL_COUPLING_OBSERVED",
+  "LIMITATIONS": [
+    "LLM generation disabled for deterministic execution",
+    "Field intervention NOT POSSIBLE with current backend - field parameters cannot be modified after initialization",
+    "Missing integration: backend does not expose field parameter modification API",
+    "Single-entity worlds to isolate causality"
+  ],
+  "TRACE_A": [
+    {
+      "tick": 1,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.5404610434580409,
+        "q_regime": "boundary"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000baba14e4",
+        "tick_id": "00000000-0000-0000-0000-00009090d60a"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000c95e08c9"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 1,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 2,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00005c333164",
+        "tick_id": "00000000-0000-0000-0000-000097c79f14"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000cacd8367"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 2,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 3,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00003ee460e2",
+        "tick_id": "00000000-0000-0000-0000-0000b609c2ca"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-000020321bb1"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 3,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 4,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-000061b474e5",
+        "tick_id": "00000000-0000-0000-0000-00006ffb20b9"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000b6ef8ffe"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 4,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 5,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000e5cdc760",
+        "tick_id": "00000000-0000-0000-0000-0000ca2ce9f9"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000c60a386f"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 5,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 6,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000a94c7ba7",
+        "tick_id": "00000000-0000-0000-0000-000043615cbf"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-00006b2000a3"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 6,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 7,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00002445bb0e",
+        "tick_id": "00000000-0000-0000-0000-00002b73e236"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-00005643dc99"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 7,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 8,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-000021188c49",
+        "tick_id": "00000000-0000-0000-0000-000011a00cbd"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000fb4e36dd"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 8,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 9,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00007073a219",
+        "tick_id": "00000000-0000-0000-0000-0000e2c1bd68"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-000049df2ded"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 9,
+        "memory_id": "1465398013"
+      }
+    },
+    {
+      "tick": 10,
+      "world": "World_A",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00004a6eb9b1",
+        "tick_id": "00000000-0000-0000-0000-0000124198ef"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-00002a584de8"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-0000b6a3a70a",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 10,
+        "memory_id": "1465398013"
+      }
+    }
+  ],
+  "TRACE_B": [
+    {
+      "tick": 1,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.5404610434580409,
+        "q_regime": "boundary"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000f3a7a44b",
+        "tick_id": "00000000-0000-0000-0000-00001a4669f4"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-00003c6680fb"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 1,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 2,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00005c762171",
+        "tick_id": "00000000-0000-0000-0000-00001e6a5e15"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000a62bbbd1"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 2,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 3,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000e3f2d366",
+        "tick_id": "00000000-0000-0000-0000-000097653b5d"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-00006e13e8b5"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 3,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 4,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-000014752e77",
+        "tick_id": "00000000-0000-0000-0000-0000fc840fb7"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-000067357047"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 4,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 5,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000180ccca2",
+        "tick_id": "00000000-0000-0000-0000-00000419fd6f"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000ffb2faf8"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 5,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 6,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-000098318ae7",
+        "tick_id": "00000000-0000-0000-0000-00009f6232ea"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000c1bb5537"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 6,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 7,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000e8d06d1c",
+        "tick_id": "00000000-0000-0000-0000-0000ec410e60"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000cf394af5"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 7,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 8,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000af016eaf",
+        "tick_id": "00000000-0000-0000-0000-0000687dff2a"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-000043f1bf51"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 8,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 9,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-0000dc407401",
+        "tick_id": "00000000-0000-0000-0000-0000d22bd05e"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-000014550298"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 9,
+        "memory_id": "1576841054"
+      }
+    },
+    {
+      "tick": 10,
+      "world": "World_B",
+      "field": {
+        "dominant_regime": "overdamped",
+        "dominant_k": 0.24630086404143978,
+        "dominant_D": -0.7573435374897608,
+        "propagating_power_fraction": 5.978343703949776e-35,
+        "overdamped_power_fraction": 1.0,
+        "q_value": 0.9201394681103817,
+        "q_regime": "stable"
+      },
+      "perception": {
+        "snapshot_id": "00000000-0000-0000-0000-00006f804c5c",
+        "tick_id": "00000000-0000-0000-0000-00003e3629ff"
+      },
+      "cognition": {},
+      "action": {
+        "event_count": 3,
+        "revision_id": "00000000-0000-0000-0000-0000a11b5c15"
+      },
+      "state": {
+        "entity_id": "00000000-0000-0000-0000-00002e7320f9",
+        "entity_type": "human",
+        "display_name": "TestAgent",
+        "alive": true,
+        "enabled": true,
+        "needs": {
+          "hunger": 0.7,
+          "thirst": 0.5,
+          "energy": 0.8
+        },
+        "location": "village_center"
+      },
+      "memory": {
+        "record_count": 10,
+        "memory_id": "1576841054"
+      }
+    }
+  ]
+}

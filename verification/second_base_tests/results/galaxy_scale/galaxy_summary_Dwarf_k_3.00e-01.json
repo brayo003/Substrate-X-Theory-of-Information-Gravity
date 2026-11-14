@@ -1,0 +1,10 @@
+{
+  "smoothing_sigma": 2,
+  "k_eff": 0.3,
+  "v_total_8_15kpc_mean_kms": 12.641053761537474,
+  "v_newt_8_15kpc_mean_kms": 5.681747830601304,
+  "ratio_outer_mean": 1.918442193023359,
+  "max_v_total_kms": 37.77540173250464,
+  "npz_file": "verification/second_base_tests/results/galaxy_scale/galaxy_Dwarf_k_3.00e-01.npz",
+  "plot_file": "verification/second_base_tests/results/galaxy_scale/galaxy_rotation_Dwarf_k_3.00e-01.png"
+}

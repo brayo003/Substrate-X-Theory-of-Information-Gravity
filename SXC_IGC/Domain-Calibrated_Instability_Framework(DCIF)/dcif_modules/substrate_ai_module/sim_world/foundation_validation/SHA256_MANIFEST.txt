@@ -1,0 +1,20 @@
+# Foundation validation pre-run manifest
+# UTC 2026-11-13T19:15:11.613123+00:00
+
+domains/physical_field/physical_field_dynamics.py | 33636 | 5b4414a890cbf7c6f051aaff12ba15e636d08193925e8dc5a3e7ff3cd2fee153
+domains/physical_field/physical_field_models.py | 19313 | eaf20daf6e432884389d0d9f7a93e03cda7bc819ec7295554de07e03dc71c090
+domains/physical_field/test_nonlinear_reaction_telegraph.py | 25091 | d2587eebf8ad008450ddd4805b99cb39531874bed1f959e1bf1240fcea2afaf0
+domains/physical_field/test_physical_field.py | 20032 | 00afb9dbe4efe217a26d9d8513bbfaf66343979e95ec8f9dc687f62b216039b9
+domains/physical_field/test_modal_validation.py | 18463 | 173fdce79a9166372f0fd23052cf321336a099b141cc612c7f8d0bd020b0612a
+exp8/config.py | 3413 | 301b768686d1a0076fa303ddaad570e27366c70973d90a8232ca08be024cdd21
+exp8/field_core.py | 7180 | 110c5c0813a4b992e0f6d0d1ca240947d2a9f16517d6cc66f53749ed4232f89a
+exp8/experiments.py | 21956 | e9f14af5e3c8512aa6a9c0c7c3c5c6f82b45a5ea9161e587562d5fc268860984
+exp8/numerical_validation.py | 4480 | 10394ab52f1c58565364311f1ef7f327a5837c02604f5c4b941a581ee5a026b0
+exp8_configuration.json | 1528 | fc99ba5545751e4021e05a26cd7f02c57747e404d73f67947956c0d2faa05246
+exp9/config.py | 3956 | 26604d21bba6f284c1990b39b4758bcf2f2b98e325349c9dedf6379bf92aaa3e
+exp9/field_backend.py | 14967 | 515ce86f7f0e569ea8665b07ce6e967c48f14c4f9476d2c71416565531b72b01
+exp9/exp9_configuration.json | 1337 | 546b74bcb5450d394d38dc2f87f815ed13c621d12d8f21a2544ed5e6d1c32db8
+EXP8_EXPERIMENTAL_REPORT.md | 10232 | 70f4878b92ec5b276b5a850bda7f8ced2ae6f0e95969b9d7c1dc4f8719d66f8e
+EXP8_THEORETICAL_SPECIFICATION.md | 4970 | 6f336d03744259188419bb2368a81b133c0dd8959b94c0731532691d235cd8e7
+NONLINEAR_REACTION_TELEGRAPH_IMPLEMENTATION_REPORT.md | 9606 | 70b829196d76553a27aabf41bd03a826714cb52151ff8ced67372b1d383862c0
+tests/test_exp8_computational_expressivity.py | 5261 | 183013f7d1ee9b158c5cbf7a0af323ad145e3b4c07f1d7cc3ac1e69a7b3f51e3

@@ -1,0 +1,11 @@
+PHASE: ATOMKI VALIDATION
+DATE: 2025-12-19
+STATUS: SUCCESS
+-------------------------
+MODEL: X17 Vector Boson (Protophobic)
+MASS: 17.01 MeV
+COUPLING: 1.15e-03 (Baryonic)
+-------------------------
+KEY PREDICTION:
+Neon-20 transition @ 17.15 MeV will show e+e- peak at 165.3 degrees.
+Confidence: Consistent with 3 independent isotopes.

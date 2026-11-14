@@ -1,0 +1,11 @@
+{
+  "done": [
+    "market_BTCUSDT",
+    "market_ETHUSDT",
+    "market_XAUUSD",
+    "market_NAS100",
+    "market_USOIL",
+    "market_UKOIL"
+  ],
+  "market_bars": {}
+}

@@ -1,0 +1,1280 @@
+{
+  "task": "microscopic_C2_current_substrate_coupling_derivation",
+  "date": "2026-10-10",
+  "silicon_constants": {
+    "C11_GPa": 165.7,
+    "C12_GPa": 63.9,
+    "C44_GPa": 79.6,
+    "rho_kg_m3": 2330.0
+  },
+  "c2_obstruction_analysis": {
+    "c2_current_definition": {
+      "formula": "J_C2 = c (n_plus - n_minus)",
+      "status": "DEFINED_IN_PRW_ONLY",
+      "source": "02_derivations/microscopic_derivation.md Eq.[C-q]",
+      "comment": "J_C2 is defined as the net flux of information quanta in the 1D PRW. It is a classical scalar field (in 1D). No 3D generalization is given. No map to u(x,t), epsilon_ij(x,t), or any elastic variable appears in any existing C2 document."
+    },
+    "why_no_map_exists": [
+      {
+        "obstruction": "UNIT_MISMATCH",
+        "description": "J_C2 has units info/(m^2 s). Displacement u has units m. div(u) has units 1/m (dimensionless strain). Velocity rho*u_dot has units kg/(m^2 s). None of these equals info/(m^2 s) without a new conversion factor with units [info/m^3] or [info/(kg)] which introduces a free parameter."
+      },
+      {
+        "obstruction": "POLARITY_MISMATCH",
+        "description": "J_C2 is a 1D scalar. Silicon elastic fields u, epsilon are 3D tensors. Any map from J_C2 to an elastic observable requires a projection direction. That direction is not specified in the existing theory. It is not the same as the PRW propagation direction n because n is the 1D ray coordinate, not a crystal orientation."
+      },
+      {
+        "obstruction": "MISSING_INFORMATION_ONTOLOGY",
+        "description": "'Information density' s is defined as a probability distribution over a CCA state space, not as a thermodynamic state of the silicon lattice. The two ontologies are not connected by any existing equation. s(x,t) is not proportional to any known elastic observable unless a new identification is postulated."
+      },
+      {
+        "obstruction": "FREE_PARAMETER_PROLIFERATION",
+        "description": "Any candidate map B = kappa * F(u,epsilon,...) introduces kappa with units [info / (m^3)] or similar. This is an additional free parameter not fixed by the C2 transport equations. It therefore does not reduce the parameter count; it replaces one free parameter (g) with two (g, kappa) or replaces (c, lambda) with (v_b(n), lambda, direction)."
+      }
+    ],
+    "what_would_close_the_obstruction": {
+      "required": "A microscopic Hamiltonian H_substrate derived from the CCA axioms that (a) has elastic phonons as normal modes, (b) defines an information density operator whose expectation value equals the PRW density s, and (c) has an interaction term with the qubit whose matrix element between elastic phonon states is explicitly calculable. This would simultaneously fix the units, the projection direction, and the coupling constant g.",
+      "status": "ABSENT_FROM_CURRENT_C2",
+      "closest_existing_element": "The decoherence_chain_summary.md contains a Born-Markov derivation that treats J as a classical bath field. It does not connect J to any quantum operator on the substrate Hilbert space, so there is no substrate Hilbert space and no phonon creation/annihilation operators."
+    }
+  },
+  "kinetic_reduction_analysis": {
+    "step_1_normal_mode": {
+      "physics": "Christoffel eigenvalue problem gives omega_b(k,n) = v_b(n) |k|",
+      "status": "DERIVED from elastic wave equation",
+      "assumptions": [
+        "linear elasticity",
+        "cubic symmetry",
+        "infinite homogeneous medium"
+      ]
+    },
+    "step_2_wave_packet": {
+      "physics": "A wave packet localized in k-space around k_0 n propagates at group velocity v_g = d omega_b / d|k| = v_b(n) (long-wavelength: phase = group)",
+      "status": "DERIVED for narrow k-packets in linear regime",
+      "assumptions": [
+        "narrow bandwidth in k",
+        "no dispersion correction O(k^2 a^2)",
+        "single branch (no inter-branch mixing in propagation)"
+      ]
+    },
+    "step_3_coarse_grain": {
+      "physics": "Coarse-grained population n_b^+(s,t) = integral over right-moving k-packets near k_0 in direction n",
+      "status": "ASSUMED - requires explicit coarse-graining prescription",
+      "assumptions": [
+        "spatial scale >> phonon wavelength",
+        "time scale >> phonon period",
+        "branch population is a slowly-varying envelope",
+        "no coherence between different k modes (incoherent limit)"
+      ],
+      "new_physics_required": "The coarse-graining prescription is NOT given by elastic theory or C2. It is standard kinetic theory but introduces a coarse-graining length and time scale as additional parameters."
+    },
+    "step_4_prw_pair": {
+      "physics": "n_b^+(s,t) = right-moving, n_b^-(s,t) = left-moving populations",
+      "status": "ASSUMED - direction decomposition requires a 1D ray coordinate s",
+      "assumptions": [
+        "fixed propagation direction n (or projection onto n)",
+        "left/right decomposition along n",
+        "no coupling to perpendicular directions"
+      ],
+      "geometric_issue": "In 3D, phonons propagate in all directions. The PRW pair (n^+, n^-) describes propagation along ONE ray. Reducing 3D elastic wave propagation to 1D PRW requires either (a) single propagation direction n, or (b) spherical/angular averaging with appropriate weighting. Option (b) introduces angular integration as new physics."
+    },
+    "step_5_reversal": {
+      "physics": "Reversal/scattering process at rate gamma_b converts right-movers to left-movers and vice versa. This is phonon backscattering.",
+      "status": "ASSUMED physical process - requires scattering model",
+      "possible_mechanisms": [
+        "Phonon-phonon anharmonic scattering (Umklapp processes)",
+        "Phonon-defect scattering (Rayleigh, resonant)",
+        "Phonon-boundary scattering",
+        "Phonon-phonon normal processes (momentum-conserving)"
+      ],
+      "requirements": [
+        "scattering is branch-preserving (does not change b)",
+        "scattering reverses the propagation direction along n",
+        "scattering rate gamma_b is well-defined and approximately Markovian",
+        "backscattering dominates over forward scattering"
+      ],
+      "new_parameters": "gamma_b introduces one free parameter per active branch. It is NOT determined by the Christoffel eigenvalue problem or by the C2 coupling constant g."
+    },
+    "step_6_telegrapher": {
+      "physics": "PRW equations: dn^+/dt = -v_b dn^+/ds - gamma_b(n^+ - n^-)  \u2192 telegrapher: d^2s/dt^2 + 2gamma_b ds/dt = v_b^2 d^2s/ds^2",
+      "status": "DERIVED from PRW equations (exact, no approximation)",
+      "prerequisite": "Steps 3-5 must first be justified"
+    },
+    "overall_kinetic_reduction_status": {
+      "verdict": "CONDITIONAL",
+      "new_assumptions_required": [
+        "coarse-graining length and time scales",
+        "incoherent-phonon approximation",
+        "single-direction projection or angular averaging prescription",
+        "branch-preserving backscattering mechanism",
+        "Markovian scattering approximation",
+        "narrow wave-packet approximation"
+      ],
+      "free_parameters_introduced": [
+        "scattering rate gamma_b (one per active branch)",
+        "coarse-graining scale",
+        "angular weighting if 3D\u21921D projection"
+      ],
+      "relationship_to_gap7": "Even after all kinetic reduction assumptions are made, the effective PRW speed c_eff = v_b(n) is branch- and direction-dependent. It equals a unique c only if ONE branch is active at ALL propagation directions, which requires a branch-selection mechanism not present in C2."
+    }
+  },
+  "multi_branch_correlator_analysis": {
+    "multi_branch_dephasing": {
+      "formula": "Gamma_phi = sum_b w_b * g^2 s_0^2 * S_b(omega_q=0) = sum_b w_b * g^2 s_0^2 * 2 S_0 tau_b / (1 + omega_q^2 tau_b^2)|_{omega_q=0} = sum_b w_b * g^2 s_0^2 * 2 S_0 tau_b",
+      "consequence": "Dephasing rate is a weighted sum of branch-specific rates. Each branch has its own tau_b = 1/(2 gamma_b). For a single branch: Gamma_phi = g^2 s_0^2 * 2 S_0 tau. For multiple: Gamma_phi is a weighted average -- the individual tau_b are not separately identifiable from temporal Ramsey alone."
+    },
+    "multi_branch_spatial_correlator": {
+      "formula": "C_Gamma(r) = sum_b w_b * K_0(r / xi_b) / K_0(a / xi_b)",
+      "consequence": "Spatial correlator is a sum of K_0 functions with different length scales. Fitting a single K_0 extracts an EFFECTIVE xi that is a weighted geometric mean of branch xi_b values. This effective xi is NOT directly related to a single physical speed unless one branch dominates."
+    },
+    "single_speed_conditions": {
+      "condition_a": "w_b = 1 for one branch, w_b' = 0 for all b' != b",
+      "condition_b_alternative": "Fast interbranch equilibration: all branches equilibrate at rate >> 1/tau, producing single effective mode",
+      "condition_c_alternative": "Spectral filtering: qubit frequency selects one branch via resonance",
+      "each_is_new_physics": "All three conditions require physics beyond the existing C2 assumptions. None is derivable from H_int = g J_C2 sigma_z alone."
+    },
+    "obstruction_statement": "The mathematical obstruction to a unique c is: the bath spectral density C_BB(omega) = sum_b w_b C_b(omega) is a superposition of branch-specific Lorentzians with different widths (tau_b) and spectral weights. The ratio xi / tau that equals 2c is defined only if one term dominates or all tau_b are equal. Neither follows from C2 or elastic theory without additional input."
+  },
+  "directional_analysis": [
+    {
+      "direction": "[100]",
+      "n_hat": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "mode_speeds": {
+        "TA1": 5844.920027575687,
+        "TA2": 5844.920027575687,
+        "LA": 8433.023172523966
+      },
+      "mode_longitudinal_projections": {
+        "TA1": 0.0,
+        "TA2": 0.0,
+        "LA": 1.0
+      },
+      "candidates": [
+        {
+          "mapping": "M0_EXISTING_C2",
+          "formula": "H_int = g J_C2(x_q,t) sigma_z",
+          "derivation_status": "DEFINED_IN_C2_BUT_NO_ELASTIC_MAP",
+          "branch_weights": "UNDEFINED",
+          "branch_matrix_elements": "ABSENT",
+          "unique_speed": false,
+          "unique_speed_reason": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT"
+        },
+        {
+          "mapping": "M1_SCALAR_DILATATION",
+          "formula": "B = -kappa * rho * div(u)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Dilatation div(u) = strain trace = volume change per unit volume. Couples to compression/expansion of substrate at qubit location. This is a scalar, compatible with sigma_z.",
+          "dimensional_check": "[B] = [kappa][rho][|k||q|] = (Pa^{-1})(kg/m^3)(m^{-1})(m) = kg/(m^3 Pa) = kg/(m^3 * kg/(m s^2)) = s^2/m^2. For B to have units of C2 current info/(m^2 s), kappa must carry [info * s^3/m^2]. This is a new free parameter.",
+          "branch_weights": {
+            "TA1": 0.0,
+            "TA2": 0.0,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 8433.023172523966
+              }
+            },
+            "effective_c": 8433.023172523966
+          },
+          "symmetry": {
+            "TA1": {
+              "longitudinal_projection": 0.0,
+              "exactly_decoupled": true,
+              "note": "exact only at high-symmetry direction or isotropic limit"
+            },
+            "TA2": {
+              "longitudinal_projection": 0.0,
+              "exactly_decoupled": true,
+              "note": "exact only at high-symmetry direction or isotropic limit"
+            },
+            "LA": {
+              "longitudinal_projection": 1.0,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            }
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M2_ELASTIC_ENERGY_FLUX",
+          "formula": "B = n_i sigma_ij u_dot_j (stress contracted with velocity, projected on n)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Energy flux through a surface with normal n. Analogy: electromagnetic Poynting vector E x B / mu_0. This is an energy flow per unit area, plausible for coupling energy-carrying substrate modes to a qubit.",
+          "dimensional_check": "[sigma_ij] = Pa = N/m^2. [u_dot_j] = m/s. B has units Pa*(m/s) = W/m^2 (power per area). To match C2 current info/(m^2 s), need conversion factor [info/(J)] -- another free parameter.",
+          "key_result": "B_b amplitude = rho v_b^3 (n.e_b) * k^2 * q_b. Weight w_b proportional to (rho v_b^3 (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^6. Transverse modes still have nonzero weight at generic directions unless (n.e_b) = 0, i.e., exact transverse polarization.",
+          "branch_weights": {
+            "TA1": 0.0,
+            "TA2": 0.0,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 8433.023172523966
+              }
+            },
+            "effective_c": 8433.023172523966
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M3_MOMENTUM_DENSITY",
+          "formula": "B = rho * n . (du/dt)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Momentum density of the elastic medium projected onto the propagation direction. This would arise naturally if the C2 qubit coupling is via elastic impulse (radiation pressure-like). Standard in optomechanics for momentum transfer.",
+          "dimensional_check": "[rho * du/dt] = (kg/m^3)(m/s) = kg/(m^2 s) = Pa * s / m. To match C2 current info/(m^2 s), need factor [info / (Pa * s^2)]. Still another free parameter.",
+          "key_result": "B_b amplitude = rho omega_b (n.e_b) * q_b = rho v_b k (n.e_b) q_b. Weight w_b proportional to (v_b (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^2. No exact transverse decoupling at generic directions.",
+          "branch_weights": {
+            "TA1": 0.0,
+            "TA2": 0.0,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 8433.023172523966
+              }
+            },
+            "effective_c": 8433.023172523966
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M4_ACOUSTIC_INTENSITY",
+          "formula": "B = n_i sigma_ij u_dot_j using full Christoffel contraction",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "The full elastic intensity contraction e_b^T Gamma e_b = rho v_b^2 is the same for all branch indices -- it is the eigenvalue. This coupling discriminates branches ONLY by their speed v_b, not by polarization. It couples to ALL branches.",
+          "key_result": "B_b amplitude = rho v_b^3 k^2 q_b (independent of n.e_b). Weight w_b proportional to v_b^6. ALL THREE BRANCHES ACTIVE at all directions. No branch decoupling from polarization, only speed weighting.",
+          "branch_weights": {
+            "TA1": 0.09074037600310231,
+            "TA2": 0.09074037600310231,
+            "LA": 0.8185192479937954
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.09074037600310231,
+                "speed": 5844.920027575687
+              },
+              "TA2": {
+                "weight": 0.09074037600310231,
+                "speed": 5844.920027575687
+              },
+              "LA": {
+                "weight": 0.8185192479937954,
+                "speed": 8433.023172523966
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 5844.920027575687,
+              "max": 8433.023172523966
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        }
+      ]
+    },
+    {
+      "direction": "[110]",
+      "n_hat": [
+        0.7071067811865475,
+        0.7071067811865475,
+        0.0
+      ],
+      "mode_speeds": {
+        "TA1": 4673.91629816279,
+        "TA2": 5844.920027575687,
+        "LA": 9134.192706246664
+      },
+      "mode_longitudinal_projections": {
+        "TA1": 0.0,
+        "TA2": 0.0,
+        "LA": 0.9999999999999998
+      },
+      "candidates": [
+        {
+          "mapping": "M0_EXISTING_C2",
+          "formula": "H_int = g J_C2(x_q,t) sigma_z",
+          "derivation_status": "DEFINED_IN_C2_BUT_NO_ELASTIC_MAP",
+          "branch_weights": "UNDEFINED",
+          "branch_matrix_elements": "ABSENT",
+          "unique_speed": false,
+          "unique_speed_reason": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT"
+        },
+        {
+          "mapping": "M1_SCALAR_DILATATION",
+          "formula": "B = -kappa * rho * div(u)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Dilatation div(u) = strain trace = volume change per unit volume. Couples to compression/expansion of substrate at qubit location. This is a scalar, compatible with sigma_z.",
+          "dimensional_check": "[B] = [kappa][rho][|k||q|] = (Pa^{-1})(kg/m^3)(m^{-1})(m) = kg/(m^3 Pa) = kg/(m^3 * kg/(m s^2)) = s^2/m^2. For B to have units of C2 current info/(m^2 s), kappa must carry [info * s^3/m^2]. This is a new free parameter.",
+          "branch_weights": {
+            "TA1": 0.0,
+            "TA2": 0.0,
+            "LA": 0.9999999999999996
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 0.9999999999999996,
+                "speed": 9134.192706246664
+              }
+            },
+            "effective_c": 9134.192706246664
+          },
+          "symmetry": {
+            "TA1": {
+              "longitudinal_projection": 0.0,
+              "exactly_decoupled": true,
+              "note": "exact only at high-symmetry direction or isotropic limit"
+            },
+            "TA2": {
+              "longitudinal_projection": 0.0,
+              "exactly_decoupled": true,
+              "note": "exact only at high-symmetry direction or isotropic limit"
+            },
+            "LA": {
+              "longitudinal_projection": 0.9999999999999998,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            }
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M2_ELASTIC_ENERGY_FLUX",
+          "formula": "B = n_i sigma_ij u_dot_j (stress contracted with velocity, projected on n)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Energy flux through a surface with normal n. Analogy: electromagnetic Poynting vector E x B / mu_0. This is an energy flow per unit area, plausible for coupling energy-carrying substrate modes to a qubit.",
+          "dimensional_check": "[sigma_ij] = Pa = N/m^2. [u_dot_j] = m/s. B has units Pa*(m/s) = W/m^2 (power per area). To match C2 current info/(m^2 s), need conversion factor [info/(J)] -- another free parameter.",
+          "key_result": "B_b amplitude = rho v_b^3 (n.e_b) * k^2 * q_b. Weight w_b proportional to (rho v_b^3 (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^6. Transverse modes still have nonzero weight at generic directions unless (n.e_b) = 0, i.e., exact transverse polarization.",
+          "branch_weights": {
+            "TA1": 0.0,
+            "TA2": 0.0,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 9134.192706246664
+              }
+            },
+            "effective_c": 9134.192706246664
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M3_MOMENTUM_DENSITY",
+          "formula": "B = rho * n . (du/dt)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Momentum density of the elastic medium projected onto the propagation direction. This would arise naturally if the C2 qubit coupling is via elastic impulse (radiation pressure-like). Standard in optomechanics for momentum transfer.",
+          "dimensional_check": "[rho * du/dt] = (kg/m^3)(m/s) = kg/(m^2 s) = Pa * s / m. To match C2 current info/(m^2 s), need factor [info / (Pa * s^2)]. Still another free parameter.",
+          "key_result": "B_b amplitude = rho omega_b (n.e_b) * q_b = rho v_b k (n.e_b) q_b. Weight w_b proportional to (v_b (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^2. No exact transverse decoupling at generic directions.",
+          "branch_weights": {
+            "TA1": 0.0,
+            "TA2": 0.0,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 9134.192706246664
+              }
+            },
+            "effective_c": 9134.192706246664
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M4_ACOUSTIC_INTENSITY",
+          "formula": "B = n_i sigma_ij u_dot_j using full Christoffel contraction",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "The full elastic intensity contraction e_b^T Gamma e_b = rho v_b^2 is the same for all branch indices -- it is the eigenvalue. This coupling discriminates branches ONLY by their speed v_b, not by polarization. It couples to ALL branches.",
+          "key_result": "B_b amplitude = rho v_b^3 k^2 q_b (independent of n.e_b). Weight w_b proportional to v_b^6. ALL THREE BRANCHES ACTIVE at all directions. No branch decoupling from polarization, only speed weighting.",
+          "branch_weights": {
+            "TA1": 0.01651939882812705,
+            "TA2": 0.0631800688276416,
+            "LA": 0.9203005323442314
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.01651939882812705,
+                "speed": 4673.91629816279
+              },
+              "TA2": {
+                "weight": 0.0631800688276416,
+                "speed": 5844.920027575687
+              },
+              "LA": {
+                "weight": 0.9203005323442314,
+                "speed": 9134.192706246664
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4673.91629816279,
+              "max": 9134.192706246664
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        }
+      ]
+    },
+    {
+      "direction": "[111]",
+      "n_hat": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "mode_speeds": {
+        "TA1": 5094.247646552559,
+        "TA2": 5094.247646552561,
+        "LA": 9356.246144529563
+      },
+      "mode_longitudinal_projections": {
+        "TA1": 4.163336342344337e-17,
+        "TA2": 1.1102230246251565e-16,
+        "LA": 1.0
+      },
+      "candidates": [
+        {
+          "mapping": "M0_EXISTING_C2",
+          "formula": "H_int = g J_C2(x_q,t) sigma_z",
+          "derivation_status": "DEFINED_IN_C2_BUT_NO_ELASTIC_MAP",
+          "branch_weights": "UNDEFINED",
+          "branch_matrix_elements": "ABSENT",
+          "unique_speed": false,
+          "unique_speed_reason": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT"
+        },
+        {
+          "mapping": "M1_SCALAR_DILATATION",
+          "formula": "B = -kappa * rho * div(u)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Dilatation div(u) = strain trace = volume change per unit volume. Couples to compression/expansion of substrate at qubit location. This is a scalar, compatible with sigma_z.",
+          "dimensional_check": "[B] = [kappa][rho][|k||q|] = (Pa^{-1})(kg/m^3)(m^{-1})(m) = kg/(m^3 Pa) = kg/(m^3 * kg/(m s^2)) = s^2/m^2. For B to have units of C2 current info/(m^2 s), kappa must carry [info * s^3/m^2]. This is a new free parameter.",
+          "branch_weights": {
+            "TA1": 1.7333369499485123e-33,
+            "TA2": 1.232595164407831e-32,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 9356.246144529563
+              }
+            },
+            "effective_c": 9356.246144529563
+          },
+          "symmetry": {
+            "TA1": {
+              "longitudinal_projection": 4.163336342344337e-17,
+              "exactly_decoupled": true,
+              "note": "exact only at high-symmetry direction or isotropic limit"
+            },
+            "TA2": {
+              "longitudinal_projection": 1.1102230246251565e-16,
+              "exactly_decoupled": true,
+              "note": "exact only at high-symmetry direction or isotropic limit"
+            },
+            "LA": {
+              "longitudinal_projection": 1.0,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            }
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M2_ELASTIC_ENERGY_FLUX",
+          "formula": "B = n_i sigma_ij u_dot_j (stress contracted with velocity, projected on n)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Energy flux through a surface with normal n. Analogy: electromagnetic Poynting vector E x B / mu_0. This is an energy flow per unit area, plausible for coupling energy-carrying substrate modes to a qubit.",
+          "dimensional_check": "[sigma_ij] = Pa = N/m^2. [u_dot_j] = m/s. B has units Pa*(m/s) = W/m^2 (power per area). To match C2 current info/(m^2 s), need conversion factor [info/(J)] -- another free parameter.",
+          "key_result": "B_b amplitude = rho v_b^3 (n.e_b) * k^2 * q_b. Weight w_b proportional to (rho v_b^3 (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^6. Transverse modes still have nonzero weight at generic directions unless (n.e_b) = 0, i.e., exact transverse polarization.",
+          "branch_weights": {
+            "TA1": 4.515995324877327e-35,
+            "TA2": 3.2113744532461067e-34,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 9356.246144529563
+              }
+            },
+            "effective_c": 9356.246144529563
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M3_MOMENTUM_DENSITY",
+          "formula": "B = rho * n . (du/dt)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Momentum density of the elastic medium projected onto the propagation direction. This would arise naturally if the C2 qubit coupling is via elastic impulse (radiation pressure-like). Standard in optomechanics for momentum transfer.",
+          "dimensional_check": "[rho * du/dt] = (kg/m^3)(m/s) = kg/(m^2 s) = Pa * s / m. To match C2 current info/(m^2 s), need factor [info / (Pa * s^2)]. Still another free parameter.",
+          "key_result": "B_b amplitude = rho omega_b (n.e_b) * q_b = rho v_b k (n.e_b) q_b. Weight w_b proportional to (v_b (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^2. No exact transverse decoupling at generic directions.",
+          "branch_weights": {
+            "TA1": 5.138540982524269e-34,
+            "TA2": 3.654073587572816e-33,
+            "LA": 1.0
+          },
+          "prw_reduction": {
+            "single_speed_possible": true,
+            "reason": "UNIQUE_BRANCH_SELECTED",
+            "n_active_branches": 1,
+            "active_branches": {
+              "LA": {
+                "weight": 1.0,
+                "speed": 9356.246144529563
+              }
+            },
+            "effective_c": 9356.246144529563
+          },
+          "unique_speed": true
+        },
+        {
+          "mapping": "M4_ACOUSTIC_INTENSITY",
+          "formula": "B = n_i sigma_ij u_dot_j using full Christoffel contraction",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "The full elastic intensity contraction e_b^T Gamma e_b = rho v_b^2 is the same for all branch indices -- it is the eigenvalue. This coupling discriminates branches ONLY by their speed v_b, not by polarization. It couples to ALL branches.",
+          "key_result": "B_b amplitude = rho v_b^3 k^2 q_b (independent of n.e_b). Weight w_b proportional to v_b^6. ALL THREE BRANCHES ACTIVE at all directions. No branch decoupling from polarization, only speed weighting.",
+          "branch_weights": {
+            "TA1": 0.024763404962477944,
+            "TA2": 0.024763404962478006,
+            "LA": 0.950473190075044
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.024763404962477944,
+                "speed": 5094.247646552559
+              },
+              "TA2": {
+                "weight": 0.024763404962478006,
+                "speed": 5094.247646552561
+              },
+              "LA": {
+                "weight": 0.950473190075044,
+                "speed": 9356.246144529563
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 5094.247646552559,
+              "max": 9356.246144529563
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        }
+      ]
+    },
+    {
+      "direction": "generic[123]",
+      "n_hat": [
+        0.2672612419124244,
+        0.5345224838248488,
+        0.8017837257372732
+      ],
+      "mode_speeds": {
+        "TA1": 4893.089750176557,
+        "TA2": 5626.044336855584,
+        "LA": 9156.820294310097
+      },
+      "mode_longitudinal_projections": {
+        "TA1": 0.07290948397745556,
+        "TA2": 0.04276101893327611,
+        "LA": 0.9964214481864236
+      },
+      "candidates": [
+        {
+          "mapping": "M0_EXISTING_C2",
+          "formula": "H_int = g J_C2(x_q,t) sigma_z",
+          "derivation_status": "DEFINED_IN_C2_BUT_NO_ELASTIC_MAP",
+          "branch_weights": "UNDEFINED",
+          "branch_matrix_elements": "ABSENT",
+          "unique_speed": false,
+          "unique_speed_reason": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT"
+        },
+        {
+          "mapping": "M1_SCALAR_DILATATION",
+          "formula": "B = -kappa * rho * div(u)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Dilatation div(u) = strain trace = volume change per unit volume. Couples to compression/expansion of substrate at qubit location. This is a scalar, compatible with sigma_z.",
+          "dimensional_check": "[B] = [kappa][rho][|k||q|] = (Pa^{-1})(kg/m^3)(m^{-1})(m) = kg/(m^3 Pa) = kg/(m^3 * kg/(m s^2)) = s^2/m^2. For B to have units of C2 current info/(m^2 s), kappa must carry [info * s^3/m^2]. This is a new free parameter.",
+          "branch_weights": {
+            "TA1": 0.005315792853858849,
+            "TA2": 0.0018285047402119977,
+            "LA": 0.9928557024059297
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.005315792853858849,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 0.0018285047402119977,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.9928557024059297,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "symmetry": {
+            "TA1": {
+              "longitudinal_projection": 0.07290948397745556,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            },
+            "TA2": {
+              "longitudinal_projection": 0.04276101893327611,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            },
+            "LA": {
+              "longitudinal_projection": 0.9964214481864236,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            }
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M2_ELASTIC_ENERGY_FLUX",
+          "formula": "B = n_i sigma_ij u_dot_j (stress contracted with velocity, projected on n)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Energy flux through a surface with normal n. Analogy: electromagnetic Poynting vector E x B / mu_0. This is an energy flow per unit area, plausible for coupling energy-carrying substrate modes to a qubit.",
+          "dimensional_check": "[sigma_ij] = Pa = N/m^2. [u_dot_j] = m/s. B has units Pa*(m/s) = W/m^2 (power per area). To match C2 current info/(m^2 s), need conversion factor [info/(J)] -- another free parameter.",
+          "key_result": "B_b amplitude = rho v_b^3 (n.e_b) * k^2 * q_b. Weight w_b proportional to (rho v_b^3 (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^6. Transverse modes still have nonzero weight at generic directions unless (n.e_b) = 0, i.e., exact transverse polarization.",
+          "branch_weights": {
+            "TA1": 0.0001246280226635563,
+            "TA2": 9.905207042448128e-05,
+            "LA": 0.999776319906912
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.0001246280226635563,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 9.905207042448128e-05,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.999776319906912,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M3_MOMENTUM_DENSITY",
+          "formula": "B = rho * n . (du/dt)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Momentum density of the elastic medium projected onto the propagation direction. This would arise naturally if the C2 qubit coupling is via elastic impulse (radiation pressure-like). Standard in optomechanics for momentum transfer.",
+          "dimensional_check": "[rho * du/dt] = (kg/m^3)(m/s) = kg/(m^2 s) = Pa * s / m. To match C2 current info/(m^2 s), need factor [info / (Pa * s^2)]. Still another free parameter.",
+          "key_result": "B_b amplitude = rho omega_b (n.e_b) * q_b = rho v_b k (n.e_b) q_b. Weight w_b proportional to (v_b (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^2. No exact transverse decoupling at generic directions.",
+          "branch_weights": {
+            "TA1": 0.0015254362862842058,
+            "TA2": 0.0006936845976982917,
+            "LA": 0.9977808791160175
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.0015254362862842058,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 0.0006936845976982917,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.9977808791160175,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M4_ACOUSTIC_INTENSITY",
+          "formula": "B = n_i sigma_ij u_dot_j using full Christoffel contraction",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "The full elastic intensity contraction e_b^T Gamma e_b = rho v_b^2 is the same for all branch indices -- it is the eigenvalue. This coupling discriminates branches ONLY by their speed v_b, not by polarization. It couples to ALL branches.",
+          "key_result": "B_b amplitude = rho v_b^3 k^2 q_b (independent of n.e_b). Weight w_b proportional to v_b^6. ALL THREE BRANCHES ACTIVE at all directions. No branch decoupling from polarization, only speed weighting.",
+          "branch_weights": {
+            "TA1": 0.02161640755169758,
+            "TA2": 0.04994630115680247,
+            "LA": 0.9284372912914999
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.02161640755169758,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 0.04994630115680247,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.9284372912914999,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        }
+      ]
+    },
+    {
+      "direction": "generic[213]",
+      "n_hat": [
+        0.5345224838248488,
+        0.2672612419124244,
+        0.8017837257372732
+      ],
+      "mode_speeds": {
+        "TA1": 4893.089750176557,
+        "TA2": 5626.044336855584,
+        "LA": 9156.820294310097
+      },
+      "mode_longitudinal_projections": {
+        "TA1": 0.0729094839774555,
+        "TA2": 0.04276101893327641,
+        "LA": 0.9964214481864235
+      },
+      "candidates": [
+        {
+          "mapping": "M0_EXISTING_C2",
+          "formula": "H_int = g J_C2(x_q,t) sigma_z",
+          "derivation_status": "DEFINED_IN_C2_BUT_NO_ELASTIC_MAP",
+          "branch_weights": "UNDEFINED",
+          "branch_matrix_elements": "ABSENT",
+          "unique_speed": false,
+          "unique_speed_reason": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT"
+        },
+        {
+          "mapping": "M1_SCALAR_DILATATION",
+          "formula": "B = -kappa * rho * div(u)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Dilatation div(u) = strain trace = volume change per unit volume. Couples to compression/expansion of substrate at qubit location. This is a scalar, compatible with sigma_z.",
+          "dimensional_check": "[B] = [kappa][rho][|k||q|] = (Pa^{-1})(kg/m^3)(m^{-1})(m) = kg/(m^3 Pa) = kg/(m^3 * kg/(m s^2)) = s^2/m^2. For B to have units of C2 current info/(m^2 s), kappa must carry [info * s^3/m^2]. This is a new free parameter.",
+          "branch_weights": {
+            "TA1": 0.005315792853858841,
+            "TA2": 0.0018285047402120237,
+            "LA": 0.9928557024059295
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.005315792853858841,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 0.0018285047402120237,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.9928557024059295,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "symmetry": {
+            "TA1": {
+              "longitudinal_projection": 0.0729094839774555,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            },
+            "TA2": {
+              "longitudinal_projection": 0.04276101893327641,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            },
+            "LA": {
+              "longitudinal_projection": 0.9964214481864235,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            }
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M2_ELASTIC_ENERGY_FLUX",
+          "formula": "B = n_i sigma_ij u_dot_j (stress contracted with velocity, projected on n)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Energy flux through a surface with normal n. Analogy: electromagnetic Poynting vector E x B / mu_0. This is an energy flow per unit area, plausible for coupling energy-carrying substrate modes to a qubit.",
+          "dimensional_check": "[sigma_ij] = Pa = N/m^2. [u_dot_j] = m/s. B has units Pa*(m/s) = W/m^2 (power per area). To match C2 current info/(m^2 s), need conversion factor [info/(J)] -- another free parameter.",
+          "key_result": "B_b amplitude = rho v_b^3 (n.e_b) * k^2 * q_b. Weight w_b proportional to (rho v_b^3 (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^6. Transverse modes still have nonzero weight at generic directions unless (n.e_b) = 0, i.e., exact transverse polarization.",
+          "branch_weights": {
+            "TA1": 0.00012462802266355614,
+            "TA2": 9.90520704244827e-05,
+            "LA": 0.999776319906912
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.00012462802266355614,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 9.90520704244827e-05,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.999776319906912,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M3_MOMENTUM_DENSITY",
+          "formula": "B = rho * n . (du/dt)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Momentum density of the elastic medium projected onto the propagation direction. This would arise naturally if the C2 qubit coupling is via elastic impulse (radiation pressure-like). Standard in optomechanics for momentum transfer.",
+          "dimensional_check": "[rho * du/dt] = (kg/m^3)(m/s) = kg/(m^2 s) = Pa * s / m. To match C2 current info/(m^2 s), need factor [info / (Pa * s^2)]. Still another free parameter.",
+          "key_result": "B_b amplitude = rho omega_b (n.e_b) * q_b = rho v_b k (n.e_b) q_b. Weight w_b proportional to (v_b (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^2. No exact transverse decoupling at generic directions.",
+          "branch_weights": {
+            "TA1": 0.0015254362862842043,
+            "TA2": 0.0006936845976983018,
+            "LA": 0.9977808791160175
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.0015254362862842043,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 0.0006936845976983018,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.9977808791160175,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M4_ACOUSTIC_INTENSITY",
+          "formula": "B = n_i sigma_ij u_dot_j using full Christoffel contraction",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "The full elastic intensity contraction e_b^T Gamma e_b = rho v_b^2 is the same for all branch indices -- it is the eigenvalue. This coupling discriminates branches ONLY by their speed v_b, not by polarization. It couples to ALL branches.",
+          "key_result": "B_b amplitude = rho v_b^3 k^2 q_b (independent of n.e_b). Weight w_b proportional to v_b^6. ALL THREE BRANCHES ACTIVE at all directions. No branch decoupling from polarization, only speed weighting.",
+          "branch_weights": {
+            "TA1": 0.02161640755169758,
+            "TA2": 0.04994630115680247,
+            "LA": 0.9284372912914999
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.02161640755169758,
+                "speed": 4893.089750176557
+              },
+              "TA2": {
+                "weight": 0.04994630115680247,
+                "speed": 5626.044336855584
+              },
+              "LA": {
+                "weight": 0.9284372912914999,
+                "speed": 9156.820294310097
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176557,
+              "max": 9156.820294310097
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        }
+      ]
+    },
+    {
+      "direction": "generic[132]",
+      "n_hat": [
+        0.2672612419124244,
+        0.8017837257372732,
+        0.5345224838248488
+      ],
+      "mode_speeds": {
+        "TA1": 4893.089750176556,
+        "TA2": 5626.044336855585,
+        "LA": 9156.820294310095
+      },
+      "mode_longitudinal_projections": {
+        "TA1": 0.07290948397745567,
+        "TA2": 0.04276101893327619,
+        "LA": 0.9964214481864235
+      },
+      "candidates": [
+        {
+          "mapping": "M0_EXISTING_C2",
+          "formula": "H_int = g J_C2(x_q,t) sigma_z",
+          "derivation_status": "DEFINED_IN_C2_BUT_NO_ELASTIC_MAP",
+          "branch_weights": "UNDEFINED",
+          "branch_matrix_elements": "ABSENT",
+          "unique_speed": false,
+          "unique_speed_reason": "J_C2_TO_ELASTIC_FIELD_MAP_ABSENT"
+        },
+        {
+          "mapping": "M1_SCALAR_DILATATION",
+          "formula": "B = -kappa * rho * div(u)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Dilatation div(u) = strain trace = volume change per unit volume. Couples to compression/expansion of substrate at qubit location. This is a scalar, compatible with sigma_z.",
+          "dimensional_check": "[B] = [kappa][rho][|k||q|] = (Pa^{-1})(kg/m^3)(m^{-1})(m) = kg/(m^3 Pa) = kg/(m^3 * kg/(m s^2)) = s^2/m^2. For B to have units of C2 current info/(m^2 s), kappa must carry [info * s^3/m^2]. This is a new free parameter.",
+          "branch_weights": {
+            "TA1": 0.005315792853858865,
+            "TA2": 0.0018285047402120049,
+            "LA": 0.9928557024059295
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.005315792853858865,
+                "speed": 4893.089750176556
+              },
+              "TA2": {
+                "weight": 0.0018285047402120049,
+                "speed": 5626.044336855585
+              },
+              "LA": {
+                "weight": 0.9928557024059295,
+                "speed": 9156.820294310095
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176556,
+              "max": 9156.820294310095
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "symmetry": {
+            "TA1": {
+              "longitudinal_projection": 0.07290948397745567,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            },
+            "TA2": {
+              "longitudinal_projection": 0.04276101893327619,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            },
+            "LA": {
+              "longitudinal_projection": 0.9964214481864235,
+              "exactly_decoupled": false,
+              "note": "nonzero generic coupling -- no decoupling at this direction"
+            }
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M2_ELASTIC_ENERGY_FLUX",
+          "formula": "B = n_i sigma_ij u_dot_j (stress contracted with velocity, projected on n)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Energy flux through a surface with normal n. Analogy: electromagnetic Poynting vector E x B / mu_0. This is an energy flow per unit area, plausible for coupling energy-carrying substrate modes to a qubit.",
+          "dimensional_check": "[sigma_ij] = Pa = N/m^2. [u_dot_j] = m/s. B has units Pa*(m/s) = W/m^2 (power per area). To match C2 current info/(m^2 s), need conversion factor [info/(J)] -- another free parameter.",
+          "key_result": "B_b amplitude = rho v_b^3 (n.e_b) * k^2 * q_b. Weight w_b proportional to (rho v_b^3 (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^6. Transverse modes still have nonzero weight at generic directions unless (n.e_b) = 0, i.e., exact transverse polarization.",
+          "branch_weights": {
+            "TA1": 0.00012462802266355671,
+            "TA2": 9.905207042448192e-05,
+            "LA": 0.999776319906912
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.00012462802266355671,
+                "speed": 4893.089750176556
+              },
+              "TA2": {
+                "weight": 9.905207042448192e-05,
+                "speed": 5626.044336855585
+              },
+              "LA": {
+                "weight": 0.999776319906912,
+                "speed": 9156.820294310095
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176556,
+              "max": 9156.820294310095
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M3_MOMENTUM_DENSITY",
+          "formula": "B = rho * n . (du/dt)",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "Momentum density of the elastic medium projected onto the propagation direction. This would arise naturally if the C2 qubit coupling is via elastic impulse (radiation pressure-like). Standard in optomechanics for momentum transfer.",
+          "dimensional_check": "[rho * du/dt] = (kg/m^3)(m/s) = kg/(m^2 s) = Pa * s / m. To match C2 current info/(m^2 s), need factor [info / (Pa * s^2)]. Still another free parameter.",
+          "key_result": "B_b amplitude = rho omega_b (n.e_b) * q_b = rho v_b k (n.e_b) q_b. Weight w_b proportional to (v_b (n.e_b))^2. SAME ANGULAR STRUCTURE AS M1 but weighted by v_b^2. No exact transverse decoupling at generic directions.",
+          "branch_weights": {
+            "TA1": 0.001525436286284211,
+            "TA2": 0.000693684597698295,
+            "LA": 0.9977808791160175
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.001525436286284211,
+                "speed": 4893.089750176556
+              },
+              "TA2": {
+                "weight": 0.000693684597698295,
+                "speed": 5626.044336855585
+              },
+              "LA": {
+                "weight": 0.9977808791160175,
+                "speed": 9156.820294310095
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176556,
+              "max": 9156.820294310095
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        },
+        {
+          "mapping": "M4_ACOUSTIC_INTENSITY",
+          "formula": "B = n_i sigma_ij u_dot_j using full Christoffel contraction",
+          "derivation_status": "ASSUMED_NOT_FROM_C2",
+          "physical_basis": "The full elastic intensity contraction e_b^T Gamma e_b = rho v_b^2 is the same for all branch indices -- it is the eigenvalue. This coupling discriminates branches ONLY by their speed v_b, not by polarization. It couples to ALL branches.",
+          "key_result": "B_b amplitude = rho v_b^3 k^2 q_b (independent of n.e_b). Weight w_b proportional to v_b^6. ALL THREE BRANCHES ACTIVE at all directions. No branch decoupling from polarization, only speed weighting.",
+          "branch_weights": {
+            "TA1": 0.021616407551697588,
+            "TA2": 0.04994630115680259,
+            "LA": 0.9284372912914999
+          },
+          "prw_reduction": {
+            "single_speed_possible": false,
+            "reason": "MULTIPLE_ACTIVE_BRANCHES",
+            "n_active_branches": 3,
+            "active_branches": {
+              "TA1": {
+                "weight": 0.021616407551697588,
+                "speed": 4893.089750176556
+              },
+              "TA2": {
+                "weight": 0.04994630115680259,
+                "speed": 5626.044336855585
+              },
+              "LA": {
+                "weight": 0.9284372912914999,
+                "speed": 9156.820294310095
+              }
+            },
+            "speed_range_m_per_s": {
+              "min": 4893.089750176556,
+              "max": 9156.820294310095
+            },
+            "kinetic_reduction_note": "Multiple characteristic velocities. Single-speed PRW requires either exact branch decoupling, interbranch equilibration at rate >> scattering rate, or spectral filtering -- each is additional physics not present in C2."
+          },
+          "unique_speed": false
+        }
+      ]
+    }
+  ],
+  "unique_speed_cases": [
+    {
+      "direction": "[100]",
+      "mapping": "M1_SCALAR_DILATATION",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 8433.023172523966
+    },
+    {
+      "direction": "[100]",
+      "mapping": "M2_ELASTIC_ENERGY_FLUX",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 8433.023172523966
+    },
+    {
+      "direction": "[100]",
+      "mapping": "M3_MOMENTUM_DENSITY",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 8433.023172523966
+    },
+    {
+      "direction": "[110]",
+      "mapping": "M1_SCALAR_DILATATION",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 9134.192706246664
+    },
+    {
+      "direction": "[110]",
+      "mapping": "M2_ELASTIC_ENERGY_FLUX",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 9134.192706246664
+    },
+    {
+      "direction": "[110]",
+      "mapping": "M3_MOMENTUM_DENSITY",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 9134.192706246664
+    },
+    {
+      "direction": "[111]",
+      "mapping": "M1_SCALAR_DILATATION",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 9356.246144529563
+    },
+    {
+      "direction": "[111]",
+      "mapping": "M2_ELASTIC_ENERGY_FLUX",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 9356.246144529563
+    },
+    {
+      "direction": "[111]",
+      "mapping": "M3_MOMENTUM_DENSITY",
+      "reason": "UNIQUE_BRANCH_SELECTED",
+      "effective_c": 9356.246144529563
+    }
+  ],
+  "any_unique_speed_from_any_candidate": true,
+  "closure_classification": {
+    "outcome": "D",
+    "reason": "The existing theory permits several physically distinct couplings (M1-M4), all of which produce multiple speeds at generic cubic directions. However, a specific missing postulate -- exact longitudinal-only coupling in ISOTROPIC elasticity OR propagation restricted to high-symmetry directions -- would close the system to a unique speed. This postulate is not derivable from C2 and constitutes new physics.",
+    "gap7_update": "NOT_CLOSED; requires new physical postulate",
+    "minimum_missing_physics": [
+      "A microscopic derivation of J_C2 as an elastic observable with units [info/(m^2 s)], specifying the projection direction and the conversion factor from mechanical to information units.",
+      "Proof that transverse phonon branches decouple from the qubit interaction at ALL propagation directions in the actual substrate geometry (not just high-symmetry directions).",
+      "A kinetic reduction mechanism (branch-preserving scattering process) with a derivable scattering rate gamma_b from the substrate physics.",
+      "Justification that the 3D elastic medium reduces to a 1D PRW transport without introducing direction-dependent speed."
+    ]
+  },
+  "gap7_status": {
+    "previous": "NOT_CLOSED (from THEORY_CLOSURE_AUDIT.md 2026-08-22)",
+    "current": "NOT_CLOSED; requires new physical postulate"
+  }
+}

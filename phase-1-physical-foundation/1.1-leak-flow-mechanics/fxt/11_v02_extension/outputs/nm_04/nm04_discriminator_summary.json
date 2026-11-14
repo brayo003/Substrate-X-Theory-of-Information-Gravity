@@ -1,0 +1,30 @@
+{
+  "task": "nm_04_ramsey_discriminator",
+  "status": "PASS",
+  "reference_params": {
+    "Gamma_med_Hz": 31678.0,
+    "T2star_us": 31.567649472820257
+  },
+  "key_finding": "The non-Markovian coherence is distinguishable from the Markov exponential in the TIME DOMAIN. The signature is: (1) Gaussian initial decay at t < tau_B (visible in log C vs t^2 plot), (2) Coherence ABOVE the Markov exponential at early times, (3) Convergence to Markov at t >> tau_B. The gamma_dataset (single 1/e-point per frequency) cannot see this. A full Ramsey trace with dense time sampling can.",
+  "discrimination_times_1000shots": {
+    "Transitional (NMP=0.3)": null,
+    "Non-Markovian (NMP=1.5)": 36.077313683223146,
+    "Non-Markovian (NMP=3.0)": 30.69736339712847
+  },
+  "gaussian_diagnostic": {
+    "method": "Plot log(C(t)) vs t^2. Straight line = Gaussian (NM). Curved upward = exponential (Markov).",
+    "observable_window": "t < tau_B  (approximately)"
+  },
+  "cramer_rao": {
+    "sigma_shot": 0.02,
+    "tau_B_constrained_below_us": 0.09999999999999999,
+    "note": "tau_B above this threshold is measurable to <10% with 10k shots"
+  },
+  "experimental_requirement": {
+    "time_resolution": "sub-\u00b5s Ramsey time steps (dt << tau_B)",
+    "n_shots": ">= 1000 per time point",
+    "t_free_range": "0 to ~126 \u00b5s (= 4 \u00d7 T2*)",
+    "key_window": "0 to tau_B  (where Gaussian onset is visible)"
+  },
+  "connection_to_C2": "tau_B is the substrate bath correlation time \u2014 the memory of the C2 PRW substrate. In the Markov limit tau_B -> 0, the substrate has no memory and all predictions are identical to standard Lindblad. A measured tau_B > 0 (NMP > 0.1) would be evidence that the substrate has a finite correlation time, which is a non-trivial statement about the microscopic dynamics."
+}

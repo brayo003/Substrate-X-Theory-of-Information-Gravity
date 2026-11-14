@@ -1,0 +1,198 @@
+{
+  "gate1": {
+    "model": "Matrix-valued persistent random walk",
+    "walker_state": "(sigma, Q) where sigma in {+1,-1}, Q in M_n(C)",
+    "reversal": "Q -> U Q U^dagger, U ~ mu on U(n)",
+    "current": "J = Tr(A @ q) for fixed coupling matrix A",
+    "observable_algebra": "COMMUTATIVE (classical)",
+    "classification": "Matrix-valued classical PRW",
+    "noncommutativity_type": "representational (internal labels), not physical",
+    "verdict": "The matrices enrich the internal state space but the observable algebra is classical. This is NOT a quantum substrate. It is a classical stochastic process with matrix-valued internal states."
+  },
+  "gate2": {
+    "haar": {
+      "r_eigenvalues": {
+        "I": 1.0,
+        "sx": 0.0,
+        "sy": 0.0,
+        "sz": 0.0
+      },
+      "decay_rates": {
+        "I": 2.0,
+        "sx": 1.0,
+        "sy": 1.0,
+        "sz": 1.0
+      },
+      "n_distinct_rates": 2,
+      "distinct_rates": [
+        1.0,
+        2.0
+      ],
+      "rate_ratio": 2.0,
+      "equivalent_to_scalar_prw": false
+    },
+    "pauli_twirl": {
+      "r_eigenvalues": {
+        "I": 1.0,
+        "sx": 0.0,
+        "sy": 0.0,
+        "sz": 0.0
+      },
+      "decay_rates": {
+        "I": 2.0,
+        "sx": 1.0,
+        "sy": 1.0,
+        "sz": 1.0
+      },
+      "n_distinct_rates": 2,
+      "distinct_rates": [
+        1.0,
+        2.0
+      ],
+      "rate_ratio": 2.0,
+      "equivalent_to_scalar_prw": false
+    },
+    "sz_only": {
+      "r_eigenvalues": {
+        "I": 1.0,
+        "sz": 1.0,
+        "sx": 0.0,
+        "sy": 0.0
+      },
+      "decay_rates": {
+        "I": 2.0,
+        "sz": 2.0,
+        "sx": 1.0,
+        "sy": 1.0
+      },
+      "n_distinct_rates": 2,
+      "distinct_rates": [
+        1.0,
+        2.0
+      ],
+      "rate_ratio": 2.0,
+      "equivalent_to_scalar_prw": false
+    },
+    "partial_p=0.5": {
+      "r_eigenvalues": {
+        "I": 1.0,
+        "sx": 0.5,
+        "sy": 0.5,
+        "sz": 0.5
+      },
+      "decay_rates": {
+        "I": 2.0,
+        "sx": 1.5,
+        "sy": 1.5,
+        "sz": 1.5
+      },
+      "n_distinct_rates": 2,
+      "distinct_rates": [
+        1.5,
+        2.0
+      ],
+      "rate_ratio": 1.3333333333333333,
+      "equivalent_to_scalar_prw": false
+    },
+    "partial_p=0.9": {
+      "r_eigenvalues": {
+        "I": 1.0,
+        "sx": 0.9,
+        "sy": 0.9,
+        "sz": 0.9
+      },
+      "decay_rates": {
+        "I": 2.0,
+        "sx": 1.9,
+        "sy": 1.9,
+        "sz": 1.9
+      },
+      "n_distinct_rates": 2,
+      "distinct_rates": [
+        1.9,
+        2.0
+      ],
+      "rate_ratio": 1.0526315789473684,
+      "equivalent_to_scalar_prw": false
+    },
+    "identity": {
+      "r_eigenvalues": {
+        "I": 1.0,
+        "sx": 1.0,
+        "sy": 1.0,
+        "sz": 1.0
+      },
+      "decay_rates": {
+        "I": 2.0,
+        "sx": 2.0,
+        "sy": 2.0,
+        "sz": 2.0
+      },
+      "n_distinct_rates": 1,
+      "distinct_rates": [
+        2.0
+      ],
+      "rate_ratio": 1.0,
+      "equivalent_to_scalar_prw": true
+    }
+  },
+  "gate3": {
+    "trace_coupling": {
+      "weights": {
+        "I": 1.0,
+        "sx": 0.0,
+        "sy": 0.0,
+        "sz": 0.0
+      },
+      "cp_preserved": "True",
+      "is_markovian": "True",
+      "non_markovianity": 0.0,
+      "cp_note": "CP always preserved because gamma(t) = sum S_k(1-exp(-r_k t))/r_k >= 0 when all S_k >= 0 and r_k > 0. This is the same CP guarantee as any positive-correlation Gaussian dephasing bath.",
+      "markovianity_note": "Non-Markovian (gamma(t) time-dependent) but this is the same type of non-Markovianity as any finite-memory bath. Not a new type of quantum dynamics."
+    },
+    "traceless_coupling": {
+      "weights": {
+        "I": 0.0,
+        "sx": 0.0,
+        "sy": 0.0,
+        "sz": 1.0
+      },
+      "cp_preserved": "True",
+      "is_markovian": "True",
+      "non_markovianity": 0.0,
+      "cp_note": "CP always preserved because gamma(t) = sum S_k(1-exp(-r_k t))/r_k >= 0 when all S_k >= 0 and r_k > 0. This is the same CP guarantee as any positive-correlation Gaussian dephasing bath.",
+      "markovianity_note": "Non-Markovian (gamma(t) time-dependent) but this is the same type of non-Markovianity as any finite-memory bath. Not a new type of quantum dynamics."
+    },
+    "mixed_coupling": {
+      "weights": {
+        "I": 0.5,
+        "sx": 0.0,
+        "sy": 0.0,
+        "sz": 0.5
+      },
+      "cp_preserved": "True",
+      "is_markovian": "True",
+      "non_markovianity": 0.0,
+      "cp_note": "CP always preserved because gamma(t) = sum S_k(1-exp(-r_k t))/r_k >= 0 when all S_k >= 0 and r_k > 0. This is the same CP guarantee as any positive-correlation Gaussian dephasing bath.",
+      "markovianity_note": "Non-Markovian (gamma(t) time-dependent) but this is the same type of non-Markovianity as any finite-memory bath. Not a new type of quantum dynamics."
+    }
+  },
+  "gate4": {
+    "matrix_prw_params": 3,
+    "twobath_params": 4,
+    "ou_params": 2,
+    "max_diff_matrix_vs_twobath": 0.0,
+    "twobath_reproduces_matrix": "True",
+    "constraint_type": "fixed rate ratio 2:1 (Haar) or 2/(1+p) (partial)",
+    "constraint_is_special_case_of_twobath": true,
+    "verdict": "The matrix PRW produces a constrained two-Lorentzian spectrum. A conventional two-bath model reproduces it exactly by choosing the rate ratio to match. The matrix PRW's constraint (ratio=2 for Haar) removes one parameter, but this is the same type of constrained relationship as the original fxt's P3 relation: a fixed ratio that is a special case of a more general conventional model. The constraint depends on the U distribution parameter p, which is itself a free input. DISTINCTIVE PREDICTION: NONE that survives conventional comparison."
+  },
+  "simulation": {
+    "max_diff_single_exp": 0.040123323442754266,
+    "max_diff_two_exp": 0.044985028994553033,
+    "n_steps": 200000,
+    "n_walkers": 500,
+    "distribution": "haar",
+    "coupling": "traceless (sigma_z)"
+  }
+}

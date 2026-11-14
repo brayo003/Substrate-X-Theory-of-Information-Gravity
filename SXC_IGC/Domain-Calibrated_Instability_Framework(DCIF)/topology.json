@@ -1,0 +1,12 @@
+{
+  "links": [
+    {"source": "seismic_module", "target": "urban_module", "strength": 0.05, "desc": "Infrastructure Damage"},
+    {"source": "urban_module", "target": "energy_module", "strength": 0.08, "desc": "Grid Failure"},
+    {"source": "energy_module", "target": "finance_module", "strength": 0.12, "desc": "Market Panic"},
+    {"source": "finance_module", "target": "social_module", "strength": 0.15, "desc": "Economic Grievance"},
+    {"source": "social_module", "target": "finance_module", "strength": 0.05, "desc": "Feedback: Trust Erosion"}
+  ],
+  "circuit_breakers": [
+    {"target": "urban_module", "threshold": 0.5, "boost": 0.3, "desc": "Emergency Response"}
+  ]
+}

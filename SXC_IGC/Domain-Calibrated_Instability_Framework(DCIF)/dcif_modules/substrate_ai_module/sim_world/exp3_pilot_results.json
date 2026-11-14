@@ -1,0 +1,20 @@
+{
+  "recommended_window": 3,
+  "results": {
+    "3": {
+      "baseline": 0.41464270000000003,
+      "spectral": 0.41417190000000004,
+      "in_target": true
+    },
+    "5": {
+      "baseline": 0.43650975000000003,
+      "spectral": 0.4416050499999999,
+      "in_target": true
+    },
+    "8": {
+      "baseline": 0.43882315,
+      "spectral": 0.4701263,
+      "in_target": true
+    }
+  }
+}

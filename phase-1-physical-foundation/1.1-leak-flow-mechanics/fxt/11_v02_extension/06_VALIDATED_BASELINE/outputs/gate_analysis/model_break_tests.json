@@ -1,0 +1,6 @@
+{
+  "full_conventional_chi_squared": 5.482835051077747,
+  "no_magnetic_projection_chi_squared": 82.44441646073513,
+  "no_echo_toggling_chi_squared": 77.03887572151093,
+  "statement": "Large degradation is expected if the published field-projection or spin-echo feature is removed."
+}

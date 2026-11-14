@@ -1,0 +1,97 @@
+{
+  "run_id": "aal20k_run_001",
+  "git_revision": "8f101e7a303a909296511721ff202372c99cecfe",
+  "python_version": "3.10.12",
+  "platform": "Linux-6.17.4-76061704-generic-x86_64-with-glibc2.35",
+  "ollama_model": "qwen2.5-coder:1.5b",
+  "llm_temperature": 0.7,
+  "llm_max_tokens": 64,
+  "llm_timeout_s": 360,
+  "seed": "aal_20k_controlled_seed_v1",
+  "target_ticks": 20000,
+  "completed_ticks": 10,
+  "max_feasible_ticks": 10,
+  "hard_stop_reason": "Hardware feasibility cap reached: 10 ticks. Full 20,000-tick run requires ~2560h on this machine (measured 461s/tick).",
+  "start_timestamp": "2026-08-10T14:41:33.045113+00:00",
+  "end_timestamp": "2026-08-10T15:41:28.556936+00:00",
+  "total_wall_seconds": 3595.5118453502655,
+  "world_A": {
+    "c_nominal": 1.0,
+    "tau_nominal": 1.0,
+    "name": "world_a_c1"
+  },
+  "world_B": {
+    "c_nominal": 2.0,
+    "tau_nominal": 1.0,
+    "name": "world_b_c2"
+  },
+  "entity_definitions": [
+    {
+      "name": "Agent_1",
+      "type": "human",
+      "location": "village_center",
+      "needs": {
+        "hunger": 0.85,
+        "thirst": 0.75,
+        "energy": 0.15
+      },
+      "inventory": {
+        "food": 2.0,
+        "water": 3.0
+      }
+    },
+    {
+      "name": "Agent_2",
+      "type": "human",
+      "location": "village_center",
+      "needs": {
+        "hunger": 0.6,
+        "thirst": 0.55,
+        "energy": 0.4
+      },
+      "inventory": {
+        "food": 1.5,
+        "water": 2.0
+      }
+    },
+    {
+      "name": "Agent_3",
+      "type": "human",
+      "location": "village_center",
+      "needs": {
+        "hunger": 0.4,
+        "thirst": 0.35,
+        "energy": 0.65
+      },
+      "inventory": {
+        "food": 3.0,
+        "water": 1.5
+      }
+    }
+  ],
+  "cooldown_ticks": 1,
+  "cooldown_seconds": 0.0,
+  "importance_threshold": 0.0,
+  "benchmark_latency_avg_s": 76.8,
+  "estimated_seconds_per_tick": 460.79999999999995,
+  "estimated_hours_for_20k": 2560.0,
+  "validation": {
+    "entity_count_a_eq_3": true,
+    "entity_count_b_eq_3": true,
+    "field_c_a_correct": true,
+    "field_c_b_correct": true,
+    "field_tau_a_correct": true,
+    "field_tau_b_correct": true,
+    "field_c_differs": true,
+    "kernels_isolated": true,
+    "field_objects_isolated": true,
+    "cooldown_ticks_a": true,
+    "cooldown_ticks_b": true,
+    "cooldown_secs_a": true,
+    "cooldown_secs_b": true,
+    "importance_threshold_a": true,
+    "importance_threshold_b": true,
+    "ollama_reachable": true,
+    "model_available": true
+  }
+}

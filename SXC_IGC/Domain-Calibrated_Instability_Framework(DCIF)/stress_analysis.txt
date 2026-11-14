@@ -1,0 +1,284 @@
+./DCIF/SXC_V12_INTEGRATED_CORE.py:    def check_stability(self, current_density, velocity_of_info):
+./DCIF/SXC_V12_INTEGRATED_CORE.py:        stability_index = (momentum_tax / self.threshold)
+./DCIF/SXC_V12_INTEGRATED_CORE.py:        status = "STABLE" if stability_index < 1.0 else "CRITICAL: CASCADE RISK"
+./DCIF/SXC_V12_INTEGRATED_CORE.py:        return status, stability_index, gamma
+./DCIF/SXC_V12_INTEGRATED_CORE.py:        status, idx, g = core.check_stability(rho, v)
+./vortex/fail:Title: Triple Falsification of Information Geometric Gravity: Inconsistency of the K(s)=1/s Kinetic Term with Galactic Dynamics, Stability, and Thermodynamics.
+./vortex/fail:3. Model II: Structural and Stability Constraints (s-Field)
+./vortex/fail:    3.4 The Instability: Identify the s→0 singularity and the necessity of the stabilizing term V(s)=μ4/s2. (Conclude: Model II is mathematically non-viable without modification.)
+./vortex/fail:        Analysis: Note the high numerical instability (spike) and the negligible enhancement (a/aNewton​≈1.0) at large radii. (Conclude: Model III fails the galactic dynamics test.)
+./vortex/rename/run_all_extensions.sh:4. Consider stronger coupling versions for testability
+./vortex/rename/target_parameters.py:print(f"  (Maximum allowed: {optimal['alpha_max']:.3e}, using 50% for testability)")
+./vortex/rename/ULTIMATE_SUMMARY.md:Testability: Medium (challenging but possible)
+./vortex/rename/experimental_guidance.md:4. Environment: Ultra-high vacuum, temperature stability
+./vortex/rename/tool:αS/MPlXμTμνuναS​/MPl​Xμ​Tμνuν​	Coupling to stress-energy	Proper stress-energy tensor, conserved coupling
+./vortex/rename/tool:11. Falsifiable Predictions (Ordered by Testability)
+./vortex/rename/concrete_predictions.py:# Choose: m_S for ~1 mm range gives good testability
+./vortex/rename/concrete_predictions.py:    f.write("4. Environment: Ultra-high vacuum, temperature stability\n\n")
+./vortex/rename/methodology_framework.py:   - Clear statement of testability
+./vortex/rename/complete_framework.md:Environment: UHV (<10^-7 mbar), temperature stability
+./vortex/rename/predictive_substrate_x_theory.py:        print("Can't tweak to fit experiments without breaking consistency")
+./vortex/rename/predictive_substrate_x_theory.py:            print("Cannot adjust parameters without breaking other predictions")
+./vortex/rename/MASTER_SUMMARY.md:4. Consider stronger coupling versions for testability
+./vortex/rename/parameter_space.py:print(f"\nRecommended target for testability:")
+./vortex/next:    r = 0.153267 → m_s² = -r (negative mass squared → symmetry breaking)
+./vortex/next:    Dark energy as a symmetry-breaking phase transition
+./vortex/next:Figure 7: Future testability
+./vortex/assamption:Step 1: Simplify the Stress-Energy Tensor (Tμν
+./vortex/assamption:​ component of the field's stress-energy tensor (Tfield
+./vortex/critical_behavior_tester.py:        """Symmetry breaking pattern"""
+./vortex/substratev2.0:Energy–momentum sources gravity via a stress–energy tensor.
+./vortex/substratev2.0:Stress-Energy Tensors:
+./vortex/substratev2.0:Total Stress-Energy:
+./vortex/substratev2.0:Layer 4 — DCII / Information–Instability Model
+./vortex/substratev2.0:Detecting instability onset.
+./vortex/substrate:A. Stress-Energy Tensor:
+./calibration_params.txt:./vortex/rename/target_parameters.py:print(f"  (Maximum allowed: {optimal['alpha_max']:.3e}, using 50% for testability)")
+./calibration_params.txt:./SXC-IGC/UniversalTentionDynamics/test_long_term_stability.py:    alpha_eff = engine.compute_effective_stiffness(engine.rho)
+./calibration_params.txt:./SXC-IGC/UniversalTentionDynamics/test_long_term_stability.py:    stiffness_ratio = np.max(alpha_eff) / engine.alpha
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_stress_test.py:        T = (c['beta'] * E_shock) - (c['gamma'] * F_load)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/decoupling_strategy.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/decoupling_strategy.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V12_CORE.py:        self.beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V12_CORE.py:        inflow = E * self.beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:            'social_module':  {'E': 0.00, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75}, 
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:            'urban_module':   {'E': 0.60, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:            'finance_module': {'E': 0.50, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7.2_FLUX.py:                inflow = m['E'] * m['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:    ax1.axhline(y=1.0, color='#ff4444', linestyle=':', alpha=0.8, label='Firewall Threshold (1.0)')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:    ax1.axhline(y=0.4, color='#ffbb33', linestyle=':', alpha=0.8, label='Hysteresis Floor (0.4)')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:                    color='red', alpha=0.15, label='FIREWALL Active')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:                    color='yellow', alpha=0.05, label='PREDICTIVE Active')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/DASHBOARD.py:    ax1.grid(True, which='both', linestyle='--', alpha=0.1)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:            'social_module':  {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:            'urban_module':   {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:            'finance_module': {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_ADAPTIVE.py:                inflow = m['E'] * m['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/sxc_igc_v7_ram.py:    v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/sxc_igc_v7_ram.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/compare_extremes.py:    alpha, beta, gamma = c['alpha'], c['beta'], c['gamma']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/compare_extremes.py:    x = (alpha * rho_grad) + (beta * E) - (gamma * F)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/ram_optimizer.py:    beta, gamma = c['beta'], c['gamma']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/ram_optimizer.py:    # 0.4 = beta*E - gamma*F -> gamma*F = beta*E - 0.4 -> F = (beta*E - 0.4)/gamma
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/ram_optimizer.py:    f_required = (beta * current_E - 0.4) / gamma
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v5.py:    state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v5.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * effective_F)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V3_EMERGENCY.py:        self.beta_calibrated = 3.56  # Corrected sensitivity
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V3_EMERGENCY.py:        # Using the calibrated Beta for high-sensitivity detection
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V3_EMERGENCY.py:        social_T = self.state['social_module']['E'] * self.beta_calibrated 
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/predictive_intervention.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/predictive_intervention.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/resilience_test.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/resilience_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:        # Module-specific coefficients (Calibrated Beta/Gamma)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7, 'crisis': False},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'urban_module':  {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6, 'crisis': False},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'finance_module':{'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8, 'crisis': False},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            'seismic_module':{'E': 0.15, 'F': 0.9, 'T': 0.0, 'beta': 1.000, 'gamma': 0.5, 'crisis': False}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_PRODUCTION.py:            new_tensions[name] = max(0.0, (m['beta'] * m['E']) - (m['gamma'] * m['F'] * damping_mod))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:            'social_module':  {'E': 0.00, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:            'urban_module':   {'E': 0.60, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:            'finance_module': {'E': 0.50, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_COUPLING_TEST.py:                mod['T'] += (mod['E'] * mod['beta'] - mod['T'] * mod['gamma']) * self.dt
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/redundancy_test.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/redundancy_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/engine_orchestrator.py:            self.alpha = coeffs['alpha']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/engine_orchestrator.py:            self.beta = coeffs['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/engine_orchestrator.py:        x = (self.alpha * rho_grad) + (self.beta * E) - (self.gamma * F)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7, 'crisis': False},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:            'urban_module':  {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6, 'crisis': False},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:            'finance_module':{'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8, 'crisis': False}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6_STRESS.py:                new_tensions[name] = max(0.0, (m['beta'] * m['E']) - (m['gamma'] * m['F'] * damping))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dynamic_cascade_v2.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * state[m]['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V1.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * self.state['viral_evolution']['E']) - (v_c['gamma'] * self.state['viral_evolution']['F'])))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V1.py:            self.state[m]['T'] = (c['beta'] * self.state[m]['E']) - (c['gamma'] * (self.state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/intervention_test.py:        state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/intervention_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dynamic_cascade_v3.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * state[m]['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/hybrid_strategy.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/hybrid_strategy.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V2.py:        erosion = max(0.1, 1.0 - ((v_c['beta'] * self.state['viral_evolution']['E']) - (v_c['gamma'] * self.state['viral_evolution']['F'])))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V2.py:            self.state[m]['T'] = (c['beta'] * self.state[m]['E']) - (c['gamma'] * (current_f * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/COMPARATIVE_STUDY.py:    ax.axhline(y=1.0, color='white', linestyle='--', alpha=0.3, label='Social Critical Threshold')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/COMPARATIVE_STUDY.py:    ax.fill_between(steps, 1.0, 5.0, alpha=0.1, color='red')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/COMPARATIVE_STUDY.py:    ax.grid(alpha=0.1)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:            'social_module':  {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:            'urban_module':   {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:            'finance_module': {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V9_AUTONOMOUS.py:                inflow = m['E'] * m['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:        # Calibrated Beta (3.5) and Gamma coefficients
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'urban_module': {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'finance_module': {'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.5, 'gamma': 0.8},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            'seismic_module': {'E': 0.15, 'F': 0.9, 'T': 0.0, 'beta': 1.0, 'gamma': 0.5}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:        # Calculate Base Tensions: T = beta*E - gamma*F
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V4_ACTIVE_DEFENSE.py:            new_tensions[name] = max(0.0, m['beta'] * m['E'] - m['gamma'] * m['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax1.axhline(y=0, color='black', linestyle='-', alpha=0.3)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax1.axvline(x=0, color='red', linestyle='--', alpha=0.5, label='Synchrony')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:                     color='green', alpha=0.3, label='Positive correlation')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:                     color='red', alpha=0.3, label='Negative correlation')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax1.grid(True, alpha=0.3)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    bars = ax2.bar(categories, values, color=colors, alpha=0.7)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_correlation_results.py:    ax2.grid(True, alpha=0.3, axis='y')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:def calculate_optimal_beta():
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:        # Linear regression through origin: T = beta * E
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:        beta = np.sum(E * T) / np.sum(E**2)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:        calibrated_coeffs[module] = round(beta, 3)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:    print("CALIBRATED COEFFICIENTS (BETA):")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibrate_beta.py:    calculate_optimal_beta()
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V11_SENSITIVE.py:gamma, beta, dt = 0.8, 3.5, 0.05
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V11_SENSITIVE.py:    inflow = ((fin_e[i] * 0.7) + (geo_e[i] * 0.3)) * beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST_FINAL.py:beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST_FINAL.py:    inflow = total_excitation * beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    Generalized Solver for DCII coefficients beta (β) and gamma (γ) using 
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    T = β*E - γ*F. Assumes alpha is 0.0.
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    x = [beta, gamma]
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:    Returns: (alpha, beta, gamma)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:        beta = x[0]
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:        alpha = 0.0
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/solver.py:        return alpha, beta, gamma
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_INSIGHT.py:            'finance_module': {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.5, 'gamma': 0.8},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_INSIGHT.py:            'social_module':  {'E': 0.1, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V10_INSIGHT.py:            inflow = E_in * m['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/adaptive_topology.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/adaptive_topology.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.axhline(y=0, color='black', linestyle='-', alpha=0.3)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.axvline(x=0, color='red', linestyle='--', alpha=0.5, label='Synchrony (0 lag)')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:                     color='green', alpha=0.3, label='Positive correlation')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:                     color='red', alpha=0.3, label='Negative correlation')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.grid(True, alpha=0.3)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    bars = plt.bar(categories, values, color=colors, alpha=0.7)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/plot_results.py:    plt.grid(True, alpha=0.3, axis='y')
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_2008_BACKTEST.py:gamma, beta, dt = 0.8, 3.5, 0.05
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_2008_BACKTEST.py:    inflow = ((fin_e[i] * 0.7) + (geo_e[i] * 0.3)) * beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/cascade_simulator.py:        state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * state[m]['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.ALPHA = np.nan
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.BETA = np.nan
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.ALPHA = alpha
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        self.BETA = beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        return alpha, beta, gamma
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:    alpha, beta, gamma = analyzer.run_calibration()
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:    if not np.isnan(beta):
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        print(f"EQUATION: T = {beta:.4f}E - {gamma:.4f}F")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        print(f"Alpha (Accumulation α): {alpha:.4f} (Negligible)")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        print(f"Beta (Excitation β):    {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        if beta / gamma > 5: # Use a higher ratio to signify "overwhelmingly dominant"
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/social_module/SocialInstabilityAnalyzer.py:        elif beta > gamma:
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:    ALPHA = 0.0000 
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:    BETA = 18.3916
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:            grad_rho_mag (float): Mean Accumulation Gradient (ignored due to ALPHA=0).
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:        T = (self.ALPHA * grad_rho_mag) + (self.BETA * E) - (self.GAMMA * F)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/seismic_module/SeismicInstabilityAnalyzer.py:    print(f"LOCKED EQUATION: T = {analyzer.BETA:.4f}E - {analyzer.GAMMA:.4f}F")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_FINAL.py:        self.beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_FINAL.py:        inflow = E * self.beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_MICRO_REGEN.py:beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_MICRO_REGEN.py:    inflow = E_noise * beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_AGING_SIM.py:beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_AGING_SIM.py:    inflow = E_noise * beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/biological_stress_overlay.py:    # Calculate Viral Tension: High Beta (0.9) vs Low Gamma (0.1)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/biological_stress_overlay.py:    state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/biological_stress_overlay.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * effective_F)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_REALITY.py:        self.beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V13_REALITY.py:        self.T_sys += (E * self.beta - gamma_eff * self.gamma * self.T_sys) * self.dt
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_ANCHOR.py:        self.beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_ANCHOR.py:        self.T_sys += (E * self.beta - gamma_eff * self.gamma * self.T_sys) * self.dt
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_MASTER_PROTOCOL.py:        self.beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/biological_rejuvenation_core/SXC_V15_MASTER_PROTOCOL.py:        self.T_sys += (E * self.beta - gamma_eff * self.gamma * self.T_sys) * self.dt
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/quantum_module/calibrate_quantum.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/quantum_module/calibrate_quantum.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/quantum_module/calibrate_quantum.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:    T = beta*E - gamma*F
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/dark_matter_module/calibrate_dark_matter.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/urban_module/calibrate_urban.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/urban_module/calibrate_urban.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/urban_module/calibrate_urban.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/cosmology_module/calibrate_cosmology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/cosmology_module/calibrate_cosmology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/cosmology_module/calibrate_cosmology.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:    Solves for alpha (gradient/gravity) and beta (excitation).
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:    T = alpha*G + beta*E. Damping (gamma) is assumed zero/negligible at the horizon.
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:alpha, beta, gamma = solve_black_hole_coefficients(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/black_hole_module/calibrate_black_hole.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/muon_g2_analysis.py:    alpha_x = (g_mu**2) / (4 * np.pi)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/muon_g2_analysis.py:    # a_mu = (alpha_x / 2*pi) * L(m_x/m_mu)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/muon_g2_analysis.py:    contribution = (alpha_x / (2 * np.pi)) * (m_mu / m_x)**2
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/calibrate_physics.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/calibrate_physics.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/particle_physics_module/calibrate_physics.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/ecology_module/calibrate_ecology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/ecology_module/calibrate_ecology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/ecology_module/calibrate_ecology.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Quantum_Decoherence_Module/calibrate_quantum_decoherence.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Quantum_Decoherence_Module/calibrate_quantum_decoherence.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Quantum_Decoherence_Module/calibrate_quantum_decoherence.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.ALPHA = np.nan
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.BETA = np.nan
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.ALPHA = alpha
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        self.BETA = beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        return alpha, beta, gamma
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        if np.isnan(self.BETA) or np.isnan(self.GAMMA):
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        T = (self.BETA * E) - (self.GAMMA * F)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:    alpha, beta, gamma = analyzer.run_calibration()
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:    if not np.isnan(beta):
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        print(f"EQUATION: T = {beta:.4f}E - {gamma:.4f}F")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        print(f"Alpha (Accumulation α): {alpha:.4f} (Negligible)")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        print(f"Beta (Excitation β):    {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/finance_module/FinanceInstabilityAnalyzer.py:        if beta > gamma:
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Viral_Evolution_Module/calibrate_viral_evolution.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Viral_Evolution_Module/calibrate_viral_evolution.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/Viral_Evolution_Module/calibrate_viral_evolution.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/mycology_module/calibrate_mycology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/mycology_module/calibrate_mycology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/mycology_module/calibrate_mycology.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/virology_module/calibrate_virology.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/virology_module/calibrate_virology.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/virology_module/calibrate_virology.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/calibrate_game_theory.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/calibrate_game_theory.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/calibrate_game_theory.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:  "alpha_E": 1.5,
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:  "alpha_F": 0.5,
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:  "beta_F": 0.8,
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:    dE = (cfg["alpha_E"] * rho - E) / cfg["tau_E"]
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/game_module/new_world/verify_tension.py:    dF = (cfg["alpha_F"] * rho + cfg["beta_F"] * E - F) / cfg["tau_F"]
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/energy_module/calibrate_energy.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/energy_module/calibrate_energy.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/energy_module/calibrate_energy.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/agriculture_module/calibrate_agriculture.py:alpha, beta, gamma = solve_dcii_coefficients_two_anchor(
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/agriculture_module/calibrate_agriculture.py:print(f"Alpha (Gradient): {alpha:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/agriculture_module/calibrate_agriculture.py:print(f"Beta (Excitation): {beta:.4f}")
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v4.py:    state['viral_evolution']['T'] = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v4.py:    new_state['finance_module']['T'] = (f_c['beta'] * state['finance_module']['E']) - (f_c['gamma'] * effective_F_fin)
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_collapse_v4.py:        new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/breaking_point_test.py:        v_T = (v_c['beta'] * state['viral_evolution']['E']) - (v_c['gamma'] * state['viral_evolution']['F'])
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/breaking_point_test.py:            new_state[m]['T'] = (c['beta'] * state[m]['E']) - (c['gamma'] * (state[m]['F'] * erosion))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:        # Established Beta/Gamma calibration
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:            'social_module':  {'E': 0.10, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.75},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:            'urban_module':   {'E': 0.55, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.60},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:            'finance_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.80}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V8_FINAL.py:                inflow = m['E'] * m['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST.py:beta = 3.5
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_V10_BACKTEST.py:    inflow = total_excitation * beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:        # Parameters with established Beta/Gamma calibration
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:            'social_module':  {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:            'urban_module':   {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:            'finance_module': {'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:                # Inflow: Excitation * Beta
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V7_DYNAMIC.py:                inflow = m['E'] * m['beta']
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:            'social_module': {'E': 0.45, 'F': 0.8, 'T': 0.0, 'beta': 3.448, 'gamma': 0.7},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:            'urban_module':  {'E': 0.15, 'F': 0.8, 'T': 0.0, 'beta': 3.383, 'gamma': 0.6},
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:            'finance_module':{'E': 0.30, 'F': 0.8, 'T': 0.0, 'beta': 3.500, 'gamma': 0.8}
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/SXC_CORE_V6.1_HYSTERESIS.py:                new_tensions[name] = max(0.0, (m['beta'] * m['E']) - (m['gamma'] * m['F'] * damping))
+./calibration_params.txt:./SXC-IGC/"Domain-Calibrated_Instability_Framework(DCIF)/global_heatmap.py:                T = (c['beta'] * E_test) - (c['gamma'] * F_test)
+./calibration_params.txt:./quantt/dangerous_theory.py:    stability_limit = gamma_beta_universal / omega
+./leak/agebramath/substrate_x_experiments.py:force laws to visualize how leak/puff corrections alter orbital stability.
+./leak/agebramath/substrate_x_proof.py:plt.title('Orbital Stability')
+./leak/mission:- Substrate density (ρ₀) determines dimensional stability
+./leak/substrate-x-complete-package/agebramath/substrate_x_experiments.py:force laws to visualize how leak/puff corrections alter orbital stability.
+./leak/substrate-x-complete-package/agebramath/substrate_x_proof.py:plt.title('Orbital Stability')
+./leak/substrate-x-complete-package/substrate_x_experiments.py:force laws to visualize how leak/puff corrections alter orbital stability.

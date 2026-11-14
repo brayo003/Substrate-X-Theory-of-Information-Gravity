@@ -1,0 +1,719 @@
+{
+  "test_date": "2026-08-09",
+  "telegraph_equation": "\u03c4 \u2202\u00b2s/\u2202t\u00b2 + \u2202s/\u2202t = c\u00b2\u03c4 \u2207\u00b2s",
+  "modal_discriminant": "D(k) = 4c\u00b2\u03c4\u00b2k\u00b2 - 1",
+  "phases": {
+    "phase_1": [
+      {
+        "k": 0.25,
+        "true_regime": "overdamped",
+        "D": -0.75
+      },
+      {
+        "k": 0.4,
+        "true_regime": "overdamped",
+        "D": -0.3599999999999999
+      },
+      {
+        "k": 0.5,
+        "true_regime": "critical",
+        "D": 0.0
+      },
+      {
+        "k": 0.6,
+        "true_regime": "coherent",
+        "D": 0.43999999999999995
+      },
+      {
+        "k": 0.75,
+        "true_regime": "coherent",
+        "D": 1.25
+      },
+      {
+        "k": 1.0,
+        "true_regime": "coherent",
+        "D": 3.0
+      },
+      {
+        "k": 1.2566,
+        "true_regime": "coherent",
+        "D": 5.31617424
+      }
+    ],
+    "phase_2": {
+      "results": [
+        {
+          "k": 0.25,
+          "A": 0.01,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 6.855858966883008e-12,
+          "f_over": 0.9999999999931438
+        },
+        {
+          "k": 0.25,
+          "A": 0.05,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 1.7120488722361029e-10,
+          "f_over": 0.9999999998287948
+        },
+        {
+          "k": 0.25,
+          "A": 0.1,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 6.824743505880554e-10,
+          "f_over": 0.9999999993175257
+        },
+        {
+          "k": 0.25,
+          "A": 0.2,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 2.693208593333744e-09,
+          "f_over": 0.9999999973067917
+        },
+        {
+          "k": 0.25,
+          "A": 0.4,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 1.0224692896111401e-08,
+          "f_over": 0.999999989775307
+        },
+        {
+          "k": 0.25,
+          "A": 0.6,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 2.120897237241596e-08,
+          "f_over": 0.9999999787910276
+        },
+        {
+          "k": 0.25,
+          "A": 0.8,
+          "true_regime": "overdamped",
+          "k_dominant": 0.2499005568814638,
+          "D_dominant": -0.7501988466813372,
+          "f_prop": 3.399040579980651e-08,
+          "f_over": 0.9999999660095942
+        },
+        {
+          "k": 0.4,
+          "A": 0.01,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 1.4949695627564295e-10,
+          "f_over": 0.9999999998505035
+        },
+        {
+          "k": 0.4,
+          "A": 0.05,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 3.7331815672848705e-09,
+          "f_over": 0.9999999962668186
+        },
+        {
+          "k": 0.4,
+          "A": 0.1,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 1.4881293619882262e-08,
+          "f_over": 0.9999999851187066
+        },
+        {
+          "k": 0.4,
+          "A": 0.2,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 5.8723234242821315e-08,
+          "f_over": 0.9999999412767658
+        },
+        {
+          "k": 0.4,
+          "A": 0.4,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 2.2293247229875338e-07,
+          "f_over": 0.9999997770675276
+        },
+        {
+          "k": 0.4,
+          "A": 0.6,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 4.6242436941477314e-07,
+          "f_over": 0.9999995375756308
+        },
+        {
+          "k": 0.4,
+          "A": 0.8,
+          "true_regime": "overdamped",
+          "k_dominant": 0.39974538510502855,
+          "D_dominant": -0.3608145083489297,
+          "f_prop": 7.411180929767779e-07,
+          "f_over": 0.9999992588819072
+        },
+        {
+          "k": 0.5,
+          "A": 0.01,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 8.281850596538751e-10,
+          "f_over": 0.9999999991718153
+        },
+        {
+          "k": 0.5,
+          "A": 0.05,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 2.0680891737878882e-08,
+          "f_over": 0.9999999793191083
+        },
+        {
+          "k": 0.5,
+          "A": 0.1,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 8.24376285881089e-08,
+          "f_over": 0.9999999175623716
+        },
+        {
+          "k": 0.5,
+          "A": 0.2,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 3.2530200996488876e-07,
+          "f_over": 0.9999996746979902
+        },
+        {
+          "k": 0.5,
+          "A": 0.4,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 1.2349367443403608e-06,
+          "f_over": 0.9999987650632556
+        },
+        {
+          "k": 0.5,
+          "A": 0.6,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 2.5616475214043245e-06,
+          "f_over": 0.9999974383524785
+        },
+        {
+          "k": 0.5,
+          "A": 0.8,
+          "true_regime": "critical",
+          "k_dominant": 0.49960222752585515,
+          "D_dominant": -0.0015904570048146383,
+          "f_prop": 4.10565770499201e-06,
+          "f_over": 0.999995894342295
+        },
+        {
+          "k": 0.6,
+          "A": 0.01,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 4.523777853304319e-05,
+          "f_over": 0.9999547622214671
+        },
+        {
+          "k": 0.6,
+          "A": 0.05,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 0.0011296355396848163,
+          "f_over": 0.998870364460315
+        },
+        {
+          "k": 0.6,
+          "A": 0.1,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 0.0045028714606691455,
+          "f_over": 0.9954971285393304
+        },
+        {
+          "k": 0.6,
+          "A": 0.2,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 0.01776822453969548,
+          "f_over": 0.9822317754603043
+        },
+        {
+          "k": 0.6,
+          "A": 0.4,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 0.06745300487114927,
+          "f_over": 0.9325469951288508
+        },
+        {
+          "k": 0.6,
+          "A": 0.6,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 0.13992331943860362,
+          "f_over": 0.860076680561397
+        },
+        {
+          "k": 0.6,
+          "A": 0.8,
+          "true_regime": "coherent",
+          "k_dominant": 0.5994274809160306,
+          "D_dominant": 0.4372532195093528,
+          "f_prop": 0.2242735834319151,
+          "f_over": 0.7757264165680853
+        },
+        {
+          "k": 0.75,
+          "A": 0.01,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 4.514877632006989e-05,
+          "f_over": 0.9999548512236796
+        },
+        {
+          "k": 0.75,
+          "A": 0.05,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 0.0011273947116510101,
+          "f_over": 0.9988726052883489
+        },
+        {
+          "k": 0.75,
+          "A": 0.1,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 0.004493866453011152,
+          "f_over": 0.9955061335469892
+        },
+        {
+          "k": 0.75,
+          "A": 0.2,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 0.01773236460485928,
+          "f_over": 0.9822676353951408
+        },
+        {
+          "k": 0.75,
+          "A": 0.4,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 0.0673180156956994,
+          "f_over": 0.9326819843043009
+        },
+        {
+          "k": 0.75,
+          "A": 0.6,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 0.13965414109899565,
+          "f_over": 0.860345858901004
+        },
+        {
+          "k": 0.75,
+          "A": 0.8,
+          "true_regime": "coherent",
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052,
+          "f_prop": 0.22386876000889538,
+          "f_over": 0.7761312399911044
+        },
+        {
+          "k": 1.0,
+          "A": 0.01,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 4.495051496163794e-05,
+          "f_over": 0.9999550494850384
+        },
+        {
+          "k": 1.0,
+          "A": 0.05,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 0.0011224147466493872,
+          "f_over": 0.9988775852533508
+        },
+        {
+          "k": 1.0,
+          "A": 0.1,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 0.004473910919859361,
+          "f_over": 0.9955260890801407
+        },
+        {
+          "k": 1.0,
+          "A": 0.2,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 0.01765332814961895,
+          "f_over": 0.982346671850381
+        },
+        {
+          "k": 1.0,
+          "A": 0.4,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 0.06702341979349938,
+          "f_over": 0.9329765802065005
+        },
+        {
+          "k": 1.0,
+          "A": 0.6,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 0.13907178046894464,
+          "f_over": 0.8609282195310552
+        },
+        {
+          "k": 1.0,
+          "A": 0.8,
+          "true_regime": "coherent",
+          "k_dominant": 0.998410174880763,
+          "D_dominant": 2.987291509221743,
+          "f_prop": 0.2229996373432884,
+          "f_over": 0.7770003626567117
+        },
+        {
+          "k": 1.2566,
+          "A": 0.01,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 4.4684889408126765e-05,
+          "f_over": 0.9999553151105921
+        },
+        {
+          "k": 1.2566,
+          "A": 0.05,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 0.001115753494156856,
+          "f_over": 0.9988842465058428
+        },
+        {
+          "k": 1.2566,
+          "A": 0.1,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 0.004447270828291202,
+          "f_over": 0.9955527291717086
+        },
+        {
+          "k": 1.2566,
+          "A": 0.2,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 0.017548216109442984,
+          "f_over": 0.9824517838905572
+        },
+        {
+          "k": 1.2566,
+          "A": 0.4,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 0.0666343656394926,
+          "f_over": 0.9333656343605076
+        },
+        {
+          "k": 1.2566,
+          "A": 0.6,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 0.13830754183813712,
+          "f_over": 0.861692458161863
+        },
+        {
+          "k": 1.2566,
+          "A": 0.8,
+          "true_regime": "coherent",
+          "k_dominant": 1.2540918163672652,
+          "D_dominant": 5.290985135517386,
+          "f_prop": 0.22186565212466564,
+          "f_over": 0.7781343478753343
+        }
+      ],
+      "amplitude_independent": true
+    },
+    "phase_3": [
+      {
+        "A1": 0.8,
+        "A2": 0.2,
+        "true_regime1": "overdamped",
+        "true_regime2": "coherent",
+        "k_dominant": 0.24671052631578946,
+        "D_dominant": -0.7565356648199446,
+        "f_prop": 0.013182265111911342,
+        "f_over": 0.9868177348880888
+      },
+      {
+        "A1": 0.5,
+        "A2": 0.5,
+        "true_regime1": "overdamped",
+        "true_regime2": "coherent",
+        "k_dominant": 0.24671052631578946,
+        "D_dominant": -0.7565356648199446,
+        "f_prop": 0.08935726402406094,
+        "f_over": 0.9106427359759391
+      },
+      {
+        "A1": 0.2,
+        "A2": 0.8,
+        "true_regime1": "overdamped",
+        "true_regime2": "coherent",
+        "k_dominant": 0.7401315789473684,
+        "D_dominant": 1.1911790166204983,
+        "f_prop": 0.2161678640913363,
+        "f_over": 0.7838321359086637
+      }
+    ],
+    "phase_4": {
+      "modes": [
+        [
+          0.25,
+          0.2,
+          0.0
+        ],
+        [
+          0.4,
+          0.3,
+          0.0
+        ],
+        [
+          0.5,
+          0.4,
+          0.0
+        ],
+        [
+          0.75,
+          0.5,
+          0.5590169943749475
+        ],
+        [
+          1.0,
+          0.6,
+          0.8660254037844386
+        ]
+      ],
+      "true_regimes": [
+        "overdamped",
+        "overdamped",
+        "critical",
+        "coherent",
+        "coherent"
+      ],
+      "metrics": {
+        "k_dominant": 0.9900990099009901,
+        "D_dominant": 2.9211841976276833,
+        "f_prop": 0.18499232984181116,
+        "f_over": 0.8150076701581888,
+        "f_crit": 0.0,
+        "D_weighted": -0.3245877346501277,
+        "spectral_entropy": 1.350730542824891
+      }
+    },
+    "phase_5": {
+      "k_mag": 0.3,
+      "true_regime": "overdamped",
+      "k_dominant": 0.30892327760299637,
+      "D_dominant": -0.6182656342200882,
+      "dominant_regime": "overdamped",
+      "agreement": true
+    },
+    "phase_6": [
+      {
+        "snr_db": 40,
+        "k_dominant": 0.7491050119331744,
+        "D_dominant": 1.2446332756136052,
+        "spectral_entropy": 0.3990869810703077
+      },
+      {
+        "snr_db": 20,
+        "k_dominant": 0.7491050119331744,
+        "D_dominant": 1.2446332756136052,
+        "spectral_entropy": 0.4068717776102675
+      },
+      {
+        "snr_db": 10,
+        "k_dominant": 0.7491050119331744,
+        "D_dominant": 1.2446332756136052,
+        "spectral_entropy": 0.4795061479117898
+      },
+      {
+        "snr_db": 5,
+        "k_dominant": 0.7491050119331744,
+        "D_dominant": 1.2446332756136052,
+        "spectral_entropy": 0.6109701985592981
+      }
+    ],
+    "phase_7": {
+      "results": [
+        {
+          "resolution_factor": 10,
+          "k_dominant": 0.7482100238663486,
+          "D_dominant": 1.2392729592563279
+        },
+        {
+          "resolution_factor": 20,
+          "k_dominant": 0.7491050119331744,
+          "D_dominant": 1.2446332756136052
+        },
+        {
+          "resolution_factor": 40,
+          "k_dominant": 0.7495525059665872,
+          "D_dominant": 1.2473158368031627
+        },
+        {
+          "resolution_factor": 80,
+          "k_dominant": 0.7497762529832936,
+          "D_dominant": 1.248657718150672
+        }
+      ],
+      "k_std": 0.0005998548606109996
+    },
+    "phase_8": [
+      {
+        "c": 0.5,
+        "tau": 0.5,
+        "k_c": 2.0,
+        "k_test": 4.0,
+        "true_regime": "coherent",
+        "k_dominant": 3.974683544303797,
+        "D_dominant": 2.949527319339848
+      },
+      {
+        "c": 0.5,
+        "tau": 1.0,
+        "k_c": 1.0,
+        "k_test": 2.0,
+        "true_regime": "coherent",
+        "k_dominant": 1.9936507936507935,
+        "D_dominant": 2.9746434870244385
+      },
+      {
+        "c": 0.5,
+        "tau": 2.0,
+        "k_c": 0.5,
+        "k_test": 1.0,
+        "true_regime": "coherent",
+        "k_dominant": 0.998410174880763,
+        "D_dominant": 2.987291509221743
+      },
+      {
+        "c": 1.0,
+        "tau": 0.5,
+        "k_c": 1.0,
+        "k_test": 2.0,
+        "true_regime": "coherent",
+        "k_dominant": 1.9936507936507935,
+        "D_dominant": 2.9746434870244385
+      },
+      {
+        "c": 1.0,
+        "tau": 1.0,
+        "k_c": 0.5,
+        "k_test": 1.0,
+        "true_regime": "coherent",
+        "k_dominant": 0.998410174880763,
+        "D_dominant": 2.987291509221743
+      },
+      {
+        "c": 1.0,
+        "tau": 2.0,
+        "k_c": 0.25,
+        "k_test": 0.5,
+        "true_regime": "coherent",
+        "k_dominant": 0.49960222752585515,
+        "D_dominant": 2.9936381719807414
+      },
+      {
+        "c": 2.0,
+        "tau": 0.5,
+        "k_c": 0.5,
+        "k_test": 1.0,
+        "true_regime": "coherent",
+        "k_dominant": 0.998410174880763,
+        "D_dominant": 2.987291509221743
+      },
+      {
+        "c": 2.0,
+        "tau": 1.0,
+        "k_c": 0.25,
+        "k_test": 0.5,
+        "true_regime": "coherent",
+        "k_dominant": 0.49960222752585515,
+        "D_dominant": 2.9936381719807414
+      },
+      {
+        "c": 2.0,
+        "tau": 2.0,
+        "k_c": 0.125,
+        "k_test": 0.25,
+        "true_regime": "coherent",
+        "k_dominant": 0.2499005568814638,
+        "D_dominant": 2.996818453098606
+      }
+    ]
+  },
+  "conclusion": "CASE_B: STRUCTURED SPECTRAL OBSERVABLE REQUIRED",
+  "criteria": {
+    "amplitude_independence": true,
+    "two_mode_stability": true,
+    "multimode_meaningful": true,
+    "2d_validity": true,
+    "noise_robustness": true,
+    "resolution_convergence": true,
+    "parameter_validity": true
+  }
+}

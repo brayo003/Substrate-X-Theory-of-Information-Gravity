@@ -1,0 +1,53 @@
+{
+  "status": "SIMULATION_COMPLETE",
+  "scenario": "adversarial_unmodelled_vibration",
+  "scope": "detectability simulation only; injected signals are not evidence for C2",
+  "blinding_commitment_sha256": "b007d3077445bb7aa50080449f8774388aa69d79f66c847c88a1a4fbc53cbbc4",
+  "analysis": {
+    "train": [
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "test": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "names0": [
+      "intercept",
+      "magnetic_monitor",
+      "thermal_monitor"
+    ],
+    "coef0": [
+      18739.333760570124,
+      0.0,
+      0.0
+    ],
+    "coef1": [
+      17676.330157310345,
+      0.0,
+      0.0,
+      2.0952764847433243
+    ],
+    "rmse0": 877.0111711269021,
+    "rmse1": 656.2672819234101,
+    "aic0": 90.86982789890115,
+    "aic1": 73.94465221990475,
+    "delta_aic_signal_minus_null": -16.925175678996396,
+    "quadratic_coefficient_estimate": 2.0952764847433243
+  },
+  "interpretation": "A lower held-out RMSE or AIC for the quadratic model is not a discovery; it only measures distinguishability under the declared synthetic assumptions."
+}

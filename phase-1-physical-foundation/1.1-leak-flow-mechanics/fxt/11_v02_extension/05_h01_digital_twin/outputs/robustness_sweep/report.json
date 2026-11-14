@@ -1,0 +1,15 @@
+{
+  "status": "SIMULATION_COMPLETE",
+  "repetitions_per_cell": 8,
+  "detection_rule": "held-out RMSE improvement >15% and positive quadratic coefficient",
+  "minimum_k_for_80pct_detection_by_monitor_noise": {
+    "0.0": 0.5,
+    "0.02": 1.0,
+    "0.05": 0.5,
+    "0.1": 1.0,
+    "0.2": 1.5,
+    "0.35": 1.0
+  },
+  "max_false_positive_rate": 1.0,
+  "scope": "engineering sensitivity only; does not establish a physical signal"
+}

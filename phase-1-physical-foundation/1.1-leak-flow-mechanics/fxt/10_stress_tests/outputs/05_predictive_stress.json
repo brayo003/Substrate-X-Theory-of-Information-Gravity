@@ -1,0 +1,21 @@
+{
+  "computed": {
+    "frequency_exponent_fit": 2.0,
+    "ramsey_vs_echo_max_difference": 0.0
+  },
+  "falsifiability": {
+    "direct_test": "fit Gamma_phi versus omega_rot and test exponent 2 plus intercept 0",
+    "limitation": "An observed deviation cannot uniquely diagnose the frozen mechanism because standard dephasing models can share the same envelope."
+  },
+  "reference_only_predictions": {
+    "CPMG/dynamical_decoupling": "no pulse-spacing dependence follows from a time-local Markov generator",
+    "Ramsey": "exp(-Gamma_phi t)",
+    "frequency_response": "Gamma_phi=k_rot omega_rot^2",
+    "multi_qubit_scaling": "not specified by frozen equations",
+    "noise_spectroscopy": "only zero-frequency integrated correlation enters the frozen rate",
+    "spin_echo": "same Markov pure-dephasing envelope; no refocusing advantage without a non-Markov/static-noise model",
+    "temperature_scaling": "not specified by frozen equations"
+  },
+  "status": "PARTIAL",
+  "verdict": "No additional protocol-specific deviation is entailed by the frozen Markov pure-dephasing equations; claiming echo, CPMG, temperature, or multi-qubit novelty would invent evidence."
+}

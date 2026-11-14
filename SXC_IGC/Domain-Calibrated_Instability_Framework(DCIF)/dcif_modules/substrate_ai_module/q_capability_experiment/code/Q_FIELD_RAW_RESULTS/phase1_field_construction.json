@@ -1,0 +1,33 @@
+{
+  "candidate1_clip_magnitude": {
+    "success": false,
+    "error": "sentence-transformers not available"
+  },
+  "candidate2_feature_space": {
+    "success": true,
+    "field_shape": [
+      5,
+      5
+    ],
+    "spatial_domain": "feature space (5 dimensions)",
+    "gradient_computable": true,
+    "avg_gradient_magnitude": 0.2959964640838429,
+    "information_density_interpretation": "sum of normalized features",
+    "info_densities": [
+      0.215,
+      1.7799999999999998,
+      0.30000000000000004,
+      0.49,
+      0.615
+    ]
+  },
+  "candidate3_temporal_novelty": {
+    "success": false,
+    "error": "sentence-transformers not available"
+  },
+  "summary": {
+    "total_tests": 4,
+    "successful": 1,
+    "viable_s_constructions": 1
+  }
+}

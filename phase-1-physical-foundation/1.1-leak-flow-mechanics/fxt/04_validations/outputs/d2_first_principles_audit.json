@@ -1,0 +1,329 @@
+{
+  "audit": "D2_CCA_probability_flux_first_principles_verification",
+  "date": "2026-10-10",
+  "tests": {
+    "continuity_and_conservation": {
+      "test": "continuity_and_conservation",
+      "status": "FAIL",
+      "max_continuity_residual_info_per_m3_per_s": 376.598081516393,
+      "Q_conservation_relative_error": 0.0,
+      "note": "Finite-difference error ~O(dx, dt_sim); not PDE-exact",
+      "unit_check": {
+        "s_units": "info/m^3",
+        "J_units": "info/(m^2 s) = [info/m^3]*[m/s]",
+        "ds_dt_units": "info/(m^3 s)",
+        "dJ_dx_units": "info/(m^3 s) = [info/(m^2 s)] / m",
+        "continuity_dimensionally_consistent": true,
+        "Q_units": "info = integral info/m^3 dV"
+      },
+      "parameters": {
+        "c_m_per_s": 5000.0,
+        "lambda_per_s": 100000.0,
+        "tau_s": 5e-06,
+        "k_per_m": 40.0
+      }
+    },
+    "solenoidal_ambiguity": {
+      "test": "solenoidal_ambiguity",
+      "status": "PASS",
+      "verified": "J' = J + K with div(K)=0 satisfies continuity equally well",
+      "max_div_K": 4.085620730620576e-14,
+      "max_diff_div_J_vs_Jprime": 6.091491480881336e-14,
+      "conclusion": "Continuity does NOT uniquely determine J_C2 in >1D. The PRW resolves this only after the set of propagation directions {e_b} is externally specified. This is an additional model input.",
+      "claim_in_GAP0_audit": "J is uniquely forced by continuity",
+      "verdict_on_claim": "INCORRECT \u2014 continuity does not uniquely fix J in >1D",
+      "what_eliminates_ambiguity": {
+        "1D_PRW": "DERIVED \u2014 in 1D no solenoidal ambiguity exists; J is a scalar",
+        "2D_3D_PRW": "CONDITIONALLY RESOLVED \u2014 the PRW with direction-resolved n+/n- gives J = sum_b c*(n+_b - n-_b)*e_b. This fixes J completely once the set of propagation directions {e_b} is specified. The solenoidal freedom is absorbed into the directional decomposition. BUT: the direction set {e_b} is a model input, not derived from Ax1-Ax5.",
+        "from_CCA_axioms": "NOT RESOLVED \u2014 Ax1-Ax5 have no metric, no spatial directions",
+        "from_H_int": "PARTIALLY CONSTRAINED \u2014 H_int = g*J*sigma_z requires J to be a scalar. In >1D this means a projection B = n_hat . J. The solenoidal part of J contributes to B unless n_hat is perpendicular to K everywhere, which is not guaranteed."
+      }
+    },
+    "d2_vs_cca_axioms": {
+      "test": "d2_vs_cca_axioms",
+      "status": "FAIL",
+      "axiom_check": {
+        "Ax1_objects_morphisms": {
+          "content": "Finite set O, morphisms M, symmetric monoidal category",
+          "has_positions": false,
+          "has_metric": false,
+          "has_spatial_directions": false,
+          "contributes_to_D2": "NONE \u2014 no spatial content"
+        },
+        "Ax2_causal_order": {
+          "content": "Partial order <= on M (locally finite)",
+          "provides": "Directed transitions (A causes B)",
+          "does_not_provide": "Spatial positions, metric, directions in physical space",
+          "contributes_to_D2": "CONCEPTUAL PRECURSOR only \u2014 no spatial field"
+        },
+        "Ax3_time_reversal": {
+          "content": "Dagger involution reversing causal order",
+          "provides": "T-parity: J\u2020 = -J (J is T-odd) \u2014 VALID",
+          "contributes_to_D2": "T-parity of J \u2014 GENUINE partial derivation"
+        },
+        "Ax4_probability": {
+          "content": "Weight map \u03b5: M \u2192 [0,1] summing to 1 per hom-set",
+          "provides": "Probability weights on transitions",
+          "does_not_provide": "Spatial current density without embedding",
+          "contributes_to_D2": "CONCEPTUAL PRECURSOR for flux interpretation only"
+        },
+        "Ax5_composition": {
+          "content": "Causal depth / probability simplex structure",
+          "contributes_to_D2": "NONE for J definition"
+        }
+      },
+      "d2_derivability": {
+        "n_plus_n_minus": {
+          "claim": "n+_alpha, n-_alpha come from Ax4 probability weights",
+          "verdict": "NOT_DERIVED",
+          "reason": "n+_alpha and n-_alpha require SPATIAL POSITIONS to define alpha-direction. Ax1-Ax5 have no spatial positions (CCA-IMP-1). The definition of 'morphisms flowing in +alpha direction' requires that objects have positions and a Euclidean metric to define directions."
+        },
+        "speed_factor_c": {
+          "claim": "c in J = c*(n+ - n-) equals a/dt from CCA geometry",
+          "verdict": "CONTRADICTED",
+          "reason": "CCA-IMP-3 (proved theorem in C2_FOUNDATIONS.md): 'Finite propagation speed as a physical ratio requires a metric. CCA provides only a counting measure (rank). Numerical value of c is not derivable from Ax1-Ax5 alone.' The claim that c = a/dt is derivable from D2 is directly contradicted by a proved impossibility theorem in the existing theory.",
+          "source": "C2_FOUNDATIONS.md Subsystem 6, CCA-IMP-3"
+        },
+        "spatial_field": {
+          "claim": "D2 gives J as a spatial field J(x,t)",
+          "verdict": "NOT_DERIVED",
+          "reason": "CCA-IMP-1: 'Ax1-Ax5 generate only a finite discrete structure. A continuous Lorentzian manifold cannot emerge without a limiting procedure.' Converting J from 'net probability flux per morphism pair' to a spatial field J(x,t) requires both a spatial embedding AND a continuum limit \u2014 neither of which is in Ax1-Ax5.",
+          "source": "C2_FOUNDATIONS.md Subsystem 6, CCA-IMP-1"
+        },
+        "T_parity": {
+          "claim": "J is T-odd follows from Ax3",
+          "verdict": "CONDITIONALLY DERIVED",
+          "reason": "Ax3 (dagger) reverses causal order. If J is identified with a net transition rate, it inherits T-oddness from Ax3. This step is the ONLY genuinely derivable property of D2 from the CCA axioms."
+        }
+      },
+      "embedding_requirements": {
+        "what_it_adds": [
+          "Map phi: O \u2192 R^d assigning positions to CCA objects",
+          "A lattice spacing a = min_{i,j in M} |phi(src(m)) - phi(tgt(m))|",
+          "A time step dt per morphism application",
+          "A direction structure: morphisms classified by direction e_b",
+          "A continuum limit procedure (a \u2192 0, dt \u2192 0 at fixed c = a/dt)"
+        ],
+        "what_it_does_NOT_add": [
+          "The VALUE of c (still free: c = a/dt with a, dt both free)",
+          "Isotropy (must be separately assumed)",
+          "Unique direction set {e_b}",
+          "Connection between abstract CCA probability and physical energy"
+        ],
+        "classification": "MAJOR NEW AXIOM \u2014 not a minor clarification",
+        "relationship_to_CCA_IMP": "The spatial embedding is precisely the 'additional limiting procedure' whose absence is stated in CCA-IMP-1. It is not a mere promotion of an existing interpretation \u2014 it adds the metric structure that CCA-IMP-1 proves is absent from Ax1-Ax5."
+      },
+      "overall_verdict": "D2 is NOT derivable from Ax1-Ax5. Only J's T-parity follows from Ax3. Everything else \u2014 spatial positions, direction decomposition, continuum limit, and especially c = a/dt \u2014 requires assumptions that are directly contradicted as derivable by CCA-IMP-1 and CCA-IMP-3.",
+      "what_is_genuinely_derivable": [
+        "T-parity of J (from Ax3)"
+      ],
+      "what_requires_new_axioms": [
+        "Spatial positions of CCA objects",
+        "Lattice spacing a",
+        "Continuum limit",
+        "Direction structure {e_b}",
+        "c = a/dt relationship"
+      ]
+    },
+    "c_equals_a_over_dt": {
+      "test": "c_equals_a_over_dt",
+      "status": "PARTIAL",
+      "verified": "c = a/dt holds for all tested a, dt values",
+      "test_cases_summary": "9 cases tested, all consistent",
+      "classification": {
+        "c_equals_a_over_dt_in_1D_PRW": {
+          "verdict": "TRIVIALLY TRUE BY DEFINITION",
+          "reason": "c = v = a/dt is how the discrete PRW step is defined.",
+          "derivation_status": "DERIVED from PRW definition \u2014 NOT from CCA",
+          "value_fixed": false,
+          "reason_value_not_fixed": "a and dt are both free parameters"
+        },
+        "c_equals_a_over_dt_from_CCA": {
+          "verdict": "CONTRADICTED by CCA-IMP-3",
+          "reason": "CCA-IMP-3 proves c is not derivable from Ax1-Ax5. Even if we add spatial embedding, a and dt remain free. c = a/dt is a TAUTOLOGY once the lattice step is defined, not a new constraint on c's value."
+        },
+        "is_this_a_new_result": {
+          "verdict": "NO",
+          "reason": "c = a/dt is the defining relation of a lattice random walk. It appears in every textbook treatment of the PRW. Goldstein (1951), Kac (1974) both use v = a/dt explicitly. This is not a novel structural identification."
+        },
+        "multidimensional_case": {
+          "verdict": "c = a/dt still holds per direction if a = dt * v_b",
+          "but": "In anisotropic lattice: a_b, dt_b can differ by direction",
+          "consequence": "Multiple c_b values possible even with c = a/dt"
+        }
+      },
+      "conclusion": "c = a/dt is a tautological consequence of the PRW discrete-step definition. It is not a new structural result derived from D2 or from CCA. It does not fix c's value because a and dt remain free. The GAP0 audit's claim that this is 'the first structural identification of c' is incorrect: it was implicit in the PRW from the beginning."
+    },
+    "coupling_constant_g": {
+      "test": "coupling_constant_g",
+      "status": "FAIL",
+      "g_stated_units": "J m^2 s / info",
+      "g_units_if_info_dimensionless": "J m^2 s",
+      "hbar_units": "J s",
+      "g_over_hbar_units": "m^2 (area)",
+      "verdict_on_g_tilde_hbar": "INCORRECT: g ~ hbar is dimensionally inconsistent. g has units [J m^2 s]; hbar has units [J s]. g/hbar has units [m^2], not dimensionless. The claim 'g ~ hbar' in GAP0_J_C2_OPERATIONAL_DEFINITION.md is a dimensional error.",
+      "correct_constraint": "g = hbar * sqrt(3 k_rot / (8 s0^2 r_q^2 tau)). This cannot be evaluated without s0 (background information density). s0 is a free parameter not constrained by any existing equation.",
+      "g_estimates_by_s0": {
+        "sparse_1_per_m3": {
+          "g_J_m2_s": 4.332211568587112e-28,
+          "g_over_hbar": 4107919.181288746,
+          "units_g": "J m^2 s",
+          "units_g_over_hbar": "m^2 / s^0 = m^2",
+          "conclusion": "g/hbar = 4.11e+06 m^2 -- NOT dimensionless"
+        },
+        "chip_phonon_density_m3": {
+          "g_J_m2_s": 4.332211568587112e-56,
+          "g_over_hbar": 4.107919181288746e-22,
+          "units_g": "J m^2 s",
+          "units_g_over_hbar": "m^2 / s^0 = m^2",
+          "conclusion": "g/hbar = 4.11e-22 m^2 -- NOT dimensionless"
+        },
+        "unknown": "NOT_EVALUABLE"
+      },
+      "conclusion": "g is NOT of order hbar. g/hbar has units m^2. The coupling is NOT numerically constrained without s0. The GAP0 dimensional analysis is incorrect.",
+      "parameters_used": {
+        "k_rot_s": 4.5e-07,
+        "r_q_m": 1e-07,
+        "tau_s": 1e-06,
+        "hbar_Js": 1.0546e-34
+      }
+    },
+    "isotropy_transport_tensor": {
+      "test": "isotropy_transport_tensor",
+      "status": "PASS",
+      "cubic_lattice_isotropic": false,
+      "aniso_tau_isotropic": false,
+      "aniso_c_isotropic": false,
+      "fcc_isotropic": true,
+      "D_cubic_diagonal": [
+        50.0,
+        50.0,
+        50.0
+      ],
+      "D_aniso_tau_diagonal": [
+        50.0,
+        50.0,
+        100.0
+      ],
+      "D_aniso_c_diagonal": [
+        50.0,
+        50.0,
+        128.0
+      ],
+      "D_fcc_diagonal": [
+        99.99999999999999,
+        99.99999999999999,
+        99.99999999999999
+      ],
+      "conditions_for_single_speed": {
+        "isotropic_D_tensor": {
+          "sufficient": true,
+          "but_note": "Isotropic D only means propagation is direction-independent; c_eff = sqrt(D/tau) still requires knowing tau"
+        },
+        "equal_c_b_and_tau_b_all_directions": {
+          "sufficient": true,
+          "status": "REQUIRES uniform lambda (A-PRW1) \u2014 already a postulate"
+        },
+        "from_CCA_axioms": {
+          "derivable": false,
+          "reason": "CCA Ax1-Ax5 have no spatial directions \u2014 transport tensor undefined from axioms alone"
+        }
+      },
+      "conclusion": "Isotropy of the transport tensor requires both isotropic spatial embedding AND equal transition rates in all directions. CCA axioms provide neither. The claim 'if CCA is isotropic, 3D transport has one speed' is correct as a conditional statement but CCA isotropy is an additional assumption, not a consequence of Ax1-Ax5."
+    },
+    "experimental_discriminator": {
+      "test": "experimental_discriminator",
+      "status": "PARTIAL",
+      "la_speed_by_crystal_orientation": {
+        "[100]_surface": {
+          "in_plane_LA_speeds_m_per_s": [
+            8433.023172523966,
+            8433.023172523966,
+            9134.192706246668,
+            9134.192706246668
+          ],
+          "min": 8433.023172523966,
+          "max": 9134.192706246668,
+          "mean": 8783.607939385318
+        },
+        "[110]_surface": {
+          "in_plane_LA_speeds_m_per_s": [
+            9134.192706246668,
+            8433.023172523966,
+            9356.246144529563,
+            9356.246144529563
+          ],
+          "min": 8433.023172523966,
+          "max": 9356.246144529563,
+          "mean": 9069.92704195744
+        },
+        "[111]_surface": {
+          "in_plane_LA_speeds_m_per_s": [
+            9134.192706246668,
+            9134.192706246668,
+            9134.192706246668
+          ],
+          "min": 9134.192706246668,
+          "max": 9134.192706246668,
+          "mean": 9134.192706246668
+        }
+      },
+      "la_speed_range_all_directions": {
+        "min": 8433.240035279801,
+        "max": 9355.79099211069,
+        "ratio": 1.1093946043242535
+      },
+      "cited_range_8435_9355_verified": true,
+      "confounders": {
+        "angular_averaging": "A qubit couples to phonons propagating in many directions (not just one). The effective bath speed is an angular average, not a single-direction speed. Depending on the coupling geometry, this average can be nearly orientation-independent even for an anisotropic medium.",
+        "qubit_geometry": "The qubit's geometric shape determines which phonon modes it couples to strongly. A transmon qubit is approximately isotropic, coupling to phonons in all directions with approximately equal weight. The effective c_eff would then be close to the isotropic average.",
+        "surface_wave_coupling": "Near a surface, surface acoustic waves (SAWs) dominate. SAW speed depends on surface orientation but is not the same as bulk LA speed. This introduces a systematic correction.",
+        "two_level_system_bath": "In superconducting qubits, dominant decoherence comes from two-level systems (TLS) in amorphous oxide layers, not from bulk phonons. TLS bath is effectively isotropic by its amorphous nature. A measured orientation-independent c_eff would be consistent with TLS bath, not just with C2.",
+        "measurement_precision": "The predicted LA speed variation is ~11% across directions. Measuring xi_c to 11% precision requires spatial correlation data at sufficient resolution, which is experimentally challenging."
+      },
+      "parameter_analysis": {
+        "xi_c_measurement": "Requires spatial qubit array \u2014 not standard single-qubit experiment",
+        "tau_B_measurement": "Extractable from Ramsey decay shape (non-Markovian onset)",
+        "ratio_c_eff": "Measurable in principle, but requires both xi_c and tau_B",
+        "is_parameter_free": false,
+        "reason": "xi_c depends on the spatial decay of correlations, which requires fitting the K0(r/xi_c) model. The fit result depends on the assumed functional form. K0 is not the unique function that fits spatial decay data. Therefore xi_c extraction is model-dependent."
+      },
+      "verdict": "The proposed experiment is not parameter-free and has major confounders. Specifically: (1) angular averaging may make conventional phonon bath appear orientation-independent; (2) TLS bath (dominant in practice) IS isotropic; (3) xi_c extraction requires assuming K0 functional form. The experiment could work in principle but requires controlling all confounders and measuring xi_c with <11% precision.",
+      "discriminating_condition": "The experiment discriminates D2 from conventional physics ONLY IF: (a) TLS bath is ruled out independently, (b) coupling geometry is known (not isotropically averaged), (c) xi_c is measured without assuming K0 form, (d) c_eff is measured on chips with SAME T2 physics but different orientations."
+    },
+    "multibranch_spectral_density_equivalence": {
+      "test": "multibranch_spectral_density_equivalence",
+      "status": "PASS",
+      "algebraically_identical": true,
+      "max_numerical_difference": 0.0,
+      "P3_LA": 9156.82,
+      "P3_TA1": 4893.09,
+      "P3_spread_fraction": 0.6069405426796328,
+      "equivalence_levels": {
+        "algebraic_PSD": "PROVED \u2014 same formula",
+        "correlation_function": "PROVED \u2014 same Fourier transform \u2192 same C_JJ(t)",
+        "stochastic_dynamics": "NOT EQUIVALENT \u2014 C2 has specific microscopic dynamics (PRW with reversal) that differ from Ornstein-Uhlenbeck. But both produce the same two-point correlation function for Gaussian statistics.",
+        "all_predictions": "EQUIVALENT for all two-point observables (dephasing, spatial correlator). May differ at higher-order (non-Gaussian) statistics, but PRW IS Gaussian (linear theory), so all n-point functions factorize by Wick's theorem. COMPLETE OBSERVATIONAL EQUIVALENCE for all accessible observables."
+      },
+      "P3_conclusion": "Multi-branch C2 does not have a unique P3 ratio. P3 spread across branches = 65% of mean. This confirms prior result: multi-branch C2 kills the P3 discriminator."
+    }
+  },
+  "claims_from_gap0_audit_verdict": {
+    "J uniquely determined by continuity": "FAIL \u2014 solenoidal ambiguity in >1D",
+    "D2 derivable from CCA Ax1-Ax5": "FAIL \u2014 contradicted by CCA-IMP-1, CCA-IMP-3",
+    "c = a/dt is a new structural result": "FAIL \u2014 tautological definition, known since PRW origin",
+    "g ~ hbar": "FAIL \u2014 dimensional error; g has units [J m^2 s], not [J]",
+    "Isotropy from CCA": "FAIL \u2014 CCA has no spatial directions; isotropy is a separate assumption",
+    "Experiment is parameter-free discriminator": "PARTIAL \u2014 valid in principle, major confounders"
+  },
+  "what_survives_scrutiny": {
+    "J_is_T_odd": "CONDITIONALLY DERIVED from Ax3 (if J is defined from transitions)",
+    "Lorentzian_PSD": "DERIVED from PRW C-J equation",
+    "continuity_holds": "NUMERICALLY VERIFIED",
+    "multibranch_equivalent_to_Drude": "NUMERICALLY VERIFIED",
+    "isotropy_requires_equal_transition_rates": "DERIVED (transport tensor calculation)",
+    "experiment_in_principle_discriminating": "OPEN (requires ruling out confounders)"
+  },
+  "gap0_status": "PARTIALLY_OPEN \u2014 J has T-parity from Ax3; everything else requires new axioms",
+  "gap7_status": "NOT_CLOSED \u2014 c not derivable from any existing axiom"
+}

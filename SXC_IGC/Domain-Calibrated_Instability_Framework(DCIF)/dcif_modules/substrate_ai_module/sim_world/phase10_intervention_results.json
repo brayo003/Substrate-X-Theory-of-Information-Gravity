@@ -1,0 +1,194 @@
+{
+  "passed": 9,
+  "total": 9,
+  "tests": [
+    {
+      "name": "coord_capacity_monotone",
+      "status": "PASS",
+      "pass": true,
+      "capacities": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          -0.75,
+          0.125
+        ],
+        [
+          -0.5,
+          0.25
+        ],
+        [
+          -0.25,
+          0.375
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.25,
+          0.625
+        ],
+        [
+          0.5,
+          0.75
+        ],
+        [
+          0.75,
+          0.875
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "details": [
+        "signal=-1.00 \u2192 coord_cap=0.0000",
+        "signal=-0.75 \u2192 coord_cap=0.1250",
+        "signal=-0.50 \u2192 coord_cap=0.2500",
+        "signal=-0.25 \u2192 coord_cap=0.3750",
+        "signal=+0.00 \u2192 coord_cap=0.5000",
+        "signal=+0.25 \u2192 coord_cap=0.6250",
+        "signal=+0.50 \u2192 coord_cap=0.7500",
+        "signal=+0.75 \u2192 coord_cap=0.8750",
+        "signal=+1.00 \u2192 coord_cap=1.0000"
+      ],
+      "note": "coordination_capacity must be non-decreasing in signal"
+    },
+    {
+      "name": "decision_response_curve",
+      "status": "PASS",
+      "pass": true,
+      "action_at_low_signal": "explore",
+      "action_at_high_signal": "cooperate",
+      "details": [
+        "low  signal=-0.9: action='explore'  (expected: not cooperate \u2192 OK)",
+        "high signal=+0.9: action='cooperate'  (expected: cooperate \u2192 OK)"
+      ]
+    },
+    {
+      "name": "decision_sweep",
+      "status": "PASS",
+      "pass": true,
+      "low_coop_rate": 0.1,
+      "high_coop_rate": 1.0,
+      "details": [
+        "c=-1.00 \u2192 explore",
+        "c=-0.90 \u2192 explore",
+        "c=-0.80 \u2192 explore",
+        "c=-0.70 \u2192 explore",
+        "c=-0.60 \u2192 explore",
+        "c=-0.50 \u2192 explore",
+        "c=-0.40 \u2192 explore",
+        "c=-0.30 \u2192 explore",
+        "c=-0.20 \u2192 explore",
+        "c=-0.10 \u2192 cooperate",
+        "c=+0.00 \u2192 cooperate",
+        "c=+0.10 \u2192 cooperate",
+        "c=+0.20 \u2192 cooperate",
+        "c=+0.30 \u2192 cooperate",
+        "c=+0.40 \u2192 cooperate",
+        "c=+0.50 \u2192 cooperate",
+        "c=+0.60 \u2192 cooperate",
+        "c=+0.70 \u2192 cooperate",
+        "c=+0.80 \u2192 cooperate",
+        "c=+0.90 \u2192 cooperate",
+        "c=+1.00 \u2192 cooperate",
+        "low-half  coop rate: 10%",
+        "high-half coop rate: 100%"
+      ]
+    },
+    {
+      "name": "threshold_varies_with_need",
+      "status": "PASS",
+      "pass": true,
+      "cases": [
+        {
+          "label": "low_need",
+          "action_low": "explore",
+          "action_high": "cooperate",
+          "low_not_cooperate": true
+        },
+        {
+          "label": "mid_need",
+          "action_low": "explore",
+          "action_high": "cooperate",
+          "low_not_cooperate": true
+        },
+        {
+          "label": "high_need",
+          "action_low": "forage",
+          "action_high": "cooperate",
+          "low_not_cooperate": true
+        }
+      ],
+      "details": [
+        "    low_need: signal=-0.5\u2192'explore'  signal=+0.5\u2192'cooperate'  OK",
+        "    mid_need: signal=-0.5\u2192'explore'  signal=+0.5\u2192'cooperate'  OK",
+        "   high_need: signal=-0.5\u2192'forage'  signal=+0.5\u2192'cooperate'  OK"
+      ]
+    },
+    {
+      "name": "cooperate_efficiency_scales",
+      "status": "PASS",
+      "pass": true,
+      "details": [
+        "signal=-1.0: eff=0.80 expected_stress_reduction=0.0800 actual=0.080000  OK",
+        "signal=+0.0: eff=0.80 expected_stress_reduction=0.0800 actual=0.080000  OK",
+        "signal=+0.5: eff=1.00 expected_stress_reduction=0.1000 actual=0.100000  OK",
+        "signal=+1.0: eff=1.20 expected_stress_reduction=0.1200 actual=0.120000  OK"
+      ]
+    },
+    {
+      "name": "baseline_ignores_signal",
+      "status": "PASS",
+      "pass": true,
+      "details": [
+        "decide_baseline() (would-be signal=-1.0): 'explore'  OK",
+        "decide_baseline() (would-be signal=-0.5): 'explore'  OK",
+        "decide_baseline() (would-be signal=+0.0): 'explore'  OK",
+        "decide_baseline() (would-be signal=+0.5): 'explore'  OK",
+        "decide_baseline() (would-be signal=+1.0): 'explore'  OK",
+        "Consistency check: 'explore' == 'explore'  OK"
+      ]
+    },
+    {
+      "name": "coordination_blocked",
+      "status": "PASS",
+      "pass": true,
+      "action_free": "cooperate",
+      "action_blocked": "build",
+      "details": [
+        "signal=+1.0, blocked=False: 'cooperate'  (expected cooperate: OK)",
+        "signal=+1.0, blocked=True:  'build'  (expected not cooperate: OK)"
+      ]
+    },
+    {
+      "name": "critical_need_override",
+      "status": "PASS",
+      "pass": true,
+      "details": [
+        "hunger=0.85, signal=-1.0: 'forage'  (must be forage: OK)",
+        "hunger=0.85, signal=+0.0: 'forage'  (must be forage: OK)",
+        "hunger=0.85, signal=+1.0: 'forage'  (must be forage: OK)",
+        "energy=0.10, signal=-1.0: 'rest'  (must be rest: OK)",
+        "energy=0.10, signal=+0.0: 'rest'  (must be rest: OK)",
+        "energy=0.10, signal=+1.0: 'rest'  (must be rest: OK)"
+      ]
+    },
+    {
+      "name": "substrate_state_roundtrip",
+      "status": "PASS",
+      "pass": true,
+      "details": [
+        "c_spectral=-1.0: coord_capacity=0.0000 (expected=0.0000) ctx_has_keys=True OK",
+        "c_spectral=-0.5: coord_capacity=0.2500 (expected=0.2500) ctx_has_keys=True OK",
+        "c_spectral=+0.0: coord_capacity=0.5000 (expected=0.5000) ctx_has_keys=True OK",
+        "c_spectral=+0.5: coord_capacity=0.7500 (expected=0.7500) ctx_has_keys=True OK",
+        "c_spectral=+1.0: coord_capacity=1.0000 (expected=1.0000) ctx_has_keys=True OK"
+      ]
+    }
+  ]
+}

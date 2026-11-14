@@ -1,0 +1,32 @@
+{
+  "figure4": {
+    "fit_frequency_mhz": 3.7415255171619277,
+    "fit_frequency_standard_error_mhz": 0.3797530298281911,
+    "published_frequency_mhz": 3.6,
+    "published_standard_error_mhz": 0.2,
+    "frequency_difference_mhz": 0.14152551716192763,
+    "weighted_rmse": 0.355634130279981,
+    "plain_rmse": 0.01042966160154071,
+    "fit_parameters": {
+      "offset": 0.8979063564783519,
+      "amplitude": 0.0517328816754734,
+      "phase_rad": -0.06880645677734729
+    },
+    "status": "PARTIAL: digitized curve supports a Rabi-scale check only; readout parameters are fitted."
+  },
+  "figure5": {
+    "fit_effective_ac_field_gauss": 0.07113570926236207,
+    "fit_effective_ac_field_standard_error_gauss": 0.006584817288337096,
+    "published_effective_ac_field_gauss": 0.088,
+    "published_standard_error_gauss": 0.029,
+    "difference_from_published_gauss": -0.016864290737637927,
+    "fit_rotation_phase_rad": -1.3137601540594976,
+    "fitted_readout_contrast": 0.2207133674616919,
+    "fitted_readout_offset": 0.043743832835981634,
+    "weighted_rmse": 0.7060025142284754,
+    "plain_rmse": 0.04608528625003348,
+    "chi_squared": 5.482835051066214,
+    "degrees_of_freedom": 7,
+    "status": "PARTIAL: conventional Eq. (1) model fit to digitized points only; no raw data or independently fixed readout phase/contrast."
+  }
+}

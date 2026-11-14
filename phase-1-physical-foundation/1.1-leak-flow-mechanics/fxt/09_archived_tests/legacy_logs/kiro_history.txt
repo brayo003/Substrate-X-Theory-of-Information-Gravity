@@ -1,0 +1,1000 @@
+  697                           c_ops=[np.sqrt(Gamma0) * sz],
+  698                           e_ops=[sx])
+  699      sx_std = result_std.expect[0]
+  700      vis_std = (max(sx_std) - min(sx_std)) / 2
+  701      visibility_std.append(vis_std)
+  702      rho_final_std = result_std.states[-1]
+  703      purity_std.append(rho_final_std.purity())
+  704      # Substrate Lindblad: Gamma_sub
+  705      result_sub = mesolve(H, psi0, times,
+  706                           c_ops=[np.sqrt(Gamma_sub) * sz],
+  707                           e_ops=[sx])
+  708      sx_sub = result_sub.expect[0]
+  709      vis_sub = (max(sx_sub) - min(sx_sub)) / 2
+  710      visibility_sub.append(vis_sub)
+  711      rho_final_sub = result_sub.states[-1]
+  712      purity_sub.append(rho_final_sub.purity())
+  713  # ----- plots -----
+  714  plt.figure(figsize=(12,5))
+  715  plt.subplot(1,2,1)
+  716  plt.semilogx(omega_vals, visibility_std, 'bo-', label='Standard QM')
+  717  plt.semilogx(omega_vals, visibility_sub, 'rs-', label='QM + Substrate X')
+  718  plt.xlabel('ω (rad/s)')
+  719  plt.ylabel('Ramsey visibility')
+  720  plt.legend()
+  721  plt.grid(True, alpha=0.3)
+  722  plt.title('Visibility at fixed free evolution')
+  723  plt.subplot(1,2,2)
+  724  plt.semilogx(omega_vals, purity_std, 'bo-', label='Standard QM')
+  725  plt.semilogx(omega_vals, purity_sub, 'rs-', label='QM + Substrate X')
+  726  plt.xlabel('ω (rad/s)')
+  727  plt.ylabel('Final purity')
+  728  plt.legend()
+  729  plt.grid(True, alpha=0.3)
+  730  plt.title('Purity after Ramsey sequence')
+  731  plt.tight_layout()
+  732  plt.savefig('stage3_qutip_ramsey.png', dpi=150)
+  733  print("Stage 3 QuTiP simulation complete. Results saved.")
+  734  EOF
+  735  python3 stage3_qutip_ramsey.py
+  736  cat > stage4_sensitivity.py << 'EOF'
+  737  import numpy as np
+  738  omega_max = 1e6
+  739  Gamma0 = 5e5           # typical NV T2* rate
+  740  omega_exp = 1e6        # a typical achievable rotation rate? (arbitrary)
+  741  noise_floor = 0.02     # 2% relative uncertainty in Γ
+  742  k_vals = np.logspace(-12, -4, 20)
+  743  print("Sensitivity analysis for k_rot")
+  744  print("k_rot (s)    | extra Γ (s⁻¹) | fraction of Γ0 | detectable? (>2%)")
+  745  for k in k_vals:
+  746      extra = k * omega_exp**2 / (1 + (omega_exp/omega_max)**2)
+  747      frac = extra / Gamma0
+  748      detect = frac > noise_floor
+  749      print(f"{k:.1e}        {extra:.2e}        {frac:.4f}         {'YES' if detect else 'no'}")
+  750  EOF
+  751  python3 stage4_sensitivity.py
+  752  cat > stage5_synthetic.py << 'EOF'
+  753  import numpy as np
+  754  from scipy.optimize import curve_fit
+  755  # True parameters
+  756  k_true = 4.5e-7
+  757  om_max_true = 1e6
+  758  Gamma0_true = 1e3
+  759  omega = np.logspace(3, 8, 20)
+  760  Gamma_true = Gamma0_true + k_true * omega**2 / (1 + (omega/om_max_true)**2)
+  761  # add 5% Gaussian noise
+  762  np.random.seed(42)
+  763  noise = 0.05 * Gamma_true * np.random.randn(len(omega))
+  764  Gamma_meas = Gamma_true + noise
+  765  def model(omega, Gamma0, k, om_max):
+  766      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+  767  p0 = [1e3, 1e-7, 1e6]
+  768  popt, _ = curve_fit(model, omega, Gamma_meas, p0=p0, maxfev=10000)
+  769  Gamma0_fit, k_fit, om_fit = popt
+  770  print("Synthetic experiment recovery")
+  771  print(f"True: Gamma0={Gamma0_true:.2e}, k={k_true:.2e}, om_max={om_max_true:.2e}")
+  772  print(f"Fit : Gamma0={Gamma0_fit:.2e}, k={k_fit:.2e}, om_max={om_fit:.2e}")
+  773  EOF
+  774  python3 stage5_synthetic.py
+  775  cat > stage6_feasibility.py << 'EOF'
+  776  import numpy as np
+  777  omega_max = 1e6
+  778  omega_test = 1e6     # test rotation rate
+  779  Gamma0 = 5e5          # NV T2*
+  780  rel_uncertainty = 0.02 # 2% uncertainty in Γ measurement
+  781  # Minimum detectable extra decoherence: Delta_Gamma_min = rel_uncertainty * Gamma0
+  782  Delta_Gamma_min = rel_uncertainty * Gamma0
+  783  # From substrate: Delta_Gamma = k_rot * omega^2 / (1 + (omega/omega_max)^2)
+  784  # Solve for k_rot_min:
+  785  k_rot_min = Delta_Gamma_min * (1 + (omega_test/omega_max)**2) / omega_test**2
+  786  print("Experimental feasibility")
+  787  print(f"Base Γ0 = {Gamma0:.2e} s⁻¹")
+  788  print(f"Measurement uncertainty = {rel_uncertainty*100:.0f}%  → ΔΓ_min = {Delta_Gamma_min:.2e} s⁻¹")
+  789  print(f"At test rotation ω = {omega_test:.2e} rad/s")
+  790  print(f"Minimum detectable k_rot = {k_rot_min:.2e} s")
+  791  print(f"Your predicted k_rot = 4.5e-7 s")
+  792  if 4.5e-7 > k_rot_min:
+  793      print("→ Predicted effect IS detectable with current precision.")
+  794  else:
+  795      print("→ Predicted effect is BELOW current detection threshold.")
+  796  EOF
+  797  python3 stage6_feasibility.py
+  798  pip install arviz  # if not already installed
+  799  ls
+  800  cat checki.py
+  801  python3 checki.py
+  802  clear
+  803  ls
+  804  clear
+  805  cat substrate_gradient_test.py
+  806  python3 substrate_gradient_test.py
+  807  l
+  808  clear
+  809  tree
+  810  clear
+  811  cat > ~/Desktop/msalab.txt << 'EOF'
+  812  rotation-decoherence-derivation.md
+  813  Highest priority. Most likely to contain the derivation connecting rotational substrate dynamics to the decoherence law. If the quantum and gravitational sectors share a common origin, this is the strongest candidate.
+  814  ------------------------------------------------------------
+  815  master-equation-first-principles.md
+  816  Likely contains the foundational derivation of the substrate equations. This is the first place to check for the constitutive relation
+  817      δs = s₀ (v⊥² / c²)
+  818  being derived directly from the master equation.
+  819  ------------------------------------------------------------
+  820  COMPLETE_MASTER_EQUATION.md
+  821  Likely contains the full nonlinear master equation from which the effective gravity and decoherence equations were extracted. Check whether the low-velocity expansion naturally produces the transverse correction.
+  822  ------------------------------------------------------------
+  823  master-equation-origin.md
+  824  Should explain why the master equation has its specific form. Verify whether the constitutive assumptions are introduced here rather than assumed later.
+  825  ------------------------------------------------------------
+  826  post_newtonian_derivation.md
+  827  Check whether the Mercury correction
+  828      δΦ ∝ L²/r³
+  829  is actually derived from the substrate equations or simply introduced as an effective perturbation.
+  830  ------------------------------------------------------------
+  831  mercury_precession_derivation.md
+  832  Likely contains the detailed orbital derivation. Determine whether it begins from the master equation or from an already-assumed perturbation potential.
+  833  ------------------------------------------------------------
+  834  deriv/6_gravity_coupling.md
+  835  Likely the point where the substrate PDE is first coupled to gravity. Check whether the effective potential and force law are obtained from the field equations.
+  836  ------------------------------------------------------------
+  837  core-equations.md
+  838  Review for summarized constitutive laws or definitions that may connect the master equation to the effective perturbation
+  839      δs = s₀ (v⊥² / c²)
+  840  or an equivalent expression.
+  841  ------------------------------------------------------------
+  842  Objective
+  843  Determine whether the repository already contains the complete theoretical chain
+  844      Master Equation
+  845          ↓
+  846      δs = s₀(v⊥²/c²)
+  847          ↓
+  848      δΦ ∝ L²/r³
+  849          ↓
+  850      F = -∇δΦ
+  851          ↓
+  852      a_corr = -3μL²/(c²r⁴) r̂
+  853  If this chain already exists, then the recent Mercury derivation is not introducing a new assumption; it is making explicit a consequence that was already implicit in the underlying substrate theory.
+  854  EOF
+  855  cat > substrate_feasibility_corrected.py << 'EOF'
+  856  import numpy as np
+  857  # Substrate parameters
+  858  k_rot = 4.5e-7       # s (from your derivation)
+  859  omega_max = 1e6       # rad/s (saturation scale)
+  860  def gamma_rot_correct(omega, Gamma0):
+  861      # Correct formula with squared term in denominator
+  862      return Gamma0 + k_rot * omega**2 / (1 + (omega/omega_max)**2)
+  863  # Three hypothetical systems with realistic base decoherence rates
+  864  systems = {
+  865      "Trapped-ion rotor (microscopic)": {
+  866          "Gamma0": 1e3,
+  867          "omega_range": np.logspace(4, 7, 4)
+  868      },
+  869      "Levitated nanosphere (quantum ground state)": {
+  870          "Gamma0": 100,
+  871          "omega_range": np.logspace(4, 8, 5)
+  872      },
+  873      "Rotating molecule (cryogenic)": {
+  874          "Gamma0": 1e6,
+  875          "omega_range": np.logspace(6, 9, 4)
+  876      }
+  877  }
+  878  print("Corrected Substrate X rotational decoherence feasibility check\n")
+  879  for name, params in systems.items():
+  880      print(f"System: {name}")
+  881      print(f"  Base decoherence rate Γ₀ = {params['Gamma0']:.1e} s⁻¹")
+  882      print(f"  {'ω (rad/s)':<15} {'Γ_total (s⁻¹)':<18} {'Rot. contribution (%)':}")
+  883      for w in params['omega_range']:
+  884          g = gamma_rot_correct(w, params['Gamma0'])
+  885          rot_contrib = (g - params['Gamma0']) / g * 100
+  886          print(f"  {w:<15.2e} {g:<18.2e} {rot_contrib:.2f}%")
+  887      # Find crossover where rot = 10% of total, approximate ignoring saturation
+  888      # For small omega, denominator ≈ 1, so condition: k_rot ω² ≈ 0.1 Γ₀
+  889      w_cross = np.sqrt(0.1 * params['Gamma0'] / k_rot)
+  890      print(f"  Rotation becomes >10% of total at ω ≈ {w_cross:.2e} rad/s (approx, low-ω)\n")
+  891      # Saturation plateau value: k_rot * ω_max²
+  892      plateau = k_rot * omega_max**2
+  893      print(f"  Saturation plateau (ω ≫ ω_max): adds {plateau:.2e} s⁻¹\n")
+  894  EOF
+  895  python3 substrate_feasibility_corrected.py
+  896  ( for f in rotation-decoherence-derivation.md master-equation-first-principles.md COMPLETE_MASTER_EQUATION.md master-equation-origin.md post_newtonian_derivation.md deriv/mercury_precession_derivation.md deriv/6_gravity_coupling.md core-equations.md; do     echo "===== $f =====";     cat "$f";     echo;     echo; done; ) > ~/Desktop/msalab.txt
+  897  kiro-cli
+  898  kiro-log out
+  899  clear
+  900  kiro-cli log out
+  901  kiro-cli
+  902  cLEAR
+  903  CLEAR
+  904  clear
+  905  kiro-cli log out
+  906  kiro-cli logout
+  907  kiro-cli login
+  908  kiro-cli
+  909  cat UNIFIED_PERTURBATIVE_DERIVATION.md
+  910  tree
+  911  ls
+  912  cat README.md
+  913  kiro-cli
+  914  clear
+  915  ls
+  916  clear
+  917  kiro-cli
+  918  cat > stage3_qutip_ramsey_fixed.py << 'EOF'
+  919  import numpy as np
+  920  import matplotlib.pyplot as plt
+  921  from qutip import (basis, sigmax, sigmaz, mesolve, Options, fidelity,
+  922                     entropy_vn, Qobj)
+  923  # ---------- parameters ----------
+  924  Gamma0 = 5e5                # s⁻¹ (NV T2*)
+  925  rabi_detuning = 2*np.pi*1e6 # 1 MHz detuning
+  926  free_time = 2e-6            # 2 µs free evolution
+  927  times = np.linspace(0, free_time, 200)
+  928  # Substrate X
+  929  k_rot = 4.5e-7
+  930  omega_max = 1e6
+  931  omega_vals = np.logspace(3, 8, 8)   # 1e3..1e8
+  932  # initial state |+>
+  933  psi0 = (basis(2,0) + basis(2,1)).unit()
+  934  # operators
+  935  sx = sigmax()
+  936  sz = sigmaz()
+  937  # Hamiltonian = (Delta/2) sigma_z
+  938  H = 0.5 * rabi_detuning * sz
+  939  # QuTiP options – store states explicitly
+  940  opts = Options(store_states=True, store_final_state=True)
+  941  visibility_std = []
+  942  visibility_sub = []
+  943  purity_std = []
+  944  purity_sub = []
+  945  trace_std = []
+  946  trace_sub = []
+  947  for w in omega_vals:
+  948      Gamma_sub = Gamma0 + k_rot * w**2 / (1 + (w/omega_max)**2)
+  949      # Standard
+  950      result_std = mesolve(H, psi0, times,
+  951                           c_ops=[np.sqrt(Gamma0) * sz],
+  952                           e_ops=[sx],
+  953                           options=opts)
+  954      sx_std = result_std.expect[0]
+  955      vis_std = (max(sx_std) - min(sx_std)) / 2
+  956      visibility_std.append(vis_std)
+  957      rho_final_std = result_std.final_state
+  958      purity_std.append(rho_final_std.purity())
+  959      trace_std.append(rho_final_std.tr().real)
+  960      # Substrate
+  961      result_sub = mesolve(H, psi0, times,
+  962                           c_ops=[np.sqrt(Gamma_sub) * sz],
+  963                           e_ops=[sx],
+  964                           options=opts)
+  965      sx_sub = result_sub.expect[0]
+  966      vis_sub = (max(sx_sub) - min(sx_sub)) / 2
+  967      visibility_sub.append(vis_sub)
+  968      rho_final_sub = result_sub.final_state
+  969      purity_sub.append(rho_final_sub.purity())
+  970      trace_sub.append(rho_final_sub.tr().real)
+  971  # ----- Quick consistency check -----
+  972  print("Trace (should be 1):")
+  973  for w, tr_s, tr_sub in zip(omega_vals, trace_std, trace_sub):
+  974      print(f"ω={w:.1e}: std={tr_s:.6f}, sub={tr_sub:.6f}")
+  975  print("Min purity std:", min(purity_std), "  sub:", min(purity_sub))
+  976  # ----- plots -----
+  977  plt.figure(figsize=(12,5))
+  978  plt.subplot(1,2,1)
+  979  plt.semilogx(omega_vals, visibility_std, 'bo-', label='Standard QM')
+  980  plt.semilogx(omega_vals, visibility_sub, 'rs-', label='QM + Substrate X')
+  981  plt.xlabel('ω (rad/s)')
+  982  plt.ylabel('Ramsey visibility')
+  983  plt.legend()
+  984  plt.grid(True, alpha=0.3)
+  985  plt.title('Visibility at fixed free evolution')
+  986  plt.subplot(1,2,2)
+  987  plt.semilogx(omega_vals, purity_std, 'bo-', label='Standard QM')
+  988  plt.semilogx(omega_vals, purity_sub, 'rs-', label='QM + Substrate X')
+  989  plt.xlabel('ω (rad/s)')
+  990  plt.ylabel('Final purity')
+  991  plt.legend()
+  992  plt.grid(True, alpha=0.3)
+  993  plt.title('Purity after Ramsey sequence')
+  994  plt.tight_layout()
+  995  plt.savefig('stage3_qutip_ramsey_fixed.png', dpi=150)
+  996  print("Stage 3 corrected simulation complete. Plot saved.")
+  997  EOF
+  998  python3 stage3_qutip_ramsey_fixed.py
+  999  cat > stage5_model_comparison.py << 'EOF'
+ 1000  import numpy as np
+ 1001  from scipy.optimize import curve_fit
+ 1002  import matplotlib.pyplot as plt
+ 1003  # True substrate parameters (if present)
+ 1004  k_true = 4.5e-7
+ 1005  om_max_true = 1e6
+ 1006  Gamma0_true = 1e3
+ 1007  omega = np.logspace(3, 8, 20)
+ 1008  def substrate_model(omega, Gamma0, k, om_max):
+ 1009      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1010  def constant_model(omega, Gamma0):
+ 1011      return np.full_like(omega, Gamma0)
+ 1012  np.random.seed(123)
+ 1013  # ----- 1. Generate data WITHOUT substrate (null model) -----
+ 1014  Gamma_std = np.full_like(omega, Gamma0_true)
+ 1015  noise_std = 0.02 * Gamma0_true * np.random.randn(len(omega))
+ 1016  Gamma_meas_std = Gamma_std + noise_std
+ 1017  # Fit constant model
+ 1018  popt_const_std, _ = curve_fit(constant_model, omega, Gamma_meas_std, p0=[Gamma0_true])
+ 1019  # Fit substrate model (expect k close to 0)
+ 1020  popt_sub_std, _ = curve_fit(substrate_model, omega, Gamma_meas_std,
+ 1021                              p0=[Gamma0_true, 1e-7, 1e6], maxfev=10000)
+ 1022  print("=== NULL MODEL DATA (no substrate) ===")
+ 1023  print(f"Constant fit:  Γ0 = {popt_const_std[0]:.2e}")
+ 1024  print(f"Substrate fit: Γ0 = {popt_sub_std[0]:.2e}, k = {popt_sub_std[1]:.2e}, ω_max = {popt_sub_std[2]:.2e}")
+ 1025  print("  (k should be ~0; if k is spuriously large, model is over-parameterized)")
+ 1026  # ----- 2. Generate data WITH substrate -----
+ 1027  Gamma_sub = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1028  noise_sub = 0.02 * Gamma_sub * np.random.randn(len(omega))
+ 1029  Gamma_meas_sub = Gamma_sub + noise_sub
+ 1030  # Fit constant model
+ 1031  popt_const_sub, _ = curve_fit(constant_model, omega, Gamma_meas_sub, p0=[Gamma0_true])
+ 1032  # Fit substrate model
+ 1033  popt_sub_sub, _ = curve_fit(substrate_model, omega, Gamma_meas_sub,
+ 1034                              p0=[Gamma0_true, 1e-7, 1e6], maxfev=10000)
+ 1035  print("\n=== SUBSTRATE DATA ===")
+ 1036  print(f"True:            Γ0={Gamma0_true:.2e}, k={k_true:.2e}, ω_max={om_max_true:.2e}")
+ 1037  print(f"Constant fit:    Γ0 = {popt_const_sub[0]:.2e}")
+ 1038  print(f"Substrate fit:   Γ0 = {popt_sub_sub[0]:.2e}, k = {popt_sub_sub[1]:.2e}, ω_max = {popt_sub_sub[2]:.2e}")
+ 1039  # Compute residuals and AIC for substrate data
+ 1040  res_const = Gamma_meas_sub - constant_model(omega, *popt_const_sub)
+ 1041  res_sub   = Gamma_meas_sub - substrate_model(omega, *popt_sub_sub)
+ 1042  n = len(omega)
+ 1043  aic_const = n * np.log(np.sum(res_const**2)/n) + 2*1
+ 1044  aic_sub   = n * np.log(np.sum(res_sub**2)/n)   + 2*3
+ 1045  print(f"AIC constant: {aic_const:.1f}, AIC substrate: {aic_sub:.1f}")
+ 1046  print(f"ΔAIC = {aic_sub - aic_const:.1f} (negative -> substrate favoured)")
+ 1047  # Optional: quick plot
+ 1048  plt.figure(figsize=(6,4))
+ 1049  plt.loglog(omega, Gamma_meas_sub, 'k.')
+ 1050  omega_fine = np.logspace(3,8,100)
+ 1051  plt.loglog(omega_fine, constant_model(omega_fine, *popt_const_sub), 'b--', label='Const')
+ 1052  plt.loglog(omega_fine, substrate_model(omega_fine, *popt_sub_sub), 'r-', label='Substrate')
+ 1053  plt.legend()
+ 1054  plt.grid(alpha=0.3)
+ 1055  plt.title('Synthetic data with substrate')
+ 1056  plt.tight_layout()
+ 1057  plt.savefig('stage5_model_comparison.png', dpi=150)
+ 1058  print("Plot saved.")
+ 1059  EOF
+ 1060  python3 stage5_model_comparison.py
+ 1061  cat > stage6_detectability_map.py << 'EOF'
+ 1062  import numpy as np
+ 1063  import matplotlib.pyplot as plt
+ 1064  omega_max = 1e6
+ 1065  Gamma0 = 5e5
+ 1066  rel_uncertainty = 0.02   # 2%
+ 1067  omega_range = np.logspace(3, 9, 100)   # 1e3 to 1e9 rad/s
+ 1068  # Minimum detectable extra decoherence: ΔΓ_min = rel_uncertainty * Gamma0
+ 1069  Delta_Gamma_min = rel_uncertainty * Gamma0
+ 1070  # Solve for k_min: k_min = ΔΓ_min * (1 + (ω/ω_max)^2) / ω^2
+ 1071  k_min = Delta_Gamma_min * (1 + (omega_range/omega_max)**2) / omega_range**2
+ 1072  plt.figure(figsize=(8,5))
+ 1073  plt.loglog(omega_range, k_min, 'b-', label='Detection threshold $k_{min}$')
+ 1074  plt.axhline(4.5e-7, color='red', linestyle='--', label='Predicted $k_{rot}=4.5\\times10^{-7}$ s')
+ 1075  plt.fill_between(omega_range, k_min, 1e-3, alpha=0.1, color='green', label='Detectable region')
+ 1076  plt.xlabel('Rotation frequency $\\omega$ (rad/s)')
+ 1077  plt.ylabel('Minimum detectable $k_{rot}$ (s)')
+ 1078  plt.title('Substrate X detectability map (2% measurement uncertainty)')
+ 1079  plt.legend()
+ 1080  plt.grid(True, alpha=0.3)
+ 1081  plt.tight_layout()
+ 1082  plt.savefig('stage6_detectability_map.png', dpi=150)
+ 1083  # Print some representative values
+ 1084  print("Detectability map (2% uncertainty):")
+ 1085  print("ω (rad/s)    | k_min (s)   | Prediction detectable?")
+ 1086  for w in [1e3, 1e4, 1e5, 1e6, 1e7, 1e8]:
+ 1087      kmin = Delta_Gamma_min * (1 + (w/omega_max)**2) / w**2
+ 1088      detectable = 4.5e-7 > kmin
+ 1089      print(f"{w:.1e}      {kmin:.2e}       {'YES' if detectable else 'no'}")
+ 1090  EOF
+ 1091  python3 stage6_detectability_map.py
+ 1092  clear
+ 1093  pip install emcee corner
+ 1094  clear
+ 1095  cat > stage7_mcmc_recovery.py << 'EOF'
+ 1096  import numpy as np
+ 1097  import matplotlib.pyplot as plt
+ 1098  import emcee
+ 1099  import corner
+ 1100  # ------------------------------------------------------------
+ 1101  # 1. True substrate parameters
+ 1102  # ------------------------------------------------------------
+ 1103  Gamma0_true = 1.0e3
+ 1104  k_true = 4.5e-7
+ 1105  om_max_true = 1.0e6
+ 1106  # ------------------------------------------------------------
+ 1107  # 2. Generate synthetic data at different noise levels
+ 1108  # ------------------------------------------------------------
+ 1109  omega = np.logspace(3, 8, 20)   # same as earlier stages
+ 1110  def substrate_model(omega, Gamma0, k, om_max):
+ 1111      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1112  # Choose a noise fraction to study (change this to 0.005,0.01,0.02,0.05,0.1,0.2)
+ 1113  noise_frac = 0.02   # 2% noise for demonstration
+ 1114  np.random.seed(42)
+ 1115  Gamma_true = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1116  noise = noise_frac * Gamma_true * np.random.randn(len(omega))
+ 1117  Gamma_meas = Gamma_true + noise
+ 1118  # ------------------------------------------------------------
+ 1119  # 3. Define log‑probability (likelihood + priors)
+ 1120  # ------------------------------------------------------------
+ 1121  def log_prior(theta):
+ 1122      Gamma0, k, om_max = theta
+ 1123      if not (0 < Gamma0 < 1e4 and 1e-10 < k < 1e-3 and 1e3 < om_max < 1e9):
+ 1124          return -np.inf
+ 1125      return 0.0   # flat prior within bounds
+ 1126  def log_likelihood(theta, omega, Gamma_meas):
+ 1127      Gamma0, k, om_max = theta
+ 1128      model = substrate_model(omega, Gamma0, k, om_max)
+ 1129      return -0.5 * np.sum((Gamma_meas - model)**2 / (noise_frac * Gamma_meas)**2)
+ 1130  def log_probability(theta, omega, Gamma_meas):
+ 1131      lp = log_prior(theta)
+ 1132      if not np.isfinite(lp):
+ 1133          return -np.inf
+ 1134      return lp + log_likelihood(theta, omega, Gamma_meas)
+ 1135  # ------------------------------------------------------------
+ 1136  # 4. MCMC setup
+ 1137  # ------------------------------------------------------------
+ 1138  ndim = 3
+ 1139  nwalkers = 20
+ 1140  nsteps = 2000   # increase for smoother posteriors (e.g. 5000)
+ 1141  # initial positions spread around true values
+ 1142  initial = np.array([Gamma0_true, k_true, om_max_true])
+ 1143  init_pos = initial + 0.01 * initial * np.random.randn(nwalkers, ndim)
+ 1144  args = (omega, Gamma_meas)
+ 1145  sampler = emcee.EnsembleSampler(nwalkers, ndim, log_probability, args=args)
+ 1146  sampler.run_mcmc(init_pos, nsteps, progress=True)
+ 1147  # ------------------------------------------------------------
+ 1148  # 5. Discard burn‑in and flatten
+ 1149  # ------------------------------------------------------------
+ 1150  burnin = 500
+ 1151  samples = sampler.get_chain(discard=burnin, flat=True)
+ 1152  # ------------------------------------------------------------
+ 1153  # 6. Print parameter estimates
+ 1154  # ------------------------------------------------------------
+ 1155  print("\n=== MCMC Parameter Recovery (noise = {}%) ===".format(noise_frac*100))
+ 1156  for i, name in enumerate(["Gamma0", "k", "om_max"]):
+ 1157      mcmc_vals = samples[:, i]
+ 1158      med = np.median(mcmc_vals)
+ 1159      low, high = np.percentile(mcmc_vals, [16, 84])
+ 1160      print(f"{name} = {med:.2e}  (+{high-med:.2e} / -{med-low:.2e})  (true: {initial[i]:.2e})")
+ 1161  # ------------------------------------------------------------
+ 1162  # 7. Corner plot
+ 1163  # ------------------------------------------------------------
+ 1164  fig = corner.corner(samples, labels=["$\\Gamma_0$", "$k$", "$\\omega_{max}$"],
+ 1165                      truths=initial, quantiles=[0.16, 0.5, 0.84],
+ 1166                      show_titles=True, title_fmt='.2e')
+ 1167  plt.suptitle(f"MCMC recovery, {noise_frac*100:.0f}% noise", fontsize=14)
+ 1168  plt.tight_layout()
+ 1169  plt.savefig(f'mcmc_recovery_noise_{int(noise_frac*100)}pct.png', dpi=150)
+ 1170  print("Corner plot saved.")
+ 1171  EOF
+ 1172  python3 stage7_mcmc_recovery.py
+ 1173  clear
+ 1174  cat > stage7_noise_sweep.py << 'EOF'
+ 1175  import numpy as np
+ 1176  import emcee
+ 1177  import sys
+ 1178  # ------------------------------------------------------------
+ 1179  # 1. True parameters & data setup
+ 1180  # ------------------------------------------------------------
+ 1181  Gamma0_true = 1.0e3
+ 1182  k_true = 4.5e-7
+ 1183  om_max_true = 1.0e6
+ 1184  omega = np.logspace(3, 8, 20)
+ 1185  def substrate_model(omega, Gamma0, k, om_max):
+ 1186      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1187  # ------------------------------------------------------------
+ 1188  # 2. Log‑probability (same as before)
+ 1189  # ------------------------------------------------------------
+ 1190  def log_prior(theta):
+ 1191      Gamma0, k, om_max = theta
+ 1192      if 0 < Gamma0 < 1e4 and 1e-10 < k < 1e-3 and 1e3 < om_max < 1e9:
+ 1193          return 0.0
+ 1194      return -np.inf
+ 1195  def log_likelihood(theta, omega, Gamma_meas, noise_frac):
+ 1196      Gamma0, k, om_max = theta
+ 1197      model = substrate_model(omega, Gamma0, k, om_max)
+ 1198      # uncertainties proportional to measured value * noise_frac
+ 1199      sigma = noise_frac * np.abs(Gamma_meas) + 1e-12  # avoid zero
+ 1200      return -0.5 * np.sum(((Gamma_meas - model) / sigma)**2)
+ 1201  def log_probability(theta, omega, Gamma_meas, noise_frac):
+ 1202      lp = log_prior(theta)
+ 1203      if not np.isfinite(lp):
+ 1204          return -np.inf
+ 1205      return lp + log_likelihood(theta, omega, Gamma_meas, noise_frac)
+ 1206  # ------------------------------------------------------------
+ 1207  # 3. Noise fractions to test
+ 1208  # ------------------------------------------------------------
+ 1209  noise_fracs = [0.005, 0.01, 0.02, 0.05, 0.10, 0.20]
+ 1210  ndim = 3
+ 1211  nwalkers = 20
+ 1212  nsteps = 2000   # can be increased later for final plot
+ 1213  burnin = 500
+ 1214  # store results
+ 1215  results = {}
+ 1216  np.random.seed(42)
+ 1217  for noise_frac in noise_fracs:
+ 1218      # Generate data
+ 1219      Gamma_true = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1220      noise = noise_frac * Gamma_true * np.random.randn(len(omega))
+ 1221      Gamma_meas = Gamma_true + noise
+ 1222      # initial positions
+ 1223      initial = np.array([Gamma0_true, k_true, om_max_true])
+ 1224      init_pos = initial + 0.01 * initial * np.random.randn(nwalkers, ndim)
+ 1225      args = (omega, Gamma_meas, noise_frac)
+ 1226      sampler = emcee.EnsembleSampler(nwalkers, ndim, log_probability, args=args)
+ 1227      sampler.run_mcmc(init_pos, nsteps, progress=False)  # silent
+ 1228      samples = sampler.get_chain(discard=burnin, flat=True)
+ 1229      results[noise_frac] = samples
+ 1230      # compute relative uncertainties
+ 1231      k_samples = samples[:, 1]
+ 1232      om_samples = samples[:, 2]
+ 1233      k_rel = np.std(k_samples) / np.mean(k_samples)
+ 1234      om_rel = np.std(om_samples) / np.mean(om_samples)
+ 1235      print(f"Noise {noise_frac*100:4.1f}%  σ(k)/k = {k_rel*100:.2f}%  σ(ω_max)/ω_max = {om_rel*100:.2f}%")
+ 1236  print("\nTable complete.")
+ 1237  EOF
+ 1238  python3 stage7_noise_sweep.py
+ 1239  clear
+ 1240  cat > test1_wrong_model.py << 'EOF'
+ 1241  import numpy as np
+ 1242  from scipy.optimize import curve_fit
+ 1243  omega = np.logspace(3, 8, 20)
+ 1244  Gamma0 = 1e3
+ 1245  # --- define alternative true models ---
+ 1246  def linear(omega, a):
+ 1247      return Gamma0 + a * omega
+ 1248  def quadratic_no_sat(omega, a):
+ 1249      return Gamma0 + a * omega**2
+ 1250  def logarithmic(omega, a):
+ 1251      return Gamma0 + a * np.log(1 + omega)
+ 1252  # --- substrate model to fit ---
+ 1253  def substrate_model(omega, Gamma0, k, om_max):
+ 1254      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1255  # choose coefficients so that the effect is comparable to the substrate one at 1e6 rad/s
+ 1256  ref = 1e6
+ 1257  sub_ref = 4.5e-7 * ref**2 / (1 + (ref/1e6)**2)   # = 2.25e5
+ 1258  a_lin = sub_ref / ref          # ~0.225
+ 1259  a_quad = sub_ref / ref**2      # 2.25e-7
+ 1260  a_log = sub_ref / np.log(1+ref)  # ~2.21e4
+ 1261  models = {
+ 1262      'linear': (linear, a_lin),
+ 1263      'quadratic (no sat)': (quadratic_no_sat, a_quad),
+ 1264      'logarithmic': (logarithmic, a_log)
+ 1265  }
+ 1266  np.random.seed(123)
+ 1267  for name, (func, a_val) in models.items():
+ 1268      true_gamma = func(omega, a_val)
+ 1269      noise = 0.02 * true_gamma * np.random.randn(len(omega))
+ 1270      measured = true_gamma + noise
+ 1271      # fit substrate model
+ 1272      try:
+ 1273          popt, _ = curve_fit(substrate_model, omega, measured,
+ 1274                              p0=[1e3, 1e-7, 1e6], maxfev=10000)
+ 1275          Gamma0_fit, k_fit, om_fit = popt
+ 1276          residuals = measured - substrate_model(omega, *popt)
+ 1277          rss = np.sum(residuals**2)
+ 1278          print(f"True model: {name}")
+ 1279          print(f"  Fitted k_rot = {k_fit:.2e}, ω_max = {om_fit:.2e}")
+ 1280          print(f"  RSS = {rss:.2e}  (vs expected from noise ~ {np.sum((noise)**2):.2e})")
+ 1281          # check if k is spuriously "significant"
+ 1282          if k_fit > 1e-8:
+ 1283              print("  WARNING: spurious k_rot detected.")
+ 1284          else:
+ 1285              print("  k_rot effectively zero, model not fooled.")
+ 1286      except Exception as e:
+ 1287          print(f"True model: {name}  fit failed: {e}")
+ 1288      print()
+ 1289  EOF
+ 1290  python3 test1_wrong_model.py
+ 1291  cat > test2_sampling_robustness.py << 'EOF'
+ 1292  import numpy as np
+ 1293  import emcee
+ 1294  # True parameters
+ 1295  Gamma0_true = 1.0e3
+ 1296  k_true = 4.5e-7
+ 1297  om_max_true = 1.0e6
+ 1298  def substrate_model(omega, Gamma0, k, om_max):
+ 1299      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1300  # Log-probability (same as before, noise=2%)
+ 1301  def log_prob(theta, omega, data):
+ 1302      Gamma0, k, om_max = theta
+ 1303      if not (0<Gamma0<1e4 and 1e-10<k<1e-3 and 1e3<om_max<1e9):
+ 1304          return -np.inf
+ 1305      model = substrate_model(omega, Gamma0, k, om_max)
+ 1306      sigma = 0.02 * np.abs(data) + 1e-12
+ 1307      return -0.5 * np.sum(((data - model)/sigma)**2)
+ 1308  # MCMC settings
+ 1309  ndim, nwalkers, nsteps, burnin = 3, 20, 1500, 500
+ 1310  # define scenarios: (label, number of points, omega array)
+ 1311  scenarios = [
+ 1312      ("full, N=10", 10, np.logspace(3, 8, 10)),
+ 1313      ("full, N=50", 50, np.logspace(3, 8, 50)),
+ 1314      ("low range 1e3-1e5", 20, np.logspace(3, 5, 20)),
+ 1315      ("high range 1e6-1e8", 20, np.logspace(6, 8, 20)),
+ 1316  ]
+ 1317  np.random.seed(42)
+ 1318  for label, N, omega in scenarios:
+ 1319      true_gamma = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1320      noise = 0.02 * true_gamma * np.random.randn(N)
+ 1321      data = true_gamma + noise
+ 1322      init = np.array([Gamma0_true, k_true, om_max_true])
+ 1323      pos = init + 0.01*init * np.random.randn(nwalkers, ndim)
+ 1324      sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, args=(omega, data))
+ 1325      sampler.run_mcmc(pos, nsteps, progress=False)
+ 1326      samples = sampler.get_chain(discard=burnin, flat=True)
+ 1327      k_samples = samples[:,1]
+ 1328      k_rel = np.std(k_samples) / np.mean(k_samples)
+ 1329      print(f"{label:<25} σ(k)/k = {k_rel*100:.2f}%")
+ 1330  EOF
+ 1331  python3 test2_sampling_robustness.py
+ 1332  cat > test3_model_comparison.py << 'EOF'
+ 1333  import numpy as np
+ 1334  import emcee
+ 1335  import arviz as az
+ 1336  # True substrate
+ 1337  Gamma0_true, k_true, om_max_true = 1e3, 4.5e-7, 1e6
+ 1338  omega = np.logspace(3, 8, 20)
+ 1339  def substrate_model(omega, Gamma0, k, om_max):
+ 1340      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1341  # Generate substrate data (2% noise)
+ 1342  true_gamma = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1343  np.random.seed(42)
+ 1344  noise = 0.02 * true_gamma * np.random.randn(len(omega))
+ 1345  data = true_gamma + noise
+ 1346  # ------ Substrate model MCMC ------
+ 1347  def log_prob_sub(theta, omega, data):
+ 1348      G0, k, om = theta
+ 1349      if not (0<G0<1e4 and 1e-10<k<1e-3 and 1e3<om<1e9):
+ 1350          return -np.inf
+ 1351      model = substrate_model(omega, G0, k, om)
+ 1352      sigma = 0.02 * np.abs(data) + 1e-12
+ 1353      return -0.5 * np.sum(((data - model)/sigma)**2)
+ 1354  ndim, nwalkers, nsteps, burnin = 3, 20, 2000, 500
+ 1355  init = np.array([Gamma0_true, k_true, om_max_true])
+ 1356  pos = init + 0.01*init * np.random.randn(nwalkers, ndim)
+ 1357  sampler_sub = emcee.EnsembleSampler(nwalkers, ndim, log_prob_sub, args=(omega, data))
+ 1358  sampler_sub.run_mcmc(pos, nsteps, progress=False)
+ 1359  samples_sub = sampler_sub.get_chain(discard=burnin, flat=True)
+ 1360  # ------ Constant model MCMC ------
+ 1361  def log_prob_const(theta, omega, data):
+ 1362      G0 = theta[0]
+ 1363      if not 0<G0<1e4:
+ 1364          return -np.inf
+ 1365      model = np.full_like(omega, G0)
+ 1366      sigma = 0.02 * np.abs(data) + 1e-12
+ 1367      return -0.5 * np.sum(((data - model)/sigma)**2)
+ 1368  sampler_const = emcee.EnsembleSampler(2, 1, log_prob_const, args=(omega, data))
+ 1369  pos_const = np.array([[Gamma0_true]]) + 100 * np.random.randn(2,1)
+ 1370  sampler_const.run_mcmc(pos_const, nsteps, progress=False)
+ 1371  samples_const = sampler_const.get_chain(discard=burnin, flat=True)
+ 1372  # ------ Compute WAIC and LOO ------
+ 1373  # We need log-likelihood evaluated at each posterior sample for each data point.
+ 1374  def log_likelihood_sub(theta, omega, data):
+ 1375      model = substrate_model(omega, *theta)
+ 1376      sigma = 0.02 * np.abs(data) + 1e-12
+ 1377      # return array of log-likelihoods per point
+ 1378      return -0.5 * ((data - model)/sigma)**2 - np.log(sigma) - 0.5*np.log(2*np.pi)
+ 1379  def log_likelihood_const(theta, omega, data):
+ 1380      G0 = theta[0]
+ 1381      model = np.full_like(omega, G0)
+ 1382      sigma = 0.02 * np.abs(data) + 1e-12
+ 1383      return -0.5 * ((data - model)/sigma)**2 - np.log(sigma) - 0.5*np.log(2*np.pi)
+ 1384  # compute pointwise log-likelihood for a set of samples (thin to 200 samples)
+ 1385  n_thin = 200
+ 1386  idx = np.random.choice(len(samples_sub), n_thin, replace=False)
+ 1387  sub_ll = np.array([log_likelihood_sub(samples_sub[i], omega, data) for i in idx])
+ 1388  const_ll = np.array([log_likelihood_const([samples_const[i]], omega, data) for i in np.random.choice(len(samples_const), n_thin, replace=False)])
+ 1389  # arviz expects an InferenceData object; we can create manually
+ 1390  idata_sub = az.from_dict(posterior={"Gamma0": samples_sub[:,0], "k": samples_sub[:,1], "om_max": samples_sub[:,2]},
+ 1391                           log_likelihood={"Gamma": sub_ll})
+ 1392  idata_const = az.from_dict(posterior={"Gamma0": samples_const[:,0]},
+ 1393                             log_likelihood={"Gamma": const_ll})
+ 1394  waic_sub = az.waic(idata_sub, scale="deviance")
+ 1395  waic_const = az.waic(idata_const, scale="deviance")
+ 1396  loo_sub = az.loo(idata_sub, scale="deviance")
+ 1397  loo_const = az.loo(idata_const, scale="deviance")
+ 1398  print(f"Constant model: WAIC = {waic_const.waic:.1f}, LOO = {loo_const.loo:.1f}")
+ 1399  print(f"Substrate model: WAIC = {waic_sub.waic:.1f}, LOO = {loo_sub.loo:.1f}")
+ 1400  print("Lower is better. WAIC/LOO differences >10 are considered significant.")
+ 1401  EOF
+ 1402  python3 test3_model_comparison.py
+ 1403  cat > test4_posterior_predictive.py << 'EOF'
+ 1404  import numpy as np
+ 1405  import matplotlib.pyplot as plt
+ 1406  import emcee
+ 1407  # True substrate and data (2% noise)
+ 1408  Gamma0_true, k_true, om_max_true = 1e3, 4.5e-7, 1e6
+ 1409  omega = np.logspace(3, 8, 20)
+ 1410  true_gamma = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1411  np.random.seed(42)
+ 1412  noise = 0.02 * true_gamma * np.random.randn(len(omega))
+ 1413  data = true_gamma + noise
+ 1414  def substrate_model(omega, Gamma0, k, om_max):
+ 1415      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1416  # MCMC run (already done in previous test, but repeat here)
+ 1417  def log_prob(theta, omega, data):
+ 1418      G0, k, om = theta
+ 1419      if not (0<G0<1e4 and 1e-10<k<1e-3 and 1e3<om<1e9):
+ 1420          return -np.inf
+ 1421      model = substrate_model(omega, G0, k, om)
+ 1422      sigma = 0.02 * np.abs(data) + 1e-12
+ 1423      return -0.5 * np.sum(((data - model)/sigma)**2)
+ 1424  ndim, nwalkers, nsteps, burnin = 3, 20, 2000, 500
+ 1425  init = np.array([Gamma0_true, k_true, om_max_true])
+ 1426  pos = init + 0.01*init * np.random.randn(nwalkers, ndim)
+ 1427  sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, args=(omega, data))
+ 1428  sampler.run_mcmc(pos, nsteps, progress=False)
+ 1429  samples = sampler.get_chain(discard=burnin, flat=True)
+ 1430  # posterior predictive: randomly select 200 samples from posterior
+ 1431  n_pred = 200
+ 1432  idx = np.random.choice(len(samples), n_pred, replace=False)
+ 1433  pred_curves = np.array([substrate_model(omega, *samples[i]) for i in idx])
+ 1434  # plot
+ 1435  plt.figure(figsize=(8,5))
+ 1436  # plot a few predictive realizations (light blue)
+ 1437  for i in range(20):
+ 1438      plt.loglog(omega, pred_curves[i], color='lightblue', alpha=0.5)
+ 1439  # plot the predictive envelope (percentiles)
+ 1440  low = np.percentile(pred_curves, 2.5, axis=0)
+ 1441  high = np.percentile(pred_curves, 97.5, axis=0)
+ 1442  plt.fill_between(omega, low, high, color='blue', alpha=0.15, label='95% predictive interval')
+ 1443  plt.loglog(omega, data, 'k.', label='Observed data')
+ 1444  plt.xlabel('ω (rad/s)')
+ 1445  plt.ylabel('Γ (s⁻¹)')
+ 1446  plt.title('Posterior predictive check')
+ 1447  plt.legend()
+ 1448  plt.grid(True, alpha=0.3)
+ 1449  plt.tight_layout()
+ 1450  plt.savefig('posterior_predictive.png', dpi=150)
+ 1451  print("Posterior predictive plot saved. Data should lie within the envelope.")
+ 1452  EOF
+ 1453  python3 test4_posterior_predictive.py
+ 1454  cat > test5_fisher.py << 'EOF'
+ 1455  import numpy as np
+ 1456  import matplotlib.pyplot as plt
+ 1457  # True parameters
+ 1458  Gamma0 = 1e3
+ 1459  k = 4.5e-7
+ 1460  om = 1e6
+ 1461  sigma_rel = 0.02   # 2% noise
+ 1462  omega = np.logspace(3, 8, 20)
+ 1463  def substrate(omega, Gamma0, k, om):
+ 1464      return Gamma0 + k * omega**2 / (1 + (omega/om)**2)
+ 1465  # Compute derivatives numerically
+ 1466  eps = 1e-3 * np.array([Gamma0, k, om])
+ 1467  def derivative(func, theta, i, omega):
+ 1468      theta1 = theta.copy()
+ 1469      theta2 = theta.copy()
+ 1470      theta1[i] += eps[i]
+ 1471      theta2[i] -= eps[i]
+ 1472      return (func(omega, *theta1) - func(omega, *theta2)) / (2*eps[i])
+ 1473  theta = np.array([Gamma0, k, om])
+ 1474  # Fisher information matrix I_ij = sum_n (1/sigma_n^2) * (dΓ/dθ_i)(dΓ/dθ_j)
+ 1475  sigma = sigma_rel * substrate(omega, *theta)
+ 1476  I = np.zeros((3,3))
+ 1477  for i in range(3):
+ 1478      dG_i = derivative(substrate, theta, i, omega)
+ 1479      for j in range(3):
+ 1480          dG_j = derivative(substrate, theta, j, omega)
+ 1481          I[i,j] = np.sum( (dG_i * dG_j) / sigma**2 )
+ 1482  # Cramér-Rao lower bound (covariance matrix)
+ 1483  C = np.linalg.inv(I)
+ 1484  errors = np.sqrt(np.diag(C))
+ 1485  print("Cramér-Rao lower bounds (1σ):")
+ 1486  print(f"  σ_Γ0  = {errors[0]:.2e}")
+ 1487  print(f"  σ_k   = {errors[1]:.2e}   (relative: {errors[1]/k*100:.2f}%)")
+ 1488  print(f"  σ_ω   = {errors[2]:.2e}   (relative: {errors[2]/om*100:.2f}%)")
+ 1489  print()
+ 1490  print("Compare with MCMC from Stage 7 (2% noise):")
+ 1491  print("  σ_k/k ~ 1.12%, σ_ω/ω ~ 0.73%")
+ 1492  EOF
+ 1493  python3 test5_fisher.py
+ 1494  clear
+ 1495  cat > test3_fixed.py << 'EOF'
+ 1496  import numpy as np, emcee, arviz as az
+ 1497  Gamma0_true, k_true, om_max_true = 1e3, 4.5e-7, 1e6
+ 1498  omega = np.logspace(3, 8, 20)
+ 1499  def substrate_model(omega, Gamma0, k, om_max):
+ 1500      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1501  true_gamma = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1502  np.random.seed(42)
+ 1503  noise = 0.02 * true_gamma * np.random.randn(len(omega))
+ 1504  data = true_gamma + noise
+ 1505  # pointwise log‑likelihood for WAIC/LOO
+ 1506  def log_likelihood_sub(theta, omega, y):
+ 1507      G0, k, om = theta
+ 1508      model = substrate_model(omega, G0, k, om)
+ 1509      sigma = 0.02 * np.abs(y) + 1e-12
+ 1510      # return per‑point log‑likelihood
+ 1511      return -0.5 * ((y - model)/sigma)**2 - np.log(sigma) - 0.5*np.log(2*np.pi)
+ 1512  def log_likelihood_const(theta, omega, y):
+ 1513      G0 = theta[0]
+ 1514      model = np.full_like(omega, G0)
+ 1515      sigma = 0.02 * np.abs(y) + 1e-12
+ 1516      return -0.5 * ((y - model)/sigma)**2 - np.log(sigma) - 0.5*np.log(2*np.pi)
+ 1517  # MCMC for substrate model
+ 1518  def log_prob_sub(theta, omega, y):
+ 1519      G0, k, om = theta
+ 1520      if not (0<G0<1e4 and 1e-10<k<1e-3 and 1e3<om<1e9):
+ 1521          return -np.inf
+ 1522      return np.sum(log_likelihood_sub(theta, omega, y))
+ 1523  ndim, nwalkers, nsteps, burnin = 3, 20, 2000, 500
+ 1524  init = np.array([Gamma0_true, k_true, om_max_true])
+ 1525  pos = init + 0.01*init * np.random.randn(nwalkers, ndim)
+ 1526  sampler_sub = emcee.EnsembleSampler(nwalkers, ndim, log_prob_sub, args=(omega, data))
+ 1527  sampler_sub.run_mcmc(pos, nsteps, progress=False)
+ 1528  samples_sub = sampler_sub.get_chain(discard=burnin, flat=True)
+ 1529  # MCMC for constant model
+ 1530  def log_prob_const(theta, omega, y):
+ 1531      G0 = theta[0]
+ 1532      if not 0<G0<1e4:
+ 1533          return -np.inf
+ 1534      return np.sum(log_likelihood_const(theta, omega, y))
+ 1535  sampler_const = emcee.EnsembleSampler(20, 1, log_prob_const, args=(omega, data))
+ 1536  pos_const = np.array([Gamma0_true]) + 100 * np.random.randn(20,1)
+ 1537  sampler_const.run_mcmc(pos_const, nsteps, progress=False)
+ 1538  samples_const = sampler_const.get_chain(discard=burnin, flat=True)
+ 1539  # thin to 200 samples for likelihood storage
+ 1540  thin = 200
+ 1541  idx_sub = np.random.choice(len(samples_sub), thin, replace=False)
+ 1542  idx_const = np.random.choice(len(samples_const), thin, replace=False)
+ 1543  sub_ll = np.array([log_likelihood_sub(samples_sub[i], omega, data) for i in idx_sub])
+ 1544  const_ll = np.array([log_likelihood_const([samples_const[i]], omega, data) for i in idx_const])
+ 1545  idata_sub = az.from_dict(posterior={"Gamma0": samples_sub[:,0], "k": samples_sub[:,1], "om_max": samples_sub[:,2]},
+ 1546                           log_likelihood={"Gamma": sub_ll})
+ 1547  idata_const = az.from_dict(posterior={"Gamma0": samples_const[:,0]},
+ 1548                             log_likelihood={"Gamma": const_ll})
+ 1549  waic_sub = az.waic(idata_sub, scale="deviance")
+ 1550  waic_const = az.waic(idata_const, scale="deviance")
+ 1551  loo_sub = az.loo(idata_sub, scale="deviance")
+ 1552  loo_const = az.loo(idata_const, scale="deviance")
+ 1553  print(f"Constant model: WAIC = {waic_const['waic']:.1f}, LOO = {loo_const['loo']:.1f}")
+ 1554  print(f"Substrate model: WAIC = {waic_sub['waic']:.1f}, LOO = {loo_sub['loo']:.1f}")
+ 1555  print("Lower is better. Differences >10 are significant.")
+ 1556  EOF
+ 1557  python3 test3_fixed.py
+ 1558  cat > test4_fixed.py << 'EOF'
+ 1559  import numpy as np, matplotlib.pyplot as plt, emcee
+ 1560  Gamma0_true, k_true, om_max_true = 1e3, 4.5e-7, 1e6
+ 1561  omega = np.logspace(3, 8, 20)
+ 1562  def substrate_model(omega, Gamma0, k, om_max):
+ 1563      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1564  true_gamma = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1565  np.random.seed(42)
+ 1566  noise = 0.02 * true_gamma * np.random.randn(len(omega))
+ 1567  data = true_gamma + noise
+ 1568  def log_prob(theta, omega, data):
+ 1569      G0, k, om = theta
+ 1570      if not (0<G0<1e4 and 1e-10<k<1e-3 and 1e3<om<1e9):
+ 1571          return -np.inf
+ 1572      model = substrate_model(omega, G0, k, om)
+ 1573      sigma = 0.02 * np.abs(data) + 1e-12
+ 1574      return -0.5 * np.sum(((data - model)/sigma)**2)
+ 1575  ndim, nwalkers, nsteps, burnin = 3, 20, 2000, 500
+ 1576  init = np.array([Gamma0_true, k_true, om_max_true])
+ 1577  pos = init + 0.01*init * np.random.randn(nwalkers, ndim)
+ 1578  sampler = emcee.EnsembleSampler(nwalkers, ndim, log_prob, args=(omega, data))
+ 1579  sampler.run_mcmc(pos, nsteps, progress=False)
+ 1580  samples = sampler.get_chain(discard=burnin, flat=True)
+ 1581  n_pred = 200
+ 1582  idx = np.random.choice(len(samples), n_pred, replace=False)
+ 1583  pred_curves = np.array([substrate_model(omega, *samples[i]) for i in idx])
+ 1584  plt.figure(figsize=(8,5))
+ 1585  for i in range(20):
+ 1586      plt.loglog(omega, pred_curves[i], color='lightblue', alpha=0.5)
+ 1587  low = np.percentile(pred_curves, 2.5, axis=0)
+ 1588  high = np.percentile(pred_curves, 97.5, axis=0)
+ 1589  plt.fill_between(omega, low, high, color='blue', alpha=0.15, label='95% predictive interval')
+ 1590  plt.loglog(omega, data, 'k.', label='Observed data')
+ 1591  plt.xlabel('ω (rad/s)'); plt.ylabel('Γ (s⁻¹)')
+ 1592  plt.title('Posterior predictive check')
+ 1593  plt.legend(); plt.grid(True, alpha=0.3)
+ 1594  plt.tight_layout()
+ 1595  plt.savefig('posterior_predictive.png', dpi=150)
+ 1596  print("Posterior predictive check saved. Data should lie within the envelope.")
+ 1597  EOF
+ 1598  python3 test4_fixed.py
+ 1599  clear
+ 1600  cat > test3_fixed_v2.py << 'EOF'
+ 1601  import numpy as np, emcee, arviz as az
+ 1602  Gamma0_true, k_true, om_max_true = 1e3, 4.5e-7, 1e6
+ 1603  omega = np.logspace(3, 8, 20)
+ 1604  def substrate_model(omega, Gamma0, k, om_max):
+ 1605      return Gamma0 + k * omega**2 / (1 + (omega/om_max)**2)
+ 1606  true_gamma = substrate_model(omega, Gamma0_true, k_true, om_max_true)
+ 1607  np.random.seed(42)
+ 1608  noise = 0.02 * true_gamma * np.random.randn(len(omega))
+ 1609  data = true_gamma + noise
+ 1610  # pointwise log-likelihood
+ 1611  def log_like_sub(theta, omega, y):
+ 1612      G0, k, om = theta
+ 1613      model = substrate_model(omega, G0, k, om)
+ 1614      sigma = 0.02 * np.abs(y) + 1e-12
+ 1615      return -0.5 * ((y - model)/sigma)**2 - np.log(sigma) - 0.5*np.log(2*np.pi)
+ 1616  def log_like_const(theta, omega, y):
+ 1617      G0 = theta[0]
+ 1618      model = np.full_like(omega, G0)
+ 1619      sigma = 0.02 * np.abs(y) + 1e-12
+ 1620      return -0.5 * ((y - model)/sigma)**2 - np.log(sigma) - 0.5*np.log(2*np.pi)
+ 1621  # MCMC substrate
+ 1622  def log_prob_sub(theta, omega, y):
+ 1623      G0, k, om = theta
+ 1624      if not (0<G0<1e4 and 1e-10<k<1e-3 and 1e3<om<1e9):
+ 1625          return -np.inf
+ 1626      return np.sum(log_like_sub(theta, omega, y))
+ 1627  ndim, nwalkers, nsteps, burnin = 3, 20, 2000, 500
+ 1628  init = np.array([Gamma0_true, k_true, om_max_true])
+ 1629  pos = init + 0.01*init * np.random.randn(nwalkers, ndim)
+ 1630  sampler_sub = emcee.EnsembleSampler(nwalkers, ndim, log_prob_sub, args=(omega, data))
+ 1631  sampler_sub.run_mcmc(pos, nsteps, progress=False)
+ 1632  samples_sub = sampler_sub.get_chain(discard=burnin, flat=True)
+ 1633  # MCMC constant
+ 1634  def log_prob_const(theta, omega, y):
+ 1635      G0 = theta[0]
+ 1636      if not 0<G0<1e4: return -np.inf
+ 1637      return np.sum(log_like_const(theta, omega, y))
+ 1638  sampler_const = emcee.EnsembleSampler(20, 1, log_prob_const, args=(omega, data))
+ 1639  pos_const = np.array([Gamma0_true]) + 100 * np.random.randn(20,1)
+ 1640  sampler_const.run_mcmc(pos_const, nsteps, progress=False)
+ 1641  samples_const = sampler_const.get_chain(discard=burnin, flat=True)
+ 1642  # thin and compute pointwise log-likelihood
+ 1643  thin = 200
+ 1644  idx_sub = np.random.choice(len(samples_sub), thin, replace=False)
+ 1645  idx_const = np.random.choice(len(samples_const), thin, replace=False)
+ 1646  sub_ll = np.array([log_like_sub(samples_sub[i], omega, data) for i in idx_sub])
+ 1647  const_ll = np.array([log_like_const([samples_const[i]], omega, data) for i in idx_const])
+ 1648  idata_sub = az.from_dict(posterior={"Gamma0": samples_sub[:,0], "k": samples_sub[:,1], "om_max": samples_sub[:,2]},
+ 1649                           log_likelihood={"Gamma": sub_ll})
+ 1650  idata_const = az.from_dict(posterior={"Gamma0": samples_const[:,0]},
+ 1651                             log_likelihood={"Gamma": const_ll})
+ 1652  # Compute WAIC and LOO
+ 1653  waic_sub = az.waic(idata_sub, scale="deviance")
+ 1654  waic_const = az.waic(idata_const, scale="deviance")
+ 1655  loo_sub = az.loo(idata_sub, scale="deviance")
+ 1656  loo_const = az.loo(idata_const, scale="deviance")
+ 1657  # Inspect the returned objects to find the correct keys
+ 1658  print("WAIC object keys:", waic_sub.keys())
+ 1659  print("LOO object keys:", loo_sub.keys())
+ 1660  # Try to print using the first key that looks plausible
+ 1661  # Usually 'elpd_waic' or 'waic' depending on version
+ 1662  try:
+ 1663      print(f"Constant WAIC: {waic_const['waic']:.1f}")
+ 1664  except KeyError:
+ 1665      print(f"Constant WAIC (via elpd_waic): {waic_const['elpd_waic']:.1f}")
+ 1666  try:
+ 1667      print(f"Substrate WAIC: {waic_sub['waic']:.1f}")
+ 1668  except KeyError:
+ 1669      print(f"Substrate WAIC (via elpd_waic): {waic_sub['elpd_waic']:.1f}")
+ 1670  try:
+ 1671      print(f"Constant LOO: {loo_const['loo']:.1f}")
+ 1672  except KeyError:
+ 1673      print(f"Constant LOO (via elpd_loo): {loo_const['elpd_loo']:.1f}")
+ 1674  try:
+ 1675      print(f"Substrate LOO: {loo_sub['loo']:.1f}")
+ 1676  except KeyError:
+ 1677      print(f"Substrate LOO (via elpd_loo): {loo_sub['elpd_loo']:.1f}")
+ 1678  EOF
+ 1679  python3 test3_fixed_v2.py
+ 1680  python3 test4_fixed.py
+ 1681  cat test4_fixed.py
+ 1682  tree
+ 1683  l
+ 1684  nano test.py
+ 1685  python3 test.py
+ 1686  tree
+ 1687  l
+ 1688  cat UNIFIED_PERTURBATIVE_DERIVATION.md
+ 1689  tree
+ 1690  cat interaction_hamiltonian_validation.py
+ 1691  clear
+ 1692  cat interaction_hamiltonian_derivation.md
+ 1693  clear
+ 1694  cd ~/Desktop/fxt
+ 1695  git status
+ 1696  history > kiro_history.txt

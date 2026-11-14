@@ -1,0 +1,22 @@
+{
+  "coincidence": "A z dephasing Lindblad channel is exactly the repository effective equation; therefore agreement with that channel is not independent evidence for the derivation.",
+  "experimental_measurability": "Not determined: no experimental noise floor, sample size, or apparatus model is frozen in the repository. Difference maps are numerical separations, not detection claims.",
+  "grid": {
+    "points": 8800,
+    "rate_range": [
+      0.001,
+      10.0
+    ],
+    "time_range": [
+      0.0,
+      8.0
+    ]
+  },
+  "max_coherence_differences": {
+    "amplitude_damping": 0.23623519356959943,
+    "bit_flip": 0.5000000000000001,
+    "depolarizing": 0.07407405724626107
+  },
+  "status": "PARTIAL",
+  "verdict": "Standard non-z channels diverge over much of the grid, but calibrated Pauli mixtures can mimic an envelope. Benchmarking establishes model non-uniqueness for coherence-only observables."
+}

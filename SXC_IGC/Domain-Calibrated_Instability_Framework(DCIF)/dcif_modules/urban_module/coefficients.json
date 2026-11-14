@@ -1,0 +1,8 @@
+{
+  "module": "urban_module",
+  "coefficients": {
+    "beta": 3.383,
+    "gamma": 0.7,
+    "lambda": 0.06
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "signal_construction_sec": 0.8997182550010621,
+  "v12_engine_sec": 0.09405203200003598,
+  "transport_layer_sec": 0.016181306000362383,
+  "total_pipeline_sec": 1.0099515930014604,
+  "n_ticks": 3577553,
+  "n_bars": 8363,
+  "transport_pct_of_total": 1.6021862941230056,
+  "bars_per_sec": 8280.594889838078,
+  "practical_for_live_trading": 1,
+  "layer_n_bars": 8363,
+  "layer_n_repeats": 5,
+  "layer_full_pipeline_total_sec": 0.016448408799624302,
+  "layer_full_pipeline_per_bar_us": 1.9668072222437287,
+  "layer_full_pipeline_bars_per_sec": 508438.23873048555,
+  "layer_full_pipeline_std_sec": 0.0019763406722152752,
+  "layer_q_only_total_sec": 0.0001295885995205026,
+  "layer_q_only_per_bar_us": 0.015495468076109365,
+  "layer_q_only_bars_per_sec": 64534997.916054055,
+  "layer_peak_memory_mb": 2.478468894958496,
+  "layer_current_memory_mb": 0.9267511367797852,
+  "layer_overhead_vs_5min_realtime": 6.556024074145762e-07
+}

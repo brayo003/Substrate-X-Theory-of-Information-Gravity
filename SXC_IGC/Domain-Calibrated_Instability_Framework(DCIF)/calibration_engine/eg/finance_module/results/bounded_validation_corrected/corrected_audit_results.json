@@ -1,0 +1,226 @@
+{
+  "git_commit": "6738ed05 Restore lost leak-flow mechanics derivations and physics test scripts",
+  "run_timestamp": "2026-10-11T10:13:44.407424+00:00",
+  "cost_model": {
+    "cost_per_trade_fraction": 0.0003,
+    "deduction_count": "once",
+    "double_count": false,
+    "bid_only_data": true,
+    "note": "Cost applied as flat fraction; no tick-level bid/ask available."
+  },
+  "section3": {
+    "correct_same_3pip": {
+      "n": 7,
+      "pf": 0.5375690087080903,
+      "wr": 0.42857142857142855,
+      "exp": -0.0002680499141127824,
+      "sharpe": -0.7928716713085878,
+      "maxdd": 0.002375387353278103,
+      "label": "correct_same_3pip"
+    },
+    "correct_same_5pip": {
+      "n": 7,
+      "pf": 0.3255177768717436,
+      "wr": 0.42857142857142855,
+      "exp": -0.00046804991411278243,
+      "sharpe": -1.3844567676388082,
+      "maxdd": 0.0031753873532781034,
+      "label": "correct_same_5pip"
+    },
+    "correct_same_7pip": {
+      "n": 7,
+      "pf": 0.17343602758517535,
+      "wr": 0.42857142857142855,
+      "exp": -0.0006680499141127823,
+      "sharpe": -1.9760418639690276,
+      "maxdd": 0.0039753873532781024,
+      "label": "correct_same_7pip"
+    },
+    "orig_next_3pip": {
+      "n": 60,
+      "pf": 0.4047791793320816,
+      "wr": 0.3333333333333333,
+      "exp": -0.00038491238143405427,
+      "sharpe": -3.268948901546684,
+      "maxdd": 0.02463551631135945,
+      "label": "orig_next_3pip"
+    },
+    "orig_next_5pip": {
+      "n": 60,
+      "pf": 0.2549401581568598,
+      "wr": 0.26666666666666666,
+      "exp": -0.0005849123814340544,
+      "sharpe": -4.967490730400138,
+      "maxdd": 0.03603551631135945,
+      "label": "orig_next_5pip"
+    },
+    "correct_next_3pip": {
+      "n": 7,
+      "pf": 0.5375716641901283,
+      "wr": 0.42857142857142855,
+      "exp": -0.00026804788832166204,
+      "sharpe": -0.792864965731924,
+      "maxdd": 0.0023754066458791965,
+      "label": "correct_next_3pip"
+    },
+    "correct_next_5pip": {
+      "n": 7,
+      "pf": 0.32551967351529204,
+      "wr": 0.42857142857142855,
+      "exp": -0.000468047888321662,
+      "sharpe": -1.3844495297412274,
+      "maxdd": 0.003175406645879197,
+      "label": "correct_next_5pip"
+    },
+    "orig_same_3pip": {
+      "n": 76,
+      "pf": 0.46893927717544415,
+      "wr": 0.3684210526315789,
+      "exp": -0.00031848670515129384,
+      "sharpe": -3.068219411398033,
+      "maxdd": 0.02673648154610363,
+      "label": "orig_same_3pip"
+    },
+    "orig_same_5pip": {
+      "n": 76,
+      "pf": 0.29207762611377225,
+      "wr": 0.3157894736842105,
+      "exp": -0.000518486705151294,
+      "sharpe": -4.994968228081297,
+      "maxdd": 0.041136481546103644,
+      "label": "orig_same_5pip"
+    },
+    "orig_same_7pip": {
+      "n": 76,
+      "pf": 0.17527945434208178,
+      "wr": 0.3026315789473684,
+      "exp": -0.0007184867051512939,
+      "sharpe": -6.921717044764558,
+      "maxdd": 0.05553648154610364,
+      "label": "orig_same_7pip"
+    }
+  },
+  "section4": {
+    "os_pf": 0.3255177768717166,
+    "n_os": 7,
+    "pool_size": 61,
+    "iid_mean": 0.34344850955728534,
+    "iid_p95": 0.9636550565514371,
+    "iid_p_value": 0.3722,
+    "block_mean": 0.34623534510269965,
+    "block_p95": 0.9226690115462413,
+    "block_p_value": 0.3796,
+    "n_bootstrap": 10000,
+    "block_size": "weekly"
+  },
+  "section5": {
+    "n_eff_3pip": 29.907254432678233,
+    "expectancy_ci_3pip": [
+      -0.001161570350410267,
+      0.0006254705221846956
+    ],
+    "pf_ci_3pip": [
+      0.06852943036783521,
+      2.691014884686441
+    ],
+    "pf_point_3pip": 0.5375690087080665,
+    "ttest_p_3pip": 0.49059316640172357,
+    "n_eff_5pip": 29.907254432678226,
+    "expectancy_ci_5pip": [
+      -0.001361570350410267,
+      0.0004254705221846956
+    ],
+    "pf_ci_5pip": [
+      0.03404955510892001,
+      1.6280820253104922
+    ],
+    "pf_point_5pip": 0.3255177768717166,
+    "ttest_p_5pip": 0.24722721142813767,
+    "mw_p_value": 0.08887332235049838,
+    "mw_r_biserial": -0.12564550726940493,
+    "mw_n_sc": 41,
+    "mw_n_other": 614,
+    "sample_size_note": "See log for derivation"
+  },
+  "section6": {
+    "q_formula_verified": true,
+    "q_fwd_vol_sign": "negative",
+    "q_fwd_vol_max_rho": 0.0080533047098381,
+    "tsys_table": [
+      {
+        "k": 1,
+        "rho_tsys": NaN,
+        "p_tsys": NaN,
+        "rho_rv5_baseline": NaN,
+        "p_rv5_baseline": NaN,
+        "n": 209688
+      },
+      {
+        "k": 3,
+        "rho_tsys": 0.20224797040009737,
+        "p_tsys": 0.0,
+        "rho_rv5_baseline": 0.47961379348489597,
+        "p_rv5_baseline": 0.0,
+        "n": 209686
+      },
+      {
+        "k": 6,
+        "rho_tsys": 0.2500900204162402,
+        "p_tsys": 0.0,
+        "rho_rv5_baseline": 0.5834584848072882,
+        "p_rv5_baseline": 0.0,
+        "n": 209683
+      },
+      {
+        "k": 12,
+        "rho_tsys": 0.26888753233194157,
+        "p_tsys": 0.0,
+        "rho_rv5_baseline": 0.6188760680073753,
+        "p_rv5_baseline": 0.0,
+        "n": 209677
+      }
+    ]
+  },
+  "section7": {
+    "reproducibility": {
+      "git_commit": "6738ed05 Restore lost leak-flow mechanics derivations and physics test scripts",
+      "run_timestamp": "2026-10-11T10:14:34.930924+00:00",
+      "input_files": {
+        "2023_2024_ticks": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/data/2023 + /home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/data/2024",
+        "2025_ticks": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/data/2025/eurusd_ticks_2025.csv",
+        "2026_ohlc": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/data/2026/eurusd-m1-bid-2026-01-01-2026-07-22.csv",
+        "cache_dir": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/cache",
+        "phase1_results": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/results/phase1",
+        "phase2_results": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/results/phase2"
+      },
+      "date_ranges": {
+        "calibration": "2023-01-01 22:00:00+00:00 \u2192 2025-10-24 20:55:00+00:00",
+        "oos_2026": "2026-01-01 \u2192 2026-07-21",
+        "2026_rows": 224700,
+        "2026_5min_bars": 44940
+      },
+      "frozen_params": {
+        "q05": -0.9979956145675514,
+        "q95": 1.7322887804197729,
+        "c": 1.0,
+        "tau": 5.0,
+        "hold_bars_5m": 24,
+        "atr_stop": 1.5,
+        "atr_target": 2.5,
+        "cost_3pip_rt": 0.0003,
+        "cost_5pip_rt": 0.0005,
+        "cost_7pip_rt": 0.0007
+      },
+      "q_quantiles": {
+        "q05": -0.9979956145675514,
+        "q95": 1.7322887804197729,
+        "mean_Q": -0.3167938726500055,
+        "std_Q": 1.2726007825340975,
+        "n_bars": 209689,
+        "coherent_fraction": 0.20118365770259766
+      },
+      "command": "python3 corrected_audit.py",
+      "output_dir": "/home/lenovo/Git/Substrate_X_Theory_of_Information_Gravity/SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/calibration_engine/eg/finance_module/results/bounded_validation_corrected"
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "run_id": "aal20k_run_001",
+  "world": "A",
+  "tick": 9,
+  "timestamp": "2026-08-10T15:34:19.562511+00:00",
+  "field_parameters": {
+    "c_nominal": 1.0,
+    "tau_nominal": 1.0
+  },
+  "spectral_observable": {
+    "dominant_k": 0.24630086404143978,
+    "dominant_D": -0.7573435374897608,
+    "dominant_regime": "overdamped",
+    "weighted_D": -1.0,
+    "spectral_entropy": 3.178404066278161e-32,
+    "c_nominal": 1.0,
+    "tau_nominal": 1.0,
+    "k_critical": 0.5,
+    "propagating_power_fraction": 5.978343703949776e-35,
+    "overdamped_power_fraction": 1.0,
+    "critical_power_fraction": 0.0,
+    "spectral_resolution": 2.0408163265306123,
+    "num_modes": 2500
+  },
+  "entities": {
+    "Agent_1": {
+      "entity_id": "00000000-0000-0000-0000-0000d2a24b10",
+      "entity_name": "Agent_1",
+      "snapshot": "{'entity_id': '00000000-0000-0000-0000-0000d2a24b10', 'type': 'human', 'display_name': 'Agent_1', 'created_tick': 0, 'created_revision': None, 'alive': True, 'enabled': True, 'lifecycle': 'active', 'components': mappingproxy({'TransformComponent': mappingproxy({'position': (0.0, 0.0, 0.0), 'rotation': (0.0, 0.0, 0.0, 1.0), 'room': 'village_center', 'component_type': 'TransformComponent'}), 'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.85, 'thirst': 0.75, 'energy': 0.15}), 'component_type': 'NeedsComponent'}), 'InventoryComponent': mappingproxy({'items': (mappingproxy({'identifier': 'food', 'quantity': 2.0, 'properties': mappingproxy({})}), mappingproxy({'identifier': 'water', 'quantity': 3.0, 'properties': mappingproxy({})})), 'capacity': None, 'component_type': 'InventoryComponent'})}), 'relationships': (), 'actions': (), 'metadata': mappingproxy({'agent_memory_id': '1375896868'}), 'history_ref': '00000000-0000-0000-0000-000063d646b5', 'history': ('00000000-0000-0000-0000-0000e705f99e', '00000000-0000-0000-0000-0000ea3fa4a0', '00000000-0000-0000-0000-00003df1e317', '00000000-0000-0000-0000-000063d646b5')}",
+      "needs": {},
+      "location": "unknown",
+      "inventory": {},
+      "memory_stats": {
+        "total_memories": 0
+      }
+    },
+    "Agent_2": {
+      "entity_id": "00000000-0000-0000-0000-00009fae471c",
+      "entity_name": "Agent_2",
+      "snapshot": "{'entity_id': '00000000-0000-0000-0000-00009fae471c', 'type': 'human', 'display_name': 'Agent_2', 'created_tick': 0, 'created_revision': None, 'alive': True, 'enabled': True, 'lifecycle': 'active', 'components': mappingproxy({'TransformComponent': mappingproxy({'position': (0.0, 0.0, 0.0), 'rotation': (0.0, 0.0, 0.0, 1.0), 'room': 'village_center', 'component_type': 'TransformComponent'}), 'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.6, 'thirst': 0.55, 'energy': 0.4}), 'component_type': 'NeedsComponent'}), 'InventoryComponent': mappingproxy({'items': (mappingproxy({'identifier': 'food', 'quantity': 1.5, 'properties': mappingproxy({})}), mappingproxy({'identifier': 'water', 'quantity': 2.0, 'properties': mappingproxy({})})), 'capacity': None, 'component_type': 'InventoryComponent'})}), 'relationships': (), 'actions': (), 'metadata': mappingproxy({'agent_memory_id': '3075020289'}), 'history_ref': '00000000-0000-0000-0000-0000ae7294f2', 'history': ('00000000-0000-0000-0000-00006d79165a', '00000000-0000-0000-0000-0000f4bd7ec6', '00000000-0000-0000-0000-00002a0dc793', '00000000-0000-0000-0000-0000ae7294f2')}",
+      "needs": {},
+      "location": "unknown",
+      "inventory": {},
+      "memory_stats": {
+        "total_memories": 0
+      }
+    },
+    "Agent_3": {
+      "entity_id": "00000000-0000-0000-0000-000098818271",
+      "entity_name": "Agent_3",
+      "snapshot": "{'entity_id': '00000000-0000-0000-0000-000098818271', 'type': 'human', 'display_name': 'Agent_3', 'created_tick': 0, 'created_revision': None, 'alive': True, 'enabled': True, 'lifecycle': 'active', 'components': mappingproxy({'TransformComponent': mappingproxy({'position': (0.0, 0.0, 0.0), 'rotation': (0.0, 0.0, 0.0, 1.0), 'room': 'village_center', 'component_type': 'TransformComponent'}), 'NeedsComponent': mappingproxy({'needs': mappingproxy({'hunger': 0.4, 'thirst': 0.35, 'energy': 0.65}), 'component_type': 'NeedsComponent'}), 'InventoryComponent': mappingproxy({'items': (mappingproxy({'identifier': 'food', 'quantity': 3.0, 'properties': mappingproxy({})}), mappingproxy({'identifier': 'water', 'quantity': 1.5, 'properties': mappingproxy({})})), 'capacity': None, 'component_type': 'InventoryComponent'})}), 'relationships': (), 'actions': (), 'metadata': mappingproxy({'agent_memory_id': '3365411566'}), 'history_ref': '00000000-0000-0000-0000-00000fdb5e22', 'history': ('00000000-0000-0000-0000-0000f9465d3b', '00000000-0000-0000-0000-0000cdc2abed', '00000000-0000-0000-0000-00009f9268c3', '00000000-0000-0000-0000-00000fdb5e22')}",
+      "needs": {},
+      "location": "unknown",
+      "inventory": {},
+      "memory_stats": {
+        "total_memories": 0
+      }
+    }
+  },
+  "goals_per_entity": {
+    "Agent_1": [],
+    "Agent_2": [],
+    "Agent_3": []
+  },
+  "world_state_keys": [
+    "entities",
+    "physical_field",
+    "propagation_parameters",
+    "relaxation_parameters",
+    "spectral_transport_observable",
+    "q_observations",
+    "independent_observables",
+    "population",
+    "goals",
+    "perceptions",
+    "pending_actions",
+    "action_harvest_signals",
+    "action_eat_signals"
+  ],
+  "llm_accounting": {
+    "total_calls": 27,
+    "successful_calls": 27,
+    "failed_calls": 0,
+    "timeout_calls": 0,
+    "avg_latency_s": 60.92297943433126,
+    "min_latency_s": 3.1515095233917236,
+    "max_latency_s": 98.13303470611572,
+    "calls_per_entity": {
+      "Agent_1": 9,
+      "Agent_2": 9,
+      "Agent_3": 9
+    }
+  },
+  "checkpoint": true,
+  "field_trajectory_len": 9,
+  "field_trajectory_last10": [
+    {
+      "tick": 1,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 2,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 3,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 4,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 5,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 6,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 7,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 8,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    },
+    {
+      "tick": 9,
+      "dominant_k": 0.24630086404143978,
+      "dominant_D": -0.7573435374897608,
+      "dominant_regime": "overdamped",
+      "weighted_D": -1.0,
+      "spectral_entropy": 3.178404066278161e-32,
+      "c_nominal": 1.0,
+      "tau_nominal": 1.0,
+      "k_critical": 0.5,
+      "propagating_power_fraction": 5.978343703949776e-35,
+      "overdamped_power_fraction": 1.0,
+      "critical_power_fraction": 0.0,
+      "spectral_resolution": 2.0408163265306123,
+      "num_modes": 2500
+    }
+  ]
+}

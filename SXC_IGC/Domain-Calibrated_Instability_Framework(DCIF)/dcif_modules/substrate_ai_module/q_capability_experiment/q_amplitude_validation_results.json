@@ -1,0 +1,689 @@
+{
+  "experiment_date": "2026-08-09",
+  "theoretical_Q": "Q = 4 c\u00b2 \u03c4\u00b2 |\u2207ln s|\u00b2 - 1",
+  "pde": "\u03c4 \u2202\u00b2s/\u2202t\u00b2 + \u2202s/\u2202t = c\u00b2\u03c4 \u2207\u00b2s",
+  "dispersion_relation": "\u03c9\u00b2 = c\u00b2k\u00b2 - 1/(4\u03c4\u00b2)",
+  "telegraph_boundary": "k_c = 1/(2c\u03c4)",
+  "fixed_parameters": {
+    "c": 1.0,
+    "tau": 1.0,
+    "s0": 1.0,
+    "k_c": 0.5
+  },
+  "amplitude_sweep": [
+    {
+      "k": 0.25,
+      "A": 0.05,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 2.439201300475293e-17,
+      "q_min": -1.0,
+      "q_max": -0.9996293734598822,
+      "q_mean": -0.9998081547740193,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 2514,
+      "dx": 0.05000545409613678
+    },
+    {
+      "k": 0.25,
+      "A": 0.1,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.3965389942692453e-16,
+      "q_min": -1.0,
+      "q_max": -0.9985108693978637,
+      "q_mean": -0.9992320791165591,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 2514,
+      "dx": 0.05000545409613678
+    },
+    {
+      "k": 0.25,
+      "A": 0.2,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 5.282112410418892e-19,
+      "q_min": -1.0,
+      "q_max": -0.9939350946811074,
+      "q_mean": -0.9969010209062332,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 2514,
+      "dx": 0.05000545409613678
+    },
+    {
+      "k": 0.25,
+      "A": 0.4,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.0375771917088882e-17,
+      "q_min": -1.0,
+      "q_max": -0.973836127830006,
+      "q_mean": -0.9869824895662027,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 2514,
+      "dx": 0.05000545409613678
+    },
+    {
+      "k": 0.25,
+      "A": 0.6,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 3.050360194554866e-17,
+      "q_min": -1.0,
+      "q_max": -0.9322704343155896,
+      "q_mean": -0.9676970883841595,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 2514,
+      "dx": 0.05000545409613678
+    },
+    {
+      "k": 0.25,
+      "A": 0.8,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.0701341131512293e-17,
+      "q_min": -1.0,
+      "q_max": -0.8474449271362448,
+      "q_mean": -0.9320956273838369,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 2514,
+      "dx": 0.05000545409613678
+    },
+    {
+      "k": 0.4,
+      "A": 0.05,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.9832611490655644e-17,
+      "q_min": -1.0,
+      "q_max": -0.9993497764108733,
+      "q_mean": -0.9997701224832469,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1571,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.4,
+      "A": 0.1,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 5.083367539712565e-17,
+      "q_min": -1.0,
+      "q_max": -0.9975728529710197,
+      "q_mean": -0.9990893420134814,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1571,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.4,
+      "A": 0.2,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 7.608285676426077e-17,
+      "q_min": -1.0,
+      "q_max": -0.9912241433682186,
+      "q_mean": -0.9964095020044291,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1571,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.4,
+      "A": 0.4,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.6476847177652263e-17,
+      "q_min": -1.0,
+      "q_max": -0.968729256185707,
+      "q_mean": -0.9857933859558438,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1571,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.4,
+      "A": 0.6,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.9179258356281783e-17,
+      "q_min": -1.0,
+      "q_max": -0.9328393579318265,
+      "q_mean": -0.967667766147992,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1571,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.4,
+      "A": 0.8,
+      "analytical_transport": "overdamped",
+      "measured_transport": "overdamped",
+      "omega_measured": 1.5505673362362966e-17,
+      "q_min": -1.0,
+      "q_max": -0.8801420828932341,
+      "q_mean": -0.9405393129046753,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1571,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.5,
+      "A": 0.05,
+      "analytical_transport": "critical",
+      "measured_transport": "overdamped",
+      "omega_measured": 6.228374029685562e-16,
+      "q_min": -1.0,
+      "q_max": -0.9989644610932774,
+      "q_mean": -0.9998166621110837,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1257,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.5,
+      "A": 0.1,
+      "analytical_transport": "critical",
+      "measured_transport": "overdamped",
+      "omega_measured": 3.142173533435612e-16,
+      "q_min": -1.0,
+      "q_max": -0.9961902885702842,
+      "q_mean": -0.9992830648510478,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1257,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.5,
+      "A": 0.2,
+      "analytical_transport": "critical",
+      "measured_transport": "overdamped",
+      "omega_measured": 5.575742834638686e-18,
+      "q_min": -1.0,
+      "q_max": -0.9867899591252215,
+      "q_mean": -0.9972447351260978,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1257,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.5,
+      "A": 0.4,
+      "analytical_transport": "critical",
+      "measured_transport": "overdamped",
+      "omega_measured": 2.105850031641557e-17,
+      "q_min": -1.0,
+      "q_max": -0.9574488341943935,
+      "q_mean": -0.9896466078306938,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1257,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.5,
+      "A": 0.6,
+      "analytical_transport": "critical",
+      "measured_transport": "overdamped",
+      "omega_measured": 2.790064470593554e-17,
+      "q_min": -1.0,
+      "q_max": -0.9180410293672999,
+      "q_mean": -0.9777038641506668,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1257,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.5,
+      "A": 0.8,
+      "analytical_transport": "critical",
+      "measured_transport": "overdamped",
+      "omega_measured": 5.4618243793367446e-17,
+      "q_min": -1.0,
+      "q_max": -0.8699680655326778,
+      "q_mean": -0.9614874460966939,
+      "q_regime": "overdamped",
+      "agreement": true,
+      "nx": 1257,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 0.6,
+      "A": 0.05,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.18127677141723914,
+      "q_min": -1.0,
+      "q_max": -0.999518771741637,
+      "q_mean": -0.9999636411393742,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 1048,
+      "dx": 0.05000943415456532
+    },
+    {
+      "k": 0.6,
+      "A": 0.1,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.20857287185864012,
+      "q_min": -1.0,
+      "q_max": -0.9981638669990894,
+      "q_mean": -0.9998574255019935,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 1048,
+      "dx": 0.05000943415456532
+    },
+    {
+      "k": 0.6,
+      "A": 0.2,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.2240897703627712,
+      "q_min": -1.0,
+      "q_max": -0.9932751951202721,
+      "q_mean": -0.9994509390213011,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 1048,
+      "dx": 0.05000943415456532
+    },
+    {
+      "k": 0.6,
+      "A": 0.4,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.23233459518714528,
+      "q_min": -1.0,
+      "q_max": -0.9769789036774181,
+      "q_mean": -0.9979511643892169,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 1048,
+      "dx": 0.05000943415456532
+    },
+    {
+      "k": 0.6,
+      "A": 0.6,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.23515519603387586,
+      "q_min": -1.0,
+      "q_max": -0.9547144026565035,
+      "q_mean": -0.9956675168342922,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 1048,
+      "dx": 0.05000943415456532
+    },
+    {
+      "k": 0.6,
+      "A": 0.8,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.2365790230388775,
+      "q_min": -1.0,
+      "q_max": -0.9284637603425495,
+      "q_mean": -0.9927154660115223,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 1048,
+      "dx": 0.05000943415456532
+    },
+    {
+      "k": 0.75,
+      "A": 0.05,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.2689970514375606,
+      "q_min": -1.0,
+      "q_max": -0.9997622574007415,
+      "q_mean": -0.9999640443464443,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 838,
+      "dx": 0.05004528321130693
+    },
+    {
+      "k": 0.75,
+      "A": 0.1,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.36012308733326026,
+      "q_min": -1.0,
+      "q_max": -0.999093732811331,
+      "q_mean": -0.9998587786371721,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 838,
+      "dx": 0.05004528321130693
+    },
+    {
+      "k": 0.75,
+      "A": 0.2,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.4049199067408922,
+      "q_min": -1.0,
+      "q_max": -0.996691004165826,
+      "q_mean": -0.9994543618123948,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 838,
+      "dx": 0.05004528321130693
+    },
+    {
+      "k": 0.75,
+      "A": 0.4,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.42528987517254807,
+      "q_min": -1.0,
+      "q_max": -0.9887918335508518,
+      "q_mean": -0.9979501770305443,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 838,
+      "dx": 0.05004528321130693
+    },
+    {
+      "k": 0.75,
+      "A": 0.6,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.43172481860983936,
+      "q_min": -1.0,
+      "q_max": -0.978261960975128,
+      "q_mean": -0.995635398962229,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 838,
+      "dx": 0.05004528321130693
+    },
+    {
+      "k": 0.75,
+      "A": 0.8,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.43487449133573663,
+      "q_min": -1.0,
+      "q_max": -0.9662228662974568,
+      "q_mean": -0.9926097821141888,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 838,
+      "dx": 0.05004528321130693
+    },
+    {
+      "k": 1.0,
+      "A": 0.05,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.1007357854554125,
+      "q_min": -1.0,
+      "q_max": -0.9994606444579086,
+      "q_mean": -0.9999304292783604,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 629,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 1.0,
+      "A": 0.1,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.006729058859503,
+      "q_min": -1.0,
+      "q_max": -0.997886935476893,
+      "q_mean": -0.9997260902165978,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 629,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 1.0,
+      "A": 0.2,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.964287970855245,
+      "q_min": -1.0,
+      "q_max": -0.9918757730480589,
+      "q_mean": -0.9989369096206351,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 629,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 1.0,
+      "A": 0.4,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.9447753947761326,
+      "q_min": -1.0,
+      "q_max": -0.9697589855427476,
+      "q_mean": -0.9959746383051956,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 629,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 1.0,
+      "A": 0.6,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.9385521631605994,
+      "q_min": -1.0,
+      "q_max": -0.9361988584535017,
+      "q_mean": -0.9913724044437136,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 629,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 1.0,
+      "A": 0.8,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 0.9354947507884132,
+      "q_min": -1.0,
+      "q_max": -0.8930687562207011,
+      "q_mean": -0.9853112974098734,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 629,
+      "dx": 0.05002536072595212
+    },
+    {
+      "k": 1.2566,
+      "A": 0.05,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.34378397232639,
+      "q_min": -1.0,
+      "q_max": -0.9996470137883771,
+      "q_mean": -0.9999279306517541,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 501,
+      "dx": 0.0500014746711729
+    },
+    {
+      "k": 1.2566,
+      "A": 0.1,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.2645083023800903,
+      "q_min": -1.0,
+      "q_max": -0.9986237966903946,
+      "q_mean": -0.9997162033858319,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 501,
+      "dx": 0.0500014746711729
+    },
+    {
+      "k": 1.2566,
+      "A": 0.2,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.2190115378488806,
+      "q_min": -1.0,
+      "q_max": -0.994765301993423,
+      "q_mean": -0.9988981649671766,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 501,
+      "dx": 0.0500014746711729
+    },
+    {
+      "k": 1.2566,
+      "A": 0.4,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.1944632225194889,
+      "q_min": -1.0,
+      "q_max": -0.9809720653031462,
+      "q_mean": -0.9958251980929197,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 501,
+      "dx": 0.0500014746711729
+    },
+    {
+      "k": 1.2566,
+      "A": 0.6,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.1859899964994691,
+      "q_min": -1.0,
+      "q_max": -0.9607723282747364,
+      "q_mean": -0.9910462464595259,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 501,
+      "dx": 0.0500014746711729
+    },
+    {
+      "k": 1.2566,
+      "A": 0.8,
+      "analytical_transport": "coherent",
+      "measured_transport": "coherent",
+      "omega_measured": 1.1816972220297304,
+      "q_min": -1.0,
+      "q_max": -0.9358111887469814,
+      "q_mean": -0.9847457260479052,
+      "q_regime": "overdamped",
+      "agreement": false,
+      "nx": 501,
+      "dx": 0.0500014746711729
+    }
+  ],
+  "analysis": {
+    "boundary_analysis": [
+      {
+        "A": 0.05,
+        "k_transition": null
+      },
+      {
+        "A": 0.1,
+        "k_transition": null
+      },
+      {
+        "A": 0.2,
+        "k_transition": null
+      },
+      {
+        "A": 0.4,
+        "k_transition": null
+      },
+      {
+        "A": 0.6,
+        "k_transition": null
+      },
+      {
+        "A": 0.8,
+        "k_transition": null
+      }
+    ],
+    "transport_analysis": [
+      {
+        "k": 0.25,
+        "transports": [
+          "overdamped"
+        ],
+        "consistent": true
+      },
+      {
+        "k": 0.4,
+        "transports": [
+          "overdamped"
+        ],
+        "consistent": true
+      },
+      {
+        "k": 0.5,
+        "transports": [
+          "overdamped"
+        ],
+        "consistent": true
+      },
+      {
+        "k": 0.6,
+        "transports": [
+          "coherent"
+        ],
+        "consistent": true
+      },
+      {
+        "k": 0.75,
+        "transports": [
+          "coherent"
+        ],
+        "consistent": true
+      },
+      {
+        "k": 1.0,
+        "transports": [
+          "coherent"
+        ],
+        "consistent": true
+      },
+      {
+        "k": 1.2566,
+        "transports": [
+          "coherent"
+        ],
+        "consistent": true
+      }
+    ],
+    "transport_consistent": true,
+    "q_boundary_amplitude_dependent": true,
+    "k_transition_mean": null,
+    "k_transition_std": null,
+    "boundary_deviation": 1.0,
+    "conclusion": "STRUCTURAL MISMATCH"
+  },
+  "conclusion": "STRUCTURAL MISMATCH"
+}

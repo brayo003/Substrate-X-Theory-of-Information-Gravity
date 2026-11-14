@@ -1,0 +1,36 @@
+{
+  "task": "nm_01_memory_kernel",
+  "status": "PASS",
+  "derivation": {
+    "exact_coherence": "rho_01(t) = rho_01(0) * exp(-Phi(t))",
+    "dephasing_function": "Phi(t) = Gamma_markov * tau_B * [t/tau_B - 1 + exp(-t/tau_B)]",
+    "correlation_function": "C_JJ(t) = S0 * exp(-t/tau_B)",
+    "S0_definition": "S0 = (2/3) * s0^2 * omega_rot^2 * r_q^2",
+    "Gamma_markov_definition": "Gamma_markov = 2 g^2 S0 tau_B / hbar^2",
+    "method": "Second-order cumulant expansion (exact for Gaussian noise, no Markov approx)",
+    "reference": "Kubo 1963; Breuer & Petruccione Ch.3"
+  },
+  "limits": {
+    "Markov_limit": "tau_B -> 0, Phi(t) -> Gamma_markov * t  (exponential)",
+    "short_time_NM": "t << tau_B, Phi(t) ~ Gamma_markov * t^2 / (2 tau_B)  (Gaussian)",
+    "crossover_time": "t* ~ tau_B"
+  },
+  "distinguishable_prediction": {
+    "signature": "Gaussian initial decay instead of exponential at t < tau_B",
+    "effective_rate": "Gamma_eff(t) = Gamma_markov * (1 - exp(-t/tau_B))",
+    "NM_parameter": "NMP = Gamma_markov * tau_B  (NMP >> 1 = strongly non-Markovian)",
+    "stress_test_mismatch_at_NMP_1": "~0.34 (from 07_derivation_stress)",
+    "stress_test_mismatch_at_NMP_10": "~0.70 (from 07_derivation_stress)"
+  },
+  "verification": {
+    "numerical_vs_analytic_max_error": 3.124614051941421e-06,
+    "result": "PASS"
+  },
+  "new_free_parameter": "tau_B (substrate bath correlation time)",
+  "old_free_parameters": [
+    "Gamma0",
+    "k_rot",
+    "omega_max"
+  ],
+  "next_task": "nm_02_parameter_space.py \u2014 map distinguishability across (omega_rot, tau_B)"
+}

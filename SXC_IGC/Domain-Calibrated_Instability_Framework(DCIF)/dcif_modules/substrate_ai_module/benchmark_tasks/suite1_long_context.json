@@ -1,0 +1,218 @@
+{
+  "suite_id": "suite1_long_context",
+  "name": "Long Context Stability",
+  "description": "Tasks requiring reference tracking, summarization, and cross-reference reasoning across extended context. Tests whether Q rises before context failures.",
+  "failure_type": "context_loss",
+  "tasks": [
+    {
+      "task_id": "lc_001",
+      "prompt": "Alice has a red car. Bob has a blue car. Carol has a green car. Dave has Alice's car color. Eve has the same color as Bob. What color is Dave's car and what color is Eve's car?",
+      "expected_keywords": ["red", "blue"],
+      "failure_indicators": ["green", "unclear", "cannot determine"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "lc_002",
+      "prompt": "A sequence of events: (1) John moved to Paris in 2010. (2) In 2012 John met Marie. (3) Marie had lived in Paris since 2008. (4) John left Paris in 2015. (5) Marie left two years after John. When did Marie leave Paris?",
+      "expected_keywords": ["2017"],
+      "failure_indicators": ["2015", "2013", "unclear"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "lc_003",
+      "prompt": "Read these instructions carefully: Step 1: Add 3 to the starting number. Step 2: Multiply the result by 2. Step 3: Subtract the original starting number. Step 4: Divide by the number you added in Step 1. Starting number is 7. What is the final result?",
+      "expected_keywords": ["2"],
+      "failure_indicators": ["cannot", "unclear", "3", "7"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_004",
+      "prompt": "There are 5 boxes labeled A through E. Box A contains a marble. Box B contains whatever Box D contains. Box C contains nothing. Box D contains a coin. Box E contains whatever Box A contains. List the contents of each box.",
+      "expected_keywords": ["A: marble", "B: coin", "D: coin", "E: marble"],
+      "failure_indicators": ["cannot determine", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_005",
+      "prompt": "A company has departments: Engineering (12 people), Marketing (8 people), HR (4 people), Finance (6 people). Engineering has 3 managers. Marketing has 2 managers. HR and Finance each have 1 manager. Total employees is 30. How many non-managers are there total? How many managers are there total?",
+      "expected_keywords": ["23", "7"],
+      "failure_indicators": ["30", "cannot"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "lc_006",
+      "prompt": "Passage: The Zorblax Protocol requires that any agent receiving a RED signal must forward it to three other agents within 10 cycles. Any agent receiving a BLUE signal must wait 5 cycles then send one YELLOW signal. Agent Alpha received a RED signal at cycle 1. Agent Beta received the forwarded RED signal at cycle 3. What minimum number of agents have received a signal by cycle 15, counting all forwarded signals?",
+      "expected_keywords": [],
+      "failure_indicators": ["cannot determine", "undefined", "unclear"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "lc_007",
+      "prompt": "Maria is taller than John. John is taller than Sam. Sam is taller than Lee. Peter is shorter than Sam but taller than Lee. Kate is taller than Maria. Rank all six people from tallest to shortest.",
+      "expected_keywords": ["Kate", "Maria", "John", "Sam", "Peter", "Lee"],
+      "failure_indicators": ["cannot determine", "unclear"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "lc_008",
+      "prompt": "Recipe calls for: 2 cups flour, 1 cup sugar, 3 eggs, half cup butter, 1 tsp vanilla. This makes 12 cookies. I want to make 30 cookies. Also I only have 2 eggs. I will substitute each missing egg with 3 tablespoons of applesauce. List the exact quantities of all ingredients for 30 cookies with the egg substitution.",
+      "expected_keywords": ["flour", "sugar", "butter", "applesauce", "vanilla"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_009",
+      "prompt": "Customers A, B, C, D ordered items. A ordered items 1, 3, 7. B ordered items 2, 3, 5. C ordered items 1, 5, 6. D ordered items 2, 4, 7. Item 3 is out of stock. Item 5 is out of stock. Which customers are affected by both out-of-stock items? Which customers are affected by at least one?",
+      "expected_keywords": ["B", "A and C", "D not affected"],
+      "failure_indicators": ["cannot determine", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_010",
+      "prompt": "A train leaves station X at 9:00 AM traveling east at 60 mph. Another train leaves station Y (300 miles east of X) at 10:00 AM traveling west at 90 mph. At what time do they meet? How far from station X?",
+      "expected_keywords": ["11:00", "120"],
+      "failure_indicators": ["cannot", "unclear", "never"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_011",
+      "prompt": "The library catalog says: Fantasy books are on shelf 3. Science books are on shelf 7. History books are on shelf 2. Shelf 2 is being renovated until next month. Shelf 7 has a sign saying 'See shelf 7A for overflow'. The librarian added: Science books from 2020 onward are on shelf 7A. I want a science book published in 2019. Which shelf should I check?",
+      "expected_keywords": ["shelf 7"],
+      "failure_indicators": ["7A", "cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_012",
+      "prompt": "Four friends split expenses on a trip. Total trip cost was $480. Alex paid $180, Ben paid $120, Chris paid $100, Dana paid $80. They agreed to split evenly. Calculate how much each person owes or is owed to settle up.",
+      "expected_keywords": ["Alex", "owed", "Ben", "Chris", "Dana"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_013",
+      "prompt": "Process: Input X → Step A (multiply by 3) → Step B (add 10) → Step C (divide by result of Step A minus 2) → Output. For input X=4: compute the output. For input X=2: compute the output.",
+      "expected_keywords": [],
+      "failure_indicators": ["cannot", "undefined"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "lc_014",
+      "prompt": "A building has floors 1-10. Red team works on floors 1-4. Blue team works on floors 5-7. Green team works on floors 8-10. There's a meeting room on every odd floor. The cafeteria is on floor 6. The server room is on floor 9. HR is on floor 3. Which floors have both a meeting room AND a team workspace? Which team has the cafeteria on their floor?",
+      "expected_keywords": ["1", "3", "5", "7", "9", "Blue"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_015",
+      "prompt": "Variables: X=5, Y=3, Z=X+Y, W=Z*X, V=W-Y. Final answer is (V+Z) / X. Calculate step by step and give the final numerical result.",
+      "expected_keywords": ["14", "14.0"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "lc_016",
+      "prompt": "Schedule: Meeting A runs 9-10 AM. Meeting B runs 10:30-11:30 AM. Meeting C runs 11-12 PM. Meeting D runs 1-2 PM. Meeting E runs 1:30-2:30 PM. Which pairs of meetings conflict (overlap)? List all conflicting pairs.",
+      "expected_keywords": ["B and C", "D and E"],
+      "failure_indicators": ["A and B", "A and C", "cannot"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_017",
+      "prompt": "Inventory: Item P (qty: 50, reorder at 10). Item Q (qty: 8, reorder at 15). Item R (qty: 25, reorder at 20). Item S (qty: 19, reorder at 20). After selling 5 P, 4 Q, 6 R, 1 S: which items now need reordering?",
+      "expected_keywords": ["Q", "R", "S"],
+      "failure_indicators": ["P", "cannot"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_018",
+      "prompt": "Company policy states: Employees with over 5 years tenure get 25 days vacation. Employees with 2-5 years get 20 days. Employees under 2 years get 15 days. Managers get 5 extra days regardless. Remote workers get 2 extra days. Alice (7 years, manager, remote), Bob (3 years, not manager, not remote), Carol (1 year, not manager, remote). How many vacation days does each get?",
+      "expected_keywords": ["Alice", "32", "Bob", "20", "Carol", "17"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_019",
+      "prompt": "Cipher rule: Each letter shifts forward by its position in the word (1-indexed). A=1, B=2, Z=26, wraps around. Decode the word 'BDF'. Position 1 shifts B back by 1 → A. Position 2 shifts D back by 2 → B. Position 3 shifts F back by 3 → C. What does 'BDF' decode to? Now encode 'CAT' using the same forward-shift rule.",
+      "expected_keywords": ["ABC", "CAT", "CEW"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "lc_020",
+      "prompt": "Four switches control four lights: Switch 1 → Light A and Light B. Switch 2 → Light B and Light C. Switch 3 → Light C and Light D. Switch 4 → Light A and Light D. All lights start OFF. I flip Switch 1, then Switch 2, then Switch 3. Which lights are ON? Which are OFF?",
+      "expected_keywords": ["A", "D"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "lc_021",
+      "prompt": "A family tree: Grandpa Tom has two children: Uncle Pete and Mom Sarah. Uncle Pete has one child: Cousin Amy. Mom Sarah has two children: Me and Sister Lisa. Grandma Beth is married to Grandpa Tom. Aunt Carol is married to Uncle Pete. How many first cousins do I have? Who are my first cousins?",
+      "expected_keywords": ["1", "Amy"],
+      "failure_indicators": ["2", "Lisa", "cannot"],
+      "difficulty": "low"
+    },
+    {
+      "task_id": "lc_022",
+      "prompt": "A cryptarithmetic puzzle: SEND + MORE = MONEY. Each letter represents a unique digit. S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. Verify this solution by computing 9567 + 1085 and checking if it equals 10652.",
+      "expected_keywords": ["10652", "correct", "yes"],
+      "failure_indicators": ["incorrect", "wrong", "cannot"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_023",
+      "prompt": "Project dependencies: Task A must complete before B. Task B must complete before D and E. Task C can run anytime. Task D must complete before F. Task E must complete before F. Task F is the final task. What is the critical path (longest dependency chain)?",
+      "expected_keywords": ["A", "B", "D", "F"],
+      "failure_indicators": ["cannot", "unclear", "C"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_024",
+      "prompt": "A store has items with these properties: Item 1 (red, large, $10). Item 2 (blue, small, $5). Item 3 (red, small, $8). Item 4 (blue, large, $12). Item 5 (green, medium, $7). Filter: I want red or blue items that are NOT large AND cost less than $10. Which items match?",
+      "expected_keywords": ["Item 2", "Item 3"],
+      "failure_indicators": ["Item 1", "Item 4", "Item 5", "cannot"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_025",
+      "prompt": "Sequence rule: Each term equals the sum of the previous two terms minus 1. First term: 3. Second term: 5. Compute the next six terms of the sequence.",
+      "expected_keywords": ["7", "11", "17", "27", "43", "69"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_026",
+      "prompt": "An organization chart: CEO has 3 direct reports (VP1, VP2, VP3). VP1 has 4 reports. VP2 has 2 reports. VP3 has 5 reports. Each of VP1's reports has 2 reports each. Each of VP2's reports has 3 reports each. VP3's reports have no direct reports. How many total employees are there in the entire organization?",
+      "expected_keywords": ["30", "30 total"],
+      "failure_indicators": ["cannot", "unclear", "25", "27"],
+      "difficulty": "high"
+    },
+    {
+      "task_id": "lc_027",
+      "prompt": "Track state: A counter starts at 100. Event 1: subtract 15. Event 2: multiply by 2. Event 3: add 30. Event 4: divide by 5. Event 5: subtract the original starting value divided by 10. What is the final counter value?",
+      "expected_keywords": ["48", "48.0"],
+      "failure_indicators": ["cannot", "100", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_028",
+      "prompt": "Grid navigation: Start at position (0,0). Move right 3. Move up 4. Move left 1. Move down 2. Move right 2. Move up 1. What is your final position (x,y)? What is the straight-line distance from start?",
+      "expected_keywords": ["4", "3", "(4,3)", "5"],
+      "failure_indicators": ["cannot", "unclear"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_029",
+      "prompt": "Conditional chain: IF temperature > 30 THEN set fan=HIGH ELSE IF temperature > 20 THEN set fan=MEDIUM ELSE set fan=LOW. IF fan=HIGH AND humidity>70 THEN set AC=ON ELSE set AC=OFF. Temperature=25, Humidity=80. What are the settings for fan and AC?",
+      "expected_keywords": ["MEDIUM", "OFF"],
+      "failure_indicators": ["HIGH", "ON", "LOW", "cannot"],
+      "difficulty": "medium"
+    },
+    {
+      "task_id": "lc_030",
+      "prompt": "Tournament bracket: 8 teams: A, B, C, D, E, F, G, H. Round 1 results: A beat B, C beat D, E beat F, G beat H. Round 2: A beat C, G beat E. Final: G beat A. Who won the tournament? Who came second? Who came third and fourth (both semifinal losers)?",
+      "expected_keywords": ["G", "A", "C", "E"],
+      "failure_indicators": ["B", "D", "F", "H", "cannot"],
+      "difficulty": "low"
+    }
+  ]
+}

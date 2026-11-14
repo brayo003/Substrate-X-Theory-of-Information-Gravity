@@ -1,0 +1,237 @@
+{
+  "audit": "SE_uniqueness_resolution",
+  "date": "2026-10-10",
+  "command": "python 04_validations/se_uniqueness_resolution.py",
+  "se_definitions": {
+    "SE1": {
+      "text": "A metric embedding \u03c6: O \u2192 R^d with minimum inter-object distance a. That is: \u03c6 assigns positions in Euclidean space to CCA objects, and a = min_{m \u2208 M} |\u03c6(tgt(m)) \u2212 \u03c6(src(m))| > 0 is the shortest step length.",
+      "free_parameters": [
+        "\u03c6 (the embedding itself)",
+        "a (the step length, in metres)"
+      ],
+      "what_it_introduces": "A spatial scale: a \u2208 \u211d_{>0} with units [m]."
+    },
+    "SE2": {
+      "text": "Isotropy: the spacing a is the same in all directions. That is: |\u03c6(tgt(m)) \u2212 \u03c6(src(m))| = a for every morphism m \u2208 M.",
+      "free_parameters": [
+        "a (still free \u2014 SE2 does not fix its numerical value)"
+      ],
+      "what_it_introduces": "A single uniform step length a (rather than a_x \u2260 a_y \u2260 a_z)."
+    },
+    "SE3": {
+      "text": "Uniform time: each morphism has temporal duration dt. That is: a clock assigns to every m \u2208 M a duration dt \u2208 \u211d_{>0} [s], and dt is the same for all m.",
+      "free_parameters": [
+        "dt \u2208 \u211d_{>0} with units [s]"
+      ],
+      "what_it_introduces": "A temporal scale: dt \u2208 \u211d_{>0} with units [s]."
+    },
+    "SE4": {
+      "text": "Single branch: all morphisms share the same spatial step length. Equivalent to SE2 in the isotropic case. In the multi-branch context it additionally forbids morphisms with step length k\u00b7a for k \u2260 1.",
+      "free_parameters": [
+        "None beyond those in SE1\u2013SE3"
+      ],
+      "what_it_introduces": "Absence of multiple coexisting step scales."
+    }
+  },
+  "task2": {
+    "task": "T2_scale_analysis",
+    "conclusion": "After imposing SE1\u2013SE4, two free parameters remain: (a, dt). Rescaling (a, dt) \u2192 (k_a\u00b7a, k_t\u00b7dt) satisfies all four conditions for any k_a, k_t > 0, and gives c \u2192 (k_a/k_t)\u00b7c. Over the tested 25-point grid, 9 distinct c values appear, ranging from 5.0e-01 to 5.0e+07 m/s.",
+    "all_grid_points_satisfy_SE1_to_SE4": true,
+    "distinct_c_values_m_per_s": [
+      0.5,
+      5.0,
+      50.0,
+      500.0,
+      5000.0,
+      50000.0,
+      500000.0,
+      5000000.0,
+      50000000.0
+    ],
+    "n_distinct_c_values": 9,
+    "freedom_remaining": "2-parameter group: (a, dt) \u2192 (k_a\u00b7a, k_t\u00b7dt), k_a,k_t > 0",
+    "c_invariant_under": "simultaneous rescaling k_a = k_t (ratio a/dt preserved)",
+    "c_not_invariant_under": "independent rescaling of a and dt"
+  },
+  "task3": {
+    "task": "T3_two_models",
+    "abstract_cca_shared": {
+      "O": [
+        "A",
+        "B",
+        "C"
+      ],
+      "morphisms": "m_AB, m_BC, m_AC and identities",
+      "order": "e_A < m_AB < m_BC, e_A < m_AC",
+      "epsilon": "1.0 per hom-set (single morphism per directed pair)",
+      "dagger": "each morphism paired with its reverse",
+      "note": "This abstract CCA is identical for all four models below"
+    },
+    "models": [
+      {
+        "model": "M_A (silicon [100] LA speed)",
+        "a_m": 1e-09,
+        "dt_s": 1.1855364552459988e-13,
+        "c_m_per_s": 8435.0,
+        "SE1": true,
+        "SE2": true,
+        "SE3": true,
+        "SE4": true,
+        "all_SE1_to_SE4": true
+      },
+      {
+        "model": "M_B (silicon [111] LA speed)",
+        "a_m": 1e-09,
+        "dt_s": 1.0689470871191877e-13,
+        "c_m_per_s": 9355.0,
+        "SE1": true,
+        "SE2": true,
+        "SE3": true,
+        "SE4": true,
+        "all_SE1_to_SE4": true
+      },
+      {
+        "model": "M_C (generic acoustic)",
+        "a_m": 1e-06,
+        "dt_s": 2e-10,
+        "c_m_per_s": 5000.0,
+        "SE1": true,
+        "SE2": true,
+        "SE3": true,
+        "SE4": true,
+        "all_SE1_to_SE4": true
+      },
+      {
+        "model": "M_D (double step length)",
+        "a_m": 2e-06,
+        "dt_s": 2e-10,
+        "c_m_per_s": 10000.0,
+        "SE1": true,
+        "SE2": true,
+        "SE3": true,
+        "SE4": true,
+        "all_SE1_to_SE4": true
+      }
+    ],
+    "all_models_satisfy_SE1_to_SE4": true,
+    "all_speeds_distinct": true,
+    "speeds_m_per_s": [
+      8435.0,
+      9355.0,
+      5000.0,
+      10000.0
+    ],
+    "verdict": "COUNTEREXAMPLE CONFIRMED. Four models share the same abstract CCA structure. All satisfy SE1\u2013SE4. They have four distinct propagation speeds: [8435.0, 9355.0, 5000.0, 10000.0] m/s. SE1\u2013SE4 are therefore NOT sufficient to uniquely determine c.",
+    "physical_note": "Models M_A and M_B use silicon LA speeds at [100] and [111] orientations respectively. They correspond exactly to the experimental speed range 8435\u20139355 m/s cited in MICROSCOPIC_C2_COUPLING_DERIVATION_AUDIT.md. Both are physically plausible values for c in the C2 theory \u2014 and SE1\u2013SE4 cannot distinguish between them."
+  },
+  "task4": {
+    "task": "T4_missing_condition",
+    "missing_conditions": {
+      "SE5a_fix_a": {
+        "statement": "Fix the numerical value of a by identifying it with a known physical length.",
+        "examples": [
+          "a = l_Planck \u2248 1.6e-35 m (Planck length)",
+          "a = r_qubit \u2248 1e-7 m (qubit radius, empirical)",
+          "a = \u03bb_phonon \u2248 1e-9 m (dominant phonon wavelength, empirical)"
+        ],
+        "is_derivable_from_Ax1_to_Ax5": false,
+        "is_derivable_from_SE1_to_SE4": false,
+        "type": "Empirical identification",
+        "does_it_fix_c": false,
+        "reason": "Fixing a alone still leaves dt free; c = a/dt is undetermined without dt."
+      },
+      "SE5b_fix_dt": {
+        "statement": "Fix the numerical value of dt by identifying it with a known physical time.",
+        "examples": [
+          "dt = t_Planck \u2248 5.4e-44 s (Planck time)",
+          "dt = 1/omega_qubit \u2248 2e-10 s (qubit oscillation period, empirical)",
+          "dt = tau_B = 1/(2*lambda) (PRW correlation time, measured)"
+        ],
+        "is_derivable_from_Ax1_to_Ax5": false,
+        "is_derivable_from_SE1_to_SE4": false,
+        "type": "Empirical identification",
+        "does_it_fix_c": false,
+        "reason": "Fixing dt alone still leaves a free; c = a/dt is undetermined without a."
+      },
+      "SE5c_fix_ratio": {
+        "statement": "Fix the ratio c = a/dt directly, either by derivation or measurement.",
+        "examples": [
+          "c = v_acoustic(material) \u2014 constitutive identification (Gap 7 assumption)",
+          "c = \u03be_c / (2\u03c4_B) \u2014 empirical P3 ratio measurement",
+          "c = speed_of_light \u2014 (incompatible with acoustic-scale physics)"
+        ],
+        "is_derivable_from_Ax1_to_Ax5": false,
+        "is_derivable_from_SE1_to_SE4": false,
+        "type": "Theoretical derivation OR empirical calibration",
+        "does_it_fix_c": true,
+        "reason": "If c is fixed, then a = c\u00b7dt and dt is still free, but c itself is determined. This is the only form that directly yields a unique numerical speed.",
+        "note": "SE5c is the Gap 7 question itself: deriving c from the theory is equivalent to providing SE5c from an axiomatic route. GAP7_REDERIVATION.md showed 25 routes to derive SE5c all fail. This is now understood as: none of them provide a derivation of the ratio a/dt from within Ax1\u2013Ax5."
+      },
+      "SE5d_fix_both": {
+        "statement": "Fix both a and dt independently via two separate physical identifications.",
+        "example": "a = \u03bb_phonon AND dt = 1/omega_qubit \u2192 c = lambda_phonon * omega_qubit",
+        "is_derivable": false,
+        "type": "Double empirical identification",
+        "does_it_fix_c": true,
+        "reason": "If both are fixed, c = a/dt is determined. Over-determines the system.",
+        "note": "The two identifications must be independently motivated to avoid circularity."
+      }
+    },
+    "minimum_missing_condition": "SE5c: fix the ratio c = a/dt",
+    "does_SE5c_follow_from_axioms": false,
+    "nature_of_SE5": "Always empirical or an additional axiomatic identification",
+    "rescaling_proof": {
+      "simultaneous_rescaling_k_a_eq_k_t_preserves_c": true,
+      "independent_rescaling_k_a_neq_k_t_changes_c": true,
+      "conclusion": "Rescaling is NOT forbidden by SE1\u2013SE4. Simultaneous rescaling (k_a = k_t) preserves c. Independent rescaling (k_a \u2260 k_t) changes c while satisfying all four conditions. Therefore SE1\u2013SE4 are not sufficient to fix the numerical value of c."
+    },
+    "corrected_theorem_CUT": "SE1\u2013SE4 are necessary and sufficient for uniqueness of c UP TO THE FREEDOM c \u2192 (k_a/k_t)\u00b7c. A fifth condition SE5 is required to eliminate this freedom. The minimum SE5 is: fix c = a/dt directly (either by derivation or calibration). SE5 is always an empirical or external-physics input."
+  },
+  "task5": {
+    "task": "T5_testable_quantity",
+    "candidate_A": {
+      "name": "P3 ratio c_eff = \u03be_c / (2\u03c4_B)",
+      "is_c_independent": false,
+      "reason": "\u03be_c = c / \u03bb contains c. Measuring \u03be_c from spatial correlation data is model-dependent: it requires fitting C_\u0393(r) = K\u2080(r/\u03be_c), which assumes the K\u2080 functional form. The ratio c_eff = \u03be_c / (2\u03c4_B) would correctly extract c IF \u03be_c is independently measured AND the K\u2080 form is verified. Both require additional assumptions.",
+      "theory_prediction": "c_eff = c (a free parameter needing SE5)",
+      "null_prediction": "c_eff = v_acoustic (a material property, orientation-dependent)",
+      "is_discriminating": "Only if c_eff is orientation-independent AND TLS bath is excluded",
+      "data_available": "Multi-qubit spatial correlation data (IBM devices): YES (in 06_datasets/)",
+      "limitation": "TLS bath dominates and is isotropic \u2014 confounds orientation test"
+    },
+    "candidate_B": {
+      "name": "Orientation dependence of c_eff across crystal cuts",
+      "is_c_independent": false,
+      "theory_prediction": "D2 + SE2 (isotropic CCA): c_eff constant across orientations (value = c, free parameter)",
+      "null_prediction_phonon": "Conventional LA phonon bath: c_eff varies by ~10.3% across orientations. Range: 8433.0\u20139134.2 m/s.",
+      "null_prediction_TLS": "TLS bath: c_eff constant across orientations (same as D2)",
+      "la_speeds_by_direction": {
+        "[100]_surf_xprop": 8433.0,
+        "[100]_surf_yprop": 8433.0,
+        "[110]_surf_prop110": 9134.2,
+        "[110]_surf_prop001": 8433.0,
+        "[111]_surf_prop110": 9134.2
+      },
+      "is_discriminating": "YES, if TLS bath is independently excluded. NO, if TLS dominates (both D2 and TLS predict orientation-independence).",
+      "data_available": "NOT from existing IBM datasets \u2014 requires dedicated orientation experiment",
+      "required_precision": "Need \u03be_c measured to <4% across orientations (3\u03c3 on 11% variation)"
+    },
+    "currently_testable": {
+      "from_existing_IBM_data": {
+        "xi_c_measurement": "Possible in principle from spatial qubit correlations",
+        "tau_B_measurement": "Extractable from non-Markovian onset in Ramsey curves",
+        "c_eff_from_P3": "Possible in principle \u2014 but requires K\u2080 functional form assumption",
+        "orientation_test": "NOT possible \u2014 requires chips with different crystal cuts",
+        "TLS_exclusion": "NOT possible from Ramsey data alone \u2014 requires echo spectroscopy"
+      },
+      "conclusion": "From existing open data (IBM multi-qubit devices), one can estimate c_eff via the P3 ratio. This gives an empirical value for c (SE5d: empirical calibration). It does NOT test whether c is predicted by the theory. The orientation experiment would test whether c is orientation-independent (D2 prediction) vs. orientation-dependent (conventional phonon bath prediction), but requires data not currently available."
+    },
+    "verdict": "No quantity in the theory is testable as a zero-free-parameter prediction. c is always a calibrated empirical input (SE5). The theory currently makes one conditional prediction: IF c is calibrated from one experiment (e.g., P3 on one chip orientation), THEN the same c should be recovered from other orientations IF D2+SE2 holds. This is the correct framing of the orientation experiment: a test of SELF-CONSISTENCY of the calibrated c, not a test of a derived c. It is discriminating against conventional LA phonon bath, but not against TLS bath.",
+    "next_actionable_step": "Measure c_eff from existing IBM spatial correlation data (P3 ratio) without assuming any orientation. This gives the empirical SE5 value. Then assess whether existing literature on qubit decoherence and spatial correlations provides an independent constraint on c_eff's orientation dependence."
+  },
+  "overall_verdict": {
+    "theorem_CUT_status": "TOO STRONG as stated. SE1\u2013SE4 are necessary and sufficient only for uniqueness of c up to independent rescalings of a and dt. A fifth condition SE5 is required for uniqueness of the numerical value of c.",
+    "SE5_nature": "Always empirical \u2014 a constitutive identification, not a derivation.",
+    "gap7_restatement": "GAP-7 is equivalent to: find SE5 from within the theory. All 25 routes in GAP7_REDERIVATION.md failed because they lacked SE5, not because they lacked SE1\u2013SE4 (which are also assumptions, but at least structurally meaningful). The theory needs either a derivation of the physical scale of the CCA lattice, or must accept c as empirical."
+  }
+}

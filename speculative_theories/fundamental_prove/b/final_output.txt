@@ -1,0 +1,140 @@
+FINAL INTEGRATION TEST: SXC-IGC GRADUATION CHECK
+============================================================
+
+============================================================
+RUNNING: phase_I/test_uniqueness.py
+============================================================
+PHASE I: LOCK THE ACTION
+============================================================
+Testing polynomial boundedness...
+Quadratic force: 2*I*a + r
+As I → ∞: force → ∞ (UNBOUNDED) ✗
+
+Cubic force: -3*I**2*b + 2*I*a + r
+As I → ∞: force → -∞ (BOUNDED) ✓
+
+Fixed points analysis:
+Cubic has 2 fixed point(s)
+
+Numerical roots (r=0.153, a=1.0, b=1.0):
+  I = 0.7360: f' = 0.0000 (UNSTABLE)
+  I = -0.0693: f' = -0.0000 (STABLE)
+
+============================================================
+CONCLUSION: Cubic potential is uniquely determined
+Quadratic: Unbounded ✗
+Quartic+: Multiple basins ✗
+Cubic: Bounded with single global attractor ✓
+
+
+============================================================
+RUNNING: phase_II/test_geometry_alpha.py
+============================================================
+PHASE II: FORCE α FROM GEOMETRY
+============================================================
+Simulating scale-free graph with saturation penalties...
+Computing relational distances...
+
+Estimated Hausdorff dimension: DH = 2.4922
+Target α = 1.254
+Difference: 1.2382
+R² = 0.8946
+
+============================================================
+✗ FAILURE: DH ≠ 1.254
+
+
+============================================================
+RUNNING: phase_III/test_spectral_lock.py
+============================================================
+PHASE III: SPECTRAL LOCK
+============================================================
+Constructing entropy-weighted Laplacian...
+Computing eigenvalues...
+Not enough eigenvalues
+
+
+============================================================
+RUNNING: phase_IV/test_solver_invariance.py
+============================================================
+PHASE IV: UNIVERSALITY OR DEATH
+============================================================
+
+Testing RK45...
+  Max |I|: 1.1349
+  Final I: 0.4722
+
+Testing BDF...
+  Max |I|: 1.1348
+  Final I: 0.4718
+
+Testing Radau...
+  Max |I|: 1.1348
+  Final I: 0.4723
+
+Consistency check:
+  Mean I_max: 1.1348
+  Std I_max: 0.0000
+  CV: 0.0000
+
+============================================================
+✓ SOLVER INVARIANCE CONFIRMED
+  Dynamics are physical, not numerical
+
+
+============================================================
+RUNNING: phase_V/test_falsifiable_prediction.py
+============================================================
+PHASE V: FALSIFIABLE PREDICTION
+============================================================
+Predicted ω_crit = 4.9196e+09
+
+Testing forced response...
+
+ω = 4.9196e+08:
+  Max |I|: 233338580312784469187624960.0000
+  Std I: 9807618198604250420871168.0000
+  Clipping fraction: 0.1169
+
+ω = 2.4598e+09:
+  Max |I|: 1.1310
+  Std I: 0.3320
+  Clipping fraction: 0.0000
+
+ω = 4.9196e+09:
+  Max |I|: 1.1249
+  Std I: 0.3629
+  Clipping fraction: 0.0000
+
+Testing hysteresis...
+Frequency response: [np.float64(0.5704199480371057), np.float64(1.8466239560900565e+25), np.float64(5.714192593136639e+25), np.float64(5.966450607430953e+25), np.float64(0.57485141512264)]
+
+============================================================
+FALSIFIABLE PREDICTIONS:
+1. Critical frequency ω_crit predicted
+2. Square-wave clipping at saturation
+3. Hysteresis loops
+
+These falsify smooth theories (GR, Navier-Stokes)
+
+✓ PREDICTIONS ARE FALSIFIABLE
+
+
+============================================================
+FINAL STATUS CHECK (BINARY)
+============================================================
+
+Tests passed: 0/5
+
+BINARY CONDITIONS FOR GRADUATION:
+  ✗ 1. Cubic V(I) is unique
+  ✗ 2. α emerges from minimal bit-cost geometry
+  ✗ 3. Same α controls entropy and correlations
+  ✗ 4. Fixed point is solver-independent
+  ✗ 5. A new hard prediction exists
+
+============================================================
+❌ SXC-IGC REMAINS A PHENOMENOLOGICAL MODEL
+
+Not all binary conditions are satisfied.
+The framework is useful but not yet fundamental.

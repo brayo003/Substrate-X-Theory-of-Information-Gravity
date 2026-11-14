@@ -1,0 +1,78 @@
+{
+  "run_timestamp": "2026-10-11T10:02:32.025370+00:00",
+  "git_commit": "6738ed05 Restore lost leak-flow mechanics derivations and physics test scripts",
+  "frozen_params": {
+    "q05": -0.9979956145675514,
+    "q95": 1.7322887804197729,
+    "c": 1.0,
+    "tau": 5.0,
+    "hold_bars_5m": 24,
+    "atr_stop": 1.5,
+    "atr_target": 2.5,
+    "risk_fraction": 0.25,
+    "strategy": "NY_Continuation",
+    "cost_3pip_rt": 0.0003,
+    "cost_5pip_rt": 0.0005,
+    "cost_7pip_rt": 0.0007
+  },
+  "test_c": {
+    "mw_p_value": 0.08887332235049838,
+    "mw_r_biserial": -0.12564550726940493,
+    "mw_n_sc": 41,
+    "mw_n_other": 614,
+    "sc_mean": 0.003373347137388638,
+    "other_mean": -0.0002351229833031469
+  },
+  "test_d": {
+    "rho_k1": NaN,
+    "p_k1": NaN,
+    "rho_k3": -0.0054037044977290685,
+    "p_k3": 0.013343869988338749,
+    "rho_k6": -0.00735471134525313,
+    "p_k6": 0.0007574827720990217,
+    "rho_k12": -0.008053304709838142,
+    "p_k12": 0.00022620850768174927,
+    "note": "Q uses only s[t] and s[t-1] (backward difference). Forward window starts at t+1. No overlap confirmed."
+  },
+  "test_a": {
+    "3pip_rt": {
+      "n_trades": 76,
+      "win_rate": 0.3684210526315789,
+      "profit_factor": 0.468939277175448,
+      "expectancy": -0.0003184867051513068,
+      "sharpe": -3.0682194113980192,
+      "max_dd": 0.026736481546104772,
+      "cost_rt": 0.0003
+    },
+    "5pip_rt": {
+      "n_trades": 76,
+      "win_rate": 0.3157894736842105,
+      "profit_factor": 0.2920776261137793,
+      "expectancy": -0.0005184867051513069,
+      "sharpe": -4.994968228081195,
+      "max_dd": 0.04113648154610478,
+      "cost_rt": 0.0005
+    },
+    "7pip_rt": {
+      "n_trades": 76,
+      "win_rate": 0.3026315789473684,
+      "profit_factor": 0.17527945434209075,
+      "expectancy": -0.000718486705151307,
+      "sharpe": -6.921717044764371,
+      "max_dd": 0.05553648154610476,
+      "cost_rt": 0.0007
+    }
+  },
+  "test_b": {
+    "os_pf": 0.2920776261137793,
+    "os_n_trades": 76,
+    "pool_size": 797,
+    "bootstrap_mean": 0.23709489256768487,
+    "bootstrap_p95": 0.3700507433791644,
+    "bootstrap_p05": 0.13258790738014303,
+    "p_value": 0.2077,
+    "pct_pool_pf_ge_1": 0.0,
+    "n_bootstrap": 10000,
+    "cost_rt": 0.0005
+  }
+}

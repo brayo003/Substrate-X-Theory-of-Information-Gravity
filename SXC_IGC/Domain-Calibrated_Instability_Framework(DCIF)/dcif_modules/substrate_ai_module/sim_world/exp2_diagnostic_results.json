@@ -1,0 +1,66 @@
+{
+  "passed": 12,
+  "total": 12,
+  "tests": [
+    {
+      "name": "field_solver_finite",
+      "status": "PASS",
+      "detail": "20 steps, min=1.0000 max=4.4850"
+    },
+    {
+      "name": "spectral_valid",
+      "status": "PASS",
+      "detail": "c_spectral=0.2192 regime=overdamped f_prop=0.610 f_over=0.390"
+    },
+    {
+      "name": "c_spectral_schedule_independent",
+      "status": "PASS",
+      "detail": "Baseline: signal_to_agents always 0.0; c_spectral_actual from field (unique values: 10)"
+    },
+    {
+      "name": "per_tick_complete",
+      "status": "PASS",
+      "detail": "All 5 ticks have complete records (18 fields each)"
+    },
+    {
+      "name": "baseline_signal_zero",
+      "status": "PASS",
+      "detail": "All 20 ticks: signal_to_agents=0.0 for baseline"
+    },
+    {
+      "name": "schedule_not_in_observation",
+      "status": "PASS",
+      "detail": "TickObservation fields: ['coord_task_active', 'coord_task_zone', 'indep_slots_available', 'tick']"
+    },
+    {
+      "name": "c_spectral_varies_with_coupling",
+      "status": "PASS",
+      "detail": "C_spectral std=0.1975 range=[0.1606,0.7590] coord_successes=33/80 ticks"
+    },
+    {
+      "name": "paired_conditions_identical_initial",
+      "status": "PASS",
+      "detail": "20 ticks: schedule identical across baseline/spectral (9 coord opportunities)"
+    },
+    {
+      "name": "no_lookahead_leakage",
+      "status": "PASS",
+      "detail": "Records consistent: tick 0 c_spectral=0.2235 tick 1 c_spectral=0.1644 (coordination at tick 0: False)"
+    },
+    {
+      "name": "ablation_marginal_distribution",
+      "status": "PASS",
+      "detail": "time_reversed: exact reversal \u2713  shuffled: same marginal \u2713  constant=0.5599 \u2713"
+    },
+    {
+      "name": "experiment_ids",
+      "status": "PASS",
+      "detail": "25 unique IDs generated, format correct. Example: 'diag_baseline_5000_tau3p0'"
+    },
+    {
+      "name": "modal_validation_regression",
+      "status": "PASS",
+      "detail": "6/6 modal validation tests passed"
+    }
+  ]
+}
