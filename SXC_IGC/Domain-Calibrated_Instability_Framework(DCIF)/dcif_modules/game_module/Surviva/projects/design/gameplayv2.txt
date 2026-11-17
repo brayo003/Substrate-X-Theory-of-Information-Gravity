@@ -1,0 +1,170 @@
+1. The Three Fields (strict separation)
+T (Tension)
+Fast variable
+Driven by:
+player actions
+predictability (via P)
+memory influence (via M)
+Purpose:
+→ controls when rupture happens
+P (Prediction)
+Derived variable (not independent)
+Represents:
+→ how well the substrate can predict the player
+Mechanically:
+→ increases when player behavior is repetitive / directional
+Purpose:
+→ accelerates T growth
+→ makes rupture inevitable if player is predictable
+M (Memory / Knowledge field)
+Slow variable
+Represents:
+→ how much of the world the player has explored
+Purpose:
+→ unlocks rewards (artifacts)
+→ also increases danger indirectly
+2. Core Loop (this is the engine’s real job)
+
+This is the invariant loop your system must satisfy:
+
+Phase 1 — Exploration
+Player moves → M increases
+Substrate learns → P slowly increases
+T rises gradually
+Phase 2 — Opportunity
+When M crosses thresholds:
+→ artifacts can spawn
+
+This is not deterministic, it’s probabilistic:
+
+M in [30–40] → low-tier spawn chance
+M in [40–50] → higher-tier spawn chance
+
+So:
+
+M does NOT directly give artifacts
+it unlocks the possibility space
+
+Phase 3 — Pressure
+As player continues:
+P increases (predictability)
+T accelerates
+
+Player now feels:
+
+“something is coming”
+
+Phase 4 — Decision window
+
+Player must choose:
+
+keep exploring (risk rupture)
+or search for artifact (reward)
+
+This is where gameplay lives.
+
+Phase 5 — Rupture (punishment event)
+
+Triggered when:
+
+T high AND P high
+
+Effects:
+
+T resets
+P collapses
+M partially decays
+
+But the critical part:
+
+3. Artifact = Checkpoint System (this is your key insight)
+
+You correctly shifted M into a two-layer system:
+
+Layer A — Raw M (volatile)
+increases with exploration
+decreases on rupture
+Layer B — Tier Progress (persistent)
+defined by collected artifacts
+Formal behavior:
+Without artifact:
+M = 40 → rupture → M drops (e.g. 35)
+progress lost
+With artifact (tier checkpoint):
+Player reaches Tier 5 (collected all artifacts in that tier)
+
+Now:
+
+Tier 5 becomes floor
+
+So:
+
+M = 15 but Tier 5 unlocked
+rupture → M returns to Tier 5 baseline (NOT below)
+This creates:
+Risk:
+exploring beyond your tier → unstable
+Safety:
+artifacts → lock progress
+4. Why this system works (important)
+
+You now have:
+
+1. Anti-idle enforcement
+idle → predictable → P ↑ → T ↑ → rupture
+2. Anti-pattern enforcement
+repetitive play → punished
+3. Exploration incentive
+higher M → better artifacts
+4. Risk-reward tension
+push further → better rewards
+but rupture risk increases
+5. Psychological loop (this is what you wanted)
+
+Player experience becomes:
+
+“I’m safe”
+“I’m progressing”
+“Something feels off”
+“I should find it now”
+“Oh shit”
+rupture
+
+That is your immersion spike
+
+5. What your logs prove (important)
+
+From your logs:
+
+T rises smoothly ✅
+rupture triggers correctly ✅
+system re-arms correctly ✅
+
+But:
+
+Problem:
+
+P never becomes meaningful in gameplay terms
+
+You see:
+
+P ≈ 0.35 → 0.45 most of the time
+
+Then suddenly:
+
+RUPTURE TRIGGER → P ≈ 0.9
+
+This means:
+
+P is not driving behavior
+it is only reacting to T
+
+That violates your design:
+
+Intended:
+
+P → drives T
+
+Current:
+
+T → drives P

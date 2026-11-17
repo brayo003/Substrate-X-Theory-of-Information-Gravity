@@ -1,0 +1,36 @@
+{
+  "frozen_at": "2026-11-15",
+  "note": "Parameters in this file were fixed using development cases 0-39 and validation cases 40-59 only. They were not changed after held-out evaluation cases 60-159 were run.",
+  "graph": {
+    "n": 24,
+    "root": 0,
+    "K_values": [3, 4],
+    "K_rule": "K = 3 if case_id % 2 == 0 else 4",
+    "base_edges_target": "2*n, Hamiltonian cycle plus random forward edges without mutual pairs",
+    "required_edges": 6,
+    "case_seed": "1000003 + case_id * 7919",
+    "disruption_seeds": ["seed ^ 0xD1", "seed ^ 0xD2", "seed ^ 0xD3"]
+  },
+  "constraints": {
+    "C1": "root reaches every node",
+    "C2": "out-degree(v) <= K for every node",
+    "C3": "no mutual pair (u,v) and (v,u)",
+    "C4": "all required edges present"
+  },
+  "disruptions": [
+    {"op": 250, "kind": "delete", "k": 6, "allow_required": false, "tag": "d1"},
+    {"op": 500, "kind": "hub_cycles", "add_from_hub": 5, "mutual_pairs": 3, "tag": "d2"},
+    {"op": 750, "kind": "delete", "k": 8, "allow_required": true, "tag": "d3"}
+  ],
+  "budget": {
+    "ops": 900,
+    "op_unit": "1 rule evaluation, 1 edit application, or 1 meta-rule action",
+    "create_cost_ops": 3,
+    "max_stalls": 4
+  },
+  "splits": {
+    "dev": [0, 39],
+    "validation": [40, 59],
+    "eval": [60, 159]
+  }
+}

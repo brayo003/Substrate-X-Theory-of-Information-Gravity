@@ -1,0 +1,112 @@
+Right now you are close to something structurally coherent:
+
+field → prediction → stalker → tension → player behavior → field
+
+Anything you add should feed or perturb that loop, not sit beside it as decoration.
+
+1. Jumpscares
+
+Verdict: allowed, but only as a function of system state—not random events.
+
+If you implement jumpscares as:
+
+random triggers
+or time-based triggers
+
+→ they will feel cheap and disconnected.
+
+Instead, tie them to high local prediction certainty + proximity:
+
+Condition structure:
+
+if P(x) is high
+AND stalker is near
+AND player enters predicted cell
+→ trigger jumpscare
+
+What this does:
+
+The scare becomes confirmation of prediction, not surprise
+Player subconsciously learns: “the system knows where I will go”
+
+That’s much stronger than a loud noise.
+
+2. Animals (predator / prey systems)
+
+This can work very well, but only if treated as field carriers, not NPCs.
+
+Correct way to think about them:
+
+Animals are:
+
+moving disturbances in M(x), P(x), T(x)
+not “gameplay content”
+Example roles:
+Prey (e.g., deer)
+Avoid high M (player paths)
+Generate low P trails
+Occasionally “fake” future paths
+
+Effect:
+
+Introduces noise into prediction field
+Makes stalker less perfectly accurate
+Predators (e.g., wolves)
+Follow high M gradients
+Increase local T(x)
+
+Effect:
+
+Competes with stalker for influence
+Can mislead player into unsafe regions
+Risk
+
+If animals:
+
+attack directly
+become the main threat
+
+→ you destroy the stalker’s role as primary pressure source
+
+So constraint:
+
+Animals must modulate the field, not replace the antagonist.
+
+3. Player tools
+
+This is where your system can become genuinely deep.
+
+Tools should modify the field equations, not just do actions.
+
+Good tool patterns
+Tool A: Memory Scrubber
+Reduces M(x) locally
+
+Effect:
+
+Player erases their own history
+Stalker loses tracking reliability
+
+Tradeoff:
+
+Lower M → weaker P → but less predictability
+Tool B: Decoy Emitter
+Artificially injects high P in a location
+
+Effect:
+
+Stalker is pulled to false future
+
+This directly interacts with your new directional P(x) idea.
+
+Tool C: Noise Generator
+Adds random perturbation to P gradients
+
+Effect:
+
+Breaks directional coherence
+Stalker movement becomes less stable
+Tool D: Anchor / Sanctuary Node
+Locally dampens T(x)
+
+You already hinted this—good direction.

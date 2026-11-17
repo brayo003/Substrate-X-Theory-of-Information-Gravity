@@ -1,0 +1,112 @@
+first one tutorial
+
+    a tutorial artifact that teaches tension management.
+
+The player starts with an artifact that can drain tension once, then must recharge in sanctuary. This gives them a safety net while learning, but doesn't remove the core tension loop.
+Tutorial	Shattered Mirror	One-time tension drain (-0.3)	Reach first ruin
+Early Game	Burnt Journal	Reveals prediction field (P_sys hotspots)	Avoid stalker ambushes
+Mid Game	Broken Compass	Aligns movement to memory gradient (M_avg)	Find resource-rich areas
+Late Game	Empty Locket	Creates safe zone (temporary sanctuary)	Deep exploration
+End Game	Fractured Crown	Injects tension into T_sys (sacrifice for power)	Trigger rupture on demand
+
+
+Shattered Mirror	First trip max 5 min	Trip extended by 3-5 min
+Burnt Journal	Blind to stalker predictions	Can avoid stalker, go further
+Broken Compass	Random resource finding	Find high-M areas (resources)
+Empty Locket	Must return to sanctuary	Create temporary safe zone anywhere
+Fractured Crown	Tension builds slowly	Trade safety for power (risk/reward)
+The Exploration Math (With Artifacts)
+Artifacts Owned	Max Trip Duration (before tension critical)	Max Distance from Sanctuary
+None	5 minutes	500 studs
+Shattered Mirror	8 minutes	800 studs
++ Burnt Journal	12 minutes	1200 studs
++ Broken Compass	15 minutes	1500 studs
++ Empty Locket	20 minutes	2000 studs
++ Fractured Crown	Unlimited (with risk)	Anywhere
+The Emergent Loop
+textShattered Mirror	First trip max 5 min	Trip extended by 3-5 min
+Burnt Journal	Blind to stalker predictions	Can avoid stalker, go further
+Broken Compass	Random resource finding	Find high-M areas (resources)
+Empty Locket	Must return to sanctuary	Create temporary safe zone anywhere
+Fractured Crown	Tension builds slowly	Trade safety for power (risk/reward)
+The Exploration Math (With Artifacts)
+Artifacts Owned	Max Trip Duration (before tension critical)	Max Distance from Sanctuary
+None	5 minutes	500 studs
+Shattered Mirror	8 minutes	800 studs
++ Burnt Journal	12 minutes	1200 studs
++ Broken Compass	15 minutes	1500 studs
++ Empty Locket	20 minutes	2000 studs
++ Fractured Crown	Unlimited (with risk)	Anywhere
+The Emergent Loop
+text
+
+Start → Get Shattered Mirror → Explore first ruin
+                    ↓
+          Find Burnt Journal → Explore deeper forest
+                    ↓
+          Find Broken Compass → Explore mountains
+                    ↓
+          Find Empty Locket → Explore distant lands
+                    ↓
+          Find Fractured Crown → Face the substrate directly
+
+
+
+
+
+Passive Equippables: An artifact that the player holds in their off-hand. While held, it dynamically changes the math for them (e.g., it artificially boosts FORCING_SCALE from 18 to 25 for as long as it's equipped, but maybe it drains a battery or degrades over time).
+
+
+
+
+The Sanctuary Network (You already coded this!)
+If you look closely at your own engine script, you already wrote this exact function:
+Lua
+function Engine:applySanctuaryDecay(dt, decayStrength)
+To let players explore further, you build Sanctuaries (campfires, lit ruins, or abandoned cabins) strategically placed across the massive map.
+  >>>>> but not random, more like 3 permanent ones inbuild they will just activate
+
+
+and also when they explore more, like in some ruins, or near swamps, only there could be scarse acient wildfruits that they would harvest and now learn to gather and manage since they are scarse
+Calling consumeArtifactDamper(0.5) wipes their P_sys and drops their Tension.
+This acts as an "adrenaline shot," giving them a 60-second window to aggressively chop wood or hunt an animal without triggering a Rupture, before they pack their leather bags and flee.
+
+
+
+a player might get an artifact that reduces noise (making gathering easier). In another, they might get one that expands their inventory.
+
+
+
+                The Artifact Progression System
+Tier	|Ruins	                Artifacts Available	Artifacts to Collect	Reward
+
+Tier 1	|1 small ruin   	3 artifacts (pool)	1	                Access Tier 2
+Tier 2	|2 small ruins	        5 artifacts (pool)	1	                Access Tier 3
+Tier 3	|3 small + 1 big ruin	8 artifacts (pool)	3	                Access Tier 4
+Tier 4	|3 small + 1 big ruin	10 artifacts (pool)	2	                Access Tier 5
+Tier 5	|1 origin ruin	        1 final artifact	1	                Access the Origin
+(when all collectible artifacts in tier are collected, all ruins turn grey)
+
+
+  1. Shattered Mirror    (tension drain)                      │
+│ 2. Burnt Journal       (reveal P_sys)                       │
+│ 3. Broken Compass      (follow M_avg gradient)              │
+│ 4. Empty Locket        (temporary sanctuary)                │
+│ 5. Fractured Crown     (tension injection)                  │
+│ 6. Weeping Stone       (slow stalker)                       │
+│ 7. Caged Heart         (absorb rupture damage)              │
+│ 8. Silent Bell         (silence false audio for 30 sec)     │
+│ 9. Twisted Key         (unlock locked doors)                │
+│10. Forgotten Idol      (reveal all ruins on map) 
+
+
+
+
+
+
+
+
+
+
+
+The player can travel very far without artifacts, but they have to do it slowly and quietly, which takes more time and leaves them vulnerable to the ambient system pressure (P_sys).

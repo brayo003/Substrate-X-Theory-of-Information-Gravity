@@ -1,0 +1,123 @@
+The System: Coupled Adaptive Loop
+
+Let me formalize what you've outlined into something operational.
+1. Player Fields (Measurable)
+Field	Range	What It Is	How Player Perceives It
+T_player	0 → 1	Fear, arousal	Screen edges darken. Heartbeat audio.
+M_player(x)	0 → 1 per location	Memory intensity	Subtle geometry warping. Déjà vu. Paths feel "familiar."
+P_player(x)	0 → 1 per location	Expected stalker probability	Audio cues. Visual tension. "I think it's there."
+2. Substrate Fields
+Field	What It Is
+T_sys	Global tension. Stalker aggression. Night intensity.
+M_sys(x)	Substrate's memory of player. Where you've been.
+P_sys(x)	Substrate's prediction of where you'll go.
+3. Coupling Equation
+text
+
+T_sys = α·T_player + β·⟨M_player⟩ + γ·⟨P_player⟩
+
+The player is not metaphorically part of the system. Mathematically, they are.
+Parameter	Effect
+α	Your fear feeds the world
+β	Your memory feeds its memory
+γ	Your expectation feeds its prediction
+4. Memory Distorts the World (Visible)
+
+If M_player(x) > 0.6:
+Effect	How Player Sees It
+Resource respawn bias	Wood reappears where you remember it
+Layout drift	Familiar paths subtly shorten, loop
+Landmark persistence	Old structures "reappear"
+Geometry warping	Walls shift slightly. Doors in wrong places.
+
+Not lore. World-editing.
+5. Expectation Competes with Reality
+
+Stalker spawn probability at x:
+text
+
+P_stalker(x) ∝ (1 - λ)·P_sys(x) + λ·P_player(x)
+
+λ (Tension)	Reality Dominates	Belief Dominates
+Low	P_sys(x)	P_player(x) weak
+High	P_sys(x) weak	P_player(x) strong
+
+Player feels: "Low tension — I was wrong. High tension — I made it appear."
+
+Edge case (both high): Stalker in two places.
+6. Feedback Costs (Tradeoffs)
+Memory Cost
+
+High M_player → increases predictability → stalker intercept probability increases.
+
+The more you know the world, the easier it traps you.
+Expectation Cost
+Confidence	Outcome	Penalty
+High, correct	Temporary control	None
+High, wrong	Amplified	Stalker spawns closer
+
+Not random punishment. Confidence-weighted failure.
+7. Identity Drift (Non-Generic Layer)
+
+Introduce I_player = similarity(player behavior, stalker model)
+I_player	Effect
+Increases	Your movement resembles stalker
+Increases	Audio cues invert (you hear what it hears)
+High threshold	Control inversion events: input ≠ output. You move like it.
+
+"Becoming the stalker" is not narrative. It is mechanical.
+8. The Unified Loop
+text
+
+Explore
+    ↓
+Build Memory (M_player)
+    ↓
+Increase Predictability
+    ↓
+Stalker Exploits
+    ↓
+Build Expectation (P_player)
+    ↓
+Expectation Distorts Reality
+    ↓
+Errors Amplify
+    ↓
+Identity Drift Increases
+    ↓
+Player Loses Control
+    ↓
+Reset / Escape / Become
+
+Not a survival loop.
+A coupled adaptive system.
+9. Visibility Requirements (Non-Negotiable)
+
+Without these, players interpret everything as randomness:
+State	How to Surface
+M_player high	Subtle geometry warping. "This path feels familiar."
+P_player high	Audio cue. Visual tension bar. "I think it's there."
+Identity drift	Movement feels off. Audio inverts. "I'm moving like it."
+T_sys high	Screen edges darken. Heartbeat. Night deepens.
+
+
+The Coupling Equation in Luau
+
+To implement Tsys​=α⋅Tplayer​+β⋅⟨Mplayer​⟩+γ⋅⟨Pplayer​⟩ in Roblox, we need a Summation Function in your SXCOmegaEngine.lua.
+Lua
+-- The Coupled Adaptive Loop Core
+function Engine:CalculateGlobalTension(playerState)
+    local alpha, beta, gamma = 0.4, 0.3, 0.3
+    
+    -- Alpha: Real-time stress (Heartbeat/Health)
+    local term1 = alpha * playerState.HeartRate 
+    
+    -- Beta: Spatial Memory (How many grid cells have M > 0.5)
+    local term2 = beta * self:GetAverageMemoryDensity()
+    
+    -- Gamma: Expectation (Is the player looking at high-P zones?)
+    local term3 = gamma * self:GetPlayerExpectationBias()
+    
+    self.T_sys = term1 + term2 + term3
+    return self.T_sys
+end

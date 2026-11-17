@@ -1,0 +1,147 @@
+1. The central mathematical object
+Start with a fixed underlying state space:
+\[
+\Omega = \{\text{all possible configurations}\}
+\]
+
+At time \(t\), the system has three structures:
+\[
+\mathcal S_t=(z_t,\sim_t,\mathcal R_t)
+\]
+
+Where:
+- \(z_t\in\Omega\): the system's current configuration.
+- \(\sim_t\): its current state-distinguishability relation.
+- \(\mathcal R_t\): its currently admissible transition relation.
+The important addition is \(\sim_t\).
+
+Two configurations may be considered equivalent at one moment and distinguishable later:
+\[
+z_i\sim_t z_j
+\]
+
+but
+\[
+z_i\not\sim_{t+1}z_j
+\]
+
+This means the system has changed its own representation of what constitutes a different state.
+2. How the mathematics operates
+The system has three coupled operations.
+
+A. Determine the current distinctions
+
+An equivalence relation partitions the underlying state space into classes:
+\[
+Q_t=\Omega/\sim_t
+\]
+
+For example, several different configurations might currently belong to the same class because the system treats them as equivalent.
+
+B. Determine which transitions are permitted
+
+Define:
+\[
+\mathcal R_t\subseteq Q_t\times Q_t
+\]
+
+A transition is permitted only if it belongs to this relation:
+\[
+q_t\rightarrow q_{t+1}
+\]
+
+The transition rules therefore operate on the system's current distinctions, rather than necessarily on every underlying configuration separately.
+
+C. Modify the distinctions
+
+After a transition, a meta-update changes the equivalence relation:
+\[
+\sim_{t+1}
+=
+M(\sim_t,z_t,z_{t+1},\mathcal R_t)
+\]
+
+The admissible transition relation can also change:
+\[
+\mathcal R_{t+1}
+=
+G(\mathcal R_t,\sim_t,\sim_{t+1},z_{t+1})
+\]
+
+The complete evolution is consequently:
+\[
+\boxed{
+(z_t,\sim_t,\mathcal R_t)
+\longrightarrow
+(z_{t+1},\sim_{t+1},\mathcal R_{t+1})
+}
+\]
+
+This is the basic mathematical proposal.
+3. What makes this different from ordinary self-modifying systems?
+Consider a system that initially treats three configurations as equivalent:
+\[
+\{A,B,C\}
+\]
+
+It has one available transition category.
+
+After observing a particular transition, it discovers that \(C\) behaves differently. Its classification changes:
+\[
+\{A,B,C\}
+\longrightarrow
+\{A,B\},\{C\}
+\]
+
+That change can alter the transition structure.
+
+Previously:
+\[
+[A,B,C]\rightarrow[D]
+\]
+
+Afterward:
+\[
+[A,B]\rightarrow[D]
+\]
+
+\[
+[C]\rightarrow[E]
+\]
+
+The system has not merely changed a numerical parameter. It has changed the classification of its own possible states, and that classification changes the structure of its permitted evolution.
+
+That is the property worth investigating.
+4. The mathematical difficulty we must solve
+There is a serious issue.
+
+If we simply define a larger state containing the configuration, equivalence relation, and rules, then the entire system can be represented as an ordinary dynamical system:
+\[
+\mathcal S_{t+1}=F(\mathcal S_t)
+\]
+
+That observation alone does not establish new mathematics.
+
+The actual research question is whether the coupled structure has a property that existing frameworks do not already capture, or whether it is a useful new formulation of existing mathematics.
+
+One particularly important technical issue is consistency under changing equivalence relations.
+
+Suppose:
+\[
+z_1\sim_t z_2
+\]
+
+If the system treats these configurations as equivalent, their permitted transitions must be compatible with that equivalence. Otherwise, the quotient transition system is not well-defined.
+
+A useful consistency condition is:
+\[
+z_1\sim_t z_2
+\implies
+\operatorname{Succ}_t(z_1)
+\sim_t
+\operatorname{Succ}_t(z_2)
+\]
+
+Here, the implication means that equivalent configurations must have compatible successor classes. The exact condition will depend on whether transitions are deterministic or nondeterministic.
+
+This is where the research becomes technically meaningful: the system must be able to change its distinctions without making its transition mathematics incoherent.

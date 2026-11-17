@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "name": "n_rows",
+      "value": 9600,
+      "ok": true
+    },
+    {
+      "name": "n_models",
+      "value": 8,
+      "ok": true
+    },
+    {
+      "name": "baseline_D_minus_CR_msgs_mean",
+      "value": -8.56,
+      "ok": true
+    },
+    {
+      "name": "STATIC_equals_A_baseline_frac_correct",
+      "value": true,
+      "ok": true
+    },
+    {
+      "name": "all_tests_pass",
+      "value": true,
+      "ok": true
+    },
+    {
+      "name": "one_py_unchanged",
+      "value": true,
+      "ok": true
+    },
+    {
+      "name": "v1_dir_exists",
+      "value": true,
+      "ok": true
+    }
+  ],
+  "all_ok": true
+}

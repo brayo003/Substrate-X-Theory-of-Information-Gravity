@@ -1,0 +1,15 @@
+--- TECHNICAL LORE (For Implementation) ---
+
+The Stalker is a compressed file of every player who died before.
+It wears their movement patterns like a costume.
+
+Artifacts are Tools of Reconstruction:
+- Shattered Mirror: Creates fake memory trace (decoy)
+- Empty Locket: Creates invisible gap in memory grid
+- Broken Compass: Points to lowest tension cell
+- Fractured Crown: Forces local memory reset
+
+The Book is the Substrate's source code. Writing in it rewrites the game's rules.
+
+The player is not a hero. They are Vessel-[number]. 
+On death: "MEMORY UPLOADING..." not "You Died."

@@ -1,0 +1,68 @@
+1. The Sanctuary (your home, but not safe)
+
+    Appearance: A small, run‑down cabin in a clearing. Wooden walls, a creaking door, a single window that flickers with light. Inside: a table with the Book, a fireplace (can be upgraded), a storage chest.
+
+    Function: Tension decays here. Stalker cannot enter. But if you stay too long, memory leaks in – walls start to creak, shadows move, the door rattles. Upgrades (fire pit, walls, lantern, altar) improve safety but also make the Substrate remember your hiding place faster.
+
+    Location: Center of the map, roughly. Easy to find from any starting edge.
+
+2. The Forest (most of the map)
+
+    Appearance: Dense trees, undergrowth, winding dirt paths. Ambient sounds: birds, wind, occasional branch snap. At low tension, it feels peaceful. At high tension, trees seem taller, shadows deeper, sounds stop.
+
+    Features:
+
+        Resource nodes: Wood (from trees), stone (from rock outcroppings), food (berry bushes, mushrooms). Overharvesting depletes an area – resources respawn slower where you take too much.
+
+        Memory scars: Areas where many players have died become “wrong” – grass grows in spirals, trees have faces, the ground pulses faintly.
+
+        Hidden paths: The Substrate can generate new routes where you walk often. A path you use repeatedly may become a permanent shortcut.
+
+3. Ruins (artifacts and lore)
+
+    Appearance: Crumbled stone structures, overgrown with moss. Archways, broken pillars, half‑buried statues. Faint glow from ancient symbols.
+
+    Function: Artifacts spawn here (Shattered Mirror, Burnt Journal, etc.). Each ruin has a unique layout – some have basements, some have hidden chambers revealed only when memory in that area is high.
+
+    Lore fragments: Inscribed on walls, readable only when holding a specific artifact. Reveal the history of the Memoria.
+
+4. The Origin (deepest point, endgame area)
+
+    Appearance: A massive, buried machine – the Memoria core. Metal walls, humming cables, flickering screens displaying fragments of past players’ memories. Feels cold, technological, out of place in the forest.
+
+    Access: Requires all artifacts and a long journey through high‑tension zones. The Stalker is more aggressive here.
+
+    Function: Endings trigger here. You interact with the core to choose your fate.
+
+5. Biomes (diversity across the map)
+Biome	Appearance	Resources	Danger
+Deep Forest	Dense, dark, little light	Wood, mushrooms	High – Stalker appears frequently
+Open Meadows	Grass, flowers, sunlight	Berries, small stones	Low – but no hiding spots
+Rocky Highlands	Hills, caves, cliffs	Stone, rare ore	Medium – Stalker can ambush from above
+Swamp	Murky water, twisted trees, fog	Unique plants (fuel), but slow movement	High – walking in water leaves strong memory traces
+Ruined City	Collapsed buildings, paved streets	Artifacts, scrap metal	Very high – Stalker knows these ruins from past players
+
+The map is large enough that a full exploration takes 30–60 minutes, but you will never see all of it in one run – you must choose where to go.
+6. Dynamic features (change with player behaviour)
+
+    Memory trails – Your footsteps create visible, faint white lines on the ground (only you can see them). Over time, they fade, but if you walk the same path often, they become permanent – and the Stalker will use them.
+
+    Prediction markers – When you look in a direction for more than a few seconds, a subtle red pulse appears at the spot where the Substrate expects you to go. That is where the Stalker may spawn.
+
+    Sanctuary decay – The longer you stay inside, the more the walls darken, windows fog, and the Book’s text becomes erratic.
+
+    Ghost echoes – After you die, your last footsteps remain as faint, blueish trails. Other players (if you later add echo mode) or your own future runs will see them.
+
+7. Map size and grid
+
+    Grid resolution: 10×10 studs per cell (same as your memory field). Total map size: approximately 500×500 studs (50×50 cells). This is large enough to feel expansive but small enough to remember landmarks.
+
+    Chunks: The map is divided into 10×10 cell regions. Each region has its own baseline memory decay rate and resource spawn table.
+
+8. Visual style
+
+    Low poly, atmospheric – Not hyper‑realistic. Shadows, fog, and colour grading do the heavy lifting.
+
+    Day/night cycle – Night intensity driven by global Tension. At high Tension, night falls faster and is darker.
+
+    Screen effects – Tension adds vignette, desaturation, heartbeat sound, and slight camera sway. Shatter adds heavy distortion, inverse colours, and FOV zoom.

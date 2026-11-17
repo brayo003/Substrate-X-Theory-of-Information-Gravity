@@ -1,0 +1,9 @@
+{
+  "verdict": "mixed_fails_accuracy_supports_cost",
+  "accuracy_D_vs_CR": "fails_to_distinguish",
+  "communication_cost_D_vs_CR": "supports_lower_cost_for_D",
+  "agreement_speed_D_vs_CR": "fails_to_distinguish",
+  "coverage_D_vs_CR": "fails_to_distinguish",
+  "resilience_D_vs_CR": "fails_to_distinguish",
+  "explanation": "On final decision accuracy, correct agreement, evidence coverage, and failure resilience, paired D\u2212CR differences are near zero with CIs that include zero (or are exactly zero under ceiling effects). A Holm-significant reduction in messages_per_correct_node and total_messages indicates a small communication-cost advantage for D versus creation-matched CR under several conditions. This does not establish an accuracy advantage for partition-conditioned placement, nor practical AI usefulness."
+}

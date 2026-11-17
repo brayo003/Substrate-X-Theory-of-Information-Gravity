@@ -1,0 +1,15 @@
+{
+  "E01_no_double_count": "PASS",
+  "E02_hidden_ground_truth": "PASS",
+  "E03_no_central_coordinator": "PASS",
+  "E04_relabelling": "PASS",
+  "E05_identical_evidence": "PASS",
+  "E06_d_cr_creation_match": "PASS",
+  "E07_message_budgets": "PASS",
+  "E08_propagation_graph": "PASS",
+  "E09_disconnected": "PASS",
+  "E10_consensus_distinction": "PASS",
+  "E11_stream_isolation": "PASS",
+  "E12_reproducibility": "PASS",
+  "E13_one_py_preserved": "PASS"
+}

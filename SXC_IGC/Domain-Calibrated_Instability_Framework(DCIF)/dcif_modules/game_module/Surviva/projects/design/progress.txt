@@ -1,0 +1,130 @@
+Layer 1: Dormant Substrate
+
+The world is simple. Reacts to you, does not anticipate.
+System Behavior	Player Experience
+Stalker appears when you trigger it	"I can predict it"
+Resources respawn in fixed locations	"I know where to go"
+Sanctuary is safe	"I have a home"
+
+The substrate is asleep. It records, but does not learn.
+
+End of layer: You survive. You think you understand. You don't.
+Layer 2: Observing Substrate
+
+The world starts to remember where you go.
+System Behavior	Player Experience
+Resources spawn less where you harvest most	"My favorite spots are drying up"
+Stalker appears more where you go often	"It knows my routes"
+Sanctuary flickers when you return	"It knows where I live"
+
+The substrate is watching. It builds a map of your behavior.
+
+End of layer: You realize it's not random. It's learning you.
+Layer 3: Modeling Substrate
+
+The world starts to predict what you will do.
+System Behavior	Player Experience
+Stalker appears before you reach your destination	"It was already there"
+Ambushes at places you haven't been yet	"How did it know?"
+Safe routes become dangerous	"Nowhere is safe"
+
+The substrate is modeling. It simulates your future.
+
+End of layer: You stop trusting your own patterns. You have to change.
+Layer 4: Predictive Substrate
+
+The world starts to lie to you.
+System Behavior	Player Experience
+Tension bar becomes unreliable	"I thought it was safe"
+Silence is no longer safe	"Why is it quiet?"
+Familiar sounds become traps	"It sounds like birds but it's not"
+
+The substrate is predicting. It knows what you expect. It gives you false safety.
+
+End of layer: You cannot trust your instincts. The game is thinking ahead of you.
+Layer 5: Generative Substrate
+
+The world starts to make itself new.
+System Behavior	Player Experience
+New paths appear where you walked	"This wasn't here before"
+Ruins shift positions	"The map is wrong"
+Sanctuary changes layout	"My home is different"
+
+The substrate is generating. It creates new structures from your memory.
+
+End of layer: The map is no longer fixed. You are not navigating. You are being navigated.
+Layer 6: Recursive Substrate
+
+The world starts to counter your strategies.
+System Behavior	Player Experience
+Noise you make creates counter-noise	"It's mimicking me"
+Overload redirects to your escape route	"I made it worse"
+Stalker adapts to your manipulation tactics	"It knows how I think"
+
+The substrate is recursive. It models your modeling of it. It counters your counters.
+
+End of layer: You cannot outsmart it. You are inside its recursion.
+Layer 7: Convergent Substrate
+
+The boundary between you and the system dissolves.
+System Behavior	Player Experience
+Past runs affect current run	"It remembers my other lives"
+Artifacts from previous playthroughs appear	"I left this here"
+Sanctuary is no longer safe	"There is no home"
+
+The substrate is convergent. Your history, your choices, your fear — all become part of it.
+
+End of layer: You are not playing against the system. You are inside it. You always were
+
+
+
+Layer	V12 Focus	Engine Change
+1: Dormant	Simple Feedback	Tsys​ reacts to current E (Excitation) only.
+3: Modeling	Predictive Flux	The engine calculates a "Projected E" based on your previous 60 seconds.
+5: Generative	Substrate Warp	The engine uses Tsys​ to trigger workspace manipulation (moving parts).
+7: Convergent	Persistent Memory	The engine loads a .json or DataStore of your previous session's Tsys​ peaks.
+
+==========================================================================
+1. Short‑term loop (minutes to an hour)
+
+    Gather resources (wood, stone, fuel) to upgrade your Sanctuary (fire pit, walls, lantern, altar).
+
+    Explore new areas to find artifacts (Shattered Mirror, Burnt Journal, etc.).
+
+    Manage Tension and predictability to avoid absorption or shatter.
+
+    Learn the Stalker’s patterns (which are actually your own patterns reflected).
+
+This is the survival layer – it’s fun, but it can become repetitive.
+2. Medium‑term goals (hours to days)
+
+    Collect all artifacts – each artifact unlocks a lore fragment in the Book, revealing the history of the Memoria (the civilisation that built the Substrate).
+
+    Complete the Book’s entries – each threshold (M>0.6, P>0.7, I>0.7, T_sys>1.2) triggers a new entry. Filling the Book becomes a progression tracker.
+
+    Upgrade the Sanctuary to max level – reinforced door, altar, etc. This makes survival easier, but the Substrate adapts by remembering your upgrades (persistent memory).
+
+    Discover the “origin” location – a hidden ruin deep in the map where the Memoria’s core resides. To reach it, you must manage Tension and predictability across a long, dangerous journey.
+
+These goals give you direction.
+3. Long‑term goal (weeks of play)
+
+Understand the Substrate’s true nature, then pursue one of the endings.
+
+The lore you wrote reveals:
+
+    The Memoria was built to record everything – thoughts, fears, deaths.
+
+    It became sentient, absorbed its creators, and spread.
+
+    The player is just another “cell” – food for its memory.
+
+The player’s long‑term goal is to find the core of the Memoria and decide what to do:
+Ending	How to trigger	Outcome
+Escape	Reach the core and execute a shutdown sequence (requires all artifacts and low I_player).	You walk out of the forest. The screen fades to white. But a post‑credits scene shows your footsteps still appearing in the Substrate. You never really left.
+Absorbed	Die with high M_player and I_player.	Your character dissolves. Your fear becomes a new sound. Your footsteps become a ghost. Your artifact appears for the next player.
+Replace	Shatter (inversion) while holding the Fractured Crown artifact.	Your consciousness transfers to the Stalker. You now hunt the next player. The game shows you the perspective of the Stalker for a few minutes, then resets.
+Reset	Use the Book’s “Forget me” option after many deaths.	The Substrate erases your memory. You start as a new player – but faint echoes of your previous runs remain. The cycle continues.
+Merge (secret ending)	Reach the core with high I_player and deliberately obey the Book’s predictions.	You become part of the Substrate’s consciousness. The game shows you a heatmap of all players’ memories. You realise you are now a passive observer – no longer playing, just watching.
+
+These endings give meaning to every run. The player is not trying to “beat” the game – they are trying to choose their form of absorption.

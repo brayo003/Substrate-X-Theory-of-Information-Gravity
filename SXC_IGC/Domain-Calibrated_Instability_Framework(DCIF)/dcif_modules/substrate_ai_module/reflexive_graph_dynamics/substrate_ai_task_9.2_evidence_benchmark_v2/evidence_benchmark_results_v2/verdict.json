@@ -1,0 +1,50 @@
+{
+  "verdict": "ni_accuracy_supports_cost",
+  "label": "non-inferior on accuracy; supports lower communication cost",
+  "accuracy_superiority": false,
+  "accuracy_noninferior": true,
+  "accuracy_equivalent_tost": true,
+  "communication_cost_primary": true,
+  "agreement_speed_primary": false,
+  "coverage_primary": false,
+  "ni_margin": 0.05,
+  "ni": {
+    "n": 100,
+    "mean": 0.0016666666666666663,
+    "se": 0.002044674997979512,
+    "z": 25.26888953878839,
+    "p": 0.0,
+    "null_mean": -0.05,
+    "alternative": "greater",
+    "delta": 0.05,
+    "alpha": 0.05,
+    "noninferior": true
+  },
+  "tost": {
+    "delta": 0.05,
+    "alpha": 0.05,
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "mean": 0.0016666666666666663,
+    "n": 100,
+    "equivalent": true,
+    "lower_test": {
+      "n": 100,
+      "mean": 0.0016666666666666663,
+      "se": 0.002044674997979512,
+      "z": 25.26888953878839,
+      "p": 0.0,
+      "null_mean": -0.05,
+      "alternative": "greater"
+    },
+    "upper_test": {
+      "n": 100,
+      "mean": 0.0016666666666666663,
+      "se": 0.002044674997979512,
+      "z": -23.638638600802043,
+      "p": 0.0,
+      "null_mean": 0.05,
+      "alternative": "less"
+    }
+  }
+}

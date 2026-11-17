@@ -49,3 +49,6 @@ SXC_IGC/Domain-Calibrated_Instability_Framework(DCIF)/dcif_modules/substrate_ai_
 
 
 lfs_tracked_files.txt
+**/reflexive_graph_dynamics/archive/
+**/reflexive_graph_dynamics/**/results/
+**/reflexive_graph_dynamics/archieve/

@@ -1,0 +1,19 @@
+{
+  "A06T": {
+    "status": "error",
+    "error": "file not found locally"
+  },
+  "A07T": {
+    "status": "error",
+    "error": "file not found locally"
+  },
+  "A09T": {
+    "status": "error",
+    "error": "file not found locally"
+  },
+  "A09E": {
+    "status": "error",
+    "error": "could not read bytes",
+    "sha256": "ede93f92022c0650bac412f498658c5ea799d33abeee6f6b72ce37900859c9b3"
+  }
+}

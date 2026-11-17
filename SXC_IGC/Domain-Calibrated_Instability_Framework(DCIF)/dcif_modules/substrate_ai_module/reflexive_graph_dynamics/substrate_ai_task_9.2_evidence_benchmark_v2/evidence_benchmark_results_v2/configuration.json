@@ -1,0 +1,1228 @@
+{
+  "benchmark_id": "evidence_integration_v2",
+  "architecture": "Stage-1: evidence propagation over precomputed graph sequences. Substrate dynamics run first; evidence cannot alter edge creation. This is not evidence-driven graph adaptation.",
+  "preserved_one_py": {
+    "path": "/home/lenovo/Projects/GI/one.py",
+    "bytes": 94175,
+    "md5": "9b73b12efc1c43b1a22c99ec2cfac03d",
+    "sha256": "3671c48e08c26dbe0c6bab20b2ec2091c63f721fb2d8adaa4dd2a6543c11a88a"
+  },
+  "expected_one_py_sha256": "3671c48e08c26dbe0c6bab20b2ec2091c63f721fb2d8adaa4dd2a6543c11a88a",
+  "one_py_unchanged": true,
+  "prior_results_dir": "evidence_benchmark_results",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99
+  ],
+  "n_seeds": 100,
+  "conditions": [
+    {
+      "condition_id": "baseline",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Primary locked baseline; n matches preserved graph experiment."
+    },
+    {
+      "condition_id": "rel_weak",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.55,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Weak evidence reliability."
+    },
+    {
+      "condition_id": "rel_strong",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.9,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Strong evidence reliability."
+    },
+    {
+      "condition_id": "corr",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "correlated",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Correlated evidence sources."
+    },
+    {
+      "condition_id": "uneven",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "uneven",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Uneven evidence placement (25% holders)."
+    },
+    {
+      "condition_id": "budget_low",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 5,
+      "send_cap": 1,
+      "max_messages": 400,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Low communication budget."
+    },
+    {
+      "condition_id": "budget_high",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 40,
+      "send_cap": 4,
+      "max_messages": 20000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "High communication budget."
+    },
+    {
+      "condition_id": "failures",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.2,
+      "adversarial_fraction": 0.0,
+      "notes": "Controlled exogenous edge failures (20% of R0)."
+    },
+    {
+      "condition_id": "adversarial",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.2,
+      "notes": "20% adversarial misleading sources."
+    },
+    {
+      "condition_id": "size_small",
+      "n_states": 8,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 3000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Small network."
+    },
+    {
+      "condition_id": "size_large",
+      "n_states": 20,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.7,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 12000,
+      "failure_fraction": 0.0,
+      "adversarial_fraction": 0.0,
+      "notes": "Larger network."
+    },
+    {
+      "condition_id": "stress_weak_fail",
+      "n_states": 12,
+      "edge_prob": 0.25,
+      "initial_blocks": 3,
+      "graph_steps": 40,
+      "removal_age": 5,
+      "reliability": 0.55,
+      "correlation": "independent",
+      "distribution": "balanced",
+      "max_rounds": 15,
+      "send_cap": 2,
+      "max_messages": 5000,
+      "failure_fraction": 0.2,
+      "adversarial_fraction": 0.0,
+      "notes": "Weak reliability under failures."
+    }
+  ],
+  "models": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "CR",
+    "STATIC",
+    "MV_W",
+    "MV_U"
+  ],
+  "baselines": {
+    "STATIC": "static directed R0 + weighted decision",
+    "MV_W": "static bidirected R0 + weighted decision (formerly mislabelled MV)",
+    "MV_U": "static bidirected R0 + unweighted majority of bits",
+    "CR": "creation-count-matched random edge placement (preserved)"
+  },
+  "noninferiority_margin_frac_correct": 0.05,
+  "primary_inference": {
+    "condition": "baseline",
+    "pair": "D-CR",
+    "metrics": [
+      "frac_correct",
+      "time_to_correct_agreement",
+      "messages_per_correct_node",
+      "evidence_coverage",
+      "agreement_correct"
+    ],
+    "note": "Condition-level contrasts outside baseline primary list are exploratory."
+  },
+  "correlation_diagnostics": {
+    "baseline": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    },
+    "rel_weak": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    },
+    "rel_strong": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": 0.18181818181818168,
+      "n_bundles": 100
+    },
+    "corr": {
+      "correlation_setting": "correlated",
+      "empirical_mean_pairwise_bit_corr": -0.025454545454545445,
+      "n_bundles": 100
+    },
+    "uneven": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": 0.055,
+      "n_bundles": 100
+    },
+    "budget_low": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    },
+    "budget_high": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    },
+    "failures": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    },
+    "adversarial": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    },
+    "size_small": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.05142857142857141,
+      "n_bundles": 100
+    },
+    "size_large": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.05263157894736838,
+      "n_bundles": 100
+    },
+    "stress_weak_fail": {
+      "correlation_setting": "independent",
+      "empirical_mean_pairwise_bit_corr": -0.09090909090909095,
+      "n_bundles": 100
+    }
+  },
+  "random_streams": {
+    "init": "s*1000000+1 (one.py)",
+    "move": "s*1000000+2 (one.py)",
+    "ctrl": "s*1000000+3 (one.py)",
+    "evidence": "s*1000000+4",
+    "failure": "s*1000000+5",
+    "relabel": "s*1000000+6",
+    "note": "Distinctness claimed; independence NOT claimed."
+  },
+  "stream_seeds": {
+    "0": {
+      "init": 1,
+      "move": 2,
+      "ctrl": 3,
+      "evidence": 4,
+      "failure": 5,
+      "relabel": 6
+    },
+    "1": {
+      "init": 1000001,
+      "move": 1000002,
+      "ctrl": 1000003,
+      "evidence": 1000004,
+      "failure": 1000005,
+      "relabel": 1000006
+    },
+    "2": {
+      "init": 2000001,
+      "move": 2000002,
+      "ctrl": 2000003,
+      "evidence": 2000004,
+      "failure": 2000005,
+      "relabel": 2000006
+    },
+    "3": {
+      "init": 3000001,
+      "move": 3000002,
+      "ctrl": 3000003,
+      "evidence": 3000004,
+      "failure": 3000005,
+      "relabel": 3000006
+    },
+    "4": {
+      "init": 4000001,
+      "move": 4000002,
+      "ctrl": 4000003,
+      "evidence": 4000004,
+      "failure": 4000005,
+      "relabel": 4000006
+    },
+    "5": {
+      "init": 5000001,
+      "move": 5000002,
+      "ctrl": 5000003,
+      "evidence": 5000004,
+      "failure": 5000005,
+      "relabel": 5000006
+    },
+    "6": {
+      "init": 6000001,
+      "move": 6000002,
+      "ctrl": 6000003,
+      "evidence": 6000004,
+      "failure": 6000005,
+      "relabel": 6000006
+    },
+    "7": {
+      "init": 7000001,
+      "move": 7000002,
+      "ctrl": 7000003,
+      "evidence": 7000004,
+      "failure": 7000005,
+      "relabel": 7000006
+    },
+    "8": {
+      "init": 8000001,
+      "move": 8000002,
+      "ctrl": 8000003,
+      "evidence": 8000004,
+      "failure": 8000005,
+      "relabel": 8000006
+    },
+    "9": {
+      "init": 9000001,
+      "move": 9000002,
+      "ctrl": 9000003,
+      "evidence": 9000004,
+      "failure": 9000005,
+      "relabel": 9000006
+    },
+    "10": {
+      "init": 10000001,
+      "move": 10000002,
+      "ctrl": 10000003,
+      "evidence": 10000004,
+      "failure": 10000005,
+      "relabel": 10000006
+    },
+    "11": {
+      "init": 11000001,
+      "move": 11000002,
+      "ctrl": 11000003,
+      "evidence": 11000004,
+      "failure": 11000005,
+      "relabel": 11000006
+    },
+    "12": {
+      "init": 12000001,
+      "move": 12000002,
+      "ctrl": 12000003,
+      "evidence": 12000004,
+      "failure": 12000005,
+      "relabel": 12000006
+    },
+    "13": {
+      "init": 13000001,
+      "move": 13000002,
+      "ctrl": 13000003,
+      "evidence": 13000004,
+      "failure": 13000005,
+      "relabel": 13000006
+    },
+    "14": {
+      "init": 14000001,
+      "move": 14000002,
+      "ctrl": 14000003,
+      "evidence": 14000004,
+      "failure": 14000005,
+      "relabel": 14000006
+    },
+    "15": {
+      "init": 15000001,
+      "move": 15000002,
+      "ctrl": 15000003,
+      "evidence": 15000004,
+      "failure": 15000005,
+      "relabel": 15000006
+    },
+    "16": {
+      "init": 16000001,
+      "move": 16000002,
+      "ctrl": 16000003,
+      "evidence": 16000004,
+      "failure": 16000005,
+      "relabel": 16000006
+    },
+    "17": {
+      "init": 17000001,
+      "move": 17000002,
+      "ctrl": 17000003,
+      "evidence": 17000004,
+      "failure": 17000005,
+      "relabel": 17000006
+    },
+    "18": {
+      "init": 18000001,
+      "move": 18000002,
+      "ctrl": 18000003,
+      "evidence": 18000004,
+      "failure": 18000005,
+      "relabel": 18000006
+    },
+    "19": {
+      "init": 19000001,
+      "move": 19000002,
+      "ctrl": 19000003,
+      "evidence": 19000004,
+      "failure": 19000005,
+      "relabel": 19000006
+    },
+    "20": {
+      "init": 20000001,
+      "move": 20000002,
+      "ctrl": 20000003,
+      "evidence": 20000004,
+      "failure": 20000005,
+      "relabel": 20000006
+    },
+    "21": {
+      "init": 21000001,
+      "move": 21000002,
+      "ctrl": 21000003,
+      "evidence": 21000004,
+      "failure": 21000005,
+      "relabel": 21000006
+    },
+    "22": {
+      "init": 22000001,
+      "move": 22000002,
+      "ctrl": 22000003,
+      "evidence": 22000004,
+      "failure": 22000005,
+      "relabel": 22000006
+    },
+    "23": {
+      "init": 23000001,
+      "move": 23000002,
+      "ctrl": 23000003,
+      "evidence": 23000004,
+      "failure": 23000005,
+      "relabel": 23000006
+    },
+    "24": {
+      "init": 24000001,
+      "move": 24000002,
+      "ctrl": 24000003,
+      "evidence": 24000004,
+      "failure": 24000005,
+      "relabel": 24000006
+    },
+    "25": {
+      "init": 25000001,
+      "move": 25000002,
+      "ctrl": 25000003,
+      "evidence": 25000004,
+      "failure": 25000005,
+      "relabel": 25000006
+    },
+    "26": {
+      "init": 26000001,
+      "move": 26000002,
+      "ctrl": 26000003,
+      "evidence": 26000004,
+      "failure": 26000005,
+      "relabel": 26000006
+    },
+    "27": {
+      "init": 27000001,
+      "move": 27000002,
+      "ctrl": 27000003,
+      "evidence": 27000004,
+      "failure": 27000005,
+      "relabel": 27000006
+    },
+    "28": {
+      "init": 28000001,
+      "move": 28000002,
+      "ctrl": 28000003,
+      "evidence": 28000004,
+      "failure": 28000005,
+      "relabel": 28000006
+    },
+    "29": {
+      "init": 29000001,
+      "move": 29000002,
+      "ctrl": 29000003,
+      "evidence": 29000004,
+      "failure": 29000005,
+      "relabel": 29000006
+    },
+    "30": {
+      "init": 30000001,
+      "move": 30000002,
+      "ctrl": 30000003,
+      "evidence": 30000004,
+      "failure": 30000005,
+      "relabel": 30000006
+    },
+    "31": {
+      "init": 31000001,
+      "move": 31000002,
+      "ctrl": 31000003,
+      "evidence": 31000004,
+      "failure": 31000005,
+      "relabel": 31000006
+    },
+    "32": {
+      "init": 32000001,
+      "move": 32000002,
+      "ctrl": 32000003,
+      "evidence": 32000004,
+      "failure": 32000005,
+      "relabel": 32000006
+    },
+    "33": {
+      "init": 33000001,
+      "move": 33000002,
+      "ctrl": 33000003,
+      "evidence": 33000004,
+      "failure": 33000005,
+      "relabel": 33000006
+    },
+    "34": {
+      "init": 34000001,
+      "move": 34000002,
+      "ctrl": 34000003,
+      "evidence": 34000004,
+      "failure": 34000005,
+      "relabel": 34000006
+    },
+    "35": {
+      "init": 35000001,
+      "move": 35000002,
+      "ctrl": 35000003,
+      "evidence": 35000004,
+      "failure": 35000005,
+      "relabel": 35000006
+    },
+    "36": {
+      "init": 36000001,
+      "move": 36000002,
+      "ctrl": 36000003,
+      "evidence": 36000004,
+      "failure": 36000005,
+      "relabel": 36000006
+    },
+    "37": {
+      "init": 37000001,
+      "move": 37000002,
+      "ctrl": 37000003,
+      "evidence": 37000004,
+      "failure": 37000005,
+      "relabel": 37000006
+    },
+    "38": {
+      "init": 38000001,
+      "move": 38000002,
+      "ctrl": 38000003,
+      "evidence": 38000004,
+      "failure": 38000005,
+      "relabel": 38000006
+    },
+    "39": {
+      "init": 39000001,
+      "move": 39000002,
+      "ctrl": 39000003,
+      "evidence": 39000004,
+      "failure": 39000005,
+      "relabel": 39000006
+    },
+    "40": {
+      "init": 40000001,
+      "move": 40000002,
+      "ctrl": 40000003,
+      "evidence": 40000004,
+      "failure": 40000005,
+      "relabel": 40000006
+    },
+    "41": {
+      "init": 41000001,
+      "move": 41000002,
+      "ctrl": 41000003,
+      "evidence": 41000004,
+      "failure": 41000005,
+      "relabel": 41000006
+    },
+    "42": {
+      "init": 42000001,
+      "move": 42000002,
+      "ctrl": 42000003,
+      "evidence": 42000004,
+      "failure": 42000005,
+      "relabel": 42000006
+    },
+    "43": {
+      "init": 43000001,
+      "move": 43000002,
+      "ctrl": 43000003,
+      "evidence": 43000004,
+      "failure": 43000005,
+      "relabel": 43000006
+    },
+    "44": {
+      "init": 44000001,
+      "move": 44000002,
+      "ctrl": 44000003,
+      "evidence": 44000004,
+      "failure": 44000005,
+      "relabel": 44000006
+    },
+    "45": {
+      "init": 45000001,
+      "move": 45000002,
+      "ctrl": 45000003,
+      "evidence": 45000004,
+      "failure": 45000005,
+      "relabel": 45000006
+    },
+    "46": {
+      "init": 46000001,
+      "move": 46000002,
+      "ctrl": 46000003,
+      "evidence": 46000004,
+      "failure": 46000005,
+      "relabel": 46000006
+    },
+    "47": {
+      "init": 47000001,
+      "move": 47000002,
+      "ctrl": 47000003,
+      "evidence": 47000004,
+      "failure": 47000005,
+      "relabel": 47000006
+    },
+    "48": {
+      "init": 48000001,
+      "move": 48000002,
+      "ctrl": 48000003,
+      "evidence": 48000004,
+      "failure": 48000005,
+      "relabel": 48000006
+    },
+    "49": {
+      "init": 49000001,
+      "move": 49000002,
+      "ctrl": 49000003,
+      "evidence": 49000004,
+      "failure": 49000005,
+      "relabel": 49000006
+    },
+    "50": {
+      "init": 50000001,
+      "move": 50000002,
+      "ctrl": 50000003,
+      "evidence": 50000004,
+      "failure": 50000005,
+      "relabel": 50000006
+    },
+    "51": {
+      "init": 51000001,
+      "move": 51000002,
+      "ctrl": 51000003,
+      "evidence": 51000004,
+      "failure": 51000005,
+      "relabel": 51000006
+    },
+    "52": {
+      "init": 52000001,
+      "move": 52000002,
+      "ctrl": 52000003,
+      "evidence": 52000004,
+      "failure": 52000005,
+      "relabel": 52000006
+    },
+    "53": {
+      "init": 53000001,
+      "move": 53000002,
+      "ctrl": 53000003,
+      "evidence": 53000004,
+      "failure": 53000005,
+      "relabel": 53000006
+    },
+    "54": {
+      "init": 54000001,
+      "move": 54000002,
+      "ctrl": 54000003,
+      "evidence": 54000004,
+      "failure": 54000005,
+      "relabel": 54000006
+    },
+    "55": {
+      "init": 55000001,
+      "move": 55000002,
+      "ctrl": 55000003,
+      "evidence": 55000004,
+      "failure": 55000005,
+      "relabel": 55000006
+    },
+    "56": {
+      "init": 56000001,
+      "move": 56000002,
+      "ctrl": 56000003,
+      "evidence": 56000004,
+      "failure": 56000005,
+      "relabel": 56000006
+    },
+    "57": {
+      "init": 57000001,
+      "move": 57000002,
+      "ctrl": 57000003,
+      "evidence": 57000004,
+      "failure": 57000005,
+      "relabel": 57000006
+    },
+    "58": {
+      "init": 58000001,
+      "move": 58000002,
+      "ctrl": 58000003,
+      "evidence": 58000004,
+      "failure": 58000005,
+      "relabel": 58000006
+    },
+    "59": {
+      "init": 59000001,
+      "move": 59000002,
+      "ctrl": 59000003,
+      "evidence": 59000004,
+      "failure": 59000005,
+      "relabel": 59000006
+    },
+    "60": {
+      "init": 60000001,
+      "move": 60000002,
+      "ctrl": 60000003,
+      "evidence": 60000004,
+      "failure": 60000005,
+      "relabel": 60000006
+    },
+    "61": {
+      "init": 61000001,
+      "move": 61000002,
+      "ctrl": 61000003,
+      "evidence": 61000004,
+      "failure": 61000005,
+      "relabel": 61000006
+    },
+    "62": {
+      "init": 62000001,
+      "move": 62000002,
+      "ctrl": 62000003,
+      "evidence": 62000004,
+      "failure": 62000005,
+      "relabel": 62000006
+    },
+    "63": {
+      "init": 63000001,
+      "move": 63000002,
+      "ctrl": 63000003,
+      "evidence": 63000004,
+      "failure": 63000005,
+      "relabel": 63000006
+    },
+    "64": {
+      "init": 64000001,
+      "move": 64000002,
+      "ctrl": 64000003,
+      "evidence": 64000004,
+      "failure": 64000005,
+      "relabel": 64000006
+    },
+    "65": {
+      "init": 65000001,
+      "move": 65000002,
+      "ctrl": 65000003,
+      "evidence": 65000004,
+      "failure": 65000005,
+      "relabel": 65000006
+    },
+    "66": {
+      "init": 66000001,
+      "move": 66000002,
+      "ctrl": 66000003,
+      "evidence": 66000004,
+      "failure": 66000005,
+      "relabel": 66000006
+    },
+    "67": {
+      "init": 67000001,
+      "move": 67000002,
+      "ctrl": 67000003,
+      "evidence": 67000004,
+      "failure": 67000005,
+      "relabel": 67000006
+    },
+    "68": {
+      "init": 68000001,
+      "move": 68000002,
+      "ctrl": 68000003,
+      "evidence": 68000004,
+      "failure": 68000005,
+      "relabel": 68000006
+    },
+    "69": {
+      "init": 69000001,
+      "move": 69000002,
+      "ctrl": 69000003,
+      "evidence": 69000004,
+      "failure": 69000005,
+      "relabel": 69000006
+    },
+    "70": {
+      "init": 70000001,
+      "move": 70000002,
+      "ctrl": 70000003,
+      "evidence": 70000004,
+      "failure": 70000005,
+      "relabel": 70000006
+    },
+    "71": {
+      "init": 71000001,
+      "move": 71000002,
+      "ctrl": 71000003,
+      "evidence": 71000004,
+      "failure": 71000005,
+      "relabel": 71000006
+    },
+    "72": {
+      "init": 72000001,
+      "move": 72000002,
+      "ctrl": 72000003,
+      "evidence": 72000004,
+      "failure": 72000005,
+      "relabel": 72000006
+    },
+    "73": {
+      "init": 73000001,
+      "move": 73000002,
+      "ctrl": 73000003,
+      "evidence": 73000004,
+      "failure": 73000005,
+      "relabel": 73000006
+    },
+    "74": {
+      "init": 74000001,
+      "move": 74000002,
+      "ctrl": 74000003,
+      "evidence": 74000004,
+      "failure": 74000005,
+      "relabel": 74000006
+    },
+    "75": {
+      "init": 75000001,
+      "move": 75000002,
+      "ctrl": 75000003,
+      "evidence": 75000004,
+      "failure": 75000005,
+      "relabel": 75000006
+    },
+    "76": {
+      "init": 76000001,
+      "move": 76000002,
+      "ctrl": 76000003,
+      "evidence": 76000004,
+      "failure": 76000005,
+      "relabel": 76000006
+    },
+    "77": {
+      "init": 77000001,
+      "move": 77000002,
+      "ctrl": 77000003,
+      "evidence": 77000004,
+      "failure": 77000005,
+      "relabel": 77000006
+    },
+    "78": {
+      "init": 78000001,
+      "move": 78000002,
+      "ctrl": 78000003,
+      "evidence": 78000004,
+      "failure": 78000005,
+      "relabel": 78000006
+    },
+    "79": {
+      "init": 79000001,
+      "move": 79000002,
+      "ctrl": 79000003,
+      "evidence": 79000004,
+      "failure": 79000005,
+      "relabel": 79000006
+    },
+    "80": {
+      "init": 80000001,
+      "move": 80000002,
+      "ctrl": 80000003,
+      "evidence": 80000004,
+      "failure": 80000005,
+      "relabel": 80000006
+    },
+    "81": {
+      "init": 81000001,
+      "move": 81000002,
+      "ctrl": 81000003,
+      "evidence": 81000004,
+      "failure": 81000005,
+      "relabel": 81000006
+    },
+    "82": {
+      "init": 82000001,
+      "move": 82000002,
+      "ctrl": 82000003,
+      "evidence": 82000004,
+      "failure": 82000005,
+      "relabel": 82000006
+    },
+    "83": {
+      "init": 83000001,
+      "move": 83000002,
+      "ctrl": 83000003,
+      "evidence": 83000004,
+      "failure": 83000005,
+      "relabel": 83000006
+    },
+    "84": {
+      "init": 84000001,
+      "move": 84000002,
+      "ctrl": 84000003,
+      "evidence": 84000004,
+      "failure": 84000005,
+      "relabel": 84000006
+    },
+    "85": {
+      "init": 85000001,
+      "move": 85000002,
+      "ctrl": 85000003,
+      "evidence": 85000004,
+      "failure": 85000005,
+      "relabel": 85000006
+    },
+    "86": {
+      "init": 86000001,
+      "move": 86000002,
+      "ctrl": 86000003,
+      "evidence": 86000004,
+      "failure": 86000005,
+      "relabel": 86000006
+    },
+    "87": {
+      "init": 87000001,
+      "move": 87000002,
+      "ctrl": 87000003,
+      "evidence": 87000004,
+      "failure": 87000005,
+      "relabel": 87000006
+    },
+    "88": {
+      "init": 88000001,
+      "move": 88000002,
+      "ctrl": 88000003,
+      "evidence": 88000004,
+      "failure": 88000005,
+      "relabel": 88000006
+    },
+    "89": {
+      "init": 89000001,
+      "move": 89000002,
+      "ctrl": 89000003,
+      "evidence": 89000004,
+      "failure": 89000005,
+      "relabel": 89000006
+    },
+    "90": {
+      "init": 90000001,
+      "move": 90000002,
+      "ctrl": 90000003,
+      "evidence": 90000004,
+      "failure": 90000005,
+      "relabel": 90000006
+    },
+    "91": {
+      "init": 91000001,
+      "move": 91000002,
+      "ctrl": 91000003,
+      "evidence": 91000004,
+      "failure": 91000005,
+      "relabel": 91000006
+    },
+    "92": {
+      "init": 92000001,
+      "move": 92000002,
+      "ctrl": 92000003,
+      "evidence": 92000004,
+      "failure": 92000005,
+      "relabel": 92000006
+    },
+    "93": {
+      "init": 93000001,
+      "move": 93000002,
+      "ctrl": 93000003,
+      "evidence": 93000004,
+      "failure": 93000005,
+      "relabel": 93000006
+    },
+    "94": {
+      "init": 94000001,
+      "move": 94000002,
+      "ctrl": 94000003,
+      "evidence": 94000004,
+      "failure": 94000005,
+      "relabel": 94000006
+    },
+    "95": {
+      "init": 95000001,
+      "move": 95000002,
+      "ctrl": 95000003,
+      "evidence": 95000004,
+      "failure": 95000005,
+      "relabel": 95000006
+    },
+    "96": {
+      "init": 96000001,
+      "move": 96000002,
+      "ctrl": 96000003,
+      "evidence": 96000004,
+      "failure": 96000005,
+      "relabel": 96000006
+    },
+    "97": {
+      "init": 97000001,
+      "move": 97000002,
+      "ctrl": 97000003,
+      "evidence": 97000004,
+      "failure": 97000005,
+      "relabel": 97000006
+    },
+    "98": {
+      "init": 98000001,
+      "move": 98000002,
+      "ctrl": 98000003,
+      "evidence": 98000004,
+      "failure": 98000005,
+      "relabel": 98000006
+    },
+    "99": {
+      "init": 99000001,
+      "move": 99000002,
+      "ctrl": 99000003,
+      "evidence": 99000004,
+      "failure": 99000005,
+      "relabel": 99000006
+    }
+  },
+  "infeasible_controls": [],
+  "d_cr_match_failures": [],
+  "cap_per_source": null,
+  "removal_age": 5
+}

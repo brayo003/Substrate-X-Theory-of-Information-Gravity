@@ -1,0 +1,194 @@
+{
+  "game": {
+    "name": "V12 — The Tension",
+    "objective": "Survive by staying unpredictable while managing tension",
+    "win": "Survive without shatter",
+    "lose": "Shatter OR full predictability"
+  },
+
+  "core_loop": [
+    "action -> memory",
+    "memory -> stalker bias",
+    "stalker -> tension",
+    "tension -> behavior change"
+  ],
+
+  "current_phase": 1,
+
+  "phases": {
+    "1": {
+      "name": "core_loop",
+      "status": "in_progress",
+
+      "tasks": [
+        { "name": "grid_memory_M", "status": "completed", "priority": "critical" },
+        { "name": "stalker_spawn_from_M", "status": "completed", "priority": "critical" },
+        { "name": "basic_tension_T", "status": "completed", "priority": "critical" },
+        { "name": "tension_engine_tuning", "status": "completed", "priority": "critical", "description": "Final parameters: c=0.20, r=-2.5, a=5.9, b=3.0, forcing=27, noise=0.018, rupture=1.15, cooldown=12" },
+        { "name": "sanctuary_zone", "status": "pending", "priority": "critical", "description": "Zone where T_sys decays faster, M growth suppressed" },
+        { "name": "stillness_trap", "status": "pending", "priority": "critical", "description": "Standing still >30s increases M, environment closes in" },
+        { "name": "resource_depletion", "status": "pending", "priority": "medium", "description": "Overharvesting creates memory scars" }
+      ],
+
+      "tests": [
+        { "name": "player_avoids_repetition", "status": "pending" },
+        { "name": "stalker_bias_visible", "status": "pending" },
+        { "name": "tension_is_spatial", "status": "pending" },
+        { "name": "stillness_punished", "status": "pending" }
+      ]
+    },
+
+    "2": {
+      "name": "prediction",
+      "status": "in_progress",
+
+      "tasks": [
+        { "name": "prediction_field_P", "status": "completed", "priority": "critical" },
+        { "name": "blend_M_and_P", "status": "pending", "priority": "critical", "description": "Stalker spawn probability = f(M, P)" },
+        { "name": "uncertainty_weighting", "status": "pending", "priority": "medium" },
+        { "name": "stalker_superposition", "status": "pending", "priority": "critical", "description": "Dual ghost states (M-based + P-based), collapse on player commitment" },
+        { "name": "entropy_calculation_H", "status": "pending", "priority": "medium", "description": "Measures unpredictability, high H reduces P" }
+      ],
+
+      "tests": [
+        "stalker_ahead_of_player",
+        "pattern_breaking_reduces_encounters",
+        "prediction_not_perfect"
+      ]
+    },
+
+    "3": {
+      "name": "tension_coupling",
+      "status": "locked",
+
+      "tasks": [
+        { "name": "Tsys_alpha_beta_gamma", "status": "completed", "priority": "critical" },
+        { "name": "visual_audio_link", "status": "pending", "priority": "critical", "description": "Map T_sys to screen effects, audio pitch/volume, stalker state machine" },
+        { "name": "scale_stalker", "status": "pending", "priority": "medium" },
+        { "name": "sanctuary_degradation", "status": "pending", "priority": "critical", "description": "M builds in sanctuary over time, safety decays structurally" },
+        { "name": "day_night_tension_coupling", "status": "pending", "priority": "medium", "description": "Night intensity ∝ ∫ T(x,t) dx, fear creates darkness" },
+        { "name": "sanctuary_upgrades", "status": "pending", "priority": "low", "description": "Fire pit, walls, lantern, altar, reinforced door" }
+      ],
+
+      "tests": [
+        "world_scales_with_tension",
+        "player_feels_pressure",
+        "no_runaway"
+      ]
+    },
+
+    "4": {
+      "name": "shatter",
+      "status": "locked",
+
+      "tasks": [
+        { "name": "input_delay", "status": "pending", "priority": "critical" },
+        { "name": "input_to_stalker", "status": "pending", "priority": "critical" },
+        { "name": "movement_buffer", "status": "pending", "priority": "critical" },
+        { "name": "environmental_lies", "status": "pending", "priority": "medium", "description": "False audio/visual cues at high T, system deceives player" }
+      ],
+
+      "tests": [
+        "control_inversion",
+        "delay_consistent",
+        "correct_trigger"
+      ]
+    },
+
+    "5": {
+      "name": "book",
+      "status": "locked",
+
+      "tasks": [
+        { "name": "observational_entries", "status": "pending", "priority": "critical" },
+        { "name": "interpretive_bias", "status": "pending", "priority": "critical" },
+        { "name": "prescriptive_rules", "status": "pending", "priority": "critical" },
+        { "name": "mislearning_mutations", "status": "pending", "priority": "critical", "description": "Book becomes unreliable at high T, P(correct) < 1" },
+        { "name": "identity_drift_I_player", "status": "pending", "priority": "low", "description": "Book predicts actions before player takes them" },
+        { "name": "artifact_shattered_mirror", "status": "pending", "priority": "low", "description": "First artifact, lore hook, triggers E spike" },
+        { "name": "book_physical_presence", "status": "pending", "priority": "low", "description": "Sanctuary anchor or carryable artifact" }
+      ],
+
+      "tests": [
+        "trigger_on_state",
+        "changes_behavior",
+        "mislearning"
+      ]
+    },
+
+    "6": {
+      "name": "persistence",
+      "status": "locked",
+
+      "tasks": [
+        { "name": "save_memory", "status": "pending", "priority": "critical" },
+        { "name": "load_memory", "status": "pending", "priority": "critical" },
+        { "name": "decay_over_time", "status": "pending", "priority": "critical" },
+        { "name": "cross_session_stalker", "status": "pending", "priority": "medium", "description": "Stalker knows old paths from previous sessions" },
+        { "name": "ghost_remnants", "status": "pending", "priority": "low", "description": "Footsteps, echoes from past runs appear" },
+        { "name": "endings_system", "status": "pending", "priority": "low", "description": "Escape, Absorbed, Replace, Reset" }
+      ],
+
+      "tests": [
+        "world_remembers",
+        "old_paths_return",
+        "memory_fades"
+      ]
+    }
+  },
+
+  "critical_path": [
+    "sanctuary_zone (Phase 1)",
+    "stillness_trap (Phase 1)",
+    "blend_M_and_P (Phase 2)",
+    "stalker_superposition (Phase 2)",
+    "sanctuary_degradation (Phase 3)",
+    "mislearning_mutations (Phase 5)"
+  ],
+
+  "rules": {
+    "phase_progression": "all critical tasks complete AND all tests passed",
+    "no_skipping": true
+  },
+
+  "failure": [
+    "feels_random",
+    "no_cause_effect",
+    "tension_cosmetic",
+    "stalker_scripted",
+    "sanctuary_permanent",
+    "prediction_broken"
+  ],
+
+  "success": [
+    "player_changes_behavior",
+    "player_says_it_learned_me",
+    "avoids_repetition",
+    "tension_is_felt",
+    "unpredictability_survives"
+  ]
+}
+"technical_stack": {
+  "engine": "Roblox Luau",
+  "modules": ["HorizonEngine.lua", "MemoryField.lua", "StalkerAI.lua"],
+  "data_store": "DataStoreService for cross-session memory"
+},
+
+"input_sources": {
+  "sprinting": "Humanoid.MoveDirection.Magnitude > 0 and Humanoid.FloorMaterial",
+  "jumping": "Humanoid.Jump",
+  "tool_use": "Tool.Activated",
+  "sanctuary": "ZonePlus or TouchInterest"
+},
+
+"ui_requirements": {
+  "tension_bar": "0-100%, color gradient green→red",
+  "state_text": "IDLE/BUILDING/DANGER/CRITICAL/RECOVERY",
+  "screen_effects": "vignette intensity, edge darkening, red flash on rupture"
+},
+
+"audio_requirements": {
+  "ambient_loops": ["calm_loop", "tense_loop", "critical_loop"],
+  "heartbeat": "starts at T>0.7, volume increases with T",
+  "rupture_sound": "loud, distinct, panic-inducing"
+}

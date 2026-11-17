@@ -1,0 +1,87 @@
+The Book – What It Actually Does (Technical)
+1. It Tracks Your State
+
+The Book constantly reads these variables:
+
+    T_sys (tension)
+
+    M(x,t) (where you've been)
+
+    P_sys (how predictable you are)
+
+    I_player (how much your movement matches the stalker)
+
+Implementation: Every few seconds, the server checks these values.
+2. It Unlocks Entries at Thresholds
+
+When a variable crosses a threshold, the Book adds a new page.
+Threshold	What Unlocks
+M > 0.6	"You remember this place" entry
+P > 0.7 + stalker nearby	"Your belief becomes real" entry
+I > 0.7	"You move like it" entry
+T > 1.2 + in sanctuary	"It remembers where you hide" entry
+
+Implementation: Each threshold has a flag. First time it happens, add entry. Never add same entry twice.
+3. It Modifies the Game (Interpretive)
+
+When an entry unlocks, it changes how the game works.
+Entry	What Changes
+"The forest remembers your steps"	M grows faster (+10% per visit)
+"Your belief becomes real"	Stalker spawns more often where you look
+"You move like it"	Input lag starts (already implemented)
+"It remembers where you hide"	Sanctuary decays faster (loses safety quicker)
+
+Implementation: When entry unlocks, multiply a parameter by 1.1. Store that multiplier permanently for this player.
+4. It Mutates (Mislearning)
+
+At high tension (T > 1.0), entry text changes to false information.
+Normal Text	Mutated Text (high T)
+"Walk where you have not"	"Walk where you remember"
+"It expects you where you expect it"	"It expects you where you last saw it"
+
+Implementation: When displaying entry text, check current T. If T > 1.0, show mutated version instead.
+5. It Predicts You (At High I)
+
+When I_player > 0.7, the Book shows text before you act.
+If you are...	Book says...
+Moving toward a high-M area	"You will go there"
+Near the stalker	"You will run"
+
+Then:
+
+    If you do what it said → I_player increases
+
+    If you don't → T_sys spikes
+
+Implementation: Detect player intent (direction of movement, stalker distance). Show prediction popup. Track if player follows or resists. Modify values accordingly.
+6. It Has a Physical Presence
+
+The Book is not just UI. It exists in the world.
+Option	Effect
+Sanctuary Anchor	A pedestal in sanctuary. Standing near it changes T decay rate.
+Carryable Artifact	Holding the Book increases learning rate but also distortion risk.
+Page Activation	Player can select a page to temporarily activate its rule.
+
+Implementation: Create a part in sanctuary. When player touches it, show Book UI. When holding Book artifact, apply modifiers.
+7. It Saves Progression
+
+All unlocked entries, mutations, and parameter modifiers save between sessions.
+
+Implementation: Use DataStore to save the player's Book state.
+What You Need to Build (Checklist)
+Task	Priority	Effort
+1. Track state variables (T, M, P, I)	Already done	0
+2. Check thresholds every few seconds	Medium	1 hour
+3. Unlock entries when thresholds crossed	Medium	1 hour
+4. Apply parameter modifiers when entries unlock	Medium	2 hours
+5. Mutate entry text at high T	Low	1 hour
+6. Predict player movement at high I	High (core mechanic)	3 hours
+7. Physical Book in sanctuary	Low	1 hour
+8. Save Book state to DataStore	Low	1 hour
+The Short Version
+Question	Answer
+What does the Book do?	Reads your state, unlocks pages, changes game rules, lies at high tension, predicts your moves
+How does it change rules?	Multiplies parameters (M growth, sanctuary decay, stalker spawn)
+How does it lie?	Shows false text when T > 1.0
+How does it predict?	When I > 0.7, shows what you will do. Punishes deviation.
+Where does it live?	In sanctuary as a pedestal, or as a carryable artifact

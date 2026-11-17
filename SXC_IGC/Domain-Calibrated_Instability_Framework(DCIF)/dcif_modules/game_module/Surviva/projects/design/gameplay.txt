@@ -1,0 +1,106 @@
+The Complete Game: "V12 — The Tension"
+Core Concept
+
+A solo survival game where the world itself responds to your behavior. Every action changes the global tension, which in turn changes how the world behaves. You are not just surviving the environment. You are surviving your own impact on it.
+The Global Tension Variable (T_sys)
+
+One number that governs everything. Range 0 to 1.5.
+T_sys Range	State	World Behavior
+0.0 - 0.4	CALM	Birds chirp. Resources abundant. Stalker lurks at distance. Sanctuary is safe.
+0.4 - 0.7	WARY	Ambient sounds change. Resources thinner. Stalker watches. Sanctuary lights flicker.
+0.7 - 0.9	ANGRY	Darker visuals. Resources scarce. Stalker hunts. Sanctuary creaks, shadows move.
+0.9 - 1.2	HUNTED	Visual distortion. Resources rare. Stalker chases. Sanctuary unsafe — sounds leak in.
+1.2 - 1.5	SHATTER	Screen distortion. Resources nearly gone. Stalker sprints. Sanctuary has shadows, footsteps.
+How T_sys Changes
+Player Action	T_sys Effect
+Staying outside	+0.2 per minute
+Gathering resources	+0.1 per item
+Hoarding (more than needed)	+0.3 per extra stack
+Making noise (sprinting, jumping, tools)	+0.05 per action
+Taking damage	+0.2 per hit
+Being seen by stalker	+0.3 per sighting
+Returning to sanctuary	-0.5 per visit
+Using resources (building, crafting)	-0.1 per use
+Killing stalker (temporary)	-0.8 per kill
+Doing nothing (resting)	-0.1 per minute
+The Stalker — Adaptive Enemy
+
+Not scripted. It learns.
+Stalker Learns	How It Adapts
+Where you go	Ambushes you on frequent routes
+When you go	Appears at times you're usually outside
+What you collect	Guards resources you take most
+How you escape	Cuts off escape routes you use
+Your hiding spots	Checks sanctuaries you frequent
+Stalker State	T_sys Range	Behavior
+LURKING	< 0.4	Distant sounds. Movement in periphery.
+STALKING	0.4 - 0.7	Watches from trees. Footsteps behind you.
+HUNTING	0.7 - 0.9	Follows. Heavy breathing. Closer.
+CHASING	0.9 - 1.2	Sprinting. Screen distortion.
+SHATTER	> 1.2	Screams. Runs. FOV zooms. Attacks.
+Resources — Dynamic and Depletable
+Resource	Where	What Happens at High T_sys
+Wood	Forest	Less spawns. Trees creak more.
+Stone	Caves	Caves collapse. Echoes intensify.
+Food	Hunting, foraging	Animals flee. Plants wilt.
+Artifacts	Ruins	Harder to find. Stalker guards them.
+Fuel	Scattered	Spawns decrease. Harder to see.
+Resource Behavior	Effect
+Overharvesting	Depletes area. Takes longer to respawn.
+Hoarding	Global T_sys rises. Stalker learns.
+Scarcity	Forces player to go further, risk more.
+Sanctuary — Your Home (Not Guaranteed Safe)
+Upgrade	Cost	Effect
+Fire Pit	Wood	Faster tension decay (base -0.5/min)
+Walls	Stone	Visual safety, stalker can't enter
+Storage	Wood, stone	Hold more resources, but hoarding increases T_sys
+Lantern	Fuel	Reduces night tension by -0.2/min
+Altar	Artifacts	Reveals stalker lore, reduces spawn rate
+Reinforced Door	Wood, stone	Stalker takes longer to break in at high T_sys
+Sanctuary State	What Happens
+Normal (T_sys < 0.7)	Safe. Tension decays. Stalker stays out.
+Stressed (0.7 - 1.0)	Lights flicker. Shadows move. Creaking sounds.
+Unsafe (> 1.0)	Stalker circles. Footsteps outside. Door rattles.
+Day Cycle — Your Rhythm
+Time	Light	Base T_sys Change	Activity
+Dawn	Rising	-0.1/min	Safe to leave
+Day	Full	0	Best gathering time
+Dusk	Falling	+0.05/min	Return to sanctuary
+Night	Dark	+0.1/min	Dangerous. Stalker more active.
+The Full Game Loop
+text
+
+SANCTUARY (safe)
+    ↓
+LEAVE (T_sys starts rising)
+    ↓
+GATHER (resources, T_sys rises)
+    ↓
+STALKER APPEARS (watches, follows)
+    ↓
+T_sys HIGH (world gets harder)
+    ↓
+DECISION: Keep going (risk) or return (safety)
+    ↓
+RETURN TO SANCTUARY (T_sys decays, resources spent)
+    ↓
+UPGRADE SANCTUARY (makes next run easier)
+    ↓
+REPEAT (but world has changed — stalker learned, resources depleted)
+
+Progression Arc
+Phase	Goal	T_sys Range	Challenge
+1. Survive	Find sanctuary, gather basics	0.2 - 0.5	Learn mechanics
+2. Build	Upgrade sanctuary, get tools	0.4 - 0.7	Manage tension
+3. Explore	Go further, find artifacts	0.6 - 0.9	Stalker learns you
+4. Face	Confront stalker, discover lore	0.8 - 1.2	Fight or escape
+5. Endgame	Break the cycle or succumb	> 1.0	Final confrontation
+Emergent Player Stories
+
+Not scripted. Emergent from system.
+Scenario	What Happens
+"I took too much wood"	T_sys rose → stalker appeared → sanctuary flickered → player panicked
+"I always go to the same cave"	Stalker learned → ambushed at cave entrance → player had to run
+"I hoarded artifacts"	T_sys spiked → resources depleted → stalker hunted aggressively
+"I stayed out too long"	Night fell → T_sys high → stalker chased → player barely made it back
+"I killed the stalker"	T_sys dropped → sanctuary safe again → stalker returned different

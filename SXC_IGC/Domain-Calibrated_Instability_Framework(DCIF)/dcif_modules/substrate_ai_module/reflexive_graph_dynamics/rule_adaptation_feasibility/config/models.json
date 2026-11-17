@@ -1,0 +1,49 @@
+{
+  "frozen_at": "2026-11-15",
+  "note": "All model parameters below were fixed on development cases 0-39 and checked on validation cases 40-59 before the held-out evaluation split was executed.",
+  "rule_space": {
+    "REACH": {"radius": [1, 2, 3], "policy": ["min_out", "max_out", "min_id"], "avoid_cycle": [false, true]},
+    "REACH_CAP": {"radius": [1, 2, 3], "policy": ["min_out", "max_out", "min_id"], "avoid_cycle": [false, true]},
+    "CAP": {"policy": ["min_out", "max_out", "min_id"]},
+    "CAP_SAFE": {"policy": ["min_out", "max_out", "min_id"]},
+    "CYCLE": {"policy": ["min_id", "max_id", "non_req"], "safe": [false, true]},
+    "REQ": {"order": ["min_id", "max_id"]},
+    "REWIRE": {"radius": [1, 2, 3], "policy": ["min_out", "max_out", "min_id"], "avoid_cycle": [false, true]},
+    "total_rules": 68
+  },
+  "seed_library": [
+    "REQ|order=min_id",
+    "CYCLE|policy=min_id,safe=False",
+    "CAP|policy=min_out",
+    "CAP_SAFE|policy=min_out",
+    "REACH|avoid_cycle=False,policy=min_out,radius=1",
+    "REACH_CAP|avoid_cycle=False,policy=min_out,radius=1",
+    "REWIRE|avoid_cycle=False,policy=min_out,radius=1"
+  ],
+  "models": {
+    "A": {"kind": "fixed", "library": "seed (7)", "priority": "seed order"},
+    "B": {"kind": "fixed", "library": "complete (68)", "priority": "safe-first fixed order"},
+    "C": {"kind": "adaptive", "library": "complete (68)", "k": 4, "ucb_c": 0.7, "max_evals": 10, "deactivation": true},
+    "D": {"kind": "adaptive", "library": "seed (7)", "k": 4, "ucb_c": 0.7, "max_evals": 10, "meta": true},
+    "Dc": {"kind": "adaptive", "library": "seed (7)", "k": 4, "ucb_c": 0.7, "max_evals": 10, "meta": "create-only ablation"},
+    "E1": {"kind": "programmed", "library": "complete (68)", "priority": "safe-first fixed order", "macro": 6},
+    "E2": {"kind": "greedy", "library": "complete (68)", "max_evals": "all enabled"}
+  },
+  "meta_rules": {
+    "check_interval_ops": 20,
+    "create_trigger": "stall_streak >= 2 OR no improvement in total violations over the last 10 decisions",
+    "create_guard": "stop after 6 enabled failed variants for the same constraint type",
+    "create_cost_ops": 3,
+    "disable_trigger": "attempts >= 12 and successes == 0",
+    "disable_guards": ["not the last enabled rule covering a constraint type", "target type not currently violated"],
+    "modify_trigger": "oldest disabled rule whose target type is currently violated; step to next parameter variant",
+    "delete_trigger": "library > 18 rules or more than 3 disabled rules",
+    "max_library": 18
+  },
+  "selection": {
+    "adaptive_priority": "currently violated constraint types first, then UCB score",
+    "soft_eval_cap": 10,
+    "hard_eval_cap": 30,
+    "no_harm_rule": "an adaptive/greedy model never applies an edit with negative predicted delta"
+  }
+}

@@ -1,0 +1,14 @@
+# Environment
+
+Date: 2026-11-15T03:58:30+03:00
+Python: Python 3.10.12
+Platform: Linux-6.17.4-76061704-generic-x86_64-with-glibc2.35
+Processor: x86_64
+numpy 1.26.4
+scipy 1.15.3
+pandas 2.3.3
+
+## Determinism
+- No wall-clock, no network, no GPU, no randomness outside seeded random.Random instances.
+- Bootstrap seed: 20261115
+- Case seeds: 1000003 + case_id * 7919

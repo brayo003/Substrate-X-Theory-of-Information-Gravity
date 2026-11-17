@@ -1,0 +1,23 @@
+{
+  "E01_no_double_count": "PASS",
+  "E02_hidden_ground_truth": "PASS",
+  "E03_no_central_coordinator": "PASS",
+  "E04_relabelling": "PASS",
+  "E04b_relabel_budget": "PASS",
+  "E04c_relabel_fail_dyn": "PASS",
+  "E05_identical_evidence": "PASS",
+  "E06_d_cr_creation_match": "PASS",
+  "E07_message_budgets": "PASS",
+  "E08_propagation_graph": "PASS",
+  "E09_disconnected": "PASS",
+  "E10_consensus_distinction": "PASS",
+  "E10b_agreement_ties": "PASS",
+  "E11_stream_isolation": "PASS",
+  "E12_reproducibility": "PASS",
+  "E13_one_py_preserved": "PASS",
+  "E14_edge_attribution": "PASS",
+  "E15_baselines_mv_u_static": "PASS",
+  "E16_correlation_quantified": "PASS",
+  "E17_ni_tost_helpers": "PASS",
+  "E18_v1_preserved": "PASS"
+}

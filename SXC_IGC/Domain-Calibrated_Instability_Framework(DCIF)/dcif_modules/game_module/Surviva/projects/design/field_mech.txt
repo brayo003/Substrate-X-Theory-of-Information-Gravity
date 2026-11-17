@@ -1,0 +1,146 @@
+Field Mechanics: The Non-Generic Version
+
+Your actions no longer just change a number. They change a living field. The world does not react. It transforms.
+The Three Fields
+Field	What It Is	What It Does
+T(x,t)	Tension Field	Where fear concentrates. Stalker spawns where T is high.
+M(x,t)	Memory Field	Where you have been. Stalker learns where M is dense.
+P(x,t)	Prediction Field	Where the system expects you to go. Stalker waits where P is high.
+
+Every action writes into all three fields. Not one number. A spatial history.
+Movement (WASD)
+Before	After
+Move → +0.2 T_sys	Move → writes trajectory into M(x,t)
+
+What happens: Frequently used paths become high-memory corridors. The stalker does not chase you. It waits where you have been. Where you always go.
+
+Player feels: "It knows where I walk."
+Sneak (Shift)
+Before	After
+Sneak → reduces noise	Sneak → suppresses T(x,t), increases P(x,t)
+
+What happens: You are quiet. You are hidden. But the system becomes more certain where you are. You trade safety for predictability.
+
+Player feels: "I'm hiding, but it knows."
+Jump (Space)
+Before	After
+Jump → noise spike	Jump → injects high-frequency signal into T(x,t)
+
+What happens: Jump creates a wavefront in the tension field. It ripples outward. It can reveal hidden structures. It can trigger distant responses.
+
+Player feels: "I made noise and something answered. Far away."
+Gather (E)
+Before	After
+Gather → +0.1 T_sys	Gather → removes resource + creates void in M(x,t)
+
+What happens: Over-harvested areas become memory scars. The substrate forgets what was there. Anomalies form. Distortions grow.
+
+Player feels: "I took too much. The ground is wrong now."
+Drop (Q)
+Before	After
+Drop → reduces hoarding	Drop → creates artificial attractor in P(x,t)
+
+What happens: You drop an item. The system believes that location matters. The stalker will check there. Not because you were there. Because you made it believe.
+
+Player feels: "I tricked it. It went where I dropped the stone."
+Right Click (Core Shift)
+No Artifact: Probe
+Before	After
+Right click → see stalker location	Right click → sample P(x,t)
+
+What happens: You don't see the stalker. You see where the system expects you to be. The prediction field. The stalker is not the enemy. The expectation is.
+
+Player feels: "It knows where I'm going. It's already there."
+With Artifact: Transform
+
+Each artifact modifies the fields themselves, not your outcomes.
+Artifacts (Rewritten)
+Artifact	Effect	What It Does
+Shattered Mirror	Creates delayed copy of M(x,t)	Stalker follows ghost trajectory. Not illusion. Real signal.
+Burnt Journal	Reveals gradient of P(x,t)	You see where the system is certain. Where it expects you.
+Broken Compass	Aligns movement to ∇M	You follow the memory gradient. Where you've been most. Dangerous.
+Empty Locket	Translates sanctuary to low-M region	Finds area with minimal memory density. Not teleport. A gap.
+Fractured Crown	Injects energy into T(x,t)	Nonlinear amplification. Local instability. Not a spike. A collapse.
+Tension Spending (Fixed)
+Before	After
+Spend tension → linear effect	Spend tension → effect depends on local gradient of T(x,t)
+
+What happens: Same action, different result. Burst sprint in a low-tension area: small boost. Burst sprint in a high-tension gradient: massive escape, or collapse.
+
+Player feels: "I used it here and nothing happened. I used it there and everything broke."
+Signal Injection (Measurable)
+
+You teach the substrate patterns.
+Action	Effect
+Repeat sequence (sprint, jump, sprint, jump)	Substrate builds prediction model
+Break pattern	Substrate error spikes, resets model
+
+What happens: If you are predictable, the stalker knows. If you are creative, it loses you.
+
+Player feels: "I did the same thing three times. The fourth time, it was waiting."
+Pattern Breaking Reward
+Measure	What It Means
+H = unpredictability of player actions	High H = creative. Low H = predictable.
+
+High H → reduces P(x,t). The system loses confidence.
+Low H → strengthens P(x,t). The stalker knows.
+
+Creativity = survival.
+Day/Night Cycle (Upgraded)
+Before	After
+Night = time-based	Night intensity ∝ ∫ T(x,t) dx
+
+What happens: Your fear creates the night. Stay out too long, tension builds, night deepens. Return to sanctuary, night recedes.
+
+Player feels: "The darkness is my fault."
+Sanctuary (Fixed)
+Before	After
+Sanctuary = static safe zone	Sanctuary = region where M(x,t) ≈ 0
+
+What happens: Sanctuary is safe because the substrate forgot it. But memory leaks in. The longer you stay, the more M(x,t) builds. Safety decays structurally.
+
+Player feels: "I stayed too long. It's starting to remember."
+What Changed
+Before	After
+Action → ΔT_sys	Action → transforms (M, P, T) fields
+Player vs enemy	Player vs distributed system
+Fixed map	Field that evolves with you
+Predictable stalker	System that predicts you
+Static safety	Safety that decays
+Night = time	Night = your fear
+Creativity optional	Creativity = survival
+
+
+To make this work without lagging the server, we don't use thousands of parts. We use a Grid-Based Table in your SXCOmegaEngine.lua.
+
+The Data Structure:
+Lua
+
+-- Representing the World as a 2D Grid of Fields
+local FieldGrid = {
+    -- [x][z] = {T = 0, M = 0, P = 0}
+}
+
+function Engine:UpdateField(worldPos, actionType)
+    local gx, gz = self:WorldToGrid(worldPos)
+    
+    if actionType == "MOVE" then
+        -- Movement writes to Memory
+        FieldGrid[gx][gz].M += 0.1 
+        -- Prediction "flows" toward the direction of velocity
+    elseif actionType == "JUMP" then
+        -- Jump creates a Ripple (Signal Injection)
+        self:CreateRipple(gx, gz, "T", 50) 
+    end
+end
+
+To make this work, we have to change the fundamental way Roblox handles your keyboard. Usually, when you press "W," your character moves. In the Shatter Loop, we intercept that "W."
+1. The Input Buffer (The 10-Second Delay)
+
+We create a "Queue" (a list).
+
+    T = 0: You press W. We don't move the player. We add "W" to the list.
+
+    T = 0: The Stalker reads the list and moves Forward immediately.
+
+    T = 2: The Player Body finally reads the first item in the list and moves Forward.

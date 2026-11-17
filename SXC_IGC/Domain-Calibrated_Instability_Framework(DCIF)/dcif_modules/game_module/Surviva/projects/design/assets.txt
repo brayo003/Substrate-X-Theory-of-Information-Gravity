@@ -1,0 +1,42 @@
+1. Audio: The "Signal" vs. The "Scare"
+
+In your tension_predictability.md, sound is a feedback loop. You need sounds that change based on Tsys​.
+
+    Don't get: High-fidelity forest ambiance or monster screams yet.
+
+    Do get: A single Heartbeat loop and a Static/White Noise file.
+
+    The Logic: You can use code to change the PlaybackSpeed of the heartbeat based on the Tension variable.
+
+        Low Tension: Slow, deep thumps.
+
+        Shatter State: High-speed, distorted static.
+
+    Where to get: Use the Roblox Creator Store (Toolbox) directly inside Studio. Search for "Looping Heartbeat." It’s free and doesn't require external downloads.
+
+2. Images: The "UI" vs. The "Art"
+
+You don't need "Images" (PNGs/JPEGs). You need Procedural UI.
+
+    The Tension Bar: Do not use an image of a bar. Use a Frame in a ScreenGui. Change its BackgroundColor3 from Green to Red in your script.
+
+    The Shatter Effect: Use a ColorCorrectionEffect in game.Lighting. When the player hits the Shatter state, turn the Saturation to -1 (Black and White) and increase the Contrast. This creates a terrifying look without a single image asset.
+
+3. Models: The "Stalker"
+
+The Stalker doesn't need to be a scary monster model yet.
+
+    The Proxy: Use a simple Neon Red Part (a 4x4x4 cube).
+
+    Why? If a Red Cube follows you through a dark hallway using your "Memory Field" logic, it is scarier than a high-def monster that glitches through walls.
+
+    The Goal: Once the Red Cube successfully "Puppets" you in the Shatter loop, then you can swap the cube for a scary 3D model.
+
+4. The "Data-Lite" Asset List
+
+If you have a small window of high-speed data, only download these 4 things:
+Asset Type	What to find in Toolbox	Purpose
+Sound	"Thumping Heartbeat"	Audible feedback for Tsys​ levels.
+Sound	"Radio Static / White Noise"	Feedback for the Shatter/Identity Drift.
+Texture	"Gritty Concrete" or "Dark Dirt"	One texture for the whole map to give it a "vibe."
+Model	"R6 Rig"	A basic human shape to act as your "Stalker" proxy.

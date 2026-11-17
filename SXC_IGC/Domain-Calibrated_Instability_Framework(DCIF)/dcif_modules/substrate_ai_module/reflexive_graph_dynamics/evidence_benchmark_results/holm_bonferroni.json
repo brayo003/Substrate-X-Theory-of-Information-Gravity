@@ -1,0 +1,37 @@
+[
+  {
+    "hypothesis": "messages_per_correct_node",
+    "p": 0.0019362687262169942,
+    "holm_threshold": 0.01,
+    "significant": true,
+    "rank": 1
+  },
+  {
+    "hypothesis": "evidence_coverage",
+    "p": 0.9191409127844665,
+    "holm_threshold": 0.0125,
+    "significant": false,
+    "rank": 2
+  },
+  {
+    "hypothesis": "frac_correct",
+    "p": NaN,
+    "holm_threshold": 0.016666666666666666,
+    "significant": false,
+    "rank": 3
+  },
+  {
+    "hypothesis": "time_to_correct_agreement",
+    "p": NaN,
+    "holm_threshold": 0.025,
+    "significant": false,
+    "rank": 4
+  },
+  {
+    "hypothesis": "agreement_correct",
+    "p": NaN,
+    "holm_threshold": 0.05,
+    "significant": false,
+    "rank": 5
+  }
+]

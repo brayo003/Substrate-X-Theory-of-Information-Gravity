@@ -1,0 +1,19 @@
+Proposed experiment: Neural Network Structural Adaptation
+1. Build a neural-style network
+   
+   Use simulated neurons, connections, activation signals, and a simple learning task.
+2. Introduce your structural rules
+   
+   Allow the network to create and remove connections and update its state partitions.
+3. Compare against established alternatives
+   
+   Include fixed connectivity, random pruning, activity-dependent pruning, and conventional structural plasticity rules.
+4. Measure actual computational costs
+   
+   Record connection count, signal transmissions, computational operations, and an explicit energy-cost estimate.
+5. Test whether performance survives
+   
+   Measure accuracy, learning speed, memory retention, robustness to damaged connections, and performance on unfamiliar inputs.
+6. Remove the partition mechanism
+   
+   Compare the complete model against a version that only changes connections. This isolates whether partition refinement contributes anything.

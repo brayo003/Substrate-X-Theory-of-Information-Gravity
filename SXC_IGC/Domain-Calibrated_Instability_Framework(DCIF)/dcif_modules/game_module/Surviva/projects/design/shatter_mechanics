@@ -1,0 +1,92 @@
+In a normal game, the Hierarchy of Authority is:
+
+    Input (Your Fingers) → 2. Character (Your Body) → 3. AI (The Stalker).
+
+In your Shatter Loop, the hierarchy literally reverses:
+
+    Input (Your Fingers) → 2. The Stalker (The New Leader) → 3. The Character (The New Trailer).
+
+The "Freaky Friday" Mechanics
+
+To make the player's body "struggle" to finish the commands, we have to treat the Player Character as if it were the AI.
+
+    The Stalker's Body: We unbind it from the "Memory Field" and bind it directly to your WASD keys. It becomes a Puppet that reacts instantly to your brain.
+
+    The Player's Body: We disconnect it from the keyboard entirely. We give it a "Trailing Script." It looks at the Stalker's position from 2 seconds ago and tries to walk toward it.
+
+The True Horror: The "Trailing" Body
+
+The "struggle" happens because your body is no longer being "driven." It is being "dragged" by the ghost of the Stalker's previous position.
+
+    If you move the Stalker Left, your body doesn't move yet.
+
+    The Stalker is now 20 studs away to the Left.
+
+    Your body finally "wakes up" and realizes it needs to be where the Stalker was. It starts a slow, clunky pathfind to that spot.
+
+    The Panic: You see your body walking toward the Stalker, and you can't stop it, because your only way to move is to move the Stalker further away!
+
+How we implement this "Identity Drift" (Layer 5)
+
+Since we have the Jammo and Peter engine running, we can create a "Shatter State" toggle.
+
+    The Switch: When Tension > 0.95, we disable the Player's ControlModule.
+
+    The Stalker Control: We map UserInputService to the Stalker's CFrame.
+
+    The Trail: We use a Buffer Array to store the Stalker's position every 0.1 seconds. The Player's body is then forced to move to the position that was stored in the array 20 slots ago.
+
+
+
+exactly. something like
+Your FingerStalkerYour BodyPress WMoves forward (0ms)—Press W againMoves forward againMoves forward (from first press)Press AMoves leftStill moving forward (from second press)Press A againMoves left againMoves left (from first A press)
+You are controlling the stalker with your fingers. Your body is following the stalker's trail.
+
+
+1. The Input Re-Routing (Fingers to Stalker)
+
+We use UserInputService to capture your keystrokes. Instead of moving the player, we apply that movement to the Stalker Part.
+
+    Action: You press W.
+
+    Result: The Red Stalker moves forward at a high speed. Your character stands still.
+
+2. The Command Buffer (The "Trail")
+
+We create a table called CommandHistory. Every 0.1 seconds, we save the Stalker's current CFrame (Position and Rotation) into that table.
+3. The Body Playback (Stalker to Body)
+
+The Player's body is then forced to move to the CFrame that was saved in the table exactly 20 slots ago (2 seconds).
+
+You remain in your body. But your body is no longer yours.
+The POV
+Phase	POV	Control
+Normal	Your body	You control it
+High tension	Your body	You control it, but delayed
+Shatter	Your body	You cannot control it. You watch.
+Collapse	Your body	Frozen. You watch from inside.
+
+You never leave your body. Your body leaves you.
+What You See
+What You Look At	What You See
+Your hands	They do not move when you try
+The stalker	It moves when you press keys
+Sanctuary	It is close. You cannot go.
+Your body	You are inside it. It is not yours.
+
+You are a passenger. Trapped in a body that does not obey. Watching your inputs control the stalker. Watching your body stand still.
+The Experience
+
+You press W. The stalker moves forward. Your body stays.
+
+You press W again. The stalker moves again. Your body still.
+
+You try to turn. You press A. The stalker turns. Your body faces forward.
+
+You scream. No sound. Your mouth does not open.
+
+You try to run to sanctuary. You press W repeatedly. The stalker runs to the threshold. Stops. Cannot enter.
+
+Your body stands where you collapsed. Frozen. Watching the stalker. Watching yourself.
+
+You are in your body. Your body is a prison. The stalker is your hands. The sanctuary is a wall.
